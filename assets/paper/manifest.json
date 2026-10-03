@@ -1,0 +1,71 @@
+{
+  "purpose": "README display previews; the linked PDFs are the original paper figures.",
+  "renderer": "PyMuPDF 1.28.0",
+  "width_requested": 2400,
+  "figures": [
+    {
+      "pdf": "figures/fig1-visual-scenarios.pdf",
+      "pdf_sha256": "3fb1b5d24d447169f19d6cba5e45a44884ebc3d763de058687bffd323b8767e2",
+      "preview": "assets/paper/fig1-visual-scenarios.png",
+      "preview_sha256": "d7c4ffd596251329eda1c6894523c4f37cc5927906ad9cd6a3b49429241b0f78",
+      "width": 2400,
+      "height": 967
+    },
+    {
+      "pdf": "figures/fig2-motivating-example.pdf",
+      "pdf_sha256": "f5a21c41d83338ed46c16eee32c21a85cc60ec835a5fe3dd2c8c71ca5142739d",
+      "preview": "assets/paper/fig2-motivating-example.png",
+      "preview_sha256": "0ea5ecbd8803eb072316a7b30964496a47e1083d9cd0d13a803970fe5ee40868",
+      "width": 2400,
+      "height": 788
+    },
+    {
+      "pdf": "figures/fig3-framework.pdf",
+      "pdf_sha256": "6da27460ecc17b05a1a7c9bcc92f923fb84c237c338052700e416b4b40676fd5",
+      "preview": "assets/paper/fig3-framework.png",
+      "preview_sha256": "e227c602e795c16094f5de118a5fab7fdc5c52b367458f7ac2bee5c72f79d11b",
+      "width": 2400,
+      "height": 1047
+    },
+    {
+      "pdf": "figures/fig4-code-investigation.pdf",
+      "pdf_sha256": "321101d23911225f1a422632402eb335eba153e9edd4a255c0f1a5fad255fe0f",
+      "preview": "assets/paper/fig4-code-investigation.png",
+      "preview_sha256": "b537a087209a3ed3a3da5d29bd96ffe655743790ce1bfbc985251430977e2829",
+      "width": 2400,
+      "height": 891
+    },
+    {
+      "pdf": "figures/fig5-browser-investigation.pdf",
+      "pdf_sha256": "b9582cc798244204195f352ce831caf4c5e9ab50458d6545423344b9c8f209ff",
+      "preview": "assets/paper/fig5-browser-investigation.png",
+      "preview_sha256": "03af6940f0e7c894c218189dbedbfdee1269c5ef4e01191f2891f849d0fdcddd",
+      "width": 2400,
+      "height": 691
+    },
+    {
+      "pdf": "figures/fig6-repair-overlap.pdf",
+      "pdf_sha256": "7060d9e73c51b843dd1dca7817b02280fe68a040cbe7040c8b76546c569e20c2",
+      "preview": "assets/paper/fig6-repair-overlap.png",
+      "preview_sha256": "3431855f90940960033a4dfe63c47494a8d7c8c8f3e3bf0431ba8a30bdedd919",
+      "width": 2400,
+      "height": 1588
+    },
+    {
+      "pdf": "figures/fig7-ablation-overlap.pdf",
+      "pdf_sha256": "fbb16f19e76916a1218b49cd3c00d26e2a6ea36eeb65c377d973f495fa827df6",
+      "preview": "assets/paper/fig7-ablation-overlap.png",
+      "preview_sha256": "4b49d3e3b3e901c5c89fd741048ad8eea23f9e75291e0d576c197f434cce827a",
+      "width": 2400,
+      "height": 1588
+    },
+    {
+      "pdf": "figures/fig8-repair-trajectory.pdf",
+      "pdf_sha256": "741d0b943a8954b59de752e13c0e0feb1ad8bd1e0b58c0f4014c8d55069b1f1e",
+      "preview": "assets/paper/fig8-repair-trajectory.png",
+      "preview_sha256": "44698ea7073284a977cac74196f7c10976871e645066ba6ef0563d81e999918b",
+      "width": 2400,
+      "height": 1382
+    }
+  ]
+}

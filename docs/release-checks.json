@@ -11,7 +11,7 @@
     "pdf_files": 8,
     "byte_identical_to_manuscript_sources": 8,
     "readable_single_page_pdfs": 8,
-    "svg_or_raster_exports": 0
+    "svg_or_raster_files_in_figures_directory": 0
   },
   "figure_8": {
     "archived_files_verified": 451,
@@ -82,5 +82,17 @@
       "provider token prefixes",
       "literal bearer tokens"
     ]
+  },
+  "readme_previews": {
+    "figures": 8,
+    "target_width_px": 2400,
+    "source_pdf_hashes_verified": true,
+    "image_hashes_verified": true,
+    "all_paper_figures_expanded": true,
+    "desktop_images_loaded": 8,
+    "mobile_horizontal_overflow": false,
+    "source_manifest": "assets/paper/manifest.json",
+    "github_markdown_rendered_images": 8,
+    "github_image_links_open_original_pdfs": true
   }
 }

@@ -2,62 +2,148 @@
   <img src="assets/t2repair-banner.png" alt="Centered T2Repair nameplate held by two small mascots, surrounded by illustrated software inspection, repair and validation icons" width="960">
 </p>
 
-# T2Repair
+<h1 align="center">T2Repair</h1>
 
-**T2Repair: Thinking It Through and Trying It Out for Visual Bug Repair**
+<p align="center">
+  <strong>Thinking It Through and Trying It Out for Visual Bug Repair</strong>
+</p>
 
-[Run T2Repair](docs/RUNNING.md) · [Paper figures (PDF)](figures/README.md) · [Figure 8 trajectory](trajectories/fig8-prism-1853/README.md) · [Release contents](docs/RELEASE.md)
+<p align="center">
+  <a href="#overview">Overview</a> ·
+  <a href="#results">Results</a> ·
+  <a href="#case-study">Figure 8</a> ·
+  <a href="#getting-started">Get started</a> ·
+  <a href="figures/README.md">Paper PDFs</a> ·
+  <a href="code/causalgui/">Code</a>
+</p>
 
-T2Repair repairs visual bugs in JavaScript projects by combining source-code investigation (*Thinking It Through*) with runtime reproduction (*Trying It Out*). A screenshot reveals what went wrong; the method investigates how the program produced it and what a patch must preserve.
+T2Repair combines **source-code investigation** with **runtime reproduction** to repair visual bugs in JavaScript projects. A screenshot provides the symptom. The Code Agent investigates how the implementation produces it, while the Browser Agent runs the program and checks what actually happens. Their evidence guides a separate patch generator.
 
-This repository contains the current T2Repair implementation, a standalone container launcher, all eight paper figures as PDFs, and the recorded DeepSeek trajectory behind Figure 8. Baseline implementations are outside this release.
+## Overview
 
-## How it works
+<p align="center">
+  <a href="figures/fig3-framework.pdf">
+    <img src="assets/paper/fig3-framework.png" alt="T2Repair framework: grounded issue and hypotheses, Code and Browser investigations, evidence-informed patch generation, and candidate validation with frozen replay" width="960">
+  </a>
+</p>
 
-1. **Ground the issue.** Read the issue and its images, derive requirements, index the base source, and form shared hypotheses about relevant program behavior.
-2. **Investigate in two roles.** The Code Agent inspects source paths and dependencies. The Browser Agent executes the real base program, refines its reproduction, and records observations. They run Code → Browser with separate contexts and do not revise each other's reports.
-3. **Generate patches from evidence.** A separate patch generator receives both reports and tool observations, then produces five candidate patches. The investigation agents do not edit the target source.
-4. **Validate and replay.** Check candidates and replay the Browser Agent's frozen scene and completed actions without further model calls. Select a patch using the available evidence, preserving `UNKNOWN` when a check cannot establish a result.
+*Figure 3. The T2Repair workflow. Click any paper figure to open its original PDF.*
 
-The default budgets are **2 Code Agent calls**, **3 Browser Agent calls**, and **5 candidates**, with seed **42**. Each agent's final call is reserved for its report. Screenshots are retained as evidence; replay does not send them to a model for a new visual judgment.
+1. **Ground the issue:** derive requirements from the issue and images, index the base source, and form shared debugging hypotheses.
+2. **Investigate:** run the Code Agent and then the Browser Agent in separate contexts. Each follows the shared hypotheses and produces an evidence-linked report.
+3. **Generate:** combine both reports and tool observations to produce five candidate patches.
+4. **Check and replay:** validate candidates and replay the frozen browser scene without further model calls. Keep `UNKNOWN` when the available checks cannot establish a result.
 
-See the [framework](figures/fig3-framework.pdf) and [runtime/configuration guide](docs/RUNNING.md).
+The default budgets are **2 Code Agent calls**, **3 Browser Agent calls**, and **5 candidates**, with seed **42**. Each agent's final call is reserved for its report. The agents do not edit the target source or revise each other's reports. GLM and DeepSeek are interchangeable backends; the same configured backend serves both roles in a run.
+
+## Motivation
+
+Visual bugs can involve layout, rendering, and parsing behavior. The visible symptom is the starting point for investigating the computation behind it.
+
+<p align="center">
+  <a href="figures/fig1-visual-scenarios.pdf">
+    <img src="assets/paper/fig1-visual-scenarios.png" alt="Illustrative visual bug scenarios in Chart.js, p5.js, and marked, followed by the issue-to-repair investigation process" width="960">
+  </a>
+</p>
+
+*Figure 1. Illustrative visual-bug scenarios and the investigation process.*
+
+In `bpmn-io__bpmn-js-1299`, an empty label edit can change the geometry of the underlying event. Reading the code identifies the guard and resize path; execution is needed to check the affected state.
+
+<p align="center">
+  <a href="figures/fig2-motivating-example.pdf">
+    <img src="assets/paper/fig2-motivating-example.png" alt="Motivating example from bpmn-js Issue 1294: reported and expected behavior, the label guard change, and reference test expectations" width="960">
+  </a>
+</p>
+
+*Figure 2. Reported behavior, code-level explanation, and reference repair/test expectations for the motivating example.*
 
 ## Thinking It Through
 
-The Code Agent inspects definitions, callers and dependencies to trace state changes and decision logic. It supplies evidence-linked findings and repair suggestions to the patch generator.
+The **Code Agent** follows the shared hypotheses through definitions, callers, dependencies, and state changes. It identifies relevant implementation paths and supplies evidence-linked findings, repair suggestions, and preservation constraints to the patch generator.
 
 <p align="center">
-  <img src="assets/deepseek-code-agent.png" alt="A proud DeepSeek whale girl directing the Code Agent: Trace the state to the decision, and bring me the evidence." width="960">
+  <a href="figures/fig4-code-investigation.pdf">
+    <img src="assets/paper/fig4-code-investigation.png" alt="Code Agent case study showing shared hypotheses, source inspection, cited findings, and the handoff to patch generation" width="960">
+  </a>
 </p>
+
+*Figure 4. Thinking It Through: source inspection connects suspicious behavior to candidate edit locations and constraints.*
 
 ## Trying It Out
 
-The Browser Agent tests the hypotheses against the running base program, collecting runtime events and available browser observations. Its final reproduction script and completed actions are frozen for replay on candidate patches.
+The **Browser Agent** loads the real base program, builds a reproduction, and interacts with it to collect runtime values and interface observations. It can refine the reproduction within its call budget. Its final scene and completed actions are frozen for replay on candidate patches.
 
 <p align="center">
-  <img src="assets/glm-browser-agent.png" alt="A composed GLM directing the Browser Agent: Recreate the scene, probe the state, and keep it replayable." width="960">
+  <a href="figures/fig5-browser-investigation.pdf">
+    <img src="assets/paper/fig5-browser-investigation.png" alt="Browser Agent case study with two reproduction attempts, observed values across scenes, report conclusions, and frozen replay" width="960">
+  </a>
 </p>
 
-*DeepSeek and GLM personify the two roles in these illustrations; the implementation uses a shared, configurable model backend for both agents.*
+*Figure 5. Trying It Out: execution checks the hypotheses against observed behavior and preserves a replayable scene.*
 
-## Figure 8: evidence that changes the diagnosis
+<details>
+<summary>Meet the two investigation roles</summary>
+
+<p align="center">
+  <img src="assets/deepseek-code-agent.png" alt="A proud DeepSeek whale girl directing the Code Agent to trace the state to the decision and bring back evidence" width="440">
+  <img src="assets/glm-browser-agent.png" alt="A composed GLM directing the Browser Agent to recreate the scene, probe the state, and keep it replayable" width="440">
+</p>
+
+DeepSeek and GLM personify the roles in these illustrations. The implementation uses a shared, configurable backend for both agents.
+
+</details>
+
+## Results
+
+The paper reports the following T2Repair results on the **480-task SWE-bench Multimodal v2 test set**:
+
+| Model backend | Resolved tasks | Resolution rate |
+| --- | --- | --- |
+| GLM | **168 / 480** | **35.00%** |
+| DeepSeek | **161 / 480** | **33.54%** |
+
+<p align="center">
+  <a href="figures/fig6-repair-overlap.pdf">
+    <img src="assets/paper/fig6-repair-overlap.png" alt="Repair overlap between T2Repair and GUIRepair under GLM and DeepSeek, with the repository distribution of tasks resolved only by T2Repair" width="960">
+  </a>
+</p>
+
+*Figure 6. Tasks resolved by T2Repair and GUIRepair, including the distribution of T2Repair-only repairs across repositories.*
+
+The two ablations remove either the Code Agent or the Browser Agent together with that role's call budget. Removed calls are not reassigned to the remaining role.
+
+<p align="center">
+  <a href="figures/fig7-ablation-overlap.pdf">
+    <img src="assets/paper/fig7-ablation-overlap.png" alt="Overlap among tasks resolved by full T2Repair, the variant without the Code Agent, and the variant without the Browser Agent, under both model backends" width="960">
+  </a>
+</p>
+
+*Figure 7. Repair overlap between the full method and its two agent ablations.*
+
+## Case study
+
+<p align="center">
+  <a href="figures/fig8-repair-trajectory.pdf">
+    <img src="assets/paper/fig8-repair-trajectory.png" alt="Figure 8: the recorded DeepSeek trajectory for PrismJS prism-1853, from Issue 1852 through Code and Browser evidence to the selected patch and frozen replay" width="960">
+  </a>
+</p>
+
+*Figure 8. The recorded DeepSeek repair trajectory for `PrismJS__prism-1853` (original report: `Issue #1852`).*
 
 On `PrismJS__prism-1853`, source inspection suggests that a comment rule interferes with strings containing `/*`. Browser execution reveals a more precise failure: the final `"C":"C"` member splits into **text → string → text**, with no comment token in the issue output. It also establishes that real comments must still work.
 
-The selected patch restores **property → operator → string**, and frozen replay preserves the line/block comment controls. The archived official evaluation records a pass. The [walkthrough](trajectories/fig8-prism-1853/README.md) connects each step to the original requests, observations, patch, and replay, including the checks that remain unknown.
+The selected patch restores **property → operator → string**, and frozen replay preserves the line/block comment controls. The archived official evaluation records a pass. Read the [trajectory walkthrough](trajectories/fig8-prism-1853/README.md) to follow the original requests, observations, patch, and replay, including checks that remain unknown.
 
-Verify the 451 archived files and the figure's key observations offline:
+## Getting started
+
+Verify the **451 archived Figure 8 files** and their key observations offline with Python 3.11+:
 
 ```bash
 python scripts/verify_fig8.py
 ```
 
-Python 3.11+ is sufficient for this archive check; it needs no API key or extra packages.
-
-## Run the method
-
-Build the Linux runtime:
+To run T2Repair on a new case, build the Linux runtime:
 
 ```bash
 docker build -t t2repair:local .
@@ -65,22 +151,20 @@ docker build -t t2repair:local .
 
 Then follow [Run T2Repair](docs/RUNNING.md) to prepare a base checkout and issue images, install the target project's dependencies, configure an OpenAI-compatible model endpoint, and run `prepare → check → run → export`. The same configured backend serves both investigation roles and patch generation.
 
-The launcher runs one case at a time. Official benchmark evaluation is a separate step; the recorded Figure 8 outcome was not regenerated for this release.
+The archive check needs no API key or extra packages. A new repair run calls the configured model endpoint. The launcher runs one case at a time, with official benchmark evaluation as a separate step.
 
-## Paper figures
+## Repository guide
 
-| Figure | PDF |
+| Resource | Contents |
 | --- | --- |
-| 1 | [Visual bug scenarios](figures/fig1-visual-scenarios.pdf) |
-| 2 | [Motivating example](figures/fig2-motivating-example.pdf) |
-| 3 | [T2Repair framework](figures/fig3-framework.pdf) |
-| 4 | [Code Agent investigation](figures/fig4-code-investigation.pdf) |
-| 5 | [Browser Agent investigation](figures/fig5-browser-investigation.pdf) |
-| 6 | [Repair overlap](figures/fig6-repair-overlap.pdf) |
-| 7 | [Agent ablation overlap](figures/fig7-ablation-overlap.pdf) |
-| 8 | [Repair trajectory: PrismJS__prism-1853](figures/fig8-repair-trajectory.pdf) |
+| [Implementation](code/causalgui/) | Current T2Repair method and standalone launcher |
+| [Running guide](docs/RUNNING.md) | Setup, inputs, configuration, ablations, and evaluation |
+| [Paper figures](figures/README.md) | All eight original PDFs |
+| [Figure 8 archive](trajectories/fig8-prism-1853/README.md) | Recorded investigation, candidates, patch, and replay |
+| [Release notes](docs/RELEASE.md) | Source provenance and completed checks |
 
-## Code map
+<details>
+<summary>Implementation map</summary>
 
 | Location | Purpose |
 | --- | --- |
@@ -95,4 +179,6 @@ The launcher runs one case at a time. Official benchmark evaluation is a separat
 | [tests/](tests/) | Contract, browser, synthesis, feedback, and launcher checks |
 | [trajectories/fig8-prism-1853/](trajectories/fig8-prism-1853/) | Recorded Figure 8 evidence |
 
-`causalgui` is the implementation's internal Python package name. The released method is T2Repair. Ordinary code comments and docstrings were removed with executable-AST equivalence checks; model prompts and archived evidence were preserved. See [release provenance](docs/RELEASE.md).
+`causalgui` is the implementation's internal Python package name. This release includes T2Repair; baseline implementations are outside its scope. See [release provenance](docs/RELEASE.md) for source cleanup and preservation details.
+
+</details>

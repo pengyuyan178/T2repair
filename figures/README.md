@@ -15,4 +15,13 @@ All eight paper figures are provided as the original PDFs. Figure numbers follow
 
 [manifest.json](manifest.json) records the original manuscript filenames and SHA-256 hashes. Figure 8 also has a [trace walkthrough and raw records](../trajectories/fig8-prism-1853/README.md).
 
-README illustrations in `assets/` and screenshots inside the archived trajectory are separate from the paper figures. No raster or SVG exports of the paper figures are included.
+The README displays [PNG previews](../assets/paper/) rendered directly from these PDFs, with each preview linking back to its original PDF. This directory keeps the original PDF figure collection. Mascot illustrations and archived screenshots are separate assets.
+
+To refresh the display previews after updating the PDFs and this directory's manifest:
+
+```bash
+python -m pip install PyMuPDF
+python scripts/render_readme_figures.py
+```
+
+Run these commands from the repository root. Previews use a 2400-pixel target width, white backgrounds, and the complete PDF page. [assets/paper/manifest.json](../assets/paper/manifest.json) records each source PDF hash, preview hash, and image dimensions. PyMuPDF is only needed to regenerate the documentation previews.

@@ -14,7 +14,7 @@ The copied tests retain the algorithm and browser checks. Their pipeline fixture
 
 ## Figures and trajectory
 
-The [eight PDFs](../figures/README.md) are byte-for-byte copies of the current manuscript figures. Their original filenames and hashes are in [figures/manifest.json](../figures/manifest.json). No SVG or raster exports of those figures are included.
+The [eight PDFs](../figures/README.md) are byte-for-byte copies of the current manuscript figures. Their original filenames and hashes are in [figures/manifest.json](../figures/manifest.json). The README embeds [display previews](../assets/paper/) rendered directly from the PDFs; clicking a preview opens its original PDF. The preview manifest records the source PDF and rendered image hashes.
 
 The [Figure 8 archive](../trajectories/fig8-prism-1853/README.md) contains 451 hash-listed files from the recorded DeepSeek run. Model responses, source excerpts, scripts, timestamps, and original audit paths remain unchanged. The exported official result is the matching row from the original final-results CSV, with that CSV's hash retained. The full CSV and other methods' experiments are outside this release.
 
