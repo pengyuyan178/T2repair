@@ -63,6 +63,10 @@ In `bpmn-io__bpmn-js-1299`, an empty label edit can change the geometry of the u
 The **Code Agent** follows the shared hypotheses through definitions, callers, dependencies, and state changes. It identifies relevant implementation paths and supplies evidence-linked findings, repair suggestions, and preservation constraints to the patch generator.
 
 <p align="center">
+  <img src="assets/deepseek-code-agent.png" alt="A proud DeepSeek whale girl directing the Code Agent to trace the state to the decision and bring back evidence" width="960">
+</p>
+
+<p align="center">
   <a href="figures/fig4-code-investigation.pdf">
     <img src="assets/paper/fig4-code-investigation.png" alt="Code Agent case study showing shared hypotheses, source inspection, cited findings, and the handoff to patch generation" width="960">
   </a>
@@ -75,6 +79,10 @@ The **Code Agent** follows the shared hypotheses through definitions, callers, d
 The **Browser Agent** loads the real base program, builds a reproduction, and interacts with it to collect runtime values and interface observations. It can refine the reproduction within its call budget. Its final scene and completed actions are frozen for replay on candidate patches.
 
 <p align="center">
+  <img src="assets/glm-browser-agent.png" alt="A composed GLM directing the Browser Agent to recreate the scene, probe the state, and keep it replayable" width="960">
+</p>
+
+<p align="center">
   <a href="figures/fig5-browser-investigation.pdf">
     <img src="assets/paper/fig5-browser-investigation.png" alt="Browser Agent case study with two reproduction attempts, observed values across scenes, report conclusions, and frozen replay" width="960">
   </a>
@@ -82,17 +90,7 @@ The **Browser Agent** loads the real base program, builds a reproduction, and in
 
 *Figure 5. Trying It Out: execution checks the hypotheses against observed behavior and preserves a replayable scene.*
 
-<details>
-<summary>Meet the two investigation roles</summary>
-
-<p align="center">
-  <img src="assets/deepseek-code-agent.png" alt="A proud DeepSeek whale girl directing the Code Agent to trace the state to the decision and bring back evidence" width="440">
-  <img src="assets/glm-browser-agent.png" alt="A composed GLM directing the Browser Agent to recreate the scene, probe the state, and keep it replayable" width="440">
-</p>
-
-DeepSeek and GLM personify the roles in these illustrations. The implementation uses a shared, configurable backend for both agents.
-
-</details>
+*DeepSeek and GLM personify the roles in these illustrations. The implementation uses a shared, configurable backend for both agents.*
 
 ## Results
 
