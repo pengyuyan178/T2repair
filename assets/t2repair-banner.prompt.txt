@@ -1,18 +1,73 @@
 Generation mode: built-in image_gen; the backend model selector is not exposed.
-Input: assets/t2repair-banner.png at commit 2a611b7.
-Requested output: an opaque pastel background with clouds, stars and small accents around the existing banner.
+Source: assets/t2repair-banner.png at commit 2692852.
+The three prompts below were applied successively. Each stage used the preceding image as its edit target.
+Requested output: a centered T2Repair title with smaller mascots and illustrated software icons outside the plaque.
 Requested resolution: 3840 x 1536 if supported.
-Verified output: 1983 x 793, RGB, fully opaque. This is not native 4K.
+Verified final output: 1983 x 793, RGB, fully opaque. This is not native 4K.
 
-BACKGROUND EDIT PROMPT
+LAYOUT AND MASCOT REDESIGN PROMPT
+Use case: style-transfer.
+Asset: T2Repair software-engineering research repository README banner.
+Input image 1 is the edit target and reference for the two existing mascot identities. Redesign it into a restrained professional software-engineering paper project banner. The user says the current design looks too childish, explicitly chooses SMALLER, SIMPLIFIED mascots and a TECHNICAL LINE-ART BACKGROUND, and requires the text to be centered within the WHOLE IMAGE.
+
+LAYOUT — very important:
+Wide horizontal 2.5:1 rectangular canvas. Exact title "T2Repair" must have its visual bounding-box CENTER at x = 50% of canvas width AND y = 50% of canvas height. This is vertical AND horizontal centering within the full image, not merely centering inside a low-positioned sign. Move the long nameplate UP to the middle of the canvas. Keep balanced open space above and below. Do not preserve the current low plaque position.
+Use a long, slim white nameplate spanning about 72% of the canvas width, about 26% of its height, with subtle rounded corners, a fine slate-blue double-line border and only the faintest shadow. Center this plaque on the canvas. It should feel like a flat editorial title panel, not a glossy toy.
+The left blue-haired and right black-haired mascots are smaller supporting accents at the outer ends of the plaque, each about 14% of the total canvas width and 45% of its height. Position their body centers at roughly y = 50% so their silhouettes are vertically balanced around the title, with both naturally holding the outer ends of the plaque. Keep the title unobstructed and the full silhouettes uncropped.
+
+TYPOGRAPHY:
+Exact text "T2Repair", in a refined, friendly contemporary humanist sans-serif wordmark, semibold, with subtly softened terminals. Dark navy with a small restrained indigo accent, crisp flat lettering, comfortably spaced, no 3D extrusion. Title occupies about 42% of the overall canvas width and is immediately legible at README sizes. Replace the current candy bubble lettering entirely. No balloon shapes, jelly shine, thick white sticker strokes or puffy cartoon font. Do not add a subtitle or slogan.
+
+CHARACTERS:
+Preserve the recognizable original identities: left character with cobalt-blue hair, blue eyes, forelock and blue bow; right character with charcoal-black hair, cat ears, violet eyes, sleep-mask headband and small bells. Keep their existing navy-and-white clothing and friendly expressions. Simplify their rendering into neat, understated anime line illustrations with a small number of flat color fills and subtle two-tone shading; remove the excessive glossy effects and micro-detail. They remain small mascots, not the visual focus. Do not exaggerate their eyes or infantile proportions.
+
+OPAQUE BACKGROUND AND SOFTWARE-ENGINEERING MOTIFS:
+Use a fully opaque cool ivory / extremely pale blue-gray background, almost flat. A very faint technical grid or a few alignment ticks can suggest a research diagram.
+Draw a sparse, deliberate network of fine slate-blue technical line art OUTSIDE the nameplate, distributed evenly ABOVE and BELOW it:
+- upper-left / upper-center: a small browser GUI wireframe showing an outlined interface element;
+- upper-right: a compact source-code panel made of a few bracket marks and horizontal code strokes;
+- lower-left: a small patch/diff card with subtly colored blue line changes;
+- lower-right: a browser preview with a tiny restrained green validation check.
+Connect a few of these with thin orthogonal arrows or a neat curved iteration loop, conveying investigation, code repair, runtime observation and validation. These are lightweight schematic motifs, not large saturated app icons. Use low contrast and ample negative space so the center title clearly dominates. No labels or fabricated code text, just plausible abstract UI/code lines. Keep all diagrams OUTSIDE the plaque, away from the characters' faces and hands. This should resemble tasteful software-engineering conference project artwork with clean 2D technical drawing, not a classroom poster or children's stationery.
+
+REMOVE all clouds, stars, sparkles, diamonds, pearl dots, party confetti, candy gradients, decorative swirls, and toy-like glossy borders from the current design. No rainbow, no space scene, no unnecessary ornamental objects.
+Preserve opaque background all the way to the four corners; no transparency or checkerboard.
+Polished high-resolution raster illustration, clean consistent line weights and antialiasing. Target 3840 x 1536 if supported. Deliver one finished banner.
+
+TITLE POSITION REFINEMENT PROMPT
 Use case: precise-object-edit.
-Asset: T2Repair GitHub README banner.
-Input image 1 is the edit target.
+Input image is the current professional T2Repair software-engineering research banner, 1983 x 793 pixels.
 
-Replace the transparent space around the existing illustration with a fully opaque, softly decorated pastel background. The user explicitly does NOT want transparency. Create a finished rectangular banner with background color extending to all four corners. Keep the current wide 2.5:1 composition.
+Make ONLY a small geometric positioning correction. The exact "T2Repair" letter shapes currently occupy approximately x=584..1408, y=335..508, centered at (996,421.5). The whole image center is (991.5,396.5). The user explicitly requires the TITLE ITSELF at the exact horizontal and vertical center of the whole canvas.
 
-Background art direction: a warm milky ivory base, with an extremely soft sky-blue wash on the left blending into pale lavender on the right. Add softly rounded, low-contrast pastel cloud-like color patches near the corners. In the open space ABOVE and AROUND the long plaque, lightly scatter a small number of cute decorative doodles: two or three little fluffy white clouds with faint blue-lavender outlines, a handful of small rounded four-point stars, tiny hollow diamonds, pearly dots and short delicate curved strokes. Use a restrained balance of small accents, varied in size, with generous breathing room; the large central area above the plaque should feel gently decorated, not empty and not crowded. Keep the palette soft and coordinated with the blue-haired and violet-eyed characters. The decorations should feel like a polished kawaii stationery illustration. No busy repeating wallpaper, no overpowering glow, no realistic scenery.
+Translate the whole main foreground group (long white nameplate, exact existing wordmark and both small mascots gripping its ends) UP by 25 pixels and LEFT by 4 to 5 pixels, or equivalent proportional amounts if the output size differs (up 3.15% of canvas height; left 0.23% of canvas width). Preserve the group's dimensions, proportions, colors, lettering, character identities, simplified illustration style, hand grips, fine border, and details completely. Do NOT redraw or restyle the title; preserve its clean navy sans-serif text with blue 2.
+After this shift the visible title bounding box should be centered at exactly x=50%, y=50% of the ENTIRE image; the long panel surrounds it symmetrically. This is not an instruction to move the title towards the lower half.
 
-STRICT FOREGROUND PRESERVATION: preserve the two existing chibi mascots exactly: same identities, faces, eyes, hairstyles, colors, costumes, accessories, size, placement and poses, with their hands holding the nameplate. Preserve the current very long white rounded plaque, its blue border and the exact cute blue-to-lavender bubble wordmark "T2Repair" including its white outline and soft shadow. Do NOT redesign the lettering. Preserve the current small exterior sparkle clusters. Keep the entire plaque interior plain apart from the existing wordmark. All NEW decoration belongs in the BACKGROUND OUTSIDE the plaque, behind the foreground illustration and never across faces, hands or letters. Keep the entire illustration visible and uncropped. Clean the transparent-edge fringe naturally into the new pastel backdrop.
+Keep the pale opaque technical background and all existing code, GUI, patch/diff, verification panels and arrows unchanged in style and positions. Fill only the small background areas newly revealed by moving the foreground group. Keep a restrained professional 2D software-engineering research banner. No extra text or objects, no clouds/stars/confetti, no glossy effects.
+Same 2.5:1 canvas and fully opaque background. Crisp original detail.
 
-Deliver a single finished opaque banner, no checkerboard, no transparent cutout, no black backdrop, no additional text or watermark. Crisp high quality anime sticker illustration with fine linework. Target 3840 x 1536 pixels if supported.
+FINAL SOFTWARE-ICON BACKGROUND PROMPT
+Use case: precise-object-edit.
+Asset: T2Repair software-engineering project README banner.
+Input image 1 is the exact edit target. The user likes the centered title and smaller mascots but finds the technical wireframe background too severe. Replace ONLY the surrounding background art with friendly, polished CARTOON SOFTWARE ICONS.
+
+FOREGROUND AND COMPOSITION:
+Keep the existing two small mascots, their recognizable designs, scale, positions, poses and hands holding the same long white plaque. Keep the same slim slate-blue plaque border and the clean navy title with the blue numeral 2. Exact text "T2Repair", no spelling or case changes. Keep the wordmark visually centered at x=50%, y=50% of the WHOLE canvas, and preserve balanced upper/lower margins. Keep the central panel empty except for the title. All icons must be OUTSIDE the plaque, floating in the surrounding background. Do not add any icons to the plaque interior.
+
+REMOVE THE CURRENT TECHNICAL BACKGROUND:
+Remove the large code/browser wireframe panels, diff table, flowchart arrows, circular cycle arrows, construction grid, dashed alignment guides, corner crosshairs, dot matrices and square swatches. The user wants icon illustration rather than an engineering diagram.
+
+NEW ICON BACKGROUND:
+An opaque, very pale warm blue-gray / ivory background with extremely subtle soft blue and lavender color washes.
+Arrange five small, loosely spaced illustrated software icons in balanced positions around the title:
+1. Upper left-center: a compact rounded browser-window icon overlapped by a small magnifying glass, representing GUI inspection. Just a couple of simple interface shapes inside, no detailed wireframe or text.
+2. Upper center: a small indigo pair of code brackets "</>" drawn as an independent friendly icon, not inside a rectangular code box.
+3. Upper right-center: a lavender gear with a little blue wrench, representing repair.
+4. Lower left-center: two rounded blue-and-lavender puzzle pieces fitting together, representing a patch.
+5. Lower right-center: a simple blue mouse-pointer icon beside a small mint-green circular check badge, representing execution and verification.
+Each main icon about 7–9% of the image width, and never more than 18% of the image height. Allow slight playful tilts and generous blank space between icons. Keep enough clear space around the characters and plaque. No connectors, flowchart or rigid grid. A handful of tiny subdued short strokes or dots may add light rhythm, but keep them sparse.
+
+ICON STYLE:
+High-quality contemporary editorial cartoon icons: rounded geometric silhouettes, neat medium-weight indigo outlines, soft two-tone cel shading, slight shallow dimension, small gentle shadows. Think thoughtful open-source software project illustration: approachable and playful yet polished. Coordinated cornflower blue, muted lavender, slate navy and a small mint accent. Consistent drawing style across all icons. Not flat gray blueprint lines, not realistic screenshots, not emoji stickers, not childish puffy candy toys. Avoid heavy gloss, thick white sticker borders, exaggerated 3D extrusion or saturated rainbow colors. No cloud, star, sparkle, heart, nursery or confetti motifs.
+
+Maintain a fully opaque rectangular background, same wide 2.5:1 composition, clean sharp details. No extra words, labels or slogans. Deliver one finished banner at the highest supported quality, targeting 3840 x 1536 if supported.
