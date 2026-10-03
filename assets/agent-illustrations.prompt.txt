@@ -33,7 +33,7 @@ https://github.com/Neko3000/deepseek-whalechan/blob/main/README.zh.md
 https://treapgogo.github.io/deepseek-whale-girl/index.html
 GLM identity reference: parent project docs/figure-design/20260923/framework_v4/assets/reference_glm.png and the user-provided black-haired mascot.
 The community character references establish visual features, not official model branding or measured experimental findings.
-First card input 2: assets/t2repair-banner.png at commit 679b830, for project palette/style.
+First card input 2: assets/t2repair-banner.png, for project palette/style.
 Second card input 2: the completed deepseek-code-agent.png, for consistent scene composition and drawing style.
 
 DEEPSEEK / CODE AGENT PROMPT

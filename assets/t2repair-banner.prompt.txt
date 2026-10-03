@@ -1,5 +1,5 @@
 Generation mode: built-in image_gen; the backend model selector is not exposed.
-Source: assets/t2repair-banner.png at commit 2692852.
+Source: assets/t2repair-banner.png.
 The three prompts below were applied successively. Each stage used the preceding image as its edit target.
 Requested output: a centered T2Repair title with smaller mascots and illustrated software icons outside the plaque.
 Requested resolution: 3840 x 1536 if supported.
