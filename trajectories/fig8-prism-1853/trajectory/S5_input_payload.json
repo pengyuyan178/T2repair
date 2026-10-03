@@ -1,0 +1,3406 @@
+{
+  "protocol": "s5_context_v1",
+  "mode": "NORMAL",
+  "task": {
+    "issue": "/* breaks JSON tokenization\n**Information**\r\n- Language: [JSON]\r\n- Plugins: [none]\r\n\r\nDoes the problem still occur in the latest version of Prism? Yes\r\n\r\n**Description**\r\nI'm logging server response as JSON. The HTTP header `Accept: */*` triggers this problem.\r\n\r\n![broken_tokenization](https://user-images.githubusercontent.com/24775744/55315159-55a5b580-549e-11e9-9789-1c0e7ac3356f.png)\r\n\r\n\r\n**Code snippet**\r\n\r\n<details>\r\n<summary>The code being highlighted incorrectly.</summary>\r\n\r\n```\r\n{\r\n  \"A\": \"/*\",\r\n  \"B\": \"B\",\r\n  \"C\": \"C\"\r\n}\r\n```\r\n\r\n</details>\r\n\n",
+    "repo": "PrismJS/prism",
+    "base_commit": "2f9c9261bc1454899266929711d5842a3675e467",
+    "issue_images": {
+      "index_base": 0,
+      "count": 1
+    }
+  },
+  "requirements": {
+    "entities": [
+      "JSON string containing \"/*\"",
+      "comment",
+      "\"*/*\" sequence inside a JSON string",
+      "JSON tokens following a string containing \"/*\"",
+      "JSON tokenizer"
+    ],
+    "constraints": [
+      {
+        "id": "C1",
+        "kind": "REQUIREMENT",
+        "role": "CHANGE_DISTINGUISH",
+        "entity": "JSON string containing \"/*\"",
+        "property": "tokenization",
+        "context": "JSON tokenization",
+        "relation": "Must be tokenized as a string, not as a comment start.",
+        "strength": "MUST",
+        "ambiguity_reason": "",
+        "provenance_valid": true,
+        "provenance": {
+          "kind": "issue_sentence",
+          "reference": "/* breaks JSON tokenization",
+          "region": []
+        }
+      },
+      {
+        "id": "C2",
+        "kind": "REQUIREMENT",
+        "role": "CHANGE_UNITE",
+        "entity": "\"*/*\" sequence inside a JSON string",
+        "property": "tokenization",
+        "context": "HTTP header Accept: */*",
+        "relation": "Must be processed together with the surrounding string token, not separately as a comment.",
+        "strength": "MUST",
+        "ambiguity_reason": "",
+        "provenance_valid": true,
+        "provenance": {
+          "kind": "issue_sentence",
+          "reference": "The HTTP header `Accept: */*` triggers this problem.",
+          "region": []
+        }
+      },
+      {
+        "id": "C3",
+        "kind": "REQUIREMENT",
+        "role": "CHANGE_DISTINGUISH",
+        "entity": "JSON tokens following a string containing \"/*\"",
+        "property": "tokenization",
+        "context": "JSON tokenization",
+        "relation": "Must not be consumed as part of a comment; must be tokenized as normal JSON tokens.",
+        "strength": "MUST",
+        "ambiguity_reason": "",
+        "provenance_valid": true,
+        "provenance": {
+          "kind": "image_region",
+          "reference": "0",
+          "region": [
+            0.03,
+            0.56,
+            0.97,
+            0.97
+          ]
+        }
+      },
+      {
+        "id": "C4",
+        "kind": "REQUIREMENT",
+        "role": "CHANGE_DISTINGUISH",
+        "entity": "comment",
+        "property": "tokenization",
+        "context": "Inside a JSON string",
+        "relation": "Must not be triggered by the /* sequence when it appears inside a string.",
+        "strength": "MUST",
+        "ambiguity_reason": "",
+        "provenance_valid": true,
+        "provenance": {
+          "kind": "issue_sentence",
+          "reference": "/* breaks JSON tokenization",
+          "region": []
+        }
+      }
+    ],
+    "ambiguity_groups": []
+  },
+  "edit_contract": {
+    "allowed_change": [
+      "components/prism-json.js",
+      "components/prism-core.js",
+      "prism.js",
+      "components/index.js",
+      "components/prism-abnf.js",
+      "components/prism-actionscript.js",
+      "components/prism-ada.js",
+      "components/prism-apl.js",
+      "style.css",
+      "components.js"
+    ],
+    "new_files": [],
+    "must_co_edit": [],
+    "interface_obligations": [
+      {
+        "from": "components.js",
+        "to": "style.css",
+        "kind": "same_directory_visual"
+      },
+      {
+        "from": "components/index.js",
+        "to": "components.js",
+        "kind": "import"
+      },
+      {
+        "from": "gulpfile.js",
+        "to": "style.css",
+        "kind": "same_directory_visual"
+      },
+      {
+        "from": "prism.js",
+        "to": "style.css",
+        "kind": "same_directory_visual"
+      }
+    ],
+    "atomicity": "All edits in a candidate succeed together; no partial patch is retained.",
+    "ranked_files": [
+      "components/prism-json.js",
+      "components/prism-core.js",
+      "prism.js",
+      "components/index.js",
+      "components/prism-abnf.js",
+      "components/prism-actionscript.js",
+      "components/prism-ada.js",
+      "components/prism-apl.js"
+    ],
+    "unknown_policy": "Retain UNKNOWN hypotheses; no runtime failure removes an editable file.",
+    "scope_complete": false,
+    "interface_obligations_status": "review_in_generation_and_validate_atomic_candidate",
+    "patch_protocol": "exact_unique_search_v1",
+    "must_preserve": [],
+    "must_satisfy": [
+      "C1",
+      "C2",
+      "C3",
+      "C4"
+    ],
+    "may_explain": []
+  },
+  "hypotheses": {
+    "all_unknown": true,
+    "negative_reach_policy": "finite non-reach is UNKNOWN",
+    "items": [
+      {
+        "id": "H1",
+        "boundary_id": "matching:components/prism-json.js:2:37-68",
+        "boundary_valid": true,
+        "file": "components/prism-json.js",
+        "symbol": "comment",
+        "line": 2,
+        "mechanism": "matching_boundary",
+        "question": {
+          "kind": "value",
+          "expression": "Prism.languages.json['comment'].exec('{\"Accept\":\"*/*\"}')[0]",
+          "expected": "/*\"}"
+        },
+        "readable_symbols": [],
+        "target_property": "comment",
+        "constraint_ids": [
+          "C2",
+          "C4"
+        ],
+        "verdict": "UNKNOWN",
+        "baseline_rank": 0,
+        "input_rank": 0,
+        "local_influence_supported": false,
+        "witness_count": 1,
+        "certificate": {
+          "kind": "insufficient_evidence",
+          "expected_prediction": null,
+          "refutation_scope": null,
+          "excludes_candidate": false,
+          "proves_expressibility": false,
+          "witness_refs": [
+            "final:0"
+          ]
+        },
+        "source_refs": [
+          "W10"
+        ],
+        "evidence_refs": [
+          "runtime:browser.t1.o1:0:tier:0",
+          "runtime:browser.t1.o1:0:tier:1",
+          "runtime:browser.t1.o1:0",
+          "runtime:browser.t2.o1:0:tier:0",
+          "runtime:browser.t2.o1:0:tier:1",
+          "runtime:browser.t2.o1:0",
+          "final:0:tier:0",
+          "final:0:tier:1",
+          "final:0"
+        ]
+      },
+      {
+        "id": "H2",
+        "boundary_id": "matching:components/prism-json.js:2:37-68",
+        "boundary_valid": true,
+        "file": "components/prism-json.js",
+        "symbol": "comment",
+        "line": 2,
+        "mechanism": "matching_boundary",
+        "question": {
+          "kind": "value",
+          "expression": "Object.keys(Prism.languages.json).indexOf('comment') < Object.keys(Prism.languages.json).indexOf('string')",
+          "expected": "true"
+        },
+        "readable_symbols": [],
+        "target_property": "comment",
+        "constraint_ids": [
+          "C1",
+          "C4"
+        ],
+        "verdict": "UNKNOWN",
+        "baseline_rank": 0,
+        "input_rank": 1,
+        "local_influence_supported": false,
+        "witness_count": 1,
+        "certificate": {
+          "kind": "insufficient_evidence",
+          "expected_prediction": null,
+          "refutation_scope": null,
+          "excludes_candidate": false,
+          "proves_expressibility": false,
+          "witness_refs": [
+            "final:1"
+          ]
+        },
+        "source_refs": [
+          "W10"
+        ],
+        "evidence_refs": [
+          "runtime:browser.t1.o1:1:tier:0",
+          "runtime:browser.t1.o1:1:tier:1",
+          "runtime:browser.t1.o1:1",
+          "runtime:browser.t2.o1:1:tier:0",
+          "runtime:browser.t2.o1:1:tier:1",
+          "runtime:browser.t2.o1:1",
+          "final:1:tier:0",
+          "final:1:tier:1",
+          "final:1"
+        ]
+      },
+      {
+        "id": "H3",
+        "boundary_id": "",
+        "boundary_valid": false,
+        "file": "components/prism-json.js",
+        "symbol": "string",
+        "line": 8,
+        "mechanism": "matching_boundary",
+        "question": {
+          "kind": "value",
+          "expression": "Prism.languages.json['string'].pattern.exec('{\"Accept\":\"*/*\"}')[0]",
+          "expected": "\"*/*\""
+        },
+        "readable_symbols": [
+          "Prism.languages.json"
+        ],
+        "target_property": "string",
+        "constraint_ids": [
+          "C1",
+          "C2"
+        ],
+        "verdict": "UNKNOWN",
+        "baseline_rank": 0,
+        "input_rank": 2,
+        "local_influence_supported": false,
+        "witness_count": 1,
+        "certificate": {
+          "kind": "insufficient_evidence",
+          "expected_prediction": null,
+          "refutation_scope": null,
+          "excludes_candidate": false,
+          "proves_expressibility": false,
+          "witness_refs": [
+            "final:2"
+          ]
+        },
+        "source_refs": [
+          "W10"
+        ],
+        "evidence_refs": [
+          "runtime:browser.t1.o1:2:tier:0",
+          "runtime:browser.t1.o1:2:tier:1",
+          "runtime:browser.t1.o1:2",
+          "runtime:browser.t2.o1:2:tier:0",
+          "runtime:browser.t2.o1:2:tier:1",
+          "runtime:browser.t2.o1:2",
+          "final:2:tier:0",
+          "final:2:tier:1",
+          "final:2"
+        ]
+      },
+      {
+        "id": "H4",
+        "boundary_id": "matching:components/prism-json.js:2:37-68",
+        "boundary_valid": true,
+        "file": "components/prism-json.js",
+        "symbol": "comment",
+        "line": 2,
+        "mechanism": "matching_boundary",
+        "question": {
+          "kind": "value",
+          "expression": "Prism.tokenize('{\"Accept\":\"*/*\"}', Prism.languages.json)",
+          "expected": "the token stream contains a top-level comment token that starts at the slash inside the value string and runs to the end of the input, so no string token covers the whole value"
+        },
+        "readable_symbols": [],
+        "target_property": "comment",
+        "constraint_ids": [
+          "C2",
+          "C3"
+        ],
+        "verdict": "UNKNOWN",
+        "baseline_rank": 0,
+        "input_rank": 3,
+        "local_influence_supported": false,
+        "witness_count": 1,
+        "certificate": {
+          "kind": "insufficient_evidence",
+          "expected_prediction": null,
+          "refutation_scope": null,
+          "excludes_candidate": false,
+          "proves_expressibility": false,
+          "witness_refs": [
+            "final:3"
+          ]
+        },
+        "source_refs": [
+          "W10"
+        ],
+        "evidence_refs": [
+          "runtime:browser.t1.o1:3:tier:0",
+          "runtime:browser.t1.o1:3:tier:1",
+          "runtime:browser.t1.o1:3",
+          "runtime:browser.t2.o1:3:tier:0",
+          "runtime:browser.t2.o1:3:tier:1",
+          "runtime:browser.t2.o1:3",
+          "final:3:tier:0",
+          "final:3:tier:1",
+          "final:3"
+        ]
+      },
+      {
+        "id": "H5",
+        "boundary_id": "matching:components/prism-json.js:2:37-68",
+        "boundary_valid": true,
+        "file": "components/prism-json.js",
+        "symbol": "comment",
+        "line": 2,
+        "mechanism": "matching_boundary",
+        "question": {
+          "kind": "value",
+          "expression": "Prism.tokenize('{\"A\":\"/*\",\"B\":\"B\",\"C\":\"C\"}', Prism.languages.json).some(function (t) { return typeof t === 'object' && t.type === 'comment' && String(t.content).indexOf('B') !== -1; })",
+          "expected": "true"
+        },
+        "readable_symbols": [],
+        "target_property": "comment",
+        "constraint_ids": [
+          "C3"
+        ],
+        "verdict": "UNKNOWN",
+        "baseline_rank": 0,
+        "input_rank": 4,
+        "local_influence_supported": false,
+        "witness_count": 1,
+        "certificate": {
+          "kind": "insufficient_evidence",
+          "expected_prediction": null,
+          "refutation_scope": null,
+          "excludes_candidate": false,
+          "proves_expressibility": false,
+          "witness_refs": [
+            "final:4"
+          ]
+        },
+        "source_refs": [
+          "W10"
+        ],
+        "evidence_refs": [
+          "runtime:browser.t1.o1:4:tier:0",
+          "runtime:browser.t1.o1:4:tier:1",
+          "runtime:browser.t1.o1:4",
+          "runtime:browser.t2.o1:4:tier:0",
+          "runtime:browser.t2.o1:4:tier:1",
+          "runtime:browser.t2.o1:4",
+          "final:4:tier:0",
+          "final:4:tier:1",
+          "final:4"
+        ]
+      },
+      {
+        "id": "H6",
+        "boundary_id": "matching:components/prism-json.js:2:37-68",
+        "boundary_valid": true,
+        "file": "components/prism-json.js",
+        "symbol": "comment",
+        "line": 2,
+        "mechanism": "matching_boundary",
+        "question": {
+          "kind": "value",
+          "expression": "Prism.highlight('{\"A\":\"/*\",\"B\":\"B\",\"C\":\"C\"}', Prism.languages.json, 'json')",
+          "expected": "the HTML contains a token comment span that begins at the slash inside the string value and extends to the end of the input; that region is not rendered inside a token string span"
+        },
+        "readable_symbols": [],
+        "target_property": "comment",
+        "constraint_ids": [
+          "C1",
+          "C3",
+          "C4"
+        ],
+        "verdict": "UNKNOWN",
+        "baseline_rank": 0,
+        "input_rank": 5,
+        "local_influence_supported": false,
+        "witness_count": 1,
+        "certificate": {
+          "kind": "insufficient_evidence",
+          "expected_prediction": null,
+          "refutation_scope": null,
+          "excludes_candidate": false,
+          "proves_expressibility": false,
+          "witness_refs": [
+            "final:5"
+          ]
+        },
+        "source_refs": [
+          "W10"
+        ],
+        "evidence_refs": [
+          "runtime:browser.t1.o1:5:tier:0",
+          "runtime:browser.t1.o1:5:tier:1",
+          "runtime:browser.t1.o1:5",
+          "runtime:browser.t2.o1:5:tier:0",
+          "runtime:browser.t2.o1:5:tier:1",
+          "runtime:browser.t2.o1:5",
+          "final:5:tier:0",
+          "final:5:tier:1",
+          "final:5"
+        ]
+      },
+      {
+        "id": "H7",
+        "boundary_id": "matching:components/prism-json.js:2:37-68",
+        "boundary_valid": true,
+        "file": "components/prism-json.js",
+        "symbol": "comment",
+        "line": 2,
+        "mechanism": "matching_boundary",
+        "question": {
+          "kind": "value",
+          "expression": "(function () { var s = '{\"A\":\"/*\",\"B\":\"B\",\"C\":\"C\"}'; return [Prism.languages.json['string'].pattern.exec(s).index, Prism.languages.json['comment'].exec(s).index]; })()",
+          "expected": "[5,6]"
+        },
+        "readable_symbols": [],
+        "target_property": "",
+        "constraint_ids": [
+          "C1",
+          "C4"
+        ],
+        "verdict": "UNKNOWN",
+        "baseline_rank": 0,
+        "input_rank": 6,
+        "local_influence_supported": false,
+        "witness_count": 1,
+        "certificate": {
+          "kind": "insufficient_evidence",
+          "expected_prediction": null,
+          "refutation_scope": null,
+          "excludes_candidate": false,
+          "proves_expressibility": false,
+          "witness_refs": [
+            "final:6"
+          ]
+        },
+        "source_refs": [
+          "W10"
+        ],
+        "evidence_refs": [
+          "runtime:browser.t1.o1:6:tier:0",
+          "runtime:browser.t1.o1:6:tier:1",
+          "runtime:browser.t1.o1:6",
+          "runtime:browser.t2.o1:6:tier:0",
+          "runtime:browser.t2.o1:6:tier:1",
+          "runtime:browser.t2.o1:6",
+          "final:6:tier:0",
+          "final:6:tier:1",
+          "final:6"
+        ]
+      },
+      {
+        "id": "H8",
+        "boundary_id": "matching:components/prism-json.js:2:37-68",
+        "boundary_valid": true,
+        "file": "components/prism-json.js",
+        "symbol": "comment",
+        "line": 2,
+        "mechanism": "matching_boundary",
+        "question": {
+          "kind": "symbol",
+          "expression": "Prism.languages.json['comment'].lookbehind",
+          "expected": "false"
+        },
+        "readable_symbols": [],
+        "target_property": "",
+        "constraint_ids": [
+          "C1",
+          "C4"
+        ],
+        "verdict": "UNKNOWN",
+        "baseline_rank": 0,
+        "input_rank": 7,
+        "local_influence_supported": false,
+        "witness_count": 1,
+        "certificate": {
+          "kind": "insufficient_evidence",
+          "expected_prediction": null,
+          "refutation_scope": null,
+          "excludes_candidate": false,
+          "proves_expressibility": false,
+          "witness_refs": [
+            "final:7"
+          ]
+        },
+        "source_refs": [
+          "W10"
+        ],
+        "evidence_refs": [
+          "runtime:browser.t1.o1:7:tier:0",
+          "runtime:browser.t1.o1:7:tier:1",
+          "runtime:browser.t1.o1:7",
+          "runtime:browser.t2.o1:7:tier:0",
+          "runtime:browser.t2.o1:7:tier:1",
+          "runtime:browser.t2.o1:7",
+          "final:7:tier:0",
+          "final:7:tier:1",
+          "final:7"
+        ]
+      }
+    ]
+  },
+  "source_windows": [
+    {
+      "id": "W1",
+      "file": "components.js",
+      "source_sha256": "5f9f0d89deb93ead371988f30d14177c2ca7604531032816373b927b04aeac56",
+      "start_line": 1,
+      "end_line": 2,
+      "purposes": [
+        "interface_dependency",
+        "legacy_scope_location"
+      ],
+      "text": "var components = {\"core\":{\"meta\":{\"path\":\"components/prism-core.js\",\"option\":\"mandatory\"},\"core\":\"Core\"},\"themes\":{\"meta\":{\"path\":\"themes/{id}.css\",\"link\":\"index.html?theme={id}\",\"exclusive\":true},\"prism\":{\"title\":\"Default\",\"option\":\"default\"},\"prism-dark\":\"Dark\",\"prism-funky\":\"Funky\",\"prism-okaidia\":{\"title\":\"Okaidia\",\"owner\":\"ocodia\"},\"prism-twilight\":{\"title\":\"Twilight\",\"owner\":\"remybach\"},\"prism-coy\":{\"title\":\"Coy\",\"owner\":\"tshedor\"},\"prism-solarizedlight\":{\"title\":\"Solarized Light\",\"owner\":\"hectormatos2011 \"},\"prism-tomorrow\":{\"title\":\"Tomorrow Night\",\"owner\":\"Rosey\"}},\"languages\":{\"meta\":{\"path\":\"components/prism-{id}\",\"noCSS\":true,\"examplesPath\":\"examples/prism-{id}\",\"addCheckAll\":true},\"markup\":{\"title\":\"Markup\",\"alias\":[\"html\",\"xml\",\"svg\",\"mathml\"],\"aliasTitles\":{\"html\":\"HTML\",\"xml\":\"XML\",\"svg\":\"SVG\",\"mathml\":\"MathML\"},\"option\":\"default\"},\"css\":{\"title\":\"CSS\",\"option\":\"default\",\"peerDependencies\":\"markup\"},\"clike\":{\"title\":\"C-like\",\"option\":\"default\",\"overrideExampleHeader\":true},\"javascript\":{\"title\":\"JavaScript\",\"require\":\"clike\",\"peerDependencies\":\"markup\",\"alias\":\"js\",\"option\":\"default\"},\"abap\":{\"title\":\"ABAP\",\"owner\":\"dellagustin\"},\"abnf\":{\"title\":\"Augmented Backus–Naur form\",\"owner\":\"RunDevelopment\"},\"actionscript\":{\"title\":\"ActionScript\",\"require\":\"javascript\",\"peerDependencies\":\"markup\",\"owner\":\"Golmote\"},\"ada\":{\"title\":\"Ada\",\"owner\":\"Lucretia\"},\"apacheconf\":{\"title\":\"Apache Configuration\",\"owner\":\"GuiTeK\"},\"apl\":{\"title\":\"APL\",\"owner\":\"ngn\"},\"applescript\":{\"title\":\"AppleScript\",\"owner\":\"Golmote\"},\"arduino\":{\"title\":\"Arduino\",\"require\":\"cpp\",\"owner\":\"eisbehr-\"},\"arff\":{\"title\":\"ARFF\",\"owner\":\"Golmote\"},\"asciidoc\":{\"alias\":\"adoc\",\"title\":\"AsciiDoc\",\"owner\":\"Golmote\"},\"asm6502\":{\"title\":\"6502 Assembly\",\"owner\":\"kzurawel\"},\"aspnet\":{\"title\":\"ASP.NET (C#)\",\"require\":[\"markup\",\"csharp\"],\"owner\":\"nauzilus\"},\"autohotkey\":{\"title\":\"AutoHotkey\",\"owner\":\"aviaryan\"},\"autoit\":{\"title\":\"AutoIt\",\"owner\":\"Golmote\"},\"bash\":{\"title\":\"Bash\",\"alias\":\"shell\",\"aliasTitles\":{\"shell\":\"Shell\"},\"owner\":\"zeitgeist87\"},\"basic\":{\"title\":\"BASIC\",\"owner\":\"Golmote\"},\"batch\":{\"title\":\"Batch\",\"owner\":\"Golmote\"},\"bison\":{\"title\":\"Bison\",\"require\":\"c\",\"owner\":\"Golmote\"},\"bnf\":{\"title\":\"Backus–Naur form\",\"alias\":\"rbnf\",\"aliasTitles\":{\"rbnf\":\"Routing Backus–Naur form\"},\"owner\":\"RunDevelopment\"},\"brainfuck\":{\"title\":\"Brainfuck\",\"owner\":\"Golmote\"},\"bro\":{\"title\":\"Bro\",\"owner\":\"wayward710\"},\"c\":{\"title\":\"C\",\"require\":\"clike\",\"owner\":\"zeitgeist87\"},\"csharp\":{\"title\":\"C#\",\"require\":\"clike\",\"alias\":\"dotnet\",\"owner\":\"mvalipour\"},\"cpp\":{\"title\":\"C++\",\"require\":\"c\",\"owner\":\"zeitgeist87\"},\"cil\":{\"title\":\"CIL\",\"owner\":\"sbrl\"},\"coffeescript\":{\"title\":\"CoffeeScript\",\"require\":\"javascript\",\"alias\":\"coffee\",\"owner\":\"R-osey\"},\"cmake\":{\"title\":\"CMake\",\"owner\":\"mjrogozinski\"},\"clojure\":{\"title\":\"Clojure\",\"owner\":\"troglotit\"},\"crystal\":{\"title\":\"Crystal\",\"require\":\"ruby\",\"owner\":\"MakeNowJust\"},\"csp\":{\"title\":\"Content-Security-Policy\",\"owner\":\"ScottHelme\"},\"css-extras\":{\"title\":\"CSS Extras\",\"require\":\"css\",\"owner\":\"milesj\"},\"d\":{\"title\":\"D\",\"require\":\"clike\",\"owner\":\"Golmote\"},\"dart\":{\"title\":\"Dart\",\"require\":\"clike\",\"owner\":\"Golmote\"},\"diff\":{\"title\":\"Diff\",\"owner\":\"uranusjr\"},\"django\":{\"title\":\"Django/Jinja2\",\"require\":\"markup-templating\",\"alias\":\"jinja2\",\"owner\":\"romanvm\"},\"docker\":{\"title\":\"Docker\",\"alias\":\"dockerfile\",\"owner\":\"JustinBeckwith\"},\"ebnf\":{\"title\":\"Extended Backus–Naur form\",\"owner\":\"RunDevelopment\"},\"eiffel\":{\"title\":\"Eiffel\",\"owner\":\"Conaclos\"},\"ejs\":{\"title\":\"EJS\",\"require\":[\"javascript\",\"markup-templating\"],\"owner\":\"RunDevelopment\"},\"elixir\":{\"title\":\"Elixir\",\"owner\":\"Golmote\"},\"elm\":{\"title\":\"Elm\",\"owner\":\"zwilias\"},\"erb\":{\"title\":\"ERB\",\"require\":[\"ruby\",\"markup-templating\"],\"owner\":\"Golmote\"},\"erlang\":{\"title\":\"Erlang\",\"owner\":\"Golmote\"},\"fsharp\":{\"title\":\"F#\",\"require\":\"clike\",\"owner\":\"simonreynolds7\"},\"flow\":{\"title\":\"Flow\",\"require\":\"javascript\",\"owner\":\"Golmote\"},\"fortran\":{\"title\":\"Fortran\",\"owner\":\"Golmote\"},\"gcode\":{\"title\":\"G-code\",\"owner\":\"RunDevelopment\"},\"gedcom\":{\"title\":\"GEDCOM\",\"owner\":\"Golmote\"},\"gherkin\":{\"title\":\"Gherkin\",\"owner\":\"hason\"},\"git\":{\"title\":\"Git\",\"owner\":\"lgiraudel\"},\"glsl\":{\"title\":\"GLSL\",\"require\":\"clike\",\"owner\":\"Golmote\"},\"gml\":{\"title\":\"GameMaker Language\",\"alias\":\"gamemakerlanguage\",\"require\":\"clike\",\"owner\":\"LiarOnce\"},\"go\":{\"title\":\"Go\",\"require\":\"clike\",\"owner\":\"arnehormann\"},\"graphql\":{\"title\":\"GraphQL\",\"owner\":\"Golmote\"},\"groovy\":{\"title\":\"Groovy\",\"require\":\"clike\",\"owner\":\"robfletcher\"},\"haml\":{\"title\":\"Haml\",\"require\":\"ruby\",\"peerDependencies\":[\"css\",\"coffeescript\",\"erb\",\"javascript\",\"less\",\"markdown\",\"ruby\",\"scss\",\"textile\"],\"owner\":\"Golmote\"},\"handlebars\":{\"title\":\"Handlebars\",\"require\":\"markup-templating\",\"owner\":\"Golmote\"},\"haskell\":{\"title\":\"Haskell\",\"alias\":\"hs\",\"owner\":\"bholst\"},\"haxe\":{\"title\":\"Haxe\",\"require\":\"clike\",\"owner\":\"Golmote\"},\"hcl\":{\"title\":\"HCL\",\"owner\":\"outsideris\"},\"http\":{\"title\":\"HTTP\",\"peerDependencies\":[\"javascript\",\"markup\"],\"owner\":\"danielgtaylor\"},\"hpkp\":{\"title\":\"HTTP Public-Key-Pins\",\"owner\":\"ScottHelme\"},\"hsts\":{\"title\":\"HTTP Strict-Transport-Security\",\"owner\":\"ScottHelme\"},\"ichigojam\":{\"title\":\"IchigoJam\",\"owner\":\"BlueCocoa\"},\"icon\":{\"title\":\"Icon\",\"owner\":\"Golmote\"},\"inform7\":{\"title\":\"Inform 7\",\"owner\":\"Golmote\"},\"ini\":{\"title\":\"Ini\",\"owner\":\"aviaryan\"},\"io\":{\"title\":\"Io\",\"owner\":\"AlesTsurko\"},\"j\":{\"title\":\"J\",\"owner\":\"Golmote\"},\"java\":{\"title\":\"Java\",\"require\":\"clike\",\"owner\":\"sherblot\"},\"javadoc\":{\"title\":\"JavaDoc\",\"require\":[\"markup\",\"java\",\"javadoclike\"],\"peerDependencies\":[\"scala\"],\"owner\":\"RunDevelopment\"},\"javadoclike\":{\"title\":\"JavaDoc-like\",\"peerDependencies\":[\"java\",\"javascript\",\"php\"],\"owner\":\"RunDevelopment\"},\"javastacktrace\":{\"title\":\"Java stack trace\",\"owner\":\"RunDevelopment\"},\"jolie\":{\"title\":\"Jolie\",\"require\":\"clike\",\"owner\":\"thesave\"},\"jsdoc\":{\"title\":\"JSDoc\",\"require\":[\"javascript\",\"javadoclike\"],\"peerDependencies\":[\"actionscript\",\"coffeescript\"],\"owner\":\"RunDevelopment\"},\"js-extras\":{\"title\":\"JS Extras\",\"require\":\"javascript\",\"peerDependencies\":[\"actionscript\",\"coffeescript\",\"flow\",\"n4js\",\"typescript\"],\"owner\":\"RunDevelopment\"},\"json\":{\"title\":\"JSON\",\"owner\":\"CupOfTea696\"},\"jsonp\":{\"title\":\"JSONP\",\"require\":\"json\",\"owner\":\"RunDevelopment\"},\"json5\":{\"title\":\"JSON5\",\"require\":\"json\",\"owner\":\"RunDevelopment\"},\"julia\":{\"title\":\"Julia\",\"owner\":\"cdagnino\"},\"keyman\":{\"title\":\"Keyman\",\"owner\":\"mcdurdin\"},\"kotlin\":{\"title\":\"Kotlin\",\"require\":\"clike\",\"owner\":\"Golmote\"},\"latex\":{\"title\":\"LaTeX\",\"owner\":\"japborst\"},\"less\":{\"title\":\"Less\",\"require\":\"css\",\"owner\":\"Golmote\"},\"liquid\":{\"title\":\"Liquid\",\"owner\":\"cinhtau\"},\"lisp\":{\"title\":\"Lisp\",\"alias\":[\"emacs\",\"elisp\",\"emacs-lisp\"],\"owner\":\"JuanCaicedo\"},\"livescript\":{\"title\":\"LiveScript\",\"owner\":\"Golmote\"},\"lolcode\":{\"title\":\"LOLCODE\",\"owner\":\"Golmote\"},\"lua\":{\"title\":\"Lua\",\"owner\":\"Golmote\"},\"makefile\":{\"title\":\"Makefile\",\"owner\":\"Golmote\"},\"markdown\":{\"title\":\"Markdown\",\"require\":\"markup\",\"alias\":\"md\",\"owner\":\"Golmote\"},\"markup-templating\":{\"title\":\"Markup templating\",\"require\":\"markup\",\"owner\":\"Golmote\"},\"matlab\":{\"title\":\"MATLAB\",\"owner\":\"Golmote\"},\"mel\":{\"title\":\"MEL\",\"owner\":\"Golmote\"},\"mizar\":{\"title\":\"Mizar\",\"owner\":\"Golmote\"},\"monkey\":{\"title\":\"Monkey\",\"owner\":\"Golmote\"},\"n1ql\":{\"title\":\"N1QL\",\"owner\":\"TMWilds\"},\"n4js\":{\"title\":\"N4JS\",\"require\":\"javascript\",\"peerDependencies\":[\"jsdoc\"],\"alias\":\"n4jsd\",\"owner\":\"bsmith-n4\"},\"nand2tetris-hdl\":{\"title\":\"Nand To Tetris HDL\",\"owner\":\"stephanmax\"},\"nasm\":{\"title\":\"NASM\",\"owner\":\"rbmj\"},\"nginx\":{\"title\":\"nginx\",\"owner\":\"westonganger\",\"require\":\"clike\"},\"nim\":{\"title\":\"Nim\",\"owner\":\"Golmote\"},\"nix\":{\"title\":\"Nix\",\"owner\":\"Golmote\"},\"nsis\":{\"title\":\"NSIS\",\"owner\":\"idleberg\"},\"objectivec\":{\"title\":\"Objective-C\",\"require\":\"c\",\"owner\":\"uranusjr\"},\"ocaml\":{\"title\":\"OCaml\",\"owner\":\"Golmote\"},\"opencl\":{\"title\":\"OpenCL\",\"require\":\"cpp\",\"peerDependencies\":[\"c\",\"cpp\"],\"overrideExampleHeader\":true,\"owner\":\"Milania1\"},\"oz\":{\"title\":\"Oz\",\"owner\":\"Golmote\"},\"parigp\":{\"title\":\"PARI/GP\",\"owner\":\"Golmote\"},\"parser\":{\"title\":\"Parser\",\"require\":\"markup\",\"owner\":\"Golmote\"},\"pascal\":{\"title\":\"Pascal\",\"alias\":\"objectpascal\",\"aliasTitles\":{\"objectpascal\":\"Object Pascal\"},\"owner\":\"Golmote\"},\"perl\":{\"title\":\"Perl\",\"owner\":\"Golmote\"},\"php\":{\"title\":\"PHP\",\"require\":[\"clike\",\"markup-templating\"],\"owner\":\"milesj\"},\"phpdoc\":{\"title\":\"PHPDoc\",\"require\":[\"php\",\"javadoclike\"],\"owner\":\"RunDevelopment\"},\"php-extras\":{\"title\":\"PHP Extras\",\"require\":\"php\",\"owner\":\"milesj\"},\"plsql\":{\"title\":\"PL/SQL\",\"require\":\"sql\",\"owner\":\"Golmote\"},\"powershell\":{\"title\":\"PowerShell\",\"owner\":\"nauzilus\"},\"processing\":{\"title\":\"Processing\",\"require\":\"clike\",\"owner\":\"Golmote\"},\"prolog\":{\"title\":\"Prolog\",\"owner\":\"Golmote\"},\"properties\":{\"title\":\".properties\",\"owner\":\"Golmote\"},\"protobuf\":{\"title\":\"Protocol Buffers\",\"require\":\"clike\",\"owner\":\"just-boris\"},\"pug\":{\"title\":\"Pug\",\"require\":[\"markup\",\"javascript\"],\"peerDependencies\":[\"coffeescript\",\"ejs\",\"handlebars\",\"less\",\"livescript\",\"markdown\",\"scss\",\"stylus\",\"twig\"],\"owner\":\"Golmote\"},\"puppet\":{\"title\":\"Puppet\",\"owner\":\"Golmote\"},\"pure\":{\"title\":\"Pure\",\"peerDependencies\":[\"c\",\"cpp\",\"fortran\"],\"owner\":\"Golmote\"},\"python\":{\"title\":\"Python\",\"alias\":\"py\",\"owner\":\"multipetros\"},\"q\":{\"title\":\"Q (kdb+ database)\",\"owner\":\"Golmote\"},\"qore\":{\"title\":\"Qore\",\"require\":\"clike\",\"owner\":\"temnroegg\"},\"r\":{\"title\":\"R\",\"owner\":\"Golmote\"},\"jsx\":{\"title\":\"React JSX\",\"require\":[\"markup\",\"javascript\"],\"peerDependencies\":[\"jsdoc\",\"js-extras\"],\"owner\":\"vkbansal\"},\"tsx\":{\"title\":\"React TSX\",\"require\":[\"jsx\",\"typescript\"]},\"renpy\":{\"title\":\"Ren'py\",\"owner\":\"HyuchiaDiego\"},\"reason\":{\"title\":\"Reason\",\"require\":\"clike\",\"owner\":\"Golmote\"},\"regex\":{\"title\":\"Regex\",\"peerDependencies\":[\"actionscript\",\"coffeescript\",\"flow\",\"javascript\",\"typescript\",\"vala\"],\"owner\":\"RunDevelopment\"},\"rest\":{\"title\":\"reST (reStructuredText)\",\"owner\":\"Golmote\"},\"rip\":{\"title\":\"Rip\",\"owner\":\"ravinggenius\"},\"roboconf\":{\"title\":\"Roboconf\",\"owner\":\"Golmote\"},\"ruby\":{\"title\":\"Ruby\",\"require\":\"clike\",\"alias\":\"rb\",\"owner\":\"samflores\"},\"rust\":{\"title\":\"Rust\",\"owner\":\"Golmote\"},\"sas\":{\"title\":\"SAS\",\"owner\":\"Golmote\"},\"sass\":{\"title\":\"Sass (Sass)\",\"require\":\"css\",\"owner\":\"Golmote\"},\"scss\":{\"title\":\"Sass (Scss)\",\"require\":\"css\",\"owner\":\"MoOx\"},\"scala\":{\"title\":\"Scala\",\"require\":\"java\",\"owner\":\"jozic\"},\"scheme\":{\"title\":\"Scheme\",\"owner\":\"bacchus123\"},\"smalltalk\":{\"title\":\"Smalltalk\",\"owner\":\"Golmote\"},\"smarty\":{\"title\":\"Smarty\",\"require\":\"markup-templating\",\"owner\":\"Golmote\"},\"sql\":{\"title\":\"SQL\",\"owner\":\"multipetros\"},\"soy\":{\"title\":\"Soy (Closure Template)\",\"require\":\"markup-templating\",\"owner\":\"Golmote\"},\"stylus\":{\"title\":\"Stylus\",\"owner\":\"vkbansal\"},\"swift\":{\"title\":\"Swift\",\"require\":\"clike\",\"owner\":\"chrischares\"},\"tap\":{\"title\":\"TAP\",\"owner\":\"isaacs\",\"require\":\"yaml\"},\"tcl\":{\"title\":\"Tcl\",\"owner\":\"PeterChaplin\"},\"textile\":{\"title\":\"Textile\",\"require\":\"markup\",\"peerDependencies\":\"css\",\"owner\":\"Golmote\"},\"toml\":{\"title\":\"TOML\",\"owner\":\"RunDevelopment\"},\"tt2\":{\"title\":\"Template Toolkit 2\",\"require\":[\"clike\",\"markup-templating\"],\"owner\":\"gflohr\"},\"twig\":{\"title\":\"Twig\",\"require\":\"markup\",\"owner\":\"brandonkelly\"},\"typescript\":{\"title\":\"TypeScript\",\"require\":\"javascript\",\"alias\":\"ts\",\"owner\":\"vkbansal\"},\"t4-cs\":{\"title\":\"T4 Text Templates (C#)\",\"require\":[\"t4-templating\",\"csharp\"],\"alias\":\"t4\",\"owner\":\"RunDevelopment\"},\"t4-vb\":{\"title\":\"T4 Text Templates (VB)\",\"require\":[\"t4-templating\",\"visual-basic\"],\"owner\":\"RunDevelopment\"},\"t4-templating\":{\"title\":\"T4 templating\",\"owner\":\"RunDevelopment\"},\"vala\":{\"title\":\"Vala\",\"require\":\"clike\",\"owner\":\"TemplarVolk\"},\"vbnet\":{\"title\":\"VB.Net\",\"require\":\"basic\",\"owner\":\"Bigsby\"},\"velocity\":{\"title\":\"Velocity\",\"require\":\"markup\",\"owner\":\"Golmote\"},\"verilog\":{\"title\":\"Verilog\",\"owner\":\"a-rey\"},\"vhdl\":{\"title\":\"VHDL\",\"owner\":\"a-rey\"},\"vim\":{\"title\":\"vim\",\"owner\":\"westonganger\"},\"visual-basic\":{\"title\":\"Visual Basic\",\"alias\":\"vb\",\"owner\":\"Golmote\"},\"wasm\":{\"title\":\"WebAssembly\",\"owner\":\"Golmote\"},\"wiki\":{\"title\":\"Wiki markup\",\"require\":\"markup\",\"owner\":\"Golmote\"},\"xeora\":{\"title\":\"Xeora\",\"require\":\"markup\",\"alias\":\"xeoracube\",\"aliasTitles\":{\"xeoracube\":\"XeoraCube\"},\"owner\":\"freakmaxi\"},\"xojo\":{\"title\":\"Xojo (REALbasic)\",\"owner\":\"Golmote\"},\"xquery\":{\"title\":\"XQuery\",\"require\":\"markup\",\"owner\":\"Golmote\"},\"yaml\":{\"title\":\"YAML\",\"alias\":\"yml\",\"owner\":\"hason\"}},\"plugins\":{\"meta\":{\"path\":\"plugins/{id}/prism-{id}\",\"link\":\"plugins/{id}/\"},\"line-highlight\":\"Line Highlight\",\"line-numbers\":{\"title\":\"Line Numbers\",\"owner\":\"kuba-kubula\"},\"show-invisibles\":{\"title\":\"Show Invisibles\",\"after\":[\"autolinker\",\"data-uri-highlight\"]},\"autolinker\":\"Autolinker\",\"wpd\":\"WebPlatform Docs\",\"custom-class\":{\"title\":\"Custom Class\",\"owner\":\"dvkndn\",\"noCSS\":true},\"file-highlight\":{\"title\":\"File Highlight\",\"noCSS\":true},\"show-language\":{\"title\":\"Show Language\",\"owner\":\"nauzilus\",\"noCSS\":true,\"require\":\"toolbar\"},\"jsonp-highlight\":{\"title\":\"JSONP Highlight\",\"noCSS\":true,\"owner\":\"nauzilus\"},\"highlight-keywords\":{\"title\":\"Highlight Keywords\",\"owner\":\"vkbansal\",\"noCSS\":true},\"remove-initial-line-feed\":{\"title\":\"Remove initial line feed\",\"owner\":\"Golmote\",\"noCSS\":true},\"previewers\":{\"title\":\"Previewers\",\"owner\":\"Golmote\"},\"autoloader\":{\"title\":\"Autoloader\",\"owner\":\"Golmote\",\"noCSS\":true},\"keep-markup\":{\"title\":\"Keep Markup\",\"owner\":\"Golmote\",\"after\":\"normalize-whitespace\",\"noCSS\":true},\"command-line\":{\"title\":\"Command Line\",\"owner\":\"chriswells0\"},\"unescaped-markup\":\"Unescaped Markup\",\"normalize-whitespace\":{\"title\":\"Normalize Whitespace\",\"owner\":\"zeitgeist87\",\"after\":\"unescaped-markup\",\"noCSS\":true},\"data-uri-highlight\":{\"title\":\"Data-URI Highlight\",\"owner\":\"Golmote\",\"noCSS\":true},\"toolbar\":{\"title\":\"Toolbar\",\"owner\":\"mAAdhaTTah\"},\"copy-to-clipboard\":{\"title\":\"Copy to Clipboard Button\",\"owner\":\"mAAdhaTTah\",\"require\":\"toolbar\",\"noCSS\":true}}};\nif (typeof module !== 'undefined' && module.exports) { module.exports = components; }",
+      "byte_range": [
+        0,
+        13887
+      ],
+      "whole_window_match_count": 1,
+      "origin": "verified_base_context_not_new_agent_evidence"
+    },
+    {
+      "id": "W2",
+      "file": "components/index.js",
+      "source_sha256": "5681b909dbe5594b88ad9d925a8f68879eef105b2ba8f836f4e114d22c8e606f",
+      "start_line": 1,
+      "end_line": 82,
+      "purposes": [
+        "legacy_scope_location"
+      ],
+      "text": "var components = require('../components.js');\nvar peerDependentsMap = null;\n\nfunction getPeerDependentsMap() {\n\tvar peerDependentsMap = {};\n\tObject.keys(components.languages).forEach(function (language) {\n\t\tif (language === 'meta') {\n\t\t\treturn false;\n\t\t}\n\t\tif (components.languages[language].peerDependencies) {\n\t\t\tvar peerDependencies = components.languages[language].peerDependencies;\n\t\t\tif (!Array.isArray(peerDependencies)) {\n\t\t\t\tpeerDependencies = [peerDependencies];\n\t\t\t}\n\t\t\tpeerDependencies.forEach(function (peerDependency) {\n\t\t\t\tif (!peerDependentsMap[peerDependency]) {\n\t\t\t\t\tpeerDependentsMap[peerDependency] = [];\n\t\t\t\t}\n\t\t\t\tpeerDependentsMap[peerDependency].push(language);\n\t\t\t});\n\t\t}\n\t});\n\treturn peerDependentsMap;\n}\n\nfunction getPeerDependents(mainLanguage) {\n\tif (!peerDependentsMap) {\n\t\tpeerDependentsMap = getPeerDependentsMap();\n\t}\n\treturn peerDependentsMap[mainLanguage] || [];\n}\n\nfunction loadLanguages(arr, withoutDependencies) {\n\t// If no argument is passed, load all components\n\tif (!arr) {\n\t\tarr = Object.keys(components.languages).filter(function (language) {\n\t\t\treturn language !== 'meta';\n\t\t});\n\t}\n\tif (arr && !arr.length) {\n\t\treturn;\n\t}\n\n\tif (!Array.isArray(arr)) {\n\t\tarr = [arr];\n\t}\n\n\tarr.forEach(function (language) {\n\t\tif (!components.languages[language]) {\n\t\t\tconsole.warn('Language does not exist ' + language);\n\t\t\treturn;\n\t\t}\n\t\t// Load dependencies first\n\t\tif (!withoutDependencies && components.languages[language].require) {\n\t\t\tloadLanguages(components.languages[language].require);\n\t\t}\n\n\t\tvar pathToLanguage = './prism-' + language;\n\t\tdelete require.cache[require.resolve(pathToLanguage)];\n\t\tdelete Prism.languages[language];\n\t\trequire(pathToLanguage);\n\n\t\t// Reload dependents\n\t\tvar dependents = getPeerDependents(language).filter(function (dependent) {\n\t\t\t// If dependent language was already loaded,\n\t\t\t// we want to reload it.\n\t\t\tif (Prism.languages[dependent]) {\n\t\t\t\tdelete Prism.languages[dependent];\n\t\t\t\treturn true;\n\t\t\t}\n\t\t\treturn false;\n\t\t});\n\t\tif (dependents.length) {\n\t\t\tloadLanguages(dependents, true);\n\t\t}\n\t});\n}\n\nmodule.exports = function (arr) {\n\t// Don't expose withoutDependencies\n\tloadLanguages(arr);\n};",
+      "byte_range": [
+        0,
+        2157
+      ],
+      "whole_window_match_count": 1,
+      "origin": "verified_base_context_not_new_agent_evidence"
+    },
+    {
+      "id": "W3",
+      "file": "components/prism-abnf.js",
+      "source_sha256": "802a5e54c7d3c7fb5b8ba81c03c3ac6e481613cc9b92eab168d0865b63783429",
+      "start_line": 1,
+      "end_line": 54,
+      "purposes": [
+        "legacy_scope_location"
+      ],
+      "text": "(function (Prism) {\n\n\tvar coreRules = '(?:ALPHA|BIT|CHAR|CR|CRLF|CTL|DIGIT|DQUOTE|HEXDIG|HTAB|LF|LWSP|OCTET|SP|VCHAR|WSP)';\n\n\tPrism.languages.abnf = {\n\t\t'comment': /;.*/,\n\t\t'string': {\n\t\t\tpattern: /(?:%[is])?\"[^\"\\n\\r]*\"/,\n\t\t\tgreedy: true,\n\t\t\tinside: {\n\t\t\t\t'punctuation': /^%[is]/\n\t\t\t}\n\t\t},\n\t\t'range': {\n\t\t\tpattern: /%(?:b[01]+-[01]+|d\\d+-\\d+|x[A-F\\d]+-[A-F\\d]+)/i,\n\t\t\talias: 'number'\n\t\t},\n\t\t'terminal': {\n\t\t\tpattern: /%(?:b[01]+(?:\\.[01]+)*|d\\d+(?:\\.\\d+)*|x[A-F\\d]+(?:\\.[A-F\\d]+)*)/i,\n\t\t\talias: 'number'\n\t\t},\n\t\t'repetition': {\n\t\t\tpattern: /(^|[^\\w-])(?:\\d*\\*\\d*|\\d+)/,\n\t\t\tlookbehind: true,\n\t\t\talias: 'operator'\n\t\t},\n\t\t'definition': {\n\t\t\tpattern: /(^[ \\t]*)(?:[a-z][\\w-]*|<[^>\\r\\n]*>)(?=\\s*=)/m,\n\t\t\tlookbehind: true,\n\t\t\talias: 'keyword',\n\t\t\tinside: {\n\t\t\t\t'punctuation': /<|>/\n\t\t\t}\n\t\t},\n\t\t'core-rule': {\n\t\t\tpattern: RegExp('(?:(^|[^<\\\\w-])' + coreRules + '|<' + coreRules + '>)(?![\\\\w-])', 'i'),\n\t\t\tlookbehind: true,\n\t\t\talias: ['rule', 'constant'],\n\t\t\tinside: {\n\t\t\t\t'punctuation': /<|>/\n\t\t\t}\n\t\t},\n\t\t'rule': {\n\t\t\tpattern: /(^|[^<\\w-])[a-z][\\w-]*|<[^>\\r\\n]*>/i,\n\t\t\tlookbehind: true,\n\t\t\tinside: {\n\t\t\t\t'punctuation': /<|>/\n\t\t\t}\n\t\t},\n\t\t'operator': /=\\/?|\\//,\n\t\t'punctuation': /[()\\[\\]]/\n\t};\n\n})(Prism);\n",
+      "byte_range": [
+        0,
+        1196
+      ],
+      "whole_window_match_count": 1,
+      "origin": "verified_base_context_not_new_agent_evidence"
+    },
+    {
+      "id": "W4",
+      "file": "components/prism-actionscript.js",
+      "source_sha256": "9134474b090f28cec34d75a81520c65baaeff3e9cf7dc0514e0d74e8ac9685eb",
+      "start_line": 1,
+      "end_line": 17,
+      "purposes": [
+        "legacy_scope_location"
+      ],
+      "text": "Prism.languages.actionscript = Prism.languages.extend('javascript',  {\n\t'keyword': /\\b(?:as|break|case|catch|class|const|default|delete|do|else|extends|finally|for|function|if|implements|import|in|instanceof|interface|internal|is|native|new|null|package|private|protected|public|return|super|switch|this|throw|try|typeof|use|var|void|while|with|dynamic|each|final|get|include|namespace|native|override|set|static)\\b/,\n\t'operator': /\\+\\+|--|(?:[+\\-*\\/%^]|&&?|\\|\\|?|<<?|>>?>?|[!=]=?)=?|[~?@]/\n});\nPrism.languages.actionscript['class-name'].alias = 'function';\n\nif (Prism.languages.markup) {\n\tPrism.languages.insertBefore('actionscript', 'string', {\n\t\t'xml': {\n\t\t\tpattern: /(^|[^.])<\\/?\\w+(?:\\s+[^\\s>\\/=]+=(\"|')(?:\\\\[\\s\\S]|(?!\\2)[^\\\\])*\\2)*\\s*\\/?>/,\n\t\t\tlookbehind: true,\n\t\t\tinside: {\n\t\t\t\trest: Prism.languages.markup\n\t\t\t}\n\t\t}\n\t});\n}",
+      "byte_range": [
+        0,
+        829
+      ],
+      "whole_window_match_count": 1,
+      "origin": "verified_base_context_not_new_agent_evidence"
+    },
+    {
+      "id": "W5",
+      "file": "components/prism-ada.js",
+      "source_sha256": "305a2954307233e8f7c03407c0991ab35b689d0ed93ed8cab33b161bcb151c6f",
+      "start_line": 1,
+      "end_line": 19,
+      "purposes": [
+        "legacy_scope_location"
+      ],
+      "text": "Prism.languages.ada = {\n\t'comment': /--.*/,\n\t'string': /\"(?:\"\"|[^\"\\r\\f\\n])*\"/i,\n\t'number': [\n\t\t{\n\t\t\tpattern: /\\b\\d(?:_?\\d)*#[\\dA-F](?:_?[\\dA-F])*(?:\\.[\\dA-F](?:_?[\\dA-F])*)?#(?:E[+-]?\\d(?:_?\\d)*)?/i\n\t\t},\n\t\t{\n\t\t\tpattern: /\\b\\d(?:_?\\d)*(?:\\.\\d(?:_?\\d)*)?(?:E[+-]?\\d(?:_?\\d)*)?\\b/i\n\t\t}\n\t],\n\t'attr-name': /\\b'\\w+/i,\n\t'keyword': /\\b(?:abort|abs|abstract|accept|access|aliased|all|and|array|at|begin|body|case|constant|declare|delay|delta|digits|do|else|new|return|elsif|end|entry|exception|exit|for|function|generic|goto|if|in|interface|is|limited|loop|mod|not|null|of|others|out|overriding|package|pragma|private|procedure|protected|raise|range|record|rem|renames|requeue|reverse|select|separate|some|subtype|synchronized|tagged|task|terminate|then|type|until|use|when|while|with|xor)\\b/i,\n\t'boolean': /\\b(?:true|false)\\b/i,\n\t'operator': /<[=>]?|>=?|=>?|:=|\\/=?|\\*\\*?|[&+-]/,\n\t'punctuation': /\\.\\.?|[,;():]/,\n\t'char': /'.'/,\n\t'variable': /\\b[a-z](?:[_a-z\\d])*\\b/i\n};",
+      "byte_range": [
+        0,
+        962
+      ],
+      "whole_window_match_count": 1,
+      "origin": "verified_base_context_not_new_agent_evidence"
+    },
+    {
+      "id": "W6",
+      "file": "components/prism-apl.js",
+      "source_sha256": "36749c0d81bdbc83aab5523d0a1c3091e56033dd76e6d8a2070e0b92b3722bba",
+      "start_line": 1,
+      "end_line": 32,
+      "purposes": [
+        "legacy_scope_location"
+      ],
+      "text": "Prism.languages.apl = {\n\t'comment': /(?:⍝|#[! ]).*$/m,\n\t'string': {\n\t\tpattern: /'(?:[^'\\r\\n]|'')*'/,\n\t\tgreedy: true\n\t},\n\t'number': /¯?(?:\\d*\\.?\\d+(?:e[+¯]?\\d+)?|¯|∞)(?:j¯?(?:\\d*\\.?\\d+(?:e[+¯]?\\d+)?|¯|∞))?/i,\n\t'statement': /:[A-Z][a-z][A-Za-z]*\\b/,\n\t'system-function': {\n\t\tpattern: /⎕[A-Z]+/i,\n\t\talias: 'function'\n\t},\n\t'constant': /[⍬⌾#⎕⍞]/,\n\t'function': /[-+×÷⌈⌊∣|⍳⍸?*⍟○!⌹<≤=>≥≠≡≢∊⍷∪∩~∨∧⍱⍲⍴,⍪⌽⊖⍉↑↓⊂⊃⊆⊇⌷⍋⍒⊤⊥⍕⍎⊣⊢⍁⍂≈⍯↗¤→]/,\n\t'monadic-operator': {\n\t\tpattern: /[\\\\\\/⌿⍀¨⍨⌶&∥]/,\n\t\talias: 'operator'\n\t},\n\t'dyadic-operator': {\n\t\tpattern: /[.⍣⍠⍤∘⌸@⌺]/,\n\t\talias: 'operator'\n\t},\n\t'assignment': {\n\t\tpattern: /←/,\n\t\talias: 'keyword'\n\t},\n\t'punctuation': /[\\[;\\]()◇⋄]/,\n\t'dfn': {\n\t\tpattern: /[{}⍺⍵⍶⍹∇⍫:]/,\n\t\talias: 'builtin'\n\t}\n};",
+      "byte_range": [
+        0,
+        874
+      ],
+      "whole_window_match_count": 1,
+      "origin": "verified_base_context_not_new_agent_evidence"
+    },
+    {
+      "id": "W7",
+      "file": "components/prism-core.js",
+      "source_sha256": "4b0caf0f02be3c26b45e50a13bd7c97e1f18427af8a35a1c8af674e5e8aa16f4",
+      "start_line": 1,
+      "end_line": 115,
+      "purposes": [
+        "legacy_scope_location"
+      ],
+      "text": "var _self = (typeof window !== 'undefined')\n\t? window   // if in browser\n\t: (\n\t\t(typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope)\n\t\t? self // if in worker\n\t\t: {}   // if in node js\n\t);\n\n/**\n * Prism: Lightweight, robust, elegant syntax highlighting\n * MIT license http://www.opensource.org/licenses/mit-license.php/\n * @author Lea Verou http://lea.verou.me\n */\n\nvar Prism = (function (_self){\n\n// Private helper vars\nvar lang = /\\blang(?:uage)?-([\\w-]+)\\b/i;\nvar uniqueId = 0;\n\nvar _ = {\n\tmanual: _self.Prism && _self.Prism.manual,\n\tdisableWorkerMessageHandler: _self.Prism && _self.Prism.disableWorkerMessageHandler,\n\tutil: {\n\t\tencode: function (tokens) {\n\t\t\tif (tokens instanceof Token) {\n\t\t\t\treturn new Token(tokens.type, _.util.encode(tokens.content), tokens.alias);\n\t\t\t} else if (Array.isArray(tokens)) {\n\t\t\t\treturn tokens.map(_.util.encode);\n\t\t\t} else {\n\t\t\t\treturn tokens.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\\u00a0/g, ' ');\n\t\t\t}\n\t\t},\n\n\t\ttype: function (o) {\n\t\t\treturn Object.prototype.toString.call(o).slice(8, -1);\n\t\t},\n\n\t\tobjId: function (obj) {\n\t\t\tif (!obj['__id']) {\n\t\t\t\tObject.defineProperty(obj, '__id', { value: ++uniqueId });\n\t\t\t}\n\t\t\treturn obj['__id'];\n\t\t},\n\n\t\t// Deep clone a language definition (e.g. to extend it)\n\t\tclone: function deepClone(o, visited) {\n\t\t\tvar clone, id, type = _.util.type(o);\n\t\t\tvisited = visited || {};\n\n\t\t\tswitch (type) {\n\t\t\t\tcase 'Object':\n\t\t\t\t\tid = _.util.objId(o);\n\t\t\t\t\tif (visited[id]) {\n\t\t\t\t\t\treturn visited[id];\n\t\t\t\t\t}\n\t\t\t\t\tclone = {};\n\t\t\t\t\tvisited[id] = clone;\n\n\t\t\t\t\tfor (var key in o) {\n\t\t\t\t\t\tif (o.hasOwnProperty(key)) {\n\t\t\t\t\t\t\tclone[key] = deepClone(o[key], visited);\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\n\t\t\t\t\treturn clone;\n\n\t\t\t\tcase 'Array':\n\t\t\t\t\tid = _.util.objId(o);\n\t\t\t\t\tif (visited[id]) {\n\t\t\t\t\t\treturn visited[id];\n\t\t\t\t\t}\n\t\t\t\t\tclone = [];\n\t\t\t\t\tvisited[id] = clone;\n\n\t\t\t\t\to.forEach(function (v, i) {\n\t\t\t\t\t\tclone[i] = deepClone(v, visited);\n\t\t\t\t\t});\n\n\t\t\t\t\treturn clone;\n\n\t\t\t\tdefault:\n\t\t\t\t\treturn o;\n\t\t\t}\n\t\t}\n\t},\n\n\tlanguages: {\n\t\textend: function (id, redef) {\n\t\t\tvar lang = _.util.clone(_.languages[id]);\n\n\t\t\tfor (var key in redef) {\n\t\t\t\tlang[key] = redef[key];\n\t\t\t}\n\n\t\t\treturn lang;\n\t\t},\n\n\t\t/**\n\t\t * Insert a token before another token in a language literal\n\t\t * As this needs to recreate the object (we cannot actually insert before keys in object literals),\n\t\t * we cannot just provide an object, we need an object and a key.\n\t\t * @param inside The key (or language id) of the parent\n\t\t * @param before The key to insert before.\n\t\t * @param insert Object with the key/value pairs to insert\n\t\t * @param root The object that contains `inside`. If equal to Prism.languages, it can be omitted.\n\t\t */\n\t\tinsertBefore: function (inside, before, insert, root) {\n\t\t\troot = root || _.languages;\n\t\t\tvar grammar = root[inside];\n\t\t\tvar ret = {};\n\n\t\t\tfor (var token in grammar) {\n\t\t\t\tif (grammar.hasOwnProperty(token)) {\n\n",
+      "byte_range": [
+        0,
+        2892
+      ],
+      "whole_window_match_count": 1,
+      "origin": "verified_base_context_not_new_agent_evidence"
+    },
+    {
+      "id": "W8",
+      "file": "components/prism-core.js",
+      "source_sha256": "4b0caf0f02be3c26b45e50a13bd7c97e1f18427af8a35a1c8af674e5e8aa16f4",
+      "start_line": 453,
+      "end_line": 460,
+      "purposes": [
+        "legacy_scope_location"
+      ],
+      "text": "function Token(type, content, alias, matchedStr, greedy) {\n\tthis.type = type;\n\tthis.content = content;\n\tthis.alias = alias;\n\t// Copy of the full string this token was created from\n\tthis.length = (matchedStr || \"\").length|0;\n\tthis.greedy = !!greedy;\n}\n",
+      "byte_range": [
+        10667,
+        10918
+      ],
+      "whole_window_match_count": 1,
+      "origin": "verified_base_context_not_new_agent_evidence"
+    },
+    {
+      "id": "W9",
+      "file": "components/prism-core.js",
+      "source_sha256": "4b0caf0f02be3c26b45e50a13bd7c97e1f18427af8a35a1c8af674e5e8aa16f4",
+      "start_line": 543,
+      "end_line": 551,
+      "purposes": [
+        "legacy_scope_location"
+      ],
+      "text": "\nif (typeof module !== 'undefined' && module.exports) {\n\tmodule.exports = Prism;\n}\n\n// hack for components to work correctly in node.js\nif (typeof global !== 'undefined') {\n\tglobal.Prism = Prism;\n}\n",
+      "byte_range": [
+        12794,
+        12992
+      ],
+      "whole_window_match_count": 1,
+      "origin": "verified_base_context_not_new_agent_evidence"
+    },
+    {
+      "id": "W10",
+      "file": "components/prism-json.js",
+      "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+      "start_line": 1,
+      "end_line": 19,
+      "purposes": [
+        "boundary:matching:components/prism-json.js:2:37-68",
+        "hypothesis:H1",
+        "hypothesis:H2",
+        "hypothesis:H3",
+        "hypothesis:H4",
+        "hypothesis:H5",
+        "hypothesis:H6",
+        "hypothesis:H7",
+        "hypothesis:H8",
+        "initial:browser:0",
+        "initial:code:0",
+        "initial_anchor:browser:0",
+        "initial_anchor:code:0",
+        "legacy_scope_location",
+        "tool:code.t1.o1",
+        "tool_anchor:code.t1.o1"
+      ],
+      "text": "Prism.languages.json = {\n\t'comment': /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/,\n\t'property': {\n\t\tpattern: /\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?=\\s*:)/,\n\t\tgreedy: true\n\t},\n\t'string': {\n\t\tpattern: /\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?!\\s*:)/,\n\t\tgreedy: true\n\t},\n\t'number': /-?\\d+\\.?\\d*(e[+-]?\\d+)?/i,\n\t'punctuation': /[{}[\\],]/,\n\t'operator': /:/,\n\t'boolean': /\\b(?:true|false)\\b/,\n\t'null': {\n\t\tpattern: /\\bnull\\b/,\n\t\talias: 'keyword'\n\t}\n};\n",
+      "byte_range": [
+        0,
+        402
+      ],
+      "whole_window_match_count": 1,
+      "origin": "verified_base_context_not_new_agent_evidence"
+    },
+    {
+      "id": "W11",
+      "file": "gulpfile.js",
+      "source_sha256": "77ab92a09a482b5056fa7da3266d8fb56428081e1b26403a7d09ebd9efddaf47",
+      "start_line": 1,
+      "end_line": 17,
+      "purposes": [
+        "interface_dependency"
+      ],
+      "text": "const { src, dest, series, parallel, watch } = require('gulp');\n\nconst rename = require('gulp-rename');\nconst uglify = require('gulp-uglify');\nconst header = require('gulp-header');\nconst concat = require('gulp-concat');\nconst replace = require('gulp-replace');\nconst pump = require('pump');\nconst fs = require('fs');\nconst simpleGit = require('simple-git');\nconst shelljs = require('shelljs');\n\nconst paths = {\n\tcomponentsFile: 'components.json',\n\tcomponentsFileJS: 'components.js',\n\tcomponents: ['components/**/*.js', '!components/index.js', '!components/**/*.min.js'],\n\tmain: [\n",
+      "byte_range": [
+        0,
+        581
+      ],
+      "whole_window_match_count": 1,
+      "origin": "verified_base_context_not_new_agent_evidence"
+    },
+    {
+      "id": "W12",
+      "file": "package.json",
+      "source_sha256": "c32ef0709a5982cad76ca73d90616a4bf6bcc57d0b961a290bd0de90472e3adc",
+      "start_line": 1,
+      "end_line": 23,
+      "purposes": [
+        "initial:browser:1",
+        "initial:browser:2",
+        "initial:browser:3",
+        "initial:browser:4",
+        "initial_anchor:browser:1",
+        "initial_anchor:browser:2",
+        "initial_anchor:browser:3",
+        "initial_anchor:browser:4"
+      ],
+      "text": "{\n  \"name\": \"prismjs\",\n  \"version\": \"1.16.0\",\n  \"description\": \"Lightweight, robust, elegant syntax highlighting. A spin-off project from Dabblet.\",\n  \"main\": \"prism.js\",\n  \"style\": \"themes/prism.css\",\n  \"scripts\": {\n    \"test:aliases\": \"mocha tests/aliases-test.js\",\n    \"test:languages\": \"mocha tests/run.js\",\n    \"test:plugins\": \"mocha tests/plugins/**/*.js\",\n    \"test:runner\": \"mocha tests/testrunner-tests.js\",\n    \"test\": \"npm run test:runner && npm run test:languages && npm run test:plugins && npm run test:aliases\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/LeaVerou/prism.git\"\n  },\n  \"keywords\": [\n    \"prism\",\n    \"highlight\"\n  ],\n  \"author\": \"Lea Verou\",\n  \"license\": \"MIT\",\n",
+      "byte_range": [
+        0,
+        718
+      ],
+      "whole_window_match_count": 1,
+      "origin": "verified_base_context_not_new_agent_evidence"
+    },
+    {
+      "id": "W13",
+      "file": "package.json",
+      "source_sha256": "c32ef0709a5982cad76ca73d90616a4bf6bcc57d0b961a290bd0de90472e3adc",
+      "start_line": 36,
+      "end_line": 52,
+      "purposes": [
+        "initial:browser:5",
+        "initial_anchor:browser:5"
+      ],
+      "text": "    \"jsdom\": \"^13.0.0\",\n    \"mocha\": \"^6.0.0\",\n    \"pump\": \"^3.0.0\",\n    \"shelljs\": \"^0.8.3\",\n    \"simple-git\": \"^1.107.0\",\n    \"yargs\": \"^13.2.2\"\n  },\n  \"jspm\": {\n    \"main\": \"prism\",\n    \"registry\": \"jspm\",\n    \"jspmPackage\": true,\n    \"format\": \"global\",\n    \"files\": [\n      \"components/**/*.js\",\n      \"plugins/**/*\",\n      \"themes/*.css\",\n      \"prism.js\"\n",
+      "byte_range": [
+        1023,
+        1385
+      ],
+      "whole_window_match_count": 1,
+      "origin": "verified_base_context_not_new_agent_evidence"
+    },
+    {
+      "id": "W14",
+      "file": "prism.js",
+      "source_sha256": "a85a83c23090257355e5e9bfb3b0dc974938a34013a03999716f30fe78c739fd",
+      "start_line": 1,
+      "end_line": 120,
+      "purposes": [
+        "initial:browser:6",
+        "initial_anchor:browser:6",
+        "legacy_scope_location"
+      ],
+      "text": "\n/* **********************************************\n     Begin prism-core.js\n********************************************** */\n\nvar _self = (typeof window !== 'undefined')\n\t? window   // if in browser\n\t: (\n\t\t(typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope)\n\t\t? self // if in worker\n\t\t: {}   // if in node js\n\t);\n\n/**\n * Prism: Lightweight, robust, elegant syntax highlighting\n * MIT license http://www.opensource.org/licenses/mit-license.php/\n * @author Lea Verou http://lea.verou.me\n */\n\nvar Prism = (function (_self){\n\n// Private helper vars\nvar lang = /\\blang(?:uage)?-([\\w-]+)\\b/i;\nvar uniqueId = 0;\n\nvar _ = {\n\tmanual: _self.Prism && _self.Prism.manual,\n\tdisableWorkerMessageHandler: _self.Prism && _self.Prism.disableWorkerMessageHandler,\n\tutil: {\n\t\tencode: function (tokens) {\n\t\t\tif (tokens instanceof Token) {\n\t\t\t\treturn new Token(tokens.type, _.util.encode(tokens.content), tokens.alias);\n\t\t\t} else if (Array.isArray(tokens)) {\n\t\t\t\treturn tokens.map(_.util.encode);\n\t\t\t} else {\n\t\t\t\treturn tokens.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\\u00a0/g, ' ');\n\t\t\t}\n\t\t},\n\n\t\ttype: function (o) {\n\t\t\treturn Object.prototype.toString.call(o).slice(8, -1);\n\t\t},\n\n\t\tobjId: function (obj) {\n\t\t\tif (!obj['__id']) {\n\t\t\t\tObject.defineProperty(obj, '__id', { value: ++uniqueId });\n\t\t\t}\n\t\t\treturn obj['__id'];\n\t\t},\n\n\t\t// Deep clone a language definition (e.g. to extend it)\n\t\tclone: function deepClone(o, visited) {\n\t\t\tvar clone, id, type = _.util.type(o);\n\t\t\tvisited = visited || {};\n\n\t\t\tswitch (type) {\n\t\t\t\tcase 'Object':\n\t\t\t\t\tid = _.util.objId(o);\n\t\t\t\t\tif (visited[id]) {\n\t\t\t\t\t\treturn visited[id];\n\t\t\t\t\t}\n\t\t\t\t\tclone = {};\n\t\t\t\t\tvisited[id] = clone;\n\n\t\t\t\t\tfor (var key in o) {\n\t\t\t\t\t\tif (o.hasOwnProperty(key)) {\n\t\t\t\t\t\t\tclone[key] = deepClone(o[key], visited);\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\n\t\t\t\t\treturn clone;\n\n\t\t\t\tcase 'Array':\n\t\t\t\t\tid = _.util.objId(o);\n\t\t\t\t\tif (visited[id]) {\n\t\t\t\t\t\treturn visited[id];\n\t\t\t\t\t}\n\t\t\t\t\tclone = [];\n\t\t\t\t\tvisited[id] = clone;\n\n\t\t\t\t\to.forEach(function (v, i) {\n\t\t\t\t\t\tclone[i] = deepClone(v, visited);\n\t\t\t\t\t});\n\n\t\t\t\t\treturn clone;\n\n\t\t\t\tdefault:\n\t\t\t\t\treturn o;\n\t\t\t}\n\t\t}\n\t},\n\n\tlanguages: {\n\t\textend: function (id, redef) {\n\t\t\tvar lang = _.util.clone(_.languages[id]);\n\n\t\t\tfor (var key in redef) {\n\t\t\t\tlang[key] = redef[key];\n\t\t\t}\n\n\t\t\treturn lang;\n\t\t},\n\n\t\t/**\n\t\t * Insert a token before another token in a language literal\n\t\t * As this needs to recreate the object (we cannot actually insert before keys in object literals),\n\t\t * we cannot just provide an object, we need an object and a key.\n\t\t * @param inside The key (or language id) of the parent\n\t\t * @param before The key to insert before.\n\t\t * @param insert Object with the key/value pairs to insert\n\t\t * @param root The object that contains `inside`. If equal to Prism.languages, it can be omitted.\n\t\t */\n\t\tinsertBefore: function (inside, before, insert, root) {\n\t\t\troot = root || _.languages;\n\t\t\tvar grammar = root[inside];\n\t\t\tvar ret = {};\n\n\t\t\tfor (var token in grammar) {\n\t\t\t\tif (grammar.hasOwnProperty(token)) {\n\n",
+      "byte_range": [
+        0,
+        3019
+      ],
+      "whole_window_match_count": 1,
+      "origin": "verified_base_context_not_new_agent_evidence"
+    },
+    {
+      "id": "W15",
+      "file": "prism.js",
+      "source_sha256": "a85a83c23090257355e5e9bfb3b0dc974938a34013a03999716f30fe78c739fd",
+      "start_line": 548,
+      "end_line": 626,
+      "purposes": [
+        "legacy_scope_location"
+      ],
+      "text": "\nif (typeof module !== 'undefined' && module.exports) {\n\tmodule.exports = Prism;\n}\n\n// hack for components to work correctly in node.js\nif (typeof global !== 'undefined') {\n\tglobal.Prism = Prism;\n}\n\n\n/* **********************************************\n     Begin prism-markup.js\n********************************************** */\n\nPrism.languages.markup = {\n\t'comment': /<!--[\\s\\S]*?-->/,\n\t'prolog': /<\\?[\\s\\S]+?\\?>/,\n\t'doctype': /<!DOCTYPE[\\s\\S]+?>/i,\n\t'cdata': /<!\\[CDATA\\[[\\s\\S]*?]]>/i,\n\t'tag': {\n\t\tpattern: /<\\/?(?!\\d)[^\\s>\\/=$<%]+(?:\\s(?:\\s*[^\\s>\\/=]+(?:\\s*=\\s*(?:\"[^\"]*\"|'[^']*'|[^\\s'\">=]+(?=[\\s>]))|(?=[\\s/>])))+)?\\s*\\/?>/i,\n\t\tgreedy: true,\n\t\tinside: {\n\t\t\t'tag': {\n\t\t\t\tpattern: /^<\\/?[^\\s>\\/]+/i,\n\t\t\t\tinside: {\n\t\t\t\t\t'punctuation': /^<\\/?/,\n\t\t\t\t\t'namespace': /^[^\\s>\\/:]+:/\n\t\t\t\t}\n\t\t\t},\n\t\t\t'attr-value': {\n\t\t\t\tpattern: /=\\s*(?:\"[^\"]*\"|'[^']*'|[^\\s'\">=]+)/i,\n\t\t\t\tinside: {\n\t\t\t\t\t'punctuation': [\n\t\t\t\t\t\t/^=/,\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tpattern: /^(\\s*)[\"']|[\"']$/,\n\t\t\t\t\t\t\tlookbehind: true\n\t\t\t\t\t\t}\n\t\t\t\t\t]\n\t\t\t\t}\n\t\t\t},\n\t\t\t'punctuation': /\\/?>/,\n\t\t\t'attr-name': {\n\t\t\t\tpattern: /[^\\s>\\/]+/,\n\t\t\t\tinside: {\n\t\t\t\t\t'namespace': /^[^\\s>\\/:]+:/\n\t\t\t\t}\n\t\t\t}\n\n\t\t}\n\t},\n\t'entity': /&#?[\\da-z]{1,8};/i\n};\n\nPrism.languages.markup['tag'].inside['attr-value'].inside['entity'] =\n\tPrism.languages.markup['entity'];\n\n// Plugin to make entity title show the real entity, idea by Roman Komarov\nPrism.hooks.add('wrap', function(env) {\n\n\tif (env.type === 'entity') {\n\t\tenv.attributes['title'] = env.content.replace(/&amp;/, '&');\n\t}\n});\n\nObject.defineProperty(Prism.languages.markup.tag, 'addInlined', {\n\t/**\n\t * Adds an inlined language to markup.\n\t *\n\t * An example of an inlined language is CSS with `<style>` tags.\n\t *\n\t * @param {string} tagName The name of the tag that contains the inlined language. This name will be treated as\n\t * case insensitive.\n\t * @param {string} lang The language key.\n\t * @example\n\t * addInlined('style', 'css');\n\t */\n",
+      "byte_range": [
+        12921,
+        14832
+      ],
+      "whole_window_match_count": 1,
+      "origin": "verified_base_context_not_new_agent_evidence"
+    },
+    {
+      "id": "W16",
+      "file": "prism.js",
+      "source_sha256": "a85a83c23090257355e5e9bfb3b0dc974938a34013a03999716f30fe78c739fd",
+      "start_line": 657,
+      "end_line": 668,
+      "purposes": [
+        "legacy_scope_location"
+      ],
+      "text": "});\n\nPrism.languages.xml = Prism.languages.extend('markup', {});\nPrism.languages.html = Prism.languages.markup;\nPrism.languages.mathml = Prism.languages.markup;\nPrism.languages.svg = Prism.languages.markup;\n\n\n/* **********************************************\n     Begin prism-css.js\n********************************************** */\n\n",
+      "byte_range": [
+        15620,
+        15954
+      ],
+      "whole_window_match_count": 1,
+      "origin": "verified_base_context_not_new_agent_evidence"
+    },
+    {
+      "id": "W17",
+      "file": "prism.js",
+      "source_sha256": "a85a83c23090257355e5e9bfb3b0dc974938a34013a03999716f30fe78c739fd",
+      "start_line": 720,
+      "end_line": 958,
+      "purposes": [
+        "legacy_scope_location"
+      ],
+      "text": "\n\n/* **********************************************\n     Begin prism-clike.js\n********************************************** */\n\nPrism.languages.clike = {\n\t'comment': [\n\t\t{\n\t\t\tpattern: /(^|[^\\\\])\\/\\*[\\s\\S]*?(?:\\*\\/|$)/,\n\t\t\tlookbehind: true\n\t\t},\n\t\t{\n\t\t\tpattern: /(^|[^\\\\:])\\/\\/.*/,\n\t\t\tlookbehind: true,\n\t\t\tgreedy: true\n\t\t}\n\t],\n\t'string': {\n\t\tpattern: /([\"'])(?:\\\\(?:\\r\\n|[\\s\\S])|(?!\\1)[^\\\\\\r\\n])*\\1/,\n\t\tgreedy: true\n\t},\n\t'class-name': {\n\t\tpattern: /((?:\\b(?:class|interface|extends|implements|trait|instanceof|new)\\s+)|(?:catch\\s+\\())[\\w.\\\\]+/i,\n\t\tlookbehind: true,\n\t\tinside: {\n\t\t\tpunctuation: /[.\\\\]/\n\t\t}\n\t},\n\t'keyword': /\\b(?:if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\\b/,\n\t'boolean': /\\b(?:true|false)\\b/,\n\t'function': /\\w+(?=\\()/,\n\t'number': /\\b0x[\\da-f]+\\b|(?:\\b\\d+\\.?\\d*|\\B\\.\\d+)(?:e[+-]?\\d+)?/i,\n\t'operator': /--?|\\+\\+?|!=?=?|<=?|>=?|==?=?|&&?|\\|\\|?|\\?|\\*|\\/|~|\\^|%/,\n\t'punctuation': /[{}[\\];(),.:]/\n};\n\n\n/* **********************************************\n     Begin prism-javascript.js\n********************************************** */\n\nPrism.languages.javascript = Prism.languages.extend('clike', {\n\t'class-name': [\n\t\tPrism.languages.clike['class-name'],\n\t\t{\n\t\t\tpattern: /(^|[^$\\w\\xA0-\\uFFFF])[_$A-Z\\xA0-\\uFFFF][$\\w\\xA0-\\uFFFF]*(?=\\.(?:prototype|constructor))/,\n\t\t\tlookbehind: true\n\t\t}\n\t],\n\t'keyword': [\n\t\t{\n\t\t\tpattern: /((?:^|})\\s*)(?:catch|finally)\\b/,\n\t\t\tlookbehind: true\n\t\t},\n\t\t{\n\t\t\tpattern: /(^|[^.])\\b(?:as|async(?=\\s*(?:function\\b|\\(|[$\\w\\xA0-\\uFFFF]|$))|await|break|case|class|const|continue|debugger|default|delete|do|else|enum|export|extends|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|undefined|var|void|while|with|yield)\\b/,\n\t\t\tlookbehind: true\n\t\t},\n\t],\n\t'number': /\\b(?:(?:0[xX][\\dA-Fa-f]+|0[bB][01]+|0[oO][0-7]+)n?|\\d+n|NaN|Infinity)\\b|(?:\\b\\d+\\.?\\d*|\\B\\.\\d+)(?:[Ee][+-]?\\d+)?/,\n\t// Allow for all non-ASCII characters (See http://stackoverflow.com/a/2008444)\n\t'function': /[_$a-zA-Z\\xA0-\\uFFFF][$\\w\\xA0-\\uFFFF]*(?=\\s*(?:\\.\\s*(?:apply|bind|call)\\s*)?\\()/,\n\t'operator': /-[-=]?|\\+[+=]?|!=?=?|<<?=?|>>?>?=?|=(?:==?|>)?|&[&=]?|\\|[|=]?|\\*\\*?=?|\\/=?|~|\\^=?|%=?|\\?|\\.{3}/\n});\n\nPrism.languages.javascript['class-name'][0].pattern = /(\\b(?:class|interface|extends|implements|instanceof|new)\\s+)[\\w.\\\\]+/\n\nPrism.languages.insertBefore('javascript', 'keyword', {\n\t'regex': {\n\t\tpattern: /((?:^|[^$\\w\\xA0-\\uFFFF.\"'\\])\\s])\\s*)\\/(\\[(?:[^\\]\\\\\\r\\n]|\\\\.)*]|\\\\.|[^/\\\\\\[\\r\\n])+\\/[gimyu]{0,5}(?=\\s*($|[\\r\\n,.;})\\]]))/,\n\t\tlookbehind: true,\n\t\tgreedy: true\n\t},\n\t// This must be declared before keyword because we use \"function\" inside the look-forward\n\t'function-variable': {\n\t\tpattern: /[_$a-zA-Z\\xA0-\\uFFFF][$\\w\\xA0-\\uFFFF]*(?=\\s*[=:]\\s*(?:async\\s*)?(?:\\bfunction\\b|(?:\\((?:[^()]|\\([^()]*\\))*\\)|[_$a-zA-Z\\xA0-\\uFFFF][$\\w\\xA0-\\uFFFF]*)\\s*=>))/,\n\t\talias: 'function'\n\t},\n\t'parameter': [\n\t\t{\n\t\t\tpattern: /(function(?:\\s+[_$A-Za-z\\xA0-\\uFFFF][$\\w\\xA0-\\uFFFF]*)?\\s*\\(\\s*)(?!\\s)(?:[^()]|\\([^()]*\\))+?(?=\\s*\\))/,\n\t\t\tlookbehind: true,\n\t\t\tinside: Prism.languages.javascript\n\t\t},\n\t\t{\n\t\t\tpattern: /[_$a-z\\xA0-\\uFFFF][$\\w\\xA0-\\uFFFF]*(?=\\s*=>)/i,\n\t\t\tinside: Prism.languages.javascript\n\t\t},\n\t\t{\n\t\t\tpattern: /(\\(\\s*)(?!\\s)(?:[^()]|\\([^()]*\\))+?(?=\\s*\\)\\s*=>)/,\n\t\t\tlookbehind: true,\n\t\t\tinside: Prism.languages.javascript\n\t\t},\n\t\t{\n\t\t\tpattern: /((?:\\b|\\s|^)(?!(?:as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|undefined|var|void|while|with|yield)(?![$\\w\\xA0-\\uFFFF]))(?:[_$A-Za-z\\xA0-\\uFFFF][$\\w\\xA0-\\uFFFF]*\\s*)\\(\\s*)(?!\\s)(?:[^()]|\\([^()]*\\))+?(?=\\s*\\)\\s*\\{)/,\n\t\t\tlookbehind: true,\n\t\t\tinside: Prism.languages.javascript\n\t\t}\n\t],\n\t'constant': /\\b[A-Z](?:[A-Z_]|\\dx?)*\\b/\n});\n\nPrism.languages.insertBefore('javascript', 'string', {\n\t'template-string': {\n\t\tpattern: /`(?:\\\\[\\s\\S]|\\${[^}]+}|[^\\\\`])*`/,\n\t\tgreedy: true,\n\t\tinside: {\n\t\t\t'interpolation': {\n\t\t\t\tpattern: /\\${[^}]+}/,\n\t\t\t\tinside: {\n\t\t\t\t\t'interpolation-punctuation': {\n\t\t\t\t\t\tpattern: /^\\${|}$/,\n\t\t\t\t\t\talias: 'punctuation'\n\t\t\t\t\t},\n\t\t\t\t\trest: Prism.languages.javascript\n\t\t\t\t}\n\t\t\t},\n\t\t\t'string': /[\\s\\S]+/\n\t\t}\n\t}\n});\n\nif (Prism.languages.markup) {\n\tPrism.languages.markup.tag.addInlined('script', 'javascript');\n}\n\nPrism.languages.js = Prism.languages.javascript;\n\n\n/* **********************************************\n     Begin prism-file-highlight.js\n********************************************** */\n\n(function () {\n\tif (typeof self === 'undefined' || !self.Prism || !self.document || !document.querySelector) {\n\t\treturn;\n\t}\n\n\t/**\n\t * @param {Element} [container=document]\n\t */\n\tself.Prism.fileHighlight = function(container) {\n\t\tcontainer = container || document;\n\n\t\tvar Extensions = {\n\t\t\t'js': 'javascript',\n\t\t\t'py': 'python',\n\t\t\t'rb': 'ruby',\n\t\t\t'ps1': 'powershell',\n\t\t\t'psm1': 'powershell',\n\t\t\t'sh': 'bash',\n\t\t\t'bat': 'batch',\n\t\t\t'h': 'c',\n\t\t\t'tex': 'latex'\n\t\t};\n\n\t\tArray.prototype.slice.call(container.querySelectorAll('pre[data-src]')).forEach(function (pre) {\n\t\t\t// ignore if already loaded\n\t\t\tif (pre.hasAttribute('data-src-loaded')) {\n\t\t\t\treturn;\n\t\t\t}\n\n\t\t\t// load current\n\t\t\tvar src = pre.getAttribute('data-src');\n\n\t\t\tvar language, parent = pre;\n\t\t\tvar lang = /\\blang(?:uage)?-([\\w-]+)\\b/i;\n\t\t\twhile (parent && !lang.test(parent.className)) {\n\t\t\t\tparent = parent.parentNode;\n\t\t\t}\n\n\t\t\tif (parent) {\n\t\t\t\tlanguage = (pre.className.match(lang) || [, ''])[1];\n\t\t\t}\n\n\t\t\tif (!language) {\n\t\t\t\tvar extension = (src.match(/\\.(\\w+)$/) || [, ''])[1];\n\t\t\t\tlanguage = Extensions[extension] || extension;\n\t\t\t}\n\n\t\t\tvar code = document.createElement('code');\n\t\t\tcode.className = 'language-' + language;\n\n\t\t\tpre.textContent = '';\n\n\t\t\tcode.textContent = 'Loading…';\n\n\t\t\tpre.appendChild(code);\n\n\t\t\tvar xhr = new XMLHttpRequest();\n\n\t\t\txhr.open('GET', src, true);\n\n\t\t\txhr.onreadystatechange = function () {\n\t\t\t\tif (xhr.readyState == 4) {\n\n\t\t\t\t\tif (xhr.status < 400 && xhr.responseText) {\n\t\t\t\t\t\tcode.textContent = xhr.responseText;\n\n\t\t\t\t\t\tPrism.highlightElement(code);\n\t\t\t\t\t\t// mark as loaded\n\t\t\t\t\t\tpre.setAttribute('data-src-loaded', '');\n\t\t\t\t\t}\n\t\t\t\t\telse if (xhr.status >= 400) {\n\t\t\t\t\t\tcode.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;\n\t\t\t\t\t}\n\t\t\t\t\telse {\n\t\t\t\t\t\tcode.textContent = '✖ Error: File does not exist or is empty';\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t};\n\n\t\t\txhr.send(null);\n\t\t});\n\n\t\tif (Prism.plugins.toolbar) {\n\t\t\tPrism.plugins.toolbar.registerButton('download-file', function (env) {\n\t\t\t\tvar pre = env.element.parentNode;\n\t\t\t\tif (!pre || !/pre/i.test(pre.nodeName) || !pre.hasAttribute('data-src') || !pre.hasAttribute('data-download-link')) {\n\t\t\t\t\treturn;\n\t\t\t\t}\n\t\t\t\tvar src = pre.getAttribute('data-src');\n\t\t\t\tvar a = document.createElement('a');\n\t\t\t\ta.textContent = pre.getAttribute('data-download-link-label') || 'Download';\n\t\t\t\ta.setAttribute('download', '');\n\t\t\t\ta.href = src;\n\t\t\t\treturn a;\n\t\t\t});\n\t\t}\n\n\t};\n\n\tdocument.addEventListener('DOMContentLoaded', function () {\n\t\t// execute inside handler, for dropping Event as argument\n\t\tself.Prism.fileHighlight();\n\t});\n\n})();\n",
+      "byte_range": [
+        17190,
+        24443
+      ],
+      "whole_window_match_count": 1,
+      "origin": "verified_base_context_not_new_agent_evidence"
+    },
+    {
+      "id": "W18",
+      "file": "style.css",
+      "source_sha256": "635d73e1cc68f83aa42ae8a69d6d949e8a71002d5f85a9e682e2516b21c35f9a",
+      "start_line": 1,
+      "end_line": 413,
+      "purposes": [
+        "initial:browser:7",
+        "initial_anchor:browser:7",
+        "legacy_scope_location"
+      ],
+      "text": "@import url(https://fonts.googleapis.com/css?family=Questrial);\n@import url(https://fonts.googleapis.com/css?family=Arvo);\n\n@font-face {\n\tsrc: url(https://lea.verou.me/logo.otf);\n\tfont-family: 'LeaVerou';\n}\n\n/*\n Shared styles\n */\n\nsection h1,\n#features li strong,\nheader h2,\nfooter p {\n\tfont: 100% Rockwell, Arvo, serif;\n}\n\n/*\n Styles\n */\n\n* {\n\tmargin: 0;\n\tpadding: 0;\n\tfont-weight: normal;\n}\n\nbody {\n\tfont: 100%/1.5 Questrial, sans-serif;\n\ttab-size: 4;\n\thyphens: auto;\n}\n\na {\n\tcolor: inherit;\n}\n\nsection h1 {\n\tfont-size: 250%;\n}\n\n\tsection section h1 {\n\t\tfont-size: 150%;\n\t}\n\n\tsection h1 code {\n\t\tfont-style: normal;\n\t}\n\n\tsection h1 > a {\n\t\ttext-decoration: none;\n\t}\n\n\tsection h1 > a:before {\n\t\tcontent: '§';\n\t\tposition: absolute;\n\t\tpadding: 0 .2em;\n\t\tmargin-left: -1em;\n\t\tborder-radius: .2em;\n\t\tcolor: silver;\n\t\ttext-shadow: 0 1px white;\n\t}\n\n\tsection h1 > a:hover:before {\n\t\tcolor: black;\n\t\tbackground: #f1ad26;\n\t}\n\np {\n\tmargin: 1em 0;\n}\n\nsection h1,\nh2 {\n\tmargin: 1em 0 .3em;\n}\n\ndt {\n\tmargin: 1em 0 0 0;\n\tfont-size: 130%;\n}\n\n\tdt:after {\n\t\tcontent: ':';\n\t}\n\ndd {\n\tmargin-left: 2em;\n}\n\nstrong {\n\tfont-weight: bold;\n}\n\ncode, pre {\n\tfont-family: Consolas, Monaco, 'Andale Mono', 'Lucida Console', monospace;\n\thyphens: none;\n}\n\npre {\n\tmax-height: 30em;\n\toverflow: auto;\n}\n\npre > code.highlight {\n\toutline: .4em solid red;\n\toutline-offset: .4em;\n}\n\nheader,\nbody > section {\n\tdisplay: block;\n\tmax-width: 900px;\n\tmargin: auto;\n}\n\nheader, footer {\n\tposition: relative;\n\tpadding: 30px -webkit-calc(50% - 450px); /* Workaround for bug */\n\tpadding: 30px calc(50% - 450px);\n\tcolor: white;\n\ttext-shadow: 0 -1px 2px black;\n\tbackground: url(img/spectrum.png) fixed;\n}\n\nheader:before,\nfooter:before {\n\tcontent: '';\n\tposition: absolute;\n\tbottom: 0; left: 0; right: 0;\n\theight: 20px;\n\tbackground-size: 20px 40px;\n\tbackground-repeat: repeat-x;\n\tbackground-image: linear-gradient(45deg, transparent 34%, white 34%, white 66%, transparent 66%),\n\t                  linear-gradient(135deg, transparent 34%, white 34%, white 66%, transparent 66%);\n}\n\nheader {\n\n}\n\n\theader .intro,\n\thtml.simple header {\n\t\toverflow: hidden;\n\t}\n\n\theader h1 {\n\t\tfloat: left;\n\t\tmargin-right: 30px;\n\t\tcolor: #7fab14;\n\t\ttext-align: center;\n\t\tfont-size: 140%;\n\t\ttext-transform: uppercase;\n\t\tletter-spacing: .25em;\n\t}\n\n\theader h2 {\n\t\tmargin-top: .5em;\n\t\tcolor: #f1ad26;\n\t}\n\n\t\theader h1 a {\n\t\t\ttext-decoration: none;\n\t\t}\n\n\t\theader img {\n\t\t\tdisplay: block;\n\t\t\twidth: 150px;\n\t\t\theight: 128px;\n\t\t\tmargin-bottom: .3em;\n\t\t\tborder: 0;\n\t\t}\n\n\theader h2 {\n\t\tfont-size: 300%;\n\t}\n\n\theader .intro p {\n\t\tmargin: 0;\n\t\tfont: 150%/1.4 Questrial, sans-serif;\n\t\tfont-size: 150%;\n\t}\n\n\t#features {\n\t\twidth: 66em;\n\t\tmargin-top: 2em;\n\t\tfont-size: 80%;\n\t}\n\n\t\t#features li {\n\t\t\tmargin: 0 0 2em 0;\n\t\t\tlist-style: none;\n\t\t\tdisplay: inline-block;\n\t\t\twidth: 27em;\n\t\t\tvertical-align: top;\n\t\t}\n\n\t\t#features li:nth-child(odd) {\n\t\t\tmargin-right: 5em;\n\t\t}\n\n\t\t\t#features li:before {\n\t\t\t\tcontent: '✓';\n\t\t\t\tfloat: left;\n\t\t\t\tmargin-left: -.8em;\n\t\t\t\tcolor: #7fab14;\n\t\t\t\tfont-size: 400%;\n\t\t\t\tline-height: 1;\n\t\t\t}\n\n\t\t\t\t#features li strong {\n\t\t\t\t\tdisplay: block;\n\t\t\t\t\tmargin-bottom: .1em;\n\t\t\t\t\tfont-size: 200%;\n\t\t\t\t}\n\n\theader .download-button {\n\t\tfloat: right;\n\t\tmargin: 0 0 .5em .5em;\n\t}\n\n\t#theme {\n\t\tposition: relative;\n\t\tz-index: 1;\n\t\tfloat: right;\n\t\tmargin-right: -1em;\n\t\ttext-align: center;\n\t\ttext-transform: uppercase;\n\t\tletter-spacing: .2em;\n\t}\n\n\t\t#theme > p {\n\t\t\tposition: absolute;\n\t\t\tleft: 100%;\n\t\t\ttransform: translateX(50%) rotate(90deg) ;\n\t\t\ttransform-origin: top left;\n\t\t\tfont-size: 130%;\n\t\t}\n\n\t\t#theme > label {\n\t\t\tposition: relative;\n\t\t\tdisplay: flex;\n\t\t\tjustify-content: center;\n\t\t\talign-items: center;\n\t\t\twidth: 8.5em;\n\t\t\theight: 8.5em;\n\t\t\tline-height: 1em;\n\t\t\tborder-radius: 50%;\n\t\t\tbackground: hsla(0,0%,100%,.5);\n\t\t\tcursor: pointer;\n\t\t\tfont-size: 90%;\n\t\t\tpadding: 0;\n\t\t}\n\n\t\t#theme > label:before {\n\t\t\tcontent: '';\n\t\t\tposition: absolute;\n\t\t\ttop: 0; right: 0; bottom: 0; left: 0;\n\t\t\tz-index: -1;\n\t\t\tborder-radius: inherit;\n\t\t\tbackground: url(img/spectrum.png) fixed;\n\t\t}\n\n\t\t#theme > label:nth-of-type(n+2) {\n\t\t\tmargin-top: -2.5em;\n\t\t}\n\n\t\t#theme > input:not(:checked) + label:hover {\n\t\t\tbackground: hsla(77, 80%, 60%, .5);\n\t\t}\n\n\t\t#theme > input {\n\t\t\tposition: absolute;\n\t\t\tclip: rect(0,0,0,0);\n\t\t}\n\n\t\t#theme > input:checked + label {\n\t\t\tbackground: #7fab14;\n\t\t}\n\nfooter {\n\tmargin-top: 2em;\n\tbackground-position: bottom;\n\tcolor: white;\n\ttext-shadow: 0 -1px 2px black;\n}\n\n\tfooter:before {\n\t\tbottom: auto;\n\t\ttop: 0;\n\t\tbackground-position: bottom;\n\t}\n\n\tfooter p {\n\t\tfont-size: 150%;\n\t}\n\n\tfooter ul {\n\t\tcolumn-count: 3;\n\t}\n\n.download-button {\n\tdisplay: block;\n\tpadding: .2em .8em .1em;\n\tborder: 1px solid rgba(0,0,0,0.5);\n\tborder-radius: 10px;\n\tbackground: #39a1cf;\n\tbox-shadow: 0 2px 10px black,\n\t   inset 0 1px hsla(0,0%,100%,.3),\n\t   inset 0 .4em hsla(0,0%,100%,.2),\n\t   inset 0 10px 20px hsla(0,0%,100%,.25),\n\t   inset 0 -15px 30px rgba(0,0,0,0.3);\n\tcolor: white;\n\ttext-shadow: 0 -1px 2px black;\n\ttext-align: center;\n\tfont-size: 250%;\n\tline-height: 1.5;\n\ttext-transform: uppercase;\n\ttext-decoration: none;\n\thyphens: manual;\n}\n\n.download-button:hover {\n\tbackground-color: #7fab14;\n}\n\n.download-button:active {\n\tbox-shadow: inset 0 2px 8px rgba(0,0,0,.8);\n}\n\n#toc {\n\tposition: fixed;\n\tbottom: 15px;\n\tmax-width: calc(50% - 450px - 40px);\n\tfont-size: 80%;\n    z-index: 999;\n    background: white;\n    color: rgba(0,0,0,.5);\n    padding: 0 10px 10px;\n\tborder-radius: 0 3px 3px 0;\n\tbox-sizing: border-box;\n}\n\n@media (max-width: 1200px) {\n\t#toc {\n\t\t display: none;\n\t}\n}\n\n#toc:hover {\n    color: rgba(0,0,0,1);\n}\n\n\t#toc h1 {\n\t\tfont-size: 180%;\n\t\tmargin-top: .75rem;\n\t}\n\n\t#toc li {\n\t\tlist-style: none;\n\t}\n\n#logo:before {\n\tcontent: '☠';\n\tfloat: right;\n\tfont: 100px/1.6 LeaVerou;\n}\n\n.used-by-logos {\n\toverflow: hidden;\n}\n\t.used-by-logos > a {\n\t\tfloat: left;\n\t\twidth: 33.33%;\n\t\theight: 100px;\n\t\ttext-align: center;\n\t\tbackground: #F5F2F0;\n\t\tbox-sizing: border-box;\n\t\tborder: 5px solid white;\n\t\tposition: relative;\n\t}\n\t\t.used-by-logos > a > img {\n\t\t\tmax-height: 100%;\n\t\t\tmax-width: 100%;\n\t\t\tposition: absolute;\n\t\t\ttop: 50%;\n\t\t\tleft: 50%;\n\t\t\ttransform: translate(-50%, -50%);\n\t\t}\n\nlabel a.owner {\n\tmargin: 0 .5em;\n}\n\nlabel a.owner:not(:hover) {\n\ttext-decoration: none;\n\tcolor: #aaa;\n}\n\n#languages-list ul {\n\tcolumn-count: 3;\n}\n\t#languages-list li {\n\t\tpadding: .2em;\n\t}\n\t#languages-list li[data-id=\"javascript\"] {\n\t\tborder-bottom: 1px solid #aaa;\n\t\tpadding-bottom: 1em;\n\t\tmargin-bottom: 1em;\n\t\tmargin-right: 1em;\n\t}\n",
+      "byte_range": [
+        0,
+        6431
+      ],
+      "whole_window_match_count": 1,
+      "origin": "verified_base_context_not_new_agent_evidence"
+    }
+  ],
+  "evidence": {
+    "tool:code.t1.o1": {
+      "kind": "tool_observation",
+      "agent": "code",
+      "evidence_id": "code.t1.o1",
+      "tool_name": "read_source",
+      "ok": true,
+      "provenance": "base_commit",
+      "base_commit": "2f9c9261bc1454899266929711d5842a3675e467",
+      "source_id": 172,
+      "resolved_path": "components/prism-json.js",
+      "source_kind": "file",
+      "request": {
+        "source_id": 172,
+        "start_line": 1,
+        "end_line": 19,
+        "query": ""
+      },
+      "file": "components/prism-json.js",
+      "sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+      "total_lines": 19,
+      "truncated": false,
+      "source_visibility": {
+        "status": "complete",
+        "requested_range": [
+          1,
+          19
+        ],
+        "tool_line_window": [
+          1,
+          19
+        ],
+        "raw_text_range": [
+          1,
+          19
+        ],
+        "visible_text_range": [
+          1,
+          19
+        ],
+        "last_line": "complete",
+        "complete_through_line": 19,
+        "tool_truncation": {
+          "reported": false,
+          "character_cut": false,
+          "character_cap": 24000,
+          "unit": "python_characters",
+          "more_file_lines": false
+        },
+        "projection_omission": "none"
+      },
+      "source_refs": [
+        "W10"
+      ],
+      "original_read_range": {
+        "file": "components/prism-json.js",
+        "start_line": 1,
+        "end_line": 19,
+        "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e"
+      },
+      "content_status": "verified_base_windows",
+      "content_complete": true
+    },
+    "tool:code.t1.o2": {
+      "kind": "tool_observation",
+      "agent": "code",
+      "evidence_id": "code.t1.o2",
+      "tool_name": "symbols",
+      "ok": true,
+      "provenance": "base_commit",
+      "base_commit": "2f9c9261bc1454899266929711d5842a3675e467",
+      "source_id": 172,
+      "resolved_path": "components/prism-json.js",
+      "source_kind": "file",
+      "request": {
+        "source_id": 172,
+        "start_line": 0,
+        "end_line": 0,
+        "query": ""
+      },
+      "probes": [],
+      "declarations": [
+        "Prism.languages.json",
+        "comment",
+        "property",
+        "pattern",
+        "greedy",
+        "string",
+        "number",
+        "punctuation",
+        "operator",
+        "boolean",
+        "null",
+        "alias"
+      ],
+      "members": [
+        "json",
+        "languages"
+      ]
+    },
+    "tool:code.t1.o3": {
+      "kind": "tool_observation",
+      "agent": "code",
+      "evidence_id": "code.t1.o3",
+      "tool_name": "search_source",
+      "ok": true,
+      "provenance": "base_commit",
+      "base_commit": "2f9c9261bc1454899266929711d5842a3675e467",
+      "source_id": 66,
+      "resolved_path": "components/prism-core.js",
+      "source_kind": "file",
+      "request": {
+        "source_id": 66,
+        "start_line": 0,
+        "end_line": 0,
+        "query": "greedy"
+      },
+      "total_matches": 7,
+      "next_offset": null,
+      "truncated": false,
+      "matches": [
+        {
+          "source_id": 66,
+          "file": "components/prism-core.js",
+          "line": 297,
+          "text": "\t\t\t\t\tgreedy = !!pattern.greedy,"
+        },
+        {
+          "source_id": 66,
+          "file": "components/prism-core.js",
+          "line": 301,
+          "text": "\t\t\t\tif (greedy && !pattern.pattern.global) {"
+        },
+        {
+          "source_id": 66,
+          "file": "components/prism-core.js",
+          "line": 323,
+          "text": "\t\t\t\t\tif (greedy && i != strarr.length - 1) {"
+        },
+        {
+          "source_id": 66,
+          "file": "components/prism-core.js",
+          "line": 335,
+          "text": "\t\t\t\t\t\tfor (var len = strarr.length; k < len && (p < to || (!strarr[k].type && !strarr[k - 1].greedy)); ++k) {"
+        },
+        {
+          "source_id": 66,
+          "file": "components/prism-core.js",
+          "line": 386,
+          "text": "\t\t\t\t\tvar wrapped = new Token(token, inside? _.tokenize(match, inside) : match, alias, match, greedy);"
+        },
+        {
+          "source_id": 66,
+          "file": "components/prism-core.js",
+          "line": 453,
+          "text": "function Token(type, content, alias, matchedStr, greedy) {"
+        },
+        {
+          "source_id": 66,
+          "file": "components/prism-core.js",
+          "line": 459,
+          "text": "\tthis.greedy = !!greedy;"
+        }
+      ],
+      "omitted_results": 0,
+      "match_text_is_editable_source": false
+    },
+    "tool:code.t1.o5": {
+      "kind": "tool_observation",
+      "agent": "code",
+      "evidence_id": "code.t1.o5",
+      "tool_name": "search_source",
+      "ok": true,
+      "provenance": "base_commit",
+      "base_commit": "2f9c9261bc1454899266929711d5842a3675e467",
+      "source_id": 0,
+      "resolved_path": "",
+      "source_kind": "directory",
+      "request": {
+        "source_id": 0,
+        "start_line": 0,
+        "end_line": 0,
+        "query": "prism-json"
+      },
+      "total_matches": 2,
+      "next_offset": null,
+      "truncated": false,
+      "matches": [],
+      "omitted_results": 2,
+      "match_text_is_editable_source": false
+    },
+    "runtime:browser.t1.o1:0:tier:0": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H1",
+      "execution_identity": "runtime:browser.t1.o1:0",
+      "tier": "T1",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "node_execution",
+      "errors": []
+    },
+    "runtime:browser.t1.o1:0:tier:1": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H1",
+      "execution_identity": "runtime:browser.t1.o1:0",
+      "tier": "T2",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "pinned_chromium_scene",
+      "errors": []
+    },
+    "runtime:browser.t1.o1:0": {
+      "id": "H1",
+      "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+      "symbol_exists": true,
+      "instrumented_line": 1,
+      "static_reachable": null,
+      "coverage": {
+        "complete": false,
+        "scenarios": 1,
+        "reason": "single_issue_reproducer_is_not_exhaustive"
+      },
+      "static_certificate": null,
+      "kind": "witness_snapshot",
+      "tier_refs": [
+        "runtime:browser.t1.o1:0:tier:0",
+        "runtime:browser.t1.o1:0:tier:1"
+      ],
+      "selected_tier_ref": "runtime:browser.t1.o1:0:tier:1",
+      "artifact_visibility": "not_attached_to_s5"
+    },
+    "runtime:browser.t1.o1:1:tier:0": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H2",
+      "execution_identity": "runtime:browser.t1.o1:1",
+      "tier": "T1",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "node_execution",
+      "errors": []
+    },
+    "runtime:browser.t1.o1:1:tier:1": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H2",
+      "execution_identity": "runtime:browser.t1.o1:1",
+      "tier": "T2",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "pinned_chromium_scene",
+      "errors": []
+    },
+    "runtime:browser.t1.o1:1": {
+      "id": "H2",
+      "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+      "symbol_exists": true,
+      "instrumented_line": 1,
+      "static_reachable": null,
+      "coverage": {
+        "complete": false,
+        "scenarios": 1,
+        "reason": "single_issue_reproducer_is_not_exhaustive"
+      },
+      "static_certificate": null,
+      "kind": "witness_snapshot",
+      "tier_refs": [
+        "runtime:browser.t1.o1:1:tier:0",
+        "runtime:browser.t1.o1:1:tier:1"
+      ],
+      "selected_tier_ref": "runtime:browser.t1.o1:1:tier:1",
+      "artifact_visibility": "not_attached_to_s5"
+    },
+    "runtime:browser.t1.o1:2:tier:0": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H3",
+      "execution_identity": "runtime:browser.t1.o1:2",
+      "tier": "T1",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "node_execution",
+      "errors": []
+    },
+    "runtime:browser.t1.o1:2:tier:1": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H3",
+      "execution_identity": "runtime:browser.t1.o1:2",
+      "tier": "T2",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "pinned_chromium_scene",
+      "errors": []
+    },
+    "runtime:browser.t1.o1:2": {
+      "id": "H3",
+      "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+      "symbol_exists": true,
+      "instrumented_line": 1,
+      "static_reachable": null,
+      "coverage": {
+        "complete": false,
+        "scenarios": 1,
+        "reason": "single_issue_reproducer_is_not_exhaustive"
+      },
+      "static_certificate": null,
+      "kind": "witness_snapshot",
+      "tier_refs": [
+        "runtime:browser.t1.o1:2:tier:0",
+        "runtime:browser.t1.o1:2:tier:1"
+      ],
+      "selected_tier_ref": "runtime:browser.t1.o1:2:tier:1",
+      "artifact_visibility": "not_attached_to_s5"
+    },
+    "runtime:browser.t1.o1:3:tier:0": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H4",
+      "execution_identity": "runtime:browser.t1.o1:3",
+      "tier": "T1",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "node_execution",
+      "errors": []
+    },
+    "runtime:browser.t1.o1:3:tier:1": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H4",
+      "execution_identity": "runtime:browser.t1.o1:3",
+      "tier": "T2",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "pinned_chromium_scene",
+      "errors": []
+    },
+    "runtime:browser.t1.o1:3": {
+      "id": "H4",
+      "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+      "symbol_exists": true,
+      "instrumented_line": 1,
+      "static_reachable": null,
+      "coverage": {
+        "complete": false,
+        "scenarios": 1,
+        "reason": "single_issue_reproducer_is_not_exhaustive"
+      },
+      "static_certificate": null,
+      "kind": "witness_snapshot",
+      "tier_refs": [
+        "runtime:browser.t1.o1:3:tier:0",
+        "runtime:browser.t1.o1:3:tier:1"
+      ],
+      "selected_tier_ref": "runtime:browser.t1.o1:3:tier:1",
+      "artifact_visibility": "not_attached_to_s5"
+    },
+    "runtime:browser.t1.o1:4:tier:0": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H5",
+      "execution_identity": "runtime:browser.t1.o1:4",
+      "tier": "T1",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "node_execution",
+      "errors": []
+    },
+    "runtime:browser.t1.o1:4:tier:1": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H5",
+      "execution_identity": "runtime:browser.t1.o1:4",
+      "tier": "T2",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "pinned_chromium_scene",
+      "errors": []
+    },
+    "runtime:browser.t1.o1:4": {
+      "id": "H5",
+      "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+      "symbol_exists": true,
+      "instrumented_line": 1,
+      "static_reachable": null,
+      "coverage": {
+        "complete": false,
+        "scenarios": 1,
+        "reason": "single_issue_reproducer_is_not_exhaustive"
+      },
+      "static_certificate": null,
+      "kind": "witness_snapshot",
+      "tier_refs": [
+        "runtime:browser.t1.o1:4:tier:0",
+        "runtime:browser.t1.o1:4:tier:1"
+      ],
+      "selected_tier_ref": "runtime:browser.t1.o1:4:tier:1",
+      "artifact_visibility": "not_attached_to_s5"
+    },
+    "runtime:browser.t1.o1:5:tier:0": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H6",
+      "execution_identity": "runtime:browser.t1.o1:5",
+      "tier": "T1",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "node_execution",
+      "errors": []
+    },
+    "runtime:browser.t1.o1:5:tier:1": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H6",
+      "execution_identity": "runtime:browser.t1.o1:5",
+      "tier": "T2",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "pinned_chromium_scene",
+      "errors": []
+    },
+    "runtime:browser.t1.o1:5": {
+      "id": "H6",
+      "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+      "symbol_exists": true,
+      "instrumented_line": 1,
+      "static_reachable": null,
+      "coverage": {
+        "complete": false,
+        "scenarios": 1,
+        "reason": "single_issue_reproducer_is_not_exhaustive"
+      },
+      "static_certificate": null,
+      "kind": "witness_snapshot",
+      "tier_refs": [
+        "runtime:browser.t1.o1:5:tier:0",
+        "runtime:browser.t1.o1:5:tier:1"
+      ],
+      "selected_tier_ref": "runtime:browser.t1.o1:5:tier:1",
+      "artifact_visibility": "not_attached_to_s5"
+    },
+    "runtime:browser.t1.o1:6:tier:0": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H7",
+      "execution_identity": "runtime:browser.t1.o1:6",
+      "tier": "T1",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "node_execution",
+      "errors": []
+    },
+    "runtime:browser.t1.o1:6:tier:1": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H7",
+      "execution_identity": "runtime:browser.t1.o1:6",
+      "tier": "T2",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "pinned_chromium_scene",
+      "errors": []
+    },
+    "runtime:browser.t1.o1:6": {
+      "id": "H7",
+      "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+      "symbol_exists": true,
+      "instrumented_line": 1,
+      "static_reachable": null,
+      "coverage": {
+        "complete": false,
+        "scenarios": 1,
+        "reason": "single_issue_reproducer_is_not_exhaustive"
+      },
+      "static_certificate": null,
+      "kind": "witness_snapshot",
+      "tier_refs": [
+        "runtime:browser.t1.o1:6:tier:0",
+        "runtime:browser.t1.o1:6:tier:1"
+      ],
+      "selected_tier_ref": "runtime:browser.t1.o1:6:tier:1",
+      "artifact_visibility": "not_attached_to_s5"
+    },
+    "runtime:browser.t1.o1:7:tier:0": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H8",
+      "execution_identity": "runtime:browser.t1.o1:7",
+      "tier": "T1",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "node_execution",
+      "errors": []
+    },
+    "runtime:browser.t1.o1:7:tier:1": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H8",
+      "execution_identity": "runtime:browser.t1.o1:7",
+      "tier": "T2",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "pinned_chromium_scene",
+      "errors": []
+    },
+    "runtime:browser.t1.o1:7": {
+      "id": "H8",
+      "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+      "symbol_exists": true,
+      "instrumented_line": 1,
+      "static_reachable": null,
+      "coverage": {
+        "complete": false,
+        "scenarios": 1,
+        "reason": "single_issue_reproducer_is_not_exhaustive"
+      },
+      "static_certificate": null,
+      "kind": "witness_snapshot",
+      "tier_refs": [
+        "runtime:browser.t1.o1:7:tier:0",
+        "runtime:browser.t1.o1:7:tier:1"
+      ],
+      "selected_tier_ref": "runtime:browser.t1.o1:7:tier:1",
+      "artifact_visibility": "not_attached_to_s5"
+    },
+    "tool:browser.t1.o1": {
+      "kind": "tool_observation",
+      "agent": "browser",
+      "evidence_id": "browser.t1.o1",
+      "tool_name": "reproduce",
+      "ok": true,
+      "request": {
+        "actions": [
+          {
+            "kind": "dom",
+            "target": "#probe-log",
+            "value": ""
+          },
+          {
+            "kind": "dom",
+            "target": "#highlight-html",
+            "value": ""
+          },
+          {
+            "kind": "dom",
+            "target": "#token-dump",
+            "value": ""
+          },
+          {
+            "kind": "screenshot",
+            "target": "",
+            "value": ""
+          }
+        ]
+      },
+      "scene_ref": "tool:browser.t1.o1",
+      "runtime_session_identity": "not_provided",
+      "failed_action": "unknown",
+      "scenario": {
+        "profile": "PrismJS/prism",
+        "entry": "prism.js",
+        "node_script": "var Prism = require('./prism.js');\nif (!global.Prism) { global.Prism = Prism; }\nrequire('./components/prism-json.js');\nvar out = {};\nvar s1 = '{\"Accept\":\"*/*\"}';\nvar m1 = Prism.languages.json['comment'].exec(s1);\nout.H1 = m1 ? m1[0] : null;\nvar keys = Object.keys(Prism.languages.json);\nout.key_order = keys.join(',');\nout.H2 = keys.indexOf('comment') < keys.indexOf('string');\nvar sm = Prism.languages.json['string'].pattern.exec(s1);\nout.H3 = sm ? sm[0] : null;\nfunction plain(tokens) { return tokens.map(function (t) { return (typeof t === 'string') ? t : { type: t.type, content: t.content }; }); }\nout.H4 = JSON.stringify(plain(Prism.tokenize(s1, Prism.languages.json)));\nvar s5 = '{\"A\":\"/*\",\"B\":\"B\",\"C\":\"C\"}';\nout.H5 = Prism.tokenize(s5, Prism.languages.json).some(function (t) { return t && t.type === 'comment' && JSON.stringify(t.content).indexOf('B') !== -1; });\nout.H6 = Prism.highlight(s5, Prism.languages.json, 'json');\nout.H7 = [Prism.languages.json['string'].pattern.exec(s5).index, Prism.languages.json['comment'].exec(s5).index];\nout.H8 = String(Prism.languages.json['comment'].lookbehind);\nout.comment_source = String(Prism.languages.json['comment']);\nout.string_source = String(Prism.languages.json['string'].pattern);\nconsole.log('PROBE_RESULT ' + JSON.stringify(out, null, 1));\n",
+        "browser_script": "(function () {\n  var log = [];\n  function note(m) { log.push(m); }\n  note('Prism global: ' + (typeof window.Prism !== 'undefined'));\n  note('json lang before: ' + !!(window.Prism && Prism.languages && Prism.languages.json));\n  if (window.Prism && !(Prism.languages && Prism.languages.json)) {\n    try {\n      var xhr = new XMLHttpRequest();\n      xhr.open('GET', 'components/prism-json.js', false);\n      xhr.send(null);\n      if (xhr.status === 200 || xhr.status === 0) {\n        (new Function(xhr.responseText))();\n        note('loaded components/prism-json.js via sync XHR: ' + !!Prism.languages.json);\n      } else {\n        note('xhr status ' + xhr.status);\n      }\n    } catch (e) { note('xhr error: ' + e.message); }\n  }\n  var nl = String.fromCharCode(10);\n  var src = ['{', '  \"A\": \"/*\",', '  \"B\": \"B\",', '  \"C\": \"C\"', '}'].join(nl);\n  var pre = document.createElement('pre');\n  var code = document.createElement('code');\n  code.className = 'language-json';\n  code.textContent = src;\n  pre.appendChild(code);\n  document.body.appendChild(pre);\n  if (window.Prism && Prism.languages && Prism.languages.json) {\n    Prism.highlightElement(code);\n    note('highlightElement done');\n    var html = document.createElement('pre');\n    html.id = 'highlight-html';\n    html.textContent = code.innerHTML;\n    document.body.appendChild(html);\n    var toks = Prism.tokenize(src, Prism.languages.json).map(function (t) {\n      return (typeof t === 'string') ? { text: t } : { type: t.type, content: t.content };\n    });\n    var tokEl = document.createElement('pre');\n    tokEl.id = 'token-dump';\n    tokEl.textContent = JSON.stringify(toks);\n    document.body.appendChild(tokEl);\n  } else {\n    note('json language unavailable in page');\n  }\n  var m = document.createElement('pre');\n  m.id = 'probe-log';\n  m.textContent = log.join(' | ');\n  document.body.appendChild(m);\n  document.title = 'json-comment-probe';\n})();\n",
+        "build_command": []
+      },
+      "build": {
+        "reason": "no_build_declared",
+        "returncode": 0,
+        "entry_exists": true
+      },
+      "node": {
+        "ok": true,
+        "reason": "node_execution",
+        "state": {
+          "events": [
+            {
+              "id": "H8",
+              "value": {
+                "type": "undefined"
+              },
+              "read_succeeded": true
+            },
+            {
+              "id": "H7",
+              "value": {
+                "type": "undefined"
+              },
+              "read_succeeded": true
+            },
+            {
+              "id": "H6",
+              "value": {
+                "type": "undefined"
+              },
+              "read_succeeded": true
+            },
+            {
+              "id": "H5",
+              "value": {
+                "type": "undefined"
+              },
+              "read_succeeded": true
+            },
+            {
+              "id": "H4",
+              "value": {
+                "type": "undefined"
+              },
+              "read_succeeded": true
+            },
+            {
+              "id": "H3",
+              "value": {
+                "type": "undefined"
+              },
+              "read_succeeded": true
+            },
+            {
+              "id": "H2",
+              "value": {
+                "type": "undefined"
+              },
+              "read_succeeded": true
+            },
+            {
+              "id": "H1",
+              "value": {
+                "type": "undefined"
+              },
+              "read_succeeded": true
+            }
+          ],
+          "loaded": [
+            "components/prism-json.js"
+          ],
+          "scenario_complete": true,
+          "errors": [],
+          "seed": 42
+        },
+        "process": {
+          "returncode": 0,
+          "command": [
+            "/opt/node/bin/node",
+            "/scratch/runtime/cg-runtime-7zxfr03o/.cg_node.cjs"
+          ]
+        }
+      },
+      "browser": {
+        "ok": true,
+        "reason": "browser_actions",
+        "state": {
+          "events": [
+            {
+              "id": "H8",
+              "value": {
+                "type": "undefined"
+              },
+              "read_succeeded": true
+            },
+            {
+              "id": "H7",
+              "value": {
+                "type": "undefined"
+              },
+              "read_succeeded": true
+            },
+            {
+              "id": "H6",
+              "value": {
+                "type": "undefined"
+              },
+              "read_succeeded": true
+            },
+            {
+              "id": "H5",
+              "value": {
+                "type": "undefined"
+              },
+              "read_succeeded": true
+            },
+            {
+              "id": "H4",
+              "value": {
+                "type": "undefined"
+              },
+              "read_succeeded": true
+            },
+            {
+              "id": "H3",
+              "value": {
+                "type": "undefined"
+              },
+              "read_succeeded": true
+            },
+            {
+              "id": "H2",
+              "value": {
+                "type": "undefined"
+              },
+              "read_succeeded": true
+            },
+            {
+              "id": "H1",
+              "value": {
+                "type": "undefined"
+              },
+              "read_succeeded": true
+            }
+          ],
+          "loaded": [
+            "components/prism-json.js"
+          ],
+          "scenario_complete": true,
+          "errors": [],
+          "seed": 42,
+          "console": [],
+          "canvas_count": 0,
+          "body_text": "{\n  \"A\": \"/*\",\n  \"B\": \"B\",\n  \"C\": \"C\"\n}\n<span class=\"token punctuation\">{</span>\n  <span class=\"token property\">\"A\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"/*\"</span><s",
+          "dom_elements": 16
+        },
+        "completed_actions": [
+          {
+            "kind": "open",
+            "target": "",
+            "value": ""
+          },
+          {
+            "kind": "dom",
+            "target": "#probe-log",
+            "value": ""
+          },
+          {
+            "kind": "dom",
+            "target": "#highlight-html",
+            "value": ""
+          },
+          {
+            "kind": "dom",
+            "target": "#token-dump",
+            "value": ""
+          },
+          {
+            "kind": "screenshot",
+            "target": "",
+            "value": ""
+          }
+        ],
+        "query": [
+          {
+            "tag": "PRE",
+            "text": "[{\"type\":\"punctuation\",\"content\":\"{\"},{\"text\":\"\\n  \"},{\"type\":\"property\",\"content\":\"\\\"A\\\"\"},{\"type\":\"operator\",\"content\":\":\"},{\"text\":\" \"},{\"type\":\"string\",\"content\":\"\\\"/*\\\"\"},{\"type\":\"punctuation\",\"content\":\",\"},{\"text\":\"\\n  \"},{\"type\":\"property\",\"content\":\"\\\"B\\\"\"},{\"type\":\"operator\",\"content\":\":\"},{\"text\":\" \"},{\"type\":\"string\",\"content\":\"\\\"B\\\"\"},{\"type\":\"punctuation\",\"content\":\",\"},{\"text\":\"\\n  \\\"C\"},{\"type\":\"string\",\"content\":\"\\\": \\\"\"},{\"text\":\"C\\\"\\n\"},{\"type\":\"punctuation\",\"content\":\"}\"}]",
+            "value": null,
+            "html": "<pre id=\"token-dump\">[{\"type\":\"punctuation\",\"content\":\"{\"},{\"text\":\"\\n  \"},{\"type\":\"property\",\"content\":\"\\\"A\\\"\"},{\"type\":\"operator\",\"content\":\":\"},{\"text\":\" \"},{\"type\":\"string\",\"content\":\"\\\"/*\\\"\"},{\"type\":\"punctuation\",\"content\":\",\"},{\"text\":\"\\n  \"},{\"type\":\"property\",\"content\":\"\\\"B\\\"\"},{\"type\":\"operator\",\"content\":\":\"},{\"text\":\" \"},{\"type\":\"string\",\"content\":\"\\\"B\\\"\"},{\"type\":\"punctuation\",\"content\":\",\"},{\"text\":\"\\n  \\\"C\"},{\"type\":\"string\",\"content\":\"\\\": \\\"\"},{\"text\":\"C\\\"\\n\"},{\"type\":\"punctuation\",\"content\":\"}\"}]</pre>"
+          }
+        ],
+        "dom": "{\n  \"A\": \"/*\",\n  \"B\": \"B\",\n  \"C\": \"C\"\n}\n<span class=\"token punctuation\">{</span>\n  <span class=\"token property\">\"A\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"/*\"</span><span class=\"token punctuation\">,</span>\n  <span class=\"token property\">\"B\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"B\"</span><span class=\"token punctuation\">,</span>\n  \"C<span class=\"token string\">\": \"</span>C\"\n<span class=\"token punctuation\">}</span>\n[{\"type\":\"punctuation\",\"content\":\"{\"},{\"text\":\"\\n  \"},{\"type\":\"property\",\"content\":\"\\\"A\\\"\"},{\"type\":\"operator\",\"content\":\":\"},{\"text\":\" \"},{\"type\":\"string\",\"content\":\"\\\"/*\\\"\"},{\"type\":\"punctuation\",\"content\":\",\"},{\"text\":\"\\n  \"},{\"type\":\"property\",\"content\":\"\\\"B\\\"\"},{\"type\":\"operator\",\"content\":\":\"},{\"text\":\" \"},{\"type\":\"string\",\"content\":\"\\\"B\\\"\"},{\"type\":\"punctuation\",\"content\":\",\"},{\"text\":\"\\n  \\\"C\"},{\"type\":\"string\",\"content\":\"\\\": \\\"\"},{\"text\":\"C\\\"\\n\"},{\"type\":\"punctuation\",\"content\":\"}\"}]\nPrism global: true | json lang before: false | loaded components/prism-json.js via sync XHR: true | highlightElement done",
+        "actual_scene": true,
+        "stderr": "",
+        "process": {
+          "returncode": 0,
+          "command": [
+            "/home/ubuntu/anaconda3/envs/pyy/paper/TraceRepair/releases/isolation_20260907/.venv/bin/python",
+            "/task/trajectory/agents/browser/turn_01/tool_01/browser/actions.py",
+            "/task/trajectory/agents/browser/turn_01/tool_01/browser/request.json"
+          ]
+        }
+      },
+      "node_stderr": "",
+      "witness_refs": [
+        "runtime:browser.t1.o1:0",
+        "runtime:browser.t1.o1:1",
+        "runtime:browser.t1.o1:2",
+        "runtime:browser.t1.o1:3",
+        "runtime:browser.t1.o1:4",
+        "runtime:browser.t1.o1:5",
+        "runtime:browser.t1.o1:6",
+        "runtime:browser.t1.o1:7"
+      ],
+      "runtime_image_attached_to_s5": false
+    },
+    "runtime:browser.t2.o1:0:tier:0": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H1",
+      "execution_identity": "runtime:browser.t2.o1:0",
+      "tier": "T1",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "node_execution",
+      "errors": []
+    },
+    "runtime:browser.t2.o1:0:tier:1": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H1",
+      "execution_identity": "runtime:browser.t2.o1:0",
+      "tier": "T2",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "pinned_chromium_scene",
+      "errors": []
+    },
+    "runtime:browser.t2.o1:0": {
+      "id": "H1",
+      "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+      "symbol_exists": true,
+      "instrumented_line": 1,
+      "static_reachable": null,
+      "coverage": {
+        "complete": false,
+        "scenarios": 1,
+        "reason": "single_issue_reproducer_is_not_exhaustive"
+      },
+      "static_certificate": null,
+      "kind": "witness_snapshot",
+      "tier_refs": [
+        "runtime:browser.t2.o1:0:tier:0",
+        "runtime:browser.t2.o1:0:tier:1"
+      ],
+      "selected_tier_ref": "runtime:browser.t2.o1:0:tier:1",
+      "artifact_visibility": "not_attached_to_s5"
+    },
+    "runtime:browser.t2.o1:1:tier:0": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H2",
+      "execution_identity": "runtime:browser.t2.o1:1",
+      "tier": "T1",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "node_execution",
+      "errors": []
+    },
+    "runtime:browser.t2.o1:1:tier:1": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H2",
+      "execution_identity": "runtime:browser.t2.o1:1",
+      "tier": "T2",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "pinned_chromium_scene",
+      "errors": []
+    },
+    "runtime:browser.t2.o1:1": {
+      "id": "H2",
+      "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+      "symbol_exists": true,
+      "instrumented_line": 1,
+      "static_reachable": null,
+      "coverage": {
+        "complete": false,
+        "scenarios": 1,
+        "reason": "single_issue_reproducer_is_not_exhaustive"
+      },
+      "static_certificate": null,
+      "kind": "witness_snapshot",
+      "tier_refs": [
+        "runtime:browser.t2.o1:1:tier:0",
+        "runtime:browser.t2.o1:1:tier:1"
+      ],
+      "selected_tier_ref": "runtime:browser.t2.o1:1:tier:1",
+      "artifact_visibility": "not_attached_to_s5"
+    },
+    "runtime:browser.t2.o1:2:tier:0": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H3",
+      "execution_identity": "runtime:browser.t2.o1:2",
+      "tier": "T1",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "node_execution",
+      "errors": []
+    },
+    "runtime:browser.t2.o1:2:tier:1": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H3",
+      "execution_identity": "runtime:browser.t2.o1:2",
+      "tier": "T2",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "pinned_chromium_scene",
+      "errors": []
+    },
+    "runtime:browser.t2.o1:2": {
+      "id": "H3",
+      "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+      "symbol_exists": true,
+      "instrumented_line": 1,
+      "static_reachable": null,
+      "coverage": {
+        "complete": false,
+        "scenarios": 1,
+        "reason": "single_issue_reproducer_is_not_exhaustive"
+      },
+      "static_certificate": null,
+      "kind": "witness_snapshot",
+      "tier_refs": [
+        "runtime:browser.t2.o1:2:tier:0",
+        "runtime:browser.t2.o1:2:tier:1"
+      ],
+      "selected_tier_ref": "runtime:browser.t2.o1:2:tier:1",
+      "artifact_visibility": "not_attached_to_s5"
+    },
+    "runtime:browser.t2.o1:3:tier:0": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H4",
+      "execution_identity": "runtime:browser.t2.o1:3",
+      "tier": "T1",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "node_execution",
+      "errors": []
+    },
+    "runtime:browser.t2.o1:3:tier:1": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H4",
+      "execution_identity": "runtime:browser.t2.o1:3",
+      "tier": "T2",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "pinned_chromium_scene",
+      "errors": []
+    },
+    "runtime:browser.t2.o1:3": {
+      "id": "H4",
+      "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+      "symbol_exists": true,
+      "instrumented_line": 1,
+      "static_reachable": null,
+      "coverage": {
+        "complete": false,
+        "scenarios": 1,
+        "reason": "single_issue_reproducer_is_not_exhaustive"
+      },
+      "static_certificate": null,
+      "kind": "witness_snapshot",
+      "tier_refs": [
+        "runtime:browser.t2.o1:3:tier:0",
+        "runtime:browser.t2.o1:3:tier:1"
+      ],
+      "selected_tier_ref": "runtime:browser.t2.o1:3:tier:1",
+      "artifact_visibility": "not_attached_to_s5"
+    },
+    "runtime:browser.t2.o1:4:tier:0": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H5",
+      "execution_identity": "runtime:browser.t2.o1:4",
+      "tier": "T1",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "node_execution",
+      "errors": []
+    },
+    "runtime:browser.t2.o1:4:tier:1": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H5",
+      "execution_identity": "runtime:browser.t2.o1:4",
+      "tier": "T2",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "pinned_chromium_scene",
+      "errors": []
+    },
+    "runtime:browser.t2.o1:4": {
+      "id": "H5",
+      "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+      "symbol_exists": true,
+      "instrumented_line": 1,
+      "static_reachable": null,
+      "coverage": {
+        "complete": false,
+        "scenarios": 1,
+        "reason": "single_issue_reproducer_is_not_exhaustive"
+      },
+      "static_certificate": null,
+      "kind": "witness_snapshot",
+      "tier_refs": [
+        "runtime:browser.t2.o1:4:tier:0",
+        "runtime:browser.t2.o1:4:tier:1"
+      ],
+      "selected_tier_ref": "runtime:browser.t2.o1:4:tier:1",
+      "artifact_visibility": "not_attached_to_s5"
+    },
+    "runtime:browser.t2.o1:5:tier:0": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H6",
+      "execution_identity": "runtime:browser.t2.o1:5",
+      "tier": "T1",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "node_execution",
+      "errors": []
+    },
+    "runtime:browser.t2.o1:5:tier:1": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H6",
+      "execution_identity": "runtime:browser.t2.o1:5",
+      "tier": "T2",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "pinned_chromium_scene",
+      "errors": []
+    },
+    "runtime:browser.t2.o1:5": {
+      "id": "H6",
+      "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+      "symbol_exists": true,
+      "instrumented_line": 1,
+      "static_reachable": null,
+      "coverage": {
+        "complete": false,
+        "scenarios": 1,
+        "reason": "single_issue_reproducer_is_not_exhaustive"
+      },
+      "static_certificate": null,
+      "kind": "witness_snapshot",
+      "tier_refs": [
+        "runtime:browser.t2.o1:5:tier:0",
+        "runtime:browser.t2.o1:5:tier:1"
+      ],
+      "selected_tier_ref": "runtime:browser.t2.o1:5:tier:1",
+      "artifact_visibility": "not_attached_to_s5"
+    },
+    "runtime:browser.t2.o1:6:tier:0": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H7",
+      "execution_identity": "runtime:browser.t2.o1:6",
+      "tier": "T1",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "node_execution",
+      "errors": []
+    },
+    "runtime:browser.t2.o1:6:tier:1": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H7",
+      "execution_identity": "runtime:browser.t2.o1:6",
+      "tier": "T2",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "pinned_chromium_scene",
+      "errors": []
+    },
+    "runtime:browser.t2.o1:6": {
+      "id": "H7",
+      "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+      "symbol_exists": true,
+      "instrumented_line": 1,
+      "static_reachable": null,
+      "coverage": {
+        "complete": false,
+        "scenarios": 1,
+        "reason": "single_issue_reproducer_is_not_exhaustive"
+      },
+      "static_certificate": null,
+      "kind": "witness_snapshot",
+      "tier_refs": [
+        "runtime:browser.t2.o1:6:tier:0",
+        "runtime:browser.t2.o1:6:tier:1"
+      ],
+      "selected_tier_ref": "runtime:browser.t2.o1:6:tier:1",
+      "artifact_visibility": "not_attached_to_s5"
+    },
+    "runtime:browser.t2.o1:7:tier:0": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H8",
+      "execution_identity": "runtime:browser.t2.o1:7",
+      "tier": "T1",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "node_execution",
+      "errors": []
+    },
+    "runtime:browser.t2.o1:7:tier:1": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H8",
+      "execution_identity": "runtime:browser.t2.o1:7",
+      "tier": "T2",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "pinned_chromium_scene",
+      "errors": []
+    },
+    "runtime:browser.t2.o1:7": {
+      "id": "H8",
+      "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+      "symbol_exists": true,
+      "instrumented_line": 1,
+      "static_reachable": null,
+      "coverage": {
+        "complete": false,
+        "scenarios": 1,
+        "reason": "single_issue_reproducer_is_not_exhaustive"
+      },
+      "static_certificate": null,
+      "kind": "witness_snapshot",
+      "tier_refs": [
+        "runtime:browser.t2.o1:7:tier:0",
+        "runtime:browser.t2.o1:7:tier:1"
+      ],
+      "selected_tier_ref": "runtime:browser.t2.o1:7:tier:1",
+      "artifact_visibility": "not_attached_to_s5"
+    },
+    "tool:browser.t2.o1": {
+      "kind": "tool_observation",
+      "agent": "browser",
+      "evidence_id": "browser.t2.o1",
+      "tool_name": "reproduce",
+      "ok": true,
+      "request": {
+        "actions": [
+          {
+            "kind": "dom",
+            "target": "#probe",
+            "value": ""
+          },
+          {
+            "kind": "screenshot",
+            "target": "",
+            "value": ""
+          }
+        ]
+      },
+      "scene_ref": "tool:browser.t2.o1",
+      "runtime_session_identity": "not_provided",
+      "failed_action": "unknown",
+      "scenario": {
+        "profile": "PrismJS/prism",
+        "entry": "prism.js",
+        "node_script": "var Prism = require('./prism.js'); if (!global.Prism) { global.Prism = Prism; } require('./components/prism-json.js'); console.log('NODE keys=' + Object.keys(Prism.languages.json).join(',') + ' COMMENT=' + String(Prism.languages.json['comment']) + ' EXEC=' + String(Prism.languages.json['comment'].exec('{\"A\":\"/*\",\"B\":\"B\",\"C\":\"C\"}')))",
+        "browser_script": "(function () { function pre(id, text) { var p = document.createElement('pre'); p.id = id; p.textContent = text; document.body.appendChild(p); return p; } if (!window.Prism) { pre('probe', 'NO_PRISM'); return; } var notes = []; if (!(Prism.languages && Prism.languages.json)) { try { var xhr = new XMLHttpRequest(); xhr.open('GET', 'components/prism-json.js', false); xhr.send(null); (new Function(xhr.responseText))(); notes.push('json loaded via XHR'); } catch (e) { notes.push('load error: ' + e.message); } } else { notes.push('json already present'); } var j = Prism.languages.json; var s1 = '{\"Accept\":\"*/*\"}'; var s2 = '{\"A\":\"/*\",\"B\":\"B\",\"C\":\"C\"}'; var cre = (j['comment'] && j['comment'].pattern) ? j['comment'].pattern : j['comment']; var sre = (j['string'] && j['string'].pattern) ? j['string'].pattern : j['string']; function exec(re, s) { re.lastIndex = 0; var m = re.exec(s); return m ? { index: m.index, text: m[0] } : null; } function dump(s) { var toks = Prism.tokenize(s, j); var out = []; var pos = 0; for (var i = 0; i < toks.length; i++) { var t = toks[i]; var content = (typeof t === 'string') ? t : t.content; var type = (typeof t === 'string') ? 'text' : t.type; out.push({ type: type, content: content, start: pos, end: pos + content.length }); pos += content.length; } return out; } function hasComment(s) { return Prism.tokenize(s, j).some(function (t) { return t && t.type === 'comment'; }); } function types(s) { return Prism.tokenize(s, j).map(function (t) { return (typeof t === 'string') ? 'text' : t.type; }).join('|'); } var out = {}; out.notes = notes; out.keys = Object.keys(j).join(','); out.comment_source = String(j['comment']); out.comment_is_regexp = (j['comment'] instanceof RegExp); out.comment_lookbehind = !!j['comment'].lookbehind; out.property_source = String(j['property'] && j['property'].pattern ? j['property'].pattern : j['property']); out.property_greedy = !!(j['property'] && j['property'].greedy); out.string_source = String(sre); out.string_greedy = !!(j['string'] && j['string'].greedy); out.string_lookbehind = !!j['string'].lookbehind; out.H2 = Object.keys(j).indexOf('comment') < Object.keys(j).indexOf('string'); out.H1 = exec(cre, s1); out.comment_on_s2 = exec(cre, s2); out.H3 = exec(sre, s1); out.H7 = [exec(sre, s2).index, exec(cre, s2).index]; out.H8 = !!j['comment'].lookbehind; out.H4 = types(s1); out.H5 = Prism.tokenize(s2, j).some(function (t) { return t && t.type === 'comment' && String(t.content).indexOf('B') !== -1; }); out.has_comment_s1 = hasComment(s1); out.has_comment_s2 = hasComment(s2); out.tokens_s1 = dump(s1); out.tokens_s2 = dump(s2); out.H6 = Prism.highlight(s2, j, 'json'); out.control_only_C = dump('{\"C\":\"C\"}'); out.control_x_then_C = dump('{\"A\":\"x\",\"C\":\"C\"}'); out.control_slash_then_C = dump('{\"A\":\"/*\",\"C\":\"C\"}'); out.real_line_comment = dump('{\"a\": 1} // tail'); out.real_block_comment = dump('{\"a\": 1} /* block */'); pre('probe', JSON.stringify(out)); document.title = 'probe-done'; })();",
+        "build_command": []
+      },
+      "build": {
+        "reason": "no_build_declared",
+        "returncode": 0,
+        "entry_exists": true
+      },
+      "node": {
+        "ok": true,
+        "reason": "node_execution",
+        "state": {
+          "events": [
+            {
+              "id": "H8",
+              "value": {
+                "type": "undefined"
+              },
+              "read_succeeded": true
+            },
+            {
+              "id": "H7",
+              "value": {
+                "type": "undefined"
+              },
+              "read_succeeded": true
+            },
+            {
+              "id": "H6",
+              "value": {
+                "type": "undefined"
+              },
+              "read_succeeded": true
+            },
+            {
+              "id": "H5",
+              "value": {
+                "type": "undefined"
+              },
+              "read_succeeded": true
+            },
+            {
+              "id": "H4",
+              "value": {
+                "type": "undefined"
+              },
+              "read_succeeded": true
+            },
+            {
+              "id": "H3",
+              "value": {
+                "type": "undefined"
+              },
+              "read_succeeded": true
+            },
+            {
+              "id": "H2",
+              "value": {
+                "type": "undefined"
+              },
+              "read_succeeded": true
+            },
+            {
+              "id": "H1",
+              "value": {
+                "type": "undefined"
+              },
+              "read_succeeded": true
+            }
+          ],
+          "loaded": [
+            "components/prism-json.js"
+          ],
+          "scenario_complete": true,
+          "errors": [],
+          "seed": 42
+        },
+        "process": {
+          "returncode": 0,
+          "command": [
+            "/opt/node/bin/node",
+            "/scratch/runtime/cg-runtime-_r7n9msu/.cg_node.cjs"
+          ]
+        }
+      },
+      "browser": {
+        "ok": true,
+        "reason": "browser_actions",
+        "state": {
+          "events": [
+            {
+              "id": "H8",
+              "value": {
+                "type": "undefined"
+              },
+              "read_succeeded": true
+            },
+            {
+              "id": "H7",
+              "value": {
+                "type": "undefined"
+              },
+              "read_succeeded": true
+            },
+            {
+              "id": "H6",
+              "value": {
+                "type": "undefined"
+              },
+              "read_succeeded": true
+            },
+            {
+              "id": "H5",
+              "value": {
+                "type": "undefined"
+              },
+              "read_succeeded": true
+            },
+            {
+              "id": "H4",
+              "value": {
+                "type": "undefined"
+              },
+              "read_succeeded": true
+            },
+            {
+              "id": "H3",
+              "value": {
+                "type": "undefined"
+              },
+              "read_succeeded": true
+            },
+            {
+              "id": "H2",
+              "value": {
+                "type": "undefined"
+              },
+              "read_succeeded": true
+            },
+            {
+              "id": "H1",
+              "value": {
+                "type": "undefined"
+              },
+              "read_succeeded": true
+            }
+          ],
+          "loaded": [
+            "components/prism-json.js"
+          ],
+          "scenario_complete": true,
+          "errors": [],
+          "seed": 42,
+          "console": [],
+          "canvas_count": 0,
+          "body_text": "{\"notes\":[\"json loaded via XHR\"],\"keys\":\"comment,property,string,number,punctuation,operator,boolean,null\",\"comment_source\":\"/\\\\/\\\\/.*|\\\\/\\\\*[\\\\s\\\\S]*?(?:\\\\*\\\\/|$)/\",\"comment_is_regexp\":true,\"comment_",
+          "dom_elements": 1
+        },
+        "completed_actions": [
+          {
+            "kind": "open",
+            "target": "",
+            "value": ""
+          },
+          {
+            "kind": "dom",
+            "target": "#probe",
+            "value": ""
+          },
+          {
+            "kind": "screenshot",
+            "target": "",
+            "value": ""
+          }
+        ],
+        "query": [
+          {
+            "tag": "PRE",
+            "text": "{\"notes\":[\"json loaded via XHR\"],\"keys\":\"comment,property,string,number,punctuation,operator,boolean,null\",\"comment_source\":\"/\\\\/\\\\/.*|\\\\/\\\\*[\\\\s\\\\S]*?(?:\\\\*\\\\/|$)/\",\"comment_is_regexp\":true,\"comment_lookbehind\":false,\"property_source\":\"/\\\"(?:\\\\\\\\.|[^\\\\\\\\\\\"\\\\r\\\\n])*\\\"(?=\\\\s*:)/\",\"property_greedy\":true,\"string_source\":\"/\\\"(?:\\\\\\\\.|[^\\\\\\\\\\\"\\\\r\\\\n])*\\\"(?!\\\\s*:)/\",\"string_greedy\":true,\"string_lookbehind\":false,\"H2\":true,\"H1\":{\"index\":12,\"text\":\"/*\\\"}\"},\"comment_on_s2\":{\"index\":6,\"text\":\"/*\\\",\\\"B\\\":\\\"B\\\",\\\"C\\\":\\\"C\\\"}\"},\"H3\":{\"index\":8,\"text\":\"\\\":\\\"\"},\"H7\":[3,6],\"H8\":false,\"H4\":\"punctuation|property|operator|string|punctuation\",\"H5\":false,\"has_comment_s1\":false,\"has_comment_s2\":false,\"tokens_s1\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"Accept\\\"\",\"start\":1,\"end\":9},{\"type\":\"operator\",\"content\":\":\",\"start\":9,\"end\":10},{\"type\":\"string\",\"content\":\"\\\"*/*\\\"\",\"start\":10,\"end\":15},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":15,\"end\":16}],\"tokens_s2\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"A\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"string\",\"content\":\"\\\"/*\\\"\",\"start\":5,\"end\":9},{\"type\":\"punctuation\",\"content\":\",\",\"start\":9,\"end\":10},{\"type\":\"property\",\"content\":\"\\\"B\\\"\",\"start\":10,\"end\":13},{\"type\":\"operator\",\"content\":\":\",\"start\":13,\"end\":14},{\"type\":\"string\",\"content\":\"\\\"B\\\"\",\"start\":14,\"end\":17},{\"type\":\"punctuation\",\"content\":\",\",\"start\":17,\"end\":18},{\"type\":\"text\",\"content\":\"\\\"C\",\"start\":18,\"end\":20},{\"type\":\"string\",\"content\":\"\\\":\\\"\",\"start\":20,\"end\":23},{\"type\":\"text\",\"content\":\"C\\\"\",\"start\":23,\"end\":25},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":25,\"end\":26}],\"H6\":\"<span class=\\\"token punctuation\\\">{</span><span class=\\\"token property\\\">\\\"A\\\"</span><span class=\\\"token operator\\\">:</span><span class=\\\"token string\\\">\\\"/*\\\"</span><span class=\\\"token punctuation\\\">,</span><span class=\\\"token property\\\">\\\"B\\\"</span><span class=\\\"token operator\\\">:</span><span class=\\\"token string\\\">\\\"B\\\"</span><span class=\\\"token punctuation\\\">,</span>\\\"C<span class=\\\"token string\\\">\\\":\\\"</span>C\\\"<span class=\\\"token punctuation\\\">}</span>\",\"control_only_C\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"C\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"string\",\"content\":\"\\\"C\\\"\",\"start\":5,\"end\":8},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":8,\"end\":9}],\"control_x_then_C\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"A\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"string\",\"content\":\"\\\"x\\\"\",\"start\":5,\"end\":8},{\"type\":\"punctuation\",\"content\":\",\",\"start\":8,\"end\":9},{\"type\":\"property\",\"content\":\"\\\"C\\\"\",\"start\":9,\"end\":12},{\"type\":\"operator\",\"content\":\":\",\"start\":12,\"end\":13},{\"type\":\"string\",\"content\":\"\\\"C\\\"\",\"start\":13,\"end\":16},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":16,\"end\":17}],\"control_slash_then_C\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"A\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"string\",\"content\":\"\\\"/*\\\"\",\"start\":5,\"end\":9},{\"type\":\"punctuation\",\"content\":\",\",\"start\":9,\"end\":10},{\"type\":\"property\",\"content\":\"\\\"C\\\"\",\"start\":10,\"end\":13},{\"type\":\"operator\",\"content\":\":\",\"start\":13,\"end\":14},{\"type\":\"string\",\"content\":\"\\\"C\\\"\",\"start\":14,\"end\":17},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":17,\"end\":18}],\"real_line_comment\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"a\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"text\",\"content\":\" \",\"start\":5,\"end\":6},{\"type\":\"number\",\"content\":\"1\",\"start\":6,\"end\":7},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":7,\"end\":8},{\"type\":\"text\",\"content\":\" \",\"start\":8,\"end\":9},{\"type\":\"comment\",\"content\":\"// tail\",\"start\":9,\"end\":16}],\"real_block_comment\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"a\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"text\",\"content\":\" \",\"start\":5,\"end\":6},{\"type\":\"number\",\"content\":\"1\",\"start\":6,\"end\":7},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":7,\"end\":8},{\"type\":\"text\",\"content\":\" \",\"start\":8,\"end\":9},{\"type\":\"comment\",\"content\":\"/* block */\",\"start\":9,\"end\":20}]}",
+            "value": null,
+            "html": "<pre id=\"probe\">{\"notes\":[\"json loaded via XHR\"],\"keys\":\"comment,property,string,number,punctuation,operator,boolean,null\",\"comment_source\":\"/\\\\/\\\\/.*|\\\\/\\\\*[\\\\s\\\\S]*?(?:\\\\*\\\\/|$)/\",\"comment_is_regexp\":true,\"comment_lookbehind\":false,\"property_source\":\"/\\\"(?:\\\\\\\\.|[^\\\\\\\\\\\"\\\\r\\\\n])*\\\"(?=\\\\s*:)/\",\"property_greedy\":true,\"string_source\":\"/\\\"(?:\\\\\\\\.|[^\\\\\\\\\\\"\\\\r\\\\n])*\\\"(?!\\\\s*:)/\",\"string_greedy\":true,\"string_lookbehind\":false,\"H2\":true,\"H1\":{\"index\":12,\"text\":\"/*\\\"}\"},\"comment_on_s2\":{\"index\":6,\"text\":\"/*\\\",\\\"B\\\":\\\"B\\\",\\\"C\\\":\\\"C\\\"}\"},\"H3\":{\"index\":8,\"text\":\"\\\":\\\"\"},\"H7\":[3,6],\"H8\":false,\"H4\":\"punctuation|property|operator|string|punctuation\",\"H5\":false,\"has_comment_s1\":false,\"has_comment_s2\":false,\"tokens_s1\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"Accept\\\"\",\"start\":1,\"end\":9},{\"type\":\"operator\",\"content\":\":\",\"start\":9,\"end\":10},{\"type\":\"string\",\"content\":\"\\\"*/*\\\"\",\"start\":10,\"end\":15},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":15,\"end\":16}],\"tokens_s2\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"A\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"string\",\"content\":\"\\\"/*\\\"\",\"start\":5,\"end\":9},{\"type\":\"punctuation\",\"content\":\",\",\"start\":9,\"end\":10},{\"type\":\"property\",\"content\":\"\\\"B\\\"\",\"start\":10,\"end\":13},{\"type\":\"operator\",\"content\":\":\",\"start\":13,\"end\":14},{\"type\":\"string\",\"content\":\"\\\"B\\\"\",\"start\":14,\"end\":17},{\"type\":\"punctuation\",\"content\":\",\",\"start\":17,\"end\":18},{\"type\":\"text\",\"content\":\"\\\"C\",\"start\":18,\"end\":20},{\"type\":\"string\",\"content\":\"\\\":\\\"\",\"start\":20,\"end\":23},{\"type\":\"text\",\"content\":\"C\\\"\",\"start\":23,\"end\":25},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":25,\"end\":26}],\"H6\":\"&lt;span class=\\\"token punctuation\\\"&gt;{&lt;/span&gt;&lt;span class=\\\"token property\\\"&gt;\\\"A\\\"&lt;/span&gt;&lt;span class=\\\"token operator\\\"&gt;:&lt;/span&gt;&lt;span class=\\\"token string\\\"&gt;\\\"/*\\\"&lt;/span&gt;&lt;span class=\\\"token punctuation\\\"&gt;,&lt;/span&gt;&lt;span class=\\\"token property\\\"&gt;\\\"B\\\"&lt;/span&gt;&lt;span class=\\\"token operator\\\"&gt;:&lt;/span&gt;&lt;span class=\\\"token string\\\"&gt;\\\"B\\\"&lt;/span&gt;&lt;span class=\\\"token punctuation\\\"&gt;,&lt;/span&gt;\\\"C&lt;span class=\\\"token string\\\"&gt;\\\":\\\"&lt;/span&gt;C\\\"&lt;span class=\\\"token punctuation\\\"&gt;}&lt;/span&gt;\",\"control_only_C\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"C\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"string\",\"content\":\"\\\"C\\\"\",\"start\":5,\"end\":8},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":8,\"end\":9}],\"control_x_then_C\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"A\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"string\",\"content\":\"\\\"x\\\"\",\"start\":5,\"end\":8},{\"type\":\"punctuation\",\"content\":\",\",\"start\":8,\"end\":9},{\"type\":\"property\",\"content\":\"\\\"C\\\"\",\"start\":9,\"end\":12},{\"type\":\"operator\",\"content\":\":\",\"start\":12,\"end\":13},{\"type\":\"string\",\"content\":\"\\\"C\\\"\",\"start\":13,\"end\":16},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":16,\"end\":17}],\"control_slash_then_C\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"A\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"string\",\"content\":\"\\\"/*\\\"\",\"start\":5,\"end\":9},{\"type\":\"punctuation\",\"content\":\",\",\"start\":9,\"end\":10},{\"type\":\"property\",\"content\":\"\\\"C\\\"\",\"start\":10,\"end\":13},{\"type\":\"operator\",\"content\":\":\",\"start\":13,\"end\":14},{\"type\":\"string\",\"content\":\"\\\"C\\\"\",\"start\":14,\"end\":17},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":17,\"end\":18}],\"real_line_comment\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"a\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"text\",\"content\":\" \",\"start\":5,\"end\":6},{\"type\":\"number\",\"content\":\"1\",\"start\":6,\"end\":7},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":7,\"end\":8"
+          }
+        ],
+        "dom": "{\"notes\":[\"json loaded via XHR\"],\"keys\":\"comment,property,string,number,punctuation,operator,boolean,null\",\"comment_source\":\"/\\\\/\\\\/.*|\\\\/\\\\*[\\\\s\\\\S]*?(?:\\\\*\\\\/|$)/\",\"comment_is_regexp\":true,\"comment_lookbehind\":false,\"property_source\":\"/\\\"(?:\\\\\\\\.|[^\\\\\\\\\\\"\\\\r\\\\n])*\\\"(?=\\\\s*:)/\",\"property_greedy\":true,\"string_source\":\"/\\\"(?:\\\\\\\\.|[^\\\\\\\\\\\"\\\\r\\\\n])*\\\"(?!\\\\s*:)/\",\"string_greedy\":true,\"string_lookbehind\":false,\"H2\":true,\"H1\":{\"index\":12,\"text\":\"/*\\\"}\"},\"comment_on_s2\":{\"index\":6,\"text\":\"/*\\\",\\\"B\\\":\\\"B\\\",\\\"C\\\":\\\"C\\\"}\"},\"H3\":{\"index\":8,\"text\":\"\\\":\\\"\"},\"H7\":[3,6],\"H8\":false,\"H4\":\"punctuation|property|operator|string|punctuation\",\"H5\":false,\"has_comment_s1\":false,\"has_comment_s2\":false,\"tokens_s1\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"Accept\\\"\",\"start\":1,\"end\":9},{\"type\":\"operator\",\"content\":\":\",\"start\":9,\"end\":10},{\"type\":\"string\",\"content\":\"\\\"*/*\\\"\",\"start\":10,\"end\":15},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":15,\"end\":16}],\"tokens_s2\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"A\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"string\",\"content\":\"\\\"/*\\\"\",\"start\":5,\"end\":9},{\"type\":\"punctuation\",\"content\":\",\",\"start\":9,\"end\":10},{\"type\":\"property\",\"content\":\"\\\"B\\\"\",\"start\":10,\"end\":13},{\"type\":\"operator\",\"content\":\":\",\"start\":13,\"end\":14},{\"type\":\"string\",\"content\":\"\\\"B\\\"\",\"start\":14,\"end\":17},{\"type\":\"punctuation\",\"content\":\",\",\"start\":17,\"end\":18},{\"type\":\"text\",\"content\":\"\\\"C\",\"start\":18,\"end\":20},{\"type\":\"string\",\"content\":\"\\\":\\\"\",\"start\":20,\"end\":23},{\"type\":\"text\",\"content\":\"C\\\"\",\"start\":23,\"end\":25},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":25,\"end\":26}],\"H6\":\"<span class=\\\"token punctuation\\\">{</span><span class=\\\"token property\\\">\\\"A\\\"</span><span class=\\\"token operator\\\">:</span><span class=\\\"token string\\\">\\\"/*\\\"</span><span class=\\\"token punctuation\\\">,</span><span class=\\\"token property\\\">\\\"B\\\"</span><span class=\\\"token operator\\\">:</span><span class=\\\"token string\\\">\\\"B\\\"</span><span class=\\\"token punctuation\\\">,</span>\\\"C<span class=\\\"token string\\\">\\\":\\\"</span>C\\\"<span class=\\\"token punctuation\\\">}</span>\",\"control_only_C\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"C\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"string\",\"content\":\"\\\"C\\\"\",\"start\":5,\"end\":8},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":8,\"end\":9}],\"control_x_then_C\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"A\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"string\",\"content\":\"\\\"x\\\"\",\"start\":5,\"end\":8},{\"type\":\"punctuation\",\"content\":\",\",\"start\":8,\"end\":9},{\"type\":\"property\",\"content\":\"\\\"C\\\"\",\"start\":9,\"end\":12},{\"type\":\"operator\",\"content\":\":\",\"start\":12,\"end\":13},{\"type\":\"string\",\"content\":\"\\\"C\\\"\",\"start\":13,\"end\":16},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":16,\"end\":17}],\"control_slash_then_C\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"A\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"string\",\"content\":\"\\\"/*\\\"\",\"start\":5,\"end\":9},{\"type\":\"punctuation\",\"content\":\",\",\"start\":9,\"end\":10},{\"type\":\"property\",\"content\":\"\\\"C\\\"\",\"start\":10,\"end\":13},{\"type\":\"operator\",\"content\":\":\",\"start\":13,\"end\":14},{\"type\":\"string\",\"content\":\"\\\"C\\\"\",\"start\":14,\"end\":17},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":17,\"end\":18}],\"real_line_comment\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"a\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"text\",\"content\":\" \",\"start\":5,\"end\":6},{\"type\":\"number\",\"content\":\"1\",\"start\":6,\"end\":7},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":7,\"end\":8},{\"type\":\"text\",\"content\":\" \",\"start\":8,\"end\":9},{\"type\":\"comment\",\"content\":\"// tail\",\"start\":9,\"end\":16}],\"real_block_comment\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"a\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"text\",\"content\":\" \",\"start\":5,\"end\":6},{\"type\":\"number\",\"content\":\"1\",\"start\":6,\"end\":7},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":7,\"end\":8},{\"type\":\"text\",\"content\":\" \",\"start\":8,\"end\":9},{\"type\":\"comment\",\"content\":\"/* block */\",\"start\":9,\"end\":20}]}",
+        "actual_scene": true,
+        "stderr": "",
+        "process": {
+          "returncode": 0,
+          "command": [
+            "/home/ubuntu/anaconda3/envs/pyy/paper/TraceRepair/releases/isolation_20260907/.venv/bin/python",
+            "/task/trajectory/agents/browser/turn_02/tool_01/browser/actions.py",
+            "/task/trajectory/agents/browser/turn_02/tool_01/browser/request.json"
+          ]
+        }
+      },
+      "node_stderr": "",
+      "witness_refs": [
+        "runtime:browser.t2.o1:0",
+        "runtime:browser.t2.o1:1",
+        "runtime:browser.t2.o1:2",
+        "runtime:browser.t2.o1:3",
+        "runtime:browser.t2.o1:4",
+        "runtime:browser.t2.o1:5",
+        "runtime:browser.t2.o1:6",
+        "runtime:browser.t2.o1:7"
+      ],
+      "runtime_image_attached_to_s5": false
+    },
+    "final:0:tier:0": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H1",
+      "execution_identity": "final:0",
+      "tier": "T1",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "node_execution",
+      "errors": []
+    },
+    "final:0:tier:1": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H1",
+      "execution_identity": "final:0",
+      "tier": "T2",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "pinned_chromium_scene",
+      "errors": []
+    },
+    "final:0": {
+      "id": "H1",
+      "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+      "symbol_exists": true,
+      "instrumented_line": 1,
+      "static_reachable": null,
+      "coverage": {
+        "complete": false,
+        "scenarios": 1,
+        "reason": "single_issue_reproducer_is_not_exhaustive"
+      },
+      "static_certificate": null,
+      "kind": "witness_snapshot",
+      "tier_refs": [
+        "final:0:tier:0",
+        "final:0:tier:1"
+      ],
+      "selected_tier_ref": "final:0:tier:1",
+      "artifact_visibility": "not_attached_to_s5"
+    },
+    "final:1:tier:0": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H2",
+      "execution_identity": "final:1",
+      "tier": "T1",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "node_execution",
+      "errors": []
+    },
+    "final:1:tier:1": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H2",
+      "execution_identity": "final:1",
+      "tier": "T2",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "pinned_chromium_scene",
+      "errors": []
+    },
+    "final:1": {
+      "id": "H2",
+      "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+      "symbol_exists": true,
+      "instrumented_line": 1,
+      "static_reachable": null,
+      "coverage": {
+        "complete": false,
+        "scenarios": 1,
+        "reason": "single_issue_reproducer_is_not_exhaustive"
+      },
+      "static_certificate": null,
+      "kind": "witness_snapshot",
+      "tier_refs": [
+        "final:1:tier:0",
+        "final:1:tier:1"
+      ],
+      "selected_tier_ref": "final:1:tier:1",
+      "artifact_visibility": "not_attached_to_s5"
+    },
+    "final:2:tier:0": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H3",
+      "execution_identity": "final:2",
+      "tier": "T1",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "node_execution",
+      "errors": []
+    },
+    "final:2:tier:1": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H3",
+      "execution_identity": "final:2",
+      "tier": "T2",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "pinned_chromium_scene",
+      "errors": []
+    },
+    "final:2": {
+      "id": "H3",
+      "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+      "symbol_exists": true,
+      "instrumented_line": 1,
+      "static_reachable": null,
+      "coverage": {
+        "complete": false,
+        "scenarios": 1,
+        "reason": "single_issue_reproducer_is_not_exhaustive"
+      },
+      "static_certificate": null,
+      "kind": "witness_snapshot",
+      "tier_refs": [
+        "final:2:tier:0",
+        "final:2:tier:1"
+      ],
+      "selected_tier_ref": "final:2:tier:1",
+      "artifact_visibility": "not_attached_to_s5"
+    },
+    "final:3:tier:0": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H4",
+      "execution_identity": "final:3",
+      "tier": "T1",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "node_execution",
+      "errors": []
+    },
+    "final:3:tier:1": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H4",
+      "execution_identity": "final:3",
+      "tier": "T2",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "pinned_chromium_scene",
+      "errors": []
+    },
+    "final:3": {
+      "id": "H4",
+      "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+      "symbol_exists": true,
+      "instrumented_line": 1,
+      "static_reachable": null,
+      "coverage": {
+        "complete": false,
+        "scenarios": 1,
+        "reason": "single_issue_reproducer_is_not_exhaustive"
+      },
+      "static_certificate": null,
+      "kind": "witness_snapshot",
+      "tier_refs": [
+        "final:3:tier:0",
+        "final:3:tier:1"
+      ],
+      "selected_tier_ref": "final:3:tier:1",
+      "artifact_visibility": "not_attached_to_s5"
+    },
+    "final:4:tier:0": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H5",
+      "execution_identity": "final:4",
+      "tier": "T1",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "node_execution",
+      "errors": []
+    },
+    "final:4:tier:1": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H5",
+      "execution_identity": "final:4",
+      "tier": "T2",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "pinned_chromium_scene",
+      "errors": []
+    },
+    "final:4": {
+      "id": "H5",
+      "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+      "symbol_exists": true,
+      "instrumented_line": 1,
+      "static_reachable": null,
+      "coverage": {
+        "complete": false,
+        "scenarios": 1,
+        "reason": "single_issue_reproducer_is_not_exhaustive"
+      },
+      "static_certificate": null,
+      "kind": "witness_snapshot",
+      "tier_refs": [
+        "final:4:tier:0",
+        "final:4:tier:1"
+      ],
+      "selected_tier_ref": "final:4:tier:1",
+      "artifact_visibility": "not_attached_to_s5"
+    },
+    "final:5:tier:0": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H6",
+      "execution_identity": "final:5",
+      "tier": "T1",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "node_execution",
+      "errors": []
+    },
+    "final:5:tier:1": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H6",
+      "execution_identity": "final:5",
+      "tier": "T2",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "pinned_chromium_scene",
+      "errors": []
+    },
+    "final:5": {
+      "id": "H6",
+      "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+      "symbol_exists": true,
+      "instrumented_line": 1,
+      "static_reachable": null,
+      "coverage": {
+        "complete": false,
+        "scenarios": 1,
+        "reason": "single_issue_reproducer_is_not_exhaustive"
+      },
+      "static_certificate": null,
+      "kind": "witness_snapshot",
+      "tier_refs": [
+        "final:5:tier:0",
+        "final:5:tier:1"
+      ],
+      "selected_tier_ref": "final:5:tier:1",
+      "artifact_visibility": "not_attached_to_s5"
+    },
+    "final:6:tier:0": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H7",
+      "execution_identity": "final:6",
+      "tier": "T1",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "node_execution",
+      "errors": []
+    },
+    "final:6:tier:1": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H7",
+      "execution_identity": "final:6",
+      "tier": "T2",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "pinned_chromium_scene",
+      "errors": []
+    },
+    "final:6": {
+      "id": "H7",
+      "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+      "symbol_exists": true,
+      "instrumented_line": 1,
+      "static_reachable": null,
+      "coverage": {
+        "complete": false,
+        "scenarios": 1,
+        "reason": "single_issue_reproducer_is_not_exhaustive"
+      },
+      "static_certificate": null,
+      "kind": "witness_snapshot",
+      "tier_refs": [
+        "final:6:tier:0",
+        "final:6:tier:1"
+      ],
+      "selected_tier_ref": "final:6:tier:1",
+      "artifact_visibility": "not_attached_to_s5"
+    },
+    "final:7:tier:0": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H8",
+      "execution_identity": "final:7",
+      "tier": "T1",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "node_execution",
+      "errors": []
+    },
+    "final:7:tier:1": {
+      "kind": "runtime_observation",
+      "hypothesis_id": "H8",
+      "execution_identity": "final:7",
+      "tier": "T2",
+      "execution_ok": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "scenario_complete": true,
+      "target_loaded": true,
+      "reason": "pinned_chromium_scene",
+      "errors": []
+    },
+    "final:7": {
+      "id": "H8",
+      "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+      "symbol_exists": true,
+      "instrumented_line": 1,
+      "static_reachable": null,
+      "coverage": {
+        "complete": false,
+        "scenarios": 1,
+        "reason": "single_issue_reproducer_is_not_exhaustive"
+      },
+      "static_certificate": null,
+      "kind": "witness_snapshot",
+      "tier_refs": [
+        "final:7:tier:0",
+        "final:7:tier:1"
+      ],
+      "selected_tier_ref": "final:7:tier:1",
+      "artifact_visibility": "not_attached_to_s5"
+    },
+    "boundary:0": {
+      "id": "matching:components/prism-json.js:2:37-68",
+      "file": "components/prism-json.js",
+      "line": 2,
+      "end_line": 2,
+      "mechanism": "matching_boundary",
+      "repair_interface": {
+        "G_b": "matching_expression",
+        "z_b": [],
+        "read_basis": "module_candidate_upper_bound"
+      },
+      "expressivity": {
+        "verdict": "UNKNOWN",
+        "certificate": null,
+        "reason": "static_read_set_incomplete",
+        "colliding_objects": [],
+        "read_intersection": [],
+        "excludes_candidate": false,
+        "required_runtime_evidence": "object_identity_and_equal_z_b_observations"
+      },
+      "kind": "static_boundary",
+      "constraint_ids": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ],
+      "upstream_interpretation": {
+        "selection_reason": "This is the JSON comment-token matching boundary. Its pattern matches /* and can consume the rest of the input when /* appears inside a JSON string. Adjusting this local decision (or how it is gated/ordered) is what can distinguish a string-contained /* from a real comment start, prevent */* inside strings from being split into comment tokens, and stop following JSON tokens from being consumed as comment content. It therefore serves C1, C2, C3, and C4. The candidate exposes no readable symbols; the regex literal itself is the local decision.",
+        "preserve": [
+          "JSON string containing \"/*\": tokenization must remain equal to normal JSON string tokenization, not comment-start tokenization.",
+          "\"*/*\" sequence inside a JSON string: tokenization must remain equal to the surrounding string token, not separate comment tokens.",
+          "JSON tokens following a string containing \"/*\": tokenization must remain equal to normal JSON token sequence, not comment content.",
+          "Comment: tokenization must remain equal to comment-token tokenization only when the comment start occurs outside a JSON string.",
+          "Actual comment starts outside strings: matching must remain equal to existing comment-token recognition."
+        ]
+      },
+      "static_obligations": []
+    },
+    "binding:H1": {
+      "symbol_exists": false,
+      "readable_symbols": [],
+      "readable_symbols_basis": "declaration_candidates_without_accessibility_proof",
+      "interface_complete": false,
+      "requested_interface_covered": false,
+      "interface_basis": "declaration_candidates_without_lexical_scope_proof",
+      "kind": "static_binding",
+      "hypothesis_id": "H1",
+      "basis": "legacy_scope_not_s5_windows",
+      "downstream_summary": {
+        "status": "partial_static",
+        "unknown_reasons": [
+          "unresolved_dependency_closure",
+          "boundary_not_ast_bound",
+          "lexical_scope_and_dynamic_dispatch_not_proven"
+        ]
+      },
+      "effect_locations": []
+    },
+    "binding:H2": {
+      "symbol_exists": false,
+      "readable_symbols": [],
+      "readable_symbols_basis": "declaration_candidates_without_accessibility_proof",
+      "interface_complete": false,
+      "requested_interface_covered": false,
+      "interface_basis": "declaration_candidates_without_lexical_scope_proof",
+      "kind": "static_binding",
+      "hypothesis_id": "H2",
+      "basis": "legacy_scope_not_s5_windows",
+      "downstream_summary": {
+        "status": "partial_static",
+        "unknown_reasons": [
+          "unresolved_dependency_closure",
+          "boundary_not_ast_bound",
+          "lexical_scope_and_dynamic_dispatch_not_proven"
+        ]
+      },
+      "effect_locations": []
+    },
+    "binding:H3": {
+      "symbol_exists": false,
+      "readable_symbols": [],
+      "readable_symbols_basis": "declaration_candidates_without_accessibility_proof",
+      "interface_complete": false,
+      "requested_interface_covered": false,
+      "interface_basis": "declaration_candidates_without_lexical_scope_proof",
+      "kind": "static_binding",
+      "hypothesis_id": "H3",
+      "basis": "legacy_scope_not_s5_windows",
+      "downstream_summary": {
+        "status": "partial_static",
+        "unknown_reasons": [
+          "unresolved_dependency_closure",
+          "boundary_not_ast_bound",
+          "requested_symbols_not_declared_in_context",
+          "lexical_scope_and_dynamic_dispatch_not_proven"
+        ]
+      },
+      "effect_locations": []
+    },
+    "binding:H4": {
+      "symbol_exists": false,
+      "readable_symbols": [],
+      "readable_symbols_basis": "declaration_candidates_without_accessibility_proof",
+      "interface_complete": false,
+      "requested_interface_covered": false,
+      "interface_basis": "declaration_candidates_without_lexical_scope_proof",
+      "kind": "static_binding",
+      "hypothesis_id": "H4",
+      "basis": "legacy_scope_not_s5_windows",
+      "downstream_summary": {
+        "status": "partial_static",
+        "unknown_reasons": [
+          "unresolved_dependency_closure",
+          "boundary_not_ast_bound",
+          "lexical_scope_and_dynamic_dispatch_not_proven"
+        ]
+      },
+      "effect_locations": []
+    },
+    "binding:H5": {
+      "symbol_exists": false,
+      "readable_symbols": [],
+      "readable_symbols_basis": "declaration_candidates_without_accessibility_proof",
+      "interface_complete": false,
+      "requested_interface_covered": false,
+      "interface_basis": "declaration_candidates_without_lexical_scope_proof",
+      "kind": "static_binding",
+      "hypothesis_id": "H5",
+      "basis": "legacy_scope_not_s5_windows",
+      "downstream_summary": {
+        "status": "partial_static",
+        "unknown_reasons": [
+          "unresolved_dependency_closure",
+          "boundary_not_ast_bound",
+          "lexical_scope_and_dynamic_dispatch_not_proven"
+        ]
+      },
+      "effect_locations": []
+    },
+    "binding:H6": {
+      "symbol_exists": false,
+      "readable_symbols": [],
+      "readable_symbols_basis": "declaration_candidates_without_accessibility_proof",
+      "interface_complete": false,
+      "requested_interface_covered": false,
+      "interface_basis": "declaration_candidates_without_lexical_scope_proof",
+      "kind": "static_binding",
+      "hypothesis_id": "H6",
+      "basis": "legacy_scope_not_s5_windows",
+      "downstream_summary": {
+        "status": "partial_static",
+        "unknown_reasons": [
+          "unresolved_dependency_closure",
+          "boundary_not_ast_bound",
+          "lexical_scope_and_dynamic_dispatch_not_proven"
+        ]
+      },
+      "effect_locations": []
+    },
+    "binding:H7": {
+      "symbol_exists": false,
+      "readable_symbols": [],
+      "readable_symbols_basis": "declaration_candidates_without_accessibility_proof",
+      "interface_complete": false,
+      "requested_interface_covered": false,
+      "interface_basis": "declaration_candidates_without_lexical_scope_proof",
+      "kind": "static_binding",
+      "hypothesis_id": "H7",
+      "basis": "legacy_scope_not_s5_windows",
+      "downstream_summary": {
+        "status": "partial_static",
+        "unknown_reasons": [
+          "unresolved_dependency_closure",
+          "boundary_not_ast_bound",
+          "lexical_scope_and_dynamic_dispatch_not_proven"
+        ]
+      },
+      "effect_locations": []
+    },
+    "binding:H8": {
+      "symbol_exists": false,
+      "readable_symbols": [],
+      "readable_symbols_basis": "declaration_candidates_without_accessibility_proof",
+      "interface_complete": false,
+      "requested_interface_covered": false,
+      "interface_basis": "declaration_candidates_without_lexical_scope_proof",
+      "kind": "static_binding",
+      "hypothesis_id": "H8",
+      "basis": "legacy_scope_not_s5_windows",
+      "downstream_summary": {
+        "status": "partial_static",
+        "unknown_reasons": [
+          "unresolved_dependency_closure",
+          "boundary_not_ast_bound",
+          "lexical_scope_and_dynamic_dispatch_not_proven"
+        ]
+      },
+      "effect_locations": []
+    }
+  },
+  "agents": {
+    "code": {
+      "stop_reason": "completed",
+      "calls": 2,
+      "call_limit": 2,
+      "model_report_available": true,
+      "report_origin": "model_interpretation",
+      "summary": "The whole JSON grammar is only 19 lines (components/prism-json.js, source_id 172). Line 2 defines 'comment' as the FIRST grammar key with a regex literal /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/ that is not string-aware: it accepts any /* and then lazily consumes everything up to the next */ or end of input. The string rule (lines 8-11) and property rule (lines 4-7) are plain greedy regex literals that are also not string-state aware. Prism core uses a matchGrammar-style pass that iterates grammar keys in order and applies each rule over the text (greedy handling at prism-core.js:297-386), so a comment rule placed before the string rule can claim the /* inside a quoted value before the string rule is applied. This is consistent with the reported symptom, but it is a static reading only; no tokenize/highlight execution was performed here.",
+      "limitations": [
+        "No runtime execution was performed: no tokenize(), highlight(), or exec() result was observed, and jsdom/node availability was only reported by preflight, not exercised.",
+        "prism-core.js was only searched for 'greedy' (7 line snippets, code.t1.o3); the full matchGrammar/tokenize body was not read, so the exact rule-application and greedy-split behavior for the comment-inside-string case is inferred, not proven.",
+        "H3 is recorded with boundary_valid false, and every hypothesis is listed with a function_context_unresolved gap and no AST-bound readable symbols; the static bindings show symbol_exists=false for all hypotheses.",
+        "The source window for components/prism-json.js covers lines 1-19 and the read returned the complete file, but no test files specific to JSON were inspected and the base test suite was not run.",
+        "Issue image 0 was not analyzed beyond the supplied region description; the rendered HTML shown there is not tool evidence of current behavior."
+      ],
+      "claims": [
+        {
+          "hypothesis_id": "H1",
+          "interpretation": "The comment regex /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/, executed on {\"Accept\":\"*/*\"}, matches the first /* and then lazily extends because no */ follows; reaching end of input satisfies the (?:\"\\*\\/\"|$) alternative, so the returned match would end at the final character. The literal expectation '/*\"}' is consistent with the regex source in line 2; the exact returned substring was not executed.",
+          "repair_suggestion": "Do not rely on this raw-regex result. Make the comment rule only able to start outside a JSON string value (or remove comment support from the JSON grammar), so a /* occurring inside a quoted value is claimed by the string rule instead of the comment rule.",
+          "citations_valid": true,
+          "evidence_kind": "model_interpretation_not_runtime_certificate",
+          "original_evidence_ids": [
+            "code.t1.o1",
+            "code.t1.o2"
+          ],
+          "evidence_refs": [
+            "tool:code.t1.o1",
+            "tool:code.t1.o2"
+          ],
+          "support_status": "model_interpretation_not_verified"
+        },
+        {
+          "hypothesis_id": "H2",
+          "interpretation": "Source order confirms 'comment' is the first key of Prism.languages.json and 'string' is a later key, so indexOf('comment') < indexOf('string') is true in the declaration. Whether that ordering alone causes the bug depends on Prism core's per-key grammar pass, which was not executed.",
+          "repair_suggestion": "If ordering is to be used as the fix, move or restructure the 'comment' rule so the string/property rules are applied first and comments are only recognized outside quoted values; verify against a regression case such as {\"A\":\"/*\",\"B\":\"B\",\"C\":\"C\"}.",
+          "citations_valid": true,
+          "evidence_kind": "model_interpretation_not_runtime_certificate",
+          "original_evidence_ids": [
+            "code.t1.o1",
+            "code.t1.o2"
+          ],
+          "evidence_refs": [
+            "tool:code.t1.o1",
+            "tool:code.t1.o2"
+          ],
+          "support_status": "model_interpretation_not_verified"
+        },
+        {
+          "hypothesis_id": "H3",
+          "interpretation": "The string pattern /\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?!\\s*:)/ is a non-global literal. The first candidate \"Accept\" is disqualified by the trailing (?!\\s*:) because a colon follows, so the next candidate is the value \"*/*\" (followed by }), which satisfies the pattern. The raw match would therefore be \"*/*\", consistent with the stated expectation, though the hypothesis's boundary is recorded as invalid and no execution occurred.",
+          "repair_suggestion": "Preserve existing JSON string tokenization for values containing /*; the string rule itself need not change if the comment rule is prevented from pre-claiming that region.",
+          "citations_valid": true,
+          "evidence_kind": "model_interpretation_not_runtime_certificate",
+          "original_evidence_ids": [
+            "code.t1.o1",
+            "code.t1.o2"
+          ],
+          "evidence_refs": [
+            "tool:code.t1.o1",
+            "tool:code.t1.o2"
+          ],
+          "support_status": "model_interpretation_not_verified"
+        },
+        {
+          "hypothesis_id": "H4",
+          "interpretation": "The comment rule has no string-state gating and is declared before string/property, while Prism core processes greedy/ordered grammar rules over the text (prism-core.js:297-386). That creates a static path for a top-level comment token starting at the / inside the string value and running to end of input. This tokenize() outcome is a prediction, not an executed observation.",
+          "repair_suggestion": "Gate comment recognition to positions outside quoted values (e.g., reorder/guard the rule or drop JSON comment support) and add a tokenize-level regression test asserting no comment token overlaps a string value that contains /*.",
+          "citations_valid": true,
+          "evidence_kind": "model_interpretation_not_runtime_certificate",
+          "original_evidence_ids": [
+            "code.t1.o1",
+            "code.t1.o3"
+          ],
+          "evidence_refs": [
+            "tool:code.t1.o1",
+            "tool:code.t1.o3"
+          ],
+          "support_status": "model_interpretation_not_verified"
+        },
+        {
+          "hypothesis_id": "H5",
+          "interpretation": "Same static mechanism as H4 applied to {\"A\":\"/*\",\"B\":\"B\",\"C\":\"C\"}: the unguarded comment regex can run from the /* inside the first value to end of input, which would include 'B' and 'C' text. No tokenize() call was executed to confirm the token stream.",
+          "repair_suggestion": "Same as H4 plus a regression test that asserts no comment token content contains the trailing object members B/C for this exact input.",
+          "citations_valid": true,
+          "evidence_kind": "model_interpretation_not_runtime_certificate",
+          "original_evidence_ids": [
+            "code.t1.o1",
+            "code.t1.o3"
+          ],
+          "evidence_refs": [
+            "tool:code.t1.o1",
+            "tool:code.t1.o3"
+          ],
+          "support_status": "model_interpretation_not_verified"
+        },
+        {
+          "hypothesis_id": "H6",
+          "interpretation": "Given the unguarded, first-position comment rule, the highlighted HTML could show a comment span starting at the slash inside the string value and extending to the end of input, with the trailing members not rendered as their normal tokens. This is a static inference from the grammar plus core greedy/order handling (prism-core.js:297-386); Prism.highlight output was not produced or inspected.",
+          "repair_suggestion": "Make the comment rule string-aware or remove it, then verify highlight() renders the quoted /* inside a token string and the following members as normal JSON tokens.",
+          "citations_valid": true,
+          "evidence_kind": "model_interpretation_not_runtime_certificate",
+          "original_evidence_ids": [
+            "code.t1.o1",
+            "code.t1.o3"
+          ],
+          "evidence_refs": [
+            "tool:code.t1.o1",
+            "tool:code.t1.o3"
+          ],
+          "support_status": "model_interpretation_not_verified"
+        },
+        {
+          "hypothesis_id": "H7",
+          "interpretation": "Index arithmetic against the source literals is consistent: in {\"A\":\"/*\",\"B\":\"B\",\"C\":\"C\"} the string value \"/*\" begins at index 5 (after the colon at 4), and the comment regex's first /* begins one character later at index 6. This matches the expected [5,6]; it is a source-derived computation, not an execution.",
+          "repair_suggestion": "Use the 5/6 offset relationship as a boundary check: any fix must keep the string match starting at index 5 and must not produce a comment match starting at index 6 inside that value.",
+          "citations_valid": true,
+          "evidence_kind": "model_interpretation_not_runtime_certificate",
+          "original_evidence_ids": [
+            "code.t1.o1",
+            "code.t1.o2"
+          ],
+          "evidence_refs": [
+            "tool:code.t1.o1",
+            "tool:code.t1.o2"
+          ],
+          "support_status": "model_interpretation_not_verified"
+        },
+        {
+          "hypothesis_id": "H8",
+          "interpretation": "The 'comment' value is a bare regex literal (line 2); it exposes no lookbehind property, so Prism.languages.json['comment'].lookbehind is undefined rather than the boolean false. The expected literal 'false' is not exactly accurate, but the intended meaning (no lookbehind mechanism is present) is supported: the rule cannot itself distinguish being inside a string.",
+          "repair_suggestion": "If the fix relies on lookbehind, the rule must actually declare/support it; otherwise solve the string-vs-comment distinction without assuming a lookbehind property exists on the current rule.",
+          "citations_valid": true,
+          "evidence_kind": "model_interpretation_not_runtime_certificate",
+          "original_evidence_ids": [
+            "code.t1.o1",
+            "code.t1.o2"
+          ],
+          "evidence_refs": [
+            "tool:code.t1.o1",
+            "tool:code.t1.o2"
+          ],
+          "support_status": "model_interpretation_not_verified"
+        }
+      ],
+      "evidence_refs": [
+        "tool:code.t1.o1",
+        "tool:code.t1.o2",
+        "tool:code.t1.o3",
+        "tool:code.t1.o5"
+      ]
+    },
+    "browser": {
+      "stop_reason": "completed",
+      "calls": 3,
+      "call_limit": 3,
+      "model_report_available": true,
+      "report_origin": "model_interpretation",
+      "summary": "Base behavior was reproduced in two independent Prism scenes (browser.t1.o1, browser.t2.o1) loading the real entry prism.js plus components/prism-json.js (loaded via synchronous XHR in the page; Prism global present, JSON grammar present). Direct evidence from the browser scene: the JSON comment rule is the plain RegExp /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/ with no lookbehind. Applied to the whole document '{\"Accept\":\"*/*\"}' it matches at index 12 and returns the text '/*\"}', i.e. it does start inside a string value and run to end of input (H1 confirmation). The grammar key order is 'comment,property,string,number,punctuation,operator,boolean,null', so the comment rule is declared before the string rule (H2 confirmation). However, the composed tokenizer did NOT emit a comment token for the issue inputs: Prism.tokenize('{\"Accept\":\"*/*\"}', json) yields punctuation, property \"Accept\", operator, string \"*/*\" (offsets 10-15), punctuation, with no comment token (H4 falsified), and the raw string-pattern exec on that input returns '\":\\\"' at index 8, not '\"*/*\"' (H3 falsified). For the issue snippet '{\"A\":\"/*\",\"B\":\"B\",\"C\":\"C\"}' tokenization IS corrupted, but not through a comment token: the token stream is punctuation{ , property\"A\", operator, string\"/*\"(5-9), punctuation, property\"B\", operator, string\"B\"(14-17), punctuation, then text '\"C' (18-20), string '\":\\\"' (20-23), text 'C\"' (23-25), punctuation} — the '\"C\":\"C\"' pair is split (H5 falsified: no comment token containing 'B'; H6 partially supported as broken output but falsified as a comment span: the highlight HTML is {<property>\"A\"</property>:<string>\"/*\"</string>,<property>\"B\"</property>:<string>\"B\"</string>,\"C<string>\": \"</string>C\"<punctuation>}</punctuation> with no 'token comment' span). H7's predicted [5,6] was observed as [3,6] because the raw string pattern first matches '\":\\\"' at index 3. H8 is confirmed: the comment entry is a RegExp with no lookbehind, so it has no string-context gate. Net result: the reported corruption after a string containing /* reproduces at T1/T2 scene level, but the observed mechanism is unanchored comment/string/property matching rather than an emitted comment token; the hypotheses that predicted a comment token (H4, H5, H6) are contradicted by the observed token streams.",
+      "limitations": [
+        "Only one scenario per scene was exercised; witness coverage reports complete=false, so other JSON inputs and comment placements were not tested.",
+        "The node (T1) tier reported execution_ok/scenario_complete true but its event values are all of type undefined, and the node console output was not surfaced, so no node-level metric values are claimed here.",
+        "The exact Prism tokenizer mechanism that splits '\"C\"' into text '\"C' + string '\":\\\"' + text 'C\"' was not isolated; the comment pattern's direct match (H1) and the observed stream corruption are separate observations and no emitted comment token was observed, so a causal link between the comment rule and that split is not proven.",
+        "The probe page did not include Prism theme CSS, so the visible colors in the issue image were not compared against rendered styles; the assessment is based on token types, offsets and generated HTML.",
+        "The page scene loaded components/prism-json.js via synchronous XHR because the local prism.js bundle in the scene did not already expose the JSON language; a full production bundle may differ.",
+        "No repaired version was executed and no expected/gold output is available, so no statement is made about whether any particular fix works."
+      ],
+      "claims": [
+        {
+          "hypothesis_id": "H1",
+          "interpretation": "Prism.languages.json['comment'].exec('{\"Accept\":\"*/*\"}') returned {index:12, text:'/*\"}'}, exactly the predicted value: the comment pattern, applied to the document string, starts at the slash inside the value string and consumes to end of input, with no anchor or string-context awareness. This is a direct execution of the reported grammar object in the real scene.",
+          "repair_suggestion": "Make the JSON comment rule unable to start inside a string literal (e.g. require a position that is not inside a quoted string, or express the comment alternatives so a quoted string containing /* is consumed by the string rule first), then verify both direct exec on '{ \"Accept\": \"*/*\" }' and the full Prism.tokenize/Prism.highlight output.",
+          "citations_valid": true,
+          "evidence_kind": "model_interpretation_not_runtime_certificate",
+          "original_evidence_ids": [
+            "browser.t2.o1"
+          ],
+          "evidence_refs": [
+            "tool:browser.t2.o1"
+          ],
+          "support_status": "model_interpretation_not_verified"
+        },
+        {
+          "hypothesis_id": "H2",
+          "interpretation": "Object.keys(Prism.languages.json) = 'comment,property,string,number,punctuation,operator,boolean,null', so indexOf('comment') < indexOf('string') is true, matching the prediction. The comment rule is declared first in the grammar, which is the structural affordance for comment-first matching inside strings.",
+          "repair_suggestion": "Do not rely on object key order alone to fix this; if ordering is changed, confirm that real comment starts outside strings are still recognized as comments (observed control: '{\"a\": 1} // tail' and '{\"a\": 1} /* block */' both still produce a comment token).",
+          "citations_valid": true,
+          "evidence_kind": "model_interpretation_not_runtime_certificate",
+          "original_evidence_ids": [
+            "browser.t2.o1"
+          ],
+          "evidence_refs": [
+            "tool:browser.t2.o1"
+          ],
+          "support_status": "model_interpretation_not_verified"
+        },
+        {
+          "hypothesis_id": "H3",
+          "interpretation": "The predicted value for Prism.languages.json['string'].pattern.exec('{\"Accept\":\"*/*\"}')[0] was '\"*/*\"' but the observed raw match was '\":\\\"' at index 8. The raw pattern exec is therefore not a faithful proxy for tokenization; the full tokenizer does emit string '*/*' at offsets 10-15 for that input, so the falsification applies to the hypothesis's measurement, not to the final token output.",
+          "repair_suggestion": "Base any string-vs-comment fix and its regression test on Prism.tokenize/Prism.highlight token streams rather than on isolated RegExp.exec results, since the raw property/string patterns match quotes that the composed tokenizer never starts a token at.",
+          "citations_valid": true,
+          "evidence_kind": "model_interpretation_not_runtime_certificate",
+          "original_evidence_ids": [
+            "browser.t2.o1"
+          ],
+          "evidence_refs": [
+            "tool:browser.t2.o1"
+          ],
+          "support_status": "model_interpretation_not_verified"
+        },
+        {
+          "hypothesis_id": "H4",
+          "interpretation": "Predicted a top-level comment token starting at the slash inside the value string and running to the end. Observed for '{\"Accept\":\"*/*\"}': punctuation, property \"Accept\", operator, string '*/*' (offsets 10-15), punctuation, and has_comment = false. No comment token appears, so H4 is not supported for that input; the composed tokenizer kept the value as a string in both scenes.",
+          "repair_suggestion": "Keep this input as an explicit regression case: the value string must remain a single string token, and no comment token may be produced.",
+          "citations_valid": true,
+          "evidence_kind": "model_interpretation_not_runtime_certificate",
+          "original_evidence_ids": [
+            "browser.t2.o1",
+            "browser.t1.o1"
+          ],
+          "evidence_refs": [
+            "tool:browser.t2.o1",
+            "tool:browser.t1.o1"
+          ],
+          "support_status": "model_interpretation_not_verified"
+        },
+        {
+          "hypothesis_id": "H5",
+          "interpretation": "Predicted a comment token whose content contains 'B' for '{\"A\":\"/*\",\"B\":\"B\",\"C\":\"C\"}'. Observed: no comment token at all in the stream; instead the tail is corrupted as text '\"C' (18-20), string '\":\\\"' (20-23), text 'C\"' (23-25). The symptom (tokens after the /* string are wrong) is real, but the predicted comment-token mechanism is falsified.",
+          "repair_suggestion": "Fix must restore normal tokenization of the whole literal '{\"A\":\"/*\",\"B\":\"B\",\"C\":\"C\"}' (all three keys as properties and values as strings, '\"C\"':'\"C\"' intact), and a regression should assert the full token type/content/offset sequence, not just the absence of a comment token.",
+          "citations_valid": true,
+          "evidence_kind": "model_interpretation_not_runtime_certificate",
+          "original_evidence_ids": [
+            "browser.t2.o1",
+            "browser.t1.o1"
+          ],
+          "evidence_refs": [
+            "tool:browser.t2.o1",
+            "tool:browser.t1.o1"
+          ],
+          "support_status": "model_interpretation_not_verified"
+        },
+        {
+          "hypothesis_id": "H6",
+          "interpretation": "Predicted the highlight HTML would contain a comment span from the slash inside the value to the end. Observed HTML instead contains no 'token comment' span and shows the corruption as {<span class=token property>\"A\"</span><span class=token operator>:</span><span class=token string>\"/*\"</span>...\"C<span class=token string>\": \"</span>C\"...}, i.e. the '\"C\"':'\"C\"' pair is split into a spurious string span. The visible corruption in the issue reproduces at the render level, but not via a comment span.",
+          "repair_suggestion": "Assert the rendered spans of the issue snippet (every key as property, every value as a single string token, no comment span) as the acceptance check; the current observed highlight HTML fails that check.",
+          "citations_valid": true,
+          "evidence_kind": "model_interpretation_not_runtime_certificate",
+          "original_evidence_ids": [
+            "browser.t2.o1",
+            "browser.t1.o1"
+          ],
+          "evidence_refs": [
+            "tool:browser.t2.o1",
+            "tool:browser.t1.o1"
+          ],
+          "support_status": "model_interpretation_not_verified"
+        },
+        {
+          "hypothesis_id": "H7",
+          "interpretation": "Predicted [5,6] for [string.pattern.exec(s).index, comment.exec(s).index]; observed [3,6]. The string pattern's first raw match on that input is '\":\\\"' at index 3 (the closing quote of \"A\" plus the colon), not the \"/*\" value at 5. The comment pattern's first match is index 6 ('/*\",\"B\":\"B\",\"C\":\"C\"}'), consistent with H1. The numeric prediction is falsified.",
+          "repair_suggestion": "Treat raw pattern indices as unreliable for this grammar and gate the design decision on token streams; also keep the observed fact that the comment alternative can begin at the /* inside the value when the whole document string is scanned.",
+          "citations_valid": true,
+          "evidence_kind": "model_interpretation_not_runtime_certificate",
+          "original_evidence_ids": [
+            "browser.t2.o1"
+          ],
+          "evidence_refs": [
+            "tool:browser.t2.o1"
+          ],
+          "support_status": "model_interpretation_not_verified"
+        },
+        {
+          "hypothesis_id": "H8",
+          "interpretation": "Predicted comment lookbehind false; observed comment_lookbehind false and comment_is_regexp true, with source /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/. Confirmed: the comment rule is a bare RegExp with no lookbehind, so it has no mechanism to detect that it is inside a JSON string; this is consistent with the observed H1 match inside a string value.",
+          "repair_suggestion": "If a string-context gate is added, it must be introduced explicitly (lookbehind-free implementations in this codebase should be preferred for compatibility); verify that real comments outside strings are still matched after the change.",
+          "citations_valid": true,
+          "evidence_kind": "model_interpretation_not_runtime_certificate",
+          "original_evidence_ids": [
+            "browser.t2.o1"
+          ],
+          "evidence_refs": [
+            "tool:browser.t2.o1"
+          ],
+          "support_status": "model_interpretation_not_verified"
+        }
+      ],
+      "evidence_refs": [
+        "tool:browser.t1.o1",
+        "tool:browser.t2.o1"
+      ]
+    }
+  },
+  "gaps": [
+    {
+      "kind": "content_omitted",
+      "evidence_id": "code.t1.o4",
+      "reason": "unrelated_static_tool_record"
+    },
+    {
+      "kind": "content_omitted",
+      "evidence_id": "browser.t1.o1",
+      "field": "browser.html",
+      "reason": "default_full_html"
+    },
+    {
+      "kind": "content_omitted",
+      "evidence_id": "browser.t2.o1",
+      "field": "browser.html",
+      "reason": "default_full_html"
+    },
+    {
+      "kind": "localization_unresolved",
+      "origin": "S0_scope",
+      "text": "Selected boundary matching:components/prism-json.js:2:37-68 has no read_symbols; the local inputs cannot distinguish whether the regex literal itself or its surrounding gating/order controls the string-vs-comment decision."
+    },
+    {
+      "kind": "localization_unresolved",
+      "origin": "S0_scope",
+      "text": "No readable symbols are exposed at the selected boundary, so it cannot determine which tokenizer state (e.g., in-string) is available before the matching expression runs."
+    },
+    {
+      "kind": "upstream_scope_gaps",
+      "detail": {
+        "from": "style.css",
+        "reason": "file_budget",
+        "kind": "same_directory_source"
+      },
+      "requests": [
+        "gulpfile.js"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+{
+  "protocol": "s0_to_s2_v1",
+  "task": {
+    "issue": "/* breaks JSON tokenization\n**Information**\r\n- Language: [JSON]\r\n- Plugins: [none]\r\n\r\nDoes the problem still occur in the latest version of Prism? Yes\r\n\r\n**Description**\r\nI'm logging server response as JSON. The HTTP header `Accept: */*` triggers this problem.\r\n\r\n![broken_tokenization](https://user-images.githubusercontent.com/24775744/55315159-55a5b580-549e-11e9-9789-1c0e7ac3356f.png)\r\n\r\n\r\n**Code snippet**\r\n\r\n<details>\r\n<summary>The code being highlighted incorrectly.</summary>\r\n\r\n```\r\n{\r\n  \"A\": \"/*\",\r\n  \"B\": \"B\",\r\n  \"C\": \"C\"\r\n}\r\n```\r\n\r\n</details>\r\n\n",
+    "repo": "PrismJS/prism",
+    "base_commit": "2f9c9261bc1454899266929711d5842a3675e467"
+  },
+  "entities": [
+    "JSON string containing \"/*\"",
+    "comment",
+    "\"*/*\" sequence inside a JSON string",
+    "JSON tokens following a string containing \"/*\"",
+    "JSON tokenizer"
+  ],
+  "constraints": [
+    {
+      "id": "C1",
+      "role": "CHANGE_DISTINGUISH",
+      "entity": "JSON string containing \"/*\"",
+      "property": "tokenization",
+      "context": "JSON tokenization",
+      "relation": "Must be tokenized as a string, not as a comment start.",
+      "strength": "MUST",
+      "ambiguity_reason": "",
+      "provenance_valid": true,
+      "provenance": {
+        "kind": "issue_sentence",
+        "reference": "/* breaks JSON tokenization"
+      }
+    },
+    {
+      "id": "C2",
+      "role": "CHANGE_UNITE",
+      "entity": "\"*/*\" sequence inside a JSON string",
+      "property": "tokenization",
+      "context": "HTTP header Accept: */*",
+      "relation": "Must be processed together with the surrounding string token, not separately as a comment.",
+      "strength": "MUST",
+      "ambiguity_reason": "",
+      "provenance_valid": true,
+      "provenance": {
+        "kind": "issue_sentence",
+        "reference": "The HTTP header `Accept: */*` triggers this problem."
+      }
+    },
+    {
+      "id": "C3",
+      "role": "CHANGE_DISTINGUISH",
+      "entity": "JSON tokens following a string containing \"/*\"",
+      "property": "tokenization",
+      "context": "JSON tokenization",
+      "relation": "Must not be consumed as part of a comment; must be tokenized as normal JSON tokens.",
+      "strength": "MUST",
+      "ambiguity_reason": "",
+      "provenance_valid": true,
+      "provenance": {
+        "kind": "image_region",
+        "reference": "0",
+        "region": [
+          0.03,
+          0.56,
+          0.97,
+          0.97
+        ]
+      }
+    },
+    {
+      "id": "C4",
+      "role": "CHANGE_DISTINGUISH",
+      "entity": "comment",
+      "property": "tokenization",
+      "context": "Inside a JSON string",
+      "relation": "Must not be triggered by the /* sequence when it appears inside a string.",
+      "strength": "MUST",
+      "ambiguity_reason": "",
+      "provenance_valid": true,
+      "provenance": {
+        "kind": "issue_sentence",
+        "reference": "/* breaks JSON tokenization"
+      }
+    }
+  ],
+  "ambiguity_groups": [],
+  "interfaces": [
+    {
+      "id": "I1",
+      "edit_unit": "matching_expression",
+      "readable_candidates": [],
+      "read_basis": "module_candidate_upper_bound",
+      "focus_symbols": []
+    }
+  ],
+  "selected_boundaries": [
+    {
+      "boundary_id": "matching:components/prism-json.js:2:37-68",
+      "file": "components/prism-json.js",
+      "line": 2,
+      "end_line": 2,
+      "mechanism": "matching_boundary",
+      "expression": "\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)",
+      "interface_id": "I1",
+      "constraint_ids": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ],
+      "note_ids": [
+        "N1",
+        "N2",
+        "N3",
+        "N4",
+        "N5",
+        "N6"
+      ],
+      "source_window_ids": [
+        "W1"
+      ],
+      "expressivity": {
+        "verdict": "UNKNOWN",
+        "reason": "static_read_set_incomplete"
+      },
+      "source_range_complete": true
+    }
+  ],
+  "upstream_notes": [
+    {
+      "id": "N1",
+      "kind": "selection_reason",
+      "origin": "S0_boundaries",
+      "text": "This is the JSON comment-token matching boundary. Its pattern matches /* and can consume the rest of the input when /* appears inside a JSON string. Adjusting this local decision (or how it is gated/ordered) is what can distinguish a string-contained /* from a real comment start, prevent */* inside strings from being split into comment tokens, and stop following JSON tokens from being consumed as comment content. It therefore serves C1, C2, C3, and C4. The candidate exposes no readable symbols; the regex literal itself is the local decision."
+    },
+    {
+      "id": "N2",
+      "kind": "preserve_suggestion",
+      "origin": "S0_scope",
+      "text": "JSON string containing \"/*\": tokenization must remain equal to normal JSON string tokenization, not comment-start tokenization."
+    },
+    {
+      "id": "N3",
+      "kind": "preserve_suggestion",
+      "origin": "S0_scope",
+      "text": "\"*/*\" sequence inside a JSON string: tokenization must remain equal to the surrounding string token, not separate comment tokens."
+    },
+    {
+      "id": "N4",
+      "kind": "preserve_suggestion",
+      "origin": "S0_scope",
+      "text": "JSON tokens following a string containing \"/*\": tokenization must remain equal to normal JSON token sequence, not comment content."
+    },
+    {
+      "id": "N5",
+      "kind": "preserve_suggestion",
+      "origin": "S0_scope",
+      "text": "Comment: tokenization must remain equal to comment-token tokenization only when the comment start occurs outside a JSON string."
+    },
+    {
+      "id": "N6",
+      "kind": "preserve_suggestion",
+      "origin": "S0_scope",
+      "text": "Actual comment starts outside strings: matching must remain equal to existing comment-token recognition."
+    }
+  ],
+  "source_windows": [
+    {
+      "id": "W1",
+      "file": "components/prism-json.js",
+      "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+      "start_line": 1,
+      "end_line": 10,
+      "purposes": [
+        "local_context",
+        "target"
+      ],
+      "text": "Prism.languages.json = {\n\t'comment': /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/,\n\t'property': {\n\t\tpattern: /\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?=\\s*:)/,\n\t\tgreedy: true\n\t},\n\t'string': {\n\t\tpattern: /\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?!\\s*:)/,\n\t\tgreedy: true\n\t},\n"
+    }
+  ],
+  "gaps": [
+    {
+      "kind": "localization_unresolved",
+      "origin": "S0_boundaries",
+      "text": "No JSON string-token boundary is present in the candidate pool; the JSON string rule that would directly enforce C1/C2 by matching quoted strings before comment handling is not among the supplied boundaries."
+    },
+    {
+      "kind": "localization_unresolved",
+      "origin": "S0_scope",
+      "text": "Selected boundary matching:components/prism-json.js:2:37-68 has no read_symbols; the local inputs cannot distinguish whether the regex literal itself or its surrounding gating/order controls the string-vs-comment decision."
+    },
+    {
+      "kind": "localization_unresolved",
+      "origin": "S0_scope",
+      "text": "No readable symbols are exposed at the selected boundary, so it cannot determine which tokenizer state (e.g., in-string) is available before the matching expression runs."
+    }
+  ],
+  "coverage": {
+    "required_targets_complete": true,
+    "source_scope": "windows_only"
+  }
+}

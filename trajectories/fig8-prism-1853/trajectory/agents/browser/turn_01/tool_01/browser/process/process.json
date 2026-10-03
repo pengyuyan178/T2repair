@@ -1,0 +1,10 @@
+{
+  "command": [
+    "/home/ubuntu/anaconda3/envs/pyy/paper/TraceRepair/releases/isolation_20260907/.venv/bin/python",
+    "/task/trajectory/agents/browser/turn_01/tool_01/browser/actions.py",
+    "/task/trajectory/agents/browser/turn_01/tool_01/browser/request.json"
+  ],
+  "returncode": 0,
+  "stdout": "/task/trajectory/agents/browser/turn_01/tool_01/browser/process/stdout.log",
+  "stderr": "/task/trajectory/agents/browser/turn_01/tool_01/browser/process/stderr.log"
+}

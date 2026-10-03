@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "t2repair"
+version = "0.1.0"
+description = "Thinking It Through and Trying It Out for Visual Bug Repair"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=1.26,<3",
+  "openai>=1.50,<3",
+  "Pillow>=10,<13",
+  "playwright>=1.48,<2",
+  "pydantic>=2.8,<3",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+
+[project.scripts]
+t2repair = "causalgui.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["code"]
+
+[tool.pytest.ini_options]
+pythonpath = ["code", "tests"]
+testpaths = ["tests"]

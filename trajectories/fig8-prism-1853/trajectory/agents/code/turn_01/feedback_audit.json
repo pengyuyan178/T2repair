@@ -1,0 +1,1330 @@
+{
+  "protocol": "tool_feedback_v1",
+  "status": "ready",
+  "attempts": [
+    {
+      "protocol": "tool_feedback_v1",
+      "agent": "code",
+      "mode": "normal",
+      "status": "ready",
+      "raw_sha256": "8d350aeaf0488b48bdd41fc2431ec4512cf1ce8bfeb465c5509f21df47d1ee1f",
+      "budget": {
+        "max_observation_utf8_bytes": 131072,
+        "max_feedback_utf8_bytes": 524288,
+        "max_request_text_utf8_bytes": 2097152
+      },
+      "field_mapping": [
+        {
+          "evidence_id": "code.t1.o1",
+          "raw_pointer": "/evidence_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/evidence_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o1",
+          "raw_pointer": "/tool/name",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/tool/name",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o1",
+          "raw_pointer": "/tool/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/tool/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o1",
+          "raw_pointer": "/tool/query",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/tool/query",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o1",
+          "raw_pointer": "/tool/start_line",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/tool/start_line",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o1",
+          "raw_pointer": "/tool/end_line",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/tool/end_line",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o1",
+          "raw_pointer": "/result/ok",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/ok",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o1",
+          "raw_pointer": "/result/file",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/file",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o1",
+          "raw_pointer": "/result/start_line",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/start_line",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o1",
+          "raw_pointer": "/result/end_line",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/end_line",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o1",
+          "raw_pointer": "/result/text",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/text",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o1",
+          "raw_pointer": "/result/truncated",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/truncated",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o1",
+          "raw_pointer": "/result/sha256",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/sha256",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o1",
+          "raw_pointer": "/result/total_lines",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/total_lines",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o1",
+          "raw_pointer": "/result/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o1",
+          "raw_pointer": "/result/resolved_path",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/resolved_path",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o1",
+          "raw_pointer": "/result/source_kind",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/source_kind",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o1",
+          "raw_pointer": "/result/provenance",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/provenance",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o1",
+          "raw_pointer": "/result/base_commit",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/base_commit",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "raw_pointer": "/evidence_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/1/evidence_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "raw_pointer": "/tool/name",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/1/tool/name",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "raw_pointer": "/tool/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/1/tool/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "raw_pointer": "/tool/query",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/1/tool/query",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "raw_pointer": "/tool/start_line",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/1/tool/start_line",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "raw_pointer": "/tool/end_line",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/1/tool/end_line",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "raw_pointer": "/result/ok",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/1/result/ok",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "raw_pointer": "/result/probes",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/1/result/probes",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "raw_pointer": "/result/declarations/0",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/1/result/declarations/0",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "raw_pointer": "/result/declarations/1",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/1/result/declarations/1",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "raw_pointer": "/result/declarations/2",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/1/result/declarations/2",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "raw_pointer": "/result/declarations/3",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/1/result/declarations/3",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "raw_pointer": "/result/declarations/4",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/1/result/declarations/4",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "raw_pointer": "/result/declarations/5",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/1/result/declarations/5",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "raw_pointer": "/result/declarations/6",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/1/result/declarations/6",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "raw_pointer": "/result/declarations/7",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/1/result/declarations/7",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "raw_pointer": "/result/declarations/8",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/1/result/declarations/8",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "raw_pointer": "/result/declarations/9",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/1/result/declarations/9",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "raw_pointer": "/result/declarations/10",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/1/result/declarations/10",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "raw_pointer": "/result/declarations/11",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/1/result/declarations/11",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "raw_pointer": "/result/members/0",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/1/result/members/0",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "raw_pointer": "/result/members/1",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/1/result/members/1",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "raw_pointer": "/result/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/1/result/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "raw_pointer": "/result/resolved_path",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/1/result/resolved_path",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "raw_pointer": "/result/source_kind",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/1/result/source_kind",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "raw_pointer": "/result/provenance",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/1/result/provenance",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "raw_pointer": "/result/base_commit",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/1/result/base_commit",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/evidence_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/evidence_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/tool/name",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/tool/name",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/tool/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/tool/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/tool/query",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/tool/query",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/tool/start_line",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/tool/start_line",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/tool/end_line",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/tool/end_line",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/ok",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/ok",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/matches/0/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/matches/0/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/matches/0/file",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/matches/0/file",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/matches/0/line",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/matches/0/line",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/matches/0/text",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/matches/0/text",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/matches/1/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/matches/1/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/matches/1/file",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/matches/1/file",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/matches/1/line",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/matches/1/line",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/matches/1/text",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/matches/1/text",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/matches/2/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/matches/2/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/matches/2/file",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/matches/2/file",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/matches/2/line",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/matches/2/line",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/matches/2/text",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/matches/2/text",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/matches/3/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/matches/3/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/matches/3/file",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/matches/3/file",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/matches/3/line",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/matches/3/line",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/matches/3/text",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/matches/3/text",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/matches/4/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/matches/4/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/matches/4/file",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/matches/4/file",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/matches/4/line",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/matches/4/line",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/matches/4/text",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/matches/4/text",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/matches/5/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/matches/5/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/matches/5/file",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/matches/5/file",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/matches/5/line",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/matches/5/line",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/matches/5/text",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/matches/5/text",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/matches/6/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/matches/6/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/matches/6/file",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/matches/6/file",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/matches/6/line",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/matches/6/line",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/matches/6/text",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/matches/6/text",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/total_matches",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/total_matches",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/truncated",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/truncated",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/next_offset",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/next_offset",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/resolved_path",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/resolved_path",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/source_kind",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/source_kind",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/provenance",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/provenance",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "raw_pointer": "/result/base_commit",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/2/result/base_commit",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/evidence_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/evidence_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/tool/name",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/tool/name",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/tool/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/tool/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/tool/query",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/tool/query",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/tool/start_line",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/tool/start_line",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/tool/end_line",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/tool/end_line",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/ok",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/ok",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/scripts/test:aliases",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/scripts/test:aliases",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/scripts/test:languages",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/scripts/test:languages",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/scripts/test:plugins",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/scripts/test:plugins",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/scripts/test:runner",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/scripts/test:runner",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/scripts/test",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/scripts/test",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_runner/available",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_runner/available",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_runner/framework",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_runner/framework",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_runner/script",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_runner/script",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_runner/script_body",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_runner/script_body",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_runner/command/0",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_runner/command/0",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_runner/command/1",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_runner/command/1",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_runner/command/2",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_runner/command/2",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_runner/command/3",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_runner/command/3",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_runner/provenance",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_runner/provenance",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_runner/package_sha256",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_runner/package_sha256",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_sources/0/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_sources/0/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_sources/0/file",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_sources/0/file",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_sources/1/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_sources/1/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_sources/1/file",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_sources/1/file",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_sources/2/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_sources/2/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_sources/2/file",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_sources/2/file",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_sources/3/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_sources/3/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_sources/3/file",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_sources/3/file",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_sources/4/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_sources/4/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_sources/4/file",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_sources/4/file",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_sources/5/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_sources/5/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_sources/5/file",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_sources/5/file",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_sources/6/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_sources/6/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_sources/6/file",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_sources/6/file",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_sources/7/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_sources/7/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_sources/7/file",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_sources/7/file",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_sources/8/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_sources/8/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_sources/8/file",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_sources/8/file",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_sources/9/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_sources/9/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_sources/9/file",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_sources/9/file",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_sources/10/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_sources/10/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_sources/10/file",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_sources/10/file",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_sources/11/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_sources/11/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_sources/11/file",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_sources/11/file",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_sources/12/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_sources/12/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_sources/12/file",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_sources/12/file",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_sources/13/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_sources/13/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_sources/13/file",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_sources/13/file",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_sources/14/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_sources/14/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/test_sources/14/file",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/test_sources/14/file",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/resolved_path",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/resolved_path",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/source_kind",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/source_kind",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/provenance",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/provenance",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "raw_pointer": "/result/base_commit",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/3/result/base_commit",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o5",
+          "raw_pointer": "/evidence_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/4/evidence_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o5",
+          "raw_pointer": "/tool/name",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/4/tool/name",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o5",
+          "raw_pointer": "/tool/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/4/tool/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o5",
+          "raw_pointer": "/tool/query",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/4/tool/query",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o5",
+          "raw_pointer": "/tool/start_line",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/4/tool/start_line",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o5",
+          "raw_pointer": "/tool/end_line",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/4/tool/end_line",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o5",
+          "raw_pointer": "/result/ok",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/4/result/ok",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o5",
+          "raw_pointer": "/result/matches/0/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/4/result/matches/0/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o5",
+          "raw_pointer": "/result/matches/0/file",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/4/result/matches/0/file",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o5",
+          "raw_pointer": "/result/matches/0/line",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/4/result/matches/0/line",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o5",
+          "raw_pointer": "/result/matches/0/text",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/4/result/matches/0/text",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o5",
+          "raw_pointer": "/result/matches/1/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/4/result/matches/1/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o5",
+          "raw_pointer": "/result/matches/1/file",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/4/result/matches/1/file",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o5",
+          "raw_pointer": "/result/matches/1/line",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/4/result/matches/1/line",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o5",
+          "raw_pointer": "/result/matches/1/text",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/4/result/matches/1/text",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o5",
+          "raw_pointer": "/result/total_matches",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/4/result/total_matches",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o5",
+          "raw_pointer": "/result/truncated",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/4/result/truncated",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o5",
+          "raw_pointer": "/result/next_offset",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/4/result/next_offset",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o5",
+          "raw_pointer": "/result/source_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/4/result/source_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o5",
+          "raw_pointer": "/result/resolved_path",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/4/result/resolved_path",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o5",
+          "raw_pointer": "/result/source_kind",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/4/result/source_kind",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o5",
+          "raw_pointer": "/result/provenance",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/4/result/provenance",
+          "reason": null
+        },
+        {
+          "evidence_id": "code.t1.o5",
+          "raw_pointer": "/result/base_commit",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/4/result/base_commit",
+          "reason": null
+        }
+      ],
+      "omissions": [],
+      "references": [],
+      "pending_validation": [],
+      "artifact_fields": [],
+      "observations": [
+        {
+          "evidence_id": "code.t1.o1",
+          "tool": "read_source",
+          "raw": {
+            "chars": 964,
+            "utf8_bytes": 964
+          },
+          "visible": {
+            "chars": 1320,
+            "utf8_bytes": 1320
+          },
+          "original_tool_ok": true,
+          "required_facts_preserved": true,
+          "original_test_status": null,
+          "original_browser_ok": null,
+          "source_reference": false,
+          "runtime_aliases": 0
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "tool": "symbols",
+          "raw": {
+            "chars": 485,
+            "utf8_bytes": 485
+          },
+          "visible": {
+            "chars": 485,
+            "utf8_bytes": 485
+          },
+          "original_tool_ok": true,
+          "required_facts_preserved": true,
+          "original_test_status": null,
+          "original_browser_ok": null,
+          "source_reference": false,
+          "runtime_aliases": 0
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "tool": "search_source",
+          "raw": {
+            "chars": 1312,
+            "utf8_bytes": 1312
+          },
+          "visible": {
+            "chars": 1350,
+            "utf8_bytes": 1350
+          },
+          "original_tool_ok": true,
+          "required_facts_preserved": true,
+          "original_test_status": null,
+          "original_browser_ok": null,
+          "source_reference": false,
+          "runtime_aliases": 0
+        },
+        {
+          "evidence_id": "code.t1.o4",
+          "tool": "project_info",
+          "raw": {
+            "chars": 1833,
+            "utf8_bytes": 1833
+          },
+          "visible": {
+            "chars": 1896,
+            "utf8_bytes": 1896
+          },
+          "original_tool_ok": true,
+          "required_facts_preserved": true,
+          "original_test_status": null,
+          "original_browser_ok": null,
+          "source_reference": false,
+          "runtime_aliases": 0
+        },
+        {
+          "evidence_id": "code.t1.o5",
+          "tool": "search_source",
+          "raw": {
+            "chars": 749,
+            "utf8_bytes": 749
+          },
+          "visible": {
+            "chars": 787,
+            "utf8_bytes": 787
+          },
+          "original_tool_ok": true,
+          "required_facts_preserved": true,
+          "original_test_status": null,
+          "original_browser_ok": null,
+          "source_reference": false,
+          "runtime_aliases": 0
+        }
+      ],
+      "failure": null,
+      "metrics": {
+        "raw": {
+          "chars": 5371,
+          "utf8_bytes": 5371
+        },
+        "visible": {
+          "chars": 5965,
+          "utf8_bytes": 5965
+        },
+        "next_request": {
+          "chars": 45204,
+          "utf8_bytes": 45204,
+          "image_count": 1,
+          "image_url_utf8_bytes": 18730,
+          "image_binary_bytes": 14031,
+          "tokens": null,
+          "measurement": "canonical_json_messages_and_response_format_without_image_urls"
+        },
+        "tokens": null,
+        "reference_count": 0,
+        "image_count": 0,
+        "images": {
+          "image_count": 0,
+          "image_url_utf8_bytes": 0,
+          "image_binary_bytes": 0
+        }
+      }
+    }
+  ],
+  "selected_attempt": 0,
+  "delivery": "sent_to_model",
+  "turn": 1
+}

@@ -1,0 +1,274 @@
+{
+  "protocol": "s2_to_code_v1",
+  "status": "ready_with_gaps",
+  "config": {
+    "max_window_utf8_bytes": 32768,
+    "max_source_total_utf8_bytes": 131072,
+    "max_payload_utf8_bytes": 1048576,
+    "max_initial_message_utf8_bytes": 33554432,
+    "context_radius": 8,
+    "max_direct_helpers": 8,
+    "max_dependency_files": 4,
+    "fallback_max_files": 3,
+    "fallback_max_windows_per_file": 2
+  },
+  "reference_checks": [
+    {
+      "hypothesis_id": "H2",
+      "normalized_fields": {
+        "readable_symbols": {
+          "raw": [
+            "Prism.languages.json"
+          ],
+          "normalized": []
+        }
+      }
+    },
+    {
+      "hypothesis_id": "H4",
+      "normalized_fields": {
+        "mechanism": {
+          "raw": "output_path",
+          "normalized": "matching_boundary"
+        },
+        "readable_symbols": {
+          "raw": [
+            "Prism.languages.json",
+            "Prism.tokenize"
+          ],
+          "normalized": []
+        }
+      }
+    },
+    {
+      "hypothesis_id": "H5",
+      "normalized_fields": {
+        "mechanism": {
+          "raw": "identity_binding",
+          "normalized": "matching_boundary"
+        },
+        "readable_symbols": {
+          "raw": [
+            "Prism.languages.json",
+            "Prism.tokenize"
+          ],
+          "normalized": []
+        }
+      }
+    },
+    {
+      "hypothesis_id": "H6",
+      "normalized_fields": {
+        "mechanism": {
+          "raw": "render_group",
+          "normalized": "matching_boundary"
+        },
+        "readable_symbols": {
+          "raw": [
+            "Prism.languages.json",
+            "Prism.highlight"
+          ],
+          "normalized": []
+        }
+      }
+    },
+    {
+      "hypothesis_id": "H7",
+      "normalized_fields": {
+        "readable_symbols": {
+          "raw": [
+            "Prism.languages.json"
+          ],
+          "normalized": []
+        }
+      }
+    },
+    {
+      "hypothesis_id": "H8",
+      "normalized_fields": {
+        "readable_symbols": {
+          "raw": [
+            "Prism.languages.json"
+          ],
+          "normalized": []
+        }
+      }
+    }
+  ],
+  "omissions": [],
+  "source_versions": {
+    "components/prism-json.js": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e"
+  },
+  "required_missing": [],
+  "source_coverage": [
+    {
+      "file": "components/prism-json.js",
+      "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+      "included_ranges": [
+        [
+          1,
+          16
+        ]
+      ],
+      "unexpanded_ranges": [
+        [
+          17,
+          19
+        ]
+      ],
+      "total_lines": 19
+    }
+  ],
+  "automatic_reads_are_agent_tool_calls": false,
+  "full_state_projection_only": true,
+  "gaps": [
+    {
+      "kind": "no_evidence",
+      "hypothesis_id": "H1",
+      "file": "components/prism-json.js",
+      "reason": "function_context_unresolved"
+    },
+    {
+      "kind": "no_evidence",
+      "hypothesis_id": "H2",
+      "file": "components/prism-json.js",
+      "reason": "function_context_unresolved"
+    },
+    {
+      "kind": "no_evidence",
+      "hypothesis_id": "H3",
+      "file": "components/prism-json.js",
+      "reason": "function_context_unresolved"
+    },
+    {
+      "kind": "no_evidence",
+      "hypothesis_id": "H4",
+      "file": "components/prism-json.js",
+      "reason": "function_context_unresolved"
+    },
+    {
+      "kind": "no_evidence",
+      "hypothesis_id": "H5",
+      "file": "components/prism-json.js",
+      "reason": "function_context_unresolved"
+    },
+    {
+      "kind": "no_evidence",
+      "hypothesis_id": "H6",
+      "file": "components/prism-json.js",
+      "reason": "function_context_unresolved"
+    },
+    {
+      "kind": "no_evidence",
+      "hypothesis_id": "H7",
+      "file": "components/prism-json.js",
+      "reason": "function_context_unresolved"
+    },
+    {
+      "kind": "no_evidence",
+      "hypothesis_id": "H8",
+      "file": "components/prism-json.js",
+      "reason": "function_context_unresolved"
+    },
+    {
+      "kind": "localization_unresolved",
+      "origin": "S0_boundaries",
+      "text": "No JSON string-token boundary is present in the candidate pool; the JSON string rule that would directly enforce C1/C2 by matching quoted strings before comment handling is not among the supplied boundaries."
+    },
+    {
+      "kind": "localization_unresolved",
+      "origin": "S0_scope",
+      "text": "Selected boundary matching:components/prism-json.js:2:37-68 has no read_symbols; the local inputs cannot distinguish whether the regex literal itself or its surrounding gating/order controls the string-vs-comment decision."
+    },
+    {
+      "kind": "localization_unresolved",
+      "origin": "S0_scope",
+      "text": "No readable symbols are exposed at the selected boundary, so it cannot determine which tokenizer state (e.g., in-string) is available before the matching expression runs."
+    }
+  ],
+  "metrics": {
+    "payload": {
+      "characters": 23280,
+      "utf8_bytes": 23280
+    },
+    "initial_message": {
+      "characters": 44584,
+      "utf8_bytes": 44584
+    },
+    "source_windows": 1,
+    "source_characters": 377,
+    "source_utf8_bytes": 377,
+    "duplicate_source_lines": 0,
+    "coverage": [
+      {
+        "hypothesis_id": "H1",
+        "origin": "normalized",
+        "file": "components/prism-json.js",
+        "line": 2,
+        "status": "valid",
+        "covered": true
+      },
+      {
+        "hypothesis_id": "H2",
+        "origin": "normalized",
+        "file": "components/prism-json.js",
+        "line": 2,
+        "status": "valid",
+        "covered": true
+      },
+      {
+        "hypothesis_id": "H3",
+        "origin": "normalized",
+        "file": "components/prism-json.js",
+        "line": 8,
+        "status": "valid",
+        "covered": true
+      },
+      {
+        "hypothesis_id": "H4",
+        "origin": "normalized",
+        "file": "components/prism-json.js",
+        "line": 2,
+        "status": "valid",
+        "covered": true
+      },
+      {
+        "hypothesis_id": "H5",
+        "origin": "normalized",
+        "file": "components/prism-json.js",
+        "line": 2,
+        "status": "valid",
+        "covered": true
+      },
+      {
+        "hypothesis_id": "H6",
+        "origin": "normalized",
+        "file": "components/prism-json.js",
+        "line": 2,
+        "status": "valid",
+        "covered": true
+      },
+      {
+        "hypothesis_id": "H7",
+        "origin": "normalized",
+        "file": "components/prism-json.js",
+        "line": 2,
+        "status": "valid",
+        "covered": true
+      },
+      {
+        "hypothesis_id": "H8",
+        "origin": "normalized",
+        "file": "components/prism-json.js",
+        "line": 2,
+        "status": "valid",
+        "covered": true
+      }
+    ],
+    "valid_targets": 8,
+    "covered_targets": 8,
+    "invalid_references": 0,
+    "budget_omissions": 0,
+    "actual_input_tokens": null
+  }
+}

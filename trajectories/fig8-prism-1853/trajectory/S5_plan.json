@@ -1,0 +1,241 @@
+{
+  "allowed_change": [
+    "components/prism-json.js",
+    "components/prism-core.js",
+    "prism.js",
+    "components/index.js",
+    "components/prism-abnf.js",
+    "components/prism-actionscript.js",
+    "components/prism-ada.js",
+    "components/prism-apl.js",
+    "style.css",
+    "components.js"
+  ],
+  "new_files": [],
+  "must_preserve": [],
+  "must_satisfy": [
+    {
+      "id": "C1",
+      "kind": "REQUIREMENT",
+      "entity": "JSON string containing \"/*\"",
+      "property": "tokenization",
+      "context": "JSON tokenization",
+      "relation": "Must be tokenized as a string, not as a comment start.",
+      "provenance": {
+        "kind": "issue_sentence",
+        "reference": "/* breaks JSON tokenization",
+        "region": []
+      },
+      "role": "CHANGE_DISTINGUISH",
+      "provenance_valid": true,
+      "strength": "MUST",
+      "ambiguity_reason": ""
+    },
+    {
+      "id": "C2",
+      "kind": "REQUIREMENT",
+      "entity": "\"*/*\" sequence inside a JSON string",
+      "property": "tokenization",
+      "context": "HTTP header Accept: */*",
+      "relation": "Must be processed together with the surrounding string token, not separately as a comment.",
+      "provenance": {
+        "kind": "issue_sentence",
+        "reference": "The HTTP header `Accept: */*` triggers this problem.",
+        "region": []
+      },
+      "role": "CHANGE_UNITE",
+      "provenance_valid": true,
+      "strength": "MUST",
+      "ambiguity_reason": ""
+    },
+    {
+      "id": "C3",
+      "kind": "REQUIREMENT",
+      "entity": "JSON tokens following a string containing \"/*\"",
+      "property": "tokenization",
+      "context": "JSON tokenization",
+      "relation": "Must not be consumed as part of a comment; must be tokenized as normal JSON tokens.",
+      "provenance": {
+        "kind": "image_region",
+        "reference": "0",
+        "region": [
+          0.03,
+          0.56,
+          0.97,
+          0.97
+        ]
+      },
+      "role": "CHANGE_DISTINGUISH",
+      "provenance_valid": true,
+      "strength": "MUST",
+      "ambiguity_reason": ""
+    },
+    {
+      "id": "C4",
+      "kind": "REQUIREMENT",
+      "entity": "comment",
+      "property": "tokenization",
+      "context": "Inside a JSON string",
+      "relation": "Must not be triggered by the /* sequence when it appears inside a string.",
+      "provenance": {
+        "kind": "issue_sentence",
+        "reference": "/* breaks JSON tokenization",
+        "region": []
+      },
+      "role": "CHANGE_DISTINGUISH",
+      "provenance_valid": true,
+      "strength": "MUST",
+      "ambiguity_reason": ""
+    }
+  ],
+  "may_explain": [],
+  "must_co_edit": [],
+  "interface_obligations": [
+    {
+      "from": "components.js",
+      "to": "style.css",
+      "kind": "same_directory_visual"
+    },
+    {
+      "from": "components/index.js",
+      "to": "components.js",
+      "kind": "import"
+    },
+    {
+      "from": "gulpfile.js",
+      "to": "style.css",
+      "kind": "same_directory_visual"
+    },
+    {
+      "from": "prism.js",
+      "to": "style.css",
+      "kind": "same_directory_visual"
+    }
+  ],
+  "atomicity": "All edits in a candidate succeed together; no partial patch is retained.",
+  "ranked_files": [
+    "components/prism-json.js",
+    "components/prism-core.js",
+    "prism.js",
+    "components/index.js",
+    "components/prism-abnf.js",
+    "components/prism-actionscript.js",
+    "components/prism-ada.js",
+    "components/prism-apl.js"
+  ],
+  "unknown_policy": "Retain UNKNOWN hypotheses; no runtime failure removes an editable file.",
+  "scope_complete": false,
+  "interface_obligations_status": "review_in_generation_and_validate_atomic_candidate",
+  "patch_protocol": "exact_unique_search_v1",
+  "front_scope": {
+    "selected_boundaries": [
+      {
+        "id": "matching:components/prism-json.js:2:37-68",
+        "candidate_subtype": "matching",
+        "mechanism": "matching_boundary",
+        "file": "components/prism-json.js",
+        "line": 2,
+        "end_line": 2,
+        "expression": "\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)",
+        "repair_interface": {
+          "G_b": "matching_expression",
+          "z_b": [],
+          "read_basis": "module_candidate_upper_bound"
+        },
+        "K_b": {
+          "constraint_ids": [
+            "C1",
+            "C2",
+            "C3",
+            "C4"
+          ],
+          "static_obligations": [],
+          "declared_preserve": [
+            "JSON string containing \"/*\": tokenization must remain equal to normal JSON string tokenization, not comment-start tokenization.",
+            "\"*/*\" sequence inside a JSON string: tokenization must remain equal to the surrounding string token, not separate comment tokens.",
+            "JSON tokens following a string containing \"/*\": tokenization must remain equal to normal JSON token sequence, not comment content.",
+            "Comment: tokenization must remain equal to comment-token tokenization only when the comment start occurs outside a JSON string.",
+            "Actual comment starts outside strings: matching must remain equal to existing comment-token recognition."
+          ]
+        },
+        "expressivity": {
+          "verdict": "UNKNOWN",
+          "certificate": null,
+          "reason": "static_read_set_incomplete",
+          "colliding_objects": [],
+          "read_intersection": [],
+          "excludes_candidate": false,
+          "required_runtime_evidence": "object_identity_and_equal_z_b_observations"
+        },
+        "selection_reason": "This is the JSON comment-token matching boundary. Its pattern matches /* and can consume the rest of the input when /* appears inside a JSON string. Adjusting this local decision (or how it is gated/ordered) is what can distinguish a string-contained /* from a real comment start, prevent */* inside strings from being split into comment tokens, and stop following JSON tokens from being consumed as comment content. It therefore serves C1, C2, C3, and C4. The candidate exposes no readable symbols; the regex literal itself is the local decision."
+      }
+    ],
+    "scope_plan": {
+      "ranked_files": [
+        "components/prism-json.js",
+        "components/prism-core.js",
+        "prism.js",
+        "components/index.js",
+        "components/prism-abnf.js",
+        "components/prism-actionscript.js",
+        "components/prism-ada.js",
+        "components/prism-apl.js",
+        "components/prism-applescript.js",
+        "components/prism-arff.js",
+        "components/prism-asciidoc.js",
+        "components/prism-asm6502.js",
+        "components/prism-aspnet.js",
+        "components/prism-autoit.js",
+        "components/prism-basic.js",
+        "components/prism-batch.js",
+        "components/prism-bison.js",
+        "components/prism-bnf.js",
+        "components/prism-brainfuck.js",
+        "components/prism-bro.js",
+        "components/prism-c.js",
+        "components/prism-cil.js",
+        "components/prism-clike.js",
+        "components/prism-coffeescript.js",
+        "components/prism-cpp.js",
+        "components/prism-crystal.js",
+        "components/prism-csharp.js",
+        "components/prism-csp.js",
+        "components/prism-css-extras.js",
+        "components/prism-css.js",
+        "components/prism-d.js",
+        "components/prism-dart.js",
+        "components/prism-diff.js",
+        "components/prism-django.js",
+        "components/prism-docker.js",
+        "components/prism-ebnf.js",
+        "components/prism-eiffel.js",
+        "components/prism-ejs.js",
+        "components/prism-elixir.js",
+        "components/prism-elm.js"
+      ],
+      "boundary_plans": [
+        {
+          "id": "matching:components/prism-json.js:2:37-68",
+          "edit_unit": "matching_expression",
+          "edit_reads": [],
+          "preserve": [
+            "JSON string containing \"/*\": tokenization must remain equal to normal JSON string tokenization, not comment-start tokenization.",
+            "\"*/*\" sequence inside a JSON string: tokenization must remain equal to the surrounding string token, not separate comment tokens.",
+            "JSON tokens following a string containing \"/*\": tokenization must remain equal to normal JSON token sequence, not comment content.",
+            "Comment: tokenization must remain equal to comment-token tokenization only when the comment start occurs outside a JSON string.",
+            "Actual comment starts outside strings: matching must remain equal to existing comment-token recognition."
+          ]
+        }
+      ],
+      "unresolved": [
+        "Selected boundary matching:components/prism-json.js:2:37-68 has no read_symbols; the local inputs cannot distinguish whether the regex literal itself or its surrounding gating/order controls the string-vs-comment decision.",
+        "No readable symbols are exposed at the selected boundary, so it cannot determine which tokenizer state (e.g., in-string) is available before the matching expression runs."
+      ]
+    },
+    "candidate_pool": {
+      "total": 3162,
+      "shortlist": 80
+    },
+    "value_decision_family": "output_path"
+  }
+}

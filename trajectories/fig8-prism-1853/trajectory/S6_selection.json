@@ -1,0 +1,82 @@
+{
+  "selected": 1,
+  "first_nonempty": 1,
+  "ranking": [
+    {
+      "index": 1,
+      "key": [
+        1,
+        2,
+        0,
+        1,
+        1,
+        0,
+        -1
+      ],
+      "syntax_ok": true,
+      "missing_symbols": [],
+      "patch_applied": true
+    },
+    {
+      "index": 2,
+      "key": [
+        1,
+        2,
+        0,
+        1,
+        1,
+        0,
+        -2
+      ],
+      "syntax_ok": true,
+      "missing_symbols": [],
+      "patch_applied": true
+    },
+    {
+      "index": 3,
+      "key": [
+        1,
+        2,
+        0,
+        1,
+        1,
+        0,
+        -3
+      ],
+      "syntax_ok": true,
+      "missing_symbols": [],
+      "patch_applied": true
+    },
+    {
+      "index": 4,
+      "key": [
+        1,
+        2,
+        0,
+        1,
+        1,
+        0,
+        -4
+      ],
+      "syntax_ok": true,
+      "missing_symbols": [],
+      "patch_applied": true
+    },
+    {
+      "index": 5,
+      "key": [
+        1,
+        2,
+        0,
+        1,
+        1,
+        0,
+        -5
+      ],
+      "syntax_ok": true,
+      "missing_symbols": [],
+      "patch_applied": true
+    }
+  ],
+  "policy": "symbols, syntax, preserved witness, existing regression, grounded target, sample order"
+}

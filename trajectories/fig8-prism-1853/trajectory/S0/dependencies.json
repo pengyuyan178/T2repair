@@ -1,0 +1,11 @@
+{
+  "edges": [],
+  "unresolved": [
+    {
+      "from": "components/index.js",
+      "request": "../components.js"
+    }
+  ],
+  "consumer_counts": {},
+  "demanded_symbols": {}
+}

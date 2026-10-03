@@ -1,0 +1,4512 @@
+{
+  "base_commit": "2f9c9261bc1454899266929711d5842a3675e467",
+  "all_base_files": [
+    ".editorconfig",
+    ".gitattributes",
+    ".github/ISSUE_TEMPLATE/bug_report.md",
+    ".github/ISSUE_TEMPLATE/feature_request.md",
+    ".github/ISSUE_TEMPLATE/highlighting-bug-report.md",
+    ".github/ISSUE_TEMPLATE/new-language-request.md",
+    ".gitignore",
+    ".npmignore",
+    ".travis.yml",
+    "CHANGELOG.md",
+    "CNAME",
+    "LICENSE",
+    "README.md",
+    "bower.json",
+    "components.js",
+    "components.json",
+    "components/index.js",
+    "components/prism-abap.js",
+    "components/prism-abap.min.js",
+    "components/prism-abnf.js",
+    "components/prism-abnf.min.js",
+    "components/prism-actionscript.js",
+    "components/prism-actionscript.min.js",
+    "components/prism-ada.js",
+    "components/prism-ada.min.js",
+    "components/prism-apacheconf.js",
+    "components/prism-apacheconf.min.js",
+    "components/prism-apl.js",
+    "components/prism-apl.min.js",
+    "components/prism-applescript.js",
+    "components/prism-applescript.min.js",
+    "components/prism-arduino.js",
+    "components/prism-arduino.min.js",
+    "components/prism-arff.js",
+    "components/prism-arff.min.js",
+    "components/prism-asciidoc.js",
+    "components/prism-asciidoc.min.js",
+    "components/prism-asm6502.js",
+    "components/prism-asm6502.min.js",
+    "components/prism-aspnet.js",
+    "components/prism-aspnet.min.js",
+    "components/prism-autohotkey.js",
+    "components/prism-autohotkey.min.js",
+    "components/prism-autoit.js",
+    "components/prism-autoit.min.js",
+    "components/prism-bash.js",
+    "components/prism-bash.min.js",
+    "components/prism-basic.js",
+    "components/prism-basic.min.js",
+    "components/prism-batch.js",
+    "components/prism-batch.min.js",
+    "components/prism-bison.js",
+    "components/prism-bison.min.js",
+    "components/prism-bnf.js",
+    "components/prism-bnf.min.js",
+    "components/prism-brainfuck.js",
+    "components/prism-brainfuck.min.js",
+    "components/prism-bro.js",
+    "components/prism-bro.min.js",
+    "components/prism-c.js",
+    "components/prism-c.min.js",
+    "components/prism-cil.js",
+    "components/prism-cil.min.js",
+    "components/prism-clike.js",
+    "components/prism-clike.min.js",
+    "components/prism-clojure.js",
+    "components/prism-clojure.min.js",
+    "components/prism-cmake.js",
+    "components/prism-cmake.min.js",
+    "components/prism-coffeescript.js",
+    "components/prism-coffeescript.min.js",
+    "components/prism-core.js",
+    "components/prism-core.min.js",
+    "components/prism-cpp.js",
+    "components/prism-cpp.min.js",
+    "components/prism-crystal.js",
+    "components/prism-crystal.min.js",
+    "components/prism-csharp.js",
+    "components/prism-csharp.min.js",
+    "components/prism-csp.js",
+    "components/prism-csp.min.js",
+    "components/prism-css-extras.js",
+    "components/prism-css-extras.min.js",
+    "components/prism-css.js",
+    "components/prism-css.min.js",
+    "components/prism-d.js",
+    "components/prism-d.min.js",
+    "components/prism-dart.js",
+    "components/prism-dart.min.js",
+    "components/prism-diff.js",
+    "components/prism-diff.min.js",
+    "components/prism-django.js",
+    "components/prism-django.min.js",
+    "components/prism-docker.js",
+    "components/prism-docker.min.js",
+    "components/prism-ebnf.js",
+    "components/prism-ebnf.min.js",
+    "components/prism-eiffel.js",
+    "components/prism-eiffel.min.js",
+    "components/prism-ejs.js",
+    "components/prism-ejs.min.js",
+    "components/prism-elixir.js",
+    "components/prism-elixir.min.js",
+    "components/prism-elm.js",
+    "components/prism-elm.min.js",
+    "components/prism-erb.js",
+    "components/prism-erb.min.js",
+    "components/prism-erlang.js",
+    "components/prism-erlang.min.js",
+    "components/prism-flow.js",
+    "components/prism-flow.min.js",
+    "components/prism-fortran.js",
+    "components/prism-fortran.min.js",
+    "components/prism-fsharp.js",
+    "components/prism-fsharp.min.js",
+    "components/prism-gcode.js",
+    "components/prism-gcode.min.js",
+    "components/prism-gedcom.js",
+    "components/prism-gedcom.min.js",
+    "components/prism-gherkin.js",
+    "components/prism-gherkin.min.js",
+    "components/prism-git.js",
+    "components/prism-git.min.js",
+    "components/prism-glsl.js",
+    "components/prism-glsl.min.js",
+    "components/prism-gml.js",
+    "components/prism-gml.min.js",
+    "components/prism-go.js",
+    "components/prism-go.min.js",
+    "components/prism-graphql.js",
+    "components/prism-graphql.min.js",
+    "components/prism-groovy.js",
+    "components/prism-groovy.min.js",
+    "components/prism-haml.js",
+    "components/prism-haml.min.js",
+    "components/prism-handlebars.js",
+    "components/prism-handlebars.min.js",
+    "components/prism-haskell.js",
+    "components/prism-haskell.min.js",
+    "components/prism-haxe.js",
+    "components/prism-haxe.min.js",
+    "components/prism-hcl.js",
+    "components/prism-hcl.min.js",
+    "components/prism-hpkp.js",
+    "components/prism-hpkp.min.js",
+    "components/prism-hsts.js",
+    "components/prism-hsts.min.js",
+    "components/prism-http.js",
+    "components/prism-http.min.js",
+    "components/prism-ichigojam.js",
+    "components/prism-ichigojam.min.js",
+    "components/prism-icon.js",
+    "components/prism-icon.min.js",
+    "components/prism-inform7.js",
+    "components/prism-inform7.min.js",
+    "components/prism-ini.js",
+    "components/prism-ini.min.js",
+    "components/prism-io.js",
+    "components/prism-io.min.js",
+    "components/prism-j.js",
+    "components/prism-j.min.js",
+    "components/prism-java.js",
+    "components/prism-java.min.js",
+    "components/prism-javadoc.js",
+    "components/prism-javadoc.min.js",
+    "components/prism-javadoclike.js",
+    "components/prism-javadoclike.min.js",
+    "components/prism-javascript.js",
+    "components/prism-javascript.min.js",
+    "components/prism-javastacktrace.js",
+    "components/prism-javastacktrace.min.js",
+    "components/prism-jolie.js",
+    "components/prism-jolie.min.js",
+    "components/prism-js-extras.js",
+    "components/prism-js-extras.min.js",
+    "components/prism-jsdoc.js",
+    "components/prism-jsdoc.min.js",
+    "components/prism-json.js",
+    "components/prism-json.min.js",
+    "components/prism-json5.js",
+    "components/prism-json5.min.js",
+    "components/prism-jsonp.js",
+    "components/prism-jsonp.min.js",
+    "components/prism-jsx.js",
+    "components/prism-jsx.min.js",
+    "components/prism-julia.js",
+    "components/prism-julia.min.js",
+    "components/prism-keyman.js",
+    "components/prism-keyman.min.js",
+    "components/prism-kotlin.js",
+    "components/prism-kotlin.min.js",
+    "components/prism-latex.js",
+    "components/prism-latex.min.js",
+    "components/prism-less.js",
+    "components/prism-less.min.js",
+    "components/prism-liquid.js",
+    "components/prism-liquid.min.js",
+    "components/prism-lisp.js",
+    "components/prism-lisp.min.js",
+    "components/prism-livescript.js",
+    "components/prism-livescript.min.js",
+    "components/prism-lolcode.js",
+    "components/prism-lolcode.min.js",
+    "components/prism-lua.js",
+    "components/prism-lua.min.js",
+    "components/prism-makefile.js",
+    "components/prism-makefile.min.js",
+    "components/prism-markdown.js",
+    "components/prism-markdown.min.js",
+    "components/prism-markup-templating.js",
+    "components/prism-markup-templating.min.js",
+    "components/prism-markup.js",
+    "components/prism-markup.min.js",
+    "components/prism-matlab.js",
+    "components/prism-matlab.min.js",
+    "components/prism-mel.js",
+    "components/prism-mel.min.js",
+    "components/prism-mizar.js",
+    "components/prism-mizar.min.js",
+    "components/prism-monkey.js",
+    "components/prism-monkey.min.js",
+    "components/prism-n1ql.js",
+    "components/prism-n1ql.min.js",
+    "components/prism-n4js.js",
+    "components/prism-n4js.min.js",
+    "components/prism-nand2tetris-hdl.js",
+    "components/prism-nand2tetris-hdl.min.js",
+    "components/prism-nasm.js",
+    "components/prism-nasm.min.js",
+    "components/prism-nginx.js",
+    "components/prism-nginx.min.js",
+    "components/prism-nim.js",
+    "components/prism-nim.min.js",
+    "components/prism-nix.js",
+    "components/prism-nix.min.js",
+    "components/prism-nsis.js",
+    "components/prism-nsis.min.js",
+    "components/prism-objectivec.js",
+    "components/prism-objectivec.min.js",
+    "components/prism-ocaml.js",
+    "components/prism-ocaml.min.js",
+    "components/prism-opencl.js",
+    "components/prism-opencl.min.js",
+    "components/prism-oz.js",
+    "components/prism-oz.min.js",
+    "components/prism-parigp.js",
+    "components/prism-parigp.min.js",
+    "components/prism-parser.js",
+    "components/prism-parser.min.js",
+    "components/prism-pascal.js",
+    "components/prism-pascal.min.js",
+    "components/prism-perl.js",
+    "components/prism-perl.min.js",
+    "components/prism-php-extras.js",
+    "components/prism-php-extras.min.js",
+    "components/prism-php.js",
+    "components/prism-php.min.js",
+    "components/prism-phpdoc.js",
+    "components/prism-phpdoc.min.js",
+    "components/prism-plsql.js",
+    "components/prism-plsql.min.js",
+    "components/prism-powershell.js",
+    "components/prism-powershell.min.js",
+    "components/prism-processing.js",
+    "components/prism-processing.min.js",
+    "components/prism-prolog.js",
+    "components/prism-prolog.min.js",
+    "components/prism-properties.js",
+    "components/prism-properties.min.js",
+    "components/prism-protobuf.js",
+    "components/prism-protobuf.min.js",
+    "components/prism-pug.js",
+    "components/prism-pug.min.js",
+    "components/prism-puppet.js",
+    "components/prism-puppet.min.js",
+    "components/prism-pure.js",
+    "components/prism-pure.min.js",
+    "components/prism-python.js",
+    "components/prism-python.min.js",
+    "components/prism-q.js",
+    "components/prism-q.min.js",
+    "components/prism-qore.js",
+    "components/prism-qore.min.js",
+    "components/prism-r.js",
+    "components/prism-r.min.js",
+    "components/prism-reason.js",
+    "components/prism-reason.min.js",
+    "components/prism-regex.js",
+    "components/prism-regex.min.js",
+    "components/prism-renpy.js",
+    "components/prism-renpy.min.js",
+    "components/prism-rest.js",
+    "components/prism-rest.min.js",
+    "components/prism-rip.js",
+    "components/prism-rip.min.js",
+    "components/prism-roboconf.js",
+    "components/prism-roboconf.min.js",
+    "components/prism-ruby.js",
+    "components/prism-ruby.min.js",
+    "components/prism-rust.js",
+    "components/prism-rust.min.js",
+    "components/prism-sas.js",
+    "components/prism-sas.min.js",
+    "components/prism-sass.js",
+    "components/prism-sass.min.js",
+    "components/prism-scala.js",
+    "components/prism-scala.min.js",
+    "components/prism-scheme.js",
+    "components/prism-scheme.min.js",
+    "components/prism-scss.js",
+    "components/prism-scss.min.js",
+    "components/prism-smalltalk.js",
+    "components/prism-smalltalk.min.js",
+    "components/prism-smarty.js",
+    "components/prism-smarty.min.js",
+    "components/prism-soy.js",
+    "components/prism-soy.min.js",
+    "components/prism-sql.js",
+    "components/prism-sql.min.js",
+    "components/prism-stylus.js",
+    "components/prism-stylus.min.js",
+    "components/prism-swift.js",
+    "components/prism-swift.min.js",
+    "components/prism-t4-cs.js",
+    "components/prism-t4-cs.min.js",
+    "components/prism-t4-templating.js",
+    "components/prism-t4-templating.min.js",
+    "components/prism-t4-vb.js",
+    "components/prism-t4-vb.min.js",
+    "components/prism-tap.js",
+    "components/prism-tap.min.js",
+    "components/prism-tcl.js",
+    "components/prism-tcl.min.js",
+    "components/prism-textile.js",
+    "components/prism-textile.min.js",
+    "components/prism-toml.js",
+    "components/prism-toml.min.js",
+    "components/prism-tsx.js",
+    "components/prism-tsx.min.js",
+    "components/prism-tt2.js",
+    "components/prism-tt2.min.js",
+    "components/prism-twig.js",
+    "components/prism-twig.min.js",
+    "components/prism-typescript.js",
+    "components/prism-typescript.min.js",
+    "components/prism-vala.js",
+    "components/prism-vala.min.js",
+    "components/prism-vbnet.js",
+    "components/prism-vbnet.min.js",
+    "components/prism-velocity.js",
+    "components/prism-velocity.min.js",
+    "components/prism-verilog.js",
+    "components/prism-verilog.min.js",
+    "components/prism-vhdl.js",
+    "components/prism-vhdl.min.js",
+    "components/prism-vim.js",
+    "components/prism-vim.min.js",
+    "components/prism-visual-basic.js",
+    "components/prism-visual-basic.min.js",
+    "components/prism-wasm.js",
+    "components/prism-wasm.min.js",
+    "components/prism-wiki.js",
+    "components/prism-wiki.min.js",
+    "components/prism-xeora.js",
+    "components/prism-xeora.min.js",
+    "components/prism-xojo.js",
+    "components/prism-xojo.min.js",
+    "components/prism-xquery.js",
+    "components/prism-xquery.min.js",
+    "components/prism-yaml.js",
+    "components/prism-yaml.min.js",
+    "composer.json",
+    "download.html",
+    "examples.html",
+    "examples/prism-abap.html",
+    "examples/prism-abnf.html",
+    "examples/prism-actionscript.html",
+    "examples/prism-ada.html",
+    "examples/prism-apacheconf.html",
+    "examples/prism-apl.html",
+    "examples/prism-applescript.html",
+    "examples/prism-arduino.html",
+    "examples/prism-arff.html",
+    "examples/prism-asciidoc.html",
+    "examples/prism-asm6502.html",
+    "examples/prism-aspnet.html",
+    "examples/prism-autohotkey.html",
+    "examples/prism-autoit.html",
+    "examples/prism-bash.html",
+    "examples/prism-basic.html",
+    "examples/prism-batch.html",
+    "examples/prism-bison.html",
+    "examples/prism-bnf.html",
+    "examples/prism-brainfuck.html",
+    "examples/prism-bro.html",
+    "examples/prism-c.html",
+    "examples/prism-clike.html",
+    "examples/prism-clojure.html",
+    "examples/prism-cmake.html",
+    "examples/prism-coffeescript.html",
+    "examples/prism-cpp.html",
+    "examples/prism-crystal.html",
+    "examples/prism-csharp.html",
+    "examples/prism-csp.html",
+    "examples/prism-css.html",
+    "examples/prism-d.html",
+    "examples/prism-dart.html",
+    "examples/prism-diff.html",
+    "examples/prism-django.html",
+    "examples/prism-docker.html",
+    "examples/prism-ebnf.html",
+    "examples/prism-eiffel.html",
+    "examples/prism-ejs.html",
+    "examples/prism-elixir.html",
+    "examples/prism-elm.html",
+    "examples/prism-erb.html",
+    "examples/prism-erlang.html",
+    "examples/prism-flow.html",
+    "examples/prism-fortran.html",
+    "examples/prism-fsharp.html",
+    "examples/prism-gcode.html",
+    "examples/prism-gedcom.html",
+    "examples/prism-gherkin.html",
+    "examples/prism-git.html",
+    "examples/prism-glsl.html",
+    "examples/prism-gml.html",
+    "examples/prism-go.html",
+    "examples/prism-graphql.html",
+    "examples/prism-groovy.html",
+    "examples/prism-haml.html",
+    "examples/prism-handlebars.html",
+    "examples/prism-haskell.html",
+    "examples/prism-haxe.html",
+    "examples/prism-hcl.html",
+    "examples/prism-hpkp.html",
+    "examples/prism-hsts.html",
+    "examples/prism-http.html",
+    "examples/prism-ichigojam.html",
+    "examples/prism-icon.html",
+    "examples/prism-inform7.html",
+    "examples/prism-ini.html",
+    "examples/prism-io.html",
+    "examples/prism-j.html",
+    "examples/prism-java.html",
+    "examples/prism-javascript.html",
+    "examples/prism-javastacktrace.html",
+    "examples/prism-jolie.html",
+    "examples/prism-json.html",
+    "examples/prism-json5.html",
+    "examples/prism-jsonp.html",
+    "examples/prism-jsx.html",
+    "examples/prism-julia.html",
+    "examples/prism-keyman.html",
+    "examples/prism-kotlin.html",
+    "examples/prism-latex.html",
+    "examples/prism-less.html",
+    "examples/prism-liquid.html",
+    "examples/prism-lisp.html",
+    "examples/prism-livescript.html",
+    "examples/prism-lolcode.html",
+    "examples/prism-lua.html",
+    "examples/prism-makefile.html",
+    "examples/prism-markdown.html",
+    "examples/prism-markup.html",
+    "examples/prism-matlab.html",
+    "examples/prism-mel.html",
+    "examples/prism-mizar.html",
+    "examples/prism-monkey.html",
+    "examples/prism-n1ql.html",
+    "examples/prism-n4js.html",
+    "examples/prism-nand2tetris-hdl.html",
+    "examples/prism-nasm.html",
+    "examples/prism-nginx.html",
+    "examples/prism-nim.html",
+    "examples/prism-nix.html",
+    "examples/prism-nsis.html",
+    "examples/prism-objectivec.html",
+    "examples/prism-ocaml.html",
+    "examples/prism-opencl.html",
+    "examples/prism-oz.html",
+    "examples/prism-parigp.html",
+    "examples/prism-parser.html",
+    "examples/prism-pascal.html",
+    "examples/prism-perl.html",
+    "examples/prism-php.html",
+    "examples/prism-plsql.html",
+    "examples/prism-powershell.html",
+    "examples/prism-processing.html",
+    "examples/prism-prolog.html",
+    "examples/prism-properties.html",
+    "examples/prism-pug.html",
+    "examples/prism-puppet.html",
+    "examples/prism-pure.html",
+    "examples/prism-python.html",
+    "examples/prism-q.html",
+    "examples/prism-qore.html",
+    "examples/prism-r.html",
+    "examples/prism-reason.html",
+    "examples/prism-renpy.html",
+    "examples/prism-rest.html",
+    "examples/prism-rip.html",
+    "examples/prism-roboconf.html",
+    "examples/prism-ruby.html",
+    "examples/prism-rust.html",
+    "examples/prism-sas.html",
+    "examples/prism-sass.html",
+    "examples/prism-scala.html",
+    "examples/prism-scheme.html",
+    "examples/prism-scss.html",
+    "examples/prism-smalltalk.html",
+    "examples/prism-smarty.html",
+    "examples/prism-soy.html",
+    "examples/prism-sql.html",
+    "examples/prism-stylus.html",
+    "examples/prism-swift.html",
+    "examples/prism-tcl.html",
+    "examples/prism-textile.html",
+    "examples/prism-tsx.html",
+    "examples/prism-tt2.html",
+    "examples/prism-twig.html",
+    "examples/prism-typescript.html",
+    "examples/prism-vala.html",
+    "examples/prism-vbnet.html",
+    "examples/prism-velocity.html",
+    "examples/prism-verilog.html",
+    "examples/prism-vhdl.html",
+    "examples/prism-vim.html",
+    "examples/prism-visual-basic.html",
+    "examples/prism-wasm.html",
+    "examples/prism-wiki.html",
+    "examples/prism-xeora.html",
+    "examples/prism-xojo.html",
+    "examples/prism-xquery.html",
+    "examples/prism-yaml.html",
+    "extending.html",
+    "faq.html",
+    "favicon.png",
+    "gulpfile.js",
+    "img/logo-ala.png",
+    "img/logo-css-tricks.png",
+    "img/logo-drupal.png",
+    "img/logo-mdn.png",
+    "img/logo-react.png",
+    "img/logo-sitepoint.png",
+    "img/logo-smashing.png",
+    "img/logo-stripe.png",
+    "img/spectrum.png",
+    "index.html",
+    "logo.svg",
+    "package-lock.json",
+    "package.json",
+    "plugins/autolinker/index.html",
+    "plugins/autolinker/prism-autolinker.css",
+    "plugins/autolinker/prism-autolinker.js",
+    "plugins/autolinker/prism-autolinker.min.js",
+    "plugins/autoloader/index.html",
+    "plugins/autoloader/prism-autoloader.js",
+    "plugins/autoloader/prism-autoloader.min.js",
+    "plugins/command-line/index.html",
+    "plugins/command-line/prism-command-line.css",
+    "plugins/command-line/prism-command-line.js",
+    "plugins/command-line/prism-command-line.min.js",
+    "plugins/copy-to-clipboard/index.html",
+    "plugins/copy-to-clipboard/prism-copy-to-clipboard.js",
+    "plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js",
+    "plugins/custom-class/index.html",
+    "plugins/custom-class/prism-custom-class.js",
+    "plugins/custom-class/prism-custom-class.min.js",
+    "plugins/data-uri-highlight/index.html",
+    "plugins/data-uri-highlight/prism-data-uri-highlight.js",
+    "plugins/data-uri-highlight/prism-data-uri-highlight.min.js",
+    "plugins/file-highlight/index.html",
+    "plugins/file-highlight/prism-file-highlight.js",
+    "plugins/file-highlight/prism-file-highlight.min.js",
+    "plugins/highlight-keywords/index.html",
+    "plugins/highlight-keywords/prism-highlight-keywords.js",
+    "plugins/highlight-keywords/prism-highlight-keywords.min.js",
+    "plugins/index.html",
+    "plugins/jsonp-highlight/index.html",
+    "plugins/jsonp-highlight/prism-jsonp-highlight.js",
+    "plugins/jsonp-highlight/prism-jsonp-highlight.min.js",
+    "plugins/keep-markup/index.html",
+    "plugins/keep-markup/prism-keep-markup.js",
+    "plugins/keep-markup/prism-keep-markup.min.js",
+    "plugins/line-highlight/index.html",
+    "plugins/line-highlight/prism-line-highlight.css",
+    "plugins/line-highlight/prism-line-highlight.js",
+    "plugins/line-highlight/prism-line-highlight.min.js",
+    "plugins/line-numbers/index.html",
+    "plugins/line-numbers/prism-line-numbers.css",
+    "plugins/line-numbers/prism-line-numbers.js",
+    "plugins/line-numbers/prism-line-numbers.min.js",
+    "plugins/normalize-whitespace/demo.html",
+    "plugins/normalize-whitespace/index.html",
+    "plugins/normalize-whitespace/prism-normalize-whitespace.js",
+    "plugins/normalize-whitespace/prism-normalize-whitespace.min.js",
+    "plugins/previewers/index.html",
+    "plugins/previewers/prism-previewers.css",
+    "plugins/previewers/prism-previewers.js",
+    "plugins/previewers/prism-previewers.min.js",
+    "plugins/remove-initial-line-feed/index.html",
+    "plugins/remove-initial-line-feed/prism-remove-initial-line-feed.js",
+    "plugins/remove-initial-line-feed/prism-remove-initial-line-feed.min.js",
+    "plugins/show-invisibles/index.html",
+    "plugins/show-invisibles/prism-show-invisibles.css",
+    "plugins/show-invisibles/prism-show-invisibles.js",
+    "plugins/show-invisibles/prism-show-invisibles.min.js",
+    "plugins/show-language/index.html",
+    "plugins/show-language/prism-show-language.js",
+    "plugins/show-language/prism-show-language.min.js",
+    "plugins/toolbar/index.html",
+    "plugins/toolbar/prism-toolbar.css",
+    "plugins/toolbar/prism-toolbar.js",
+    "plugins/toolbar/prism-toolbar.min.js",
+    "plugins/unescaped-markup/index.html",
+    "plugins/unescaped-markup/prism-unescaped-markup.css",
+    "plugins/unescaped-markup/prism-unescaped-markup.js",
+    "plugins/unescaped-markup/prism-unescaped-markup.min.js",
+    "plugins/wpd/index.html",
+    "plugins/wpd/prism-wpd.css",
+    "plugins/wpd/prism-wpd.js",
+    "plugins/wpd/prism-wpd.min.js",
+    "prism.js",
+    "scripts/code.js",
+    "scripts/download.js",
+    "scripts/examples.js",
+    "scripts/prefixfree.min.js",
+    "scripts/utopia.js",
+    "scripts/vendor/FileSaver.min.js",
+    "scripts/vendor/jszip.min.js",
+    "scripts/vendor/promise.js",
+    "style.css",
+    "templates/footer.html",
+    "templates/header-download.html",
+    "templates/header-main.html",
+    "templates/header-plugins.html",
+    "test-suite.html",
+    "test.html",
+    "tests/aliases-test.js",
+    "tests/checks/extend.js",
+    "tests/checks/insert-before.js",
+    "tests/helper/check-functionality.js",
+    "tests/helper/prism-loader.js",
+    "tests/helper/test-case.js",
+    "tests/helper/test-discovery.js",
+    "tests/helper/token-stream-transformer.js",
+    "tests/languages/abap/comment_feature.test",
+    "tests/languages/abap/eol-comment_feature.test",
+    "tests/languages/abap/keyword_feature.test",
+    "tests/languages/abap/number_feature.test",
+    "tests/languages/abap/operator_feature.test",
+    "tests/languages/abap/string-template_feature.test",
+    "tests/languages/abap/string_feature.test",
+    "tests/languages/abnf/comment_feature.test",
+    "tests/languages/abnf/core-rule_feature.test",
+    "tests/languages/abnf/definition_feature.test",
+    "tests/languages/abnf/operator_feature.test",
+    "tests/languages/abnf/punctuation_feature.test",
+    "tests/languages/abnf/range_feature.test",
+    "tests/languages/abnf/repetition_feature.test",
+    "tests/languages/abnf/rule_feature.test",
+    "tests/languages/abnf/string_feature.test",
+    "tests/languages/abnf/terminal_feature.test",
+    "tests/languages/actionscript/keyword_feature.test",
+    "tests/languages/actionscript/operator_feature.test",
+    "tests/languages/ada/attr-name_feature.test",
+    "tests/languages/ada/boolean_feature.test",
+    "tests/languages/ada/char_feature.test",
+    "tests/languages/ada/comment_feature.test",
+    "tests/languages/ada/keyword_feature.test",
+    "tests/languages/ada/number_feature.test",
+    "tests/languages/ada/operator_feature.test",
+    "tests/languages/ada/string_feature.test",
+    "tests/languages/ada/variable_feature.test",
+    "tests/languages/apacheconf/comment_feature.test",
+    "tests/languages/apacheconf/directive-block_feature.test",
+    "tests/languages/apacheconf/directive-flags_feature.test",
+    "tests/languages/apacheconf/directive-inline_feature.test",
+    "tests/languages/apacheconf/regex_feature.test",
+    "tests/languages/apacheconf/string_feature.test",
+    "tests/languages/apacheconf/variable_feature.test",
+    "tests/languages/apl/assignment_feature.test",
+    "tests/languages/apl/comment_feature.test",
+    "tests/languages/apl/constant_feature.test",
+    "tests/languages/apl/dfn_feature.test",
+    "tests/languages/apl/dyadic-operator_feature.test",
+    "tests/languages/apl/function_feature.test",
+    "tests/languages/apl/monadic-operator_feature.test",
+    "tests/languages/apl/number_feature.test",
+    "tests/languages/apl/statement_feature.test",
+    "tests/languages/apl/string_feature.test",
+    "tests/languages/apl/system-function_feature.test",
+    "tests/languages/applescript/class_feature.test",
+    "tests/languages/applescript/comment_feature.test",
+    "tests/languages/applescript/keyword_feature.test",
+    "tests/languages/applescript/number_feature.test",
+    "tests/languages/applescript/operator_feature.test",
+    "tests/languages/applescript/string_feature.test",
+    "tests/languages/arff/comment_feature.test",
+    "tests/languages/arff/keyword_feature.test",
+    "tests/languages/arff/number_feature.test",
+    "tests/languages/arff/string_feature.test",
+    "tests/languages/asciidoc/admonition_feature.test",
+    "tests/languages/asciidoc/attribute-entry_feature.test",
+    "tests/languages/asciidoc/attributes_feature.test",
+    "tests/languages/asciidoc/callout_feature.test",
+    "tests/languages/asciidoc/comment-block_feature.test",
+    "tests/languages/asciidoc/comment_feature.test",
+    "tests/languages/asciidoc/entity_feature.js",
+    "tests/languages/asciidoc/entity_feature.test",
+    "tests/languages/asciidoc/hr_feature.test",
+    "tests/languages/asciidoc/indented-block_feature.test",
+    "tests/languages/asciidoc/inline_feature.test",
+    "tests/languages/asciidoc/line-continuation_feature.test",
+    "tests/languages/asciidoc/list-label_feature.test",
+    "tests/languages/asciidoc/list-punctuation_feature.test",
+    "tests/languages/asciidoc/literal-block_feature.test",
+    "tests/languages/asciidoc/macro_feature.test",
+    "tests/languages/asciidoc/other-block_feature.test",
+    "tests/languages/asciidoc/page-break_feature.test",
+    "tests/languages/asciidoc/passthrough-block_feature.test",
+    "tests/languages/asciidoc/replacement_feature.test",
+    "tests/languages/asciidoc/table_feature.test",
+    "tests/languages/asciidoc/title_feature.test",
+    "tests/languages/asm6502/comment_feature.test",
+    "tests/languages/asm6502/directive_feature.test",
+    "tests/languages/asm6502/number_feature.test",
+    "tests/languages/asm6502/opcode_feature.test",
+    "tests/languages/asm6502/register_feature.test",
+    "tests/languages/asm6502/string_feature.test",
+    "tests/languages/aspnet/comment_feature.test",
+    "tests/languages/aspnet/page-directive_feature.test",
+    "tests/languages/autohotkey/boolean_feature.test",
+    "tests/languages/autohotkey/builtin_feature.test",
+    "tests/languages/autohotkey/comment_feature.test",
+    "tests/languages/autohotkey/constant_feature.test",
+    "tests/languages/autohotkey/function_feature.test",
+    "tests/languages/autohotkey/important_feature.test",
+    "tests/languages/autohotkey/keyword_feature.test",
+    "tests/languages/autohotkey/number_feature.test",
+    "tests/languages/autohotkey/operator_feature.test",
+    "tests/languages/autohotkey/selector_feature.test",
+    "tests/languages/autohotkey/string_feature.test",
+    "tests/languages/autohotkey/symbol_feature.test",
+    "tests/languages/autohotkey/tag_feature.test",
+    "tests/languages/autohotkey/variable_feature.test",
+    "tests/languages/autoit/boolean_feature.test",
+    "tests/languages/autoit/comment_feature.test",
+    "tests/languages/autoit/directive_feature.test",
+    "tests/languages/autoit/function_feature.test",
+    "tests/languages/autoit/keyword_feature.test",
+    "tests/languages/autoit/number_feature.test",
+    "tests/languages/autoit/operator_feature.test",
+    "tests/languages/autoit/string_feature.test",
+    "tests/languages/autoit/url_feature.test",
+    "tests/languages/autoit/variable_feature.test",
+    "tests/languages/bash/arithmetic_environment_feature.test",
+    "tests/languages/bash/command_substitution_feature.test",
+    "tests/languages/bash/comment_feature.test",
+    "tests/languages/bash/function_feature.test",
+    "tests/languages/bash/keyword_feature.test",
+    "tests/languages/bash/shebang_feature.test",
+    "tests/languages/bash/string_feature.test",
+    "tests/languages/bash/variable_feature.test",
+    "tests/languages/basic/comment_feature.test",
+    "tests/languages/basic/function_feature.test",
+    "tests/languages/basic/keyword_feature.test",
+    "tests/languages/basic/number_feature.test",
+    "tests/languages/basic/operator_feature.test",
+    "tests/languages/basic/string_feature.test",
+    "tests/languages/batch/command_feature.test",
+    "tests/languages/batch/comment_feature.test",
+    "tests/languages/batch/label_feature.test",
+    "tests/languages/bison/c_feature.test",
+    "tests/languages/bison/comment_feature.test",
+    "tests/languages/bison/keyword_feature.test",
+    "tests/languages/bison/number_feature.test",
+    "tests/languages/bison/property_feature.test",
+    "tests/languages/bison/string_feature.test",
+    "tests/languages/bnf/definition_feature.test",
+    "tests/languages/bnf/operator_feature.test",
+    "tests/languages/bnf/rule_feature.test",
+    "tests/languages/bnf/string_featrue.test",
+    "tests/languages/brainfuck/all_feature.test",
+    "tests/languages/bro/builtin_feature.test",
+    "tests/languages/bro/comment_feature.test",
+    "tests/languages/bro/function_feature.test",
+    "tests/languages/bro/keyword_feature.test",
+    "tests/languages/bro/string_feature.test",
+    "tests/languages/bro/variable_feature.test",
+    "tests/languages/c+pure/c_inclusion.test",
+    "tests/languages/c/class-name_feature.test",
+    "tests/languages/c/constant_feature.test",
+    "tests/languages/c/keyword_feature.test",
+    "tests/languages/c/macro_feature.test",
+    "tests/languages/c/number_feature.test",
+    "tests/languages/c/operator_feature.test",
+    "tests/languages/cil/asm_reference.test",
+    "tests/languages/cil/boolean.test",
+    "tests/languages/cil/comment.test",
+    "tests/languages/cil/instructions.test",
+    "tests/languages/cil/keywords.test",
+    "tests/languages/cil/strings.test",
+    "tests/languages/clike/boolean_feature.test",
+    "tests/languages/clike/class-name_feature.test",
+    "tests/languages/clike/comment_feature.test",
+    "tests/languages/clike/function_feature.test",
+    "tests/languages/clike/issue1340.test",
+    "tests/languages/clike/keyword_feature.test",
+    "tests/languages/clike/number_feature.test",
+    "tests/languages/clike/operator_feature.test",
+    "tests/languages/clike/string_feature.test",
+    "tests/languages/clojure/boolean_feature.test",
+    "tests/languages/clojure/comment_feature.test",
+    "tests/languages/clojure/keyword_feature.test",
+    "tests/languages/clojure/operator_and_punctuation.test",
+    "tests/languages/clojure/string_feature.test",
+    "tests/languages/cmake/boolean_feature.test",
+    "tests/languages/cmake/comment_feature.test",
+    "tests/languages/cmake/function_feature.test",
+    "tests/languages/cmake/inserted_feature.test",
+    "tests/languages/cmake/keyword_feature.test",
+    "tests/languages/cmake/namespace_feature.test",
+    "tests/languages/cmake/number_feature.test",
+    "tests/languages/cmake/operator_feature.test",
+    "tests/languages/cmake/property_feature.test",
+    "tests/languages/cmake/punctuation_feature.test",
+    "tests/languages/cmake/string_feature.test",
+    "tests/languages/cmake/variable_feature.test",
+    "tests/languages/coffeescript+haml/coffeescript_inclusion.test",
+    "tests/languages/coffeescript+pug/coffeescript_inclusion.test",
+    "tests/languages/coffeescript/block-regex_feature.test",
+    "tests/languages/coffeescript/class-member_feature.test",
+    "tests/languages/coffeescript/comment_feature.test",
+    "tests/languages/coffeescript/inline-javascript_feature.test",
+    "tests/languages/coffeescript/keyword_feature.test",
+    "tests/languages/coffeescript/property_feature.test",
+    "tests/languages/coffeescript/string_feature.test",
+    "tests/languages/cpp+pure/cpp_inclusion.test",
+    "tests/languages/cpp/boolean_feature.test",
+    "tests/languages/cpp/class-name_feature.test",
+    "tests/languages/cpp/keyword_feature.test",
+    "tests/languages/cpp/operator_feature.test",
+    "tests/languages/cpp/raw_string_feature.test",
+    "tests/languages/crystal/attribute_feature.test",
+    "tests/languages/crystal/expansion_feature.test",
+    "tests/languages/crystal/keyword_feature.test",
+    "tests/languages/crystal/number_feature.test",
+    "tests/languages/csharp+aspnet/directive_feature.test",
+    "tests/languages/csharp/class-name_feature.test",
+    "tests/languages/csharp/generic_feature.test",
+    "tests/languages/csharp/issue1091.test",
+    "tests/languages/csharp/issue1365.test",
+    "tests/languages/csharp/issue1371.test",
+    "tests/languages/csharp/issue806.test",
+    "tests/languages/csharp/keyword_feature.test",
+    "tests/languages/csharp/number_feature.test",
+    "tests/languages/csharp/operator_feature.test",
+    "tests/languages/csharp/preprocessor_feature.test",
+    "tests/languages/csharp/punctuation_feature.test",
+    "tests/languages/csharp/string_feature.test",
+    "tests/languages/csp/directive_no_value_feature.test",
+    "tests/languages/csp/directive_with_source_expression_feature.test",
+    "tests/languages/csp/safe_feature.test",
+    "tests/languages/csp/unsafe_feature.test",
+    "tests/languages/css!+css-extras/entity_feature.test",
+    "tests/languages/css!+css-extras/hexcode_feature.test",
+    "tests/languages/css!+css-extras/number_feature.test",
+    "tests/languages/css!+css-extras/operator_feature.test",
+    "tests/languages/css!+css-extras/selector_attribute_feature.test",
+    "tests/languages/css!+css-extras/selector_feature.test",
+    "tests/languages/css!+css-extras/selector_n-th_feature.test",
+    "tests/languages/css!+css-extras/selector_pseudo-class_feature.test",
+    "tests/languages/css!+css-extras/unit_feature.test",
+    "tests/languages/css!+css-extras/variable_feature.test",
+    "tests/languages/css+haml/css+haml_usage.test",
+    "tests/languages/css+http/css_inclusion.test",
+    "tests/languages/css+textile/css_inclusion.test",
+    "tests/languages/css/atrule_feature.test",
+    "tests/languages/css/comment_feature.test",
+    "tests/languages/css/function_feature.test",
+    "tests/languages/css/important_feature.test",
+    "tests/languages/css/property_feature.test",
+    "tests/languages/css/selector_feature.test",
+    "tests/languages/css/string_feature.test",
+    "tests/languages/css/url_feature.test",
+    "tests/languages/d/comment_feature.test",
+    "tests/languages/d/keyword_feature.test",
+    "tests/languages/d/number_feature.test",
+    "tests/languages/d/operator_feature.test",
+    "tests/languages/d/property_feature.test",
+    "tests/languages/d/register_feature.test",
+    "tests/languages/d/string_feature.test",
+    "tests/languages/d/token-string_feature.test",
+    "tests/languages/dart/keyword_feature.test",
+    "tests/languages/dart/metadata_feature.test",
+    "tests/languages/dart/operator_feature.test",
+    "tests/languages/dart/string_feature.test",
+    "tests/languages/diff/coord_feature.test",
+    "tests/languages/diff/diff_feature.test",
+    "tests/languages/django!+css/inclusion.test",
+    "tests/languages/django!+javascript/inclusion.test",
+    "tests/languages/django/boolean_feature.test",
+    "tests/languages/django/comment_feature.test",
+    "tests/languages/django/delimiter_feature.test",
+    "tests/languages/django/filter_feature.test",
+    "tests/languages/django/for-loop_feature.test",
+    "tests/languages/django/function_feature.test",
+    "tests/languages/django/keyword_feature.test",
+    "tests/languages/django/tag_feature.test",
+    "tests/languages/django/test_feature.test",
+    "tests/languages/django/variable_feature.test",
+    "tests/languages/docker/comment_feature.test",
+    "tests/languages/docker/keyword_feature.test",
+    "tests/languages/docker/string_feature.test",
+    "tests/languages/ebnf/comment_feature.test",
+    "tests/languages/ebnf/definition_feature.test",
+    "tests/languages/ebnf/operator_feature.test",
+    "tests/languages/ebnf/punctuation_feature.test",
+    "tests/languages/ebnf/rule_feature.test",
+    "tests/languages/ebnf/special_feature.test",
+    "tests/languages/ebnf/string_feature.test",
+    "tests/languages/eiffel/boolean_feature.test",
+    "tests/languages/eiffel/char_feature.test",
+    "tests/languages/eiffel/class-name_feature.test",
+    "tests/languages/eiffel/comment_feature.test",
+    "tests/languages/eiffel/keyword_feature.test",
+    "tests/languages/eiffel/number_feature.test",
+    "tests/languages/eiffel/operator_feature.test",
+    "tests/languages/eiffel/string_feature.test",
+    "tests/languages/ejs/comment_feature.test",
+    "tests/languages/ejs/ejs_feature.test",
+    "tests/languages/elixir/atom_feature.test",
+    "tests/languages/elixir/attr-name_feature.test",
+    "tests/languages/elixir/attribute_feature.test",
+    "tests/languages/elixir/boolean_feature.test",
+    "tests/languages/elixir/capture_feature.test",
+    "tests/languages/elixir/comment_feature.test",
+    "tests/languages/elixir/issue1392.test",
+    "tests/languages/elixir/issue775.test",
+    "tests/languages/elixir/keyword_feature.test",
+    "tests/languages/elixir/number_feature.test",
+    "tests/languages/elixir/operator_feature.test",
+    "tests/languages/elixir/regex_feature.test",
+    "tests/languages/elixir/string_feature.test",
+    "tests/languages/elm/builtin_feature.test",
+    "tests/languages/elm/char_feature.test",
+    "tests/languages/elm/comment_feature.test",
+    "tests/languages/elm/constant_feature.test",
+    "tests/languages/elm/hvariable_feature.test",
+    "tests/languages/elm/import_statement_feature.test",
+    "tests/languages/elm/keyword_feature.test",
+    "tests/languages/elm/number_feature.test",
+    "tests/languages/elm/operator_feature.test",
+    "tests/languages/elm/string_feature.test",
+    "tests/languages/erb/erb_feature.test",
+    "tests/languages/erb/erb_in_markup_feature.test",
+    "tests/languages/erb/issue1767.test",
+    "tests/languages/erlang/atom_feature.test",
+    "tests/languages/erlang/boolean_feature.test",
+    "tests/languages/erlang/comment_feature.test",
+    "tests/languages/erlang/function_feature.test",
+    "tests/languages/erlang/keyword_feature.test",
+    "tests/languages/erlang/number_feature.test",
+    "tests/languages/erlang/operator_feature.test",
+    "tests/languages/erlang/string_feature.test",
+    "tests/languages/erlang/variable_feature.test",
+    "tests/languages/flow/flow-punctuation_feature.test",
+    "tests/languages/flow/function-variable_feature.test",
+    "tests/languages/flow/keyword_feature.test",
+    "tests/languages/flow/type_feature.test",
+    "tests/languages/fortran+pure/fortran_inclusion.test",
+    "tests/languages/fortran/boolean_feature.test",
+    "tests/languages/fortran/comment_feature.test",
+    "tests/languages/fortran/keyword_feature.test",
+    "tests/languages/fortran/number_feature.test",
+    "tests/languages/fortran/operator_feature.test",
+    "tests/languages/fortran/string_feature.test",
+    "tests/languages/fsharp/annotation_feature.test",
+    "tests/languages/fsharp/class-name_feature.test",
+    "tests/languages/fsharp/comment_feature.test",
+    "tests/languages/fsharp/computation-expression_feature.test",
+    "tests/languages/fsharp/issue1480.test",
+    "tests/languages/fsharp/keyword_feature.test",
+    "tests/languages/fsharp/number_feature.test",
+    "tests/languages/fsharp/operator_feature.test",
+    "tests/languages/fsharp/preprocessor_feature.test",
+    "tests/languages/fsharp/string_feature.test",
+    "tests/languages/gcode/checksum_feature.test",
+    "tests/languages/gcode/comment_feature.test",
+    "tests/languages/gcode/keyword_feature.test",
+    "tests/languages/gcode/property_feature.test",
+    "tests/languages/gcode/string_feature.test",
+    "tests/languages/gedcom/level_feature.test",
+    "tests/languages/gedcom/line-value_feature.test",
+    "tests/languages/gedcom/pointer_feature.test",
+    "tests/languages/gedcom/tag_feature.test",
+    "tests/languages/gherkin/atrule_feature.test",
+    "tests/languages/gherkin/comment_feature.test",
+    "tests/languages/gherkin/feature_feature.test",
+    "tests/languages/gherkin/outline_feature.test",
+    "tests/languages/gherkin/pystring_feature.test",
+    "tests/languages/gherkin/scenario_feature.test",
+    "tests/languages/gherkin/string_feature.test",
+    "tests/languages/gherkin/table_feature.test",
+    "tests/languages/gherkin/tag_feature.test",
+    "tests/languages/git/command_feature.test",
+    "tests/languages/git/comment_feature.test",
+    "tests/languages/git/commit_sha1_feature.test",
+    "tests/languages/git/coord_feature.test",
+    "tests/languages/git/diff_feature.test",
+    "tests/languages/git/string_feature.test",
+    "tests/languages/glsl/comment_feature.test",
+    "tests/languages/glsl/keyword_feature.test",
+    "tests/languages/glsl/number_feature.test",
+    "tests/languages/glsl/preprocessor_feature.test",
+    "tests/languages/go/boolean_feature.test",
+    "tests/languages/go/builtin_feature.test",
+    "tests/languages/go/keyword_feature.test",
+    "tests/languages/go/number_feature.test",
+    "tests/languages/go/operator_feature.test",
+    "tests/languages/go/string_feature.test",
+    "tests/languages/graphql/attr-name_feature.test",
+    "tests/languages/graphql/boolean_feature.test",
+    "tests/languages/graphql/class-name_feature.test",
+    "tests/languages/graphql/comment_feature.test",
+    "tests/languages/graphql/constant_feature.test",
+    "tests/languages/graphql/directive_feature.test",
+    "tests/languages/graphql/fragment_feature.test",
+    "tests/languages/graphql/keyword_feature.test",
+    "tests/languages/graphql/number_feature.test",
+    "tests/languages/graphql/operator_feature.test",
+    "tests/languages/graphql/string_feature.test",
+    "tests/languages/graphql/variable_feature.test",
+    "tests/languages/groovy/annotation_feature.test",
+    "tests/languages/groovy/issue1049.js",
+    "tests/languages/groovy/keyword_feature.test",
+    "tests/languages/groovy/number_feature.test",
+    "tests/languages/groovy/operator_feature.test",
+    "tests/languages/groovy/shebang_feature.test",
+    "tests/languages/groovy/spock-block_feature.test",
+    "tests/languages/groovy/string-interpolation_feature.js",
+    "tests/languages/groovy/string_feature.test",
+    "tests/languages/haml/code_feature.test",
+    "tests/languages/haml/doctype_feature.test",
+    "tests/languages/haml/interpolation_feature.test",
+    "tests/languages/haml/multiline-code_feature.test",
+    "tests/languages/haml/multiline-comment_feature.test",
+    "tests/languages/haml/tag_feature.test",
+    "tests/languages/handlebars+pug/handlebars_inclusion.test",
+    "tests/languages/handlebars/block_feature.test",
+    "tests/languages/handlebars/boolean_feature.test",
+    "tests/languages/handlebars/comment_feature.test",
+    "tests/languages/handlebars/handlebars_in_markup_feature.test",
+    "tests/languages/handlebars/number_feature.test",
+    "tests/languages/handlebars/string_feature.test",
+    "tests/languages/haskell/builtin_feature.test",
+    "tests/languages/haskell/char_feature.test",
+    "tests/languages/haskell/comment_feature.test",
+    "tests/languages/haskell/constant_feature.test",
+    "tests/languages/haskell/hvariable_feature.test",
+    "tests/languages/haskell/import_statement_feature.test",
+    "tests/languages/haskell/keyword_feature.test",
+    "tests/languages/haskell/number_feature.test",
+    "tests/languages/haskell/operator_feature.test",
+    "tests/languages/haskell/string_feature.test",
+    "tests/languages/haxe/keyword_feature.test",
+    "tests/languages/haxe/metadata_feature.test",
+    "tests/languages/haxe/operator_feature.test",
+    "tests/languages/haxe/preprocessor_feature.test",
+    "tests/languages/haxe/regex_feature.test",
+    "tests/languages/haxe/reification_feature.test",
+    "tests/languages/haxe/string_feature.test",
+    "tests/languages/hcl/comment_feature.test",
+    "tests/languages/hcl/interpolation_feature.test",
+    "tests/languages/hcl/keyword_feature.test",
+    "tests/languages/hcl/number_feature.test",
+    "tests/languages/hcl/property_feature.test",
+    "tests/languages/hcl/string_feature.test",
+    "tests/languages/hpkp/safe_maxage_feature.test",
+    "tests/languages/hpkp/sha256_pin_feature.test",
+    "tests/languages/hpkp/unsafe_maxage_feature.test",
+    "tests/languages/hsts/include_subdomains_feature.test",
+    "tests/languages/hsts/preload_feature.test",
+    "tests/languages/hsts/safe_maxage_feature.test",
+    "tests/languages/hsts/unsafe_maxage_feature.test",
+    "tests/languages/http/header-name_feature.test",
+    "tests/languages/http/request-line_feature.test",
+    "tests/languages/http/response-status_feature.test",
+    "tests/languages/ichigojam/comment_feature.test",
+    "tests/languages/ichigojam/function_feature.test",
+    "tests/languages/ichigojam/keyword_feature.test",
+    "tests/languages/ichigojam/label_feature.test",
+    "tests/languages/ichigojam/number_feature.test",
+    "tests/languages/ichigojam/operator_feature.test",
+    "tests/languages/ichigojam/string_feature.test",
+    "tests/languages/icon/builtin-keyword_feature.test",
+    "tests/languages/icon/comment_feature.test",
+    "tests/languages/icon/directive_feature.test",
+    "tests/languages/icon/function_feature.test",
+    "tests/languages/icon/keyword_feature.test",
+    "tests/languages/icon/number_feature.test",
+    "tests/languages/icon/operator_feature.test",
+    "tests/languages/icon/string_feature.test",
+    "tests/languages/inform7/comment_feature.test",
+    "tests/languages/inform7/keyword_feature.test",
+    "tests/languages/inform7/number_feature.test",
+    "tests/languages/inform7/position_feature.test",
+    "tests/languages/inform7/property_feature.test",
+    "tests/languages/inform7/string_feature.test",
+    "tests/languages/inform7/title_feature.test",
+    "tests/languages/inform7/variable_feature.test",
+    "tests/languages/inform7/verb_feature.test",
+    "tests/languages/ini/comment_feature.test",
+    "tests/languages/ini/key_value_feature.test",
+    "tests/languages/ini/selector_feature.test",
+    "tests/languages/io/comment_feature.test",
+    "tests/languages/io/number_feature.test",
+    "tests/languages/io/operator_feature.test",
+    "tests/languages/io/string_feature.test",
+    "tests/languages/j/adverb_feature.test",
+    "tests/languages/j/comment_feature.test",
+    "tests/languages/j/conjunction_feature.test",
+    "tests/languages/j/keyword_feature.test",
+    "tests/languages/j/number_feature.test",
+    "tests/languages/j/string_feature.test",
+    "tests/languages/j/verb_feature.test",
+    "tests/languages/java/function_featrue.test",
+    "tests/languages/java/generics_feature.test",
+    "tests/languages/java/issue1351.test",
+    "tests/languages/java/keyword_feature.test",
+    "tests/languages/java/module_feature.test",
+    "tests/languages/java/number_feature.test",
+    "tests/languages/java/operator_feature.test",
+    "tests/languages/java/package_feature.test",
+    "tests/languages/javadoc+java/javadoc_inclusion.test",
+    "tests/languages/javadoc/class-name_feature.test",
+    "tests/languages/javadoc/code_feature.test",
+    "tests/languages/javadoc/keyword_feature.test",
+    "tests/languages/javadoc/parameter_feature.test",
+    "tests/languages/javadoc/tag_feature.test",
+    "tests/languages/javascript!+js-extras/arrow_feature.test",
+    "tests/languages/javascript!+js-extras/console_feature.test",
+    "tests/languages/javascript!+js-extras/dom_feature.test",
+    "tests/languages/javascript!+js-extras/known-class-name_feature.test",
+    "tests/languages/javascript!+js-extras/maybe-class-name_feature.test",
+    "tests/languages/javascript!+js-extras/method-variable_feature.test",
+    "tests/languages/javascript!+js-extras/method_feature.test",
+    "tests/languages/javascript!+js-extras/property-access_feature.test",
+    "tests/languages/javascript!+js-extras/spread_feature.test",
+    "tests/languages/javascript!+regex/regex_inclusion.test",
+    "tests/languages/javascript+haml/javascript_inclusion.test",
+    "tests/languages/javascript+http/javascript_inclusion.test",
+    "tests/languages/javascript/boolean_feature.test",
+    "tests/languages/javascript/class-method_feature.test",
+    "tests/languages/javascript/constant_feature.test",
+    "tests/languages/javascript/function-variable_feature.test",
+    "tests/languages/javascript/function_feature.test",
+    "tests/languages/javascript/issue1337.test",
+    "tests/languages/javascript/issue1340.test",
+    "tests/languages/javascript/issue1397.test",
+    "tests/languages/javascript/issue1526.test",
+    "tests/languages/javascript/issue1807.test",
+    "tests/languages/javascript/keyword_feature.test",
+    "tests/languages/javascript/number_feature.test",
+    "tests/languages/javascript/operator_feature.test",
+    "tests/languages/javascript/regex_feature.test",
+    "tests/languages/javascript/supposed-classes_feature.test",
+    "tests/languages/javascript/supposed-function_feature.test",
+    "tests/languages/javascript/template-string_feature.test",
+    "tests/languages/javascript/try-catch_feature.test",
+    "tests/languages/javascript/variable_feature.test",
+    "tests/languages/javastacktrace/more_feature.test",
+    "tests/languages/javastacktrace/stack-frame_feature.test",
+    "tests/languages/javastacktrace/summary_feature.test",
+    "tests/languages/jolie/deployment_features.test",
+    "tests/languages/jolie/keyword_feature.test",
+    "tests/languages/jolie/number_feature.test",
+    "tests/languages/jolie/operator_feature.test",
+    "tests/languages/jsdoc+javascript/jsdoc_inclusion.test",
+    "tests/languages/jsdoc/class-name_feature.test",
+    "tests/languages/jsdoc/example_feature.test",
+    "tests/languages/jsdoc/keyword_feature.test",
+    "tests/languages/jsdoc/parameter_feature.test",
+    "tests/languages/json+http/json-suffix_inclusion.test",
+    "tests/languages/json+http/json_inclusion.test",
+    "tests/languages/json/boolean_feature.test",
+    "tests/languages/json/comment_feature.test",
+    "tests/languages/json/null_feature.test",
+    "tests/languages/json/number_feature.test",
+    "tests/languages/json/operator_feature.test",
+    "tests/languages/json/property_feature.test",
+    "tests/languages/json/punctuation_feature.test",
+    "tests/languages/json/string_feature.test",
+    "tests/languages/json5/number_feature.test",
+    "tests/languages/json5/property_feature.test",
+    "tests/languages/json5/string_feature.test",
+    "tests/languages/jsonp/function_feature.test",
+    "tests/languages/jsonp/punctuation_feature.test",
+    "tests/languages/jsx/issue1103.test",
+    "tests/languages/jsx/issue1235.test",
+    "tests/languages/jsx/issue1236.test",
+    "tests/languages/jsx/issue1294.test",
+    "tests/languages/jsx/issue1335.test",
+    "tests/languages/jsx/issue1342.test",
+    "tests/languages/jsx/issue1356.test",
+    "tests/languages/jsx/issue1364.test",
+    "tests/languages/jsx/issue1408.test",
+    "tests/languages/jsx/issue1421.test",
+    "tests/languages/jsx/plain-text_feature.test",
+    "tests/languages/jsx/tag_feature.test",
+    "tests/languages/julia/boolean_feature.test",
+    "tests/languages/julia/comment_feature.test",
+    "tests/languages/julia/keyword_feature.test",
+    "tests/languages/julia/number_feature.test",
+    "tests/languages/julia/operator_feature.test",
+    "tests/languages/julia/string_feature.test",
+    "tests/languages/keyman/atrule_feature.test",
+    "tests/languages/keyman/bold_feature.test",
+    "tests/languages/keyman/comment_feature.test",
+    "tests/languages/keyman/function_feature.test",
+    "tests/languages/keyman/keyword_feature.test",
+    "tests/languages/keyman/number_feature.test",
+    "tests/languages/keyman/operator_feature.test",
+    "tests/languages/keyman/string_feature.test",
+    "tests/languages/keyman/tag_feature.test",
+    "tests/languages/kotlin/annotation_feature.test",
+    "tests/languages/kotlin/function_feature.test",
+    "tests/languages/kotlin/interpolation_feature.test",
+    "tests/languages/kotlin/keyword_feature.test",
+    "tests/languages/kotlin/label_feature.test",
+    "tests/languages/kotlin/number_feature.test",
+    "tests/languages/kotlin/operator_feature.test",
+    "tests/languages/kotlin/raw-string_feature.test",
+    "tests/languages/latex/cdata_feature.test",
+    "tests/languages/latex/comment_feature.test",
+    "tests/languages/latex/equation_feature.test",
+    "tests/languages/latex/headline_feature.test",
+    "tests/languages/latex/keyword_feature.test",
+    "tests/languages/latex/url_feature.test",
+    "tests/languages/less+haml/less_inclusion.test",
+    "tests/languages/less+pug/less_inclusion.test",
+    "tests/languages/less/atrule_feature.test",
+    "tests/languages/less/comment_feature.test",
+    "tests/languages/less/operator_feature.test",
+    "tests/languages/less/property_feature.test",
+    "tests/languages/less/selector_feature.test",
+    "tests/languages/liquid/function_feature.test",
+    "tests/languages/liquid/keyword_feature.test",
+    "tests/languages/liquid/number_feature.test",
+    "tests/languages/liquid/operator_feature.test",
+    "tests/languages/lisp/boolean_feature.test",
+    "tests/languages/lisp/car_feature.test",
+    "tests/languages/lisp/comment_feature.test",
+    "tests/languages/lisp/declare_feature.test",
+    "tests/languages/lisp/defun_feature.test",
+    "tests/languages/lisp/defvar_feature.test",
+    "tests/languages/lisp/heading_feature.test",
+    "tests/languages/lisp/interactive_feature.test",
+    "tests/languages/lisp/keyword_feature.test",
+    "tests/languages/lisp/lambda-feature.test",
+    "tests/languages/lisp/lisp-property_feature.test",
+    "tests/languages/lisp/number_boolean.test",
+    "tests/languages/lisp/punctuation_feature.test",
+    "tests/languages/lisp/quoted-symbol_feature.test",
+    "tests/languages/lisp/splice_feature.test",
+    "tests/languages/lisp/string_feature.test",
+    "tests/languages/livescript/argument_feature.test",
+    "tests/languages/livescript/boolean_feature.test",
+    "tests/languages/livescript/comment_feature.test",
+    "tests/languages/livescript/identifier_feature.test",
+    "tests/languages/livescript/interpolated-string.test",
+    "tests/languages/livescript/keyword-operator_feature.test",
+    "tests/languages/livescript/keyword_feature.test",
+    "tests/languages/livescript/number_feature.test",
+    "tests/languages/livescript/operator_feature.test",
+    "tests/languages/livescript/regex_feature.test",
+    "tests/languages/livescript/string_feature.test",
+    "tests/languages/lolcode/boolean_feature.test",
+    "tests/languages/lolcode/comment_feature.test",
+    "tests/languages/lolcode/function_feature.test",
+    "tests/languages/lolcode/keyword_feature.test",
+    "tests/languages/lolcode/label_feature.test",
+    "tests/languages/lolcode/number_feature.test",
+    "tests/languages/lolcode/operator_feature.test",
+    "tests/languages/lolcode/string_feature.test",
+    "tests/languages/lolcode/symbol_feature.test",
+    "tests/languages/lolcode/variable_feature.test",
+    "tests/languages/lua/comment_feature.test",
+    "tests/languages/lua/function_feature.test",
+    "tests/languages/lua/keyword_feature.test",
+    "tests/languages/lua/number_feature.test",
+    "tests/languages/lua/operator_feature.test",
+    "tests/languages/lua/string_feature.test",
+    "tests/languages/makefile/builtin_feature.test",
+    "tests/languages/makefile/comment_feature.test",
+    "tests/languages/makefile/keyword_feature.test",
+    "tests/languages/makefile/operator_feature.test",
+    "tests/languages/makefile/string_feature.test",
+    "tests/languages/makefile/symbol_feature.test",
+    "tests/languages/makefile/variable_feature.test",
+    "tests/languages/markdown+haml/markdown_inclusion.test",
+    "tests/languages/markdown+pug/markdown_inclusion.test",
+    "tests/languages/markdown/blockquote_feature.test",
+    "tests/languages/markdown/bold_feature.test",
+    "tests/languages/markdown/code_feature.test",
+    "tests/languages/markdown/hr_feature.test",
+    "tests/languages/markdown/italic_feature.test",
+    "tests/languages/markdown/list_feature.test",
+    "tests/languages/markdown/strike_feature.test",
+    "tests/languages/markdown/title_feature.test",
+    "tests/languages/markdown/url-reference_feature.test",
+    "tests/languages/markdown/url_feature.test",
+    "tests/languages/markup!+css+javascript/issue1240.test",
+    "tests/languages/markup!+css/css_inclusion.test",
+    "tests/languages/markup!+javascript/javascript_inclusion.test",
+    "tests/languages/markup+actionscript/xml_feature.test",
+    "tests/languages/markup+css+wiki/table-tag_feature.test",
+    "tests/languages/markup+haml/markup_feature.test",
+    "tests/languages/markup+http/html_inclusion.test",
+    "tests/languages/markup+http/xml-suffix_inclusion.test",
+    "tests/languages/markup+http/xml_inclusion.test",
+    "tests/languages/markup+javascript+csharp+aspnet/script_feature.test",
+    "tests/languages/markup+php/issue1582.test",
+    "tests/languages/markup+php/php_in_markup_feature.test",
+    "tests/languages/markup+php/php_with_closing_tag_in_markup_feature.test",
+    "tests/languages/markup+pug/markup_feature.test",
+    "tests/languages/markup+tt2/tt2_in_markup_feature.test",
+    "tests/languages/markup/cdata_feature.test",
+    "tests/languages/markup/comment_feature.test",
+    "tests/languages/markup/doctype_feature.test",
+    "tests/languages/markup/entity_feature.js",
+    "tests/languages/markup/entity_feature.test",
+    "tests/languages/markup/issue585.test",
+    "tests/languages/markup/issue888.test",
+    "tests/languages/markup/prolog_feature.test",
+    "tests/languages/markup/tag_attribute_feature.test",
+    "tests/languages/markup/tag_feature.test",
+    "tests/languages/matlab/comment_feature.test",
+    "tests/languages/matlab/function_feature.test",
+    "tests/languages/matlab/keyword_feature.test",
+    "tests/languages/matlab/number_feature.test",
+    "tests/languages/matlab/operator_feature.test",
+    "tests/languages/matlab/string_feature.test",
+    "tests/languages/mel/code_feature.test",
+    "tests/languages/mel/comment_feature.test",
+    "tests/languages/mel/flag_feature.test",
+    "tests/languages/mel/function_feature.test",
+    "tests/languages/mel/keyword_feature.test",
+    "tests/languages/mel/number_feature.test",
+    "tests/languages/mel/operator_feature.test",
+    "tests/languages/mel/string_feature.test",
+    "tests/languages/mel/variable_feature.test",
+    "tests/languages/mizar/comment_feature.test",
+    "tests/languages/mizar/keyword_feature.test",
+    "tests/languages/mizar/number_feature.test",
+    "tests/languages/mizar/operator_feature.test",
+    "tests/languages/mizar/parameter_feature.test",
+    "tests/languages/mizar/variable_feature.test",
+    "tests/languages/monkey/comment_feature.test",
+    "tests/languages/monkey/function_feature.test",
+    "tests/languages/monkey/keyword_feature.test",
+    "tests/languages/monkey/number_feature.test",
+    "tests/languages/monkey/operator_feature.test",
+    "tests/languages/monkey/preprocessor_feature.test",
+    "tests/languages/monkey/string_feature.test",
+    "tests/languages/monkey/type-char_feature.test",
+    "tests/languages/n1ql/boolean_feature.test",
+    "tests/languages/n1ql/comment_feature.test",
+    "tests/languages/n1ql/function_feature.test",
+    "tests/languages/n1ql/identifier_feature.test",
+    "tests/languages/n1ql/keyword_feature.test",
+    "tests/languages/n1ql/number_feature.test",
+    "tests/languages/n1ql/operator_feature.test",
+    "tests/languages/n1ql/parameter_feature.test",
+    "tests/languages/n1ql/string_feature.test",
+    "tests/languages/n4js/annotation_feature.test",
+    "tests/languages/n4js/keyword_feature.test",
+    "tests/languages/nand2tetris-hdl/boolean_feature.test",
+    "tests/languages/nand2tetris-hdl/comment_feature.test",
+    "tests/languages/nand2tetris-hdl/function_feature.test",
+    "tests/languages/nand2tetris-hdl/keyword_feature.test",
+    "tests/languages/nand2tetris-hdl/number_feature.test",
+    "tests/languages/nand2tetris-hdl/operator_feature.test",
+    "tests/languages/nand2tetris-hdl/punctuation_feature.test",
+    "tests/languages/nasm/comment_feature.test",
+    "tests/languages/nasm/keyword_feature.test",
+    "tests/languages/nasm/label_feature.test",
+    "tests/languages/nasm/number_feature.test",
+    "tests/languages/nasm/operator_feature.test",
+    "tests/languages/nasm/register_feature.test",
+    "tests/languages/nasm/string_feature.test",
+    "tests/languages/nginx/comment_feature.test",
+    "tests/languages/nginx/keyword_feature.test",
+    "tests/languages/nginx/variable_feature.test",
+    "tests/languages/nim/comment_feature.test",
+    "tests/languages/nim/function_feature.test",
+    "tests/languages/nim/keyword_feature.test",
+    "tests/languages/nim/number_feature.test",
+    "tests/languages/nim/operator_feature.test",
+    "tests/languages/nim/string_feature.test",
+    "tests/languages/nix/antiquotation_feature.test",
+    "tests/languages/nix/boolean_feature.test",
+    "tests/languages/nix/comment_feature.test",
+    "tests/languages/nix/function_feature.test",
+    "tests/languages/nix/keyword_feature.test",
+    "tests/languages/nix/number_feature.test",
+    "tests/languages/nix/operator_feature.test",
+    "tests/languages/nix/string_feature.test",
+    "tests/languages/nix/url_feature.test",
+    "tests/languages/nsis/comment_feature.test",
+    "tests/languages/nsis/constant_feature.test",
+    "tests/languages/nsis/important_feature.test",
+    "tests/languages/nsis/keyword_feature.test",
+    "tests/languages/nsis/number_feature.test",
+    "tests/languages/nsis/operator_feature.test",
+    "tests/languages/nsis/property_feature.test",
+    "tests/languages/nsis/string_feature.test",
+    "tests/languages/nsis/variable_feature.test",
+    "tests/languages/objectivec/keyword_feature.test",
+    "tests/languages/objectivec/operator_feature.test",
+    "tests/languages/objectivec/string_feature.test",
+    "tests/languages/ocaml/boolean_feature.test",
+    "tests/languages/ocaml/comment_feature.test",
+    "tests/languages/ocaml/directive_feature.test",
+    "tests/languages/ocaml/keyword_feature.test",
+    "tests/languages/ocaml/number_feature.test",
+    "tests/languages/ocaml/operator_feature.test",
+    "tests/languages/ocaml/string_feature.test",
+    "tests/languages/ocaml/type_feature.test",
+    "tests/languages/opencl+c/boolean_feature.test",
+    "tests/languages/opencl+c/constant_feature.test",
+    "tests/languages/opencl+c/function_feature.test",
+    "tests/languages/opencl+c/type_feature.test",
+    "tests/languages/opencl+cpp/type_feature.test",
+    "tests/languages/opencl/constant_feature.test",
+    "tests/languages/opencl/function_feature.test",
+    "tests/languages/opencl/keyword_feature.test",
+    "tests/languages/oz/atom_feature.test",
+    "tests/languages/oz/attr-name_feature.test",
+    "tests/languages/oz/comment_feature.test",
+    "tests/languages/oz/function_feature.test",
+    "tests/languages/oz/keyword_feature.test",
+    "tests/languages/oz/number_feature.test",
+    "tests/languages/oz/operator_feature.test",
+    "tests/languages/oz/string_feature.test",
+    "tests/languages/oz/variable_feature.test",
+    "tests/languages/parigp/comment_feature.test",
+    "tests/languages/parigp/function_feature.test",
+    "tests/languages/parigp/keyword_feature.test",
+    "tests/languages/parigp/number_feature.test",
+    "tests/languages/parigp/operator_feature.test",
+    "tests/languages/parigp/string_feature.test",
+    "tests/languages/parser/boolean_feature.test",
+    "tests/languages/parser/escape_feature.test",
+    "tests/languages/parser/expression_feature.test",
+    "tests/languages/parser/function_feature.test",
+    "tests/languages/parser/keyword_feature.test",
+    "tests/languages/parser/number_feature.test",
+    "tests/languages/parser/operator_feature.test",
+    "tests/languages/parser/parser-comment_feature.test",
+    "tests/languages/parser/string_feature.test",
+    "tests/languages/parser/variable_feature.test",
+    "tests/languages/pascal/comment_feature.test",
+    "tests/languages/pascal/keyword_feature.test",
+    "tests/languages/pascal/number_feature.test",
+    "tests/languages/pascal/operator_feature.test",
+    "tests/languages/pascal/string_feature.test",
+    "tests/languages/perl/comment_feature.test",
+    "tests/languages/perl/filehandle_feature.test",
+    "tests/languages/perl/function_feature.test",
+    "tests/languages/perl/keyword_feature.test",
+    "tests/languages/perl/number_feature.test",
+    "tests/languages/perl/operator_feature.test",
+    "tests/languages/perl/regex_feature.test",
+    "tests/languages/perl/string_feature.test",
+    "tests/languages/perl/variable_feature.test",
+    "tests/languages/perl/vstring_feature.test",
+    "tests/languages/php!+php-extras/global_feature.test",
+    "tests/languages/php!+php-extras/scope_feature.test",
+    "tests/languages/php!+php-extras/this_feature.test",
+    "tests/languages/php/boolean_feature.test",
+    "tests/languages/php/comment_feature.test",
+    "tests/languages/php/constant_feature.test",
+    "tests/languages/php/delimiter_feature.test",
+    "tests/languages/php/keyword_feature.test",
+    "tests/languages/php/package_feature.test",
+    "tests/languages/php/property_feature.test",
+    "tests/languages/php/shell-comment_feature.test",
+    "tests/languages/php/string-interpolation_feature.test",
+    "tests/languages/php/string_feature.test",
+    "tests/languages/php/variable_feature.test",
+    "tests/languages/phpdoc+php/phpdoc_inclusion.test",
+    "tests/languages/phpdoc/class-name_feature.test",
+    "tests/languages/phpdoc/keyword_feature.test",
+    "tests/languages/phpdoc/parameter_feature.test",
+    "tests/languages/plsql/comment_feature.test",
+    "tests/languages/plsql/keyword_feature.test",
+    "tests/languages/plsql/operator_feature.test",
+    "tests/languages/powershell/boolean_feature.test",
+    "tests/languages/powershell/comment_feature.test",
+    "tests/languages/powershell/function_feature.test",
+    "tests/languages/powershell/issue1407.test",
+    "tests/languages/powershell/keyword_feature.test",
+    "tests/languages/powershell/namespace_feature.test",
+    "tests/languages/powershell/operator_feature.test",
+    "tests/languages/powershell/string_feature.test",
+    "tests/languages/powershell/variable_feature.test",
+    "tests/languages/processing/constant_feature.test",
+    "tests/languages/processing/function_feature.test",
+    "tests/languages/processing/keyword_feature.test",
+    "tests/languages/processing/operator_feature.test",
+    "tests/languages/processing/type_feature.test",
+    "tests/languages/prolog/builtin_feature.test",
+    "tests/languages/prolog/comment_feature.test",
+    "tests/languages/prolog/function_feature.test",
+    "tests/languages/prolog/number_feature.test",
+    "tests/languages/prolog/operator_feature.test",
+    "tests/languages/prolog/string_feature.test",
+    "tests/languages/prolog/variable_feature.test",
+    "tests/languages/properties/comment_feature.test",
+    "tests/languages/properties/key_value_feature.test",
+    "tests/languages/protobuf/keyword_feature.test",
+    "tests/languages/protobuf/string_feature.test",
+    "tests/languages/pug/code_feature.test",
+    "tests/languages/pug/comment_feature.test",
+    "tests/languages/pug/doctype_feature.test",
+    "tests/languages/pug/flow-control_feature.test",
+    "tests/languages/pug/keyword_feature.test",
+    "tests/languages/pug/mixin_feature.test",
+    "tests/languages/pug/multiline-plain-text_feature.test",
+    "tests/languages/pug/multiline-script_feature.test",
+    "tests/languages/pug/plain-text_feature.test",
+    "tests/languages/pug/script_feature.test",
+    "tests/languages/pug/tag_feature.test",
+    "tests/languages/puppet/attr-name_feature.test",
+    "tests/languages/puppet/boolean_feature.test",
+    "tests/languages/puppet/comment_feature.test",
+    "tests/languages/puppet/datatype_feature.test",
+    "tests/languages/puppet/function_feature.test",
+    "tests/languages/puppet/heredoc_feature.test",
+    "tests/languages/puppet/interpolation_feature.test",
+    "tests/languages/puppet/keyword_feature.test",
+    "tests/languages/puppet/number_feature.test",
+    "tests/languages/puppet/operator_feature.test",
+    "tests/languages/puppet/regex_feature.test",
+    "tests/languages/puppet/string_feature.test",
+    "tests/languages/puppet/variable_feature.test",
+    "tests/languages/pure/comment_feature.test",
+    "tests/languages/pure/function_feature.test",
+    "tests/languages/pure/keyword_feature.test",
+    "tests/languages/pure/number_feature.test",
+    "tests/languages/pure/operator_feature.test",
+    "tests/languages/pure/special_feature.test",
+    "tests/languages/pure/string_feature.test",
+    "tests/languages/python/boolean_feature.test",
+    "tests/languages/python/builtin_feature.test",
+    "tests/languages/python/class-name_feature.test",
+    "tests/languages/python/comment_feature.test",
+    "tests/languages/python/decorator_feature.test",
+    "tests/languages/python/function_feature.test",
+    "tests/languages/python/issue1355.test",
+    "tests/languages/python/keyword_feature.test",
+    "tests/languages/python/number_feature.test",
+    "tests/languages/python/operator_feature.test",
+    "tests/languages/python/string-interpolation_feature.test",
+    "tests/languages/python/string_feature.test",
+    "tests/languages/python/triple-quoted-string_feature.test",
+    "tests/languages/q/adverb_feature.test",
+    "tests/languages/q/comment_feature.test",
+    "tests/languages/q/datetime_feature.test",
+    "tests/languages/q/keyword_feature.test",
+    "tests/languages/q/number_feature.test",
+    "tests/languages/q/string_feature.test",
+    "tests/languages/q/symbol_feature.test",
+    "tests/languages/q/verb_feature.test",
+    "tests/languages/qore/boolean_feature.test",
+    "tests/languages/qore/comment_feature.test",
+    "tests/languages/qore/function_feature.test",
+    "tests/languages/qore/keyword_feature.test",
+    "tests/languages/qore/number_feature.test",
+    "tests/languages/qore/operator_feature.test",
+    "tests/languages/qore/string_feature.test",
+    "tests/languages/qore/variable_feature.test",
+    "tests/languages/r/boolean_feature.test",
+    "tests/languages/r/comment_feature.test",
+    "tests/languages/r/ellipsis_feature.test",
+    "tests/languages/r/keyword_feature.test",
+    "tests/languages/r/number_feature.test",
+    "tests/languages/r/operator_feature.test",
+    "tests/languages/r/percent-operator_feature.test",
+    "tests/languages/r/string_feature.test",
+    "tests/languages/reason/character_feature.test",
+    "tests/languages/reason/class-name_feature.test",
+    "tests/languages/reason/comment_feature.test",
+    "tests/languages/reason/constructor_feature.test",
+    "tests/languages/reason/keyword_feature.test",
+    "tests/languages/reason/label_feature.test",
+    "tests/languages/reason/operator_feature.test",
+    "tests/languages/reason/string_feature.test",
+    "tests/languages/regex/anchor_feature.test",
+    "tests/languages/regex/backreference_feature.test",
+    "tests/languages/regex/charclass_feature.test",
+    "tests/languages/regex/charset_feature.test",
+    "tests/languages/regex/escape_feature.test",
+    "tests/languages/regex/group_feature.test",
+    "tests/languages/regex/quantifier_feature.test",
+    "tests/languages/regex/range_feature.test",
+    "tests/languages/rest/command-line-option_feature.test",
+    "tests/languages/rest/comment_feature.test",
+    "tests/languages/rest/directive_feature.test",
+    "tests/languages/rest/doctest-block_feature.test",
+    "tests/languages/rest/field_feature.test",
+    "tests/languages/rest/hr_feature.test",
+    "tests/languages/rest/inline_feature.test",
+    "tests/languages/rest/link-target_feature.test",
+    "tests/languages/rest/link_feature.test",
+    "tests/languages/rest/list-bullet_feature.test",
+    "tests/languages/rest/literal-block_feature.test",
+    "tests/languages/rest/quoted-literal-block_feature.test",
+    "tests/languages/rest/substitution-def_feature.test",
+    "tests/languages/rest/table_feature.test",
+    "tests/languages/rest/title_feature.test",
+    "tests/languages/rip/boolean_feature.test",
+    "tests/languages/rip/builtin_feature.test",
+    "tests/languages/rip/character_feature.test",
+    "tests/languages/rip/comment_feature.test",
+    "tests/languages/rip/date_time_feature.test",
+    "tests/languages/rip/keyword_feature.test",
+    "tests/languages/rip/number_feature.test",
+    "tests/languages/rip/reference_feature.test",
+    "tests/languages/rip/regex_feature.test",
+    "tests/languages/rip/string_feature.test",
+    "tests/languages/rip/symbol_feature.test",
+    "tests/languages/roboconf/comment_feature.test",
+    "tests/languages/roboconf/component_feature.test",
+    "tests/languages/roboconf/keyword_feature.test",
+    "tests/languages/roboconf/optional_feature.test",
+    "tests/languages/roboconf/property_feature.test",
+    "tests/languages/roboconf/value_feature.test",
+    "tests/languages/roboconf/wildcard_feature.test",
+    "tests/languages/ruby/builtin_feature.test",
+    "tests/languages/ruby/comment_feature.test",
+    "tests/languages/ruby/constant_feature.test",
+    "tests/languages/ruby/issue1336.test",
+    "tests/languages/ruby/keyword_feature.test",
+    "tests/languages/ruby/method_definition_feature.test",
+    "tests/languages/ruby/regex_feature.test",
+    "tests/languages/ruby/string_feature.test",
+    "tests/languages/ruby/symbol_feature.test",
+    "tests/languages/ruby/variable_feature.test",
+    "tests/languages/rust/attribute_feature.test",
+    "tests/languages/rust/char_feature.test",
+    "tests/languages/rust/closure-params_feature.test",
+    "tests/languages/rust/comment_feature.test",
+    "tests/languages/rust/function_feature.test",
+    "tests/languages/rust/issue1339.test",
+    "tests/languages/rust/issue1353.test",
+    "tests/languages/rust/keyword_feature.test",
+    "tests/languages/rust/lifetime-annotation_feature.test",
+    "tests/languages/rust/macro-rules_feature.test",
+    "tests/languages/rust/number_feature.test",
+    "tests/languages/rust/operator_feature.test",
+    "tests/languages/rust/string_feature.test",
+    "tests/languages/sas/comment_feature.test",
+    "tests/languages/sas/datalines_feature.test",
+    "tests/languages/sas/datetime_feature.test",
+    "tests/languages/sas/keyword_feature.test",
+    "tests/languages/sas/number_feature.test",
+    "tests/languages/sas/operator_feature.test",
+    "tests/languages/sas/string_feature.test",
+    "tests/languages/sass/atrule-line_feature.test",
+    "tests/languages/sass/comment_feature.test",
+    "tests/languages/sass/property-line_feature.test",
+    "tests/languages/sass/selector_feature.test",
+    "tests/languages/sass/variable-line_feature.test",
+    "tests/languages/scala/builtin_feature.test",
+    "tests/languages/scala/keyword_feature.test",
+    "tests/languages/scala/number_feature.test",
+    "tests/languages/scala/string_feature.test",
+    "tests/languages/scala/symbol_feature.test",
+    "tests/languages/scheme/boolean_feature.test",
+    "tests/languages/scheme/builtin_feature.test",
+    "tests/languages/scheme/character_feature.test",
+    "tests/languages/scheme/comment_feature.test",
+    "tests/languages/scheme/function_feature.test",
+    "tests/languages/scheme/issue1331.test",
+    "tests/languages/scheme/keyword_feature.test",
+    "tests/languages/scheme/number_feature.test",
+    "tests/languages/scheme/operator_feature.test",
+    "tests/languages/scheme/string_feature.test",
+    "tests/languages/scss+haml/scss_inclusion.test",
+    "tests/languages/scss+pug/scss_inclusion.test",
+    "tests/languages/scss/atrule_feature.test",
+    "tests/languages/scss/boolean_feature.test",
+    "tests/languages/scss/comment_feature.test",
+    "tests/languages/scss/keyword_feature.test",
+    "tests/languages/scss/null_feature.test",
+    "tests/languages/scss/operator_feature.test",
+    "tests/languages/scss/placeholder_feature.test",
+    "tests/languages/scss/property_feature.test",
+    "tests/languages/scss/selector_feature.test",
+    "tests/languages/scss/statement_feature.test",
+    "tests/languages/scss/url_feature.test",
+    "tests/languages/scss/variable_feature.test",
+    "tests/languages/smalltalk/block-arguments_feature.test",
+    "tests/languages/smalltalk/character_feature.test",
+    "tests/languages/smalltalk/comment_feature.test",
+    "tests/languages/smalltalk/keyword_feature.test",
+    "tests/languages/smalltalk/number_feature.test",
+    "tests/languages/smalltalk/operator_feature.test",
+    "tests/languages/smalltalk/string_feature.test",
+    "tests/languages/smalltalk/symbol_feature.test",
+    "tests/languages/smalltalk/temporary-variables_feature.test",
+    "tests/languages/smarty/attr-name_feature.test",
+    "tests/languages/smarty/comment_feature.test",
+    "tests/languages/smarty/function_feature.test",
+    "tests/languages/smarty/keyword_feature.test",
+    "tests/languages/smarty/number_feature.test",
+    "tests/languages/smarty/operator_feature.test",
+    "tests/languages/smarty/smarty_in_markup_feature.test",
+    "tests/languages/smarty/string_feature.test",
+    "tests/languages/smarty/variable_feature.test",
+    "tests/languages/soy/boolean_feature.test",
+    "tests/languages/soy/command-arg.test",
+    "tests/languages/soy/comment_feature.test",
+    "tests/languages/soy/function_feature.test",
+    "tests/languages/soy/keyword_feature.test",
+    "tests/languages/soy/literal_feature.test",
+    "tests/languages/soy/number_feature.test",
+    "tests/languages/soy/operator_feature.test",
+    "tests/languages/soy/parameter_feature.test",
+    "tests/languages/soy/property_feature.test",
+    "tests/languages/soy/soy_in_markup_feature.test",
+    "tests/languages/soy/string_feature.test",
+    "tests/languages/soy/variable_feature.test",
+    "tests/languages/sql/boolean_feature.test",
+    "tests/languages/sql/comment_feature.test",
+    "tests/languages/sql/function_feature.test",
+    "tests/languages/sql/keyword_feature.test",
+    "tests/languages/sql/number_feature.test",
+    "tests/languages/sql/operator_feature.test",
+    "tests/languages/sql/string_feature.test",
+    "tests/languages/sql/variable_feature.test",
+    "tests/languages/stylus+pug/stylus_inclusion.test",
+    "tests/languages/stylus/atrule-declaration_feature.test",
+    "tests/languages/stylus/boolean_feature.test",
+    "tests/languages/stylus/comment_feature.test",
+    "tests/languages/stylus/func_feature.test",
+    "tests/languages/stylus/hexcode_feature.test",
+    "tests/languages/stylus/important_feature.test",
+    "tests/languages/stylus/keyword_feature.test",
+    "tests/languages/stylus/number_feature.test",
+    "tests/languages/stylus/operator_feature.test",
+    "tests/languages/stylus/property-declaration_feature.test",
+    "tests/languages/stylus/selector_feature.test",
+    "tests/languages/stylus/string_feature.test",
+    "tests/languages/stylus/url_feature.test",
+    "tests/languages/stylus/variable-declaration_feature.test",
+    "tests/languages/swift/atrule_feature.test",
+    "tests/languages/swift/builtin_feature.test",
+    "tests/languages/swift/constant_feature.test",
+    "tests/languages/swift/keyword_feature.test",
+    "tests/languages/swift/number_feature.test",
+    "tests/languages/swift/string_feature.test",
+    "tests/languages/t4-cs/block_class-feature_feature.test",
+    "tests/languages/t4-cs/block_directive_feature.test",
+    "tests/languages/t4-cs/block_expression_feature.test",
+    "tests/languages/t4-cs/block_standard_feature.test",
+    "tests/languages/t4-vb/block_feature.test",
+    "tests/languages/tap/bail_out_feature.test",
+    "tests/languages/tap/directive_feature.test",
+    "tests/languages/tap/pass_fail_feature.test",
+    "tests/languages/tap/plan_feature.test",
+    "tests/languages/tap/pragma_feature.test",
+    "tests/languages/tap/version_feature.test",
+    "tests/languages/tap/yamlish_feature.test",
+    "tests/languages/tcl/builtin_feature.test",
+    "tests/languages/tcl/comment_feature.test",
+    "tests/languages/tcl/function_feature.test",
+    "tests/languages/tcl/keyword_feature.test",
+    "tests/languages/tcl/operator_feature.test",
+    "tests/languages/tcl/scope_feature.test",
+    "tests/languages/tcl/string_feature.test",
+    "tests/languages/tcl/variable_feature.test",
+    "tests/languages/textile/acronym_feature.test",
+    "tests/languages/textile/block-tag_feature.test",
+    "tests/languages/textile/footnote_feature.test",
+    "tests/languages/textile/image_feature.test",
+    "tests/languages/textile/inline_feature.test",
+    "tests/languages/textile/link-ref_feature.test",
+    "tests/languages/textile/link_feature.test",
+    "tests/languages/textile/list_feature.test",
+    "tests/languages/textile/mark_feature.test",
+    "tests/languages/textile/table_feature.test",
+    "tests/languages/toml/boolean_feature.test",
+    "tests/languages/toml/comment_feature.test",
+    "tests/languages/toml/date_feature.test",
+    "tests/languages/toml/key_feature.test",
+    "tests/languages/toml/number_feature.test",
+    "tests/languages/toml/string_feature.test",
+    "tests/languages/toml/table_feature.test",
+    "tests/languages/tsx/tag_feature.test",
+    "tests/languages/tt2/comment_feature.test",
+    "tests/languages/tt2/delimiter_feature.test",
+    "tests/languages/tt2/keyword_feature.test",
+    "tests/languages/tt2/operator_feature.test",
+    "tests/languages/tt2/string-interpolation_feature.test",
+    "tests/languages/tt2/string_feature.test",
+    "tests/languages/tt2/variable_feature.test",
+    "tests/languages/twig+pug/twig_inclusion.test",
+    "tests/languages/twig/boolean_feature.test",
+    "tests/languages/twig/comment_feature.test",
+    "tests/languages/twig/keyword_feature.test",
+    "tests/languages/twig/number_feature.test",
+    "tests/languages/twig/operator_feature.test",
+    "tests/languages/twig/string_feature.test",
+    "tests/languages/typescript/builtin_feature.test",
+    "tests/languages/typescript/keyword_feature.test",
+    "tests/languages/vala/class-name_feature.test",
+    "tests/languages/vala/keyword_feature.test",
+    "tests/languages/vala/number_feature.test",
+    "tests/languages/vala/operator_feature.test",
+    "tests/languages/vala/punctuation_feature.test",
+    "tests/languages/vala/string_feature.test",
+    "tests/languages/vbnet/comment_feature.test",
+    "tests/languages/vbnet/keyword_feature.test",
+    "tests/languages/velocity/directive_feature.test",
+    "tests/languages/velocity/unparsed_feature.test",
+    "tests/languages/velocity/variable_feature.test",
+    "tests/languages/velocity/velocity-comment_feature.test",
+    "tests/languages/verilog/comment_feature.test",
+    "tests/languages/verilog/constant_feature.test",
+    "tests/languages/verilog/function_feature.test",
+    "tests/languages/verilog/important_feature.test",
+    "tests/languages/verilog/keyword_feature.test",
+    "tests/languages/verilog/number_feature.test",
+    "tests/languages/verilog/operator_feature.test",
+    "tests/languages/verilog/property_feature.test",
+    "tests/languages/verilog/string_feature.test",
+    "tests/languages/vhdl/boolean_feature.test",
+    "tests/languages/vhdl/comment_feature.test",
+    "tests/languages/vhdl/constant_feature.test",
+    "tests/languages/vhdl/function_feature.test",
+    "tests/languages/vhdl/keyword_feature.test",
+    "tests/languages/vhdl/number_feature.test",
+    "tests/languages/vhdl/operator_feature.test",
+    "tests/languages/vhdl/string_feature.test",
+    "tests/languages/vhdl/vhdl-vectors_feature.test",
+    "tests/languages/vim/builtin_feature.test",
+    "tests/languages/vim/comment_feature.test",
+    "tests/languages/vim/function_feature.test",
+    "tests/languages/vim/keyword_feature.test",
+    "tests/languages/vim/number_feature.test",
+    "tests/languages/vim/operator_feature.test",
+    "tests/languages/vim/string_feature.test",
+    "tests/languages/visual-basic/boolean_feature.test",
+    "tests/languages/visual-basic/comment_feature.test",
+    "tests/languages/visual-basic/date_feature.test",
+    "tests/languages/visual-basic/directive_feature.test",
+    "tests/languages/visual-basic/keyword_feature.test",
+    "tests/languages/visual-basic/number_feature.test",
+    "tests/languages/visual-basic/operator_feature.test",
+    "tests/languages/visual-basic/string_feature.test",
+    "tests/languages/wasm/comment_feature.test",
+    "tests/languages/wasm/keyword_feature.test",
+    "tests/languages/wasm/number_feature.test",
+    "tests/languages/wasm/string_feature.test",
+    "tests/languages/wasm/variable_feature.test",
+    "tests/languages/wiki/block-comment_feature.test",
+    "tests/languages/wiki/emphasis_feature.test",
+    "tests/languages/wiki/heading_feature.test",
+    "tests/languages/wiki/hr_feature.test",
+    "tests/languages/wiki/nowiki_feature.test",
+    "tests/languages/wiki/symbol_feature.test",
+    "tests/languages/wiki/url_feature.test",
+    "tests/languages/wiki/variable_feature.test",
+    "tests/languages/xeora/constant_feature.test",
+    "tests/languages/xeora/directive-block-close_feature.test",
+    "tests/languages/xeora/directive-block-open_feature.test",
+    "tests/languages/xeora/directive-block-separator_feature.test",
+    "tests/languages/xeora/directive-inline_feature.test",
+    "tests/languages/xeora/function-block_feature.test",
+    "tests/languages/xeora/function-inline_feature.test",
+    "tests/languages/xeora/variable_feature.test",
+    "tests/languages/xojo/comment_feature.test",
+    "tests/languages/xojo/keyword_feature.test",
+    "tests/languages/xojo/number_feature.test",
+    "tests/languages/xojo/operator_feature.test",
+    "tests/languages/xojo/string_feature.test",
+    "tests/languages/xojo/symbol_feature.test",
+    "tests/languages/xquery/axis_feature.test",
+    "tests/languages/xquery/builtin_feature.test",
+    "tests/languages/xquery/extension_feature.test",
+    "tests/languages/xquery/function_feature.test",
+    "tests/languages/xquery/keyword-operator_feature.test",
+    "tests/languages/xquery/keyword_feature.test",
+    "tests/languages/xquery/number_feature.test",
+    "tests/languages/xquery/operator_feature.test",
+    "tests/languages/xquery/plain-text_feature.test",
+    "tests/languages/xquery/string_feature.test",
+    "tests/languages/xquery/tag_feature.test",
+    "tests/languages/xquery/variable_feature.test",
+    "tests/languages/xquery/xquery-attribute_feature.test",
+    "tests/languages/xquery/xquery-comment_feature.test",
+    "tests/languages/xquery/xquery-element_feature.test",
+    "tests/languages/yaml/boolean_feature.test",
+    "tests/languages/yaml/comment_feature.test",
+    "tests/languages/yaml/datetime_feature.test",
+    "tests/languages/yaml/directive_feature.test",
+    "tests/languages/yaml/important_feature.test",
+    "tests/languages/yaml/key_feature.test",
+    "tests/languages/yaml/null_feature.test",
+    "tests/languages/yaml/number_feature.test",
+    "tests/languages/yaml/scalar_feature.test",
+    "tests/languages/yaml/string_feature.test",
+    "tests/languages/yaml/tag_feature.test",
+    "tests/plugins/keep-markup/test.js",
+    "tests/run.js",
+    "tests/testrunner-tests.js",
+    "themes/prism-coy.css",
+    "themes/prism-dark.css",
+    "themes/prism-funky.css",
+    "themes/prism-okaidia.css",
+    "themes/prism-solarizedlight.css",
+    "themes/prism-tomorrow.css",
+    "themes/prism-twilight.css",
+    "themes/prism.css"
+  ],
+  "readable_files": {
+    ".github/ISSUE_TEMPLATE/bug_report.md": {
+      "sha256": "aa6d16e9ac39f11d3016dcd9fda5ff864b4c3511dac22d4c83ccc968f64951f8",
+      "editable": false
+    },
+    ".github/ISSUE_TEMPLATE/feature_request.md": {
+      "sha256": "4b4bb54b8266d52450ff9194204027ac604cd74369535ba2378e2435aec7b055",
+      "editable": false
+    },
+    ".github/ISSUE_TEMPLATE/highlighting-bug-report.md": {
+      "sha256": "ea2e36ceeed885fc52632344f11c19529ab3b36fcd6be7c64d9be3ba24c7e414",
+      "editable": false
+    },
+    ".github/ISSUE_TEMPLATE/new-language-request.md": {
+      "sha256": "3f9dea92f59e9e97d33be7765e3506b63dfc53bbdfdd4d9b87a7bb51bf5ac5ea",
+      "editable": false
+    },
+    ".travis.yml": {
+      "sha256": "c374ae3ae6635c64a5e1a1ff533f578615c2d938c7ec2476fa8f07a57bbb4464",
+      "editable": false
+    },
+    "CHANGELOG.md": {
+      "sha256": "00050739a1978bca004547c03acba0749f3afe3f5a094eb9a49b84d0e1376f7d",
+      "editable": false
+    },
+    "README.md": {
+      "sha256": "1222cbb0c4a0126f02be8997429c41cebc3865ec4a2f6b14c4e6dd5024b713f7",
+      "editable": false
+    },
+    "bower.json": {
+      "sha256": "5dc68eeb975e4779fdc75d5c025d649a287d09a3e55cecfd83d34626bc96ad01",
+      "editable": false
+    },
+    "components.js": {
+      "sha256": "5f9f0d89deb93ead371988f30d14177c2ca7604531032816373b927b04aeac56",
+      "editable": true
+    },
+    "components.json": {
+      "sha256": "3c37f599bdd3e4e281d1f6ea3224d3a511c97dd1b1d45ccc80fddd0050fe85a9",
+      "editable": false
+    },
+    "components/index.js": {
+      "sha256": "5681b909dbe5594b88ad9d925a8f68879eef105b2ba8f836f4e114d22c8e606f",
+      "editable": true
+    },
+    "components/prism-abap.js": {
+      "sha256": "e488f806ef228633dbaf82fc83cd1cbb21a0128c70ea0f2d1413c99fde4f57bc",
+      "editable": true
+    },
+    "components/prism-abap.min.js": {
+      "sha256": "113ad32dec14a1f35f5fbe4a6490d9c58d49be9c31658dac53c704412eb6839a",
+      "editable": true
+    },
+    "components/prism-abnf.js": {
+      "sha256": "802a5e54c7d3c7fb5b8ba81c03c3ac6e481613cc9b92eab168d0865b63783429",
+      "editable": true
+    },
+    "components/prism-abnf.min.js": {
+      "sha256": "fa4f1a8a5cc19c909f1f67fbbd7ada86ea213a8fcfa6ab22fd53275ad24cf185",
+      "editable": true
+    },
+    "components/prism-actionscript.js": {
+      "sha256": "9134474b090f28cec34d75a81520c65baaeff3e9cf7dc0514e0d74e8ac9685eb",
+      "editable": true
+    },
+    "components/prism-actionscript.min.js": {
+      "sha256": "5c328b2ead6ebfcc804dcb0ed7bd99d4c3a80ce95b5e4ef92f23dbec441bc009",
+      "editable": true
+    },
+    "components/prism-ada.js": {
+      "sha256": "305a2954307233e8f7c03407c0991ab35b689d0ed93ed8cab33b161bcb151c6f",
+      "editable": true
+    },
+    "components/prism-ada.min.js": {
+      "sha256": "94dc5ffd69ad69852154ff91d03b34e11459de1648037f4d956e558235af0eb5",
+      "editable": true
+    },
+    "components/prism-apacheconf.js": {
+      "sha256": "4b4c6f97f66b5c5ad6aa11354221231eea78082b82f3b3c6ac21b680c666f200",
+      "editable": true
+    },
+    "components/prism-apacheconf.min.js": {
+      "sha256": "5b72040b3cf455af152c8f20882fe9af705b25f2d5564cd51c443892471f1644",
+      "editable": true
+    },
+    "components/prism-apl.js": {
+      "sha256": "36749c0d81bdbc83aab5523d0a1c3091e56033dd76e6d8a2070e0b92b3722bba",
+      "editable": true
+    },
+    "components/prism-apl.min.js": {
+      "sha256": "2e46bed09629220ffe2061bbdb0f634b13492c90329fa3848cec013c6bdefa4b",
+      "editable": true
+    },
+    "components/prism-applescript.js": {
+      "sha256": "53befc79f260d7344f4679520f862da481f8701c0019b7f75a3100419e7bd4aa",
+      "editable": true
+    },
+    "components/prism-applescript.min.js": {
+      "sha256": "1772cd9e7c5557801876686bf6b29a7a327e449846b2854a17c8b0f222f61c8c",
+      "editable": true
+    },
+    "components/prism-arduino.js": {
+      "sha256": "8b78fd55e3effa4cd689bdacd78a94fb30204910d0b2396fe07aff4f46ba0efa",
+      "editable": true
+    },
+    "components/prism-arduino.min.js": {
+      "sha256": "aa90586fade7f8bf4fdc522cac7bfc2a1198ab5448dac73973672fdbc0ac6216",
+      "editable": true
+    },
+    "components/prism-arff.js": {
+      "sha256": "353977a55ef86d466fe30d22b657be8a767e5b0106e865ec6aaf4f3fd87ca6ca",
+      "editable": true
+    },
+    "components/prism-arff.min.js": {
+      "sha256": "b3f527a7ca5a2e0aa1eabe3773a6d78d36aaf25e85398178c86bae5a460d0435",
+      "editable": true
+    },
+    "components/prism-asciidoc.js": {
+      "sha256": "b2f51f42228b1dbb5c3b4d65464b24f4ece7ac7d7fe2e4f7829e0a8c45cd583d",
+      "editable": true
+    },
+    "components/prism-asciidoc.min.js": {
+      "sha256": "67aaa05d2e77274d02acdf6a1e5dc2c46a97d80deab3a1f01a2f7a6e79367b8c",
+      "editable": true
+    },
+    "components/prism-asm6502.js": {
+      "sha256": "d9aab6f59ed6be45ffefd62a8de293a5e9cf4dbd112b49cfe1e14cc21d81bd49",
+      "editable": true
+    },
+    "components/prism-asm6502.min.js": {
+      "sha256": "4dd2051bebd65b0a5472de97d567de4092381866ffbe502c1beabc6c2ad4ae31",
+      "editable": true
+    },
+    "components/prism-aspnet.js": {
+      "sha256": "e9da86f9ed663a3137dc07da7c8e342378f527236f815f969a19edbc95308bb7",
+      "editable": true
+    },
+    "components/prism-aspnet.min.js": {
+      "sha256": "0565d18c8b99196098b6c98fcb60f5480f826d7a375502a283427b613196463e",
+      "editable": true
+    },
+    "components/prism-autohotkey.js": {
+      "sha256": "6da80fe32936b89ba02bb3d9d6219074d4aa933ebc81e0b5e431996666d4a423",
+      "editable": true
+    },
+    "components/prism-autohotkey.min.js": {
+      "sha256": "cd1dff1096873c3b5ce6f5957a83d4e1062470149f728331f113bc66255a6bc9",
+      "editable": true
+    },
+    "components/prism-autoit.js": {
+      "sha256": "bb26ddaf240faed2c8b51471ed83ffe1331a34f390aa440c83e4424bec527c30",
+      "editable": true
+    },
+    "components/prism-autoit.min.js": {
+      "sha256": "6fc50cd534cdaef4a8e89d81c9ef03267f2711c63a074f1ac13f8b464849dbb7",
+      "editable": true
+    },
+    "components/prism-bash.js": {
+      "sha256": "47c0741921be4b58123b5b4f91c97663eb37aabc9674f4031cecb827166db892",
+      "editable": true
+    },
+    "components/prism-bash.min.js": {
+      "sha256": "d16f5d7513ed82b8ef6555311a153f4a12f1162dd618d5764fb03b6c14ee0d6a",
+      "editable": true
+    },
+    "components/prism-basic.js": {
+      "sha256": "8cc3c7b42646e7117158adf61c04185dfd679696c02f77c3568712696309ec69",
+      "editable": true
+    },
+    "components/prism-basic.min.js": {
+      "sha256": "fe20318775cf931ee0b96b31d092d54f01bf92f0c688e34e5f04a3327438ee9b",
+      "editable": true
+    },
+    "components/prism-batch.js": {
+      "sha256": "66f8090c2cd881c7655e45cb61c0406b622e8556069e77fdbb40f8f18c2864e5",
+      "editable": true
+    },
+    "components/prism-batch.min.js": {
+      "sha256": "36df0edd1071cf45f02c34b7f02d3b018adc9f735399ec8638d8f49120bd47db",
+      "editable": true
+    },
+    "components/prism-bison.js": {
+      "sha256": "688b32512ce8234e9e36ee186b80aee7b8519aa41f3f64e9226596845822336d",
+      "editable": true
+    },
+    "components/prism-bison.min.js": {
+      "sha256": "cdd77dbf13f2e99d4ca29923c9715cec578bdf55768dfcee9c3ca8b5d0937816",
+      "editable": true
+    },
+    "components/prism-bnf.js": {
+      "sha256": "e67453a11c90d6df55a9b1d185ab80bf415456193f43c410d01d4a195d6d7127",
+      "editable": true
+    },
+    "components/prism-bnf.min.js": {
+      "sha256": "5117afc6bb92bd5709099b6f2790628e7fe1eab34f8563b3ae57008f161e7b18",
+      "editable": true
+    },
+    "components/prism-brainfuck.js": {
+      "sha256": "2f2038d0949c700a5f1a3196684ca508c6caf2fd64350f3c8247305568e82f3b",
+      "editable": true
+    },
+    "components/prism-brainfuck.min.js": {
+      "sha256": "54c9c05a99b4aaca0a621c23196a5ba4816812a98a16a81132faec3dee122c0f",
+      "editable": true
+    },
+    "components/prism-bro.js": {
+      "sha256": "00256cdf44335fcae7b39d85de1250c2df65dda08d253795e0ead438c08a7208",
+      "editable": true
+    },
+    "components/prism-bro.min.js": {
+      "sha256": "d15c3c417b6566e0d59e26c4c0316ffa1e35a4cfb354afa5b8638620af7dc65d",
+      "editable": true
+    },
+    "components/prism-c.js": {
+      "sha256": "efc5a30783a1c026979a345b73741e0e5609159597d8d3a3fed3d52fce89e43c",
+      "editable": true
+    },
+    "components/prism-c.min.js": {
+      "sha256": "194483156de4f4d33b5167f822d83fc3c94eee9490ce74f3a36d90830b8c7d53",
+      "editable": true
+    },
+    "components/prism-cil.js": {
+      "sha256": "98e098f3835ab2a966eda63f1ded3b9c565ccf74a56362b3b25347985845fa5f",
+      "editable": true
+    },
+    "components/prism-cil.min.js": {
+      "sha256": "d4fe48f7f0f7ab148de972a5f676a45c7e740bca081e4f7943187ca37d085f9a",
+      "editable": true
+    },
+    "components/prism-clike.js": {
+      "sha256": "4c429961e6e5e0fe8329fdd44bf98870fcb37f8077613427a8cd3069deda897b",
+      "editable": true
+    },
+    "components/prism-clike.min.js": {
+      "sha256": "c8bcb09590489d24de3bc79352d2d9f504073a61b9c704fe15f1088e3302f115",
+      "editable": true
+    },
+    "components/prism-clojure.js": {
+      "sha256": "8676dcf5642a5bafe6b450fcb959880bfcf6d13dc7cc8ef0843ab17d3b1e401c",
+      "editable": true
+    },
+    "components/prism-clojure.min.js": {
+      "sha256": "1cde0c5e3e887282a62e3a6478500c1dae10ed2b2a41dcd691b23ce4274739a7",
+      "editable": true
+    },
+    "components/prism-cmake.js": {
+      "sha256": "1a4e2a74dfb80ff4ca79fbfd6233f9e68a5b85e4cc85a63e28d29a55a1fd4a41",
+      "editable": true
+    },
+    "components/prism-cmake.min.js": {
+      "sha256": "4239b08be8d9860fafdd3528edce73ed7c5ddf154cbec3b197b7be327a2b0ffe",
+      "editable": true
+    },
+    "components/prism-coffeescript.js": {
+      "sha256": "5f1d07c03051e1c379189775a8e47a96d3294dabda15a79cf7c079b9f1f20c1d",
+      "editable": true
+    },
+    "components/prism-coffeescript.min.js": {
+      "sha256": "5a60c7183ae549c13b452e175655de4e1f2afcdbee3a2cc4387ea9e1213157d9",
+      "editable": true
+    },
+    "components/prism-core.js": {
+      "sha256": "4b0caf0f02be3c26b45e50a13bd7c97e1f18427af8a35a1c8af674e5e8aa16f4",
+      "editable": true
+    },
+    "components/prism-core.min.js": {
+      "sha256": "8629c17497be31e93c991374579550a7c5bff5ee607461f15b3723936631a1c1",
+      "editable": true
+    },
+    "components/prism-cpp.js": {
+      "sha256": "78a6a1c7c014bd49a2fa926b355e719cca5ba53390989878ea657eb4df6c9b0b",
+      "editable": true
+    },
+    "components/prism-cpp.min.js": {
+      "sha256": "ef230dcdecfbcde77b038edf4dd8d836d0cd296e84539ce2ed493b668caeacd0",
+      "editable": true
+    },
+    "components/prism-crystal.js": {
+      "sha256": "0104085a94b17d392189b36224c4e2ed2add0920b236dcdb9da9a7768448b911",
+      "editable": true
+    },
+    "components/prism-crystal.min.js": {
+      "sha256": "e890cff45f871338cf3e25a999a48093ac36245b3db3cd4c9557966da596f16e",
+      "editable": true
+    },
+    "components/prism-csharp.js": {
+      "sha256": "7f4648737df27d2657ae64dff744634a91e6311dd5b6faa3d078b8fa2cc31a47",
+      "editable": true
+    },
+    "components/prism-csharp.min.js": {
+      "sha256": "5be9e42d87636bf6495a1a1a84e24cb262bab3091fcd3b4841194acafff8271e",
+      "editable": true
+    },
+    "components/prism-csp.js": {
+      "sha256": "40b00c9e3ecbad569bf1e33d17ec0e2908af4dfddc454e666c6a40f3f51e2d0b",
+      "editable": true
+    },
+    "components/prism-csp.min.js": {
+      "sha256": "03e08b2f29bad0abcb3fa3f65721014091ccb967c88bcaa8fdafbff59022440e",
+      "editable": true
+    },
+    "components/prism-css-extras.js": {
+      "sha256": "61a2592ce6bb11847f269de804b76947caa6bcd3bfcf245823fe3724781a6b46",
+      "editable": true
+    },
+    "components/prism-css-extras.min.js": {
+      "sha256": "4ff65f21ba15e444aee850b83acdf61aa4ab3b27a759ffcacb9db4a1cc3dc415",
+      "editable": true
+    },
+    "components/prism-css.js": {
+      "sha256": "d30fd9486acaf3eac4ce5bcc24b0de0d71a2c6aae1ef129357cd1e5471b88294",
+      "editable": true
+    },
+    "components/prism-css.min.js": {
+      "sha256": "e3d638e68da86d4d58bf8ce4603a4c0f201af83f6c80a35b372e19606465fe5b",
+      "editable": true
+    },
+    "components/prism-d.js": {
+      "sha256": "cfe42e8fd12b1c330ac1cad25df9f1091004ee4972bd9d9ff6dcfa101310e788",
+      "editable": true
+    },
+    "components/prism-d.min.js": {
+      "sha256": "6e4ee556eeaf30936a4e07088f94003d446de1a3213ad66e2ab7038e02843a35",
+      "editable": true
+    },
+    "components/prism-dart.js": {
+      "sha256": "b4ca49e790e0b93e9bfa3da73da4ef0efe53d36dfbf48d67ca050c6840d184b1",
+      "editable": true
+    },
+    "components/prism-dart.min.js": {
+      "sha256": "d6b2368121c023ed735364ffa850860f65d55c77d1e29e6f8e999ae4b4772854",
+      "editable": true
+    },
+    "components/prism-diff.js": {
+      "sha256": "59c645283d2c9afc0eeecd50173056c82b75bfa726347afe37b5ee447585889d",
+      "editable": true
+    },
+    "components/prism-diff.min.js": {
+      "sha256": "da3d7d229b1a8d773714a6a059a38b6310af36fd7736647898c3fbe3d4cc0718",
+      "editable": true
+    },
+    "components/prism-django.js": {
+      "sha256": "1fb7d415f5b975ee8ca052e52dbc7d37a8e3653c5d44faa695d1481522affa04",
+      "editable": true
+    },
+    "components/prism-django.min.js": {
+      "sha256": "b8b861d0766e6341bbeca3054f0766a624c11874aba846312318bd325ae865d3",
+      "editable": true
+    },
+    "components/prism-docker.js": {
+      "sha256": "3a8cb2224698b5665b1efe71ec7e8aa7101b2a824ec93c0cf51a2659bc157c66",
+      "editable": true
+    },
+    "components/prism-docker.min.js": {
+      "sha256": "89f24bfefbdcf18616c9b0d286d4851b0eafaba4c701ff7a1b519a510a905333",
+      "editable": true
+    },
+    "components/prism-ebnf.js": {
+      "sha256": "4fd878383e7173bd4a024c5afd8f896898e5c38ed33392c045f5251813a159ee",
+      "editable": true
+    },
+    "components/prism-ebnf.min.js": {
+      "sha256": "a4c10873b4db30e706f80b1a7d867a24476c3e5a21475ab42e007c8fb0cc5ea2",
+      "editable": true
+    },
+    "components/prism-eiffel.js": {
+      "sha256": "e2f399fcc05a9a447d1fd64b0b1dcd4bf0f7d85b5e8a338baf62eadf40a7bb92",
+      "editable": true
+    },
+    "components/prism-eiffel.min.js": {
+      "sha256": "b0619fa8be5db21cf4ecc6473d52b4de2089c5e3a91e30bbcab8f8ff939242c1",
+      "editable": true
+    },
+    "components/prism-ejs.js": {
+      "sha256": "66898f25be6ac09746245fd335af5a4262a063144bca8cb8a2eca4261e4b0277",
+      "editable": true
+    },
+    "components/prism-ejs.min.js": {
+      "sha256": "6493eedc017d504b6584b458ac8c8d3ac02870f39a0f6f28ae70588c7156856b",
+      "editable": true
+    },
+    "components/prism-elixir.js": {
+      "sha256": "b4ff54b1627c4fd9af1c0421b97cdde0df73bf2c5a7eefd4ab7080faeb4b4bc1",
+      "editable": true
+    },
+    "components/prism-elixir.min.js": {
+      "sha256": "d166a6420b18bc36e86c6982cf69981fdc13bcbcd86f62f331df79a4c18054c6",
+      "editable": true
+    },
+    "components/prism-elm.js": {
+      "sha256": "34f7a3791df28f3cbc5daff4c8dc6859718d92024229c1d14aca846335acdf58",
+      "editable": true
+    },
+    "components/prism-elm.min.js": {
+      "sha256": "6d04130d1eda33f6b6bbfec6bde3d7fd6c5084c377fc935755278e81b4b94c9a",
+      "editable": true
+    },
+    "components/prism-erb.js": {
+      "sha256": "4032a48ec5a4ad0628fec3d9a3b6c6130dc515ce81a9a0520270dd5e28347315",
+      "editable": true
+    },
+    "components/prism-erb.min.js": {
+      "sha256": "6b72d490ff94d3fba960a0f0c5e2b29503e832ebd1248f2e8257b8f478058668",
+      "editable": true
+    },
+    "components/prism-erlang.js": {
+      "sha256": "4a3b6c9ed8fdf00b892a27308bc7d09484a218769ef8f02fe592222d94d36076",
+      "editable": true
+    },
+    "components/prism-erlang.min.js": {
+      "sha256": "f0efebc1e6865b5b4ea1361642fbbb6b400bb09e14482f441a986c1aec81ed64",
+      "editable": true
+    },
+    "components/prism-flow.js": {
+      "sha256": "9f5485bfd074ff3c98cf84c5a3c5b8880e685d249e2fb0f1553c543539338b93",
+      "editable": true
+    },
+    "components/prism-flow.min.js": {
+      "sha256": "fe3c0afca1e0cfd7defd0aa0d0ac972af3d1077d0a3b504048e04f3886c7d4e3",
+      "editable": true
+    },
+    "components/prism-fortran.js": {
+      "sha256": "cfd063cc56e300dd20e92a22c3f9e636d23a143133cb7da3ff3c7df613a2cc6b",
+      "editable": true
+    },
+    "components/prism-fortran.min.js": {
+      "sha256": "7c603bf83d4b791c532505a522d395cc3d085d02008a01f417baa69b21632e4a",
+      "editable": true
+    },
+    "components/prism-fsharp.js": {
+      "sha256": "c19a64cb817d3312d69f5dff4cdfa58481c047f828d51cfa253f4ae638861c6e",
+      "editable": true
+    },
+    "components/prism-fsharp.min.js": {
+      "sha256": "90581dcdd2654c6de24608081de09149e7b4979c2e8a0fb8cca1438658a9a144",
+      "editable": true
+    },
+    "components/prism-gcode.js": {
+      "sha256": "cf36e118f82f29ad8b77642ab1ed7616eba0dba1d0cce0897828d752542bcfab",
+      "editable": true
+    },
+    "components/prism-gcode.min.js": {
+      "sha256": "75bc9275c9d099da67d30afb653fd3d4feb13e77c842fbf11a0ef754f9ce18fd",
+      "editable": true
+    },
+    "components/prism-gedcom.js": {
+      "sha256": "3dfcb177d149d1d1ca6daf58b13b7372d5d5bce49f94df72dba195d5d8fc442d",
+      "editable": true
+    },
+    "components/prism-gedcom.min.js": {
+      "sha256": "c99997f22d7804e78cad9e1e5e1e86167b1e70b0c0daa471d6e4ff176507c499",
+      "editable": true
+    },
+    "components/prism-gherkin.js": {
+      "sha256": "6e86d998a4de953adbf3a5898bf998f6de5d9a177020e6ea5ee8139b44c8ab71",
+      "editable": true
+    },
+    "components/prism-gherkin.min.js": {
+      "sha256": "d7c357c2822355f8de4e6cfca6f87e6ef7e6c59d1382722ff036f5eae63c3492",
+      "editable": true
+    },
+    "components/prism-git.js": {
+      "sha256": "544df960b929f30238686d3b0b029f041e5cf891e96efbda57ce1320c4fa4549",
+      "editable": true
+    },
+    "components/prism-git.min.js": {
+      "sha256": "f09e9f947fdbbc81f43da797292c7557a7f368dd1ab85c93b9ba972fdd15888b",
+      "editable": true
+    },
+    "components/prism-glsl.js": {
+      "sha256": "54e6f3649e68b48ecf8627cdd3761b905adf85c4ecd82db5aeda7c566e850b73",
+      "editable": true
+    },
+    "components/prism-glsl.min.js": {
+      "sha256": "672f570bb030e8d3a021a476be25325c8f2e40f6a43c59b43faeeaf628df8555",
+      "editable": true
+    },
+    "components/prism-gml.js": {
+      "sha256": "49bcae2828540ebafa8cbc59a3d723e9479164ee0e958b9d51d266e18e7d1132",
+      "editable": true
+    },
+    "components/prism-gml.min.js": {
+      "sha256": "7fbc8e08533284142b46cf03f5c60872d8022e6a3b8fd866bb840ce3681873d1",
+      "editable": true
+    },
+    "components/prism-go.js": {
+      "sha256": "e3823728ff7a0be6ccba4643af4943f9a3f1540c5dd085634d791794ace7c699",
+      "editable": true
+    },
+    "components/prism-go.min.js": {
+      "sha256": "d203e50d73256a13690b01dd2867fa4e48e92c25d44bb9a588dde799b28e0427",
+      "editable": true
+    },
+    "components/prism-graphql.js": {
+      "sha256": "1ae1ceb6fe6d7a009d1dc63d941f845a70b69796f3a8f3b0fa120cb7b46d3f47",
+      "editable": true
+    },
+    "components/prism-graphql.min.js": {
+      "sha256": "39d4cb5a5513e3eb80893392e6e7fd802840b000cab4e1c58338726c011cf48e",
+      "editable": true
+    },
+    "components/prism-groovy.js": {
+      "sha256": "77084109e105efe1bc308a9e34647d0d39fd1b0a8eee026ecba97efffd075e60",
+      "editable": true
+    },
+    "components/prism-groovy.min.js": {
+      "sha256": "a2b8bec43f84245e76d4c9b98f39814a2d2fedaf0985f6164f23dc79a4709fcf",
+      "editable": true
+    },
+    "components/prism-haml.js": {
+      "sha256": "e13bd374787c574672fe74ab009cf4267f4f1fcffb397200f09ef1990d760306",
+      "editable": true
+    },
+    "components/prism-haml.min.js": {
+      "sha256": "ac42907f346380a621398128271a2c4100cc0f9a119ed22fd592e6a9eb243389",
+      "editable": true
+    },
+    "components/prism-handlebars.js": {
+      "sha256": "02c4bf3d79ecf1f9320eb8fc7212b273f3c638d20d51afc364238157fb7ff7ea",
+      "editable": true
+    },
+    "components/prism-handlebars.min.js": {
+      "sha256": "7a5f60bb8efa520ff7f10ae6c56f8ba78f7cf9038c097e37ab00a3cf77991559",
+      "editable": true
+    },
+    "components/prism-haskell.js": {
+      "sha256": "02399eca5345f7ba55d960fabfcb877a688ecbf87b85f5492eec701b15c87202",
+      "editable": true
+    },
+    "components/prism-haskell.min.js": {
+      "sha256": "388bea1d73395154009422cb6dbead91b020f91dd48821d1b2c0143deaabedaa",
+      "editable": true
+    },
+    "components/prism-haxe.js": {
+      "sha256": "7147c0afce7718c83af2fb362e44910e5d4542dc93ab0e72fbfe08ded3eb59fb",
+      "editable": true
+    },
+    "components/prism-haxe.min.js": {
+      "sha256": "3836153079fe3574b66f646c2433b33f984bb31e22ec0e61187e2a58c87f7b08",
+      "editable": true
+    },
+    "components/prism-hcl.js": {
+      "sha256": "408af033ae7d9d33ecdb5ae580a0b8ed30a55db5b4d00c69685005809f1452f3",
+      "editable": true
+    },
+    "components/prism-hcl.min.js": {
+      "sha256": "e5f8fa8aac273df67788fadd1b981d4d6c57c59f154534dc271a3861d6786453",
+      "editable": true
+    },
+    "components/prism-hpkp.js": {
+      "sha256": "84695009305eb5e73cc69af98a2b687459ac60c1c23796cf749af1fa10985744",
+      "editable": true
+    },
+    "components/prism-hpkp.min.js": {
+      "sha256": "abe7e6f897bf2479fe0974480e8040bea122a0913f7eef62aba072d6c45705a7",
+      "editable": true
+    },
+    "components/prism-hsts.js": {
+      "sha256": "3d818e2a9f6f6c7c413c0fde63dca358cb60fc43ba3d89141d625cf2adf9c574",
+      "editable": true
+    },
+    "components/prism-hsts.min.js": {
+      "sha256": "d2049ece792d11147df846ebb9feb48327d803d4e2d34214e89350e5395249f8",
+      "editable": true
+    },
+    "components/prism-http.js": {
+      "sha256": "a3436a8b4c32bb2c9e47e0c34d9b43cb591cb7c22f10462907dc09639b43870e",
+      "editable": true
+    },
+    "components/prism-http.min.js": {
+      "sha256": "4d3d1a516b9c133f4444a629cdba73fb18c2681c1f84040bb2658b8627a63c92",
+      "editable": true
+    },
+    "components/prism-ichigojam.js": {
+      "sha256": "38c3e34ad2e81787e979ef676f5b7b7f225141f4ac616b99103afdd9c4f39bc4",
+      "editable": true
+    },
+    "components/prism-ichigojam.min.js": {
+      "sha256": "fd7e249efc62a898f5f83c7f7804f13840b9b4499b1b44437e732c9fcaaffa7c",
+      "editable": true
+    },
+    "components/prism-icon.js": {
+      "sha256": "3346cdb7b4d7d8aa4c8bf27cbb4d2fd9bd48c2caeae73506f34cf44e84788101",
+      "editable": true
+    },
+    "components/prism-icon.min.js": {
+      "sha256": "ac4051a4779417ee11cda3bcb78289e617f1a5411f74d37659100b0b21dabcf9",
+      "editable": true
+    },
+    "components/prism-inform7.js": {
+      "sha256": "02b2b0c972500da6de74fe1869c197dbf2f7186aad0289f1ed82b2a156518706",
+      "editable": true
+    },
+    "components/prism-inform7.min.js": {
+      "sha256": "3573dd91a965cf954a70e5c64d713a6710c1678c9042555d8c11da85ed41023d",
+      "editable": true
+    },
+    "components/prism-ini.js": {
+      "sha256": "39a5fa28f5d07f3c82825db5364e5bc1bb8d93dd263d83ee7d6e29a20ae5867c",
+      "editable": true
+    },
+    "components/prism-ini.min.js": {
+      "sha256": "ec13a611f1cb9077013bf63aa5d73dbc4a3b926142a20c60eaa91d8a5d126cfd",
+      "editable": true
+    },
+    "components/prism-io.js": {
+      "sha256": "86f5514eb71c55685dcb0e6e69edffba17230f1e851a918096b4cf41595ea75a",
+      "editable": true
+    },
+    "components/prism-io.min.js": {
+      "sha256": "842285005be5b6402450fc4d9d8c1a26ecf84a16c36cf71593a534aa98eb5725",
+      "editable": true
+    },
+    "components/prism-j.js": {
+      "sha256": "cbc196e2deb72f684f10548687d88a9d7719001234b551dd7a9b0703b725ff84",
+      "editable": true
+    },
+    "components/prism-j.min.js": {
+      "sha256": "023307f36021861ac4e3e1fd760c3bd1b95559979d45ef7ae6b524811ef80666",
+      "editable": true
+    },
+    "components/prism-java.js": {
+      "sha256": "557813c881b9315c2a2985fe62dd9360b461d3da081e7a01e9995d9f128a3786",
+      "editable": true
+    },
+    "components/prism-java.min.js": {
+      "sha256": "c648df2daad97eb35cc668230d51365c68f8fce22d8b4034f87311cfc7e0d6b2",
+      "editable": true
+    },
+    "components/prism-javadoc.js": {
+      "sha256": "e13c18b90ce8ee47f59de79c1fc5df83d4418cbc7ec2c0d0be548ba5a88adc1b",
+      "editable": true
+    },
+    "components/prism-javadoc.min.js": {
+      "sha256": "547eadb2e40fb5cc3fb0cc86e39e4402ac4021a60e56c450c2491ee812b061cb",
+      "editable": true
+    },
+    "components/prism-javadoclike.js": {
+      "sha256": "5850672233c72eb20b380e1f63987ac16ae82688c38c28a7f80b408020325a7b",
+      "editable": true
+    },
+    "components/prism-javadoclike.min.js": {
+      "sha256": "09d3f2b42819535e2e7119400c22e68eabd9be374474b67bb6e2961732f66953",
+      "editable": true
+    },
+    "components/prism-javascript.js": {
+      "sha256": "979f7d2242aa416573098228fe3df7cd7e4f18bd9fef17a98264aeafabd3a5c5",
+      "editable": true
+    },
+    "components/prism-javascript.min.js": {
+      "sha256": "2b189e67cfe6d0bdb00f0384d7e17be94dd3305c38c1ce791331efcd30ba123f",
+      "editable": true
+    },
+    "components/prism-javastacktrace.js": {
+      "sha256": "f3563770841dd5076ed19ba075aead02c858848399a942c2ec559898a9ed4236",
+      "editable": true
+    },
+    "components/prism-javastacktrace.min.js": {
+      "sha256": "b490d563bbe518a78456643bf71fc6f3ab1b37ce9ae9e2a6d81c04149fbe07ac",
+      "editable": true
+    },
+    "components/prism-jolie.js": {
+      "sha256": "0553821cf28c94f3b55e444663e6141be5931daeec5b5adfff82a60a20848016",
+      "editable": true
+    },
+    "components/prism-jolie.min.js": {
+      "sha256": "711a1664bebcb784853413c95e07652e3b6bdf1fd5f97cd5f48f1440fd6fcb4f",
+      "editable": true
+    },
+    "components/prism-js-extras.js": {
+      "sha256": "4a94d898332091c6e3938ed56fe85bfa5b395ca2b7643c9bbd4e814fd0d2eede",
+      "editable": true
+    },
+    "components/prism-js-extras.min.js": {
+      "sha256": "259d9863305919bc6e3618fd4b6c5b2c26bc16949a2a28a1382608bfdeacfee7",
+      "editable": true
+    },
+    "components/prism-jsdoc.js": {
+      "sha256": "8efc463d384dd4d8d006c9b8d2713ab6bed64c30dadef01057babd3555a0f175",
+      "editable": true
+    },
+    "components/prism-jsdoc.min.js": {
+      "sha256": "67bd251a32b01e9e3e6e082fda96609663eb8d6ea5f536561b9c9013d328d046",
+      "editable": true
+    },
+    "components/prism-json.js": {
+      "sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+      "editable": true
+    },
+    "components/prism-json.min.js": {
+      "sha256": "d7c9bcf540507161a33c71e8eb8503fac431e12a4cc62448d45d0c6de7ca5d6c",
+      "editable": true
+    },
+    "components/prism-json5.js": {
+      "sha256": "2435241f07cc2ae747ee9201fde61e039da917d2f7c091fea121e83006263520",
+      "editable": true
+    },
+    "components/prism-json5.min.js": {
+      "sha256": "71eddda838637bc13eeb5ff2915f8677d7291792a747844c4970ba7483ca37fe",
+      "editable": true
+    },
+    "components/prism-jsonp.js": {
+      "sha256": "179c2cd2df6c434ad7ce6271276917cc13334d46e187b7fe46240d29953b73c8",
+      "editable": true
+    },
+    "components/prism-jsonp.min.js": {
+      "sha256": "3036e663673313dd1e9d971c07b93f5349160b370bfbaea550fb93d62340529c",
+      "editable": true
+    },
+    "components/prism-jsx.js": {
+      "sha256": "d6c14c702f37d5c4168f796a5dcc35221cb2f52e68bb39c7e44c39484af20613",
+      "editable": true
+    },
+    "components/prism-jsx.min.js": {
+      "sha256": "a0a339a576630cb561d7648749ad70b48255d33178f533b0bbe8dbaa40df6190",
+      "editable": true
+    },
+    "components/prism-julia.js": {
+      "sha256": "06ae35a46d78b8a49e27983633f762e33a71306b5c83a55da25b3dca1d54cf9d",
+      "editable": true
+    },
+    "components/prism-julia.min.js": {
+      "sha256": "78a5d0847bb4223a738e24151dad4faa5a02b27e57c6b2c7128bc4c2474ea71f",
+      "editable": true
+    },
+    "components/prism-keyman.js": {
+      "sha256": "8389813751a686bb67906e10bfb92390d2aa3ea44218394ed7df0b13fce97d50",
+      "editable": true
+    },
+    "components/prism-keyman.min.js": {
+      "sha256": "7bf0e29afbd34375115d430604f875d52309557c497a00d461ea9c3e2aa1d603",
+      "editable": true
+    },
+    "components/prism-kotlin.js": {
+      "sha256": "7271867537371af6fd3587b7e4fb635cfb90651e3466df28b7057c68fca02766",
+      "editable": true
+    },
+    "components/prism-kotlin.min.js": {
+      "sha256": "51554f68e1b1dc605fce5feffd98cb94427dc68378a52818366b665b1e470997",
+      "editable": true
+    },
+    "components/prism-latex.js": {
+      "sha256": "58af3bc43b42045a97b13815f8945a9fe80563727932bfd5d278a24ae4d0534a",
+      "editable": true
+    },
+    "components/prism-latex.min.js": {
+      "sha256": "5f891ba0b8f044150dbf27799955281cacb15bb6ccba6be2eb7986536904b4b0",
+      "editable": true
+    },
+    "components/prism-less.js": {
+      "sha256": "23c13ef300bc8f54373df876578f62c6c44cf5afabf994ee842b49b6efe953ce",
+      "editable": true
+    },
+    "components/prism-less.min.js": {
+      "sha256": "28f549444200b5b1c3215173082d821bffa4149bd2d904af85e8a3b3b8732b22",
+      "editable": true
+    },
+    "components/prism-liquid.js": {
+      "sha256": "e1799fc6bef8f5cb3be0a97a321d5ae81a00c60b5a86dbe18120d486a2d3f946",
+      "editable": true
+    },
+    "components/prism-liquid.min.js": {
+      "sha256": "337ffd671cf7cbdf50d069adbba328e40ed023e9a80531b3170d61b58eee65cf",
+      "editable": true
+    },
+    "components/prism-lisp.js": {
+      "sha256": "64cb5ff9472de1e918aa4f5ad4169d981b5ff1a0c810bc83b3793fff584a17e7",
+      "editable": true
+    },
+    "components/prism-lisp.min.js": {
+      "sha256": "245d28603d1c7ba4302708649369762e93d6f7ffa731454a8327d06702a02fba",
+      "editable": true
+    },
+    "components/prism-livescript.js": {
+      "sha256": "bdd224a3ab15372f969e5754002dd0157a8a83ccf6a661aedf53fdeb8531269a",
+      "editable": true
+    },
+    "components/prism-livescript.min.js": {
+      "sha256": "06596ce503a59cb25fe4ad822f9272afc2c913ceaafe37ef1e65087e44504362",
+      "editable": true
+    },
+    "components/prism-lolcode.js": {
+      "sha256": "19f3cb18d0e5230810288372cdf41d36f5ff708dcf9bdff89d04467b3ede32d7",
+      "editable": true
+    },
+    "components/prism-lolcode.min.js": {
+      "sha256": "637f57be058a576aad9b449313271b3bb21f12a0b9b1d1fe4a17199b1c2f9ae8",
+      "editable": true
+    },
+    "components/prism-lua.js": {
+      "sha256": "18d46f9c57f09a342bab0037870794db665c3d58b58b359b66389dc068523573",
+      "editable": true
+    },
+    "components/prism-lua.min.js": {
+      "sha256": "76d339e386ac0925a09c612d15fcb4529fd1675b0828fc089b579f9b80d31768",
+      "editable": true
+    },
+    "components/prism-makefile.js": {
+      "sha256": "e0f9c03dc76d0609fa60676e7d02c6fe954e06ced9951f9079f9f086ca786207",
+      "editable": true
+    },
+    "components/prism-makefile.min.js": {
+      "sha256": "a5b9bdad018de0eadef1feb735cd17a213bf9dd92a99a0a488cfadfbeb594bab",
+      "editable": true
+    },
+    "components/prism-markdown.js": {
+      "sha256": "2712bf7b791063ec556da75b305c24a8e6aafa4416a7df11bd304ad7893b4b5d",
+      "editable": true
+    },
+    "components/prism-markdown.min.js": {
+      "sha256": "7b88b397316611095e9d9427ce460ae68cb1579997ea5c154232faa279078b2d",
+      "editable": true
+    },
+    "components/prism-markup-templating.js": {
+      "sha256": "aa14a7652e39b6dfb109ca8cdffc845e533827ea7aeab79354764392e6b6e03c",
+      "editable": true
+    },
+    "components/prism-markup-templating.min.js": {
+      "sha256": "e353ed1df6f9edccdcbd1b4062d52161c49a2c36776a148399565aac4d2e58fa",
+      "editable": true
+    },
+    "components/prism-markup.js": {
+      "sha256": "53cb871759e1b1e0ab6ca0e1f99b48be13cc45be2302ef162d836affa13d9189",
+      "editable": true
+    },
+    "components/prism-markup.min.js": {
+      "sha256": "f274f5139d160b94c379bdfe512b0511737964680b766c19e914b9293ef55a3b",
+      "editable": true
+    },
+    "components/prism-matlab.js": {
+      "sha256": "0e1acad7354eb262e61fff64e899194df11ed1f3f2cab3a3de2760a324a8d3cb",
+      "editable": true
+    },
+    "components/prism-matlab.min.js": {
+      "sha256": "1228b890c74e13c7b316068fba4dc4108c7c5d3ce81442d6a93792033cc53738",
+      "editable": true
+    },
+    "components/prism-mel.js": {
+      "sha256": "07f3b1fe2e234d4dc0b541c209db9bc45f52359dda42bfed9ed858f4b0e50b74",
+      "editable": true
+    },
+    "components/prism-mel.min.js": {
+      "sha256": "5426dbb81ffbfdbb94c05f873ab7365a005987b27f952ec7ac9e528a8cbd3043",
+      "editable": true
+    },
+    "components/prism-mizar.js": {
+      "sha256": "884efede44eaf933efb0f0bc570870839ea47e400dd20e8d0c9fc1831e525c3f",
+      "editable": true
+    },
+    "components/prism-mizar.min.js": {
+      "sha256": "713543ec76d4f775fbbefef028e3622b4cff19c7f143b503233a5b1bf60fcf6b",
+      "editable": true
+    },
+    "components/prism-monkey.js": {
+      "sha256": "93d4b72839bf522ed5cec37585e8fa58534bd97d0298a5e3a7e4a7a16c912086",
+      "editable": true
+    },
+    "components/prism-monkey.min.js": {
+      "sha256": "09a575da4e40c299d9312deaf8ad1b254ce9633566a94b5abef4155d2786e08c",
+      "editable": true
+    },
+    "components/prism-n1ql.js": {
+      "sha256": "2fbe817c05d0ba76f69b79a3bcddff62ad95e6e8f7424f36881629565c21a0c5",
+      "editable": true
+    },
+    "components/prism-n1ql.min.js": {
+      "sha256": "c7f3272b8dd516a6e03e2a9d3929f734e2ddfb1df01d50c4b52216c48953d6db",
+      "editable": true
+    },
+    "components/prism-n4js.js": {
+      "sha256": "77356f8052b74d5c272e1e3614314d526114dae2378eb899e23535bad3d5c9c9",
+      "editable": true
+    },
+    "components/prism-n4js.min.js": {
+      "sha256": "b39e12c91032d991e280909fd2cba068eb42fb1ed9603660766cee5efb24f5ec",
+      "editable": true
+    },
+    "components/prism-nand2tetris-hdl.js": {
+      "sha256": "71f431a4f5ffe06e505ae4ea0a445d04aede3a898acf7644f5bd168639378c7e",
+      "editable": true
+    },
+    "components/prism-nand2tetris-hdl.min.js": {
+      "sha256": "af15e612185d2f99ad340437d997618f58b183601e091f250287e6bc208323a4",
+      "editable": true
+    },
+    "components/prism-nasm.js": {
+      "sha256": "9b77ea0aeab61fdc04edfb6f61f4d7a9fc62d7688ce353ac3e4ec06e76325fdf",
+      "editable": true
+    },
+    "components/prism-nasm.min.js": {
+      "sha256": "ab6e56a534c859839f652bfc96d8413318c3772c4181ba60f159146cdbecd2bd",
+      "editable": true
+    },
+    "components/prism-nginx.js": {
+      "sha256": "120fca2707f78446cd936f17d48bc84151ac890365e9a63b878f4c9e41db50f1",
+      "editable": true
+    },
+    "components/prism-nginx.min.js": {
+      "sha256": "3ef56e094221fcdcf68829432c20ac57c0e67b0ad6089855a3c4e2e6172275ce",
+      "editable": true
+    },
+    "components/prism-nim.js": {
+      "sha256": "b966f7cb7004735019f63a6db8023b2d9b6cbecb27f5aeb8c3aa98c4c192673f",
+      "editable": true
+    },
+    "components/prism-nim.min.js": {
+      "sha256": "1ceb03b4430c75820f95ad111e452424597713d55311d9e9a08d2e2f21d23b7d",
+      "editable": true
+    },
+    "components/prism-nix.js": {
+      "sha256": "9d58941ff2343f85f1066292ec53a612ec2b48841e2db30f5bff2325caa29c10",
+      "editable": true
+    },
+    "components/prism-nix.min.js": {
+      "sha256": "2bd5c9c9e7c61e8b56eb5834087537d79d6ac1e8c67dd5a5a9a66c0e0edc1cea",
+      "editable": true
+    },
+    "components/prism-nsis.js": {
+      "sha256": "a85b62c1aff6d9934cf8c570db19304eb087a85ee7959b2778906973cb8b550e",
+      "editable": true
+    },
+    "components/prism-nsis.min.js": {
+      "sha256": "5fedeefa1b194c0d198bbb122ca4ebc1549b70d8468b6aa208196e2ae1793f4a",
+      "editable": true
+    },
+    "components/prism-objectivec.js": {
+      "sha256": "2645b7d578672ef52b7c3378b537ca622be0afafb040d099db80c4ea4226e488",
+      "editable": true
+    },
+    "components/prism-objectivec.min.js": {
+      "sha256": "3ddce2848fc37b92cb5e55de6a9d7f8a2e4276ec95b6bf1d241cb13f0f6665f6",
+      "editable": true
+    },
+    "components/prism-ocaml.js": {
+      "sha256": "beae82d890dd2de5f3fb45e311488e25350aa39888262c09534b636c76bb33f1",
+      "editable": true
+    },
+    "components/prism-ocaml.min.js": {
+      "sha256": "afdde3d976ee50a30bcbb04e8f5ac6ae8fbe18b7fa1b5ab5d99f34ce5cdae88d",
+      "editable": true
+    },
+    "components/prism-opencl.js": {
+      "sha256": "634a281acc1431f42824b670bcfed843b1cc9d21ab67ba0198c1d9560ee5ed21",
+      "editable": true
+    },
+    "components/prism-opencl.min.js": {
+      "sha256": "7d665dd57fcc801d37a6551cd534bede03ebf9d5fb5402605258b77bf7521cfb",
+      "editable": true
+    },
+    "components/prism-oz.js": {
+      "sha256": "661c5eba62c7016e2581366896c5191f7c38a69d9843d789a57dff0752699bd2",
+      "editable": true
+    },
+    "components/prism-oz.min.js": {
+      "sha256": "23fd8131cad51c7ac2107fd2d78ce7e4ec89d8c1a94b1a008da5089eea1c792d",
+      "editable": true
+    },
+    "components/prism-parigp.js": {
+      "sha256": "e3aa7a3f0e2458c62221a3c1328710de7afe9cbef7f2170e2a6e9cf8583f0a87",
+      "editable": true
+    },
+    "components/prism-parigp.min.js": {
+      "sha256": "a37cc86d07d92efe2cf6fbc2c64d39def26882c329a3297fe241d415449e5f61",
+      "editable": true
+    },
+    "components/prism-parser.js": {
+      "sha256": "18befe391fe0b189b645e2c156b38be283cd89099a48b13c6d1a99c99f476a24",
+      "editable": true
+    },
+    "components/prism-parser.min.js": {
+      "sha256": "0a1094fe321f60f3be94dc02f2aa6e89a59e1b0b2ee670aeb41619611282c84c",
+      "editable": true
+    },
+    "components/prism-pascal.js": {
+      "sha256": "44b437ed97ec6bc2846e8df31ebf14ff0d59abf1a7855f964b1ccdc158f6d854",
+      "editable": true
+    },
+    "components/prism-pascal.min.js": {
+      "sha256": "f99c9d03c3657780118d0db45e0d4676a3c84d147e3b9e0286290da566e334d4",
+      "editable": true
+    },
+    "components/prism-perl.js": {
+      "sha256": "6c8f14ea665f5888efe9ce56358f31ba0eb1be47e9930cbc89e7553034926cbf",
+      "editable": true
+    },
+    "components/prism-perl.min.js": {
+      "sha256": "e14af3744cf65e13fb1942fc0b7a7912f62a93e557dcdd060d93b4d6a86a4ae7",
+      "editable": true
+    },
+    "components/prism-php-extras.js": {
+      "sha256": "c76f217d6750cee743dc2532a556118f34de14ff0f15a1930f39c76b4efcd92e",
+      "editable": true
+    },
+    "components/prism-php-extras.min.js": {
+      "sha256": "a86aa1ad15a99d9c63cb013d0feb76293f080177e4b5736973b89e3d62c33e75",
+      "editable": true
+    },
+    "components/prism-php.js": {
+      "sha256": "bf98b6510fbccee652dd4157ad366d14be1e0f3affef885c19de98df73a3172d",
+      "editable": true
+    },
+    "components/prism-php.min.js": {
+      "sha256": "8098f844a41e5f25e5545bb623c8d0002419b228bf63354c85c0d3f7d96be392",
+      "editable": true
+    },
+    "components/prism-phpdoc.js": {
+      "sha256": "b9e3ca9556c9113a1b1667a04a607129e41e6a58709b468458f8caad5479255f",
+      "editable": true
+    },
+    "components/prism-phpdoc.min.js": {
+      "sha256": "fe2966afc7d24fd8218d1ca76d454aedc2ada6bea7693889acbb2195ee2026c8",
+      "editable": true
+    },
+    "components/prism-plsql.js": {
+      "sha256": "97b68f2f694c9bc5fdf778cc25b4195f6deaddf626bacb57b3d148ed28b161a8",
+      "editable": true
+    },
+    "components/prism-plsql.min.js": {
+      "sha256": "3ac55e2e4d774602b36f4c57216f1f5f199d7de3af89100b98e7603b1ea5c159",
+      "editable": true
+    },
+    "components/prism-powershell.js": {
+      "sha256": "fde2882b260df077e02f503945672a8c0e6cccfb946b8cd5a30353cfe74b6134",
+      "editable": true
+    },
+    "components/prism-powershell.min.js": {
+      "sha256": "b000ddd2981d09ddd8a7340169a201841fdfdf01078e150f40a657570006c42f",
+      "editable": true
+    },
+    "components/prism-processing.js": {
+      "sha256": "28eb18ef71bf833e22a33e00912fdfa005ae5e2c7cc7ddde9000b5668f6a76ea",
+      "editable": true
+    },
+    "components/prism-processing.min.js": {
+      "sha256": "fae8f81a34bfd6abd211cea34ee1620f27d8f96a19110a970f1477fcd3d4d710",
+      "editable": true
+    },
+    "components/prism-prolog.js": {
+      "sha256": "d90eb1981b2ca5879fbc45f06271a35ceec5bc2afb690a3284cbf857d4daf535",
+      "editable": true
+    },
+    "components/prism-prolog.min.js": {
+      "sha256": "911a3a681c1699c035dddaf18ccff927e963d5cf6b04e3d76f3659fd15736559",
+      "editable": true
+    },
+    "components/prism-properties.js": {
+      "sha256": "1f6a5b3d13d8ce1291bb70827776cac5e3bf072a5e94d931989679cfe08b33b9",
+      "editable": true
+    },
+    "components/prism-properties.min.js": {
+      "sha256": "e5895cfdecf0beba886ea166450b1ba29f83030ad9ee40073dde079f02ee00ec",
+      "editable": true
+    },
+    "components/prism-protobuf.js": {
+      "sha256": "62dfc2047a87f5318f7ef945af882cff9719107bf58f0cbfd7604d1d6f7b9e11",
+      "editable": true
+    },
+    "components/prism-protobuf.min.js": {
+      "sha256": "99b7c66443a34f83d7d0ec02f8e9b6bd37bc52c54333697c6e7905182cc2dc23",
+      "editable": true
+    },
+    "components/prism-pug.js": {
+      "sha256": "215f14fad529dfd6856baa7f5438796d30d7db816ed001de1f8a6823e059f236",
+      "editable": true
+    },
+    "components/prism-pug.min.js": {
+      "sha256": "efc5a2fb1e15b8912fc108dadd8cb454ff963447124cc91683a920031eb556b7",
+      "editable": true
+    },
+    "components/prism-puppet.js": {
+      "sha256": "b92e6a30b58d8d0e87a0745cc1c3ce55d6a96484b2090ffd016cb20c9da78182",
+      "editable": true
+    },
+    "components/prism-puppet.min.js": {
+      "sha256": "781ccc1c6f287d46260506938f366a6806aa07dcac4a50c9e8f03f08649ed19b",
+      "editable": true
+    },
+    "components/prism-pure.js": {
+      "sha256": "cc11434789e0149648f0d550a2c7fcc46102eed0c548a982fb17b736cfdda720",
+      "editable": true
+    },
+    "components/prism-pure.min.js": {
+      "sha256": "fcd027fc982e8eb5203cb548b880389ff76b60ee2b3c4705784ed1a2268a9e5f",
+      "editable": true
+    },
+    "components/prism-python.js": {
+      "sha256": "68ebd469bfdad27ca11022e58c762c8d415069b72b46e5d71ae9c764bb1c0253",
+      "editable": true
+    },
+    "components/prism-python.min.js": {
+      "sha256": "cd74b0404f5c099f071e38cea32eac0c6ca5e7fde2d95140c54f17c4959f842d",
+      "editable": true
+    },
+    "components/prism-q.js": {
+      "sha256": "d709e0e3a71208af32a8031f40712aa5b383aa8e42a4efd55733c6de45046992",
+      "editable": true
+    },
+    "components/prism-q.min.js": {
+      "sha256": "b6eb1f94d059579922371c91425299dd02949a1f97a6f8de93da874cff665163",
+      "editable": true
+    },
+    "components/prism-qore.js": {
+      "sha256": "9f520ff5ad0c334d11fb68d289862dc30990217407d16d271463f3628ecf97cd",
+      "editable": true
+    },
+    "components/prism-qore.min.js": {
+      "sha256": "731dc28df046477994007b84ba3d65b743704e0b5a1932468b29779c17020986",
+      "editable": true
+    },
+    "components/prism-r.js": {
+      "sha256": "71aad4624f22e22cce133a4860bd048b592aea025eda0286c8aff113197d61f4",
+      "editable": true
+    },
+    "components/prism-r.min.js": {
+      "sha256": "80be1d5960cae5afcf3157a576f2fdec5243448486af87749fb074f5b4994617",
+      "editable": true
+    },
+    "components/prism-reason.js": {
+      "sha256": "e47b6cafcfd96e1ed06084661e9abc3b3bde1f32b2637a6157925927dbabc34a",
+      "editable": true
+    },
+    "components/prism-reason.min.js": {
+      "sha256": "eca239e712c29da9a6eb7e901ea66918b713856aaae46eba3732e17773a4b0c6",
+      "editable": true
+    },
+    "components/prism-regex.js": {
+      "sha256": "4ff9acc13952f4d51770150f06953eb601cb8e1caed1dab6f327243af024bace",
+      "editable": true
+    },
+    "components/prism-regex.min.js": {
+      "sha256": "63238b9e2f1c25b9905ccd451b9d0ddc90157ee4e5b5c64627012609eb9e68a0",
+      "editable": true
+    },
+    "components/prism-renpy.js": {
+      "sha256": "835e7d6da7a1919f4fb8c4d6c0f792e70fb2e6ce2ff41c039adf1c6cf61d13a8",
+      "editable": true
+    },
+    "components/prism-renpy.min.js": {
+      "sha256": "dc3a625d96e075e6689efea4a395c8e7d7eed2aeead959fe336df7c5e55c679d",
+      "editable": true
+    },
+    "components/prism-rest.js": {
+      "sha256": "e770736b1cc1dcd36e999a4dfbd4c03408c0908125d0bbd57aa681d52b2856fa",
+      "editable": true
+    },
+    "components/prism-rest.min.js": {
+      "sha256": "3566fb413f01cad9d9e70f34d52bfa2b25c7a85b7fa160f725cec47cf34cbc86",
+      "editable": true
+    },
+    "components/prism-rip.js": {
+      "sha256": "d3b5d935391f608fd9b4e083c8b1d3682a7d144391a5640bec4069e5dee52d6d",
+      "editable": true
+    },
+    "components/prism-rip.min.js": {
+      "sha256": "45dd09849d5a8d9312c85bb33e6c72bee6bc929d24ff404a8e80249627d6f1a5",
+      "editable": true
+    },
+    "components/prism-roboconf.js": {
+      "sha256": "22b2f5c4e225090d17d7811aaa05bdea9c67e672baae645972d43880c293be73",
+      "editable": true
+    },
+    "components/prism-roboconf.min.js": {
+      "sha256": "8f3ff63e053ed8c1ccb74c3da4a81b6f79b881b3355bb47c06ea52ded7b3a60d",
+      "editable": true
+    },
+    "components/prism-ruby.js": {
+      "sha256": "5f204943fa9284c62b5f5f5408da08aec82d6fdf2ae3c46d172bf4e5a4b836a1",
+      "editable": true
+    },
+    "components/prism-ruby.min.js": {
+      "sha256": "48605765a90f3f716fd0fe14ea392cbb06505391650b6d9900036cb47492a779",
+      "editable": true
+    },
+    "components/prism-rust.js": {
+      "sha256": "c93045d4a7c126718fef1c5a014a8c872045b8dba771aee970f07b135f68e857",
+      "editable": true
+    },
+    "components/prism-rust.min.js": {
+      "sha256": "88bbc0e96a14a35b33060294e6e4cd3b259803eb68ffddad50533d1a4745a5fb",
+      "editable": true
+    },
+    "components/prism-sas.js": {
+      "sha256": "6d56b413f45970ae1a0143750f3706973510de7eeb04fa91aaf023de15497a3c",
+      "editable": true
+    },
+    "components/prism-sas.min.js": {
+      "sha256": "88f260524e6025afa4eb341d77b1ef8f8736752a16efe6faad9d7d18013ffae5",
+      "editable": true
+    },
+    "components/prism-sass.js": {
+      "sha256": "5f46263c7701d64c5d1e8a35f7ed5df4de46b35ff28da50202fad088f2411bda",
+      "editable": true
+    },
+    "components/prism-sass.min.js": {
+      "sha256": "de88a0cb268fa2f28c4bd2ad8386a1003d51e9f392306012b80d370d3f08aef5",
+      "editable": true
+    },
+    "components/prism-scala.js": {
+      "sha256": "524433e21eeb8f9fc6643f67d7efec755113adfd00c360fa76fcfe99ef704448",
+      "editable": true
+    },
+    "components/prism-scala.min.js": {
+      "sha256": "9fbc84d305d77bf0868125362e1b7a392680b8fa57d5236199ac43394bf12d9b",
+      "editable": true
+    },
+    "components/prism-scheme.js": {
+      "sha256": "f2419319bbb88a8cda3dfa35af72ba6906a4fbfb2ae2b4b4f1e35f474506e4cb",
+      "editable": true
+    },
+    "components/prism-scheme.min.js": {
+      "sha256": "c1a81e3c21f405ff07d8d24be8d2ef7c0a3f136f2f0697e66961d0993c253dbb",
+      "editable": true
+    },
+    "components/prism-scss.js": {
+      "sha256": "05bf7a161ccf92b2cfee783518dba3d082ef0e762ad20b5e2633ffaf117cf759",
+      "editable": true
+    },
+    "components/prism-scss.min.js": {
+      "sha256": "7bc0f94ab00b7d839ccb636a7e96e505a453b9396b99050fe9150e62d43eedc8",
+      "editable": true
+    },
+    "components/prism-smalltalk.js": {
+      "sha256": "4d3792118a4922e7c873775e80e31583a24e5476412e8ef138cda6687f8fba31",
+      "editable": true
+    },
+    "components/prism-smalltalk.min.js": {
+      "sha256": "b692e1bd1c9a9fe6b8549708052d7c2b56a64d0f83e8cc3a4359293a6adad6dc",
+      "editable": true
+    },
+    "components/prism-smarty.js": {
+      "sha256": "b3c6a21d2ba713595565415ae6f4dfa7af86395fa44585a81dede64d4b7f11b6",
+      "editable": true
+    },
+    "components/prism-smarty.min.js": {
+      "sha256": "0b17e034ea078f4c3d10395efe57f45efcec08d6ad232db494ee6b58c06efe9a",
+      "editable": true
+    },
+    "components/prism-soy.js": {
+      "sha256": "8d79c9a9d12b00c579d670c67f3a9e5fc4a8d1e171622cfce7ea5c0df394a972",
+      "editable": true
+    },
+    "components/prism-soy.min.js": {
+      "sha256": "a94ccbdd2f808177a4329d2d07d7dc337fa17268a5cdffc71353d62924452040",
+      "editable": true
+    },
+    "components/prism-sql.js": {
+      "sha256": "11591c4af27404aaf7367f45f8103615ed179eb45ecdf86a3d808c9379f7dffb",
+      "editable": true
+    },
+    "components/prism-sql.min.js": {
+      "sha256": "ce01e7b963c46f354aad3ef62d4b4c39b2606f092fd15112c117f3ee3a5db2ad",
+      "editable": true
+    },
+    "components/prism-stylus.js": {
+      "sha256": "145b2c8f3cab5d3b9643fcd73fede7dace6aa68a9cf604e9e2d1eb022e8f4edb",
+      "editable": true
+    },
+    "components/prism-stylus.min.js": {
+      "sha256": "56227db98e5ec2703ad73cc7aa79a55851a4c0936555638c256054a0f3ffa0b2",
+      "editable": true
+    },
+    "components/prism-swift.js": {
+      "sha256": "9798ae1c03fe1ad4423cfd404ffad028557e4cc587ee302e07d694017c6b7133",
+      "editable": true
+    },
+    "components/prism-swift.min.js": {
+      "sha256": "b9d70a4ddbbabf0d46cdc682d24c333c4ff5cca6016e68ebd2663c036ed76f78",
+      "editable": true
+    },
+    "components/prism-t4-cs.js": {
+      "sha256": "c9f5ffd74f5bd616286f0f492d743f42237536b0fb06f1b4f6866a40de55f40a",
+      "editable": true
+    },
+    "components/prism-t4-cs.min.js": {
+      "sha256": "d1ae025e7a21ee8ce0e0315d3afba1eddd792353524dd1accf44598194509cc8",
+      "editable": true
+    },
+    "components/prism-t4-templating.js": {
+      "sha256": "4767ea09b6cd751128738b1f54a86b5a1a67549c9cdd429830df55aa32ecc08a",
+      "editable": true
+    },
+    "components/prism-t4-templating.min.js": {
+      "sha256": "a9654bf704444a4499cd0f3a4073e654e70477cad6210edccc4319f693ed8bda",
+      "editable": true
+    },
+    "components/prism-t4-vb.js": {
+      "sha256": "b8c4739716b3741993f4c7bd91200164baabc818c1d3c157a2e74a4fd313aae4",
+      "editable": true
+    },
+    "components/prism-t4-vb.min.js": {
+      "sha256": "11b5be59b132eb91854b3f01c827c3e5af62a9cf8bffbbbb3ec8d0003a8a286a",
+      "editable": true
+    },
+    "components/prism-tap.js": {
+      "sha256": "c49ee10553368b508b42228bb635acc7d86af959685216491d8cca8a9dc3a96a",
+      "editable": true
+    },
+    "components/prism-tap.min.js": {
+      "sha256": "48b4e89d5d269be92f0523cb012fa9aef79d2a0c5e740a4d46746f7bf220aaf6",
+      "editable": true
+    },
+    "components/prism-tcl.js": {
+      "sha256": "d418807c88c274f12c2fdbf94e0a3dff98b5b96da82bb721c515a1ecd7892e74",
+      "editable": true
+    },
+    "components/prism-tcl.min.js": {
+      "sha256": "2cf63acd4327cbf3e52be17dd9d7d123a6fd67817400aad611d43e4cc9e01054",
+      "editable": true
+    },
+    "components/prism-textile.js": {
+      "sha256": "637ae89d6e34c438e8ae4be3fe4f75a6575f2e6d2d26b6eb4a81f1b33a6ceb1c",
+      "editable": true
+    },
+    "components/prism-textile.min.js": {
+      "sha256": "50c8e96910752143fee15ad8856a592557062052bd2b4ea8c54cf911871bcd26",
+      "editable": true
+    },
+    "components/prism-toml.js": {
+      "sha256": "b2c60a232acbb412fee6c2ae23dde1523d874bd76f85578ead93a6d8c82bdd3b",
+      "editable": true
+    },
+    "components/prism-toml.min.js": {
+      "sha256": "f4c9e78277880774f010f5a2a0e23ab2750b11e37bc072eadbe7a29eef93bc61",
+      "editable": true
+    },
+    "components/prism-tsx.js": {
+      "sha256": "4979a065e0e6f9ae587e159a15aa1a9371d34ebe04f57ff8109896a69924940d",
+      "editable": true
+    },
+    "components/prism-tsx.min.js": {
+      "sha256": "2eeff332e4ed99ee1ff936d0ad73238fc390c006f4c78440a5acac61d78904dd",
+      "editable": true
+    },
+    "components/prism-tt2.js": {
+      "sha256": "2e3f689e47ecc5077bce67d94bbab46abbe0df46e33dd9289a12cc9585eed655",
+      "editable": true
+    },
+    "components/prism-tt2.min.js": {
+      "sha256": "195fe113bbc35e9c118882f12598d0e4674aa42230d571169e1df070202a4c09",
+      "editable": true
+    },
+    "components/prism-twig.js": {
+      "sha256": "2c400afec3675a697f4b4e178f6144920ff09d2c2a42cf0860999070cdd61dfb",
+      "editable": true
+    },
+    "components/prism-twig.min.js": {
+      "sha256": "a3c85ce681e52458668dd6aee5674d300960dd66d1fe91f5a1c8756c707a4b05",
+      "editable": true
+    },
+    "components/prism-typescript.js": {
+      "sha256": "a43a48b582cc480a52b6fa9b05ee75ceaf7022006454cf35396347da9a8bde64",
+      "editable": true
+    },
+    "components/prism-typescript.min.js": {
+      "sha256": "e193924352d71b5e12c1adba494b762ff21faf054f8ebb2f40d2f142220f8bc5",
+      "editable": true
+    },
+    "components/prism-vala.js": {
+      "sha256": "7bb65254612b0535f06515c7268d99c71d3bb9f892384e13311bf817761a1240",
+      "editable": true
+    },
+    "components/prism-vala.min.js": {
+      "sha256": "d2bcd65a7942e575c403a1c6c0d38caa9943ef766c8173fe4f2224d5c5e1a9c8",
+      "editable": true
+    },
+    "components/prism-vbnet.js": {
+      "sha256": "5492b0f2b2707dbbc81b6bd51dfd244f5f6ba539f0daf1a4a8c0a0f738b9cec3",
+      "editable": true
+    },
+    "components/prism-vbnet.min.js": {
+      "sha256": "3966bac82653fb6d17761a3d2d06230dfc17690401c85835fcca4f3d0989eef3",
+      "editable": true
+    },
+    "components/prism-velocity.js": {
+      "sha256": "fb2fdd8e826d486449968a9a0ce7c29f9ed6d7e5ab3cfd8ae5d16149994e4a30",
+      "editable": true
+    },
+    "components/prism-velocity.min.js": {
+      "sha256": "ade30587fd55246b7ab3c3b2286f19d4220e0d141173be3892c8160631df0544",
+      "editable": true
+    },
+    "components/prism-verilog.js": {
+      "sha256": "2172f1bbb215b0ce6fbc4911a05daae1e467d27b76abeb6225da21094cf6d373",
+      "editable": true
+    },
+    "components/prism-verilog.min.js": {
+      "sha256": "12167af0dbbf49919844ece5ae90e56a252cdc1c8e1c78964c24cb90ed1b908c",
+      "editable": true
+    },
+    "components/prism-vhdl.js": {
+      "sha256": "901d522c61ef79065fc17e628c6989cd26e1c24b85847e517105a6a42b93fa8d",
+      "editable": true
+    },
+    "components/prism-vhdl.min.js": {
+      "sha256": "0e53a73f772fb954694c619cca634d7d357e6dffeecb8df70cd3f253788ff518",
+      "editable": true
+    },
+    "components/prism-vim.js": {
+      "sha256": "f86482ab3db31f349ccb8197bbc06f6d5e8a6b859f10baf9a7aad25b5517f8c6",
+      "editable": true
+    },
+    "components/prism-vim.min.js": {
+      "sha256": "a7e24954b2a940b83eba0907f4d1bdcc1804b78a2aefd649ab2963978fe8e886",
+      "editable": true
+    },
+    "components/prism-visual-basic.js": {
+      "sha256": "dc1e6c95944f16b4f32446e0f26f927088def03797ec4d46535aeb27d6b77b5c",
+      "editable": true
+    },
+    "components/prism-visual-basic.min.js": {
+      "sha256": "579a4f78181e2fd39c32c7e9717f33b789d36555a3d7b7d056f9d2d0a54efe16",
+      "editable": true
+    },
+    "components/prism-wasm.js": {
+      "sha256": "03f6d7940b5e7fcf7f4eea5a214a43cbd1c5eba07d0b4d66e1ea6554498a70d6",
+      "editable": true
+    },
+    "components/prism-wasm.min.js": {
+      "sha256": "da2d788544952066ae94b4b12d0ff252dd33b7e242c80f14987c61dc4c98d391",
+      "editable": true
+    },
+    "components/prism-wiki.js": {
+      "sha256": "0e501de87d31e6d5ca1be1bcf1c85d23de2d88d8fc31f07e4c468dc4a12eee28",
+      "editable": true
+    },
+    "components/prism-wiki.min.js": {
+      "sha256": "575e33be995cd78d52f72db3c8352aa63d19a17a1b0f03ffc182bdd402dc02cf",
+      "editable": true
+    },
+    "components/prism-xeora.js": {
+      "sha256": "dc645778c4381c1065a6bd66809c467fc01ba39451cdf3b50cbeafd2a955416f",
+      "editable": true
+    },
+    "components/prism-xeora.min.js": {
+      "sha256": "b00074215520feeac5110e66c0d1f371b99028b665493abdad701dd0f39968a6",
+      "editable": true
+    },
+    "components/prism-xojo.js": {
+      "sha256": "3349ab9d0ba4dd156dea3a2f549e54c5beff43fbcb817af2cfea95c6fe8f0890",
+      "editable": true
+    },
+    "components/prism-xojo.min.js": {
+      "sha256": "bf1a7d07b044b3183d9a36532209ea62edd9e47e7ff407119aacad9a6c719c4f",
+      "editable": true
+    },
+    "components/prism-xquery.js": {
+      "sha256": "31c3ff363267570efa28f37959f6c99c5a0d4b9984a418f9f272e5cf036de764",
+      "editable": true
+    },
+    "components/prism-xquery.min.js": {
+      "sha256": "c72ab8f09a7348ec74a87283bd484a8c7914179060a7aa7ddaec23f026d63e7e",
+      "editable": true
+    },
+    "components/prism-yaml.js": {
+      "sha256": "0f93190fdd50ffae381bfcb9a98548f8fd2122e6fb246141a0eba331502137fe",
+      "editable": true
+    },
+    "components/prism-yaml.min.js": {
+      "sha256": "268aa228cd868a96636c68cdca5eb677aaa3418d45f504cbae258e7b837beb01",
+      "editable": true
+    },
+    "composer.json": {
+      "sha256": "334575dcb152292e9ee4b5ce3bc616098a9e86ca52e27eef350b2a81232d8a57",
+      "editable": false
+    },
+    "download.html": {
+      "sha256": "4daaafb54995a6aed910fdd0bf581f10212a134912a26d83d7790cab92d6fccd",
+      "editable": false
+    },
+    "examples.html": {
+      "sha256": "9a221c5bc3f04ecbe68530016b5ca582c82dee6fd892e44d6032bbb6798cdf13",
+      "editable": false
+    },
+    "examples/prism-abap.html": {
+      "sha256": "4748178c08ce0a1c2ddc22a5f42796df13a04a12413b988d19a1fba0500c151d",
+      "editable": false
+    },
+    "examples/prism-abnf.html": {
+      "sha256": "206b77c2667d3025c4d0ac7a2f47a7aebbcc62b2d3a87c627027e8158bb08873",
+      "editable": false
+    },
+    "examples/prism-actionscript.html": {
+      "sha256": "8f21e4bc048900ba544c13552e7c0c67d2ef7c9c0ce9a48bde4b518736e85417",
+      "editable": false
+    },
+    "examples/prism-ada.html": {
+      "sha256": "2a9b1cf4d48ec1297139c6a608a366f3326154ed9055a022c9aaa8d20beb066c",
+      "editable": false
+    },
+    "examples/prism-apacheconf.html": {
+      "sha256": "704e2dd7810415b0af406e7b2cb510fa24d1286e12fe401f4fd0d86511733529",
+      "editable": false
+    },
+    "examples/prism-apl.html": {
+      "sha256": "ddb4e6f7ea2928119f341c4169bc3a6298fd4f01fbcf8f5436a9616f9f0d836f",
+      "editable": false
+    },
+    "examples/prism-applescript.html": {
+      "sha256": "c54e365f01fd63a4d1d52a773cabbbec3372209c9075be93fe798d57a3b400c5",
+      "editable": false
+    },
+    "examples/prism-arduino.html": {
+      "sha256": "d4eabefc2d5a1c2e991f305ae0294c01177912590af10abedf7deed90fc8ef8d",
+      "editable": false
+    },
+    "examples/prism-arff.html": {
+      "sha256": "167d810d7e2e2dfb5c97c0a85a3152fb2bcd4a1776821c367693fe16f4c6108a",
+      "editable": false
+    },
+    "examples/prism-asciidoc.html": {
+      "sha256": "444813e2947d91c7fa0753da0624e2d6d970131b7d21eb29d766e6d900a45add",
+      "editable": false
+    },
+    "examples/prism-asm6502.html": {
+      "sha256": "415971a814edb3b5d29261aca01c7cc0c95276aba17b970bb258a204de74daf6",
+      "editable": false
+    },
+    "examples/prism-aspnet.html": {
+      "sha256": "fcba084e6df82414a28a958a6aed89183d86216502b9e0d8926c701f2f65ca17",
+      "editable": false
+    },
+    "examples/prism-autohotkey.html": {
+      "sha256": "86836fae64ad655d75f6577658a5799d3bb6e3d71b09e8d92dad406fb1c6ae34",
+      "editable": false
+    },
+    "examples/prism-autoit.html": {
+      "sha256": "6b80824d83db5474ac12f6997ef9c089d5a692d00c182dcc5e16921168a6d59d",
+      "editable": false
+    },
+    "examples/prism-bash.html": {
+      "sha256": "e341a4e94affce1798cd131a7cb57d10fab5da800b6bffcccdbec25a4a582c57",
+      "editable": false
+    },
+    "examples/prism-basic.html": {
+      "sha256": "5b6f850350b256d55da6560e94d945ccae313af167c020725880482b4807f81e",
+      "editable": false
+    },
+    "examples/prism-batch.html": {
+      "sha256": "66af8e3492307db6d0de40bf9deeecb4076bc0d9b6c590791b0d89ebeb825265",
+      "editable": false
+    },
+    "examples/prism-bison.html": {
+      "sha256": "21db7b136cc170359fd6fc60e34a4e4cd8e32a5e6d8b2fa76c35429e3bb79098",
+      "editable": false
+    },
+    "examples/prism-bnf.html": {
+      "sha256": "d9d1942fbf20e11bcba80af29a26a71ea51a887c46a1e6792596270a87c86571",
+      "editable": false
+    },
+    "examples/prism-brainfuck.html": {
+      "sha256": "e0725c97439578f6cdf59d0963d88a480134361ec9864d78259d27d54f34c8cd",
+      "editable": false
+    },
+    "examples/prism-bro.html": {
+      "sha256": "bc6d10fb77df907e92a3447286ae55e918656821d2c42cbdd25351705beb4463",
+      "editable": false
+    },
+    "examples/prism-c.html": {
+      "sha256": "67499f4e009d45c5f41404a9f0934c9c8bf72fd3ed98d6490ce6e0ffe70b4571",
+      "editable": false
+    },
+    "examples/prism-clike.html": {
+      "sha256": "dc9e876aef8695792fbb44b7008104fd91fc522ceae8fab2145f8ee4f3652f52",
+      "editable": false
+    },
+    "examples/prism-clojure.html": {
+      "sha256": "3b7ae9bcd9de86eeac808d0e435eec2a706eef75c161009e469bd1f9b2ff2482",
+      "editable": false
+    },
+    "examples/prism-cmake.html": {
+      "sha256": "997a1dee1f90bfb24f9dd3610a6a9fba3f80a268c0b1554a336f63098a1baee5",
+      "editable": false
+    },
+    "examples/prism-coffeescript.html": {
+      "sha256": "a4a13a9ad733447e37a35a5178ef890ea19560270fe3b034a30040fc11bcaed2",
+      "editable": false
+    },
+    "examples/prism-cpp.html": {
+      "sha256": "4c09bea01bc09a96b4051aa788d95ca183dd543c23d646847495c5020ffb3209",
+      "editable": false
+    },
+    "examples/prism-crystal.html": {
+      "sha256": "9f7a7a5542e3c6364d8ca21dd5da086de134cc4d4e344f6082c78ffc7db30e83",
+      "editable": false
+    },
+    "examples/prism-csharp.html": {
+      "sha256": "0e4179f6cb0c0bc3ba409b022a1ea2fc398ed144a1da72b1b39e8a34a41e313b",
+      "editable": false
+    },
+    "examples/prism-csp.html": {
+      "sha256": "95c696a8d065d88478f733a4726d786d303708294203bd2cafbd7473e6753ce8",
+      "editable": false
+    },
+    "examples/prism-css.html": {
+      "sha256": "e1a7fcf6f892c9c2b929868607d907556f885ffa814e39f8e3307833ded57c89",
+      "editable": false
+    },
+    "examples/prism-d.html": {
+      "sha256": "de4459844d023bb74c494874a338916fc76c8d6d378a477e4572af0114cd44f5",
+      "editable": false
+    },
+    "examples/prism-dart.html": {
+      "sha256": "6b732a5e561c0181699981f17d4e8644b8feffaf35a1cce0a24e282dd07fac86",
+      "editable": false
+    },
+    "examples/prism-diff.html": {
+      "sha256": "ebb030673307a46dafa75f6a328c6da4e6a2ee98d063cb9065931434e22266b2",
+      "editable": false
+    },
+    "examples/prism-django.html": {
+      "sha256": "0d07e05c28b2d7e420d6547022ae2c192be113bac0d69b2e255d59b2f7b210ef",
+      "editable": false
+    },
+    "examples/prism-docker.html": {
+      "sha256": "ba0cea9945ae05c7326bb2a42171be26228cd8c6724f68ece27fbc4eb9cd939c",
+      "editable": false
+    },
+    "examples/prism-ebnf.html": {
+      "sha256": "b60adbdd3dc5e0638de9955def3eab6ca671af81cd3a068236afbdec87e9ffd7",
+      "editable": false
+    },
+    "examples/prism-eiffel.html": {
+      "sha256": "58dd1e8a00112fb5b0a8f51e672c56d9f417abf3356c2c68c1ef96d69e0abd2a",
+      "editable": false
+    },
+    "examples/prism-ejs.html": {
+      "sha256": "e92eafa9fb9d445d00d4d9cb2980c43502b5543779609b097dde4ce4b5bd6c32",
+      "editable": false
+    },
+    "examples/prism-elixir.html": {
+      "sha256": "a0c5fc07d9f75c3fc11ced22af1a7f9ba857778fd3f34fbb408bd5d8efd22816",
+      "editable": false
+    },
+    "examples/prism-elm.html": {
+      "sha256": "4678d6365fd7a76b9f504acccb03d5c3ae240f41b6cfb12ba049bc07cd139b3c",
+      "editable": false
+    },
+    "examples/prism-erb.html": {
+      "sha256": "64de0129f652c4de4526ccbcb22c921351b0a2c4111ada9fdb3b4fe09cb046d4",
+      "editable": false
+    },
+    "examples/prism-erlang.html": {
+      "sha256": "48f2c6e62ec540a94141194f2f5a5b0dd185c31903df60f5d245a1cec6497db6",
+      "editable": false
+    },
+    "examples/prism-flow.html": {
+      "sha256": "43f763bb7df66081223207c6a0af2954df2f0f1dd0eb4e3b9433fb2281038b3c",
+      "editable": false
+    },
+    "examples/prism-fortran.html": {
+      "sha256": "20caa33573812cbb607d0875c16c19cb2cac1e52029a5d8a747dc5d4bfa34a70",
+      "editable": false
+    },
+    "examples/prism-fsharp.html": {
+      "sha256": "1c61bffb72ed1388546cb411f28b411ffd29544beae5cae032be153ba225176f",
+      "editable": false
+    },
+    "examples/prism-gcode.html": {
+      "sha256": "d89e407360b3902ba79dd66454b18ec5b33b7e4f40f98b8eaaf7d5c77fb6d8a6",
+      "editable": false
+    },
+    "examples/prism-gedcom.html": {
+      "sha256": "633bd1329a756abd2827acf8451cc7e24d02339fe01c7ef3e140409263bd50dc",
+      "editable": false
+    },
+    "examples/prism-gherkin.html": {
+      "sha256": "7151f9ca5baf36ffff71f79cb1a934de59097c7f6a33e74ff818f199979db2f6",
+      "editable": false
+    },
+    "examples/prism-git.html": {
+      "sha256": "9fb61938fc9871d5b1f902ea8283a66eaa2fb7fc0a15fc9144d5fdfa1ae30052",
+      "editable": false
+    },
+    "examples/prism-glsl.html": {
+      "sha256": "30726482fa75613968d4f51b2461343ad6ce6ad1529832a62ec538458b50b5f0",
+      "editable": false
+    },
+    "examples/prism-gml.html": {
+      "sha256": "c3b3ccb4865910f19f59d01fcf09b5daba66f2e78b9bf05aafbcaf78eaaecafb",
+      "editable": false
+    },
+    "examples/prism-go.html": {
+      "sha256": "abfe345e00bd8c3b1625efe3a9cae31483d22442cc4105702f4b1c8413da2193",
+      "editable": false
+    },
+    "examples/prism-graphql.html": {
+      "sha256": "d2673556d16cd310f6d87acf77de6effe616c7d89f1cedb83f1ecb0c8b3acf69",
+      "editable": false
+    },
+    "examples/prism-groovy.html": {
+      "sha256": "1a5ca8ee772de16bc8b6d5766523e4e8fb719998416b6384342940f2f21d4c2b",
+      "editable": false
+    },
+    "examples/prism-haml.html": {
+      "sha256": "d02eb9c1414c395b3ba74fdc8958184ea3b09b07ee61bebe4f2a18b31d38ba0f",
+      "editable": false
+    },
+    "examples/prism-handlebars.html": {
+      "sha256": "0c59f9fffefbd958f5f773c2d7443a28c78bb7f24cca96e0a8b1bfb284652bed",
+      "editable": false
+    },
+    "examples/prism-haskell.html": {
+      "sha256": "349274516f44cef157d458d4abddabad1fb1807ec19916413fdab81bf58bd6e7",
+      "editable": false
+    },
+    "examples/prism-haxe.html": {
+      "sha256": "8f6ed1b44301924ae6180183111ef6c44d877c278c59280a48f53bacc4ec62a8",
+      "editable": false
+    },
+    "examples/prism-hcl.html": {
+      "sha256": "a3eb4cd660fd232e35a3535d9f1c2064cc57c8a3dfbd26fbe05e8f93fb14262f",
+      "editable": false
+    },
+    "examples/prism-hpkp.html": {
+      "sha256": "cb8edfe6333de73d1eae58de70ab8f0f87ea0dd0149d7975a68603a5a1a66c7f",
+      "editable": false
+    },
+    "examples/prism-hsts.html": {
+      "sha256": "027a291b142c8b8c98fbd727dbd53b10d2f3074302de796c5f3b7499e4a0cf37",
+      "editable": false
+    },
+    "examples/prism-http.html": {
+      "sha256": "dc5d2fec593fe3e1b1e10c0b2d23ea5a6b61fe03dccb719ae75d1e8e25ed4bda",
+      "editable": false
+    },
+    "examples/prism-ichigojam.html": {
+      "sha256": "572a4eb0287a67c609b2830a569f72a0c712ed43931ca40e39c6f740674f4a24",
+      "editable": false
+    },
+    "examples/prism-icon.html": {
+      "sha256": "cec71493a17b33537b8d6104493f224eeef9745601e93e7dc13c607546ea2fd5",
+      "editable": false
+    },
+    "examples/prism-inform7.html": {
+      "sha256": "0d5d531b61304b5fe1cdee5605d54619071a2c0b00db29c594ed712f4951a8c6",
+      "editable": false
+    },
+    "examples/prism-ini.html": {
+      "sha256": "5c4fc876c90d7427d230a6be0f2c5771808138e1514d301b273e3f2585dc8a07",
+      "editable": false
+    },
+    "examples/prism-io.html": {
+      "sha256": "5098ce75c52388fc14e950a17b9932452ce97c29c2a0c69e90337dd7c6abb329",
+      "editable": false
+    },
+    "examples/prism-j.html": {
+      "sha256": "bf4321b1f91e4c1c48bb716d8bcd80c57b0a7ebfa8f6f5ca65475f5577f16c75",
+      "editable": false
+    },
+    "examples/prism-java.html": {
+      "sha256": "f9bb1ec6481de82e352f482af8742f9bf8a1e33f1b7842b01a49f0ed3edc26a6",
+      "editable": false
+    },
+    "examples/prism-javascript.html": {
+      "sha256": "105723f98856787e26274e7a7d9434cfd9f9428d089b5b6a1e444e98da963af6",
+      "editable": false
+    },
+    "examples/prism-javastacktrace.html": {
+      "sha256": "70c36a5a8358ee2a4bb5d3720ae8101859a7494e47e5f4400ecd6426dd602098",
+      "editable": false
+    },
+    "examples/prism-jolie.html": {
+      "sha256": "d71d3463d8833ea286cd77173b5ff59b3c359a4dc7201aceca35a6910591b79b",
+      "editable": false
+    },
+    "examples/prism-json.html": {
+      "sha256": "ca9e592bb327e893433a5a7ea2dc8e8bfb285ead94f8ac9ddff0224d81da51d5",
+      "editable": false
+    },
+    "examples/prism-json5.html": {
+      "sha256": "6a0f907155a77fb55b116c396768cd321a1e3159bdb6d202ce36490a7623c482",
+      "editable": false
+    },
+    "examples/prism-jsonp.html": {
+      "sha256": "92e792742de41c94a43da63c38aafd61881949f39fa070cba49aebfd1ca0b7a9",
+      "editable": false
+    },
+    "examples/prism-jsx.html": {
+      "sha256": "1d3aecf8e0939fc0d0f3f790aa004cf3268932e01c6cf7b5b0dd7a83994c23ec",
+      "editable": false
+    },
+    "examples/prism-julia.html": {
+      "sha256": "1b882bb1c8f0621a7e7a64258ad25eac3db2d441c4d171e0c0e0d41be0127185",
+      "editable": false
+    },
+    "examples/prism-keyman.html": {
+      "sha256": "441f62fe1e1ad068d90bbcf514dc08e70c5592b24259a9a580882670e0ad1943",
+      "editable": false
+    },
+    "examples/prism-kotlin.html": {
+      "sha256": "5dedea95dc7dc454f0b8d6571b54bcd0e1f7be955271ed438d7fdd7bc7f602e2",
+      "editable": false
+    },
+    "examples/prism-latex.html": {
+      "sha256": "9be10a4a564bb61958d5c0d9b2d235d81abd6faa7ecb5075b76a7af5fef711dc",
+      "editable": false
+    },
+    "examples/prism-less.html": {
+      "sha256": "86dbca8c6bdfa4b1514e3a77a305c774197260c85307ae5a5e50658690149a37",
+      "editable": false
+    },
+    "examples/prism-liquid.html": {
+      "sha256": "26a7c0c16afad7890c48015158fb7a859895aea11f9a976d871739d91cbb46e8",
+      "editable": false
+    },
+    "examples/prism-lisp.html": {
+      "sha256": "232f6ab21a755505e9748a5f24dbd93f9f6253968e314ed23cfd578f3bc404ce",
+      "editable": false
+    },
+    "examples/prism-livescript.html": {
+      "sha256": "9ba1683ed02a80bd513e625249dbba86dbc32ba258ea8a366cea139621d5f993",
+      "editable": false
+    },
+    "examples/prism-lolcode.html": {
+      "sha256": "6c5b0e321e73c8d17c06c84623e524d376422d1b453d77c4d9f9a09edd3dfa9b",
+      "editable": false
+    },
+    "examples/prism-lua.html": {
+      "sha256": "08656e36c983917db7a5e5754b8ba92fc4b5e4a0c81e43500c5516b940663235",
+      "editable": false
+    },
+    "examples/prism-makefile.html": {
+      "sha256": "7f37638f9d0bd1e1afca6e5f57f7e59eeed3fc0da9647eac01d5e25bf780b5c0",
+      "editable": false
+    },
+    "examples/prism-markdown.html": {
+      "sha256": "188a863a99abac6c11e8625cdae192061ad97cd849ee79495a451c33689f43fd",
+      "editable": false
+    },
+    "examples/prism-markup.html": {
+      "sha256": "7f3c3f0f6ed058721bb623fc0ba3f9cc5086415708099e12765364927085383f",
+      "editable": false
+    },
+    "examples/prism-matlab.html": {
+      "sha256": "9f11e00dd9859bcacab9ca668faea2a8cda650cabb03160b40828eafd2f01d3e",
+      "editable": false
+    },
+    "examples/prism-mel.html": {
+      "sha256": "f1e59f55b2ee4f952a36d104a6cce85e76e15369f3e9ec7ef640ef59b03627f6",
+      "editable": false
+    },
+    "examples/prism-mizar.html": {
+      "sha256": "60efccf463ab30129c59d97fb06271502579590a94f120fd0fce920a3259fbc4",
+      "editable": false
+    },
+    "examples/prism-monkey.html": {
+      "sha256": "64350829761376978f3e29630ee1b6b25049bc552e68f13422523af58c81df77",
+      "editable": false
+    },
+    "examples/prism-n1ql.html": {
+      "sha256": "7434a7f48fa4d9caec6d97f1fc66c35b1717870d9be33df753628327a19ecc50",
+      "editable": false
+    },
+    "examples/prism-n4js.html": {
+      "sha256": "8527e5bc2c8278a2c83cecd6ef1530e17f62093cb0eaad6437653b4a52a09330",
+      "editable": false
+    },
+    "examples/prism-nand2tetris-hdl.html": {
+      "sha256": "d45f9d13b1abc68a126b0927ef18fd6aa9680d5c8ca55f10d9dd6eeec69b7f75",
+      "editable": false
+    },
+    "examples/prism-nasm.html": {
+      "sha256": "54e4f810f68ad0d9ca6718ec032ef3698225168c5719621fd3b040699afa80a8",
+      "editable": false
+    },
+    "examples/prism-nginx.html": {
+      "sha256": "0ef59213ed7bcd803c1f72a205a0eab810cdd5a43bd74b52c403312570f78c57",
+      "editable": false
+    },
+    "examples/prism-nim.html": {
+      "sha256": "9815b45a74c5c432b18ce4474cf96fe40c81e3afabb29b3e54e2d0eb6e304f6c",
+      "editable": false
+    },
+    "examples/prism-nix.html": {
+      "sha256": "10ea25900db3b082e0d256406481d91a140e6aae32bcd819cb4516553e2e2dc9",
+      "editable": false
+    },
+    "examples/prism-nsis.html": {
+      "sha256": "0bfaae9d99a39ef5fec920c5ec7898873a6f1bf8923bfe3fee43188bfd22a768",
+      "editable": false
+    },
+    "examples/prism-objectivec.html": {
+      "sha256": "f02e0559ec447bcc2f76767d5ae8304a5e352ee3621dbbf08745c6adf1ae9ce1",
+      "editable": false
+    },
+    "examples/prism-ocaml.html": {
+      "sha256": "7d5ff761176b9a39e8be58b802a67efb8221aaf87e088f278b0c9e65aed17837",
+      "editable": false
+    },
+    "examples/prism-opencl.html": {
+      "sha256": "d88b87a0d559d38faec059eae2504bc53f5b4f87a8086f17091e839eff8daf95",
+      "editable": false
+    },
+    "examples/prism-oz.html": {
+      "sha256": "a78c8f644574152aa44e581260a869325d69e763bfa4168e12afd56fa0096ff3",
+      "editable": false
+    },
+    "examples/prism-parigp.html": {
+      "sha256": "affb332df16bb1fb88c95792623f9a0810b778aac7d7882406bda216747f85fa",
+      "editable": false
+    },
+    "examples/prism-parser.html": {
+      "sha256": "476490820fbc524e8cd99a25d1f7229c3523750764ed41d8c2847d3a702c28f4",
+      "editable": false
+    },
+    "examples/prism-pascal.html": {
+      "sha256": "96703736a2edeaff5f4ad285a72550e6681241ba485f6c713fe811f7af844f6d",
+      "editable": false
+    },
+    "examples/prism-perl.html": {
+      "sha256": "e34398897f885ec8fbe4785fcba324de262ae1f4e394aa7ff5607d9bb4fdb19c",
+      "editable": false
+    },
+    "examples/prism-php.html": {
+      "sha256": "a98966a8451e458087c40f0eafad49d0e84f3ee44844d217731cd35e9ce3f941",
+      "editable": false
+    },
+    "examples/prism-plsql.html": {
+      "sha256": "c1a9747e3afc24ac9725b4b0097b7641b289b0846b6bf344a9e18ceeefda0d73",
+      "editable": false
+    },
+    "examples/prism-powershell.html": {
+      "sha256": "5a6baa0eb9bccf4028c6d1312fbf1e1072a853d54b937a69f3d6fe9224e0ba59",
+      "editable": false
+    },
+    "examples/prism-processing.html": {
+      "sha256": "ae4dc896baae1d2466fa4d29f6993696806bb5ffeca8f737d5e5f69de8046d63",
+      "editable": false
+    },
+    "examples/prism-prolog.html": {
+      "sha256": "85c49388af5c551d4ac3052a632aa66980d132cd999b94b480afc43848d77d9d",
+      "editable": false
+    },
+    "examples/prism-properties.html": {
+      "sha256": "c9be1e71dca3c2164f06b7270c94b466a619ba04ed2c0db726f15cf3bb7be4b7",
+      "editable": false
+    },
+    "examples/prism-pug.html": {
+      "sha256": "a4112341bcad228af30985b28b841ab0d286557f6e6ddc7afa9f4a378cb060da",
+      "editable": false
+    },
+    "examples/prism-puppet.html": {
+      "sha256": "c481d7e69ec058f36fc4348bbeefa6e941462f0020fe9fc748e131fff884db8c",
+      "editable": false
+    },
+    "examples/prism-pure.html": {
+      "sha256": "641bd7c75b2a0612409db6f9b158d421a333948d4b6f6e32c1d39071e32f6cad",
+      "editable": false
+    },
+    "examples/prism-python.html": {
+      "sha256": "359bb4c10a1cf538a443d9de83337419e51be70011e9a6b4b4929962701bf1ac",
+      "editable": false
+    },
+    "examples/prism-q.html": {
+      "sha256": "b9a025e9bc54deb6eb2e03f723bed2053afa99f107debf94114ab01e9d8e3667",
+      "editable": false
+    },
+    "examples/prism-qore.html": {
+      "sha256": "5b2e81a37fbeccaa9170adc4c00802953240943fd69f4f95c0146930ce852208",
+      "editable": false
+    },
+    "examples/prism-r.html": {
+      "sha256": "b9d4de99c7416012bc24d17144397ddc9b8ea2127d684a6fd02decd5395b63ca",
+      "editable": false
+    },
+    "examples/prism-reason.html": {
+      "sha256": "6a9cb2cc71378d6365d1313975ef053f56396898984df4c127220da5f951a17f",
+      "editable": false
+    },
+    "examples/prism-renpy.html": {
+      "sha256": "02a6231108d521780c24e16652cf42b603b099bb190192665a36b3f55c215c38",
+      "editable": false
+    },
+    "examples/prism-rest.html": {
+      "sha256": "d6d668521c6f7d7fa8726dbea0a070635854f4e7aaed3e400d7bbae44681e01e",
+      "editable": false
+    },
+    "examples/prism-rip.html": {
+      "sha256": "1121e3ae355a0b97d9fdc1a7fb7bd0d42be42634e08fd00dc6fa754f4b49759b",
+      "editable": false
+    },
+    "examples/prism-roboconf.html": {
+      "sha256": "a795d3d47ca26c9f67df8306ddafe5d351799221e29b19937213db924815ac1f",
+      "editable": false
+    },
+    "examples/prism-ruby.html": {
+      "sha256": "30d42dc98375d0c92ed2a40e7c940dc14e3226ed3d0da8320f4fc046976095c3",
+      "editable": false
+    },
+    "examples/prism-rust.html": {
+      "sha256": "209f6c923f8a710fe408cd99f64ddb5f2bd5a06c185f5315d7d33f6926f587da",
+      "editable": false
+    },
+    "examples/prism-sas.html": {
+      "sha256": "d889ca8aa005d35e7b2e5d600989d625ce6b01cc9b8d12f3893553ef0ffbe139",
+      "editable": false
+    },
+    "examples/prism-sass.html": {
+      "sha256": "9720d7ede61071e10bad823fba62a01ac454f2d70676daafb5e23e8caaaeb9e7",
+      "editable": false
+    },
+    "examples/prism-scala.html": {
+      "sha256": "f8275f00b0e5c89812def704820679b686dd2783dea7f1c1b386649847ebe411",
+      "editable": false
+    },
+    "examples/prism-scheme.html": {
+      "sha256": "0649bd75b13c7d41f37baec3f7438bc86fa45da8b7bd31014a82c9e8f32d53f0",
+      "editable": false
+    },
+    "examples/prism-scss.html": {
+      "sha256": "6ec18a454d04c20aed539edd29283120cabd865826c089506d45f5a3c6ce7055",
+      "editable": false
+    },
+    "examples/prism-smalltalk.html": {
+      "sha256": "ed33934bdcb6b955db4cae545bb7b33be24eb9dae5878bd6ec3baaee6355db89",
+      "editable": false
+    },
+    "examples/prism-smarty.html": {
+      "sha256": "a32834bc53a5569c156a1d6eb9e8aae2964c18492962701a691ab404a7e34d03",
+      "editable": false
+    },
+    "examples/prism-soy.html": {
+      "sha256": "75e60be9eb367caf07e25b63785613d2186c148128a3ab2859fde63cb17ba894",
+      "editable": false
+    },
+    "examples/prism-sql.html": {
+      "sha256": "a7ff4dbae11ef4e9196897c17ab0c77e59e7c19183eb19ef5a48dee0fcfcb0a0",
+      "editable": false
+    },
+    "examples/prism-stylus.html": {
+      "sha256": "03f2b08955f2d5dfb752623e2cbc0b9ecf18857826d812f9add527209d0de621",
+      "editable": false
+    },
+    "examples/prism-swift.html": {
+      "sha256": "b7f1262f4d3b7af45fa63a3f0df5865e36dd2743011de10dd5b8791b16096500",
+      "editable": false
+    },
+    "examples/prism-tcl.html": {
+      "sha256": "5d7c1a0018ed062b8e6ec94f55c16e11d01333a4aee37eefb00159ea835d5836",
+      "editable": false
+    },
+    "examples/prism-textile.html": {
+      "sha256": "788dd9da533f42c058a6dd26172db5a0d2674c6e8e9c75466017913c62dc4fd4",
+      "editable": false
+    },
+    "examples/prism-tsx.html": {
+      "sha256": "87f7076afb7691862b15227d3f62995b07addab06af278437d6b10c42368356a",
+      "editable": false
+    },
+    "examples/prism-tt2.html": {
+      "sha256": "f0e4ffa1b43b9c38e711a06264061296467d4e4cea7ea6e96c9da5ceb52c24bb",
+      "editable": false
+    },
+    "examples/prism-twig.html": {
+      "sha256": "b9d592bc8b59ba2986a0b03c0a256a17ff7d62c9b5c92d83b5ae01d7f3fcb645",
+      "editable": false
+    },
+    "examples/prism-typescript.html": {
+      "sha256": "942e904f09a2d9ff0c6f34f8f7822761ff35647c5dcef139f10237e2074e4ad3",
+      "editable": false
+    },
+    "examples/prism-vala.html": {
+      "sha256": "fdbcbf9b40077a827bac3e9f955d812e637eb9925502ed081dab4ca6ea098ecb",
+      "editable": false
+    },
+    "examples/prism-vbnet.html": {
+      "sha256": "edefdf3e6c048a4d4fc90de49ad82b741644e8c2f2fa465dc3d9e78fa502cf7c",
+      "editable": false
+    },
+    "examples/prism-velocity.html": {
+      "sha256": "a8286e2cc352c75a0d9957972bfc46903e97d3b651f858d708ab1d4bdf0b3a17",
+      "editable": false
+    },
+    "examples/prism-verilog.html": {
+      "sha256": "0746fbf50100ea9d1d350e4c207905693afebad69b946dbec0bca5a3620b0903",
+      "editable": false
+    },
+    "examples/prism-vhdl.html": {
+      "sha256": "088923ee363b7a9817bf048d8a680cf9b32980d6c3061b6ee165b7206608a189",
+      "editable": false
+    },
+    "examples/prism-vim.html": {
+      "sha256": "0b631ca107125a418a2a8c37e21111d94a66330bdd17001df2a98a506a722630",
+      "editable": false
+    },
+    "examples/prism-visual-basic.html": {
+      "sha256": "aa638a17de60523411465519862f7c06acf708d629e896fd62d88f7967e390f3",
+      "editable": false
+    },
+    "examples/prism-wasm.html": {
+      "sha256": "9e505dbb12acd3b220bae197d5377639dd0e1fb7b1b219d0ff6356ddba8119ce",
+      "editable": false
+    },
+    "examples/prism-wiki.html": {
+      "sha256": "ae5c5f1044bc096bb1a86d8a608d64db3088112bb77aefcf304b68fbd72921d8",
+      "editable": false
+    },
+    "examples/prism-xeora.html": {
+      "sha256": "af2114f67c8506fd9f1f058d5c7a0e13bbdf553abf5a3a2fe3af5ce6fc0e88fc",
+      "editable": false
+    },
+    "examples/prism-xojo.html": {
+      "sha256": "9618d39f2a012ce0e0111bc982a49f1139e1152212a957f57ebc194244761fc3",
+      "editable": false
+    },
+    "examples/prism-xquery.html": {
+      "sha256": "2c578567a2b59ef06468b1b9dbf902a2021ea2295d97002e62b085c94ee2b264",
+      "editable": false
+    },
+    "examples/prism-yaml.html": {
+      "sha256": "8c5d6d02dbada801f755166e3f249dd18fa62118fce69aca943cde87726c0528",
+      "editable": false
+    },
+    "extending.html": {
+      "sha256": "870976174e291dcb736f8d957fc8d5c5ca6fb71c506cb2fcfb519fcc4e61fe28",
+      "editable": false
+    },
+    "faq.html": {
+      "sha256": "58debf725a513dd0ac14b0aa7ed575a6c0e233a93cc338dd9d5928752c668638",
+      "editable": false
+    },
+    "gulpfile.js": {
+      "sha256": "77ab92a09a482b5056fa7da3266d8fb56428081e1b26403a7d09ebd9efddaf47",
+      "editable": true
+    },
+    "index.html": {
+      "sha256": "045a4b2d5326ad4813f41b0ff7b9426b3303d13f0978a45c8eb1715384268c2c",
+      "editable": false
+    },
+    "package-lock.json": {
+      "sha256": "62a96d30b23c44ea067ed57bfcc0c87655ba378a94f040b2b1d5871d0ff55510",
+      "editable": false
+    },
+    "package.json": {
+      "sha256": "c32ef0709a5982cad76ca73d90616a4bf6bcc57d0b961a290bd0de90472e3adc",
+      "editable": false
+    },
+    "plugins/autolinker/index.html": {
+      "sha256": "6f6b1ef0e26836588f83defc2713bf0f7aa3b6b73a5be354b4a5df13bb2fd837",
+      "editable": false
+    },
+    "plugins/autolinker/prism-autolinker.css": {
+      "sha256": "5d27b84713281b7214a10a255287323e154ced7f1aaca4194e986666523cf6cb",
+      "editable": true
+    },
+    "plugins/autolinker/prism-autolinker.js": {
+      "sha256": "ab2987b4ce3ee7926fc52e7401decd14641f0803c7539a4193a0cece797a51a7",
+      "editable": true
+    },
+    "plugins/autolinker/prism-autolinker.min.js": {
+      "sha256": "5217e922c0ddb61551bf5c1465f375b513d99f16261ac607e59e7c147ccf5408",
+      "editable": true
+    },
+    "plugins/autoloader/index.html": {
+      "sha256": "ac06ff5a7058e11393d11e35a65705097e273785a1a9a4289b5b1a533e315f71",
+      "editable": false
+    },
+    "plugins/autoloader/prism-autoloader.js": {
+      "sha256": "a18263aa29a83081be45b86ab90907474422a0cae1c0fb22954b0b09b4e17c6f",
+      "editable": true
+    },
+    "plugins/autoloader/prism-autoloader.min.js": {
+      "sha256": "f4efeec15dd7eb2ec21ef81f4b619d7b1f3ec33400653d971b653e9c3908a53f",
+      "editable": true
+    },
+    "plugins/command-line/index.html": {
+      "sha256": "6c33dd57cf2f4b16b33802448d4d617f3bb7fdd963c765673dedcaeacac47d02",
+      "editable": false
+    },
+    "plugins/command-line/prism-command-line.css": {
+      "sha256": "52fa00f5b21809842408c4d81b9a762ccf19a499a70b81bc934a0873cf67b900",
+      "editable": true
+    },
+    "plugins/command-line/prism-command-line.js": {
+      "sha256": "36fd3e604502936bacf2bff8664e1dc7d0cc71ec7163fccca5814967192c399c",
+      "editable": true
+    },
+    "plugins/command-line/prism-command-line.min.js": {
+      "sha256": "1db3edb8b07baedde8bdbcd1d77c98af7ef61273586acee82c5efef6444d7f4c",
+      "editable": true
+    },
+    "plugins/copy-to-clipboard/index.html": {
+      "sha256": "d799f0d661e83c0fba66b53deed9993d82972e6acb4706375566efbed50a8504",
+      "editable": false
+    },
+    "plugins/copy-to-clipboard/prism-copy-to-clipboard.js": {
+      "sha256": "6ac6ff3f84226bac7c02befe77ebbe21a9effa97fa42f50b1d0976f20729d510",
+      "editable": true
+    },
+    "plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js": {
+      "sha256": "a36fb764321488581b14375b3b8d29941e5855d294d7e913968e21ea1918b0a3",
+      "editable": true
+    },
+    "plugins/custom-class/index.html": {
+      "sha256": "d000311d66947f651840654d757f1b52876f86de286516e10979e6bf11bf3202",
+      "editable": false
+    },
+    "plugins/custom-class/prism-custom-class.js": {
+      "sha256": "1ec5ab5fed5e6c2ace279116ab0d0904ea3c23705251a7ed437e73e966baaba7",
+      "editable": true
+    },
+    "plugins/custom-class/prism-custom-class.min.js": {
+      "sha256": "5a60bf77aae9e69e0584fb33b51ef6ab6143ee9da095e113b632f3aca09b6479",
+      "editable": true
+    },
+    "plugins/data-uri-highlight/index.html": {
+      "sha256": "2ab411ca1a5488bee2f9e97031936a45f3bf61edafcc6ea4878eaec84bcad7c9",
+      "editable": false
+    },
+    "plugins/data-uri-highlight/prism-data-uri-highlight.js": {
+      "sha256": "8f950f6f373d5ed038692f6fe778dbbba958fe3f1063a858aeaf0e02c2f56b4d",
+      "editable": true
+    },
+    "plugins/data-uri-highlight/prism-data-uri-highlight.min.js": {
+      "sha256": "8694d6b437b18e75557a8af59145b14434cd5e6723a0c8d363396943e6527bc9",
+      "editable": true
+    },
+    "plugins/file-highlight/index.html": {
+      "sha256": "f5567f81d1b79430a81025d265cb91d69cc91d3523c804df4c3e2343938a3f15",
+      "editable": false
+    },
+    "plugins/file-highlight/prism-file-highlight.js": {
+      "sha256": "836e7d15312668230f13b0423fc514b9046f8fbe0661b316317b16146365ba6d",
+      "editable": true
+    },
+    "plugins/file-highlight/prism-file-highlight.min.js": {
+      "sha256": "863c377d7e261792fc54628f4313bb381b9eedd65d921b6e9860e2432dc2c6bf",
+      "editable": true
+    },
+    "plugins/highlight-keywords/index.html": {
+      "sha256": "b0aa2e51ef94bd3aeb9f701a6dfae851f6c35e8d94c09c851a7fdca7f5537581",
+      "editable": false
+    },
+    "plugins/highlight-keywords/prism-highlight-keywords.js": {
+      "sha256": "4e068874ad96a696fb9865c7692ce54692968fdfc49856f6939a954adea11ff7",
+      "editable": true
+    },
+    "plugins/highlight-keywords/prism-highlight-keywords.min.js": {
+      "sha256": "6db7908a2e998189d378dcae5a72b9eb28bac744927d6416e42b314e746eb102",
+      "editable": true
+    },
+    "plugins/index.html": {
+      "sha256": "8907858c8ef89e1b35f0f52cf4885c0df3f6d4b2ee07ba3d73405618e91094c5",
+      "editable": false
+    },
+    "plugins/jsonp-highlight/index.html": {
+      "sha256": "712178b19cd7f942643bc17893e294a37248bd3afb685bdd834015ead663ba01",
+      "editable": false
+    },
+    "plugins/jsonp-highlight/prism-jsonp-highlight.js": {
+      "sha256": "2ab9ad62e302e05e20c57008f34548ae68661ce1d7ca90a5dd5bde954629c139",
+      "editable": true
+    },
+    "plugins/jsonp-highlight/prism-jsonp-highlight.min.js": {
+      "sha256": "7f9e55662038d1e3847f32cb995cf2b8a2b208f803d62ee607c2b86c6262675f",
+      "editable": true
+    },
+    "plugins/keep-markup/index.html": {
+      "sha256": "1abbc42286d7ed3b95c26edfe88eba473b24e78e8ab075b2f9267da744a6fc63",
+      "editable": false
+    },
+    "plugins/keep-markup/prism-keep-markup.js": {
+      "sha256": "429a0ed1b64ebd767fe79fc38ddad4648f484717a9c218437b3f3fc07869fcb7",
+      "editable": true
+    },
+    "plugins/keep-markup/prism-keep-markup.min.js": {
+      "sha256": "8c778b5beaae2caa12a41162b1889fd1241ff59db400a82629bdaf71d59e8492",
+      "editable": true
+    },
+    "plugins/line-highlight/index.html": {
+      "sha256": "e4d637f43a70e179d4a1d7ffaa75d90a5ed1d739701dce87fc641c5334cbac84",
+      "editable": false
+    },
+    "plugins/line-highlight/prism-line-highlight.css": {
+      "sha256": "9235b962cfa294600b5b8b529d6797ef7aa969c106d995ecc1757df1d2cd3512",
+      "editable": true
+    },
+    "plugins/line-highlight/prism-line-highlight.js": {
+      "sha256": "1dc49088e67856916203eb04964d4eaf88f27093a35eacea2995b60fb53a658c",
+      "editable": true
+    },
+    "plugins/line-highlight/prism-line-highlight.min.js": {
+      "sha256": "1961315bdc30f6bfb05dc2a22490704b96cb4d1b2584c4c012cf2498cd6e3c4a",
+      "editable": true
+    },
+    "plugins/line-numbers/index.html": {
+      "sha256": "1d917a9e0d57c6d0994705efc6595f88cdc63ee9160ee2f068fd95c3637bbecd",
+      "editable": false
+    },
+    "plugins/line-numbers/prism-line-numbers.css": {
+      "sha256": "b9d2e2f07337bcce1cb830cc1b2445cc6f1e93450dd3ebb2b4f2d691b4e96a08",
+      "editable": true
+    },
+    "plugins/line-numbers/prism-line-numbers.js": {
+      "sha256": "2125aa030380c429662c2bb6dacb77fb1538fa45581eb13c8dd9fa38dce38394",
+      "editable": true
+    },
+    "plugins/line-numbers/prism-line-numbers.min.js": {
+      "sha256": "85ea79b3cf79d8ca91ed8efd2587c25d90fabd08d51eceec3aefd91abb353844",
+      "editable": true
+    },
+    "plugins/normalize-whitespace/demo.html": {
+      "sha256": "bedc7619d2ade32da7a365c46ebf0c2c708230b451fab5745dac26886301e08c",
+      "editable": false
+    },
+    "plugins/normalize-whitespace/index.html": {
+      "sha256": "2de50c806fdd44b7f7bb74926a9920835fd4eb43a172c68a92ab30c6752cb8c2",
+      "editable": false
+    },
+    "plugins/normalize-whitespace/prism-normalize-whitespace.js": {
+      "sha256": "0a6c055bac7388b231f9d94f731ac24d5e9fc53287cbcd7774c34297f9f27a1f",
+      "editable": true
+    },
+    "plugins/normalize-whitespace/prism-normalize-whitespace.min.js": {
+      "sha256": "69b550724c6a5e458ef0d89993c4c13c7cefdff2ce6f322acf3416cf4915d05d",
+      "editable": true
+    },
+    "plugins/previewers/index.html": {
+      "sha256": "f50e6c20e1b6b6257ab9e6e6a78cf527e115784f8e91da2c0cb8af5793c1865d",
+      "editable": false
+    },
+    "plugins/previewers/prism-previewers.css": {
+      "sha256": "fbae196671193fbfc2856743e48a23282e1efb2ca84c333055c129ddcae9081e",
+      "editable": true
+    },
+    "plugins/previewers/prism-previewers.js": {
+      "sha256": "524c41e39756f502d4aed86ad01df6f24be4cc24ca8a22e7518dfeecdec25ebf",
+      "editable": true
+    },
+    "plugins/previewers/prism-previewers.min.js": {
+      "sha256": "9495dc86ae726a74b1350e7288cea46e70a0029ea224248e0796509ee75b6e05",
+      "editable": true
+    },
+    "plugins/remove-initial-line-feed/index.html": {
+      "sha256": "9f27a0df4150713254ed6b6118a0ac7d6d668dd59fe6e1eb1893375e3a774212",
+      "editable": false
+    },
+    "plugins/remove-initial-line-feed/prism-remove-initial-line-feed.js": {
+      "sha256": "f5cc178440649f1d35aaf88c129b9200856fc93f9ac7f70b671f00f49f3a0226",
+      "editable": true
+    },
+    "plugins/remove-initial-line-feed/prism-remove-initial-line-feed.min.js": {
+      "sha256": "dd29eb5ebd9e334f0501364d43b3c497e0339e2a8570146b533c89ba02fa92b0",
+      "editable": true
+    },
+    "plugins/show-invisibles/index.html": {
+      "sha256": "73987717999b3e570789905bfa54c2be024ef7945c633091211919b0c625d866",
+      "editable": false
+    },
+    "plugins/show-invisibles/prism-show-invisibles.css": {
+      "sha256": "57f49ed7a05ddce499367146fe6486cb7292ed4facb340d40c40ccea80cc9162",
+      "editable": true
+    },
+    "plugins/show-invisibles/prism-show-invisibles.js": {
+      "sha256": "50d5154e32fc3294326d5f9600834901f7efe207e3d5d2353dca7abbe8acc47f",
+      "editable": true
+    },
+    "plugins/show-invisibles/prism-show-invisibles.min.js": {
+      "sha256": "d5b685a1ccc45f076d581899ea06eeed6d649fa5df3e0298e0b9104183474e43",
+      "editable": true
+    },
+    "plugins/show-language/index.html": {
+      "sha256": "82c62830f7b54bc594719046d1ba3fffa13ebdbdb5d343c105da130191bf833e",
+      "editable": false
+    },
+    "plugins/show-language/prism-show-language.js": {
+      "sha256": "fc142e565779f9c78eb1aa231ad1a5bd4fe17521664d8130da87ca35733bfe4b",
+      "editable": true
+    },
+    "plugins/show-language/prism-show-language.min.js": {
+      "sha256": "f75efae101c8cddbc0ebdcf03587b8c3e724cdd204f82f7904731f3d79ca10bd",
+      "editable": true
+    },
+    "plugins/toolbar/index.html": {
+      "sha256": "676bd36a5a80f7bb6814a2187625cc9553ce198d1e3d7c34a5241943ff36a9db",
+      "editable": false
+    },
+    "plugins/toolbar/prism-toolbar.css": {
+      "sha256": "4fd91da7a4d8807288c109965e6840aca695b0ab47cf9c519443138866c904ff",
+      "editable": true
+    },
+    "plugins/toolbar/prism-toolbar.js": {
+      "sha256": "840cd8529f5f6d3491fca4614cc4044660d4dd5c4d0041034aa08410c63429ff",
+      "editable": true
+    },
+    "plugins/toolbar/prism-toolbar.min.js": {
+      "sha256": "a3d492e6ccd8b856795acba6df97f6d8553787684446d9e684d58087201abc51",
+      "editable": true
+    },
+    "plugins/unescaped-markup/index.html": {
+      "sha256": "fedc4efcc5ad460dff9e2530039b367e941ecba64b631a12cfb2ce2181283d10",
+      "editable": false
+    },
+    "plugins/unescaped-markup/prism-unescaped-markup.css": {
+      "sha256": "af277065c795fe242e7ac834a9f0e924d446cf499ebaf76f139770e5da44bc41",
+      "editable": true
+    },
+    "plugins/unescaped-markup/prism-unescaped-markup.js": {
+      "sha256": "4c76107cddd9902f10439238271b25a44697213eed51a91a57dfdeebd31812e5",
+      "editable": true
+    },
+    "plugins/unescaped-markup/prism-unescaped-markup.min.js": {
+      "sha256": "8dd7ec05dbe7cb3ecd34ff84a1fff0a35bd4264c55614e5012488f515fab286a",
+      "editable": true
+    },
+    "plugins/wpd/index.html": {
+      "sha256": "55a284f936da80dce0765cff98bd74f2e18ec7ec686e6421e1b66a25f40e8b47",
+      "editable": false
+    },
+    "plugins/wpd/prism-wpd.css": {
+      "sha256": "9ec94d6d954066eb2b4a25ef91a6c0775605e17eda9b13c25dd39a323f3bcd0e",
+      "editable": true
+    },
+    "plugins/wpd/prism-wpd.js": {
+      "sha256": "c6307d709a462394121d5c4549201af96db1d28c828af8c163e3c1892b12be70",
+      "editable": true
+    },
+    "plugins/wpd/prism-wpd.min.js": {
+      "sha256": "850bcb6171777c79f5486faea147f6730559ecf13a8959315e0942246e5f03f2",
+      "editable": true
+    },
+    "prism.js": {
+      "sha256": "a85a83c23090257355e5e9bfb3b0dc974938a34013a03999716f30fe78c739fd",
+      "editable": true
+    },
+    "scripts/code.js": {
+      "sha256": "e7a863e33db781980696f60ea726626b6271c73fc4dd6e769e441e86c176010f",
+      "editable": true
+    },
+    "scripts/download.js": {
+      "sha256": "7cc38166ac87ef0af05583944473414aeb23bef38f87cca1a2848ebcb3baba1c",
+      "editable": true
+    },
+    "scripts/examples.js": {
+      "sha256": "2b027e0720af7e84610b6c0ab6076ea03346f12ece6f06abcbdc455a469d76a4",
+      "editable": true
+    },
+    "scripts/prefixfree.min.js": {
+      "sha256": "766ecb30d01549a40c413c22defd8c37f0fe3793d5784a567694db92e43b1d7b",
+      "editable": true
+    },
+    "scripts/utopia.js": {
+      "sha256": "fbac68b6708f9199cd50a24d4c0052ee63bf9f8792b1f1831e747b3f746f3c83",
+      "editable": true
+    },
+    "scripts/vendor/FileSaver.min.js": {
+      "sha256": "fd625cf9a6f00df836125c4f8c5394138743c8bfe6d012fcc8c48ffa7c88b070",
+      "editable": true
+    },
+    "scripts/vendor/jszip.min.js": {
+      "sha256": "27da77f22db94e64b0ac2240d7ad383caf15fec977ef047498bc04508840952c",
+      "editable": true
+    },
+    "scripts/vendor/promise.js": {
+      "sha256": "d64603bfce32af84d5e300936b89c55e48f6e90f23f54fb88b108db0822c82cc",
+      "editable": true
+    },
+    "style.css": {
+      "sha256": "635d73e1cc68f83aa42ae8a69d6d949e8a71002d5f85a9e682e2516b21c35f9a",
+      "editable": true
+    },
+    "templates/footer.html": {
+      "sha256": "9c2bb12eacbe89e7a90d61b3f18e9712d3d6609e74e83b82be3d14e8d7829388",
+      "editable": false
+    },
+    "templates/header-download.html": {
+      "sha256": "e4b054a5a36a5c0a7f20dad7e6e02e3edfd733cc83a08dde6b2ccb522f7c3156",
+      "editable": false
+    },
+    "templates/header-main.html": {
+      "sha256": "2938e0409e509a6d66135418981ea9cfac97c33ee8e05b4e387d6602931eab17",
+      "editable": false
+    },
+    "templates/header-plugins.html": {
+      "sha256": "72e91fc0843b4c2efc7c03052f833aa1760c0a8fc7010190fdc730b537e377b4",
+      "editable": false
+    },
+    "test-suite.html": {
+      "sha256": "707582205ac37b3b4732508b0c980dc3d6db298501316298d8ba67be86b4a6fb",
+      "editable": false
+    },
+    "test.html": {
+      "sha256": "ed34c43c1143278caed5b73a7850dd872d63c0775cc5e4b404a8ec88a0985371",
+      "editable": false
+    },
+    "tests/aliases-test.js": {
+      "sha256": "ef31770a2151d2c1b58b07853f6ecc8bb38d7f487196ee25dd02e118067a7117",
+      "editable": false
+    },
+    "tests/checks/extend.js": {
+      "sha256": "397c31349896b971db05bbc6e8eaed5283413beb325cd5b45e0004d5af863d2b",
+      "editable": false
+    },
+    "tests/checks/insert-before.js": {
+      "sha256": "1d2d54dacdc92b7a0eb3ee69de62081aa7fac25d84dc1b4ff2c2a4b2e1ad56af",
+      "editable": false
+    },
+    "tests/helper/check-functionality.js": {
+      "sha256": "3224293a7d8a4f405f174c35093867ba50d8f0482ff4c968e6c64a6c18c2b2a0",
+      "editable": false
+    },
+    "tests/helper/prism-loader.js": {
+      "sha256": "6ba3978a998bc5270c69f9e53d5351c191c0107904b3effb18910859b2c91e0a",
+      "editable": false
+    },
+    "tests/helper/test-case.js": {
+      "sha256": "520ba8986673c90038480e72e3d7d0f075f6f8c90f2f3f5e11ce1972f15b1fcd",
+      "editable": false
+    },
+    "tests/helper/test-discovery.js": {
+      "sha256": "8c79e2930892d38be044834e3c09e74d613153ffeb1361c08bd099ca05cefcb5",
+      "editable": false
+    },
+    "tests/helper/token-stream-transformer.js": {
+      "sha256": "aea6a1a544306d8a7736c597b9c085f920fdd3a68d609f9337a7c88757f475f1",
+      "editable": false
+    },
+    "tests/languages/asciidoc/entity_feature.js": {
+      "sha256": "f382f7fcbd0c3fa94bb77fd37f1bdf57b7c55700fcd7a8f6142a719dd72ca431",
+      "editable": false
+    },
+    "tests/languages/groovy/issue1049.js": {
+      "sha256": "d91980e153bffd75ebddf532a29fcc1f2c9878f17b74a0506c12e3d84ea663c2",
+      "editable": false
+    },
+    "tests/languages/groovy/string-interpolation_feature.js": {
+      "sha256": "ac2e4d945448bdc4dae3f7319e772ec610fa80b07df967c21790283bcd9de3fa",
+      "editable": false
+    },
+    "tests/languages/markup/entity_feature.js": {
+      "sha256": "a8368839e0e7c83859bf89cbd02c0c7803ee89fb4c5efdf80cc8d4c68d9cca8c",
+      "editable": false
+    },
+    "tests/plugins/keep-markup/test.js": {
+      "sha256": "07eec976a46d8961b075c7a4e7f51296bf0ae225415d23450802510dac5384a3",
+      "editable": false
+    },
+    "tests/run.js": {
+      "sha256": "d3ecbe078740b8d284d5a1c31ae04971b89d17ac57bfe76b20ce6f2dd150a4bf",
+      "editable": false
+    },
+    "tests/testrunner-tests.js": {
+      "sha256": "e8891be04249152636745c071c27086c605d16f09de3121a19c961ed8f4ef90d",
+      "editable": false
+    },
+    "themes/prism-coy.css": {
+      "sha256": "d3825ae126f86529b5b606678317db8e3585a3681d1b2c6434762ffe77bacc55",
+      "editable": true
+    },
+    "themes/prism-dark.css": {
+      "sha256": "d9f556e02e0072728b8c2829c3d92a6ba2aacb01b45abeea764d60dfd57f95a4",
+      "editable": true
+    },
+    "themes/prism-funky.css": {
+      "sha256": "0f18657c38c9c610e492b87e6abb73e66fe3d9466244854263482d089625d592",
+      "editable": true
+    },
+    "themes/prism-okaidia.css": {
+      "sha256": "cf711c75e78c52285cb88687ebb26538464e4bb8fffc6acaf3d6605eb591fc5b",
+      "editable": true
+    },
+    "themes/prism-solarizedlight.css": {
+      "sha256": "ab9c711d768aa76c1c52437f07e74f47187ab51f2fa0c792414fd5eab53a454b",
+      "editable": true
+    },
+    "themes/prism-tomorrow.css": {
+      "sha256": "d1d928842f5912ea6a59bab4852e5c551e1041727e9a9e8dda8272ba4b3a82dd",
+      "editable": true
+    },
+    "themes/prism-twilight.css": {
+      "sha256": "c01b77d52d22838715709e7b6dbe0efaceac003f565d57f25729556f580658db",
+      "editable": true
+    },
+    "themes/prism.css": {
+      "sha256": "565dbff14754261a039640abf421099afefb922ba1e32c4c17b80fd4e61ee840",
+      "editable": true
+    }
+  },
+  "omitted": []
+}

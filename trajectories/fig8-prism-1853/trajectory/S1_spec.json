@@ -1,0 +1,87 @@
+{
+  "entities": [
+    "JSON string containing \"/*\"",
+    "comment",
+    "\"*/*\" sequence inside a JSON string",
+    "JSON tokens following a string containing \"/*\"",
+    "JSON tokenizer"
+  ],
+  "constraints": [
+    {
+      "id": "C1",
+      "kind": "REQUIREMENT",
+      "entity": "JSON string containing \"/*\"",
+      "property": "tokenization",
+      "context": "JSON tokenization",
+      "relation": "Must be tokenized as a string, not as a comment start.",
+      "provenance": {
+        "kind": "issue_sentence",
+        "reference": "/* breaks JSON tokenization",
+        "region": []
+      },
+      "role": "CHANGE_DISTINGUISH",
+      "provenance_valid": true,
+      "strength": "MUST",
+      "ambiguity_reason": ""
+    },
+    {
+      "id": "C2",
+      "kind": "REQUIREMENT",
+      "entity": "\"*/*\" sequence inside a JSON string",
+      "property": "tokenization",
+      "context": "HTTP header Accept: */*",
+      "relation": "Must be processed together with the surrounding string token, not separately as a comment.",
+      "provenance": {
+        "kind": "issue_sentence",
+        "reference": "The HTTP header `Accept: */*` triggers this problem.",
+        "region": []
+      },
+      "role": "CHANGE_UNITE",
+      "provenance_valid": true,
+      "strength": "MUST",
+      "ambiguity_reason": ""
+    },
+    {
+      "id": "C3",
+      "kind": "REQUIREMENT",
+      "entity": "JSON tokens following a string containing \"/*\"",
+      "property": "tokenization",
+      "context": "JSON tokenization",
+      "relation": "Must not be consumed as part of a comment; must be tokenized as normal JSON tokens.",
+      "provenance": {
+        "kind": "image_region",
+        "reference": "0",
+        "region": [
+          0.03,
+          0.56,
+          0.97,
+          0.97
+        ]
+      },
+      "role": "CHANGE_DISTINGUISH",
+      "provenance_valid": true,
+      "strength": "MUST",
+      "ambiguity_reason": ""
+    },
+    {
+      "id": "C4",
+      "kind": "REQUIREMENT",
+      "entity": "comment",
+      "property": "tokenization",
+      "context": "Inside a JSON string",
+      "relation": "Must not be triggered by the /* sequence when it appears inside a string.",
+      "provenance": {
+        "kind": "issue_sentence",
+        "reference": "/* breaks JSON tokenization",
+        "region": []
+      },
+      "role": "CHANGE_DISTINGUISH",
+      "provenance_valid": true,
+      "strength": "MUST",
+      "ambiguity_reason": ""
+    }
+  ],
+  "provenance_invalid": 0,
+  "ambiguity_groups": [],
+  "ambiguity_policy": "ungrounded or conflicting interpretations stay MAY"
+}

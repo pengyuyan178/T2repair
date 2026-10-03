@@ -1,0 +1,37 @@
+{
+  "evidence_id": "code.t1.o2",
+  "tool": {
+    "name": "symbols",
+    "source_id": 172,
+    "query": "",
+    "start_line": 0,
+    "end_line": 0
+  },
+  "result": {
+    "ok": true,
+    "probes": [],
+    "declarations": [
+      "Prism.languages.json",
+      "comment",
+      "property",
+      "pattern",
+      "greedy",
+      "string",
+      "number",
+      "punctuation",
+      "operator",
+      "boolean",
+      "null",
+      "alias"
+    ],
+    "members": [
+      "json",
+      "languages"
+    ],
+    "source_id": 172,
+    "resolved_path": "components/prism-json.js",
+    "source_kind": "file",
+    "provenance": "base_commit",
+    "base_commit": "2f9c9261bc1454899266929711d5842a3675e467"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "rationale": "In components/prism-json.js the grammar declares 'comment' as the first key, and its rule is an unanchored `\\/\\*[\\s\\S]*?(?:\\*\\/|$)` that is not string-aware. Prism applies the grammar keys in order with greedy/rematch handling, so that comment alternative can claim a `/*` (or the `*/*` inside a quoted value) before the greedy property/string rules own that region; the subsequent greedy string/property rematch then splits/consumes the tokens that follow the affected string, which reproduces C1/C3/C4 violations (the issue snippet's `\"C\":\"C\"` pair is emitted as text/string fragments). Fixing the local matching decision by making the two string-aware rules (property, string) the greedy owners of quoted regions first and by moving the comment rule after them (and marking it greedy so a recognized comment stays intact) keeps a `/*` or `*/*` inside a JSON string as a single string token, prevents following JSON tokens from being taken as comment content, and still recognizes real comments that occur outside quoted values (control inputs `{\"a\": 1} // tail` and `{\"a\": 1} /* block */`). Only components/prism-json.js is edited; no new language entry is added, so components.js/components/index.js and the non-JSON bundles (prism.js does not embed the JSON grammar) need no change.",
+  "edits": [
+    {
+      "file": "components/prism-json.js",
+      "search": "Prism.languages.json = {\n\t'comment': /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/,\n\t'property': {\n\t\tpattern: /\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?=\\s*:)/,\n\t\tgreedy: true\n\t},\n\t'string': {\n\t\tpattern: /\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?!\\s*:)/,\n\t\tgreedy: true\n\t},",
+      "replace": "Prism.languages.json = {\n\t'property': {\n\t\tpattern: /\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?=\\s*:)/,\n\t\tgreedy: true\n\t},\n\t'string': {\n\t\tpattern: /\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?!\\s*:)/,\n\t\tgreedy: true\n\t},\n\t'comment': {\n\t\tpattern: /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/,\n\t\tgreedy: true\n\t},",
+      "create": false
+    }
+  ]
+}

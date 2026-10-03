@@ -1,0 +1,22 @@
+{
+  "kind": "base_dependencies",
+  "base_commit": "2f9c9261bc1454899266929711d5842a3675e467",
+  "image_id": "sha256:3bb6fc8c0d2404c57612dae0933c64d478e8eb8aafb97e6ecbba70be0b0c03da",
+  "source_pack_sha256": "e7496a3e8a1c5d9b8fed71e5bc70390132c584f328825915af3de53255420c9a",
+  "dependency_sha256": "7c062c7a610c01b9627f374ac1fbc85d0bc380902a6375bec0bc7f3cd573dfa6",
+  "prepared_at": "2026-09-16T22:31:12.082847+00:00",
+  "elapsed_seconds": 7.683851106092334,
+  "dependency_paths": [
+    "node_modules"
+  ],
+  "dependency_archive": "node_modules.tar.gz",
+  "environment_protocol": "base_packages_v1",
+  "fixture_roots_preserved": [],
+  "dependency_link_policy": {
+    "base_commit": "2f9c9261bc1454899266929711d5842a3675e467",
+    "dependency_sha256": "7c062c7a610c01b9627f374ac1fbc85d0bc380902a6375bec0bc7f3cd573dfa6",
+    "image_id": "sha256:3bb6fc8c0d2404c57612dae0933c64d478e8eb8aafb97e6ecbba70be0b0c03da",
+    "build_time_links": {},
+    "repo_links": {}
+  }
+}

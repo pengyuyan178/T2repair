@@ -1,0 +1,2571 @@
+[
+  {
+    "id": "matching:components/prism-js-extras.js:24:753-985",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-js-extras.js",
+    "line": 24,
+    "end_line": 24,
+    "span": [
+      753,
+      985
+    ],
+    "expression": "\\b(?:(?:(?:Uint|Int)(?:8|16|32)|Uint8Clamped|Float(?:32|64))?Array|ArrayBuffer|BigInt|Boolean|DataView|Date|Error|Function|Intl|JSON|Math|Number|Object|Promise|Proxy|Reflect|RegExp|String|Symbol|(?:Weak)?(?:Set|Map)|WebAssembly)\\b",
+    "text": "pattern: /\\b(?:(?:(?:Uint|Int)(?:8|16|32)|Uint8Clamped|Float(?:32|64))?Array|ArrayBuffer|BigInt|Boolean|DataView|Date|Error|Function|Intl|JSON|Math|Number|Object|Promise|Proxy|Reflect|RegExp|String|Symbol|(?:Weak)?(?:Set|Map)|WebAssembly)\\b",
+    "read_symbols": [
+      "Prism",
+      "maybeClassNameTokens",
+      "i",
+      "token",
+      "value",
+      "inside",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 51,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "pattern"
+    }
+  },
+  {
+    "id": "matching:components/prism-jsx.js:9:497-553",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-jsx.js",
+    "line": 9,
+    "end_line": 9,
+    "span": [
+      497,
+      553
+    ],
+    "expression": "=(?!\\{)(?:(\"|')(?:\\\\[\\s\\S]|(?!\\1)[^\\\\])*\\1|[^\\s'\">]+)",
+    "text": "Prism.languages.jsx.tag.inside['attr-value'].pattern = /=(?!\\{)(?:(\"|')(?:\\\\[\\s\\S]|(?!\\1)[^\\\\])*\\1|[^\\s'\">]+)/i;",
+    "read_symbols": [
+      "Prism",
+      "javascript",
+      "stringifyToken",
+      "walkTokens",
+      "openedTags",
+      "i",
+      "token",
+      "notTagNorBrace",
+      "plainText",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 42,
+    "detail": {
+      "form": "regexp",
+      "flags": "i",
+      "method": "",
+      "rule_owner": ""
+    }
+  },
+  {
+    "id": "matching:components/prism-xquery.js:44:1571-2104",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-xquery.js",
+    "line": 44,
+    "end_line": 44,
+    "span": [
+      1571,
+      2104
+    ],
+    "expression": "(^|[^:-])\\b(?:attribute|comment|document|element|processing-instruction|text|xs:(?:anyAtomicType|anyType|anyURI|base64Binary|boolean|byte|date|dateTime|dayTimeDuration|decimal|double|duration|ENTITIES|ENTITY|float|gDay|gMonth|gMonthDay|gYear|gYearMonth|hexBinary|ID|IDREFS?|int|integer|language|long|Name|NCName|negativeInteger|NMTOKENS?|nonNegativeInteger|nonPositiveInteger|normalizedString|NOTATION|positiveInteger|QName|short|string|time|token|unsigned(?:Byte|Int|Long|Short)|untyped(?:Atomic)?|yearMonthDuration))\\b(?=$|[^:-])",
+    "text": "pattern: /(^|[^:-])\\b(?:attribute|comment|document|element|processing-instruction|text|xs:(?:anyAtomicType|anyType|anyURI|base64Binary|boolean|byte|date|dateTime|dayTimeDuration|decimal|double|duration|ENTITIES|ENTITY|float|gDay|gMonth|gMon",
+    "read_symbols": [
+      "Prism",
+      "stringifyToken",
+      "walkTokens",
+      "openedTags",
+      "i",
+      "token",
+      "notTagNorBrace",
+      "plainText",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 42,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": ""
+    }
+  },
+  {
+    "id": "matching:components/prism-xquery.js:59:2579-2667",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-xquery.js",
+    "line": 59,
+    "end_line": 59,
+    "span": [
+      2579,
+      2667
+    ],
+    "expression": "=(?:(\"|')(?:\\\\[\\s\\S]|{(?!{)(?:{(?:{[^}]*}|[^}])*}|[^}])+}|(?!\\1)[^\\\\])*\\1|[^\\s'\">=]+)",
+    "text": "Prism.languages.xquery['tag'].inside['attr-value'].pattern = /=(?:(\"|')(?:\\\\[\\s\\S]|{(?!{)(?:{(?:{[^}]*}|[^}])*}|[^}])+}|(?!\\1)[^\\\\])*\\1|[^\\s'\">=]+)/i;",
+    "read_symbols": [
+      "Prism",
+      "stringifyToken",
+      "walkTokens",
+      "openedTags",
+      "i",
+      "token",
+      "notTagNorBrace",
+      "plainText",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 42,
+    "detail": {
+      "form": "regexp",
+      "flags": "i",
+      "method": "",
+      "rule_owner": ""
+    }
+  },
+  {
+    "id": "matching:components/prism-jsx.js:8:423-440",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-jsx.js",
+    "line": 8,
+    "end_line": 8,
+    "span": [
+      423,
+      440
+    ],
+    "expression": "^<\\/?[^\\s>\\/]*",
+    "text": "Prism.languages.jsx.tag.inside['tag'].pattern = /^<\\/?[^\\s>\\/]*/i;",
+    "read_symbols": [
+      "Prism",
+      "javascript",
+      "stringifyToken",
+      "walkTokens",
+      "openedTags",
+      "i",
+      "token",
+      "notTagNorBrace",
+      "plainText",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 40,
+    "detail": {
+      "form": "regexp",
+      "flags": "i",
+      "method": "",
+      "rule_owner": ""
+    }
+  },
+  {
+    "id": "matching:components/prism-jsx.js:10:616-643",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-jsx.js",
+    "line": 10,
+    "end_line": 10,
+    "span": [
+      616,
+      643
+    ],
+    "expression": "^[A-Z]\\w*(?:\\.[A-Z]\\w*)*$",
+    "text": "Prism.languages.jsx.tag.inside['tag'].inside['class-name'] = /^[A-Z]\\w*(?:\\.[A-Z]\\w*)*$/;",
+    "read_symbols": [
+      "Prism",
+      "javascript",
+      "stringifyToken",
+      "walkTokens",
+      "openedTags",
+      "i",
+      "token",
+      "notTagNorBrace",
+      "plainText",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 40,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": ""
+    }
+  },
+  {
+    "id": "matching:components/prism-xquery.js:60:2745-2753",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-xquery.js",
+    "line": 60,
+    "end_line": 60,
+    "span": [
+      2745,
+      2753
+    ],
+    "expression": "^=\"|\"$",
+    "text": "Prism.languages.xquery['tag'].inside['attr-value'].inside['punctuation'] = /^=\"|\"$/;",
+    "read_symbols": [
+      "Prism",
+      "stringifyToken",
+      "walkTokens",
+      "openedTags",
+      "i",
+      "token",
+      "notTagNorBrace",
+      "plainText",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 40,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": ""
+    }
+  },
+  {
+    "id": "matching:components/prism-xquery.js:19:374-513",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-xquery.js",
+    "line": 19,
+    "end_line": 19,
+    "span": [
+      374,
+      513
+    ],
+    "expression": "(^|[^-])(?:ancestor(?:-or-self)?|attribute|child|descendant(?:-or-self)?|following(?:-sibling)?|parent|preceding(?:-sibling)?|self)(?=::)",
+    "text": "pattern: /(^|[^-])(?:ancestor(?:-or-self)?|attribute|child|descendant(?:-or-self)?|following(?:-sibling)?|parent|preceding(?:-sibling)?|self)(?=::)/,",
+    "read_symbols": [
+      "Prism",
+      "stringifyToken",
+      "walkTokens",
+      "openedTags",
+      "i",
+      "token",
+      "notTagNorBrace",
+      "plainText",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 54,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "pattern"
+    }
+  },
+  {
+    "id": "matching:components/prism-jsx.js:16:800-813",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-jsx.js",
+    "line": 16,
+    "end_line": 16,
+    "span": [
+      800,
+      813
+    ],
+    "expression": "\\.{3}|[{}.]",
+    "text": "'punctuation': /\\.{3}|[{}.]/,",
+    "read_symbols": [
+      "Prism",
+      "javascript",
+      "stringifyToken",
+      "walkTokens",
+      "openedTags",
+      "i",
+      "token",
+      "notTagNorBrace",
+      "plainText",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 52,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "inside"
+    }
+  },
+  {
+    "id": "matching:components/prism-jsx.js:17:832-837",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-jsx.js",
+    "line": 17,
+    "end_line": 17,
+    "span": [
+      832,
+      837
+    ],
+    "expression": "\\w+",
+    "text": "'attr-value': /\\w+/",
+    "read_symbols": [
+      "Prism",
+      "javascript",
+      "stringifyToken",
+      "walkTokens",
+      "openedTags",
+      "i",
+      "token",
+      "notTagNorBrace",
+      "plainText",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 44,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "inside"
+    }
+  },
+  {
+    "id": "matching:components/prism-io.js:26:1026-1643",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-io.js",
+    "line": 26,
+    "end_line": 26,
+    "span": [
+      1026,
+      1643
+    ],
+    "expression": "\\b(?:Array|AudioDevice|AudioMixer|Block|Box|Buffer|CFunction|CGI|Color|Curses|DBM|DNSResolver|DOConnection|DOProxy|DOServer|Date|Directory|Duration|DynLib|Error|Exception|FFT|File|Fnmatch|Font|Future|GL|GLE|GLScissor|GLU|GLUCylinder|GLUQuadric|GLUSphere|GLUT|Host|Image|Importer|LinkList|List|Lobby|Locals|MD5|MP3Decoder|MP3Encoder|Map|Message|Movie|Notification|Number|Object|OpenGL|Point|Protos|Regex|SGML|SGMLElement|SGMLParser|SQLite|Server|Sequence|ShowMessage|SleepyCat|SleepyCatCursor|Socket|SocketManager|Sound|Soup|Store|String|Tree|UDPSender|UPDReceiver|URL|User|Warning|WeakLink|Random|BigNum|Sequence)\\b",
+    "text": "'builtin':/\\b(?:Array|AudioDevice|AudioMixer|Block|Box|Buffer|CFunction|CGI|Color|Curses|DBM|DNSResolver|DOConnection|DOProxy|DOServer|Date|Directory|Duration|DynLib|Error|Exception|FFT|File|Fnmatch|Font|Future|GL|GLE|GLScissor|GLU|GLUCylin",
+    "read_symbols": [],
+    "read_basis": "module_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 50,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "greedy"
+    }
+  },
+  {
+    "id": "value_decision:components/prism-markdown.js:178:3707-3848",
+    "kind": "value_decision",
+    "mechanism": "output_path",
+    "edit_unit": "value_expression",
+    "file": "components/prism-markdown.js",
+    "line": 178,
+    "end_line": 180,
+    "span": [
+      3707,
+      3848
+    ],
+    "expression": "codeLang && codeBlock && codeLang.type === 'code-language' && codeBlock.type === 'code-block' && typeof codeLang.content === 'string'",
+    "text": "if (codeLang && codeBlock &&",
+    "read_symbols": [
+      "tokens",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 40,
+    "detail": {
+      "branches": 1,
+      "owner_line": 162,
+      "is_guard": true
+    }
+  },
+  {
+    "id": "matching:components/prism-nix.js:34:853-1367",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-nix.js",
+    "line": 34,
+    "end_line": 34,
+    "span": [
+      853,
+      1367
+    ],
+    "expression": "\\b(?:abort|add|all|any|attrNames|attrValues|baseNameOf|compareVersions|concatLists|currentSystem|deepSeq|derivation|dirOf|div|elem(?:At)?|fetch(?:url|Tarball)|filter(?:Source)?|fromJSON|genList|getAttr|getEnv|hasAttr|hashString|head|import|intersectAttrs|is(?:Attrs|Bool|Function|Int|List|Null|String)|length|lessThan|listToAttrs|map|mul|parseDrvName|pathExists|read(?:Dir|File)|removeAttrs|replaceStrings|seq|sort|stringLength|sub(?:string)?|tail|throw|to(?:File|JSON|Path|String|XML)|trace|typeOf)\\b|\\bfoldl'\\B",
+    "text": "'function': /\\b(?:abort|add|all|any|attrNames|attrValues|baseNameOf|compareVersions|concatLists|currentSystem|deepSeq|derivation|dirOf|div|elem(?:At)?|fetch(?:url|Tarball)|filter(?:Source)?|fromJSON|genList|getAttr|getEnv|hasAttr|hashString",
+    "read_symbols": [],
+    "read_basis": "module_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 38,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": ""
+    }
+  },
+  {
+    "id": "value_decision:components/prism-core.js:277:6807-6871",
+    "kind": "value_decision",
+    "mechanism": "output_path",
+    "edit_unit": "value_expression",
+    "file": "components/prism-core.js",
+    "line": 277,
+    "end_line": 277,
+    "span": [
+      6807,
+      6871
+    ],
+    "expression": "return",
+    "text": "return Token.stringify(_.util.encode(env.tokens), env.language);",
+    "read_symbols": [
+      "text",
+      "grammar",
+      "language",
+      "env",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 25,
+    "detail": {
+      "init": "CallExpression",
+      "owner_line": 268,
+      "is_return": true
+    }
+  },
+  {
+    "id": "matching:components/prism-batch.js:41:877-1076",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-batch.js",
+    "line": 41,
+    "end_line": 41,
+    "span": [
+      877,
+      1076
+    ],
+    "expression": "((?:^|[&(])[ \\t]*)if(?: ?\\/[a-z?](?:[ :](?:\"[^\"]*\"|\\S+))?)* (?:not )?(?:cmdextversion \\d+|defined \\w+|errorlevel \\d+|exist \\S+|(?:\"[^\"]*\"|\\S+)?(?:==| (?:equ|neq|lss|leq|gtr|geq) )(?:\"[^\"]*\"|\\S+))",
+    "text": "pattern: /((?:^|[&(])[ \\t]*)if(?: ?\\/[a-z?](?:[ :](?:\"[^\"]*\"|\\S+))?)* (?:not )?(?:cmdextversion \\d+|defined \\w+|errorlevel \\d+|exist \\S+|(?:\"[^\"]*\"|\\S+)?(?:==| (?:equ|neq|lss|leq|gtr|geq) )(?:\"[^\"]*\"|\\S+))/im,",
+    "read_symbols": [
+      "Prism",
+      "variable",
+      "parameter",
+      "string",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 55,
+    "detail": {
+      "form": "regexp",
+      "flags": "im",
+      "method": "",
+      "rule_owner": "inside"
+    }
+  },
+  {
+    "id": "matching:components/prism-xquery.js:29:791-1242",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-xquery.js",
+    "line": 29,
+    "end_line": 29,
+    "span": [
+      791,
+      1242
+    ],
+    "expression": "(^|[^:-])\\b(?:as|ascending|at|base-uri|boundary-space|case|cast as|collation|construction|copy-namespaces|declare|default|descending|else|empty (?:greatest|least)|encoding|every|external|for|function|if|import|in|inherit|lax|let|map|module|namespace|no-inherit|no-preserve|option|order(?: by|ed|ing)?|preserve|return|satisfies|schema|some|stable|strict|strip|then|to|treat as|typeswitch|unordered|validate|variable|version|where|xquery)\\b(?=$|[^:-])",
+    "text": "pattern: /(^|[^:-])\\b(?:as|ascending|at|base-uri|boundary-space|case|cast as|collation|construction|copy-namespaces|declare|default|descending|else|empty (?:greatest|least)|encoding|every|external|for|function|if|import|in|inherit|lax|let|m",
+    "read_symbols": [
+      "Prism",
+      "stringifyToken",
+      "walkTokens",
+      "openedTags",
+      "i",
+      "token",
+      "notTagNorBrace",
+      "plainText",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 54,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "pattern"
+    }
+  },
+  {
+    "id": "matching:components/prism-batch.js:44:1130-1189",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-batch.js",
+    "line": 44,
+    "end_line": 44,
+    "span": [
+      1130,
+      1189
+    ],
+    "expression": "^if\\b|\\b(?:not|cmdextversion|defined|errorlevel|exist)\\b",
+    "text": "'keyword': /^if\\b|\\b(?:not|cmdextversion|defined|errorlevel|exist)\\b/i,",
+    "read_symbols": [
+      "Prism",
+      "variable",
+      "parameter",
+      "string",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 51,
+    "detail": {
+      "form": "regexp",
+      "flags": "i",
+      "method": "",
+      "rule_owner": "inside"
+    }
+  },
+  {
+    "id": "matching:components/prism-jsx.js:6:185-372",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-jsx.js",
+    "line": 6,
+    "end_line": 6,
+    "span": [
+      185,
+      372
+    ],
+    "expression": "<\\/?(?:[\\w.:-]+\\s*(?:\\s+(?:[\\w.:-]+(?:=(?:(\"|')(?:\\\\[\\s\\S]|(?!\\1)[^\\\\])*\\1|[^\\s{'\">=]+|\\{(?:\\{(?:\\{[^}]*\\}|[^{}])*\\}|[^{}])+\\}))?|\\{\\.{3}[a-z_$][\\w$]*(?:\\.[a-z_$][\\w$]*)*\\}))*\\s*\\/?)?>",
+    "text": "Prism.languages.jsx.tag.pattern= /<\\/?(?:[\\w.:-]+\\s*(?:\\s+(?:[\\w.:-]+(?:=(?:(\"|')(?:\\\\[\\s\\S]|(?!\\1)[^\\\\])*\\1|[^\\s{'\">=]+|\\{(?:\\{(?:\\{[^}]*\\}|[^{}])*\\}|[^{}])+\\}))?|\\{\\.{3}[a-z_$][\\w$]*(?:\\.[a-z_$][\\w$]*)*\\}))*\\s*\\/?)?>/i;",
+    "read_symbols": [
+      "Prism",
+      "javascript",
+      "stringifyToken",
+      "walkTokens",
+      "openedTags",
+      "i",
+      "token",
+      "notTagNorBrace",
+      "plainText",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 42,
+    "detail": {
+      "form": "regexp",
+      "flags": "i",
+      "method": "",
+      "rule_owner": ""
+    }
+  },
+  {
+    "id": "matching:components/prism-xquery.js:58:2374-2515",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-xquery.js",
+    "line": 58,
+    "end_line": 58,
+    "span": [
+      2374,
+      2515
+    ],
+    "expression": "<\\/?(?!\\d)[^\\s>\\/=$<%]+(?:\\s+[^\\s>\\/=]+(?:=(?:(\"|')(?:\\\\[\\s\\S]|{(?!{)(?:{(?:{[^}]*}|[^}])*}|[^}])+}|(?!\\1)[^\\\\])*\\1|[^\\s'\">=]+))?)*\\s*\\/?>",
+    "text": "Prism.languages.xquery.tag.pattern = /<\\/?(?!\\d)[^\\s>\\/=$<%]+(?:\\s+[^\\s>\\/=]+(?:=(?:(\"|')(?:\\\\[\\s\\S]|{(?!{)(?:{(?:{[^}]*}|[^}])*}|[^}])+}|(?!\\1)[^\\\\])*\\1|[^\\s'\">=]+))?)*\\s*\\/?>/i;",
+    "read_symbols": [
+      "Prism",
+      "stringifyToken",
+      "walkTokens",
+      "openedTags",
+      "i",
+      "token",
+      "notTagNorBrace",
+      "plainText",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 42,
+    "detail": {
+      "form": "regexp",
+      "flags": "i",
+      "method": "",
+      "rule_owner": ""
+    }
+  },
+  {
+    "id": "value_decision:plugins/jsonp-highlight/prism-jsonp-highlight.js:117:3512-3561",
+    "kind": "value_decision",
+    "mechanism": "output_path",
+    "edit_unit": "value_expression",
+    "file": "plugins/jsonp-highlight/prism-jsonp-highlight.js",
+    "line": 117,
+    "end_line": 117,
+    "span": [
+      3512,
+      3561
+    ],
+    "expression": "rsp && rsp.node && typeof (rsp.data) === \"string\"",
+    "text": "if (rsp && rsp.node && typeof (rsp.data) === \"string\") {",
+    "read_symbols": [
+      "rsp",
+      "el",
+      "bitbucket",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 41,
+    "detail": {
+      "branches": 1,
+      "owner_line": 116,
+      "is_guard": true
+    }
+  },
+  {
+    "id": "matching:components/prism-json5.js:3:35-81",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-json5.js",
+    "line": 3,
+    "end_line": 3,
+    "span": [
+      35,
+      81
+    ],
+    "expression": "(\"|')(?:\\\\(?:\\r\\n?|\\n|.)|(?!\\1)[^\\\\\\r\\n])*\\1",
+    "text": "var string = /(\"|')(?:\\\\(?:\\r\\n?|\\n|.)|(?!\\1)[^\\\\\\r\\n])*\\1/",
+    "read_symbols": [
+      "Prism",
+      "string",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 40,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": ""
+    }
+  },
+  {
+    "id": "matching:components/prism-stylus.js:15:405-421",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-stylus.js",
+    "line": 15,
+    "end_line": 15,
+    "span": [
+      405,
+      421
+    ],
+    "expression": "#[\\da-f]{3,6}",
+    "text": "'hexcode': /#[\\da-f]{3,6}/i,",
+    "read_symbols": [
+      "Prism",
+      "inside",
+      "comment",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 39,
+    "detail": {
+      "form": "regexp",
+      "flags": "i",
+      "method": "",
+      "rule_owner": ""
+    }
+  },
+  {
+    "id": "matching:components/prism-json.js:2:37-68",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-json.js",
+    "line": 2,
+    "end_line": 2,
+    "span": [
+      37,
+      68
+    ],
+    "expression": "\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)",
+    "text": "'comment': /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/,",
+    "read_symbols": [],
+    "read_basis": "module_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 38,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": ""
+    }
+  },
+  {
+    "id": "matching:components/prism-json5.js:12:253-301",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-json5.js",
+    "line": 12,
+    "end_line": 12,
+    "span": [
+      253,
+      301
+    ],
+    "expression": "[_$a-zA-Z\\xA0-\\uFFFF][$\\w\\xA0-\\uFFFF]*(?=\\s*:)",
+    "text": "pattern: /[_$a-zA-Z\\xA0-\\uFFFF][$\\w\\xA0-\\uFFFF]*(?=\\s*:)/,",
+    "read_symbols": [
+      "Prism",
+      "string",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 38,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": ""
+    }
+  },
+  {
+    "id": "matching:components/prism-json5.js:20:402-476",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-json5.js",
+    "line": 20,
+    "end_line": 20,
+    "span": [
+      402,
+      476
+    ],
+    "expression": "[+-]?(?:NaN|Infinity|0x[a-fA-F\\d]+|(?:\\d+\\.?\\d*|\\.\\d+)(?:[eE][+-]?\\d+)?)",
+    "text": "'number': /[+-]?(?:NaN|Infinity|0x[a-fA-F\\d]+|(?:\\d+\\.?\\d*|\\.\\d+)(?:[eE][+-]?\\d+)?)/",
+    "read_symbols": [
+      "Prism",
+      "string",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 38,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": ""
+    }
+  },
+  {
+    "id": "value_decision:plugins/jsonp-highlight/prism-jsonp-highlight.js:49:1516-1543",
+    "kind": "value_decision",
+    "mechanism": "output_path",
+    "edit_unit": "value_expression",
+    "file": "plugins/jsonp-highlight/prism-jsonp-highlight.js",
+    "line": 49,
+    "end_line": 49,
+    "span": [
+      1516,
+      1543
+    ],
+    "expression": "typeof adapter === \"string\"",
+    "text": "else if (typeof adapter === \"string\") {",
+    "read_symbols": [
+      "adapter",
+      "getAdapter",
+      "i",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 33,
+    "detail": {
+      "branches": 1,
+      "owner_line": 41,
+      "is_guard": true
+    }
+  },
+  {
+    "id": "value_decision:plugins/jsonp-highlight/prism-jsonp-highlight.js:65:1950-1977",
+    "kind": "value_decision",
+    "mechanism": "output_path",
+    "edit_unit": "value_expression",
+    "file": "plugins/jsonp-highlight/prism-jsonp-highlight.js",
+    "line": 65,
+    "end_line": 65,
+    "span": [
+      1950,
+      1977
+    ],
+    "expression": "typeof adapter === \"string\"",
+    "text": "if (typeof adapter === \"string\") {",
+    "read_symbols": [
+      "adapter",
+      "removeAdapter",
+      "index",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 33,
+    "detail": {
+      "branches": 1,
+      "owner_line": 64,
+      "is_guard": true
+    }
+  },
+  {
+    "id": "value_decision:plugins/jsonp-highlight/prism-jsonp-highlight.js:81:2423-2461",
+    "kind": "value_decision",
+    "mechanism": "output_path",
+    "edit_unit": "value_expression",
+    "file": "plugins/jsonp-highlight/prism-jsonp-highlight.js",
+    "line": 81,
+    "end_line": 81,
+    "span": [
+      2423,
+      2461
+    ],
+    "expression": "typeof (rsp.data.content) === \"string\"",
+    "text": "else if (typeof (rsp.data.content) === \"string\") {",
+    "read_symbols": [
+      "rsp",
+      "el",
+      "github",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 33,
+    "detail": {
+      "branches": 1,
+      "owner_line": 76,
+      "is_guard": true
+    }
+  },
+  {
+    "id": "value_decision:components/prism-markdown.js:188:4091-4126",
+    "kind": "value_decision",
+    "mechanism": "output_path",
+    "edit_unit": "value_expression",
+    "file": "components/prism-markdown.js",
+    "line": 188,
+    "end_line": 188,
+    "span": [
+      4091,
+      4126
+    ],
+    "expression": "typeof codeBlock.alias === 'string'",
+    "text": "} else if (typeof codeBlock.alias === 'string') {",
+    "read_symbols": [
+      "tokens",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 32,
+    "detail": {
+      "branches": 2,
+      "owner_line": 162,
+      "is_guard": true
+    }
+  },
+  {
+    "id": "value_decision:components/prism-jsx.js:3:24-81",
+    "kind": "value_decision",
+    "mechanism": "output_path",
+    "edit_unit": "value_expression",
+    "file": "components/prism-jsx.js",
+    "line": 3,
+    "end_line": 3,
+    "span": [
+      24,
+      81
+    ],
+    "expression": "javascript",
+    "text": "var javascript = Prism.util.clone(Prism.languages.javascript);",
+    "read_symbols": [
+      "Prism",
+      "javascript",
+      "stringifyToken",
+      "walkTokens",
+      "openedTags",
+      "i",
+      "token",
+      "notTagNorBrace",
+      "plainText",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 25,
+    "detail": {
+      "init": "CallExpression",
+      "owner_line": 1,
+      "reader_count": 1
+    }
+  },
+  {
+    "id": "value_decision:prism.js:282:6934-6998",
+    "kind": "value_decision",
+    "mechanism": "output_path",
+    "edit_unit": "value_expression",
+    "file": "prism.js",
+    "line": 282,
+    "end_line": 282,
+    "span": [
+      6934,
+      6998
+    ],
+    "expression": "return",
+    "text": "return Token.stringify(_.util.encode(env.tokens), env.language);",
+    "read_symbols": [
+      "text",
+      "grammar",
+      "language",
+      "env",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 25,
+    "detail": {
+      "init": "CallExpression",
+      "owner_line": 273,
+      "is_return": true
+    }
+  },
+  {
+    "id": "render_group:plugins/autolinker/prism-autolinker.js:15:383-425",
+    "kind": "render_group",
+    "mechanism": "render_group",
+    "edit_unit": "array_expression",
+    "file": "plugins/autolinker/prism-autolinker.js",
+    "line": 15,
+    "end_line": 15,
+    "span": [
+      383,
+      425
+    ],
+    "expression": "",
+    "text": "candidates = ['comment', 'url', 'attr-value', 'string'];",
+    "read_symbols": [
+      "url",
+      "href",
+      "match",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 17,
+    "detail": {
+      "form": "ArrayExpression",
+      "size": 4,
+      "owner_line": 1
+    }
+  },
+  {
+    "id": "render_group:components/prism-json5.js:6:155-333",
+    "kind": "render_group",
+    "mechanism": "render_group",
+    "edit_unit": "array_expression",
+    "file": "components/prism-json5.js",
+    "line": 6,
+    "end_line": 15,
+    "span": [
+      155,
+      333
+    ],
+    "expression": "",
+    "text": "'property': [",
+    "read_symbols": [
+      "Prism",
+      "string",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 16,
+    "detail": {
+      "form": "ArrayExpression",
+      "size": 2,
+      "owner_line": 1
+    }
+  },
+  {
+    "id": "matching:components/prism-batch.js:28:535-619",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-batch.js",
+    "line": 28,
+    "end_line": 28,
+    "span": [
+      535,
+      619
+    ],
+    "expression": "((?:^|[&(])[ \\t]*)for(?: ?\\/[a-z?](?:[ :](?:\"[^\"]*\"|\\S+))?)* \\S+ in \\([^)]+\\) do",
+    "text": "pattern: /((?:^|[&(])[ \\t]*)for(?: ?\\/[a-z?](?:[ :](?:\"[^\"]*\"|\\S+))?)* \\S+ in \\([^)]+\\) do/im,",
+    "read_symbols": [
+      "Prism",
+      "variable",
+      "parameter",
+      "string",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 57,
+    "detail": {
+      "form": "regexp",
+      "flags": "im",
+      "method": "",
+      "rule_owner": "inside"
+    }
+  },
+  {
+    "id": "matching:components/prism-batch.js:17:330-390",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-batch.js",
+    "line": 17,
+    "end_line": 17,
+    "span": [
+      330,
+      390
+    ],
+    "expression": "((?:^|[&(])[ \\t]*)rem\\b(?:[^^&)\\r\\n]|\\^(?:\\r\\n|[\\s\\S]))*",
+    "text": "pattern: /((?:^|[&(])[ \\t]*)rem\\b(?:[^^&)\\r\\n]|\\^(?:\\r\\n|[\\s\\S]))*/im,",
+    "read_symbols": [
+      "Prism",
+      "variable",
+      "parameter",
+      "string",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 55,
+    "detail": {
+      "form": "regexp",
+      "flags": "im",
+      "method": "",
+      "rule_owner": "inside"
+    }
+  },
+  {
+    "id": "matching:components/prism-batch.js:54:1401-1430",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-batch.js",
+    "line": 54,
+    "end_line": 54,
+    "span": [
+      1401,
+      1430
+    ],
+    "expression": "((?:^|[&()])[ \\t]*)else\\b",
+    "text": "pattern: /((?:^|[&()])[ \\t]*)else\\b/im,",
+    "read_symbols": [
+      "Prism",
+      "variable",
+      "parameter",
+      "string",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 55,
+    "detail": {
+      "form": "regexp",
+      "flags": "im",
+      "method": "",
+      "rule_owner": "inside"
+    }
+  },
+  {
+    "id": "matching:components/prism-textile.js:13:326-343",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-textile.js",
+    "line": 13,
+    "end_line": 13,
+    "span": [
+      326,
+      343
+    ],
+    "expression": "(\\()[^)]+(?=\\))",
+    "text": "pattern: /(\\()[^)]+(?=\\))/,",
+    "read_symbols": [
+      "Prism",
+      "modifierRegex",
+      "modifierTokens",
+      "textile",
+      "phraseInlineInside",
+      "phraseTableInside",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 55,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "pattern"
+    }
+  },
+  {
+    "id": "matching:components/prism-jsx.js:25:990-1033",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-jsx.js",
+    "line": 25,
+    "end_line": 25,
+    "span": [
+      990,
+      1033
+    ],
+    "expression": "=(\\{(?:\\{(?:\\{[^}]*\\}|[^}])*\\}|[^}])+\\})",
+    "text": "pattern: /=(\\{(?:\\{(?:\\{[^}]*\\}|[^}])*\\}|[^}])+\\})/i,",
+    "read_symbols": [
+      "Prism",
+      "javascript",
+      "stringifyToken",
+      "walkTokens",
+      "openedTags",
+      "i",
+      "token",
+      "notTagNorBrace",
+      "plainText",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 54,
+    "detail": {
+      "form": "regexp",
+      "flags": "i",
+      "method": "",
+      "rule_owner": "pattern"
+    }
+  },
+  {
+    "id": "matching:components/prism-xquery.js:5:116-132",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-xquery.js",
+    "line": 5,
+    "end_line": 5,
+    "span": [
+      116,
+      132
+    ],
+    "expression": "\\(:[\\s\\S]*?:\\)",
+    "text": "pattern: /\\(:[\\s\\S]*?:\\)/,",
+    "read_symbols": [
+      "Prism",
+      "stringifyToken",
+      "walkTokens",
+      "openedTags",
+      "i",
+      "token",
+      "notTagNorBrace",
+      "plainText",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 54,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "pattern"
+    }
+  },
+  {
+    "id": "matching:components/prism-xquery.js:10:202-234",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-xquery.js",
+    "line": 10,
+    "end_line": 10,
+    "span": [
+      202,
+      234
+    ],
+    "expression": "([\"'])(?:\\1\\1|(?!\\1)[\\s\\S])*\\1",
+    "text": "pattern: /([\"'])(?:\\1\\1|(?!\\1)[\\s\\S])*\\1/,",
+    "read_symbols": [
+      "Prism",
+      "stringifyToken",
+      "walkTokens",
+      "openedTags",
+      "i",
+      "token",
+      "notTagNorBrace",
+      "plainText",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 54,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "pattern"
+    }
+  },
+  {
+    "id": "matching:components/prism-xquery.js:14:286-297",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-xquery.js",
+    "line": 14,
+    "end_line": 14,
+    "span": [
+      286,
+      297
+    ],
+    "expression": "\\(#.+?#\\)",
+    "text": "pattern: /\\(#.+?#\\)/,",
+    "read_symbols": [
+      "Prism",
+      "stringifyToken",
+      "walkTokens",
+      "openedTags",
+      "i",
+      "token",
+      "notTagNorBrace",
+      "plainText",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 54,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "pattern"
+    }
+  },
+  {
+    "id": "matching:components/prism-xquery.js:24:598-715",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-xquery.js",
+    "line": 24,
+    "end_line": 24,
+    "span": [
+      598,
+      715
+    ],
+    "expression": "(^|[^:-])\\b(?:and|castable as|div|eq|except|ge|gt|idiv|instance of|intersect|is|le|lt|mod|ne|or|union)\\b(?=$|[^:-])",
+    "text": "pattern: /(^|[^:-])\\b(?:and|castable as|div|eq|except|ge|gt|idiv|instance of|intersect|is|le|lt|mod|ne|or|union)\\b(?=$|[^:-])/,",
+    "read_symbols": [
+      "Prism",
+      "stringifyToken",
+      "walkTokens",
+      "openedTags",
+      "i",
+      "token",
+      "notTagNorBrace",
+      "plainText",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 54,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "pattern"
+    }
+  },
+  {
+    "id": "matching:components/prism-xquery.js:32:1283-1312",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-xquery.js",
+    "line": 32,
+    "end_line": 32,
+    "span": [
+      1283,
+      1312
+    ],
+    "expression": "[\\w-]+(?::[\\w-]+)*(?=\\s*\\()",
+    "text": "'function': /[\\w-]+(?::[\\w-]+)*(?=\\s*\\()/,",
+    "read_symbols": [
+      "Prism",
+      "stringifyToken",
+      "walkTokens",
+      "openedTags",
+      "i",
+      "token",
+      "notTagNorBrace",
+      "plainText",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 54,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "pattern"
+    }
+  },
+  {
+    "id": "matching:components/prism-xquery.js:34:1348-1380",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-xquery.js",
+    "line": 34,
+    "end_line": 34,
+    "span": [
+      1348,
+      1380
+    ],
+    "expression": "(element\\s+)[\\w-]+(?::[\\w-]+)*",
+    "text": "pattern: /(element\\s+)[\\w-]+(?::[\\w-]+)*/,",
+    "read_symbols": [
+      "Prism",
+      "stringifyToken",
+      "walkTokens",
+      "openedTags",
+      "i",
+      "token",
+      "notTagNorBrace",
+      "plainText",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 54,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "pattern"
+    }
+  },
+  {
+    "id": "matching:components/prism-batch.js:36:820-828",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-batch.js",
+    "line": 36,
+    "end_line": 36,
+    "span": [
+      820,
+      828
+    ],
+    "expression": "[()',]",
+    "text": "'punctuation': /[()',]/",
+    "read_symbols": [
+      "Prism",
+      "variable",
+      "parameter",
+      "string",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 53,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "inside"
+    }
+  },
+  {
+    "id": "matching:components/prism-js-extras.js:63:1636-1683",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-js-extras.js",
+    "line": 63,
+    "end_line": 63,
+    "span": [
+      1636,
+      1683
+    ],
+    "expression": "(\\.\\s*)[_$a-zA-Z\\xA0-\\uFFFF][$\\w\\xA0-\\uFFFF]*",
+    "text": "pattern: /(\\.\\s*)[_$a-zA-Z\\xA0-\\uFFFF][$\\w\\xA0-\\uFFFF]*/,",
+    "read_symbols": [
+      "Prism",
+      "maybeClassNameTokens",
+      "i",
+      "token",
+      "value",
+      "inside",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 53,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "pattern"
+    }
+  },
+  {
+    "id": "matching:components/prism-js-extras.js:67:1746-1791",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-js-extras.js",
+    "line": 67,
+    "end_line": 67,
+    "span": [
+      1746,
+      1791
+    ],
+    "expression": "(^|[^$\\w\\xA0-\\uFFFF])[A-Z][$\\w\\xA0-\\uFFFF]+",
+    "text": "pattern: /(^|[^$\\w\\xA0-\\uFFFF])[A-Z][$\\w\\xA0-\\uFFFF]+/,",
+    "read_symbols": [
+      "Prism",
+      "maybeClassNameTokens",
+      "i",
+      "token",
+      "value",
+      "inside",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 53,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "pattern"
+    }
+  },
+  {
+    "id": "matching:components/prism-textile.js:18:418-436",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-textile.js",
+    "line": 18,
+    "end_line": 18,
+    "span": [
+      418,
+      436
+    ],
+    "expression": "(\\[)[^\\]]+(?=\\])",
+    "text": "pattern: /(\\[)[^\\]]+(?=\\])/,",
+    "read_symbols": [
+      "Prism",
+      "modifierRegex",
+      "modifierTokens",
+      "textile",
+      "phraseInlineInside",
+      "phraseTableInside",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 53,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "pattern"
+    }
+  },
+  {
+    "id": "matching:components/prism-textile.js:29:716-758",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-textile.js",
+    "line": 29,
+    "end_line": 29,
+    "span": [
+      716,
+      758
+    ],
+    "expression": "(^|\\r|\\n)\\S[\\s\\S]*?(?=$|\\r?\\n\\r?\\n|\\r\\r)",
+    "text": "pattern: /(^|\\r|\\n)\\S[\\s\\S]*?(?=$|\\r?\\n\\r?\\n|\\r\\r)/,",
+    "read_symbols": [
+      "Prism",
+      "modifierRegex",
+      "modifierTokens",
+      "textile",
+      "phraseInlineInside",
+      "phraseTableInside",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 53,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "pattern"
+    }
+  },
+  {
+    "id": "matching:components/prism-textile.js:141:3709-3727",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-textile.js",
+    "line": 141,
+    "end_line": 141,
+    "span": [
+      3709,
+      3727
+    ],
+    "expression": "(\\[)[^\\]]+(?=\\])",
+    "text": "pattern: /(\\[)[^\\]]+(?=\\])/,",
+    "read_symbols": [
+      "Prism",
+      "modifierRegex",
+      "modifierTokens",
+      "textile",
+      "phraseInlineInside",
+      "phraseTableInside",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 53,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "pattern"
+    }
+  },
+  {
+    "id": "matching:components/prism-textile.js:145:3793-3803",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-textile.js",
+    "line": 145,
+    "end_line": 145,
+    "span": [
+      3793,
+      3803
+    ],
+    "expression": "(\\])\\S+$",
+    "text": "pattern: /(\\])\\S+$/,",
+    "read_symbols": [
+      "Prism",
+      "modifierRegex",
+      "modifierTokens",
+      "textile",
+      "phraseInlineInside",
+      "phraseTableInside",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 53,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "pattern"
+    }
+  },
+  {
+    "id": "matching:components/prism-textile.js:167:4332-4339",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-textile.js",
+    "line": 167,
+    "end_line": 167,
+    "span": [
+      4332,
+      4339
+    ],
+    "expression": "(:).+",
+    "text": "pattern: /(:).+/,",
+    "read_symbols": [
+      "Prism",
+      "modifierRegex",
+      "modifierTokens",
+      "textile",
+      "phraseInlineInside",
+      "phraseTableInside",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 53,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "pattern"
+    }
+  },
+  {
+    "id": "matching:components/prism-textile.js:190:4979-4986",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-textile.js",
+    "line": 190,
+    "end_line": 190,
+    "span": [
+      4979,
+      4986
+    ],
+    "expression": "(:).+",
+    "text": "pattern: /(:).+/,",
+    "read_symbols": [
+      "Prism",
+      "modifierRegex",
+      "modifierTokens",
+      "textile",
+      "phraseInlineInside",
+      "phraseTableInside",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 53,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "lookbehind"
+    }
+  },
+  {
+    "id": "matching:components/prism-jsx.js:14:724-768",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-jsx.js",
+    "line": 14,
+    "end_line": 14,
+    "span": [
+      724,
+      768
+    ],
+    "expression": "\\{\\.{3}[a-z_$][\\w$]*(?:\\.[a-z_$][\\w$]*)*\\}",
+    "text": "pattern: /\\{\\.{3}[a-z_$][\\w$]*(?:\\.[a-z_$][\\w$]*)*\\}/,",
+    "read_symbols": [
+      "Prism",
+      "javascript",
+      "stringifyToken",
+      "walkTokens",
+      "openedTags",
+      "i",
+      "token",
+      "notTagNorBrace",
+      "plainText",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 52,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "pattern"
+    }
+  },
+  {
+    "id": "matching:components/prism-jsx.js:28:1087-1096",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-jsx.js",
+    "line": 28,
+    "end_line": 28,
+    "span": [
+      1087,
+      1096
+    ],
+    "expression": "^=(?={)",
+    "text": "pattern: /^=(?={)/,",
+    "read_symbols": [
+      "Prism",
+      "javascript",
+      "stringifyToken",
+      "walkTokens",
+      "openedTags",
+      "i",
+      "token",
+      "notTagNorBrace",
+      "plainText",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 52,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "pattern"
+    }
+  },
+  {
+    "id": "matching:components/prism-batch.js:10:214-223",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-batch.js",
+    "line": 10,
+    "end_line": 10,
+    "span": [
+      214,
+      223
+    ],
+    "expression": "\"[^\"]*\"",
+    "text": "var string = /\"[^\"]*\"/;",
+    "read_symbols": [
+      "Prism",
+      "variable",
+      "parameter",
+      "string",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 51,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "inside"
+    }
+  },
+  {
+    "id": "matching:components/prism-batch.js:11:239-254",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-batch.js",
+    "line": 11,
+    "end_line": 11,
+    "span": [
+      239,
+      254
+    ],
+    "expression": "(?:\\b|-)\\d+\\b",
+    "text": "var number = /(?:\\b|-)\\d+\\b/;",
+    "read_symbols": [
+      "Prism",
+      "variable",
+      "parameter",
+      "string",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 51,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "inside"
+    }
+  },
+  {
+    "id": "matching:components/prism-batch.js:31:673-696",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-batch.js",
+    "line": 31,
+    "end_line": 31,
+    "span": [
+      673,
+      696
+    ],
+    "expression": "^for\\b|\\b(?:in|do)\\b",
+    "text": "'keyword': /^for\\b|\\b(?:in|do)\\b/i,",
+    "read_symbols": [
+      "Prism",
+      "variable",
+      "parameter",
+      "string",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 51,
+    "detail": {
+      "form": "regexp",
+      "flags": "i",
+      "method": "",
+      "rule_owner": "inside"
+    }
+  },
+  {
+    "id": "matching:components/prism-batch.js:49:1310-1350",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-batch.js",
+    "line": 49,
+    "end_line": 49,
+    "span": [
+      1310,
+      1350
+    ],
+    "expression": "\\^|==|\\b(?:equ|neq|lss|leq|gtr|geq)\\b",
+    "text": "'operator': /\\^|==|\\b(?:equ|neq|lss|leq|gtr|geq)\\b/i",
+    "read_symbols": [
+      "Prism",
+      "variable",
+      "parameter",
+      "string",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 51,
+    "detail": {
+      "form": "regexp",
+      "flags": "i",
+      "method": "",
+      "rule_owner": "inside"
+    }
+  },
+  {
+    "id": "matching:components/prism-js-extras.js:29:1049-1072",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-js-extras.js",
+    "line": 29,
+    "end_line": 29,
+    "span": [
+      1049,
+      1072
+    ],
+    "expression": "\\b(?:[A-Z]\\w*)Error\\b",
+    "text": "pattern: /\\b(?:[A-Z]\\w*)Error\\b/,",
+    "read_symbols": [
+      "Prism",
+      "maybeClassNameTokens",
+      "i",
+      "token",
+      "value",
+      "inside",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 51,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "pattern"
+    }
+  },
+  {
+    "id": "matching:components/prism-js-extras.js:37:1177-1216",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-js-extras.js",
+    "line": 37,
+    "end_line": 37,
+    "span": [
+      1177,
+      1216
+    ],
+    "expression": "\\b(?:as|default|export|from|import)\\b",
+    "text": "pattern: /\\b(?:as|default|export|from|import)\\b/,",
+    "read_symbols": [
+      "Prism",
+      "maybeClassNameTokens",
+      "i",
+      "token",
+      "value",
+      "inside",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 51,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "pattern"
+    }
+  },
+  {
+    "id": "matching:components/prism-js-extras.js:72:1900-1981",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-js-extras.js",
+    "line": 72,
+    "end_line": 72,
+    "span": [
+      1900,
+      1981
+    ],
+    "expression": "\\b(?:document|location|navigator|performance|(?:local|session)Storage|window)\\b",
+    "text": "pattern: /\\b(?:document|location|navigator|performance|(?:local|session)Storage|window)\\b/,",
+    "read_symbols": [
+      "Prism",
+      "maybeClassNameTokens",
+      "i",
+      "token",
+      "value",
+      "inside",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 51,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "pattern"
+    }
+  },
+  {
+    "id": "matching:components/prism-js-extras.js:76:2036-2056",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-js-extras.js",
+    "line": 76,
+    "end_line": 76,
+    "span": [
+      2036,
+      2056
+    ],
+    "expression": "\\bconsole(?=\\s*\\.)",
+    "text": "pattern: /\\bconsole(?=\\s*\\.)/,",
+    "read_symbols": [
+      "Prism",
+      "maybeClassNameTokens",
+      "i",
+      "token",
+      "value",
+      "inside",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 51,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "pattern"
+    }
+  },
+  {
+    "id": "matching:components/prism-js-extras.js:101:2708-2723",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-js-extras.js",
+    "line": 101,
+    "end_line": 101,
+    "span": [
+      2708,
+      2723
+    ],
+    "expression": "^[A-Z][\\s\\S]*",
+    "text": "inside['maybe-class-name'] = /^[A-Z][\\s\\S]*/;",
+    "read_symbols": [
+      "Prism",
+      "maybeClassNameTokens",
+      "i",
+      "token",
+      "value",
+      "inside",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 51,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "pattern"
+    }
+  },
+  {
+    "id": "matching:components/prism-textile.js:7:232-243",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-textile.js",
+    "line": 7,
+    "end_line": 7,
+    "span": [
+      232,
+      243
+    ],
+    "expression": "\\{[^}]+\\}",
+    "text": "pattern: /\\{[^}]+\\}/,",
+    "read_symbols": [
+      "Prism",
+      "modifierRegex",
+      "modifierTokens",
+      "textile",
+      "phraseInlineInside",
+      "phraseTableInside",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 51,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "pattern"
+    }
+  },
+  {
+    "id": "matching:components/prism-textile.js:23:593-607",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-textile.js",
+    "line": 23,
+    "end_line": 23,
+    "span": [
+      593,
+      607
+    ],
+    "expression": "[\\\\\\/]\\d+|\\S",
+    "text": "'punctuation': /[\\\\\\/]\\d+|\\S/",
+    "read_symbols": [
+      "Prism",
+      "modifierRegex",
+      "modifierTokens",
+      "textile",
+      "phraseInlineInside",
+      "phraseTableInside",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 51,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "alias"
+    }
+  },
+  {
+    "id": "matching:components/prism-textile.js:42:1100-1111",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-textile.js",
+    "line": 42,
+    "end_line": 42,
+    "span": [
+      1100,
+      1111
+    ],
+    "expression": "^[a-z]\\w*",
+    "text": "'tag': /^[a-z]\\w*/,",
+    "read_symbols": [
+      "Prism",
+      "modifierRegex",
+      "modifierTokens",
+      "textile",
+      "phraseInlineInside",
+      "phraseTableInside",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 51,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "inside"
+    }
+  },
+  {
+    "id": "matching:components/prism-textile.js:57:1448-1456",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-textile.js",
+    "line": 57,
+    "end_line": 57,
+    "span": [
+      1448,
+      1456
+    ],
+    "expression": "^[*#]+",
+    "text": "'punctuation': /^[*#]+/",
+    "read_symbols": [
+      "Prism",
+      "modifierRegex",
+      "modifierTokens",
+      "textile",
+      "phraseInlineInside",
+      "phraseTableInside",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 51,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "inside"
+    }
+  },
+  {
+    "id": "matching:components/prism-textile.js:74:2101-2109",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-textile.js",
+    "line": 74,
+    "end_line": 74,
+    "span": [
+      2101,
+      2109
+    ],
+    "expression": "\\||^\\.",
+    "text": "'punctuation': /\\||^\\./",
+    "read_symbols": [
+      "Prism",
+      "modifierRegex",
+      "modifierTokens",
+      "textile",
+      "phraseInlineInside",
+      "phraseTableInside",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 51,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "inside"
+    }
+  },
+  {
+    "id": "matching:components/prism-php.js:82:2406-2420",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-php.js",
+    "line": 82,
+    "end_line": 82,
+    "span": [
+      2406,
+      2420
+    ],
+    "expression": "^<<<'?|[';]$",
+    "text": "'punctuation': /^<<<'?|[';]$/",
+    "read_symbols": [
+      "Prism",
+      "string_interpolation",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 50,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "inside"
+    }
+  },
+  {
+    "id": "matching:components/prism-php.js:96:2764-2778",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-php.js",
+    "line": 96,
+    "end_line": 96,
+    "span": [
+      2764,
+      2778
+    ],
+    "expression": "^<<<\"?|[\";]$",
+    "text": "'punctuation': /^<<<\"?|[\";]$/",
+    "read_symbols": [
+      "Prism",
+      "string_interpolation",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 50,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "inside"
+    }
+  },
+  {
+    "id": "matching:components/prism-phpdoc.js:18:564-681",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-phpdoc.js",
+    "line": 18,
+    "end_line": 18,
+    "span": [
+      564,
+      681
+    ],
+    "expression": "\\b(?:callback|resource|boolean|integer|double|object|string|array|false|float|mixed|bool|null|self|true|void|int)\\b",
+    "text": "'keyword': /\\b(?:callback|resource|boolean|integer|double|object|string|array|false|float|mixed|bool|null|self|true|void|int)\\b/,",
+    "read_symbols": [
+      "Prism",
+      "typeExpression",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 50,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "inside"
+    }
+  },
+  {
+    "id": "matching:components/prism-stylus.js:79:1813-1934",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-stylus.js",
+    "line": 79,
+    "end_line": 79,
+    "span": [
+      1813,
+      1934
+    ],
+    "expression": "((?:^|\\{)([ \\t]*))(?:[\\w-]|\\{[^}\\r\\n]+\\})+(?:\\s*:\\s*|[ \\t]+)[^{\\r\\n]*(?:;|[^{\\r\\n,](?=$)(?!(\\r?\\n|\\r)(?:\\{|\\2[ \\t]+)))",
+    "text": "pattern: /((?:^|\\{)([ \\t]*))(?:[\\w-]|\\{[^}\\r\\n]+\\})+(?:\\s*:\\s*|[ \\t]+)[^{\\r\\n]*(?:;|[^{\\r\\n,](?=$)(?!(\\r?\\n|\\r)(?:\\{|\\2[ \\t]+)))/m,",
+    "read_symbols": [
+      "Prism",
+      "inside",
+      "comment",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 45,
+    "detail": {
+      "form": "regexp",
+      "flags": "m",
+      "method": "",
+      "rule_owner": ""
+    }
+  },
+  {
+    "id": "matching:components/prism-stylus.js:98:2322-2536",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-stylus.js",
+    "line": 98,
+    "end_line": 98,
+    "span": [
+      2322,
+      2536
+    ],
+    "expression": "(^[ \\t]*)(?:(?=\\S)(?:[^{}\\r\\n:()]|::?[\\w-]+(?:\\([^)\\r\\n]*\\))?|\\{[^}\\r\\n]+\\})+)(?:(?:\\r?\\n|\\r)(?:\\1(?:(?=\\S)(?:[^{}\\r\\n:()]|::?[\\w-]+(?:\\([^)\\r\\n]*\\))?|\\{[^}\\r\\n]+\\})+)))*(?:,$|\\{|(?=(?:\\r?\\n|\\r)(?:\\{|\\1[ \\t]+)))",
+    "text": "pattern: /(^[ \\t]*)(?:(?=\\S)(?:[^{}\\r\\n:()]|::?[\\w-]+(?:\\([^)\\r\\n]*\\))?|\\{[^}\\r\\n]+\\})+)(?:(?:\\r?\\n|\\r)(?:\\1(?:(?=\\S)(?:[^{}\\r\\n:()]|::?[\\w-]+(?:\\([^)\\r\\n]*\\))?|\\{[^}\\r\\n]+\\})+)))*(?:,$|\\{|(?=(?:\\r?\\n|\\r)(?:\\{|\\1[ \\t]+)))/m,",
+    "read_symbols": [
+      "Prism",
+      "inside",
+      "comment",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 45,
+    "detail": {
+      "form": "regexp",
+      "flags": "m",
+      "method": "",
+      "rule_owner": ""
+    }
+  },
+  {
+    "id": "matching:components/prism-batch.js:7:188-191",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-batch.js",
+    "line": 7,
+    "end_line": 7,
+    "span": [
+      188,
+      191
+    ],
+    "expression": ":",
+    "text": "'punctuation': /:/",
+    "read_symbols": [
+      "Prism",
+      "variable",
+      "parameter",
+      "string",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 43,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "inside"
+    }
+  },
+  {
+    "id": "matching:components/prism-batch.js:15:302-310",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-batch.js",
+    "line": 15,
+    "end_line": 15,
+    "span": [
+      302,
+      310
+    ],
+    "expression": "^::.*",
+    "text": "/^::.*/m,",
+    "read_symbols": [
+      "Prism",
+      "variable",
+      "parameter",
+      "string",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 43,
+    "detail": {
+      "form": "regexp",
+      "flags": "m",
+      "method": "",
+      "rule_owner": "inside"
+    }
+  },
+  {
+    "id": "matching:components/prism-js-extras.js:41:1258-1268",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-js-extras.js",
+    "line": 41,
+    "end_line": 41,
+    "span": [
+      1258,
+      1268
+    ],
+    "expression": "\\bnull\\b",
+    "text": "pattern: /\\bnull\\b/,",
+    "read_symbols": [
+      "Prism",
+      "maybeClassNameTokens",
+      "i",
+      "token",
+      "value",
+      "inside",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 43,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "pattern"
+    }
+  },
+  {
+    "id": "matching:components/prism-js-extras.js:45:1317-1332",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-js-extras.js",
+    "line": 45,
+    "end_line": 45,
+    "span": [
+      1317,
+      1332
+    ],
+    "expression": "\\bundefined\\b",
+    "text": "pattern: /\\bundefined\\b/,",
+    "read_symbols": [
+      "Prism",
+      "maybeClassNameTokens",
+      "i",
+      "token",
+      "value",
+      "inside",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 43,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "pattern"
+    }
+  },
+  {
+    "id": "matching:components/prism-js-extras.js:52:1443-1450",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-js-extras.js",
+    "line": 52,
+    "end_line": 52,
+    "span": [
+      1443,
+      1450
+    ],
+    "expression": "\\.{3}",
+    "text": "pattern: /\\.{3}/,",
+    "read_symbols": [
+      "Prism",
+      "maybeClassNameTokens",
+      "i",
+      "token",
+      "value",
+      "inside",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 43,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "pattern"
+    }
+  },
+  {
+    "id": "matching:components/prism-js-extras.js:56:1503-1507",
+    "kind": "matching",
+    "mechanism": "matching_boundary",
+    "edit_unit": "matching_expression",
+    "file": "components/prism-js-extras.js",
+    "line": 56,
+    "end_line": 56,
+    "span": [
+      1503,
+      1507
+    ],
+    "expression": "=>",
+    "text": "pattern: /=>/,",
+    "read_symbols": [
+      "Prism",
+      "maybeClassNameTokens",
+      "i",
+      "token",
+      "value",
+      "inside",
+      "this"
+    ],
+    "read_basis": "function_candidate_upper_bound",
+    "consumers": [],
+    "specificity": 43,
+    "detail": {
+      "form": "regexp",
+      "flags": "",
+      "method": "",
+      "rule_owner": "pattern"
+    }
+  }
+]

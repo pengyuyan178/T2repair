@@ -1,0 +1,141 @@
+{
+  "claim_support": "not_evaluated",
+  "claims": [
+    {
+      "hypothesis_id": "H1",
+      "evidence": [
+        {
+          "evidence_id": "code.t1.o1",
+          "in_raw": true,
+          "observation_visible": true,
+          "required_facts_visible": true
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "in_raw": true,
+          "observation_visible": true,
+          "required_facts_visible": true
+        }
+      ]
+    },
+    {
+      "hypothesis_id": "H2",
+      "evidence": [
+        {
+          "evidence_id": "code.t1.o1",
+          "in_raw": true,
+          "observation_visible": true,
+          "required_facts_visible": true
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "in_raw": true,
+          "observation_visible": true,
+          "required_facts_visible": true
+        }
+      ]
+    },
+    {
+      "hypothesis_id": "H3",
+      "evidence": [
+        {
+          "evidence_id": "code.t1.o1",
+          "in_raw": true,
+          "observation_visible": true,
+          "required_facts_visible": true
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "in_raw": true,
+          "observation_visible": true,
+          "required_facts_visible": true
+        }
+      ]
+    },
+    {
+      "hypothesis_id": "H4",
+      "evidence": [
+        {
+          "evidence_id": "code.t1.o1",
+          "in_raw": true,
+          "observation_visible": true,
+          "required_facts_visible": true
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "in_raw": true,
+          "observation_visible": true,
+          "required_facts_visible": true
+        }
+      ]
+    },
+    {
+      "hypothesis_id": "H5",
+      "evidence": [
+        {
+          "evidence_id": "code.t1.o1",
+          "in_raw": true,
+          "observation_visible": true,
+          "required_facts_visible": true
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "in_raw": true,
+          "observation_visible": true,
+          "required_facts_visible": true
+        }
+      ]
+    },
+    {
+      "hypothesis_id": "H6",
+      "evidence": [
+        {
+          "evidence_id": "code.t1.o1",
+          "in_raw": true,
+          "observation_visible": true,
+          "required_facts_visible": true
+        },
+        {
+          "evidence_id": "code.t1.o3",
+          "in_raw": true,
+          "observation_visible": true,
+          "required_facts_visible": true
+        }
+      ]
+    },
+    {
+      "hypothesis_id": "H7",
+      "evidence": [
+        {
+          "evidence_id": "code.t1.o1",
+          "in_raw": true,
+          "observation_visible": true,
+          "required_facts_visible": true
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "in_raw": true,
+          "observation_visible": true,
+          "required_facts_visible": true
+        }
+      ]
+    },
+    {
+      "hypothesis_id": "H8",
+      "evidence": [
+        {
+          "evidence_id": "code.t1.o1",
+          "in_raw": true,
+          "observation_visible": true,
+          "required_facts_visible": true
+        },
+        {
+          "evidence_id": "code.t1.o2",
+          "in_raw": true,
+          "observation_visible": true,
+          "required_facts_visible": true
+        }
+      ]
+    }
+  ]
+}

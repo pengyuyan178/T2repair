@@ -1,0 +1,16 @@
+{
+  "case": "PrismJS__prism-1853",
+  "displayed_trace_backend": "DeepSeek",
+  "evidence_sha256": "112d2645c58ef041032bb4b0f8a398ad9928f9192b2828e5d2306c0cd119feb3",
+  "dimensions_mm": [
+    139.11569807665697,
+    80.06658882109754
+  ],
+  "minimum_font_pt": 7.0,
+  "style": "Fonts, palette, icons and model marks inherited from the Browser and Code case figures.",
+  "raster_images": [
+    "Issue screenshot crop (26, 250, 236, 402) from the task input image"
+  ],
+  "token_rendering": "Recorded Prism token types drawn with the Prism default theme colors.",
+  "new_experiments": 0
+}

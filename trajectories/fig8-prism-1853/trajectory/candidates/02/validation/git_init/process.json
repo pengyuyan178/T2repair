@@ -1,0 +1,10 @@
+{
+  "command": [
+    "git",
+    "init",
+    "--quiet"
+  ],
+  "returncode": 0,
+  "stdout": "/task/trajectory/candidates/02/validation/git_init/stdout.log",
+  "stderr": "/task/trajectory/candidates/02/validation/git_init/stderr.log"
+}

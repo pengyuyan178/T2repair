@@ -1,0 +1,25 @@
+{
+  "evidence_id": "code.t1.o1",
+  "tool": {
+    "name": "read_source",
+    "source_id": 172,
+    "query": "",
+    "start_line": 1,
+    "end_line": 19
+  },
+  "result": {
+    "ok": true,
+    "file": "components/prism-json.js",
+    "start_line": 1,
+    "end_line": 19,
+    "text": "Prism.languages.json = {\n\t'comment': /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/,\n\t'property': {\n\t\tpattern: /\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?=\\s*:)/,\n\t\tgreedy: true\n\t},\n\t'string': {\n\t\tpattern: /\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?!\\s*:)/,\n\t\tgreedy: true\n\t},\n\t'number': /-?\\d+\\.?\\d*(e[+-]?\\d+)?/i,\n\t'punctuation': /[{}[\\],]/,\n\t'operator': /:/,\n\t'boolean': /\\b(?:true|false)\\b/,\n\t'null': {\n\t\tpattern: /\\bnull\\b/,\n\t\talias: 'keyword'\n\t}\n};\n",
+    "truncated": false,
+    "sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+    "total_lines": 19,
+    "source_id": 172,
+    "resolved_path": "components/prism-json.js",
+    "source_kind": "file",
+    "provenance": "base_commit",
+    "base_commit": "2f9c9261bc1454899266929711d5842a3675e467"
+  }
+}

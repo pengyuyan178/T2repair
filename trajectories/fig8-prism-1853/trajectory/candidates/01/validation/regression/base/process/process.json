@@ -1,0 +1,11 @@
+{
+  "command": [
+    "/opt/node/bin/npm",
+    "run",
+    "test",
+    "--"
+  ],
+  "returncode": 0,
+  "stdout": "/task/trajectory/candidates/01/validation/regression/base/process/stdout.log",
+  "stderr": "/task/trajectory/candidates/01/validation/regression/base/process/stderr.log"
+}

@@ -1,0 +1,8 @@
+{
+  "parser": "/opt/trace/baseline/guirepair/Code/node_modules/@babel/parser",
+  "file": "/scratch/runtime/cg-runtime-wpvdcour/components/prism-json.js",
+  "relative": "components/prism-json.js",
+  "hypotheses": [],
+  "hook": "",
+  "instrument": false
+}

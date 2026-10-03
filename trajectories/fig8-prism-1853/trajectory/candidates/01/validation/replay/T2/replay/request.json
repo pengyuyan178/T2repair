@@ -1,0 +1,24 @@
+{
+  "endpoint": "http://127.0.0.1:38633",
+  "repo": "/scratch/runtime/cg-runtime-nl5go0aq",
+  "target": "/scratch/runtime/cg-runtime-nl5go0aq/.cg_page.html",
+  "tag": "__cg_c53f301c8f2aaa7f_result",
+  "actions": [
+    {
+      "kind": "open",
+      "target": "",
+      "value": ""
+    },
+    {
+      "kind": "dom",
+      "target": "#probe",
+      "value": ""
+    },
+    {
+      "kind": "screenshot",
+      "target": "",
+      "value": ""
+    }
+  ],
+  "output": "/task/trajectory/candidates/01/validation/replay/T2/replay"
+}

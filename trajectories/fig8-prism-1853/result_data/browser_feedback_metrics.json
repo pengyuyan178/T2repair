@@ -1,0 +1,125 @@
+{
+  "protocol": "tool_feedback_v1",
+  "agent": "browser",
+  "tokens": null,
+  "turns": [
+    {
+      "turn": 1,
+      "status": "ready",
+      "delivery": "sent_to_model",
+      "attempts": [
+        {
+          "mode": "normal",
+          "status": "ready",
+          "failure": null,
+          "metrics": {
+            "raw": {
+              "chars": 19851,
+              "utf8_bytes": 19851
+            },
+            "visible": {
+              "chars": 14477,
+              "utf8_bytes": 14477
+            },
+            "next_request": {
+              "chars": 68591,
+              "utf8_bytes": 68591,
+              "image_count": 2,
+              "image_url_utf8_bytes": 73404,
+              "image_binary_bytes": 55019,
+              "tokens": null,
+              "measurement": "canonical_json_messages_and_response_format_without_image_urls"
+            },
+            "tokens": null,
+            "reference_count": 1,
+            "image_count": 1,
+            "images": {
+              "image_count": 1,
+              "image_url_utf8_bytes": 54674,
+              "image_binary_bytes": 40988
+            }
+          },
+          "observations": [
+            {
+              "evidence_id": "browser.t1.o1",
+              "tool": "reproduce",
+              "raw": {
+                "chars": 19827,
+                "utf8_bytes": 19827
+              },
+              "visible": {
+                "chars": 14299,
+                "utf8_bytes": 14299
+              },
+              "original_tool_ok": true,
+              "required_facts_preserved": true,
+              "original_test_status": null,
+              "original_browser_ok": true,
+              "source_reference": false,
+              "runtime_aliases": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "turn": 2,
+      "status": "ready",
+      "delivery": "sent_to_model",
+      "attempts": [
+        {
+          "mode": "normal",
+          "status": "ready",
+          "failure": null,
+          "metrics": {
+            "raw": {
+              "chars": 36343,
+              "utf8_bytes": 36343
+            },
+            "visible": {
+              "chars": 27466,
+              "utf8_bytes": 27466
+            },
+            "next_request": {
+              "chars": 107657,
+              "utf8_bytes": 107657,
+              "image_count": 3,
+              "image_url_utf8_bytes": 90378,
+              "image_binary_bytes": 67733,
+              "tokens": null,
+              "measurement": "canonical_json_messages_and_response_format_without_image_urls"
+            },
+            "tokens": null,
+            "reference_count": 1,
+            "image_count": 1,
+            "images": {
+              "image_count": 1,
+              "image_url_utf8_bytes": 16974,
+              "image_binary_bytes": 12714
+            }
+          },
+          "observations": [
+            {
+              "evidence_id": "browser.t2.o1",
+              "tool": "reproduce",
+              "raw": {
+                "chars": 36319,
+                "utf8_bytes": 36319
+              },
+              "visible": {
+                "chars": 27288,
+                "utf8_bytes": 27288
+              },
+              "original_tool_ok": true,
+              "required_facts_preserved": true,
+              "original_test_status": null,
+              "original_browser_ok": true,
+              "source_reference": false,
+              "runtime_aliases": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

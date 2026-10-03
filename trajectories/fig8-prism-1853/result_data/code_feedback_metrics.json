@@ -1,0 +1,138 @@
+{
+  "protocol": "tool_feedback_v1",
+  "agent": "code",
+  "tokens": null,
+  "turns": [
+    {
+      "turn": 1,
+      "status": "ready",
+      "delivery": "sent_to_model",
+      "attempts": [
+        {
+          "mode": "normal",
+          "status": "ready",
+          "failure": null,
+          "metrics": {
+            "raw": {
+              "chars": 5371,
+              "utf8_bytes": 5371
+            },
+            "visible": {
+              "chars": 5965,
+              "utf8_bytes": 5965
+            },
+            "next_request": {
+              "chars": 45204,
+              "utf8_bytes": 45204,
+              "image_count": 1,
+              "image_url_utf8_bytes": 18730,
+              "image_binary_bytes": 14031,
+              "tokens": null,
+              "measurement": "canonical_json_messages_and_response_format_without_image_urls"
+            },
+            "tokens": null,
+            "reference_count": 0,
+            "image_count": 0,
+            "images": {
+              "image_count": 0,
+              "image_url_utf8_bytes": 0,
+              "image_binary_bytes": 0
+            }
+          },
+          "observations": [
+            {
+              "evidence_id": "code.t1.o1",
+              "tool": "read_source",
+              "raw": {
+                "chars": 964,
+                "utf8_bytes": 964
+              },
+              "visible": {
+                "chars": 1320,
+                "utf8_bytes": 1320
+              },
+              "original_tool_ok": true,
+              "required_facts_preserved": true,
+              "original_test_status": null,
+              "original_browser_ok": null,
+              "source_reference": false,
+              "runtime_aliases": 0
+            },
+            {
+              "evidence_id": "code.t1.o2",
+              "tool": "symbols",
+              "raw": {
+                "chars": 485,
+                "utf8_bytes": 485
+              },
+              "visible": {
+                "chars": 485,
+                "utf8_bytes": 485
+              },
+              "original_tool_ok": true,
+              "required_facts_preserved": true,
+              "original_test_status": null,
+              "original_browser_ok": null,
+              "source_reference": false,
+              "runtime_aliases": 0
+            },
+            {
+              "evidence_id": "code.t1.o3",
+              "tool": "search_source",
+              "raw": {
+                "chars": 1312,
+                "utf8_bytes": 1312
+              },
+              "visible": {
+                "chars": 1350,
+                "utf8_bytes": 1350
+              },
+              "original_tool_ok": true,
+              "required_facts_preserved": true,
+              "original_test_status": null,
+              "original_browser_ok": null,
+              "source_reference": false,
+              "runtime_aliases": 0
+            },
+            {
+              "evidence_id": "code.t1.o4",
+              "tool": "project_info",
+              "raw": {
+                "chars": 1833,
+                "utf8_bytes": 1833
+              },
+              "visible": {
+                "chars": 1896,
+                "utf8_bytes": 1896
+              },
+              "original_tool_ok": true,
+              "required_facts_preserved": true,
+              "original_test_status": null,
+              "original_browser_ok": null,
+              "source_reference": false,
+              "runtime_aliases": 0
+            },
+            {
+              "evidence_id": "code.t1.o5",
+              "tool": "search_source",
+              "raw": {
+                "chars": 749,
+                "utf8_bytes": 749
+              },
+              "visible": {
+                "chars": 787,
+                "utf8_bytes": 787
+              },
+              "original_tool_ok": true,
+              "required_facts_preserved": true,
+              "original_test_status": null,
+              "original_browser_ok": null,
+              "source_reference": false,
+              "runtime_aliases": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

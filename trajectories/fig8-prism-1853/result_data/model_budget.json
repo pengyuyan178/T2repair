@@ -1,0 +1,14 @@
+{
+  "protocol": "harness_v2",
+  "valid": true,
+  "logical_calls": 11,
+  "logical_limit": 11,
+  "physical_requests": 14,
+  "host_limit": 28,
+  "format_repairs": 0,
+  "candidate_samples_requested": 5,
+  "completed_broker_records": 14,
+  "http_retry_policy_valid": true,
+  "http_attempts": 15,
+  "http_retries": 1
+}

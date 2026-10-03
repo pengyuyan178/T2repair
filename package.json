@@ -1,0 +1,9 @@
+{
+  "name": "t2repair-parser-runtime",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Babel parser used by the T2Repair source and instrumentation tools",
+  "dependencies": {
+    "@babel/parser": "7.29.8"
+  }
+}

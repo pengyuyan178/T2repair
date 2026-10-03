@@ -1,0 +1,3148 @@
+{
+  "protocol": "tool_feedback_v1",
+  "status": "ready",
+  "attempts": [
+    {
+      "protocol": "tool_feedback_v1",
+      "agent": "browser",
+      "mode": "normal",
+      "status": "ready",
+      "raw_sha256": "5714557be342faef057c0a137267cc3af68bd0bce801da0ec1e1f107d2c6ac85",
+      "budget": {
+        "max_observation_utf8_bytes": 131072,
+        "max_feedback_utf8_bytes": 524288,
+        "max_request_text_utf8_bytes": 2097152
+      },
+      "field_mapping": [
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/evidence_id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/evidence_id",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/tool/name",
+          "action": "reference",
+          "visible_pointer": "/tool_observations/0/tool",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/tool/draft/profile",
+          "action": "reference",
+          "visible_pointer": "/tool_observations/0/tool",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/tool/draft/entry",
+          "action": "reference",
+          "visible_pointer": "/tool_observations/0/tool",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/tool/draft/node_script",
+          "action": "reference",
+          "visible_pointer": "/tool_observations/0/tool",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/tool/draft/browser_script",
+          "action": "reference",
+          "visible_pointer": "/tool_observations/0/tool",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/tool/draft/build_command",
+          "action": "reference",
+          "visible_pointer": "/tool_observations/0/tool",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/tool/actions/0/kind",
+          "action": "reference",
+          "visible_pointer": "/tool_observations/0/tool",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/tool/actions/0/target",
+          "action": "reference",
+          "visible_pointer": "/tool_observations/0/tool",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/tool/actions/0/value",
+          "action": "reference",
+          "visible_pointer": "/tool_observations/0/tool",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/tool/actions/1/kind",
+          "action": "reference",
+          "visible_pointer": "/tool_observations/0/tool",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/tool/actions/1/target",
+          "action": "reference",
+          "visible_pointer": "/tool_observations/0/tool",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/tool/actions/1/value",
+          "action": "reference",
+          "visible_pointer": "/tool_observations/0/tool",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/tool/actions/2/kind",
+          "action": "reference",
+          "visible_pointer": "/tool_observations/0/tool",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/tool/actions/2/target",
+          "action": "reference",
+          "visible_pointer": "/tool_observations/0/tool",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/tool/actions/2/value",
+          "action": "reference",
+          "visible_pointer": "/tool_observations/0/tool",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/tool/actions/3/kind",
+          "action": "reference",
+          "visible_pointer": "/tool_observations/0/tool",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/tool/actions/3/target",
+          "action": "reference",
+          "visible_pointer": "/tool_observations/0/tool",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/tool/actions/3/value",
+          "action": "reference",
+          "visible_pointer": "/tool_observations/0/tool",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/ok",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/ok",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/build/returncode",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/build/returncode",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/build/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/build/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/build/entry",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/build/entry",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/build/entry_exists",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/build/entry_exists",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/build/entry_sha256",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/build/entry_sha256",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/build/entry_bytes",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/build/entry_bytes",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/ok",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/ok",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/state/events/0/id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/state/events/0/id",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/state/events/0/value/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/state/events/0/value/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/state/events/0/read_succeeded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/state/events/0/read_succeeded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/state/events/1/id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/state/events/1/id",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/state/events/1/value/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/state/events/1/value/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/state/events/1/read_succeeded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/state/events/1/read_succeeded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/state/events/2/id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/state/events/2/id",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/state/events/2/value/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/state/events/2/value/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/state/events/2/read_succeeded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/state/events/2/read_succeeded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/state/events/3/id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/state/events/3/id",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/state/events/3/value/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/state/events/3/value/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/state/events/3/read_succeeded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/state/events/3/read_succeeded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/state/events/4/id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/state/events/4/id",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/state/events/4/value/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/state/events/4/value/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/state/events/4/read_succeeded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/state/events/4/read_succeeded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/state/events/5/id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/state/events/5/id",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/state/events/5/value/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/state/events/5/value/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/state/events/5/read_succeeded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/state/events/5/read_succeeded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/state/events/6/id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/state/events/6/id",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/state/events/6/value/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/state/events/6/value/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/state/events/6/read_succeeded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/state/events/6/read_succeeded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/state/events/7/id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/state/events/7/id",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/state/events/7/value/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/state/events/7/value/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/state/events/7/read_succeeded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/state/events/7/read_succeeded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/state/loaded/0",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/state/loaded/0",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/state/scenario_complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/state/scenario_complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/state/errors",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/state/errors",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/state/seed",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/state/seed",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/process/command/0",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/process/command/0",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/process/command/1",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/process/command/1",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/process/returncode",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/process/returncode",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/process/stdout",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/process/stdout",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/process/stderr",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/process/stderr",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/artifact",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/node/artifact",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/completed_actions/0/kind",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/completed_actions/0/kind",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/completed_actions/0/target",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/completed_actions/0/target",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/completed_actions/0/value",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/completed_actions/0/value",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/completed_actions/1/kind",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/completed_actions/1/kind",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/completed_actions/1/target",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/completed_actions/1/target",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/completed_actions/1/value",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/completed_actions/1/value",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/completed_actions/2/kind",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/completed_actions/2/kind",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/completed_actions/2/target",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/completed_actions/2/target",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/completed_actions/2/value",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/completed_actions/2/value",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/completed_actions/3/kind",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/completed_actions/3/kind",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/completed_actions/3/target",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/completed_actions/3/target",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/completed_actions/3/value",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/completed_actions/3/value",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/completed_actions/4/kind",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/completed_actions/4/kind",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/completed_actions/4/target",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/completed_actions/4/target",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/completed_actions/4/value",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/completed_actions/4/value",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/state/events/0/id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/state/events/0/id",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/state/events/0/value/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/state/events/0/value/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/state/events/0/read_succeeded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/state/events/0/read_succeeded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/state/events/1/id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/state/events/1/id",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/state/events/1/value/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/state/events/1/value/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/state/events/1/read_succeeded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/state/events/1/read_succeeded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/state/events/2/id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/state/events/2/id",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/state/events/2/value/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/state/events/2/value/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/state/events/2/read_succeeded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/state/events/2/read_succeeded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/state/events/3/id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/state/events/3/id",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/state/events/3/value/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/state/events/3/value/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/state/events/3/read_succeeded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/state/events/3/read_succeeded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/state/events/4/id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/state/events/4/id",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/state/events/4/value/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/state/events/4/value/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/state/events/4/read_succeeded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/state/events/4/read_succeeded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/state/events/5/id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/state/events/5/id",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/state/events/5/value/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/state/events/5/value/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/state/events/5/read_succeeded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/state/events/5/read_succeeded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/state/events/6/id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/state/events/6/id",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/state/events/6/value/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/state/events/6/value/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/state/events/6/read_succeeded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/state/events/6/read_succeeded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/state/events/7/id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/state/events/7/id",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/state/events/7/value/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/state/events/7/value/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/state/events/7/read_succeeded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/state/events/7/read_succeeded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/state/loaded/0",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/state/loaded/0",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/state/scenario_complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/state/scenario_complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/state/errors",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/state/errors",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/state/seed",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/state/seed",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/state/console",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/state/console",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/state/canvas_count",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/state/canvas_count",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/state/body_text",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/state/body_text",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/state/dom_elements",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/state/dom_elements",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/dom",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/dom",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/url",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/url",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/html",
+          "action": "omitted",
+          "visible_pointer": null,
+          "reason": "default_html_not_directed_dom_query"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/actual_scene",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/actual_scene",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/screenshot",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/screenshot",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/query/0/tag",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/query/0/tag",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/query/0/text",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/query/0/text",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/query/0/value",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/query/0/value",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/query/0/html",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/query/0/html",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/ok",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/ok",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/process/command/0",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/process/command/0",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/process/command/1",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/process/command/1",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/process/command/2",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/process/command/2",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/process/returncode",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/process/returncode",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/process/stdout",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/process/stdout",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/process/stderr",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/process/stderr",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/browser/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/stderr",
+          "action": "omitted",
+          "visible_pointer": null,
+          "reason": "empty_diagnostic"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node_stderr",
+          "action": "omitted",
+          "visible_pointer": null,
+          "reason": "empty_diagnostic"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/screenshot",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/screenshot",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/id",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/tier",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/tier",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/symbol_exists",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/symbol_exists",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/reached",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/reached",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/values/0/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/values/0/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/execution_ok",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/execution_ok",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/artifact",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/artifact",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/source_sha256",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/source_sha256",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/instrumented_line",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/instrumented_line",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/static_reachable",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/static_reachable",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/scenario_complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/scenario_complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/coverage/complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/coverage/complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/coverage/scenarios",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/coverage/scenarios",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/coverage/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/coverage/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/tiers/0/tier",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/tiers/0/tier",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/tiers/0/execution_ok",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/tiers/0/execution_ok",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/tiers/0/reached",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/tiers/0/reached",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/tiers/0/values/0/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/tiers/0/values/0/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/tiers/0/scenario_complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/tiers/0/scenario_complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/tiers/0/target_loaded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/tiers/0/target_loaded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/tiers/0/artifact",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/tiers/0/artifact",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/tiers/0/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/tiers/0/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/tiers/0/errors",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/tiers/0/errors",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/tiers/1/tier",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/tiers/1/tier",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/tiers/1/execution_ok",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/tiers/1/execution_ok",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/tiers/1/reached",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/tiers/1/reached",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/tiers/1/values/0/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/tiers/1/values/0/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/tiers/1/scenario_complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/tiers/1/scenario_complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/tiers/1/target_loaded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/tiers/1/target_loaded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/tiers/1/artifact",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/tiers/1/artifact",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/tiers/1/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/tiers/1/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/tiers/1/errors",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/tiers/1/errors",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/static_certificate",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/static_certificate",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/target_loaded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/target_loaded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/errors",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/0/errors",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/id",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/tier",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/tier",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/symbol_exists",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/symbol_exists",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/reached",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/reached",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/values/0/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/values/0/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/execution_ok",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/execution_ok",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/artifact",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/artifact",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/source_sha256",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/source_sha256",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/instrumented_line",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/instrumented_line",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/static_reachable",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/static_reachable",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/scenario_complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/scenario_complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/coverage/complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/coverage/complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/coverage/scenarios",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/coverage/scenarios",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/coverage/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/coverage/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/tiers/0/tier",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/tiers/0/tier",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/tiers/0/execution_ok",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/tiers/0/execution_ok",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/tiers/0/reached",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/tiers/0/reached",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/tiers/0/values/0/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/tiers/0/values/0/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/tiers/0/scenario_complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/tiers/0/scenario_complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/tiers/0/target_loaded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/tiers/0/target_loaded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/tiers/0/artifact",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/tiers/0/artifact",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/tiers/0/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/tiers/0/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/tiers/0/errors",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/tiers/0/errors",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/tiers/1/tier",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/tiers/1/tier",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/tiers/1/execution_ok",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/tiers/1/execution_ok",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/tiers/1/reached",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/tiers/1/reached",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/tiers/1/values/0/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/tiers/1/values/0/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/tiers/1/scenario_complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/tiers/1/scenario_complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/tiers/1/target_loaded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/tiers/1/target_loaded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/tiers/1/artifact",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/tiers/1/artifact",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/tiers/1/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/tiers/1/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/tiers/1/errors",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/tiers/1/errors",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/static_certificate",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/static_certificate",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/target_loaded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/target_loaded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/errors",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/1/errors",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/id",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/tier",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/tier",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/symbol_exists",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/symbol_exists",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/reached",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/reached",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/values/0/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/values/0/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/execution_ok",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/execution_ok",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/artifact",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/artifact",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/source_sha256",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/source_sha256",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/instrumented_line",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/instrumented_line",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/static_reachable",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/static_reachable",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/scenario_complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/scenario_complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/coverage/complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/coverage/complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/coverage/scenarios",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/coverage/scenarios",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/coverage/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/coverage/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/tiers/0/tier",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/tiers/0/tier",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/tiers/0/execution_ok",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/tiers/0/execution_ok",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/tiers/0/reached",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/tiers/0/reached",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/tiers/0/values/0/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/tiers/0/values/0/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/tiers/0/scenario_complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/tiers/0/scenario_complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/tiers/0/target_loaded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/tiers/0/target_loaded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/tiers/0/artifact",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/tiers/0/artifact",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/tiers/0/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/tiers/0/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/tiers/0/errors",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/tiers/0/errors",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/tiers/1/tier",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/tiers/1/tier",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/tiers/1/execution_ok",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/tiers/1/execution_ok",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/tiers/1/reached",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/tiers/1/reached",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/tiers/1/values/0/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/tiers/1/values/0/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/tiers/1/scenario_complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/tiers/1/scenario_complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/tiers/1/target_loaded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/tiers/1/target_loaded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/tiers/1/artifact",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/tiers/1/artifact",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/tiers/1/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/tiers/1/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/tiers/1/errors",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/tiers/1/errors",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/static_certificate",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/static_certificate",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/target_loaded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/target_loaded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/errors",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/2/errors",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/id",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/tier",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/tier",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/symbol_exists",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/symbol_exists",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/reached",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/reached",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/values/0/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/values/0/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/execution_ok",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/execution_ok",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/artifact",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/artifact",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/source_sha256",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/source_sha256",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/instrumented_line",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/instrumented_line",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/static_reachable",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/static_reachable",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/scenario_complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/scenario_complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/coverage/complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/coverage/complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/coverage/scenarios",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/coverage/scenarios",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/coverage/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/coverage/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/tiers/0/tier",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/tiers/0/tier",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/tiers/0/execution_ok",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/tiers/0/execution_ok",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/tiers/0/reached",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/tiers/0/reached",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/tiers/0/values/0/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/tiers/0/values/0/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/tiers/0/scenario_complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/tiers/0/scenario_complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/tiers/0/target_loaded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/tiers/0/target_loaded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/tiers/0/artifact",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/tiers/0/artifact",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/tiers/0/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/tiers/0/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/tiers/0/errors",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/tiers/0/errors",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/tiers/1/tier",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/tiers/1/tier",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/tiers/1/execution_ok",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/tiers/1/execution_ok",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/tiers/1/reached",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/tiers/1/reached",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/tiers/1/values/0/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/tiers/1/values/0/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/tiers/1/scenario_complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/tiers/1/scenario_complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/tiers/1/target_loaded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/tiers/1/target_loaded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/tiers/1/artifact",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/tiers/1/artifact",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/tiers/1/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/tiers/1/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/tiers/1/errors",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/tiers/1/errors",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/static_certificate",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/static_certificate",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/target_loaded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/target_loaded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/errors",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/3/errors",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/id",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/tier",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/tier",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/symbol_exists",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/symbol_exists",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/reached",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/reached",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/values/0/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/values/0/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/execution_ok",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/execution_ok",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/artifact",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/artifact",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/source_sha256",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/source_sha256",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/instrumented_line",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/instrumented_line",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/static_reachable",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/static_reachable",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/scenario_complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/scenario_complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/coverage/complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/coverage/complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/coverage/scenarios",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/coverage/scenarios",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/coverage/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/coverage/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/tiers/0/tier",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/tiers/0/tier",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/tiers/0/execution_ok",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/tiers/0/execution_ok",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/tiers/0/reached",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/tiers/0/reached",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/tiers/0/values/0/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/tiers/0/values/0/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/tiers/0/scenario_complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/tiers/0/scenario_complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/tiers/0/target_loaded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/tiers/0/target_loaded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/tiers/0/artifact",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/tiers/0/artifact",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/tiers/0/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/tiers/0/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/tiers/0/errors",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/tiers/0/errors",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/tiers/1/tier",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/tiers/1/tier",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/tiers/1/execution_ok",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/tiers/1/execution_ok",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/tiers/1/reached",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/tiers/1/reached",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/tiers/1/values/0/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/tiers/1/values/0/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/tiers/1/scenario_complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/tiers/1/scenario_complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/tiers/1/target_loaded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/tiers/1/target_loaded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/tiers/1/artifact",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/tiers/1/artifact",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/tiers/1/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/tiers/1/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/tiers/1/errors",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/tiers/1/errors",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/static_certificate",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/static_certificate",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/target_loaded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/target_loaded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/errors",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/4/errors",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/id",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/tier",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/tier",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/symbol_exists",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/symbol_exists",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/reached",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/reached",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/values/0/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/values/0/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/execution_ok",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/execution_ok",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/artifact",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/artifact",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/source_sha256",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/source_sha256",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/instrumented_line",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/instrumented_line",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/static_reachable",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/static_reachable",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/scenario_complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/scenario_complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/coverage/complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/coverage/complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/coverage/scenarios",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/coverage/scenarios",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/coverage/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/coverage/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/tiers/0/tier",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/tiers/0/tier",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/tiers/0/execution_ok",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/tiers/0/execution_ok",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/tiers/0/reached",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/tiers/0/reached",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/tiers/0/values/0/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/tiers/0/values/0/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/tiers/0/scenario_complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/tiers/0/scenario_complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/tiers/0/target_loaded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/tiers/0/target_loaded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/tiers/0/artifact",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/tiers/0/artifact",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/tiers/0/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/tiers/0/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/tiers/0/errors",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/tiers/0/errors",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/tiers/1/tier",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/tiers/1/tier",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/tiers/1/execution_ok",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/tiers/1/execution_ok",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/tiers/1/reached",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/tiers/1/reached",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/tiers/1/values/0/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/tiers/1/values/0/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/tiers/1/scenario_complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/tiers/1/scenario_complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/tiers/1/target_loaded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/tiers/1/target_loaded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/tiers/1/artifact",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/tiers/1/artifact",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/tiers/1/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/tiers/1/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/tiers/1/errors",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/tiers/1/errors",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/static_certificate",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/static_certificate",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/target_loaded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/target_loaded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/errors",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/5/errors",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/id",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/tier",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/tier",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/symbol_exists",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/symbol_exists",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/reached",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/reached",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/values/0/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/values/0/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/execution_ok",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/execution_ok",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/artifact",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/artifact",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/source_sha256",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/source_sha256",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/instrumented_line",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/instrumented_line",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/static_reachable",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/static_reachable",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/scenario_complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/scenario_complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/coverage/complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/coverage/complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/coverage/scenarios",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/coverage/scenarios",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/coverage/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/coverage/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/tiers/0/tier",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/tiers/0/tier",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/tiers/0/execution_ok",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/tiers/0/execution_ok",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/tiers/0/reached",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/tiers/0/reached",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/tiers/0/values/0/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/tiers/0/values/0/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/tiers/0/scenario_complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/tiers/0/scenario_complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/tiers/0/target_loaded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/tiers/0/target_loaded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/tiers/0/artifact",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/tiers/0/artifact",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/tiers/0/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/tiers/0/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/tiers/0/errors",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/tiers/0/errors",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/tiers/1/tier",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/tiers/1/tier",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/tiers/1/execution_ok",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/tiers/1/execution_ok",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/tiers/1/reached",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/tiers/1/reached",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/tiers/1/values/0/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/tiers/1/values/0/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/tiers/1/scenario_complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/tiers/1/scenario_complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/tiers/1/target_loaded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/tiers/1/target_loaded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/tiers/1/artifact",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/tiers/1/artifact",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/tiers/1/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/tiers/1/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/tiers/1/errors",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/tiers/1/errors",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/static_certificate",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/static_certificate",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/target_loaded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/target_loaded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/errors",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/6/errors",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/id",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/id",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/tier",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/tier",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/symbol_exists",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/symbol_exists",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/reached",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/reached",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/values/0/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/values/0/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/execution_ok",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/execution_ok",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/artifact",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/artifact",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/source_sha256",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/source_sha256",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/instrumented_line",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/instrumented_line",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/static_reachable",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/static_reachable",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/scenario_complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/scenario_complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/coverage/complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/coverage/complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/coverage/scenarios",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/coverage/scenarios",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/coverage/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/coverage/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/tiers/0/tier",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/tiers/0/tier",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/tiers/0/execution_ok",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/tiers/0/execution_ok",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/tiers/0/reached",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/tiers/0/reached",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/tiers/0/values/0/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/tiers/0/values/0/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/tiers/0/scenario_complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/tiers/0/scenario_complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/tiers/0/target_loaded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/tiers/0/target_loaded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/tiers/0/artifact",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/tiers/0/artifact",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/tiers/0/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/tiers/0/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/tiers/0/errors",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/tiers/0/errors",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/tiers/1/tier",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/tiers/1/tier",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/tiers/1/execution_ok",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/tiers/1/execution_ok",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/tiers/1/reached",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/tiers/1/reached",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/tiers/1/values/0/type",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/tiers/1/values/0/type",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/tiers/1/scenario_complete",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/tiers/1/scenario_complete",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/tiers/1/target_loaded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/tiers/1/target_loaded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/tiers/1/artifact",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/tiers/1/artifact",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/tiers/1/reason",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/tiers/1/reason",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/tiers/1/errors",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/tiers/1/errors",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/static_certificate",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/static_certificate",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/target_loaded",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/target_loaded",
+          "reason": null
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/errors",
+          "action": "retained",
+          "visible_pointer": "/tool_observations/0/result/witnesses/7/errors",
+          "reason": null
+        }
+      ],
+      "omissions": [
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/html",
+          "reason": "default_html_not_directed_dom_query"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node_stderr",
+          "reason": "empty_diagnostic"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/stderr",
+          "reason": "empty_diagnostic"
+        }
+      ],
+      "references": [
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/tool",
+          "visible_pointer": "/tool_observations/0/tool",
+          "reference": {
+            "agent": "browser",
+            "message": 2,
+            "part": null,
+            "pointer": "/tools/0",
+            "sha256": "625ffb2c136fb6232f905784a00ef4605bc1511225d9a18bbd0e6ea87fbc41cc"
+          }
+        }
+      ],
+      "pending_validation": [],
+      "artifact_fields": [
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/screenshot"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/process/stdout"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/process/stderr"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/process/stdout"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/process/stderr"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/node/artifact"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/browser/screenshot"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/artifact"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/tiers/0/artifact"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/0/tiers/1/artifact"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/artifact"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/tiers/0/artifact"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/1/tiers/1/artifact"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/artifact"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/tiers/0/artifact"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/2/tiers/1/artifact"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/artifact"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/tiers/0/artifact"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/3/tiers/1/artifact"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/artifact"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/tiers/0/artifact"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/4/tiers/1/artifact"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/artifact"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/tiers/0/artifact"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/5/tiers/1/artifact"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/artifact"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/tiers/0/artifact"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/6/tiers/1/artifact"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/artifact"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/tiers/0/artifact"
+        },
+        {
+          "evidence_id": "browser.t1.o1",
+          "raw_pointer": "/result/witnesses/7/tiers/1/artifact"
+        }
+      ],
+      "observations": [
+        {
+          "evidence_id": "browser.t1.o1",
+          "tool": "reproduce",
+          "raw": {
+            "chars": 19827,
+            "utf8_bytes": 19827
+          },
+          "visible": {
+            "chars": 14299,
+            "utf8_bytes": 14299
+          },
+          "original_tool_ok": true,
+          "required_facts_preserved": true,
+          "original_test_status": null,
+          "original_browser_ok": true,
+          "source_reference": false,
+          "runtime_aliases": 0
+        }
+      ],
+      "failure": null,
+      "metrics": {
+        "raw": {
+          "chars": 19851,
+          "utf8_bytes": 19851
+        },
+        "visible": {
+          "chars": 14477,
+          "utf8_bytes": 14477
+        },
+        "next_request": {
+          "chars": 68591,
+          "utf8_bytes": 68591,
+          "image_count": 2,
+          "image_url_utf8_bytes": 73404,
+          "image_binary_bytes": 55019,
+          "tokens": null,
+          "measurement": "canonical_json_messages_and_response_format_without_image_urls"
+        },
+        "tokens": null,
+        "reference_count": 1,
+        "image_count": 1,
+        "images": {
+          "image_count": 1,
+          "image_url_utf8_bytes": 54674,
+          "image_binary_bytes": 40988
+        }
+      }
+    }
+  ],
+  "selected_attempt": 0,
+  "delivery": "sent_to_model",
+  "turn": 1
+}

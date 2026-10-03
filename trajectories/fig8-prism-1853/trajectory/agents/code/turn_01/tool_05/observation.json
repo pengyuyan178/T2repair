@@ -1,0 +1,35 @@
+{
+  "evidence_id": "code.t1.o5",
+  "tool": {
+    "name": "search_source",
+    "source_id": 0,
+    "query": "prism-json",
+    "start_line": 0,
+    "end_line": 0
+  },
+  "result": {
+    "ok": true,
+    "matches": [
+      {
+        "source_id": 562,
+        "file": "plugins/jsonp-highlight/index.html",
+        "line": 144,
+        "text": "\t<pre class=\"lang-javascript\" data-jsonp=\"https://api.github.com/repos/PrismJS/prism/contents/plugins/jsonp-highlight/prism-jsonp-highlight.js\"></pre>"
+      },
+      {
+        "source_id": 562,
+        "file": "plugins/jsonp-highlight/index.html",
+        "line": 166,
+        "text": "<script src=\"plugins/jsonp-highlight/prism-jsonp-highlight.js\"></script>"
+      }
+    ],
+    "total_matches": 2,
+    "truncated": false,
+    "next_offset": null,
+    "source_id": 0,
+    "resolved_path": "",
+    "source_kind": "directory",
+    "provenance": "base_commit",
+    "base_commit": "2f9c9261bc1454899266929711d5842a3675e467"
+  }
+}

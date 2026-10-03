@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/opt/browsers/chrome-pinned/chrome-linux64/chrome",
+    "--headless=new",
+    "--no-sandbox",
+    "--disable-dev-shm-usage",
+    "--no-first-run",
+    "--disable-background-networking",
+    "--disable-component-update",
+    "--allow-file-access-from-files",
+    "--window-size=1280,720",
+    "--force-device-scale-factor=1",
+    "--hide-scrollbars",
+    "--remote-debugging-port=0",
+    "--user-data-dir=/scratch/runtime/cg-runtime-nlgii9yz/.cg_chrome",
+    "about:blank"
+  ],
+  "pid": 3426,
+  "endpoint": "http://127.0.0.1:35553"
+}

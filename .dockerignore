@@ -1,0 +1,10 @@
+*
+!Dockerfile
+!requirements.txt
+!pyproject.toml
+!README.md
+!package.json
+!package-lock.json
+!code/
+!code/**
+code/**/__pycache__/

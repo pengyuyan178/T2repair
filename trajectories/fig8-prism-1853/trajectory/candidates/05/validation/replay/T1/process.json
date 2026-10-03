@@ -1,0 +1,9 @@
+{
+  "command": [
+    "/opt/node/bin/node",
+    "/scratch/runtime/cg-runtime-wnm9mb7c/.cg_node.cjs"
+  ],
+  "returncode": 0,
+  "stdout": "/task/trajectory/candidates/05/validation/replay/T1/stdout.log",
+  "stderr": "/task/trajectory/candidates/05/validation/replay/T1/stderr.log"
+}

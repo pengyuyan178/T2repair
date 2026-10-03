@@ -1,0 +1,9 @@
+{
+  "command": [
+    "/opt/node/bin/node",
+    "/scratch/runtime/cg-runtime-_r7n9msu/.cg_node.cjs"
+  ],
+  "returncode": 0,
+  "stdout": "/task/trajectory/S3b/attempt_02/T1/stdout.log",
+  "stderr": "/task/trajectory/S3b/attempt_02/T1/stderr.log"
+}

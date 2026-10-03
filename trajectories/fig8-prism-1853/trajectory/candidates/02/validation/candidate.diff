@@ -1,0 +1,21 @@
+diff --git a/components/prism-json.js b/components/prism-json.js
+index 5f40179..039d17d 100644
+--- a/components/prism-json.js
++++ b/components/prism-json.js
+@@ -1,5 +1,4 @@
+ Prism.languages.json = {
+-	'comment': /\/\/.*|\/\*[\s\S]*?(?:\*\/|$)/,
+ 	'property': {
+ 		pattern: /"(?:\\.|[^\\"\r\n])*"(?=\s*:)/,
+ 		greedy: true
+@@ -8,6 +7,10 @@ Prism.languages.json = {
+ 		pattern: /"(?:\\.|[^\\"\r\n])*"(?!\s*:)/,
+ 		greedy: true
+ 	},
++	'comment': {
++		pattern: /\/\/.*|\/\*[\s\S]*?(?:\*\/|$)/,
++		greedy: true
++	},
+ 	'number': /-?\d+\.?\d*(e[+-]?\d+)?/i,
+ 	'punctuation': /[{}[\],]/,
+ 	'operator': /:/,

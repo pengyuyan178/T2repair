@@ -1,0 +1,10 @@
+{
+  "command": [
+    "/home/ubuntu/anaconda3/envs/pyy/paper/TraceRepair/releases/isolation_20260907/.venv/bin/python",
+    "/task/trajectory/candidates/01/validation/replay/T2/replay/actions.py",
+    "/task/trajectory/candidates/01/validation/replay/T2/replay/request.json"
+  ],
+  "returncode": 0,
+  "stdout": "/task/trajectory/candidates/01/validation/replay/T2/replay/process/stdout.log",
+  "stderr": "/task/trajectory/candidates/01/validation/replay/T2/replay/process/stderr.log"
+}

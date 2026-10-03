@@ -1,0 +1,22 @@
+{
+  "protocol": "harness_v2",
+  "original_requests": 14,
+  "correction_requests": 0,
+  "original_http_attempts": 15,
+  "correction_http_attempts": 0,
+  "unknown_request_mapping": 0,
+  "correction_tokens": {
+    "prompt_tokens": {
+      "known_sum": 0,
+      "missing_requests": 0
+    },
+    "completion_tokens": {
+      "known_sum": 0,
+      "missing_requests": 0
+    },
+    "total_tokens": {
+      "known_sum": 0,
+      "missing_requests": 0
+    }
+  }
+}

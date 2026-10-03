@@ -1,0 +1,16 @@
+PROBE_RESULT {
+ "H1": "/*\"}",
+ "key_order": "comment,property,string,number,punctuation,operator,boolean,null",
+ "H2": true,
+ "H3": "\":\"",
+ "H4": "[{\"type\":\"punctuation\",\"content\":\"{\"},{\"type\":\"property\",\"content\":\"\\\"Accept\\\"\"},{\"type\":\"operator\",\"content\":\":\"},{\"type\":\"string\",\"content\":\"\\\"*/*\\\"\"},{\"type\":\"punctuation\",\"content\":\"}\"}]",
+ "H5": false,
+ "H6": "<span class=\"token punctuation\">{</span><span class=\"token property\">\"A\"</span><span class=\"token operator\">:</span><span class=\"token string\">\"/*\"</span><span class=\"token punctuation\">,</span><span class=\"token property\">\"B\"</span><span class=\"token operator\">:</span><span class=\"token string\">\"B\"</span><span class=\"token punctuation\">,</span>\"C<span class=\"token string\">\":\"</span>C\"<span class=\"token punctuation\">}</span>",
+ "H7": [
+  3,
+  6
+ ],
+ "H8": "undefined",
+ "comment_source": "/\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/",
+ "string_source": "/\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?!\\s*:)/g"
+}

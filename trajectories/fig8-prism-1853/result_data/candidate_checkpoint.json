@@ -1,0 +1,106 @@
+{
+  "protocol": "harness_v2",
+  "instance_id": "PrismJS__prism-1853",
+  "base_commit": "2f9c9261bc1454899266929711d5842a3675e467",
+  "fingerprint": "37ff488c9304d9d9bdc670dc38359de342abf84294908807be267719d7120ca3",
+  "selected": {
+    "index": 1,
+    "key": [
+      1,
+      2,
+      0,
+      1,
+      1,
+      0,
+      -1
+    ],
+    "patch": "diff --git a/components/prism-json.js b/components/prism-json.js\nindex 5f40179..5d032bc 100644\n--- a/components/prism-json.js\n+++ b/components/prism-json.js\n@@ -1,11 +1,16 @@\n Prism.languages.json = {\n-\t'comment': /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/,\n \t'property': {\n-\t\tpattern: /\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?=\\s*:)/,\n+\t\tpattern: /(^|[^\\\\])\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?=\\s*:)/,\n+\t\tlookbehind: true,\n \t\tgreedy: true\n \t},\n \t'string': {\n-\t\tpattern: /\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?!\\s*:)/,\n+\t\tpattern: /(^|[^\\\\])\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?!\\s*:)/,\n+\t\tlookbehind: true,\n+\t\tgreedy: true\n+\t},\n+\t'comment': {\n+\t\tpattern: /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/,\n \t\tgreedy: true\n \t},\n \t'number': /-?\\d+\\.?\\d*(e[+-]?\\d+)?/i,\n",
+    "syntax_ok": true,
+    "missing_symbols": [],
+    "patch_applied": true
+  },
+  "patch_sha256": "aea1499da539198f0398180376b8766c6bb12307908621abb237e60384dd0b8b",
+  "artifacts": {
+    "candidate.json": "ae0478afb64ba1cea9097af64afd45ec996aeecf9d08c45b1c1b9995d64f44e9",
+    "application.json": "3696c0412ea517bd538c7ef2a98f1ad3628f6000dc3c356537c0342d06f5bf5d",
+    "candidate.patch": "aea1499da539198f0398180376b8766c6bb12307908621abb237e60384dd0b8b",
+    "validation.json": "9a710ae0383702bbd060c534b5e78ddc38a77143e28086b8ee1bf2653f705185"
+  },
+  "ranking": [
+    {
+      "index": 1,
+      "key": [
+        1,
+        2,
+        0,
+        1,
+        1,
+        0,
+        -1
+      ],
+      "syntax_ok": true,
+      "missing_symbols": [],
+      "patch_applied": true
+    },
+    {
+      "index": 2,
+      "key": [
+        1,
+        2,
+        0,
+        1,
+        1,
+        0,
+        -2
+      ],
+      "syntax_ok": true,
+      "missing_symbols": [],
+      "patch_applied": true
+    },
+    {
+      "index": 3,
+      "key": [
+        1,
+        2,
+        0,
+        1,
+        1,
+        0,
+        -3
+      ],
+      "syntax_ok": true,
+      "missing_symbols": [],
+      "patch_applied": true
+    },
+    {
+      "index": 4,
+      "key": [
+        1,
+        2,
+        0,
+        1,
+        1,
+        0,
+        -4
+      ],
+      "syntax_ok": true,
+      "missing_symbols": [],
+      "patch_applied": true
+    },
+    {
+      "index": 5,
+      "key": [
+        1,
+        2,
+        0,
+        1,
+        1,
+        0,
+        -5
+      ],
+      "syntax_ok": true,
+      "missing_symbols": [],
+      "patch_applied": true
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "source_modules": [
+    {
+      "source": "code/causalgui/causalgui/__init__.py",
+      "file": "code/causalgui/__init__.py",
+      "source_sha256": "4bda90a452a793d533ed709ea7eb1c5b5b6ac3d693a5b5a20ec260734c150b66",
+      "sha256": "91447944015cec709e8aa7655f7e9d64e1e4508e7023a57fe3746911c0fc6fed",
+      "executable_ast_preserved": true
+    },
+    {
+      "source": "code/causalgui/causalgui/browser_agent.py",
+      "file": "code/causalgui/browser_agent.py",
+      "source_sha256": "dbb6eeb2b3b580291e9f88bfef306e48941bd4ac71d0f4a464f4a4162577f84c",
+      "sha256": "2f8d251fee35d38dc6c1dbf1c189cd36ec029a583f73c5570b43fc18a698f352",
+      "executable_ast_preserved": true
+    },
+    {
+      "source": "code/causalgui/causalgui/code_agent.py",
+      "file": "code/causalgui/code_agent.py",
+      "source_sha256": "4bbc5fc017d1dbb807caafb09472f9e10d38924327b68f7562d1fa1df9869d13",
+      "sha256": "e4ae4d38d06b74e39952f7be101d83ea9f50971d9f970758649b5f95e3ebc58e",
+      "executable_ast_preserved": true
+    },
+    {
+      "source": "code/causalgui/causalgui/feedback.py",
+      "file": "code/causalgui/feedback.py",
+      "source_sha256": "3497cb76803843a8facac1f273633bc5e977f5583458e7b99269c60195cad445",
+      "sha256": "d1f37b380e91c3d8f62b33edacd752334a484c6ed7e298376fecd44b7cd5a831",
+      "executable_ast_preserved": true
+    },
+    {
+      "source": "code/causalgui/causalgui/front.py",
+      "file": "code/causalgui/front.py",
+      "source_sha256": "446fa256b1496e737bd74e19939cec40ccb49e7e201219e336197d3044254fba",
+      "sha256": "9f1000aadfc5c00ef31bdd0f31316f525196a54afd9d038c1f757ec28341c533",
+      "executable_ast_preserved": true
+    },
+    {
+      "source": "code/causalgui/causalgui/main.py",
+      "file": "code/causalgui/main.py",
+      "source_sha256": "b4250763ea9c5ac7af9087f1a52466e5e98f60ec104f218961532be6955756ff",
+      "sha256": "1059ed375c088fd3e4a156e442e2c1a1371958851742e83f26d354c3107eb4a1",
+      "executable_ast_preserved": true
+    },
+    {
+      "source": "code/causalgui/causalgui/s5_context.py",
+      "file": "code/causalgui/s5_context.py",
+      "source_sha256": "dda16a54bd477a0f452669f1f90e6539ecccc6ecb04d02a6f4276261d5e08281",
+      "sha256": "8fafbc8a7cb3c915799ae9899ab016ca1f43b566da7d586912ad0c8e20187909",
+      "executable_ast_preserved": true
+    },
+    {
+      "source": "code/causalgui/causalgui/synthesis.py",
+      "file": "code/causalgui/synthesis.py",
+      "source_sha256": "89fa5815406d0ed5f5ce1b71d010ad83580065b46001bd87695503dcac5db9c7",
+      "sha256": "206579ec59a48e57b92accd383f29378875c4348306dd4953dfc5cf761feea2a",
+      "executable_ast_preserved": true
+    },
+    {
+      "source": "code/causalgui/tests/test_contracts.py",
+      "file": "tests/test_contracts.py",
+      "source_sha256": "34cfc3174d5de74dae86f26fe48393bbf3ad8ff1105d0c2d2b56066777b26b06",
+      "sha256": "c8f90cd3b0419c8e8a9f2796f2eb1eecbdd9678a83a3d6bc99514a6f8bc97934",
+      "executable_ast_preserved_except": []
+    },
+    {
+      "source": "code/causalgui/tests/test_synthesis.py",
+      "file": "tests/test_synthesis.py",
+      "source_sha256": "60d55fd2301b77f7a5c5e28104bedc7e6a760e286c61a5709f05c4906f1942bc",
+      "sha256": "40aca6fa64df7784d265725430fdb21f988d9f2827d937ebb6e74257cb56e719",
+      "executable_ast_preserved_except": []
+    },
+    {
+      "source": "code/causalgui/tests/test_agents.py",
+      "file": "tests/test_agents.py",
+      "source_sha256": "6bb271e6a6fc3bc040c6af8be520a5367dbb4c4858a10f926a84698b6154a456",
+      "sha256": "866f64547193225dd2737784e50ea74f9211022454fbeeae07f81cbb6f68536a",
+      "executable_ast_preserved_except": [
+        "test_budget_audit_binds_correction_to_original_response_and_rejects_third_attempt",
+        "AgentContracts.setUp: use isolated temporary directory instead of deleting a fixed server path",
+        "AgentContracts.run_pipeline: inline the same repair harness policy and verify stage/call budgets locally instead of importing the historical external runner"
+      ]
+    },
+    {
+      "source": "code/causalgui/tests/replay_tool_feedback.py",
+      "file": "tests/replay_tool_feedback.py",
+      "source_sha256": "2a7f45201d306296c9a0b83f786d3b805f7678672b573cba6dfcc69bca5eb613",
+      "sha256": "b22a21b5ece502c9ee074e1930b8e3b0ea512bb2590e579b02c24bba73fc9849",
+      "executable_ast_preserved_except": []
+    }
+  ],
+  "cleanup": "Ordinary comments and docstrings removed; executable syntax and model prompts preserved. Historical launchers coupled to baseline implementations are replaced by the standalone release entry point. The omitted test belongs to the historical external broker budget auditor.",
+  "release_entry_points": [
+    "code/causalgui/cli.py",
+    "code/causalgui/__main__.py"
+  ],
+  "release_checks": [
+    "tests/test_cli.py",
+    "tests/run_suite.py",
+    "scripts/verify_fig8.py"
+  ]
+}

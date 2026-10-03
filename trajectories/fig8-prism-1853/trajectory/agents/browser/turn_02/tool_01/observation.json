@@ -1,0 +1,699 @@
+{
+  "evidence_id": "browser.t2.o1",
+  "tool": {
+    "name": "reproduce",
+    "draft": {
+      "profile": "PrismJS/prism",
+      "entry": "prism.js",
+      "node_script": "var Prism = require('./prism.js'); if (!global.Prism) { global.Prism = Prism; } require('./components/prism-json.js'); console.log('NODE keys=' + Object.keys(Prism.languages.json).join(',') + ' COMMENT=' + String(Prism.languages.json['comment']) + ' EXEC=' + String(Prism.languages.json['comment'].exec('{\"A\":\"/*\",\"B\":\"B\",\"C\":\"C\"}')))",
+      "browser_script": "(function () { function pre(id, text) { var p = document.createElement('pre'); p.id = id; p.textContent = text; document.body.appendChild(p); return p; } if (!window.Prism) { pre('probe', 'NO_PRISM'); return; } var notes = []; if (!(Prism.languages && Prism.languages.json)) { try { var xhr = new XMLHttpRequest(); xhr.open('GET', 'components/prism-json.js', false); xhr.send(null); (new Function(xhr.responseText))(); notes.push('json loaded via XHR'); } catch (e) { notes.push('load error: ' + e.message); } } else { notes.push('json already present'); } var j = Prism.languages.json; var s1 = '{\"Accept\":\"*/*\"}'; var s2 = '{\"A\":\"/*\",\"B\":\"B\",\"C\":\"C\"}'; var cre = (j['comment'] && j['comment'].pattern) ? j['comment'].pattern : j['comment']; var sre = (j['string'] && j['string'].pattern) ? j['string'].pattern : j['string']; function exec(re, s) { re.lastIndex = 0; var m = re.exec(s); return m ? { index: m.index, text: m[0] } : null; } function dump(s) { var toks = Prism.tokenize(s, j); var out = []; var pos = 0; for (var i = 0; i < toks.length; i++) { var t = toks[i]; var content = (typeof t === 'string') ? t : t.content; var type = (typeof t === 'string') ? 'text' : t.type; out.push({ type: type, content: content, start: pos, end: pos + content.length }); pos += content.length; } return out; } function hasComment(s) { return Prism.tokenize(s, j).some(function (t) { return t && t.type === 'comment'; }); } function types(s) { return Prism.tokenize(s, j).map(function (t) { return (typeof t === 'string') ? 'text' : t.type; }).join('|'); } var out = {}; out.notes = notes; out.keys = Object.keys(j).join(','); out.comment_source = String(j['comment']); out.comment_is_regexp = (j['comment'] instanceof RegExp); out.comment_lookbehind = !!j['comment'].lookbehind; out.property_source = String(j['property'] && j['property'].pattern ? j['property'].pattern : j['property']); out.property_greedy = !!(j['property'] && j['property'].greedy); out.string_source = String(sre); out.string_greedy = !!(j['string'] && j['string'].greedy); out.string_lookbehind = !!j['string'].lookbehind; out.H2 = Object.keys(j).indexOf('comment') < Object.keys(j).indexOf('string'); out.H1 = exec(cre, s1); out.comment_on_s2 = exec(cre, s2); out.H3 = exec(sre, s1); out.H7 = [exec(sre, s2).index, exec(cre, s2).index]; out.H8 = !!j['comment'].lookbehind; out.H4 = types(s1); out.H5 = Prism.tokenize(s2, j).some(function (t) { return t && t.type === 'comment' && String(t.content).indexOf('B') !== -1; }); out.has_comment_s1 = hasComment(s1); out.has_comment_s2 = hasComment(s2); out.tokens_s1 = dump(s1); out.tokens_s2 = dump(s2); out.H6 = Prism.highlight(s2, j, 'json'); out.control_only_C = dump('{\"C\":\"C\"}'); out.control_x_then_C = dump('{\"A\":\"x\",\"C\":\"C\"}'); out.control_slash_then_C = dump('{\"A\":\"/*\",\"C\":\"C\"}'); out.real_line_comment = dump('{\"a\": 1} // tail'); out.real_block_comment = dump('{\"a\": 1} /* block */'); pre('probe', JSON.stringify(out)); document.title = 'probe-done'; })();",
+      "build_command": []
+    },
+    "actions": [
+      {
+        "kind": "dom",
+        "target": "#probe",
+        "value": ""
+      },
+      {
+        "kind": "screenshot",
+        "target": "",
+        "value": ""
+      }
+    ]
+  },
+  "result": {
+    "ok": true,
+    "build": {
+      "returncode": 0,
+      "reason": "no_build_declared",
+      "entry": "/scratch/runtime/cg-runtime-_r7n9msu/prism.js",
+      "entry_exists": true,
+      "entry_sha256": "a85a83c23090257355e5e9bfb3b0dc974938a34013a03999716f30fe78c739fd",
+      "entry_bytes": 24443
+    },
+    "node": {
+      "ok": true,
+      "reason": "node_execution",
+      "state": {
+        "events": [
+          {
+            "id": "H8",
+            "value": {
+              "type": "undefined"
+            },
+            "read_succeeded": true
+          },
+          {
+            "id": "H7",
+            "value": {
+              "type": "undefined"
+            },
+            "read_succeeded": true
+          },
+          {
+            "id": "H6",
+            "value": {
+              "type": "undefined"
+            },
+            "read_succeeded": true
+          },
+          {
+            "id": "H5",
+            "value": {
+              "type": "undefined"
+            },
+            "read_succeeded": true
+          },
+          {
+            "id": "H4",
+            "value": {
+              "type": "undefined"
+            },
+            "read_succeeded": true
+          },
+          {
+            "id": "H3",
+            "value": {
+              "type": "undefined"
+            },
+            "read_succeeded": true
+          },
+          {
+            "id": "H2",
+            "value": {
+              "type": "undefined"
+            },
+            "read_succeeded": true
+          },
+          {
+            "id": "H1",
+            "value": {
+              "type": "undefined"
+            },
+            "read_succeeded": true
+          }
+        ],
+        "loaded": [
+          "components/prism-json.js"
+        ],
+        "scenario_complete": true,
+        "errors": [],
+        "seed": 42
+      },
+      "process": {
+        "command": [
+          "/opt/node/bin/node",
+          "/scratch/runtime/cg-runtime-_r7n9msu/.cg_node.cjs"
+        ],
+        "returncode": 0,
+        "stdout": "/task/trajectory/S3b/attempt_02/T1/stdout.log",
+        "stderr": "/task/trajectory/S3b/attempt_02/T1/stderr.log"
+      },
+      "artifact": "/task/trajectory/S3b/attempt_02/T1/events.json"
+    },
+    "browser": {
+      "completed_actions": [
+        {
+          "kind": "open",
+          "target": "",
+          "value": ""
+        },
+        {
+          "kind": "dom",
+          "target": "#probe",
+          "value": ""
+        },
+        {
+          "kind": "screenshot",
+          "target": "",
+          "value": ""
+        }
+      ],
+      "state": {
+        "events": [
+          {
+            "id": "H8",
+            "value": {
+              "type": "undefined"
+            },
+            "read_succeeded": true
+          },
+          {
+            "id": "H7",
+            "value": {
+              "type": "undefined"
+            },
+            "read_succeeded": true
+          },
+          {
+            "id": "H6",
+            "value": {
+              "type": "undefined"
+            },
+            "read_succeeded": true
+          },
+          {
+            "id": "H5",
+            "value": {
+              "type": "undefined"
+            },
+            "read_succeeded": true
+          },
+          {
+            "id": "H4",
+            "value": {
+              "type": "undefined"
+            },
+            "read_succeeded": true
+          },
+          {
+            "id": "H3",
+            "value": {
+              "type": "undefined"
+            },
+            "read_succeeded": true
+          },
+          {
+            "id": "H2",
+            "value": {
+              "type": "undefined"
+            },
+            "read_succeeded": true
+          },
+          {
+            "id": "H1",
+            "value": {
+              "type": "undefined"
+            },
+            "read_succeeded": true
+          }
+        ],
+        "loaded": [
+          "components/prism-json.js"
+        ],
+        "scenario_complete": true,
+        "errors": [],
+        "seed": 42,
+        "console": [],
+        "canvas_count": 0,
+        "body_text": "{\"notes\":[\"json loaded via XHR\"],\"keys\":\"comment,property,string,number,punctuation,operator,boolean,null\",\"comment_source\":\"/\\\\/\\\\/.*|\\\\/\\\\*[\\\\s\\\\S]*?(?:\\\\*\\\\/|$)/\",\"comment_is_regexp\":true,\"comment_",
+        "dom_elements": 1
+      },
+      "dom": "{\"notes\":[\"json loaded via XHR\"],\"keys\":\"comment,property,string,number,punctuation,operator,boolean,null\",\"comment_source\":\"/\\\\/\\\\/.*|\\\\/\\\\*[\\\\s\\\\S]*?(?:\\\\*\\\\/|$)/\",\"comment_is_regexp\":true,\"comment_lookbehind\":false,\"property_source\":\"/\\\"(?:\\\\\\\\.|[^\\\\\\\\\\\"\\\\r\\\\n])*\\\"(?=\\\\s*:)/\",\"property_greedy\":true,\"string_source\":\"/\\\"(?:\\\\\\\\.|[^\\\\\\\\\\\"\\\\r\\\\n])*\\\"(?!\\\\s*:)/\",\"string_greedy\":true,\"string_lookbehind\":false,\"H2\":true,\"H1\":{\"index\":12,\"text\":\"/*\\\"}\"},\"comment_on_s2\":{\"index\":6,\"text\":\"/*\\\",\\\"B\\\":\\\"B\\\",\\\"C\\\":\\\"C\\\"}\"},\"H3\":{\"index\":8,\"text\":\"\\\":\\\"\"},\"H7\":[3,6],\"H8\":false,\"H4\":\"punctuation|property|operator|string|punctuation\",\"H5\":false,\"has_comment_s1\":false,\"has_comment_s2\":false,\"tokens_s1\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"Accept\\\"\",\"start\":1,\"end\":9},{\"type\":\"operator\",\"content\":\":\",\"start\":9,\"end\":10},{\"type\":\"string\",\"content\":\"\\\"*/*\\\"\",\"start\":10,\"end\":15},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":15,\"end\":16}],\"tokens_s2\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"A\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"string\",\"content\":\"\\\"/*\\\"\",\"start\":5,\"end\":9},{\"type\":\"punctuation\",\"content\":\",\",\"start\":9,\"end\":10},{\"type\":\"property\",\"content\":\"\\\"B\\\"\",\"start\":10,\"end\":13},{\"type\":\"operator\",\"content\":\":\",\"start\":13,\"end\":14},{\"type\":\"string\",\"content\":\"\\\"B\\\"\",\"start\":14,\"end\":17},{\"type\":\"punctuation\",\"content\":\",\",\"start\":17,\"end\":18},{\"type\":\"text\",\"content\":\"\\\"C\",\"start\":18,\"end\":20},{\"type\":\"string\",\"content\":\"\\\":\\\"\",\"start\":20,\"end\":23},{\"type\":\"text\",\"content\":\"C\\\"\",\"start\":23,\"end\":25},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":25,\"end\":26}],\"H6\":\"<span class=\\\"token punctuation\\\">{</span><span class=\\\"token property\\\">\\\"A\\\"</span><span class=\\\"token operator\\\">:</span><span class=\\\"token string\\\">\\\"/*\\\"</span><span class=\\\"token punctuation\\\">,</span><span class=\\\"token property\\\">\\\"B\\\"</span><span class=\\\"token operator\\\">:</span><span class=\\\"token string\\\">\\\"B\\\"</span><span class=\\\"token punctuation\\\">,</span>\\\"C<span class=\\\"token string\\\">\\\":\\\"</span>C\\\"<span class=\\\"token punctuation\\\">}</span>\",\"control_only_C\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"C\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"string\",\"content\":\"\\\"C\\\"\",\"start\":5,\"end\":8},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":8,\"end\":9}],\"control_x_then_C\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"A\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"string\",\"content\":\"\\\"x\\\"\",\"start\":5,\"end\":8},{\"type\":\"punctuation\",\"content\":\",\",\"start\":8,\"end\":9},{\"type\":\"property\",\"content\":\"\\\"C\\\"\",\"start\":9,\"end\":12},{\"type\":\"operator\",\"content\":\":\",\"start\":12,\"end\":13},{\"type\":\"string\",\"content\":\"\\\"C\\\"\",\"start\":13,\"end\":16},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":16,\"end\":17}],\"control_slash_then_C\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"A\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"string\",\"content\":\"\\\"/*\\\"\",\"start\":5,\"end\":9},{\"type\":\"punctuation\",\"content\":\",\",\"start\":9,\"end\":10},{\"type\":\"property\",\"content\":\"\\\"C\\\"\",\"start\":10,\"end\":13},{\"type\":\"operator\",\"content\":\":\",\"start\":13,\"end\":14},{\"type\":\"string\",\"content\":\"\\\"C\\\"\",\"start\":14,\"end\":17},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":17,\"end\":18}],\"real_line_comment\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"a\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"text\",\"content\":\" \",\"start\":5,\"end\":6},{\"type\":\"number\",\"content\":\"1\",\"start\":6,\"end\":7},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":7,\"end\":8},{\"type\":\"text\",\"content\":\" \",\"start\":8,\"end\":9},{\"type\":\"comment\",\"content\":\"// tail\",\"start\":9,\"end\":16}],\"real_block_comment\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"a\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"text\",\"content\":\" \",\"start\":5,\"end\":6},{\"type\":\"number\",\"content\":\"1\",\"start\":6,\"end\":7},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":7,\"end\":8},{\"type\":\"text\",\"content\":\" \",\"start\":8,\"end\":9},{\"type\":\"comment\",\"content\":\"/* block */\",\"start\":9,\"end\":20}]}",
+      "url": "file:///scratch/runtime/cg-runtime-_r7n9msu/.cg_page.html",
+      "html": "<script src=\".cg_boot.js\"></script><script src=\"prism.js\"></script><script src=\".cg_browser.js\"></script><pre id=\"probe\">{\"notes\":[\"json loaded via XHR\"],\"keys\":\"comment,property,string,number,punctuation,operator,boolean,null\",\"comment_source\":\"/\\\\/\\\\/.*|\\\\/\\\\*[\\\\s\\\\S]*?(?:\\\\*\\\\/|$)/\",\"comment_is_regexp\":true,\"comment_lookbehind\":false,\"property_source\":\"/\\\"(?:\\\\\\\\.|[^\\\\\\\\\\\"\\\\r\\\\n])*\\\"(?=\\\\s*:)/\",\"property_greedy\":true,\"string_source\":\"/\\\"(?:\\\\\\\\.|[^\\\\\\\\\\\"\\\\r\\\\n])*\\\"(?!\\\\s*:)/\",\"string_greedy\":true,\"string_lookbehind\":false,\"H2\":true,\"H1\":{\"index\":12,\"text\":\"/*\\\"}\"},\"comment_on_s2\":{\"index\":6,\"text\":\"/*\\\",\\\"B\\\":\\\"B\\\",\\\"C\\\":\\\"C\\\"}\"},\"H3\":{\"index\":8,\"text\":\"\\\":\\\"\"},\"H7\":[3,6],\"H8\":false,\"H4\":\"punctuation|property|operator|string|punctuation\",\"H5\":false,\"has_comment_s1\":false,\"has_comment_s2\":false,\"tokens_s1\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"Accept\\\"\",\"start\":1,\"end\":9},{\"type\":\"operator\",\"content\":\":\",\"start\":9,\"end\":10},{\"type\":\"string\",\"content\":\"\\\"*/*\\\"\",\"start\":10,\"end\":15},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":15,\"end\":16}],\"tokens_s2\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"A\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"string\",\"content\":\"\\\"/*\\\"\",\"start\":5,\"end\":9},{\"type\":\"punctuation\",\"content\":\",\",\"start\":9,\"end\":10},{\"type\":\"property\",\"content\":\"\\\"B\\\"\",\"start\":10,\"end\":13},{\"type\":\"operator\",\"content\":\":\",\"start\":13,\"end\":14},{\"type\":\"string\",\"content\":\"\\\"B\\\"\",\"start\":14,\"end\":17},{\"type\":\"punctuation\",\"content\":\",\",\"start\":17,\"end\":18},{\"type\":\"text\",\"content\":\"\\\"C\",\"start\":18,\"end\":20},{\"type\":\"string\",\"content\":\"\\\":\\\"\",\"start\":20,\"end\":23},{\"type\":\"text\",\"content\":\"C\\\"\",\"start\":23,\"end\":25},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":25,\"end\":26}],\"H6\":\"&lt;span class=\\\"token punctuation\\\"&gt;{&lt;/span&gt;&lt;span class=\\\"token property\\\"&gt;\\\"A\\\"&lt;/span&gt;&lt;span class=\\\"token operator\\\"&gt;:&lt;/span&gt;&lt;span class=\\\"token string\\\"&gt;\\\"/*\\\"&lt;/span&gt;&lt;span class=\\\"token punctuation\\\"&gt;,&lt;/span&gt;&lt;span class=\\\"token property\\\"&gt;\\\"B\\\"&lt;/span&gt;&lt;span class=\\\"token operator\\\"&gt;:&lt;/span&gt;&lt;span class=\\\"token string\\\"&gt;\\\"B\\\"&lt;/span&gt;&lt;span class=\\\"token punctuation\\\"&gt;,&lt;/span&gt;\\\"C&lt;span class=\\\"token string\\\"&gt;\\\":\\\"&lt;/span&gt;C\\\"&lt;span class=\\\"token punctuation\\\"&gt;}&lt;/span&gt;\",\"control_only_C\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"C\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"string\",\"content\":\"\\\"C\\\"\",\"start\":5,\"end\":8},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":8,\"end\":9}],\"control_x_then_C\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"A\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"string\",\"content\":\"\\\"x\\\"\",\"start\":5,\"end\":8},{\"type\":\"punctuation\",\"content\":\",\",\"start\":8,\"end\":9},{\"type\":\"property\",\"content\":\"\\\"C\\\"\",\"start\":9,\"end\":12},{\"type\":\"operator\",\"content\":\":\",\"start\":12,\"end\":13},{\"type\":\"string\",\"content\":\"\\\"C\\\"\",\"start\":13,\"end\":16},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":16,\"end\":17}],\"control_slash_then_C\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"A\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"string\",\"content\":\"\\\"/*\\\"\",\"start\":5,\"end\":9},{\"type\":\"punctuation\",\"content\":\",\",\"start\":9,\"end\":10},{\"type\":\"property\",\"content\":\"\\\"C\\\"\",\"start\":10,\"end\":13},{\"type\":\"operator\",\"content\":\":\",\"start\":13,\"end\":14},{\"type\":\"string\",\"content\":\"\\\"C\\\"\",\"start\":14,\"end\":17},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":17,\"end\":18}],\"real_line_comment\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"a\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"text\",\"content\":\" \",\"start\":5,\"end\":6},{\"type\":\"number\",\"content\":\"1\",\"start\":6,\"end\":7},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":7,\"end\":8},{\"type\":\"text\",\"content\":\" \",\"start\":8,\"end\":9},{\"type\":\"comment\",\"content\":\"// tail\",\"start\":9,\"end\":16}],\"real_block_comment\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"a\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"text\",\"content\":\" \",\"start\":5,\"end\":6},{\"type\":\"number\",\"content\":\"1\",\"start\":6,\"end\":7},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":7,\"end\":8},{\"type\":\"text\",\"content\":\" \",\"start\":8,\"end\":9},{\"type\":\"comment\",\"content\":\"/* block */\",\"start\":9,\"end\":20}]}</pre>",
+      "actual_scene": true,
+      "screenshot": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+      "query": [
+        {
+          "tag": "PRE",
+          "text": "{\"notes\":[\"json loaded via XHR\"],\"keys\":\"comment,property,string,number,punctuation,operator,boolean,null\",\"comment_source\":\"/\\\\/\\\\/.*|\\\\/\\\\*[\\\\s\\\\S]*?(?:\\\\*\\\\/|$)/\",\"comment_is_regexp\":true,\"comment_lookbehind\":false,\"property_source\":\"/\\\"(?:\\\\\\\\.|[^\\\\\\\\\\\"\\\\r\\\\n])*\\\"(?=\\\\s*:)/\",\"property_greedy\":true,\"string_source\":\"/\\\"(?:\\\\\\\\.|[^\\\\\\\\\\\"\\\\r\\\\n])*\\\"(?!\\\\s*:)/\",\"string_greedy\":true,\"string_lookbehind\":false,\"H2\":true,\"H1\":{\"index\":12,\"text\":\"/*\\\"}\"},\"comment_on_s2\":{\"index\":6,\"text\":\"/*\\\",\\\"B\\\":\\\"B\\\",\\\"C\\\":\\\"C\\\"}\"},\"H3\":{\"index\":8,\"text\":\"\\\":\\\"\"},\"H7\":[3,6],\"H8\":false,\"H4\":\"punctuation|property|operator|string|punctuation\",\"H5\":false,\"has_comment_s1\":false,\"has_comment_s2\":false,\"tokens_s1\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"Accept\\\"\",\"start\":1,\"end\":9},{\"type\":\"operator\",\"content\":\":\",\"start\":9,\"end\":10},{\"type\":\"string\",\"content\":\"\\\"*/*\\\"\",\"start\":10,\"end\":15},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":15,\"end\":16}],\"tokens_s2\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"A\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"string\",\"content\":\"\\\"/*\\\"\",\"start\":5,\"end\":9},{\"type\":\"punctuation\",\"content\":\",\",\"start\":9,\"end\":10},{\"type\":\"property\",\"content\":\"\\\"B\\\"\",\"start\":10,\"end\":13},{\"type\":\"operator\",\"content\":\":\",\"start\":13,\"end\":14},{\"type\":\"string\",\"content\":\"\\\"B\\\"\",\"start\":14,\"end\":17},{\"type\":\"punctuation\",\"content\":\",\",\"start\":17,\"end\":18},{\"type\":\"text\",\"content\":\"\\\"C\",\"start\":18,\"end\":20},{\"type\":\"string\",\"content\":\"\\\":\\\"\",\"start\":20,\"end\":23},{\"type\":\"text\",\"content\":\"C\\\"\",\"start\":23,\"end\":25},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":25,\"end\":26}],\"H6\":\"<span class=\\\"token punctuation\\\">{</span><span class=\\\"token property\\\">\\\"A\\\"</span><span class=\\\"token operator\\\">:</span><span class=\\\"token string\\\">\\\"/*\\\"</span><span class=\\\"token punctuation\\\">,</span><span class=\\\"token property\\\">\\\"B\\\"</span><span class=\\\"token operator\\\">:</span><span class=\\\"token string\\\">\\\"B\\\"</span><span class=\\\"token punctuation\\\">,</span>\\\"C<span class=\\\"token string\\\">\\\":\\\"</span>C\\\"<span class=\\\"token punctuation\\\">}</span>\",\"control_only_C\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"C\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"string\",\"content\":\"\\\"C\\\"\",\"start\":5,\"end\":8},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":8,\"end\":9}],\"control_x_then_C\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"A\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"string\",\"content\":\"\\\"x\\\"\",\"start\":5,\"end\":8},{\"type\":\"punctuation\",\"content\":\",\",\"start\":8,\"end\":9},{\"type\":\"property\",\"content\":\"\\\"C\\\"\",\"start\":9,\"end\":12},{\"type\":\"operator\",\"content\":\":\",\"start\":12,\"end\":13},{\"type\":\"string\",\"content\":\"\\\"C\\\"\",\"start\":13,\"end\":16},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":16,\"end\":17}],\"control_slash_then_C\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"A\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"string\",\"content\":\"\\\"/*\\\"\",\"start\":5,\"end\":9},{\"type\":\"punctuation\",\"content\":\",\",\"start\":9,\"end\":10},{\"type\":\"property\",\"content\":\"\\\"C\\\"\",\"start\":10,\"end\":13},{\"type\":\"operator\",\"content\":\":\",\"start\":13,\"end\":14},{\"type\":\"string\",\"content\":\"\\\"C\\\"\",\"start\":14,\"end\":17},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":17,\"end\":18}],\"real_line_comment\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"a\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"text\",\"content\":\" \",\"start\":5,\"end\":6},{\"type\":\"number\",\"content\":\"1\",\"start\":6,\"end\":7},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":7,\"end\":8},{\"type\":\"text\",\"content\":\" \",\"start\":8,\"end\":9},{\"type\":\"comment\",\"content\":\"// tail\",\"start\":9,\"end\":16}],\"real_block_comment\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"a\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"text\",\"content\":\" \",\"start\":5,\"end\":6},{\"type\":\"number\",\"content\":\"1\",\"start\":6,\"end\":7},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":7,\"end\":8},{\"type\":\"text\",\"content\":\" \",\"start\":8,\"end\":9},{\"type\":\"comment\",\"content\":\"/* block */\",\"start\":9,\"end\":20}]}",
+          "value": null,
+          "html": "<pre id=\"probe\">{\"notes\":[\"json loaded via XHR\"],\"keys\":\"comment,property,string,number,punctuation,operator,boolean,null\",\"comment_source\":\"/\\\\/\\\\/.*|\\\\/\\\\*[\\\\s\\\\S]*?(?:\\\\*\\\\/|$)/\",\"comment_is_regexp\":true,\"comment_lookbehind\":false,\"property_source\":\"/\\\"(?:\\\\\\\\.|[^\\\\\\\\\\\"\\\\r\\\\n])*\\\"(?=\\\\s*:)/\",\"property_greedy\":true,\"string_source\":\"/\\\"(?:\\\\\\\\.|[^\\\\\\\\\\\"\\\\r\\\\n])*\\\"(?!\\\\s*:)/\",\"string_greedy\":true,\"string_lookbehind\":false,\"H2\":true,\"H1\":{\"index\":12,\"text\":\"/*\\\"}\"},\"comment_on_s2\":{\"index\":6,\"text\":\"/*\\\",\\\"B\\\":\\\"B\\\",\\\"C\\\":\\\"C\\\"}\"},\"H3\":{\"index\":8,\"text\":\"\\\":\\\"\"},\"H7\":[3,6],\"H8\":false,\"H4\":\"punctuation|property|operator|string|punctuation\",\"H5\":false,\"has_comment_s1\":false,\"has_comment_s2\":false,\"tokens_s1\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"Accept\\\"\",\"start\":1,\"end\":9},{\"type\":\"operator\",\"content\":\":\",\"start\":9,\"end\":10},{\"type\":\"string\",\"content\":\"\\\"*/*\\\"\",\"start\":10,\"end\":15},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":15,\"end\":16}],\"tokens_s2\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"A\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"string\",\"content\":\"\\\"/*\\\"\",\"start\":5,\"end\":9},{\"type\":\"punctuation\",\"content\":\",\",\"start\":9,\"end\":10},{\"type\":\"property\",\"content\":\"\\\"B\\\"\",\"start\":10,\"end\":13},{\"type\":\"operator\",\"content\":\":\",\"start\":13,\"end\":14},{\"type\":\"string\",\"content\":\"\\\"B\\\"\",\"start\":14,\"end\":17},{\"type\":\"punctuation\",\"content\":\",\",\"start\":17,\"end\":18},{\"type\":\"text\",\"content\":\"\\\"C\",\"start\":18,\"end\":20},{\"type\":\"string\",\"content\":\"\\\":\\\"\",\"start\":20,\"end\":23},{\"type\":\"text\",\"content\":\"C\\\"\",\"start\":23,\"end\":25},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":25,\"end\":26}],\"H6\":\"&lt;span class=\\\"token punctuation\\\"&gt;{&lt;/span&gt;&lt;span class=\\\"token property\\\"&gt;\\\"A\\\"&lt;/span&gt;&lt;span class=\\\"token operator\\\"&gt;:&lt;/span&gt;&lt;span class=\\\"token string\\\"&gt;\\\"/*\\\"&lt;/span&gt;&lt;span class=\\\"token punctuation\\\"&gt;,&lt;/span&gt;&lt;span class=\\\"token property\\\"&gt;\\\"B\\\"&lt;/span&gt;&lt;span class=\\\"token operator\\\"&gt;:&lt;/span&gt;&lt;span class=\\\"token string\\\"&gt;\\\"B\\\"&lt;/span&gt;&lt;span class=\\\"token punctuation\\\"&gt;,&lt;/span&gt;\\\"C&lt;span class=\\\"token string\\\"&gt;\\\":\\\"&lt;/span&gt;C\\\"&lt;span class=\\\"token punctuation\\\"&gt;}&lt;/span&gt;\",\"control_only_C\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"C\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"string\",\"content\":\"\\\"C\\\"\",\"start\":5,\"end\":8},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":8,\"end\":9}],\"control_x_then_C\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"A\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"string\",\"content\":\"\\\"x\\\"\",\"start\":5,\"end\":8},{\"type\":\"punctuation\",\"content\":\",\",\"start\":8,\"end\":9},{\"type\":\"property\",\"content\":\"\\\"C\\\"\",\"start\":9,\"end\":12},{\"type\":\"operator\",\"content\":\":\",\"start\":12,\"end\":13},{\"type\":\"string\",\"content\":\"\\\"C\\\"\",\"start\":13,\"end\":16},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":16,\"end\":17}],\"control_slash_then_C\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"A\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"string\",\"content\":\"\\\"/*\\\"\",\"start\":5,\"end\":9},{\"type\":\"punctuation\",\"content\":\",\",\"start\":9,\"end\":10},{\"type\":\"property\",\"content\":\"\\\"C\\\"\",\"start\":10,\"end\":13},{\"type\":\"operator\",\"content\":\":\",\"start\":13,\"end\":14},{\"type\":\"string\",\"content\":\"\\\"C\\\"\",\"start\":14,\"end\":17},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":17,\"end\":18}],\"real_line_comment\":[{\"type\":\"punctuation\",\"content\":\"{\",\"start\":0,\"end\":1},{\"type\":\"property\",\"content\":\"\\\"a\\\"\",\"start\":1,\"end\":4},{\"type\":\"operator\",\"content\":\":\",\"start\":4,\"end\":5},{\"type\":\"text\",\"content\":\" \",\"start\":5,\"end\":6},{\"type\":\"number\",\"content\":\"1\",\"start\":6,\"end\":7},{\"type\":\"punctuation\",\"content\":\"}\",\"start\":7,\"end\":8"
+        }
+      ],
+      "ok": true,
+      "process": {
+        "command": [
+          "/home/ubuntu/anaconda3/envs/pyy/paper/TraceRepair/releases/isolation_20260907/.venv/bin/python",
+          "/task/trajectory/agents/browser/turn_02/tool_01/browser/actions.py",
+          "/task/trajectory/agents/browser/turn_02/tool_01/browser/request.json"
+        ],
+        "returncode": 0,
+        "stdout": "/task/trajectory/agents/browser/turn_02/tool_01/browser/process/stdout.log",
+        "stderr": "/task/trajectory/agents/browser/turn_02/tool_01/browser/process/stderr.log"
+      },
+      "reason": "browser_actions",
+      "stderr": ""
+    },
+    "node_stderr": "",
+    "screenshot": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+    "witnesses": [
+      {
+        "id": "H1",
+        "tier": "T2",
+        "symbol_exists": true,
+        "reached": true,
+        "values": [
+          {
+            "type": "undefined"
+          }
+        ],
+        "execution_ok": true,
+        "artifact": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+        "reason": "pinned_chromium_scene",
+        "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+        "instrumented_line": 1,
+        "static_reachable": null,
+        "scenario_complete": true,
+        "coverage": {
+          "complete": false,
+          "scenarios": 1,
+          "reason": "single_issue_reproducer_is_not_exhaustive"
+        },
+        "tiers": [
+          {
+            "tier": "T1",
+            "execution_ok": true,
+            "reached": true,
+            "values": [
+              {
+                "type": "undefined"
+              }
+            ],
+            "scenario_complete": true,
+            "target_loaded": true,
+            "artifact": "/task/trajectory/S3b/attempt_02/T1/events.json",
+            "reason": "node_execution",
+            "errors": []
+          },
+          {
+            "tier": "T2",
+            "execution_ok": true,
+            "reached": true,
+            "values": [
+              {
+                "type": "undefined"
+              }
+            ],
+            "scenario_complete": true,
+            "target_loaded": true,
+            "artifact": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+            "reason": "pinned_chromium_scene",
+            "errors": []
+          }
+        ],
+        "static_certificate": null,
+        "target_loaded": true,
+        "errors": []
+      },
+      {
+        "id": "H2",
+        "tier": "T2",
+        "symbol_exists": true,
+        "reached": true,
+        "values": [
+          {
+            "type": "undefined"
+          }
+        ],
+        "execution_ok": true,
+        "artifact": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+        "reason": "pinned_chromium_scene",
+        "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+        "instrumented_line": 1,
+        "static_reachable": null,
+        "scenario_complete": true,
+        "coverage": {
+          "complete": false,
+          "scenarios": 1,
+          "reason": "single_issue_reproducer_is_not_exhaustive"
+        },
+        "tiers": [
+          {
+            "tier": "T1",
+            "execution_ok": true,
+            "reached": true,
+            "values": [
+              {
+                "type": "undefined"
+              }
+            ],
+            "scenario_complete": true,
+            "target_loaded": true,
+            "artifact": "/task/trajectory/S3b/attempt_02/T1/events.json",
+            "reason": "node_execution",
+            "errors": []
+          },
+          {
+            "tier": "T2",
+            "execution_ok": true,
+            "reached": true,
+            "values": [
+              {
+                "type": "undefined"
+              }
+            ],
+            "scenario_complete": true,
+            "target_loaded": true,
+            "artifact": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+            "reason": "pinned_chromium_scene",
+            "errors": []
+          }
+        ],
+        "static_certificate": null,
+        "target_loaded": true,
+        "errors": []
+      },
+      {
+        "id": "H3",
+        "tier": "T2",
+        "symbol_exists": true,
+        "reached": true,
+        "values": [
+          {
+            "type": "undefined"
+          }
+        ],
+        "execution_ok": true,
+        "artifact": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+        "reason": "pinned_chromium_scene",
+        "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+        "instrumented_line": 1,
+        "static_reachable": null,
+        "scenario_complete": true,
+        "coverage": {
+          "complete": false,
+          "scenarios": 1,
+          "reason": "single_issue_reproducer_is_not_exhaustive"
+        },
+        "tiers": [
+          {
+            "tier": "T1",
+            "execution_ok": true,
+            "reached": true,
+            "values": [
+              {
+                "type": "undefined"
+              }
+            ],
+            "scenario_complete": true,
+            "target_loaded": true,
+            "artifact": "/task/trajectory/S3b/attempt_02/T1/events.json",
+            "reason": "node_execution",
+            "errors": []
+          },
+          {
+            "tier": "T2",
+            "execution_ok": true,
+            "reached": true,
+            "values": [
+              {
+                "type": "undefined"
+              }
+            ],
+            "scenario_complete": true,
+            "target_loaded": true,
+            "artifact": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+            "reason": "pinned_chromium_scene",
+            "errors": []
+          }
+        ],
+        "static_certificate": null,
+        "target_loaded": true,
+        "errors": []
+      },
+      {
+        "id": "H4",
+        "tier": "T2",
+        "symbol_exists": true,
+        "reached": true,
+        "values": [
+          {
+            "type": "undefined"
+          }
+        ],
+        "execution_ok": true,
+        "artifact": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+        "reason": "pinned_chromium_scene",
+        "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+        "instrumented_line": 1,
+        "static_reachable": null,
+        "scenario_complete": true,
+        "coverage": {
+          "complete": false,
+          "scenarios": 1,
+          "reason": "single_issue_reproducer_is_not_exhaustive"
+        },
+        "tiers": [
+          {
+            "tier": "T1",
+            "execution_ok": true,
+            "reached": true,
+            "values": [
+              {
+                "type": "undefined"
+              }
+            ],
+            "scenario_complete": true,
+            "target_loaded": true,
+            "artifact": "/task/trajectory/S3b/attempt_02/T1/events.json",
+            "reason": "node_execution",
+            "errors": []
+          },
+          {
+            "tier": "T2",
+            "execution_ok": true,
+            "reached": true,
+            "values": [
+              {
+                "type": "undefined"
+              }
+            ],
+            "scenario_complete": true,
+            "target_loaded": true,
+            "artifact": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+            "reason": "pinned_chromium_scene",
+            "errors": []
+          }
+        ],
+        "static_certificate": null,
+        "target_loaded": true,
+        "errors": []
+      },
+      {
+        "id": "H5",
+        "tier": "T2",
+        "symbol_exists": true,
+        "reached": true,
+        "values": [
+          {
+            "type": "undefined"
+          }
+        ],
+        "execution_ok": true,
+        "artifact": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+        "reason": "pinned_chromium_scene",
+        "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+        "instrumented_line": 1,
+        "static_reachable": null,
+        "scenario_complete": true,
+        "coverage": {
+          "complete": false,
+          "scenarios": 1,
+          "reason": "single_issue_reproducer_is_not_exhaustive"
+        },
+        "tiers": [
+          {
+            "tier": "T1",
+            "execution_ok": true,
+            "reached": true,
+            "values": [
+              {
+                "type": "undefined"
+              }
+            ],
+            "scenario_complete": true,
+            "target_loaded": true,
+            "artifact": "/task/trajectory/S3b/attempt_02/T1/events.json",
+            "reason": "node_execution",
+            "errors": []
+          },
+          {
+            "tier": "T2",
+            "execution_ok": true,
+            "reached": true,
+            "values": [
+              {
+                "type": "undefined"
+              }
+            ],
+            "scenario_complete": true,
+            "target_loaded": true,
+            "artifact": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+            "reason": "pinned_chromium_scene",
+            "errors": []
+          }
+        ],
+        "static_certificate": null,
+        "target_loaded": true,
+        "errors": []
+      },
+      {
+        "id": "H6",
+        "tier": "T2",
+        "symbol_exists": true,
+        "reached": true,
+        "values": [
+          {
+            "type": "undefined"
+          }
+        ],
+        "execution_ok": true,
+        "artifact": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+        "reason": "pinned_chromium_scene",
+        "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+        "instrumented_line": 1,
+        "static_reachable": null,
+        "scenario_complete": true,
+        "coverage": {
+          "complete": false,
+          "scenarios": 1,
+          "reason": "single_issue_reproducer_is_not_exhaustive"
+        },
+        "tiers": [
+          {
+            "tier": "T1",
+            "execution_ok": true,
+            "reached": true,
+            "values": [
+              {
+                "type": "undefined"
+              }
+            ],
+            "scenario_complete": true,
+            "target_loaded": true,
+            "artifact": "/task/trajectory/S3b/attempt_02/T1/events.json",
+            "reason": "node_execution",
+            "errors": []
+          },
+          {
+            "tier": "T2",
+            "execution_ok": true,
+            "reached": true,
+            "values": [
+              {
+                "type": "undefined"
+              }
+            ],
+            "scenario_complete": true,
+            "target_loaded": true,
+            "artifact": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+            "reason": "pinned_chromium_scene",
+            "errors": []
+          }
+        ],
+        "static_certificate": null,
+        "target_loaded": true,
+        "errors": []
+      },
+      {
+        "id": "H7",
+        "tier": "T2",
+        "symbol_exists": true,
+        "reached": true,
+        "values": [
+          {
+            "type": "undefined"
+          }
+        ],
+        "execution_ok": true,
+        "artifact": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+        "reason": "pinned_chromium_scene",
+        "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+        "instrumented_line": 1,
+        "static_reachable": null,
+        "scenario_complete": true,
+        "coverage": {
+          "complete": false,
+          "scenarios": 1,
+          "reason": "single_issue_reproducer_is_not_exhaustive"
+        },
+        "tiers": [
+          {
+            "tier": "T1",
+            "execution_ok": true,
+            "reached": true,
+            "values": [
+              {
+                "type": "undefined"
+              }
+            ],
+            "scenario_complete": true,
+            "target_loaded": true,
+            "artifact": "/task/trajectory/S3b/attempt_02/T1/events.json",
+            "reason": "node_execution",
+            "errors": []
+          },
+          {
+            "tier": "T2",
+            "execution_ok": true,
+            "reached": true,
+            "values": [
+              {
+                "type": "undefined"
+              }
+            ],
+            "scenario_complete": true,
+            "target_loaded": true,
+            "artifact": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+            "reason": "pinned_chromium_scene",
+            "errors": []
+          }
+        ],
+        "static_certificate": null,
+        "target_loaded": true,
+        "errors": []
+      },
+      {
+        "id": "H8",
+        "tier": "T2",
+        "symbol_exists": true,
+        "reached": true,
+        "values": [
+          {
+            "type": "undefined"
+          }
+        ],
+        "execution_ok": true,
+        "artifact": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+        "reason": "pinned_chromium_scene",
+        "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+        "instrumented_line": 1,
+        "static_reachable": null,
+        "scenario_complete": true,
+        "coverage": {
+          "complete": false,
+          "scenarios": 1,
+          "reason": "single_issue_reproducer_is_not_exhaustive"
+        },
+        "tiers": [
+          {
+            "tier": "T1",
+            "execution_ok": true,
+            "reached": true,
+            "values": [
+              {
+                "type": "undefined"
+              }
+            ],
+            "scenario_complete": true,
+            "target_loaded": true,
+            "artifact": "/task/trajectory/S3b/attempt_02/T1/events.json",
+            "reason": "node_execution",
+            "errors": []
+          },
+          {
+            "tier": "T2",
+            "execution_ok": true,
+            "reached": true,
+            "values": [
+              {
+                "type": "undefined"
+              }
+            ],
+            "scenario_complete": true,
+            "target_loaded": true,
+            "artifact": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+            "reason": "pinned_chromium_scene",
+            "errors": []
+          }
+        ],
+        "static_certificate": null,
+        "target_loaded": true,
+        "errors": []
+      }
+    ]
+  }
+}

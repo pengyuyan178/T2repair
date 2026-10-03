@@ -1,0 +1,33 @@
+{
+  "payload": {
+    "characters": 6328,
+    "utf8_bytes": 6328
+  },
+  "source_windows": 1,
+  "source_characters": 224,
+  "source_utf8_bytes": 224,
+  "duplicate_source_lines": 0,
+  "coverage": [
+    {
+      "boundary_id": "matching:components/prism-json.js:2:37-68",
+      "file": "components/prism-json.js",
+      "line": 2,
+      "end_line": 2,
+      "start_covered": true,
+      "range_covered": true
+    }
+  ],
+  "selected_targets": 1,
+  "covered_starts": 1,
+  "covered_ranges": 1,
+  "actual_input_tokens": null,
+  "omitted_items": 0,
+  "deduplicated": {
+    "constraints": 0,
+    "boundaries": 0,
+    "interfaces": 0,
+    "notes": 5
+  },
+  "unexpanded_source_ranges": 1,
+  "rejected_boundaries": 0
+}

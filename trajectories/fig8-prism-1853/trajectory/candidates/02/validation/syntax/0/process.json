@@ -1,0 +1,10 @@
+{
+  "command": [
+    "/opt/node/bin/node",
+    "/task/trajectory/candidates/02/validation/syntax/0/ast.cjs",
+    "/task/trajectory/candidates/02/validation/syntax/0/request.json"
+  ],
+  "returncode": 0,
+  "stdout": "/task/trajectory/candidates/02/validation/syntax/0/stdout.log",
+  "stderr": "/task/trajectory/candidates/02/validation/syntax/0/stderr.log"
+}

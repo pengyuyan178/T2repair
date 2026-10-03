@@ -1,0 +1,11 @@
+{
+  "command": [
+    "git",
+    "apply",
+    "--whitespace=nowarn",
+    "/task/trajectory/candidates/01/validation/candidate.diff"
+  ],
+  "returncode": 0,
+  "stdout": "/task/trajectory/candidates/01/validation/apply/stdout.log",
+  "stderr": "/task/trajectory/candidates/01/validation/apply/stderr.log"
+}

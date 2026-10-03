@@ -1,0 +1,8 @@
+{
+  "returncode": 0,
+  "reason": "no_build_declared",
+  "entry": "/scratch/runtime/cg-runtime-wnm9mb7c/prism.js",
+  "entry_exists": true,
+  "entry_sha256": "a85a83c23090257355e5e9bfb3b0dc974938a34013a03999716f30fe78c739fd",
+  "entry_bytes": 24443
+}

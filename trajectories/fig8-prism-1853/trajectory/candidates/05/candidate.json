@@ -1,0 +1,11 @@
+{
+  "rationale": "Root cause: in components/prism-json.js the `comment` rule is declared first and its regex /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/ is not string-aware, so a `/*` occurring inside a quoted JSON value can be claimed by the comment rule before the `property`/`string` rules run, which then re-splits the remaining tokens (the observed stream for {\"A\":\"/*\",\"B\":\"B\",\"C\":\"C\"} loses the `\"C\"` property and splits `\"C\":\"C\"`). Fix: give the string-aware rules priority by moving `comment` after `property` and `string`, exactly as later Prism versions order the grammar. Then property first claims the keys (`\"A\"`, `\"B\"`, `\"C\"`), string claims the values (`\"/*\"`, `\"B\"`, `\"C\"`), and comment only runs over the leftover text, so `/*` and `*/*` inside strings are tokenized as part of the string (C1, C2), following tokens stay normal JSON tokens (C3), and a comment token is only produced when the comment start occurs outside a string (C4). Real comments remain recognized because the comment rule still applies to the remaining plain text. The concatenated bundle prism.js in this base does not embed the JSON grammar (it contains core/markup/css/clike/javascript/file-highlight only), so only components/prism-json.js is changed and no other allowed file needs a co-edit; no test, build or dependency files are touched.",
+  "edits": [
+    {
+      "file": "components/prism-json.js",
+      "search": "Prism.languages.json = {\n\t'comment': /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/,\n\t'property': {\n\t\tpattern: /\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?=\\s*:)/,\n\t\tgreedy: true\n\t},\n\t'string': {\n\t\tpattern: /\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?!\\s*:)/,\n\t\tgreedy: true\n\t},\n",
+      "replace": "Prism.languages.json = {\n\t'property': {\n\t\tpattern: /\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?=\\s*:)/,\n\t\tgreedy: true\n\t},\n\t'string': {\n\t\tpattern: /\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?!\\s*:)/,\n\t\tgreedy: true\n\t},\n\t'comment': /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/,\n",
+      "create": false
+    }
+  ]
+}

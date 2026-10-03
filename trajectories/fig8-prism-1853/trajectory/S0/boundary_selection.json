@@ -1,0 +1,57 @@
+{
+  "selections": [
+    {
+      "boundary_id": "matching:components/prism-json.js:2:37-68",
+      "constraint_ids": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ],
+      "readable_symbols": [],
+      "reason": "This is the JSON comment-token matching boundary. Its pattern matches /* and can consume the rest of the input when /* appears inside a JSON string. Adjusting this local decision (or how it is gated/ordered) is what can distinguish a string-contained /* from a real comment start, prevent */* inside strings from being split into comment tokens, and stop following JSON tokens from being consumed as comment content. It therefore serves C1, C2, C3, and C4. The candidate exposes no readable symbols; the regex literal itself is the local decision.",
+      "selective": true,
+      "claimed_readable_symbols": [],
+      "boundary": {
+        "id": "matching:components/prism-json.js:2:37-68",
+        "kind": "matching",
+        "mechanism": "matching_boundary",
+        "edit_unit": "matching_expression",
+        "file": "components/prism-json.js",
+        "line": 2,
+        "end_line": 2,
+        "span": [
+          37,
+          68
+        ],
+        "expression": "\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)",
+        "text": "'comment': /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/,",
+        "read_symbols": [],
+        "read_basis": "module_candidate_upper_bound",
+        "consumers": [],
+        "specificity": 38,
+        "detail": {
+          "form": "regexp",
+          "flags": "",
+          "method": "",
+          "rule_owner": ""
+        }
+      },
+      "expressivity": {
+        "verdict": "UNKNOWN",
+        "certificate": null,
+        "reason": "static_read_set_incomplete",
+        "colliding_objects": [],
+        "read_intersection": [],
+        "excludes_candidate": false,
+        "required_runtime_evidence": "object_identity_and_equal_z_b_observations"
+      },
+      "obligations": []
+    }
+  ],
+  "unresolved": [
+    "No JSON string-token boundary is present in the candidate pool; the JSON string rule that would directly enforce C1/C2 by matching quoted strings before comment handling is not among the supplied boundaries."
+  ],
+  "dropped_unknown_ids": [],
+  "dropped_duplicate_or_overflow_ids": []
+}

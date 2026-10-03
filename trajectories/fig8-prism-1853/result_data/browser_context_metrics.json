@@ -1,0 +1,85 @@
+{
+  "payload": {
+    "characters": 28320,
+    "utf8_bytes": 28320
+  },
+  "initial_message": {
+    "characters": 50251,
+    "utf8_bytes": 50251
+  },
+  "source_windows": 8,
+  "source_characters": 1310,
+  "source_utf8_bytes": 1310,
+  "duplicate_source_lines": 0,
+  "coverage": [
+    {
+      "hypothesis_id": "H1",
+      "origin": "normalized",
+      "file": "components/prism-json.js",
+      "line": 2,
+      "status": "valid",
+      "covered": true
+    },
+    {
+      "hypothesis_id": "H2",
+      "origin": "normalized",
+      "file": "components/prism-json.js",
+      "line": 2,
+      "status": "valid",
+      "covered": true
+    },
+    {
+      "hypothesis_id": "H3",
+      "origin": "normalized",
+      "file": "components/prism-json.js",
+      "line": 8,
+      "status": "valid",
+      "covered": true
+    },
+    {
+      "hypothesis_id": "H4",
+      "origin": "normalized",
+      "file": "components/prism-json.js",
+      "line": 2,
+      "status": "valid",
+      "covered": true
+    },
+    {
+      "hypothesis_id": "H5",
+      "origin": "normalized",
+      "file": "components/prism-json.js",
+      "line": 2,
+      "status": "valid",
+      "covered": true
+    },
+    {
+      "hypothesis_id": "H6",
+      "origin": "normalized",
+      "file": "components/prism-json.js",
+      "line": 2,
+      "status": "valid",
+      "covered": true
+    },
+    {
+      "hypothesis_id": "H7",
+      "origin": "normalized",
+      "file": "components/prism-json.js",
+      "line": 2,
+      "status": "valid",
+      "covered": true
+    },
+    {
+      "hypothesis_id": "H8",
+      "origin": "normalized",
+      "file": "components/prism-json.js",
+      "line": 2,
+      "status": "valid",
+      "covered": true
+    }
+  ],
+  "valid_targets": 8,
+  "covered_targets": 8,
+  "invalid_references": 0,
+  "budget_omissions": 0,
+  "actual_input_tokens": null
+}

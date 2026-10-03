@@ -1,0 +1,171 @@
+{
+  "parser": "/opt/trace/baseline/guirepair/Code/node_modules/@babel/parser",
+  "file": "/scratch/runtime/cg-runtime-nlgii9yz/components/prism-json.js",
+  "relative": "components/prism-json.js",
+  "hypotheses": [
+    {
+      "id": "H1",
+      "boundary_id": "matching:components/prism-json.js:2:37-68",
+      "file": "components/prism-json.js",
+      "symbol": "comment",
+      "line": 2,
+      "mechanism": "matching_boundary",
+      "question": {
+        "kind": "value",
+        "expression": "Prism.languages.json['comment'].exec('{\"Accept\":\"*/*\"}')[0]",
+        "expected": "/*\"}"
+      },
+      "readable_symbols": [],
+      "target_property": "comment",
+      "constraint_ids": [
+        "C2",
+        "C4"
+      ],
+      "boundary_valid": true
+    },
+    {
+      "id": "H2",
+      "boundary_id": "matching:components/prism-json.js:2:37-68",
+      "file": "components/prism-json.js",
+      "symbol": "comment",
+      "line": 2,
+      "mechanism": "matching_boundary",
+      "question": {
+        "kind": "value",
+        "expression": "Object.keys(Prism.languages.json).indexOf('comment') < Object.keys(Prism.languages.json).indexOf('string')",
+        "expected": "true"
+      },
+      "readable_symbols": [],
+      "target_property": "comment",
+      "constraint_ids": [
+        "C1",
+        "C4"
+      ],
+      "boundary_valid": true
+    },
+    {
+      "id": "H3",
+      "boundary_id": "",
+      "file": "components/prism-json.js",
+      "symbol": "string",
+      "line": 8,
+      "mechanism": "matching_boundary",
+      "question": {
+        "kind": "value",
+        "expression": "Prism.languages.json['string'].pattern.exec('{\"Accept\":\"*/*\"}')[0]",
+        "expected": "\"*/*\""
+      },
+      "readable_symbols": [
+        "Prism.languages.json"
+      ],
+      "target_property": "string",
+      "constraint_ids": [
+        "C1",
+        "C2"
+      ],
+      "boundary_valid": false
+    },
+    {
+      "id": "H4",
+      "boundary_id": "matching:components/prism-json.js:2:37-68",
+      "file": "components/prism-json.js",
+      "symbol": "comment",
+      "line": 2,
+      "mechanism": "matching_boundary",
+      "question": {
+        "kind": "value",
+        "expression": "Prism.tokenize('{\"Accept\":\"*/*\"}', Prism.languages.json)",
+        "expected": "the token stream contains a top-level comment token that starts at the slash inside the value string and runs to the end of the input, so no string token covers the whole value"
+      },
+      "readable_symbols": [],
+      "target_property": "comment",
+      "constraint_ids": [
+        "C2",
+        "C3"
+      ],
+      "boundary_valid": true
+    },
+    {
+      "id": "H5",
+      "boundary_id": "matching:components/prism-json.js:2:37-68",
+      "file": "components/prism-json.js",
+      "symbol": "comment",
+      "line": 2,
+      "mechanism": "matching_boundary",
+      "question": {
+        "kind": "value",
+        "expression": "Prism.tokenize('{\"A\":\"/*\",\"B\":\"B\",\"C\":\"C\"}', Prism.languages.json).some(function (t) { return typeof t === 'object' && t.type === 'comment' && String(t.content).indexOf('B') !== -1; })",
+        "expected": "true"
+      },
+      "readable_symbols": [],
+      "target_property": "comment",
+      "constraint_ids": [
+        "C3"
+      ],
+      "boundary_valid": true
+    },
+    {
+      "id": "H6",
+      "boundary_id": "matching:components/prism-json.js:2:37-68",
+      "file": "components/prism-json.js",
+      "symbol": "comment",
+      "line": 2,
+      "mechanism": "matching_boundary",
+      "question": {
+        "kind": "value",
+        "expression": "Prism.highlight('{\"A\":\"/*\",\"B\":\"B\",\"C\":\"C\"}', Prism.languages.json, 'json')",
+        "expected": "the HTML contains a token comment span that begins at the slash inside the string value and extends to the end of the input; that region is not rendered inside a token string span"
+      },
+      "readable_symbols": [],
+      "target_property": "comment",
+      "constraint_ids": [
+        "C1",
+        "C3",
+        "C4"
+      ],
+      "boundary_valid": true
+    },
+    {
+      "id": "H7",
+      "boundary_id": "matching:components/prism-json.js:2:37-68",
+      "file": "components/prism-json.js",
+      "symbol": "comment",
+      "line": 2,
+      "mechanism": "matching_boundary",
+      "question": {
+        "kind": "value",
+        "expression": "(function () { var s = '{\"A\":\"/*\",\"B\":\"B\",\"C\":\"C\"}'; return [Prism.languages.json['string'].pattern.exec(s).index, Prism.languages.json['comment'].exec(s).index]; })()",
+        "expected": "[5,6]"
+      },
+      "readable_symbols": [],
+      "target_property": "",
+      "constraint_ids": [
+        "C1",
+        "C4"
+      ],
+      "boundary_valid": true
+    },
+    {
+      "id": "H8",
+      "boundary_id": "matching:components/prism-json.js:2:37-68",
+      "file": "components/prism-json.js",
+      "symbol": "comment",
+      "line": 2,
+      "mechanism": "matching_boundary",
+      "question": {
+        "kind": "symbol",
+        "expression": "Prism.languages.json['comment'].lookbehind",
+        "expected": "false"
+      },
+      "readable_symbols": [],
+      "target_property": "",
+      "constraint_ids": [
+        "C1",
+        "C4"
+      ],
+      "boundary_valid": true
+    }
+  ],
+  "hook": "__cg_c53f301c8f2aaa7f",
+  "instrument": true
+}

@@ -1,0 +1,835 @@
+{
+  "protocol": "s5_context_v1",
+  "status": "ready_with_gaps",
+  "mode": "normal",
+  "attempts": [
+    {
+      "protocol": "s5_context_v1",
+      "mode": "normal",
+      "status": "ready_with_gaps",
+      "config": {
+        "protocol": "s5_context_v1",
+        "max_window_utf8_bytes": 32768,
+        "max_source_total_utf8_bytes": 131072,
+        "max_evidence_utf8_bytes": 262144,
+        "max_payload_utf8_bytes": 524288,
+        "max_request_text_utf8_bytes": 1048576,
+        "context_radius": 8,
+        "max_direct_helpers": 8,
+        "max_dependency_files": 4,
+        "fallback_max_files": 3,
+        "fallback_max_windows_per_file": 2
+      },
+      "gaps": [
+        {
+          "kind": "content_omitted",
+          "evidence_id": "code.t1.o4",
+          "reason": "unrelated_static_tool_record"
+        },
+        {
+          "kind": "content_omitted",
+          "evidence_id": "browser.t1.o1",
+          "field": "browser.html",
+          "reason": "default_full_html"
+        },
+        {
+          "kind": "content_omitted",
+          "evidence_id": "browser.t2.o1",
+          "field": "browser.html",
+          "reason": "default_full_html"
+        },
+        {
+          "kind": "localization_unresolved",
+          "origin": "S0_scope",
+          "text": "Selected boundary matching:components/prism-json.js:2:37-68 has no read_symbols; the local inputs cannot distinguish whether the regex literal itself or its surrounding gating/order controls the string-vs-comment decision."
+        },
+        {
+          "kind": "localization_unresolved",
+          "origin": "S0_scope",
+          "text": "No readable symbols are exposed at the selected boundary, so it cannot determine which tokenizer state (e.g., in-string) is available before the matching expression runs."
+        },
+        {
+          "kind": "upstream_scope_gap",
+          "detail": {
+            "from": "style.css",
+            "request": "gulpfile.js",
+            "reason": "file_budget",
+            "kind": "same_directory_source"
+          }
+        }
+      ],
+      "source_versions": {
+        "components/prism-json.js": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+        "package.json": "c32ef0709a5982cad76ca73d90616a4bf6bcc57d0b961a290bd0de90472e3adc",
+        "prism.js": "a85a83c23090257355e5e9bfb3b0dc974938a34013a03999716f30fe78c739fd",
+        "style.css": "635d73e1cc68f83aa42ae8a69d6d949e8a71002d5f85a9e682e2516b21c35f9a",
+        "components.js": "5f9f0d89deb93ead371988f30d14177c2ca7604531032816373b927b04aeac56",
+        "gulpfile.js": "77ab92a09a482b5056fa7da3266d8fb56428081e1b26403a7d09ebd9efddaf47",
+        "components/prism-core.js": "4b0caf0f02be3c26b45e50a13bd7c97e1f18427af8a35a1c8af674e5e8aa16f4",
+        "components/index.js": "5681b909dbe5594b88ad9d925a8f68879eef105b2ba8f836f4e114d22c8e606f",
+        "components/prism-abnf.js": "802a5e54c7d3c7fb5b8ba81c03c3ac6e481613cc9b92eab168d0865b63783429",
+        "components/prism-actionscript.js": "9134474b090f28cec34d75a81520c65baaeff3e9cf7dc0514e0d74e8ac9685eb",
+        "components/prism-ada.js": "305a2954307233e8f7c03407c0991ab35b689d0ed93ed8cab33b161bcb151c6f",
+        "components/prism-apl.js": "36749c0d81bdbc83aab5523d0a1c3091e56033dd76e6d8a2070e0b92b3722bba"
+      },
+      "tool_source_visibility": {
+        "code.t1.o1": {
+          "status": "complete",
+          "requested_range": [
+            1,
+            19
+          ],
+          "tool_line_window": [
+            1,
+            19
+          ],
+          "raw_text_range": [
+            1,
+            19
+          ],
+          "visible_text_range": [
+            1,
+            19
+          ],
+          "last_line": "complete",
+          "complete_through_line": 19,
+          "tool_truncation": {
+            "reported": false,
+            "character_cut": false,
+            "character_cap": 24000,
+            "unit": "python_characters",
+            "more_file_lines": false
+          },
+          "projection_omission": "none"
+        }
+      },
+      "verified_reads": {
+        "code.t1.o1": {
+          "file": "components/prism-json.js",
+          "start_line": 1,
+          "end_line": 19,
+          "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e"
+        }
+      },
+      "evidence_origins": {
+        "tool:code.t1.o1": "reports/code/observations/0/result",
+        "tool:code.t1.o2": "reports/code/observations/1/result",
+        "tool:code.t1.o3": "reports/code/observations/2/result",
+        "tool:code.t1.o5": "reports/code/observations/4/result",
+        "runtime:browser.t1.o1:0:tier:0": "reports/browser/observations/0/result/witnesses/0/tiers/0",
+        "runtime:browser.t1.o1:0:tier:1": "reports/browser/observations/0/result/witnesses/0/tiers/1",
+        "runtime:browser.t1.o1:0": "reports/browser/observations/0/result/witnesses/0",
+        "runtime:browser.t1.o1:1:tier:0": "reports/browser/observations/0/result/witnesses/1/tiers/0",
+        "runtime:browser.t1.o1:1:tier:1": "reports/browser/observations/0/result/witnesses/1/tiers/1",
+        "runtime:browser.t1.o1:1": "reports/browser/observations/0/result/witnesses/1",
+        "runtime:browser.t1.o1:2:tier:0": "reports/browser/observations/0/result/witnesses/2/tiers/0",
+        "runtime:browser.t1.o1:2:tier:1": "reports/browser/observations/0/result/witnesses/2/tiers/1",
+        "runtime:browser.t1.o1:2": "reports/browser/observations/0/result/witnesses/2",
+        "runtime:browser.t1.o1:3:tier:0": "reports/browser/observations/0/result/witnesses/3/tiers/0",
+        "runtime:browser.t1.o1:3:tier:1": "reports/browser/observations/0/result/witnesses/3/tiers/1",
+        "runtime:browser.t1.o1:3": "reports/browser/observations/0/result/witnesses/3",
+        "runtime:browser.t1.o1:4:tier:0": "reports/browser/observations/0/result/witnesses/4/tiers/0",
+        "runtime:browser.t1.o1:4:tier:1": "reports/browser/observations/0/result/witnesses/4/tiers/1",
+        "runtime:browser.t1.o1:4": "reports/browser/observations/0/result/witnesses/4",
+        "runtime:browser.t1.o1:5:tier:0": "reports/browser/observations/0/result/witnesses/5/tiers/0",
+        "runtime:browser.t1.o1:5:tier:1": "reports/browser/observations/0/result/witnesses/5/tiers/1",
+        "runtime:browser.t1.o1:5": "reports/browser/observations/0/result/witnesses/5",
+        "runtime:browser.t1.o1:6:tier:0": "reports/browser/observations/0/result/witnesses/6/tiers/0",
+        "runtime:browser.t1.o1:6:tier:1": "reports/browser/observations/0/result/witnesses/6/tiers/1",
+        "runtime:browser.t1.o1:6": "reports/browser/observations/0/result/witnesses/6",
+        "runtime:browser.t1.o1:7:tier:0": "reports/browser/observations/0/result/witnesses/7/tiers/0",
+        "runtime:browser.t1.o1:7:tier:1": "reports/browser/observations/0/result/witnesses/7/tiers/1",
+        "runtime:browser.t1.o1:7": "reports/browser/observations/0/result/witnesses/7",
+        "tool:browser.t1.o1": "reports/browser/observations/0/result",
+        "runtime:browser.t2.o1:0:tier:0": "reports/browser/observations/1/result/witnesses/0/tiers/0",
+        "runtime:browser.t2.o1:0:tier:1": "reports/browser/observations/1/result/witnesses/0/tiers/1",
+        "runtime:browser.t2.o1:0": "reports/browser/observations/1/result/witnesses/0",
+        "runtime:browser.t2.o1:1:tier:0": "reports/browser/observations/1/result/witnesses/1/tiers/0",
+        "runtime:browser.t2.o1:1:tier:1": "reports/browser/observations/1/result/witnesses/1/tiers/1",
+        "runtime:browser.t2.o1:1": "reports/browser/observations/1/result/witnesses/1",
+        "runtime:browser.t2.o1:2:tier:0": "reports/browser/observations/1/result/witnesses/2/tiers/0",
+        "runtime:browser.t2.o1:2:tier:1": "reports/browser/observations/1/result/witnesses/2/tiers/1",
+        "runtime:browser.t2.o1:2": "reports/browser/observations/1/result/witnesses/2",
+        "runtime:browser.t2.o1:3:tier:0": "reports/browser/observations/1/result/witnesses/3/tiers/0",
+        "runtime:browser.t2.o1:3:tier:1": "reports/browser/observations/1/result/witnesses/3/tiers/1",
+        "runtime:browser.t2.o1:3": "reports/browser/observations/1/result/witnesses/3",
+        "runtime:browser.t2.o1:4:tier:0": "reports/browser/observations/1/result/witnesses/4/tiers/0",
+        "runtime:browser.t2.o1:4:tier:1": "reports/browser/observations/1/result/witnesses/4/tiers/1",
+        "runtime:browser.t2.o1:4": "reports/browser/observations/1/result/witnesses/4",
+        "runtime:browser.t2.o1:5:tier:0": "reports/browser/observations/1/result/witnesses/5/tiers/0",
+        "runtime:browser.t2.o1:5:tier:1": "reports/browser/observations/1/result/witnesses/5/tiers/1",
+        "runtime:browser.t2.o1:5": "reports/browser/observations/1/result/witnesses/5",
+        "runtime:browser.t2.o1:6:tier:0": "reports/browser/observations/1/result/witnesses/6/tiers/0",
+        "runtime:browser.t2.o1:6:tier:1": "reports/browser/observations/1/result/witnesses/6/tiers/1",
+        "runtime:browser.t2.o1:6": "reports/browser/observations/1/result/witnesses/6",
+        "runtime:browser.t2.o1:7:tier:0": "reports/browser/observations/1/result/witnesses/7/tiers/0",
+        "runtime:browser.t2.o1:7:tier:1": "reports/browser/observations/1/result/witnesses/7/tiers/1",
+        "runtime:browser.t2.o1:7": "reports/browser/observations/1/result/witnesses/7",
+        "tool:browser.t2.o1": "reports/browser/observations/1/result",
+        "final:0:tier:0": "witnesses/0/tiers/0",
+        "final:0:tier:1": "witnesses/0/tiers/1",
+        "final:0": "witnesses/0",
+        "final:1:tier:0": "witnesses/1/tiers/0",
+        "final:1:tier:1": "witnesses/1/tiers/1",
+        "final:1": "witnesses/1",
+        "final:2:tier:0": "witnesses/2/tiers/0",
+        "final:2:tier:1": "witnesses/2/tiers/1",
+        "final:2": "witnesses/2",
+        "final:3:tier:0": "witnesses/3/tiers/0",
+        "final:3:tier:1": "witnesses/3/tiers/1",
+        "final:3": "witnesses/3",
+        "final:4:tier:0": "witnesses/4/tiers/0",
+        "final:4:tier:1": "witnesses/4/tiers/1",
+        "final:4": "witnesses/4",
+        "final:5:tier:0": "witnesses/5/tiers/0",
+        "final:5:tier:1": "witnesses/5/tiers/1",
+        "final:5": "witnesses/5",
+        "final:6:tier:0": "witnesses/6/tiers/0",
+        "final:6:tier:1": "witnesses/6/tiers/1",
+        "final:6": "witnesses/6",
+        "final:7:tier:0": "witnesses/7/tiers/0",
+        "final:7:tier:1": "witnesses/7/tiers/1",
+        "final:7": "witnesses/7",
+        "boundary:0": "front_context/selected_boundaries/0",
+        "binding:H1": "scope/bindings/H1",
+        "binding:H2": "scope/bindings/H2",
+        "binding:H3": "scope/bindings/H3",
+        "binding:H4": "scope/bindings/H4",
+        "binding:H5": "scope/bindings/H5",
+        "binding:H6": "scope/bindings/H6",
+        "binding:H7": "scope/bindings/H7",
+        "binding:H8": "scope/bindings/H8"
+      },
+      "deduplicated_constraints": 0,
+      "deduplicated_witness_wrappers": 24,
+      "deduplicated_witness_utf8_bytes": 4488,
+      "automatic_reads_are_agent_tool_calls": false,
+      "failure": null,
+      "source_needs": [
+        {
+          "file": "components/prism-json.js",
+          "start": 2,
+          "end": 2,
+          "purpose": "hypothesis:H1",
+          "priority": 0,
+          "center": 2
+        },
+        {
+          "file": "components/prism-json.js",
+          "start": 2,
+          "end": 2,
+          "purpose": "hypothesis:H2",
+          "priority": 0,
+          "center": 2
+        },
+        {
+          "file": "components/prism-json.js",
+          "start": 8,
+          "end": 8,
+          "purpose": "hypothesis:H3",
+          "priority": 0,
+          "center": 8
+        },
+        {
+          "file": "components/prism-json.js",
+          "start": 2,
+          "end": 2,
+          "purpose": "hypothesis:H4",
+          "priority": 0,
+          "center": 2
+        },
+        {
+          "file": "components/prism-json.js",
+          "start": 2,
+          "end": 2,
+          "purpose": "hypothesis:H5",
+          "priority": 0,
+          "center": 2
+        },
+        {
+          "file": "components/prism-json.js",
+          "start": 2,
+          "end": 2,
+          "purpose": "hypothesis:H6",
+          "priority": 0,
+          "center": 2
+        },
+        {
+          "file": "components/prism-json.js",
+          "start": 2,
+          "end": 2,
+          "purpose": "hypothesis:H7",
+          "priority": 0,
+          "center": 2
+        },
+        {
+          "file": "components/prism-json.js",
+          "start": 2,
+          "end": 2,
+          "purpose": "hypothesis:H8",
+          "priority": 0,
+          "center": 2
+        },
+        {
+          "file": "components/prism-json.js",
+          "start": 1,
+          "end": 16,
+          "purpose": "initial:code:0",
+          "priority": 2,
+          "center": null
+        },
+        {
+          "file": "components/prism-json.js",
+          "start": 1,
+          "end": 1,
+          "purpose": "initial_anchor:code:0",
+          "priority": 1,
+          "center": 1
+        },
+        {
+          "file": "components/prism-json.js",
+          "start": 1,
+          "end": 16,
+          "purpose": "initial:browser:0",
+          "priority": 2,
+          "center": null
+        },
+        {
+          "file": "components/prism-json.js",
+          "start": 1,
+          "end": 1,
+          "purpose": "initial_anchor:browser:0",
+          "priority": 1,
+          "center": 1
+        },
+        {
+          "file": "package.json",
+          "start": 2,
+          "end": 2,
+          "purpose": "initial:browser:1",
+          "priority": 2,
+          "center": null
+        },
+        {
+          "file": "package.json",
+          "start": 2,
+          "end": 2,
+          "purpose": "initial_anchor:browser:1",
+          "priority": 1,
+          "center": 2
+        },
+        {
+          "file": "package.json",
+          "start": 5,
+          "end": 5,
+          "purpose": "initial:browser:2",
+          "priority": 2,
+          "center": null
+        },
+        {
+          "file": "package.json",
+          "start": 5,
+          "end": 5,
+          "purpose": "initial_anchor:browser:2",
+          "priority": 1,
+          "center": 5
+        },
+        {
+          "file": "package.json",
+          "start": 7,
+          "end": 7,
+          "purpose": "initial:browser:3",
+          "priority": 2,
+          "center": null
+        },
+        {
+          "file": "package.json",
+          "start": 7,
+          "end": 7,
+          "purpose": "initial_anchor:browser:3",
+          "priority": 1,
+          "center": 7
+        },
+        {
+          "file": "package.json",
+          "start": 15,
+          "end": 15,
+          "purpose": "initial:browser:4",
+          "priority": 2,
+          "center": null
+        },
+        {
+          "file": "package.json",
+          "start": 15,
+          "end": 15,
+          "purpose": "initial_anchor:browser:4",
+          "priority": 1,
+          "center": 15
+        },
+        {
+          "file": "package.json",
+          "start": 44,
+          "end": 44,
+          "purpose": "initial:browser:5",
+          "priority": 2,
+          "center": null
+        },
+        {
+          "file": "package.json",
+          "start": 44,
+          "end": 44,
+          "purpose": "initial_anchor:browser:5",
+          "priority": 1,
+          "center": 44
+        },
+        {
+          "file": "prism.js",
+          "start": 1,
+          "end": 17,
+          "purpose": "initial:browser:6",
+          "priority": 2,
+          "center": null
+        },
+        {
+          "file": "prism.js",
+          "start": 1,
+          "end": 1,
+          "purpose": "initial_anchor:browser:6",
+          "priority": 1,
+          "center": 1
+        },
+        {
+          "file": "style.css",
+          "start": 1,
+          "end": 17,
+          "purpose": "initial:browser:7",
+          "priority": 2,
+          "center": null
+        },
+        {
+          "file": "style.css",
+          "start": 1,
+          "end": 1,
+          "purpose": "initial_anchor:browser:7",
+          "priority": 1,
+          "center": 1
+        },
+        {
+          "file": "components/prism-json.js",
+          "start": 1,
+          "end": 19,
+          "purpose": "tool:code.t1.o1",
+          "priority": 2,
+          "center": null
+        },
+        {
+          "file": "components/prism-json.js",
+          "start": 1,
+          "end": 1,
+          "purpose": "tool_anchor:code.t1.o1",
+          "priority": 1,
+          "center": 1
+        },
+        {
+          "file": "components/prism-json.js",
+          "start": 2,
+          "end": 2,
+          "purpose": "boundary:matching:components/prism-json.js:2:37-68",
+          "priority": 2,
+          "center": 2
+        },
+        {
+          "file": "components.js",
+          "start": 1,
+          "end": 2,
+          "purpose": "interface_dependency",
+          "priority": 3,
+          "center": null
+        },
+        {
+          "file": "gulpfile.js",
+          "start": 1,
+          "end": 17,
+          "purpose": "interface_dependency",
+          "priority": 3,
+          "center": null
+        },
+        {
+          "file": "components/prism-json.js",
+          "start": 1,
+          "end": 19,
+          "purpose": "legacy_scope_location",
+          "priority": 4,
+          "center": null
+        },
+        {
+          "file": "components/prism-core.js",
+          "start": 1,
+          "end": 115,
+          "purpose": "legacy_scope_location",
+          "priority": 4,
+          "center": null
+        },
+        {
+          "file": "components/prism-core.js",
+          "start": 453,
+          "end": 460,
+          "purpose": "legacy_scope_location",
+          "priority": 4,
+          "center": null
+        },
+        {
+          "file": "components/prism-core.js",
+          "start": 543,
+          "end": 551,
+          "purpose": "legacy_scope_location",
+          "priority": 4,
+          "center": null
+        },
+        {
+          "file": "prism.js",
+          "start": 1,
+          "end": 120,
+          "purpose": "legacy_scope_location",
+          "priority": 4,
+          "center": null
+        },
+        {
+          "file": "prism.js",
+          "start": 548,
+          "end": 626,
+          "purpose": "legacy_scope_location",
+          "priority": 4,
+          "center": null
+        },
+        {
+          "file": "prism.js",
+          "start": 657,
+          "end": 668,
+          "purpose": "legacy_scope_location",
+          "priority": 4,
+          "center": null
+        },
+        {
+          "file": "prism.js",
+          "start": 720,
+          "end": 958,
+          "purpose": "legacy_scope_location",
+          "priority": 4,
+          "center": null
+        },
+        {
+          "file": "components/index.js",
+          "start": 1,
+          "end": 82,
+          "purpose": "legacy_scope_location",
+          "priority": 4,
+          "center": null
+        },
+        {
+          "file": "components/prism-abnf.js",
+          "start": 1,
+          "end": 54,
+          "purpose": "legacy_scope_location",
+          "priority": 4,
+          "center": null
+        },
+        {
+          "file": "components/prism-actionscript.js",
+          "start": 1,
+          "end": 17,
+          "purpose": "legacy_scope_location",
+          "priority": 4,
+          "center": null
+        },
+        {
+          "file": "components/prism-ada.js",
+          "start": 1,
+          "end": 19,
+          "purpose": "legacy_scope_location",
+          "priority": 4,
+          "center": null
+        },
+        {
+          "file": "components/prism-apl.js",
+          "start": 1,
+          "end": 32,
+          "purpose": "legacy_scope_location",
+          "priority": 4,
+          "center": null
+        },
+        {
+          "file": "style.css",
+          "start": 1,
+          "end": 413,
+          "purpose": "legacy_scope_location",
+          "priority": 4,
+          "center": null
+        },
+        {
+          "file": "components.js",
+          "start": 1,
+          "end": 2,
+          "purpose": "legacy_scope_location",
+          "priority": 4,
+          "center": null
+        }
+      ],
+      "deduplicated_static_text_utf8_bytes": 0,
+      "metrics": {
+        "payload": {
+          "characters": 161456,
+          "utf8_bytes": 161637
+        },
+        "sections": {
+          "protocol": {
+            "characters": 13,
+            "utf8_bytes": 13
+          },
+          "mode": {
+            "characters": 6,
+            "utf8_bytes": 6
+          },
+          "task": {
+            "characters": 767,
+            "utf8_bytes": 767
+          },
+          "requirements": {
+            "characters": 1961,
+            "utf8_bytes": 1961
+          },
+          "edit_contract": {
+            "characters": 1273,
+            "utf8_bytes": 1273
+          },
+          "hypotheses": {
+            "characters": 8771,
+            "utf8_bytes": 8771
+          },
+          "source_windows": {
+            "characters": 57220,
+            "utf8_bytes": 57399
+          },
+          "evidence": {
+            "characters": 69679,
+            "utf8_bytes": 69679
+          },
+          "agents": {
+            "characters": 20598,
+            "utf8_bytes": 20600
+          },
+          "gaps": {
+            "characters": 1021,
+            "utf8_bytes": 1021
+          }
+        },
+        "request_text": {
+          "chars": 191922,
+          "utf8_bytes": 192103,
+          "image_count": 1,
+          "image_url_utf8_bytes": 18730,
+          "image_binary_bytes": 14031,
+          "tokens": null,
+          "measurement": "canonical_json_messages_and_response_format_without_image_urls"
+        },
+        "source_characters": 44078,
+        "source_utf8_bytes": 44257,
+        "source_windows": 18,
+        "duplicate_source_lines": 0,
+        "evidence": {
+          "characters": 69679,
+          "utf8_bytes": 69679
+        },
+        "coverage": [
+          {
+            "hypothesis_id": "H1",
+            "file": "components/prism-json.js",
+            "line": 2,
+            "target_covered": true,
+            "unique_edit_window": true
+          },
+          {
+            "hypothesis_id": "H2",
+            "file": "components/prism-json.js",
+            "line": 2,
+            "target_covered": true,
+            "unique_edit_window": true
+          },
+          {
+            "hypothesis_id": "H3",
+            "file": "components/prism-json.js",
+            "line": 8,
+            "target_covered": true,
+            "unique_edit_window": true
+          },
+          {
+            "hypothesis_id": "H4",
+            "file": "components/prism-json.js",
+            "line": 2,
+            "target_covered": true,
+            "unique_edit_window": true
+          },
+          {
+            "hypothesis_id": "H5",
+            "file": "components/prism-json.js",
+            "line": 2,
+            "target_covered": true,
+            "unique_edit_window": true
+          },
+          {
+            "hypothesis_id": "H6",
+            "file": "components/prism-json.js",
+            "line": 2,
+            "target_covered": true,
+            "unique_edit_window": true
+          },
+          {
+            "hypothesis_id": "H7",
+            "file": "components/prism-json.js",
+            "line": 2,
+            "target_covered": true,
+            "unique_edit_window": true
+          },
+          {
+            "hypothesis_id": "H8",
+            "file": "components/prism-json.js",
+            "line": 2,
+            "target_covered": true,
+            "unique_edit_window": true
+          }
+        ],
+        "reference_errors": [],
+        "omissions": 6,
+        "actual_input_tokens": null
+      },
+      "payload_sha256": "d86d258426f585449be4da77d26841cd1ba8d290e4e0328b651552c5c07cd9b4"
+    }
+  ],
+  "metrics": {
+    "payload": {
+      "characters": 161456,
+      "utf8_bytes": 161637
+    },
+    "sections": {
+      "protocol": {
+        "characters": 13,
+        "utf8_bytes": 13
+      },
+      "mode": {
+        "characters": 6,
+        "utf8_bytes": 6
+      },
+      "task": {
+        "characters": 767,
+        "utf8_bytes": 767
+      },
+      "requirements": {
+        "characters": 1961,
+        "utf8_bytes": 1961
+      },
+      "edit_contract": {
+        "characters": 1273,
+        "utf8_bytes": 1273
+      },
+      "hypotheses": {
+        "characters": 8771,
+        "utf8_bytes": 8771
+      },
+      "source_windows": {
+        "characters": 57220,
+        "utf8_bytes": 57399
+      },
+      "evidence": {
+        "characters": 69679,
+        "utf8_bytes": 69679
+      },
+      "agents": {
+        "characters": 20598,
+        "utf8_bytes": 20600
+      },
+      "gaps": {
+        "characters": 1021,
+        "utf8_bytes": 1021
+      }
+    },
+    "request_text": {
+      "chars": 191922,
+      "utf8_bytes": 192103,
+      "image_count": 1,
+      "image_url_utf8_bytes": 18730,
+      "image_binary_bytes": 14031,
+      "tokens": null,
+      "measurement": "canonical_json_messages_and_response_format_without_image_urls"
+    },
+    "source_characters": 44078,
+    "source_utf8_bytes": 44257,
+    "source_windows": 18,
+    "duplicate_source_lines": 0,
+    "evidence": {
+      "characters": 69679,
+      "utf8_bytes": 69679
+    },
+    "coverage": [
+      {
+        "hypothesis_id": "H1",
+        "file": "components/prism-json.js",
+        "line": 2,
+        "target_covered": true,
+        "unique_edit_window": true
+      },
+      {
+        "hypothesis_id": "H2",
+        "file": "components/prism-json.js",
+        "line": 2,
+        "target_covered": true,
+        "unique_edit_window": true
+      },
+      {
+        "hypothesis_id": "H3",
+        "file": "components/prism-json.js",
+        "line": 8,
+        "target_covered": true,
+        "unique_edit_window": true
+      },
+      {
+        "hypothesis_id": "H4",
+        "file": "components/prism-json.js",
+        "line": 2,
+        "target_covered": true,
+        "unique_edit_window": true
+      },
+      {
+        "hypothesis_id": "H5",
+        "file": "components/prism-json.js",
+        "line": 2,
+        "target_covered": true,
+        "unique_edit_window": true
+      },
+      {
+        "hypothesis_id": "H6",
+        "file": "components/prism-json.js",
+        "line": 2,
+        "target_covered": true,
+        "unique_edit_window": true
+      },
+      {
+        "hypothesis_id": "H7",
+        "file": "components/prism-json.js",
+        "line": 2,
+        "target_covered": true,
+        "unique_edit_window": true
+      },
+      {
+        "hypothesis_id": "H8",
+        "file": "components/prism-json.js",
+        "line": 2,
+        "target_covered": true,
+        "unique_edit_window": true
+      }
+    ],
+    "reference_errors": [],
+    "omissions": 6,
+    "actual_input_tokens": null
+  },
+  "payload_sha256": "d86d258426f585449be4da77d26841cd1ba8d290e4e0328b651552c5c07cd9b4"
+}

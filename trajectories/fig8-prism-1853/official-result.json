@@ -1,0 +1,12 @@
+{
+  "source": "test480_deepseek/final_results.csv",
+  "source_sha256": "35bfe55a2ee12837a22ec27cfa4ef103bc26ab265c7136ad92fae3e52618ba02",
+  "record": {
+    "case_id": "PrismJS__prism-1853",
+    "官方评测结果": "通过",
+    "官方是否通过": "是",
+    "评测状态": "evaluated",
+    "严格核验是否通过": "未知",
+    "严格核验状态": "unconfirmed"
+  }
+}

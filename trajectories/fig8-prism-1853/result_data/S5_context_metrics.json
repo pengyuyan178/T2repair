@@ -1,0 +1,126 @@
+{
+  "payload": {
+    "characters": 161456,
+    "utf8_bytes": 161637
+  },
+  "sections": {
+    "protocol": {
+      "characters": 13,
+      "utf8_bytes": 13
+    },
+    "mode": {
+      "characters": 6,
+      "utf8_bytes": 6
+    },
+    "task": {
+      "characters": 767,
+      "utf8_bytes": 767
+    },
+    "requirements": {
+      "characters": 1961,
+      "utf8_bytes": 1961
+    },
+    "edit_contract": {
+      "characters": 1273,
+      "utf8_bytes": 1273
+    },
+    "hypotheses": {
+      "characters": 8771,
+      "utf8_bytes": 8771
+    },
+    "source_windows": {
+      "characters": 57220,
+      "utf8_bytes": 57399
+    },
+    "evidence": {
+      "characters": 69679,
+      "utf8_bytes": 69679
+    },
+    "agents": {
+      "characters": 20598,
+      "utf8_bytes": 20600
+    },
+    "gaps": {
+      "characters": 1021,
+      "utf8_bytes": 1021
+    }
+  },
+  "request_text": {
+    "chars": 191922,
+    "utf8_bytes": 192103,
+    "image_count": 1,
+    "image_url_utf8_bytes": 18730,
+    "image_binary_bytes": 14031,
+    "tokens": null,
+    "measurement": "canonical_json_messages_and_response_format_without_image_urls"
+  },
+  "source_characters": 44078,
+  "source_utf8_bytes": 44257,
+  "source_windows": 18,
+  "duplicate_source_lines": 0,
+  "evidence": {
+    "characters": 69679,
+    "utf8_bytes": 69679
+  },
+  "coverage": [
+    {
+      "hypothesis_id": "H1",
+      "file": "components/prism-json.js",
+      "line": 2,
+      "target_covered": true,
+      "unique_edit_window": true
+    },
+    {
+      "hypothesis_id": "H2",
+      "file": "components/prism-json.js",
+      "line": 2,
+      "target_covered": true,
+      "unique_edit_window": true
+    },
+    {
+      "hypothesis_id": "H3",
+      "file": "components/prism-json.js",
+      "line": 8,
+      "target_covered": true,
+      "unique_edit_window": true
+    },
+    {
+      "hypothesis_id": "H4",
+      "file": "components/prism-json.js",
+      "line": 2,
+      "target_covered": true,
+      "unique_edit_window": true
+    },
+    {
+      "hypothesis_id": "H5",
+      "file": "components/prism-json.js",
+      "line": 2,
+      "target_covered": true,
+      "unique_edit_window": true
+    },
+    {
+      "hypothesis_id": "H6",
+      "file": "components/prism-json.js",
+      "line": 2,
+      "target_covered": true,
+      "unique_edit_window": true
+    },
+    {
+      "hypothesis_id": "H7",
+      "file": "components/prism-json.js",
+      "line": 2,
+      "target_covered": true,
+      "unique_edit_window": true
+    },
+    {
+      "hypothesis_id": "H8",
+      "file": "components/prism-json.js",
+      "line": 2,
+      "target_covered": true,
+      "unique_edit_window": true
+    }
+  ],
+  "reference_errors": [],
+  "omissions": 6,
+  "actual_input_tokens": null
+}

@@ -1,0 +1,961 @@
+{
+  "hypotheses": [
+    {
+      "id": "H1",
+      "boundary_id": "matching:components/prism-json.js:2:37-68",
+      "file": "components/prism-json.js",
+      "symbol": "comment",
+      "line": 2,
+      "mechanism": "matching_boundary",
+      "question": {
+        "kind": "value",
+        "expression": "Prism.languages.json['comment'].exec('{\"Accept\":\"*/*\"}')[0]",
+        "expected": "/*\"}"
+      },
+      "readable_symbols": [],
+      "target_property": "comment",
+      "constraint_ids": [
+        "C2",
+        "C4"
+      ],
+      "boundary_valid": true,
+      "verdict": "UNKNOWN",
+      "baseline_rank": 0,
+      "local_influence_supported": false,
+      "input_rank": 0,
+      "witness_count": 1,
+      "certificate": {
+        "kind": "insufficient_evidence",
+        "witnesses": [
+          {
+            "id": "H1",
+            "tier": "T2",
+            "symbol_exists": true,
+            "reached": true,
+            "values": [
+              {
+                "type": "undefined"
+              }
+            ],
+            "execution_ok": true,
+            "artifact": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+            "reason": "pinned_chromium_scene",
+            "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+            "instrumented_line": 1,
+            "static_reachable": null,
+            "scenario_complete": true,
+            "coverage": {
+              "complete": false,
+              "scenarios": 1,
+              "reason": "single_issue_reproducer_is_not_exhaustive"
+            },
+            "tiers": [
+              {
+                "tier": "T1",
+                "execution_ok": true,
+                "reached": true,
+                "values": [
+                  {
+                    "type": "undefined"
+                  }
+                ],
+                "scenario_complete": true,
+                "target_loaded": true,
+                "artifact": "/task/trajectory/S3b/attempt_02/T1/events.json",
+                "reason": "node_execution",
+                "errors": []
+              },
+              {
+                "tier": "T2",
+                "execution_ok": true,
+                "reached": true,
+                "values": [
+                  {
+                    "type": "undefined"
+                  }
+                ],
+                "scenario_complete": true,
+                "target_loaded": true,
+                "artifact": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+                "reason": "pinned_chromium_scene",
+                "errors": []
+              }
+            ],
+            "static_certificate": null,
+            "target_loaded": true,
+            "errors": []
+          }
+        ],
+        "effect_evidence": [],
+        "expected_prediction": null,
+        "refutation_scope": null,
+        "excludes_candidate": false,
+        "proves_expressibility": false
+      }
+    },
+    {
+      "id": "H2",
+      "boundary_id": "matching:components/prism-json.js:2:37-68",
+      "file": "components/prism-json.js",
+      "symbol": "comment",
+      "line": 2,
+      "mechanism": "matching_boundary",
+      "question": {
+        "kind": "value",
+        "expression": "Object.keys(Prism.languages.json).indexOf('comment') < Object.keys(Prism.languages.json).indexOf('string')",
+        "expected": "true"
+      },
+      "readable_symbols": [],
+      "target_property": "comment",
+      "constraint_ids": [
+        "C1",
+        "C4"
+      ],
+      "boundary_valid": true,
+      "verdict": "UNKNOWN",
+      "baseline_rank": 0,
+      "local_influence_supported": false,
+      "input_rank": 1,
+      "witness_count": 1,
+      "certificate": {
+        "kind": "insufficient_evidence",
+        "witnesses": [
+          {
+            "id": "H2",
+            "tier": "T2",
+            "symbol_exists": true,
+            "reached": true,
+            "values": [
+              {
+                "type": "undefined"
+              }
+            ],
+            "execution_ok": true,
+            "artifact": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+            "reason": "pinned_chromium_scene",
+            "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+            "instrumented_line": 1,
+            "static_reachable": null,
+            "scenario_complete": true,
+            "coverage": {
+              "complete": false,
+              "scenarios": 1,
+              "reason": "single_issue_reproducer_is_not_exhaustive"
+            },
+            "tiers": [
+              {
+                "tier": "T1",
+                "execution_ok": true,
+                "reached": true,
+                "values": [
+                  {
+                    "type": "undefined"
+                  }
+                ],
+                "scenario_complete": true,
+                "target_loaded": true,
+                "artifact": "/task/trajectory/S3b/attempt_02/T1/events.json",
+                "reason": "node_execution",
+                "errors": []
+              },
+              {
+                "tier": "T2",
+                "execution_ok": true,
+                "reached": true,
+                "values": [
+                  {
+                    "type": "undefined"
+                  }
+                ],
+                "scenario_complete": true,
+                "target_loaded": true,
+                "artifact": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+                "reason": "pinned_chromium_scene",
+                "errors": []
+              }
+            ],
+            "static_certificate": null,
+            "target_loaded": true,
+            "errors": []
+          }
+        ],
+        "effect_evidence": [],
+        "expected_prediction": null,
+        "refutation_scope": null,
+        "excludes_candidate": false,
+        "proves_expressibility": false
+      }
+    },
+    {
+      "id": "H3",
+      "boundary_id": "",
+      "file": "components/prism-json.js",
+      "symbol": "string",
+      "line": 8,
+      "mechanism": "matching_boundary",
+      "question": {
+        "kind": "value",
+        "expression": "Prism.languages.json['string'].pattern.exec('{\"Accept\":\"*/*\"}')[0]",
+        "expected": "\"*/*\""
+      },
+      "readable_symbols": [
+        "Prism.languages.json"
+      ],
+      "target_property": "string",
+      "constraint_ids": [
+        "C1",
+        "C2"
+      ],
+      "boundary_valid": false,
+      "verdict": "UNKNOWN",
+      "baseline_rank": 0,
+      "local_influence_supported": false,
+      "input_rank": 2,
+      "witness_count": 1,
+      "certificate": {
+        "kind": "insufficient_evidence",
+        "witnesses": [
+          {
+            "id": "H3",
+            "tier": "T2",
+            "symbol_exists": true,
+            "reached": true,
+            "values": [
+              {
+                "type": "undefined"
+              }
+            ],
+            "execution_ok": true,
+            "artifact": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+            "reason": "pinned_chromium_scene",
+            "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+            "instrumented_line": 1,
+            "static_reachable": null,
+            "scenario_complete": true,
+            "coverage": {
+              "complete": false,
+              "scenarios": 1,
+              "reason": "single_issue_reproducer_is_not_exhaustive"
+            },
+            "tiers": [
+              {
+                "tier": "T1",
+                "execution_ok": true,
+                "reached": true,
+                "values": [
+                  {
+                    "type": "undefined"
+                  }
+                ],
+                "scenario_complete": true,
+                "target_loaded": true,
+                "artifact": "/task/trajectory/S3b/attempt_02/T1/events.json",
+                "reason": "node_execution",
+                "errors": []
+              },
+              {
+                "tier": "T2",
+                "execution_ok": true,
+                "reached": true,
+                "values": [
+                  {
+                    "type": "undefined"
+                  }
+                ],
+                "scenario_complete": true,
+                "target_loaded": true,
+                "artifact": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+                "reason": "pinned_chromium_scene",
+                "errors": []
+              }
+            ],
+            "static_certificate": null,
+            "target_loaded": true,
+            "errors": []
+          }
+        ],
+        "effect_evidence": [],
+        "expected_prediction": null,
+        "refutation_scope": null,
+        "excludes_candidate": false,
+        "proves_expressibility": false
+      }
+    },
+    {
+      "id": "H4",
+      "boundary_id": "matching:components/prism-json.js:2:37-68",
+      "file": "components/prism-json.js",
+      "symbol": "comment",
+      "line": 2,
+      "mechanism": "matching_boundary",
+      "question": {
+        "kind": "value",
+        "expression": "Prism.tokenize('{\"Accept\":\"*/*\"}', Prism.languages.json)",
+        "expected": "the token stream contains a top-level comment token that starts at the slash inside the value string and runs to the end of the input, so no string token covers the whole value"
+      },
+      "readable_symbols": [],
+      "target_property": "comment",
+      "constraint_ids": [
+        "C2",
+        "C3"
+      ],
+      "boundary_valid": true,
+      "verdict": "UNKNOWN",
+      "baseline_rank": 0,
+      "local_influence_supported": false,
+      "input_rank": 3,
+      "witness_count": 1,
+      "certificate": {
+        "kind": "insufficient_evidence",
+        "witnesses": [
+          {
+            "id": "H4",
+            "tier": "T2",
+            "symbol_exists": true,
+            "reached": true,
+            "values": [
+              {
+                "type": "undefined"
+              }
+            ],
+            "execution_ok": true,
+            "artifact": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+            "reason": "pinned_chromium_scene",
+            "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+            "instrumented_line": 1,
+            "static_reachable": null,
+            "scenario_complete": true,
+            "coverage": {
+              "complete": false,
+              "scenarios": 1,
+              "reason": "single_issue_reproducer_is_not_exhaustive"
+            },
+            "tiers": [
+              {
+                "tier": "T1",
+                "execution_ok": true,
+                "reached": true,
+                "values": [
+                  {
+                    "type": "undefined"
+                  }
+                ],
+                "scenario_complete": true,
+                "target_loaded": true,
+                "artifact": "/task/trajectory/S3b/attempt_02/T1/events.json",
+                "reason": "node_execution",
+                "errors": []
+              },
+              {
+                "tier": "T2",
+                "execution_ok": true,
+                "reached": true,
+                "values": [
+                  {
+                    "type": "undefined"
+                  }
+                ],
+                "scenario_complete": true,
+                "target_loaded": true,
+                "artifact": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+                "reason": "pinned_chromium_scene",
+                "errors": []
+              }
+            ],
+            "static_certificate": null,
+            "target_loaded": true,
+            "errors": []
+          }
+        ],
+        "effect_evidence": [],
+        "expected_prediction": null,
+        "refutation_scope": null,
+        "excludes_candidate": false,
+        "proves_expressibility": false
+      }
+    },
+    {
+      "id": "H5",
+      "boundary_id": "matching:components/prism-json.js:2:37-68",
+      "file": "components/prism-json.js",
+      "symbol": "comment",
+      "line": 2,
+      "mechanism": "matching_boundary",
+      "question": {
+        "kind": "value",
+        "expression": "Prism.tokenize('{\"A\":\"/*\",\"B\":\"B\",\"C\":\"C\"}', Prism.languages.json).some(function (t) { return typeof t === 'object' && t.type === 'comment' && String(t.content).indexOf('B') !== -1; })",
+        "expected": "true"
+      },
+      "readable_symbols": [],
+      "target_property": "comment",
+      "constraint_ids": [
+        "C3"
+      ],
+      "boundary_valid": true,
+      "verdict": "UNKNOWN",
+      "baseline_rank": 0,
+      "local_influence_supported": false,
+      "input_rank": 4,
+      "witness_count": 1,
+      "certificate": {
+        "kind": "insufficient_evidence",
+        "witnesses": [
+          {
+            "id": "H5",
+            "tier": "T2",
+            "symbol_exists": true,
+            "reached": true,
+            "values": [
+              {
+                "type": "undefined"
+              }
+            ],
+            "execution_ok": true,
+            "artifact": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+            "reason": "pinned_chromium_scene",
+            "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+            "instrumented_line": 1,
+            "static_reachable": null,
+            "scenario_complete": true,
+            "coverage": {
+              "complete": false,
+              "scenarios": 1,
+              "reason": "single_issue_reproducer_is_not_exhaustive"
+            },
+            "tiers": [
+              {
+                "tier": "T1",
+                "execution_ok": true,
+                "reached": true,
+                "values": [
+                  {
+                    "type": "undefined"
+                  }
+                ],
+                "scenario_complete": true,
+                "target_loaded": true,
+                "artifact": "/task/trajectory/S3b/attempt_02/T1/events.json",
+                "reason": "node_execution",
+                "errors": []
+              },
+              {
+                "tier": "T2",
+                "execution_ok": true,
+                "reached": true,
+                "values": [
+                  {
+                    "type": "undefined"
+                  }
+                ],
+                "scenario_complete": true,
+                "target_loaded": true,
+                "artifact": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+                "reason": "pinned_chromium_scene",
+                "errors": []
+              }
+            ],
+            "static_certificate": null,
+            "target_loaded": true,
+            "errors": []
+          }
+        ],
+        "effect_evidence": [],
+        "expected_prediction": null,
+        "refutation_scope": null,
+        "excludes_candidate": false,
+        "proves_expressibility": false
+      }
+    },
+    {
+      "id": "H6",
+      "boundary_id": "matching:components/prism-json.js:2:37-68",
+      "file": "components/prism-json.js",
+      "symbol": "comment",
+      "line": 2,
+      "mechanism": "matching_boundary",
+      "question": {
+        "kind": "value",
+        "expression": "Prism.highlight('{\"A\":\"/*\",\"B\":\"B\",\"C\":\"C\"}', Prism.languages.json, 'json')",
+        "expected": "the HTML contains a token comment span that begins at the slash inside the string value and extends to the end of the input; that region is not rendered inside a token string span"
+      },
+      "readable_symbols": [],
+      "target_property": "comment",
+      "constraint_ids": [
+        "C1",
+        "C3",
+        "C4"
+      ],
+      "boundary_valid": true,
+      "verdict": "UNKNOWN",
+      "baseline_rank": 0,
+      "local_influence_supported": false,
+      "input_rank": 5,
+      "witness_count": 1,
+      "certificate": {
+        "kind": "insufficient_evidence",
+        "witnesses": [
+          {
+            "id": "H6",
+            "tier": "T2",
+            "symbol_exists": true,
+            "reached": true,
+            "values": [
+              {
+                "type": "undefined"
+              }
+            ],
+            "execution_ok": true,
+            "artifact": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+            "reason": "pinned_chromium_scene",
+            "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+            "instrumented_line": 1,
+            "static_reachable": null,
+            "scenario_complete": true,
+            "coverage": {
+              "complete": false,
+              "scenarios": 1,
+              "reason": "single_issue_reproducer_is_not_exhaustive"
+            },
+            "tiers": [
+              {
+                "tier": "T1",
+                "execution_ok": true,
+                "reached": true,
+                "values": [
+                  {
+                    "type": "undefined"
+                  }
+                ],
+                "scenario_complete": true,
+                "target_loaded": true,
+                "artifact": "/task/trajectory/S3b/attempt_02/T1/events.json",
+                "reason": "node_execution",
+                "errors": []
+              },
+              {
+                "tier": "T2",
+                "execution_ok": true,
+                "reached": true,
+                "values": [
+                  {
+                    "type": "undefined"
+                  }
+                ],
+                "scenario_complete": true,
+                "target_loaded": true,
+                "artifact": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+                "reason": "pinned_chromium_scene",
+                "errors": []
+              }
+            ],
+            "static_certificate": null,
+            "target_loaded": true,
+            "errors": []
+          }
+        ],
+        "effect_evidence": [],
+        "expected_prediction": null,
+        "refutation_scope": null,
+        "excludes_candidate": false,
+        "proves_expressibility": false
+      }
+    },
+    {
+      "id": "H7",
+      "boundary_id": "matching:components/prism-json.js:2:37-68",
+      "file": "components/prism-json.js",
+      "symbol": "comment",
+      "line": 2,
+      "mechanism": "matching_boundary",
+      "question": {
+        "kind": "value",
+        "expression": "(function () { var s = '{\"A\":\"/*\",\"B\":\"B\",\"C\":\"C\"}'; return [Prism.languages.json['string'].pattern.exec(s).index, Prism.languages.json['comment'].exec(s).index]; })()",
+        "expected": "[5,6]"
+      },
+      "readable_symbols": [],
+      "target_property": "",
+      "constraint_ids": [
+        "C1",
+        "C4"
+      ],
+      "boundary_valid": true,
+      "verdict": "UNKNOWN",
+      "baseline_rank": 0,
+      "local_influence_supported": false,
+      "input_rank": 6,
+      "witness_count": 1,
+      "certificate": {
+        "kind": "insufficient_evidence",
+        "witnesses": [
+          {
+            "id": "H7",
+            "tier": "T2",
+            "symbol_exists": true,
+            "reached": true,
+            "values": [
+              {
+                "type": "undefined"
+              }
+            ],
+            "execution_ok": true,
+            "artifact": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+            "reason": "pinned_chromium_scene",
+            "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+            "instrumented_line": 1,
+            "static_reachable": null,
+            "scenario_complete": true,
+            "coverage": {
+              "complete": false,
+              "scenarios": 1,
+              "reason": "single_issue_reproducer_is_not_exhaustive"
+            },
+            "tiers": [
+              {
+                "tier": "T1",
+                "execution_ok": true,
+                "reached": true,
+                "values": [
+                  {
+                    "type": "undefined"
+                  }
+                ],
+                "scenario_complete": true,
+                "target_loaded": true,
+                "artifact": "/task/trajectory/S3b/attempt_02/T1/events.json",
+                "reason": "node_execution",
+                "errors": []
+              },
+              {
+                "tier": "T2",
+                "execution_ok": true,
+                "reached": true,
+                "values": [
+                  {
+                    "type": "undefined"
+                  }
+                ],
+                "scenario_complete": true,
+                "target_loaded": true,
+                "artifact": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+                "reason": "pinned_chromium_scene",
+                "errors": []
+              }
+            ],
+            "static_certificate": null,
+            "target_loaded": true,
+            "errors": []
+          }
+        ],
+        "effect_evidence": [],
+        "expected_prediction": null,
+        "refutation_scope": null,
+        "excludes_candidate": false,
+        "proves_expressibility": false
+      }
+    },
+    {
+      "id": "H8",
+      "boundary_id": "matching:components/prism-json.js:2:37-68",
+      "file": "components/prism-json.js",
+      "symbol": "comment",
+      "line": 2,
+      "mechanism": "matching_boundary",
+      "question": {
+        "kind": "symbol",
+        "expression": "Prism.languages.json['comment'].lookbehind",
+        "expected": "false"
+      },
+      "readable_symbols": [],
+      "target_property": "",
+      "constraint_ids": [
+        "C1",
+        "C4"
+      ],
+      "boundary_valid": true,
+      "verdict": "UNKNOWN",
+      "baseline_rank": 0,
+      "local_influence_supported": false,
+      "input_rank": 7,
+      "witness_count": 1,
+      "certificate": {
+        "kind": "insufficient_evidence",
+        "witnesses": [
+          {
+            "id": "H8",
+            "tier": "T2",
+            "symbol_exists": true,
+            "reached": true,
+            "values": [
+              {
+                "type": "undefined"
+              }
+            ],
+            "execution_ok": true,
+            "artifact": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+            "reason": "pinned_chromium_scene",
+            "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+            "instrumented_line": 1,
+            "static_reachable": null,
+            "scenario_complete": true,
+            "coverage": {
+              "complete": false,
+              "scenarios": 1,
+              "reason": "single_issue_reproducer_is_not_exhaustive"
+            },
+            "tiers": [
+              {
+                "tier": "T1",
+                "execution_ok": true,
+                "reached": true,
+                "values": [
+                  {
+                    "type": "undefined"
+                  }
+                ],
+                "scenario_complete": true,
+                "target_loaded": true,
+                "artifact": "/task/trajectory/S3b/attempt_02/T1/events.json",
+                "reason": "node_execution",
+                "errors": []
+              },
+              {
+                "tier": "T2",
+                "execution_ok": true,
+                "reached": true,
+                "values": [
+                  {
+                    "type": "undefined"
+                  }
+                ],
+                "scenario_complete": true,
+                "target_loaded": true,
+                "artifact": "/task/trajectory/agents/browser/turn_02/tool_01/browser/step_03.png",
+                "reason": "pinned_chromium_scene",
+                "errors": []
+              }
+            ],
+            "static_certificate": null,
+            "target_loaded": true,
+            "errors": []
+          }
+        ],
+        "effect_evidence": [],
+        "expected_prediction": null,
+        "refutation_scope": null,
+        "excludes_candidate": false,
+        "proves_expressibility": false
+      }
+    }
+  ],
+  "ranked_files": [
+    "components/prism-json.js",
+    "components/prism-core.js",
+    "prism.js",
+    "components/index.js",
+    "components/prism-abnf.js",
+    "components/prism-actionscript.js",
+    "components/prism-ada.js",
+    "components/prism-apl.js"
+  ],
+  "all_unknown": true,
+  "pruned": [],
+  "negative_reach_policy": "finite non-reach is UNKNOWN",
+  "agent_reports": {
+    "code": {
+      "summary": "The whole JSON grammar is only 19 lines (components/prism-json.js, source_id 172). Line 2 defines 'comment' as the FIRST grammar key with a regex literal /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/ that is not string-aware: it accepts any /* and then lazily consumes everything up to the next */ or end of input. The string rule (lines 8-11) and property rule (lines 4-7) are plain greedy regex literals that are also not string-state aware. Prism core uses a matchGrammar-style pass that iterates grammar keys in order and applies each rule over the text (greedy handling at prism-core.js:297-386), so a comment rule placed before the string rule can claim the /* inside a quoted value before the string rule is applied. This is consistent with the reported symptom, but it is a static reading only; no tokenize/highlight execution was performed here.",
+      "claims": [
+        {
+          "hypothesis_id": "H1",
+          "evidence_ids": [
+            "code.t1.o1",
+            "code.t1.o2"
+          ],
+          "interpretation": "The comment regex /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/, executed on {\"Accept\":\"*/*\"}, matches the first /* and then lazily extends because no */ follows; reaching end of input satisfies the (?:\"\\*\\/\"|$) alternative, so the returned match would end at the final character. The literal expectation '/*\"}' is consistent with the regex source in line 2; the exact returned substring was not executed.",
+          "repair_suggestion": "Do not rely on this raw-regex result. Make the comment rule only able to start outside a JSON string value (or remove comment support from the JSON grammar), so a /* occurring inside a quoted value is claimed by the string rule instead of the comment rule.",
+          "citations_valid": true,
+          "evidence_kind": "model_interpretation_not_runtime_certificate"
+        },
+        {
+          "hypothesis_id": "H2",
+          "evidence_ids": [
+            "code.t1.o1",
+            "code.t1.o2"
+          ],
+          "interpretation": "Source order confirms 'comment' is the first key of Prism.languages.json and 'string' is a later key, so indexOf('comment') < indexOf('string') is true in the declaration. Whether that ordering alone causes the bug depends on Prism core's per-key grammar pass, which was not executed.",
+          "repair_suggestion": "If ordering is to be used as the fix, move or restructure the 'comment' rule so the string/property rules are applied first and comments are only recognized outside quoted values; verify against a regression case such as {\"A\":\"/*\",\"B\":\"B\",\"C\":\"C\"}.",
+          "citations_valid": true,
+          "evidence_kind": "model_interpretation_not_runtime_certificate"
+        },
+        {
+          "hypothesis_id": "H3",
+          "evidence_ids": [
+            "code.t1.o1",
+            "code.t1.o2"
+          ],
+          "interpretation": "The string pattern /\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?!\\s*:)/ is a non-global literal. The first candidate \"Accept\" is disqualified by the trailing (?!\\s*:) because a colon follows, so the next candidate is the value \"*/*\" (followed by }), which satisfies the pattern. The raw match would therefore be \"*/*\", consistent with the stated expectation, though the hypothesis's boundary is recorded as invalid and no execution occurred.",
+          "repair_suggestion": "Preserve existing JSON string tokenization for values containing /*; the string rule itself need not change if the comment rule is prevented from pre-claiming that region.",
+          "citations_valid": true,
+          "evidence_kind": "model_interpretation_not_runtime_certificate"
+        },
+        {
+          "hypothesis_id": "H4",
+          "evidence_ids": [
+            "code.t1.o1",
+            "code.t1.o3"
+          ],
+          "interpretation": "The comment rule has no string-state gating and is declared before string/property, while Prism core processes greedy/ordered grammar rules over the text (prism-core.js:297-386). That creates a static path for a top-level comment token starting at the / inside the string value and running to end of input. This tokenize() outcome is a prediction, not an executed observation.",
+          "repair_suggestion": "Gate comment recognition to positions outside quoted values (e.g., reorder/guard the rule or drop JSON comment support) and add a tokenize-level regression test asserting no comment token overlaps a string value that contains /*.",
+          "citations_valid": true,
+          "evidence_kind": "model_interpretation_not_runtime_certificate"
+        },
+        {
+          "hypothesis_id": "H5",
+          "evidence_ids": [
+            "code.t1.o1",
+            "code.t1.o3"
+          ],
+          "interpretation": "Same static mechanism as H4 applied to {\"A\":\"/*\",\"B\":\"B\",\"C\":\"C\"}: the unguarded comment regex can run from the /* inside the first value to end of input, which would include 'B' and 'C' text. No tokenize() call was executed to confirm the token stream.",
+          "repair_suggestion": "Same as H4 plus a regression test that asserts no comment token content contains the trailing object members B/C for this exact input.",
+          "citations_valid": true,
+          "evidence_kind": "model_interpretation_not_runtime_certificate"
+        },
+        {
+          "hypothesis_id": "H6",
+          "evidence_ids": [
+            "code.t1.o1",
+            "code.t1.o3"
+          ],
+          "interpretation": "Given the unguarded, first-position comment rule, the highlighted HTML could show a comment span starting at the slash inside the string value and extending to the end of input, with the trailing members not rendered as their normal tokens. This is a static inference from the grammar plus core greedy/order handling (prism-core.js:297-386); Prism.highlight output was not produced or inspected.",
+          "repair_suggestion": "Make the comment rule string-aware or remove it, then verify highlight() renders the quoted /* inside a token string and the following members as normal JSON tokens.",
+          "citations_valid": true,
+          "evidence_kind": "model_interpretation_not_runtime_certificate"
+        },
+        {
+          "hypothesis_id": "H7",
+          "evidence_ids": [
+            "code.t1.o1",
+            "code.t1.o2"
+          ],
+          "interpretation": "Index arithmetic against the source literals is consistent: in {\"A\":\"/*\",\"B\":\"B\",\"C\":\"C\"} the string value \"/*\" begins at index 5 (after the colon at 4), and the comment regex's first /* begins one character later at index 6. This matches the expected [5,6]; it is a source-derived computation, not an execution.",
+          "repair_suggestion": "Use the 5/6 offset relationship as a boundary check: any fix must keep the string match starting at index 5 and must not produce a comment match starting at index 6 inside that value.",
+          "citations_valid": true,
+          "evidence_kind": "model_interpretation_not_runtime_certificate"
+        },
+        {
+          "hypothesis_id": "H8",
+          "evidence_ids": [
+            "code.t1.o1",
+            "code.t1.o2"
+          ],
+          "interpretation": "The 'comment' value is a bare regex literal (line 2); it exposes no lookbehind property, so Prism.languages.json['comment'].lookbehind is undefined rather than the boolean false. The expected literal 'false' is not exactly accurate, but the intended meaning (no lookbehind mechanism is present) is supported: the rule cannot itself distinguish being inside a string.",
+          "repair_suggestion": "If the fix relies on lookbehind, the rule must actually declare/support it; otherwise solve the string-vs-comment distinction without assuming a lookbehind property exists on the current rule.",
+          "citations_valid": true,
+          "evidence_kind": "model_interpretation_not_runtime_certificate"
+        }
+      ],
+      "limitations": [
+        "No runtime execution was performed: no tokenize(), highlight(), or exec() result was observed, and jsdom/node availability was only reported by preflight, not exercised.",
+        "prism-core.js was only searched for 'greedy' (7 line snippets, code.t1.o3); the full matchGrammar/tokenize body was not read, so the exact rule-application and greedy-split behavior for the comment-inside-string case is inferred, not proven.",
+        "H3 is recorded with boundary_valid false, and every hypothesis is listed with a function_context_unresolved gap and no AST-bound readable symbols; the static bindings show symbol_exists=false for all hypotheses.",
+        "The source window for components/prism-json.js covers lines 1-19 and the read returned the complete file, but no test files specific to JSON were inspected and the base test suite was not run.",
+        "Issue image 0 was not analyzed beyond the supplied region description; the rendered HTML shown there is not tool evidence of current behavior."
+      ]
+    },
+    "browser": {
+      "summary": "Base behavior was reproduced in two independent Prism scenes (browser.t1.o1, browser.t2.o1) loading the real entry prism.js plus components/prism-json.js (loaded via synchronous XHR in the page; Prism global present, JSON grammar present). Direct evidence from the browser scene: the JSON comment rule is the plain RegExp /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/ with no lookbehind. Applied to the whole document '{\"Accept\":\"*/*\"}' it matches at index 12 and returns the text '/*\"}', i.e. it does start inside a string value and run to end of input (H1 confirmation). The grammar key order is 'comment,property,string,number,punctuation,operator,boolean,null', so the comment rule is declared before the string rule (H2 confirmation). However, the composed tokenizer did NOT emit a comment token for the issue inputs: Prism.tokenize('{\"Accept\":\"*/*\"}', json) yields punctuation, property \"Accept\", operator, string \"*/*\" (offsets 10-15), punctuation, with no comment token (H4 falsified), and the raw string-pattern exec on that input returns '\":\\\"' at index 8, not '\"*/*\"' (H3 falsified). For the issue snippet '{\"A\":\"/*\",\"B\":\"B\",\"C\":\"C\"}' tokenization IS corrupted, but not through a comment token: the token stream is punctuation{ , property\"A\", operator, string\"/*\"(5-9), punctuation, property\"B\", operator, string\"B\"(14-17), punctuation, then text '\"C' (18-20), string '\":\\\"' (20-23), text 'C\"' (23-25), punctuation} — the '\"C\":\"C\"' pair is split (H5 falsified: no comment token containing 'B'; H6 partially supported as broken output but falsified as a comment span: the highlight HTML is {<property>\"A\"</property>:<string>\"/*\"</string>,<property>\"B\"</property>:<string>\"B\"</string>,\"C<string>\": \"</string>C\"<punctuation>}</punctuation> with no 'token comment' span). H7's predicted [5,6] was observed as [3,6] because the raw string pattern first matches '\":\\\"' at index 3. H8 is confirmed: the comment entry is a RegExp with no lookbehind, so it has no string-context gate. Net result: the reported corruption after a string containing /* reproduces at T1/T2 scene level, but the observed mechanism is unanchored comment/string/property matching rather than an emitted comment token; the hypotheses that predicted a comment token (H4, H5, H6) are contradicted by the observed token streams.",
+      "claims": [
+        {
+          "hypothesis_id": "H1",
+          "evidence_ids": [
+            "browser.t2.o1"
+          ],
+          "interpretation": "Prism.languages.json['comment'].exec('{\"Accept\":\"*/*\"}') returned {index:12, text:'/*\"}'}, exactly the predicted value: the comment pattern, applied to the document string, starts at the slash inside the value string and consumes to end of input, with no anchor or string-context awareness. This is a direct execution of the reported grammar object in the real scene.",
+          "repair_suggestion": "Make the JSON comment rule unable to start inside a string literal (e.g. require a position that is not inside a quoted string, or express the comment alternatives so a quoted string containing /* is consumed by the string rule first), then verify both direct exec on '{ \"Accept\": \"*/*\" }' and the full Prism.tokenize/Prism.highlight output.",
+          "citations_valid": true,
+          "evidence_kind": "model_interpretation_not_runtime_certificate"
+        },
+        {
+          "hypothesis_id": "H2",
+          "evidence_ids": [
+            "browser.t2.o1"
+          ],
+          "interpretation": "Object.keys(Prism.languages.json) = 'comment,property,string,number,punctuation,operator,boolean,null', so indexOf('comment') < indexOf('string') is true, matching the prediction. The comment rule is declared first in the grammar, which is the structural affordance for comment-first matching inside strings.",
+          "repair_suggestion": "Do not rely on object key order alone to fix this; if ordering is changed, confirm that real comment starts outside strings are still recognized as comments (observed control: '{\"a\": 1} // tail' and '{\"a\": 1} /* block */' both still produce a comment token).",
+          "citations_valid": true,
+          "evidence_kind": "model_interpretation_not_runtime_certificate"
+        },
+        {
+          "hypothesis_id": "H3",
+          "evidence_ids": [
+            "browser.t2.o1"
+          ],
+          "interpretation": "The predicted value for Prism.languages.json['string'].pattern.exec('{\"Accept\":\"*/*\"}')[0] was '\"*/*\"' but the observed raw match was '\":\\\"' at index 8. The raw pattern exec is therefore not a faithful proxy for tokenization; the full tokenizer does emit string '*/*' at offsets 10-15 for that input, so the falsification applies to the hypothesis's measurement, not to the final token output.",
+          "repair_suggestion": "Base any string-vs-comment fix and its regression test on Prism.tokenize/Prism.highlight token streams rather than on isolated RegExp.exec results, since the raw property/string patterns match quotes that the composed tokenizer never starts a token at.",
+          "citations_valid": true,
+          "evidence_kind": "model_interpretation_not_runtime_certificate"
+        },
+        {
+          "hypothesis_id": "H4",
+          "evidence_ids": [
+            "browser.t2.o1",
+            "browser.t1.o1"
+          ],
+          "interpretation": "Predicted a top-level comment token starting at the slash inside the value string and running to the end. Observed for '{\"Accept\":\"*/*\"}': punctuation, property \"Accept\", operator, string '*/*' (offsets 10-15), punctuation, and has_comment = false. No comment token appears, so H4 is not supported for that input; the composed tokenizer kept the value as a string in both scenes.",
+          "repair_suggestion": "Keep this input as an explicit regression case: the value string must remain a single string token, and no comment token may be produced.",
+          "citations_valid": true,
+          "evidence_kind": "model_interpretation_not_runtime_certificate"
+        },
+        {
+          "hypothesis_id": "H5",
+          "evidence_ids": [
+            "browser.t2.o1",
+            "browser.t1.o1"
+          ],
+          "interpretation": "Predicted a comment token whose content contains 'B' for '{\"A\":\"/*\",\"B\":\"B\",\"C\":\"C\"}'. Observed: no comment token at all in the stream; instead the tail is corrupted as text '\"C' (18-20), string '\":\\\"' (20-23), text 'C\"' (23-25). The symptom (tokens after the /* string are wrong) is real, but the predicted comment-token mechanism is falsified.",
+          "repair_suggestion": "Fix must restore normal tokenization of the whole literal '{\"A\":\"/*\",\"B\":\"B\",\"C\":\"C\"}' (all three keys as properties and values as strings, '\"C\"':'\"C\"' intact), and a regression should assert the full token type/content/offset sequence, not just the absence of a comment token.",
+          "citations_valid": true,
+          "evidence_kind": "model_interpretation_not_runtime_certificate"
+        },
+        {
+          "hypothesis_id": "H6",
+          "evidence_ids": [
+            "browser.t2.o1",
+            "browser.t1.o1"
+          ],
+          "interpretation": "Predicted the highlight HTML would contain a comment span from the slash inside the value to the end. Observed HTML instead contains no 'token comment' span and shows the corruption as {<span class=token property>\"A\"</span><span class=token operator>:</span><span class=token string>\"/*\"</span>...\"C<span class=token string>\": \"</span>C\"...}, i.e. the '\"C\"':'\"C\"' pair is split into a spurious string span. The visible corruption in the issue reproduces at the render level, but not via a comment span.",
+          "repair_suggestion": "Assert the rendered spans of the issue snippet (every key as property, every value as a single string token, no comment span) as the acceptance check; the current observed highlight HTML fails that check.",
+          "citations_valid": true,
+          "evidence_kind": "model_interpretation_not_runtime_certificate"
+        },
+        {
+          "hypothesis_id": "H7",
+          "evidence_ids": [
+            "browser.t2.o1"
+          ],
+          "interpretation": "Predicted [5,6] for [string.pattern.exec(s).index, comment.exec(s).index]; observed [3,6]. The string pattern's first raw match on that input is '\":\\\"' at index 3 (the closing quote of \"A\" plus the colon), not the \"/*\" value at 5. The comment pattern's first match is index 6 ('/*\",\"B\":\"B\",\"C\":\"C\"}'), consistent with H1. The numeric prediction is falsified.",
+          "repair_suggestion": "Treat raw pattern indices as unreliable for this grammar and gate the design decision on token streams; also keep the observed fact that the comment alternative can begin at the /* inside the value when the whole document string is scanned.",
+          "citations_valid": true,
+          "evidence_kind": "model_interpretation_not_runtime_certificate"
+        },
+        {
+          "hypothesis_id": "H8",
+          "evidence_ids": [
+            "browser.t2.o1"
+          ],
+          "interpretation": "Predicted comment lookbehind false; observed comment_lookbehind false and comment_is_regexp true, with source /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/. Confirmed: the comment rule is a bare RegExp with no lookbehind, so it has no mechanism to detect that it is inside a JSON string; this is consistent with the observed H1 match inside a string value.",
+          "repair_suggestion": "If a string-context gate is added, it must be introduced explicitly (lookbehind-free implementations in this codebase should be preferred for compatibility); verify that real comments outside strings are still matched after the change.",
+          "citations_valid": true,
+          "evidence_kind": "model_interpretation_not_runtime_certificate"
+        }
+      ],
+      "limitations": [
+        "Only one scenario per scene was exercised; witness coverage reports complete=false, so other JSON inputs and comment placements were not tested.",
+        "The node (T1) tier reported execution_ok/scenario_complete true but its event values are all of type undefined, and the node console output was not surfaced, so no node-level metric values are claimed here.",
+        "The exact Prism tokenizer mechanism that splits '\"C\"' into text '\"C' + string '\":\\\"' + text 'C\"' was not isolated; the comment pattern's direct match (H1) and the observed stream corruption are separate observations and no emitted comment token was observed, so a causal link between the comment rule and that split is not proven.",
+        "The probe page did not include Prism theme CSS, so the visible colors in the issue image were not compared against rendered styles; the assessment is based on token types, offsets and generated HTML.",
+        "The page scene loaded components/prism-json.js via synchronous XHR because the local prism.js bundle in the scene did not already expose the JSON language; a full production bundle may differ.",
+        "No repaired version was executed and no expected/gold output is available, so no statement is made about whether any particular fix works."
+      ]
+    }
+  }
+}

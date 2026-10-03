@@ -1,0 +1,466 @@
+[
+  {
+    "id": "H1",
+    "tier": "T2",
+    "symbol_exists": true,
+    "reached": true,
+    "values": [
+      {
+        "type": "undefined"
+      }
+    ],
+    "execution_ok": true,
+    "artifact": "/task/trajectory/candidates/05/validation/replay/T2/replay/step_03.png",
+    "reason": "pinned_chromium_scene",
+    "source_sha256": "c1a61af576185471c8e3f0b215b40682b5cd8589248ba2a01d9e800b9763cc24",
+    "instrumented_line": 1,
+    "static_reachable": null,
+    "scenario_complete": true,
+    "coverage": {
+      "complete": false,
+      "scenarios": 1,
+      "reason": "single_issue_reproducer_is_not_exhaustive"
+    },
+    "tiers": [
+      {
+        "tier": "T1",
+        "execution_ok": true,
+        "reached": true,
+        "values": [
+          {
+            "type": "undefined"
+          }
+        ],
+        "scenario_complete": true,
+        "target_loaded": true,
+        "artifact": "/task/trajectory/candidates/05/validation/replay/T1/events.json",
+        "reason": "node_execution",
+        "errors": []
+      },
+      {
+        "tier": "T2",
+        "execution_ok": true,
+        "reached": true,
+        "values": [
+          {
+            "type": "undefined"
+          }
+        ],
+        "scenario_complete": true,
+        "target_loaded": true,
+        "artifact": "/task/trajectory/candidates/05/validation/replay/T2/replay/step_03.png",
+        "reason": "pinned_chromium_scene",
+        "errors": []
+      }
+    ],
+    "static_certificate": null,
+    "target_loaded": true,
+    "errors": []
+  },
+  {
+    "id": "H2",
+    "tier": "T2",
+    "symbol_exists": true,
+    "reached": true,
+    "values": [
+      {
+        "type": "undefined"
+      }
+    ],
+    "execution_ok": true,
+    "artifact": "/task/trajectory/candidates/05/validation/replay/T2/replay/step_03.png",
+    "reason": "pinned_chromium_scene",
+    "source_sha256": "c1a61af576185471c8e3f0b215b40682b5cd8589248ba2a01d9e800b9763cc24",
+    "instrumented_line": 1,
+    "static_reachable": null,
+    "scenario_complete": true,
+    "coverage": {
+      "complete": false,
+      "scenarios": 1,
+      "reason": "single_issue_reproducer_is_not_exhaustive"
+    },
+    "tiers": [
+      {
+        "tier": "T1",
+        "execution_ok": true,
+        "reached": true,
+        "values": [
+          {
+            "type": "undefined"
+          }
+        ],
+        "scenario_complete": true,
+        "target_loaded": true,
+        "artifact": "/task/trajectory/candidates/05/validation/replay/T1/events.json",
+        "reason": "node_execution",
+        "errors": []
+      },
+      {
+        "tier": "T2",
+        "execution_ok": true,
+        "reached": true,
+        "values": [
+          {
+            "type": "undefined"
+          }
+        ],
+        "scenario_complete": true,
+        "target_loaded": true,
+        "artifact": "/task/trajectory/candidates/05/validation/replay/T2/replay/step_03.png",
+        "reason": "pinned_chromium_scene",
+        "errors": []
+      }
+    ],
+    "static_certificate": null,
+    "target_loaded": true,
+    "errors": []
+  },
+  {
+    "id": "H3",
+    "tier": "T2",
+    "symbol_exists": true,
+    "reached": true,
+    "values": [
+      {
+        "type": "undefined"
+      }
+    ],
+    "execution_ok": true,
+    "artifact": "/task/trajectory/candidates/05/validation/replay/T2/replay/step_03.png",
+    "reason": "pinned_chromium_scene",
+    "source_sha256": "c1a61af576185471c8e3f0b215b40682b5cd8589248ba2a01d9e800b9763cc24",
+    "instrumented_line": 1,
+    "static_reachable": null,
+    "scenario_complete": true,
+    "coverage": {
+      "complete": false,
+      "scenarios": 1,
+      "reason": "single_issue_reproducer_is_not_exhaustive"
+    },
+    "tiers": [
+      {
+        "tier": "T1",
+        "execution_ok": true,
+        "reached": true,
+        "values": [
+          {
+            "type": "undefined"
+          }
+        ],
+        "scenario_complete": true,
+        "target_loaded": true,
+        "artifact": "/task/trajectory/candidates/05/validation/replay/T1/events.json",
+        "reason": "node_execution",
+        "errors": []
+      },
+      {
+        "tier": "T2",
+        "execution_ok": true,
+        "reached": true,
+        "values": [
+          {
+            "type": "undefined"
+          }
+        ],
+        "scenario_complete": true,
+        "target_loaded": true,
+        "artifact": "/task/trajectory/candidates/05/validation/replay/T2/replay/step_03.png",
+        "reason": "pinned_chromium_scene",
+        "errors": []
+      }
+    ],
+    "static_certificate": null,
+    "target_loaded": true,
+    "errors": []
+  },
+  {
+    "id": "H4",
+    "tier": "T2",
+    "symbol_exists": true,
+    "reached": true,
+    "values": [
+      {
+        "type": "undefined"
+      }
+    ],
+    "execution_ok": true,
+    "artifact": "/task/trajectory/candidates/05/validation/replay/T2/replay/step_03.png",
+    "reason": "pinned_chromium_scene",
+    "source_sha256": "c1a61af576185471c8e3f0b215b40682b5cd8589248ba2a01d9e800b9763cc24",
+    "instrumented_line": 1,
+    "static_reachable": null,
+    "scenario_complete": true,
+    "coverage": {
+      "complete": false,
+      "scenarios": 1,
+      "reason": "single_issue_reproducer_is_not_exhaustive"
+    },
+    "tiers": [
+      {
+        "tier": "T1",
+        "execution_ok": true,
+        "reached": true,
+        "values": [
+          {
+            "type": "undefined"
+          }
+        ],
+        "scenario_complete": true,
+        "target_loaded": true,
+        "artifact": "/task/trajectory/candidates/05/validation/replay/T1/events.json",
+        "reason": "node_execution",
+        "errors": []
+      },
+      {
+        "tier": "T2",
+        "execution_ok": true,
+        "reached": true,
+        "values": [
+          {
+            "type": "undefined"
+          }
+        ],
+        "scenario_complete": true,
+        "target_loaded": true,
+        "artifact": "/task/trajectory/candidates/05/validation/replay/T2/replay/step_03.png",
+        "reason": "pinned_chromium_scene",
+        "errors": []
+      }
+    ],
+    "static_certificate": null,
+    "target_loaded": true,
+    "errors": []
+  },
+  {
+    "id": "H5",
+    "tier": "T2",
+    "symbol_exists": true,
+    "reached": true,
+    "values": [
+      {
+        "type": "undefined"
+      }
+    ],
+    "execution_ok": true,
+    "artifact": "/task/trajectory/candidates/05/validation/replay/T2/replay/step_03.png",
+    "reason": "pinned_chromium_scene",
+    "source_sha256": "c1a61af576185471c8e3f0b215b40682b5cd8589248ba2a01d9e800b9763cc24",
+    "instrumented_line": 1,
+    "static_reachable": null,
+    "scenario_complete": true,
+    "coverage": {
+      "complete": false,
+      "scenarios": 1,
+      "reason": "single_issue_reproducer_is_not_exhaustive"
+    },
+    "tiers": [
+      {
+        "tier": "T1",
+        "execution_ok": true,
+        "reached": true,
+        "values": [
+          {
+            "type": "undefined"
+          }
+        ],
+        "scenario_complete": true,
+        "target_loaded": true,
+        "artifact": "/task/trajectory/candidates/05/validation/replay/T1/events.json",
+        "reason": "node_execution",
+        "errors": []
+      },
+      {
+        "tier": "T2",
+        "execution_ok": true,
+        "reached": true,
+        "values": [
+          {
+            "type": "undefined"
+          }
+        ],
+        "scenario_complete": true,
+        "target_loaded": true,
+        "artifact": "/task/trajectory/candidates/05/validation/replay/T2/replay/step_03.png",
+        "reason": "pinned_chromium_scene",
+        "errors": []
+      }
+    ],
+    "static_certificate": null,
+    "target_loaded": true,
+    "errors": []
+  },
+  {
+    "id": "H6",
+    "tier": "T2",
+    "symbol_exists": true,
+    "reached": true,
+    "values": [
+      {
+        "type": "undefined"
+      }
+    ],
+    "execution_ok": true,
+    "artifact": "/task/trajectory/candidates/05/validation/replay/T2/replay/step_03.png",
+    "reason": "pinned_chromium_scene",
+    "source_sha256": "c1a61af576185471c8e3f0b215b40682b5cd8589248ba2a01d9e800b9763cc24",
+    "instrumented_line": 1,
+    "static_reachable": null,
+    "scenario_complete": true,
+    "coverage": {
+      "complete": false,
+      "scenarios": 1,
+      "reason": "single_issue_reproducer_is_not_exhaustive"
+    },
+    "tiers": [
+      {
+        "tier": "T1",
+        "execution_ok": true,
+        "reached": true,
+        "values": [
+          {
+            "type": "undefined"
+          }
+        ],
+        "scenario_complete": true,
+        "target_loaded": true,
+        "artifact": "/task/trajectory/candidates/05/validation/replay/T1/events.json",
+        "reason": "node_execution",
+        "errors": []
+      },
+      {
+        "tier": "T2",
+        "execution_ok": true,
+        "reached": true,
+        "values": [
+          {
+            "type": "undefined"
+          }
+        ],
+        "scenario_complete": true,
+        "target_loaded": true,
+        "artifact": "/task/trajectory/candidates/05/validation/replay/T2/replay/step_03.png",
+        "reason": "pinned_chromium_scene",
+        "errors": []
+      }
+    ],
+    "static_certificate": null,
+    "target_loaded": true,
+    "errors": []
+  },
+  {
+    "id": "H7",
+    "tier": "T2",
+    "symbol_exists": true,
+    "reached": true,
+    "values": [
+      {
+        "type": "undefined"
+      }
+    ],
+    "execution_ok": true,
+    "artifact": "/task/trajectory/candidates/05/validation/replay/T2/replay/step_03.png",
+    "reason": "pinned_chromium_scene",
+    "source_sha256": "c1a61af576185471c8e3f0b215b40682b5cd8589248ba2a01d9e800b9763cc24",
+    "instrumented_line": 1,
+    "static_reachable": null,
+    "scenario_complete": true,
+    "coverage": {
+      "complete": false,
+      "scenarios": 1,
+      "reason": "single_issue_reproducer_is_not_exhaustive"
+    },
+    "tiers": [
+      {
+        "tier": "T1",
+        "execution_ok": true,
+        "reached": true,
+        "values": [
+          {
+            "type": "undefined"
+          }
+        ],
+        "scenario_complete": true,
+        "target_loaded": true,
+        "artifact": "/task/trajectory/candidates/05/validation/replay/T1/events.json",
+        "reason": "node_execution",
+        "errors": []
+      },
+      {
+        "tier": "T2",
+        "execution_ok": true,
+        "reached": true,
+        "values": [
+          {
+            "type": "undefined"
+          }
+        ],
+        "scenario_complete": true,
+        "target_loaded": true,
+        "artifact": "/task/trajectory/candidates/05/validation/replay/T2/replay/step_03.png",
+        "reason": "pinned_chromium_scene",
+        "errors": []
+      }
+    ],
+    "static_certificate": null,
+    "target_loaded": true,
+    "errors": []
+  },
+  {
+    "id": "H8",
+    "tier": "T2",
+    "symbol_exists": true,
+    "reached": true,
+    "values": [
+      {
+        "type": "undefined"
+      }
+    ],
+    "execution_ok": true,
+    "artifact": "/task/trajectory/candidates/05/validation/replay/T2/replay/step_03.png",
+    "reason": "pinned_chromium_scene",
+    "source_sha256": "c1a61af576185471c8e3f0b215b40682b5cd8589248ba2a01d9e800b9763cc24",
+    "instrumented_line": 1,
+    "static_reachable": null,
+    "scenario_complete": true,
+    "coverage": {
+      "complete": false,
+      "scenarios": 1,
+      "reason": "single_issue_reproducer_is_not_exhaustive"
+    },
+    "tiers": [
+      {
+        "tier": "T1",
+        "execution_ok": true,
+        "reached": true,
+        "values": [
+          {
+            "type": "undefined"
+          }
+        ],
+        "scenario_complete": true,
+        "target_loaded": true,
+        "artifact": "/task/trajectory/candidates/05/validation/replay/T1/events.json",
+        "reason": "node_execution",
+        "errors": []
+      },
+      {
+        "tier": "T2",
+        "execution_ok": true,
+        "reached": true,
+        "values": [
+          {
+            "type": "undefined"
+          }
+        ],
+        "scenario_complete": true,
+        "target_loaded": true,
+        "artifact": "/task/trajectory/candidates/05/validation/replay/T2/replay/step_03.png",
+        "reason": "pinned_chromium_scene",
+        "errors": []
+      }
+    ],
+    "static_certificate": null,
+    "target_loaded": true,
+    "errors": []
+  }
+]

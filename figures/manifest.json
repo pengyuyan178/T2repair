@@ -1,0 +1,42 @@
+[
+  {
+    "file": "figures/fig1-visual-scenarios.pdf",
+    "source": "latex/figure/fig1.pdf",
+    "sha256": "3fb1b5d24d447169f19d6cba5e45a44884ebc3d763de058687bffd323b8767e2"
+  },
+  {
+    "file": "figures/fig2-motivating-example.pdf",
+    "source": "latex/figure/fig2.pdf",
+    "sha256": "6bc51e0fd2e1da9eaa72dfc9f976b299e237ddce08db0e16b12cc8d3151e9e8e"
+  },
+  {
+    "file": "figures/fig3-framework.pdf",
+    "source": "latex/figure/fig3.pdf",
+    "sha256": "6da27460ecc17b05a1a7c9bcc92f923fb84c237c338052700e416b4b40676fd5"
+  },
+  {
+    "file": "figures/fig4-code-investigation.pdf",
+    "source": "latex/figure/code_module_case.pdf",
+    "sha256": "321101d23911225f1a422632402eb335eba153e9edd4a255c0f1a5fad255fe0f"
+  },
+  {
+    "file": "figures/fig5-browser-investigation.pdf",
+    "source": "latex/figure/browser_module_case.pdf",
+    "sha256": "b9582cc798244204195f352ce831caf4c5e9ab50458d6545423344b9c8f209ff"
+  },
+  {
+    "file": "figures/fig6-repair-overlap.pdf",
+    "source": "latex/figure/resolved_overlap.pdf",
+    "sha256": "7060d9e73c51b843dd1dca7817b02280fe68a040cbe7040c8b76546c569e20c2"
+  },
+  {
+    "file": "figures/fig7-ablation-overlap.pdf",
+    "source": "latex/figure/ablation_overlap.pdf",
+    "sha256": "fbb16f19e76916a1218b49cd3c00d26e2a6ea36eeb65c377d973f495fa827df6"
+  },
+  {
+    "file": "figures/fig8-repair-trajectory.pdf",
+    "source": "latex/figure/trajectory_case.pdf",
+    "sha256": "2765a832e69fd6d9f1a044373185f250fa40612c356e34af32a2e9fdf92b0003"
+  }
+]

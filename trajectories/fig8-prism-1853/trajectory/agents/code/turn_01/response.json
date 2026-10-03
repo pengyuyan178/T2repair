@@ -1,0 +1,3 @@
+{
+  "raw": "{\"action\": \"tools\", \"tools\": [{\"name\": \"read_source\", \"source_id\": 172, \"query\": \"\", \"start_line\": 1, \"end_line\": 19}, {\"name\": \"symbols\", \"source_id\": 172, \"query\": \"\", \"start_line\": 0, \"end_line\": 0}, {\"name\": \"search_source\", \"source_id\": 66, \"query\": \"greedy\", \"start_line\": 0, \"end_line\": 0}, {\"name\": \"project_info\", \"source_id\": 0, \"query\": \"\", \"start_line\": 0, \"end_line\": 0}, {\"name\": \"search_source\", \"source_id\": 0, \"query\": \"prism-json\", \"start_line\": 0, \"end_line\": 0}], \"report\": {\"summary\": \"\", \"claims\": [], \"limitations\": []}}"
+}

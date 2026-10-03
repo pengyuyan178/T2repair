@@ -1,0 +1,8 @@
+{
+  "parser": "/opt/trace/baseline/guirepair/Code/node_modules/@babel/parser",
+  "file": "/data/zy/causalgui_results/night_20260916/causalgui_test480_opencode_high_w30_20260926/scratch/remaining426/PrismJS__prism-1853/repo/components/prism-json.js",
+  "relative": "components/prism-json.js",
+  "hypotheses": [],
+  "hook": "",
+  "instrument": false
+}

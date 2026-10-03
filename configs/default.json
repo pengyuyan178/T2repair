@@ -1,0 +1,18 @@
+{
+  "model": "",
+  "per_choice_output_limit": 131072,
+  "agent_ablation": "full",
+  "agent_limits": {"code": 2, "browser": 3, "candidates": 5},
+  "witness": "probe+render",
+  "harness_policy": {
+    "protocol": "harness_v2",
+    "variant": "evidence",
+    "prompt": "improved",
+    "format_repair_limit": 1,
+    "evidence": "base",
+    "response_mode": "json_schema",
+    "sample_timeout_seconds": 1800,
+    "case_timeout_seconds": 7200,
+    "finalize_reserve_seconds": 600
+  }
+}

@@ -1,0 +1,5 @@
+numpy==2.4.6
+openai==2.41.1
+Pillow==12.3.0
+playwright==1.63.0
+pydantic==2.13.2

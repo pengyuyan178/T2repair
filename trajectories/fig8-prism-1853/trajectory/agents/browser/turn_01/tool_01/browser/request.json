@@ -1,0 +1,34 @@
+{
+  "endpoint": "http://127.0.0.1:38301",
+  "repo": "/scratch/runtime/cg-runtime-7zxfr03o",
+  "target": "/scratch/runtime/cg-runtime-7zxfr03o/.cg_page.html",
+  "tag": "__cg_c53f301c8f2aaa7f_result",
+  "actions": [
+    {
+      "kind": "open",
+      "target": "",
+      "value": ""
+    },
+    {
+      "kind": "dom",
+      "target": "#probe-log",
+      "value": ""
+    },
+    {
+      "kind": "dom",
+      "target": "#highlight-html",
+      "value": ""
+    },
+    {
+      "kind": "dom",
+      "target": "#token-dump",
+      "value": ""
+    },
+    {
+      "kind": "screenshot",
+      "target": "",
+      "value": ""
+    }
+  ],
+  "output": "/task/trajectory/agents/browser/turn_01/tool_01/browser"
+}

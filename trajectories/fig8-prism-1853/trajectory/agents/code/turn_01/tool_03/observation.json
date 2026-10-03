@@ -1,0 +1,65 @@
+{
+  "evidence_id": "code.t1.o3",
+  "tool": {
+    "name": "search_source",
+    "source_id": 66,
+    "query": "greedy",
+    "start_line": 0,
+    "end_line": 0
+  },
+  "result": {
+    "ok": true,
+    "matches": [
+      {
+        "source_id": 66,
+        "file": "components/prism-core.js",
+        "line": 297,
+        "text": "\t\t\t\t\tgreedy = !!pattern.greedy,"
+      },
+      {
+        "source_id": 66,
+        "file": "components/prism-core.js",
+        "line": 301,
+        "text": "\t\t\t\tif (greedy && !pattern.pattern.global) {"
+      },
+      {
+        "source_id": 66,
+        "file": "components/prism-core.js",
+        "line": 323,
+        "text": "\t\t\t\t\tif (greedy && i != strarr.length - 1) {"
+      },
+      {
+        "source_id": 66,
+        "file": "components/prism-core.js",
+        "line": 335,
+        "text": "\t\t\t\t\t\tfor (var len = strarr.length; k < len && (p < to || (!strarr[k].type && !strarr[k - 1].greedy)); ++k) {"
+      },
+      {
+        "source_id": 66,
+        "file": "components/prism-core.js",
+        "line": 386,
+        "text": "\t\t\t\t\tvar wrapped = new Token(token, inside? _.tokenize(match, inside) : match, alias, match, greedy);"
+      },
+      {
+        "source_id": 66,
+        "file": "components/prism-core.js",
+        "line": 453,
+        "text": "function Token(type, content, alias, matchedStr, greedy) {"
+      },
+      {
+        "source_id": 66,
+        "file": "components/prism-core.js",
+        "line": 459,
+        "text": "\tthis.greedy = !!greedy;"
+      }
+    ],
+    "total_matches": 7,
+    "truncated": false,
+    "next_offset": null,
+    "source_id": 66,
+    "resolved_path": "components/prism-core.js",
+    "source_kind": "file",
+    "provenance": "base_commit",
+    "base_commit": "2f9c9261bc1454899266929711d5842a3675e467"
+  }
+}

@@ -1,0 +1,15 @@
+/scratch/runtime/cg-runtime-0rqdbb4k/.cg_node.cjs:30
+var Prism = require('./prism.js'); if (!global.Prism) { global.Prism = Prism; } require('./components/prism-json.js'); console.log('NODE keys=' + Object.keys(Prism.languages.json).join(',') + ' COMMENT=' + String(Prism.languages.json['comment']) + ' EXEC=' + String(Prism.languages.json['comment'].exec('{"A":"/*","B":"B","C":"C"}')))
+                                                                                                                                                                                                                                                                                                          ^
+
+TypeError: Prism.languages.json.comment.exec is not a function
+    at /scratch/runtime/cg-runtime-0rqdbb4k/.cg_node.cjs:30:299
+    at Object.<anonymous> (/scratch/runtime/cg-runtime-0rqdbb4k/.cg_node.cjs:31:3)
+    at Module._compile (node:internal/modules/cjs/loader:1521:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+    at Module.load (node:internal/modules/cjs/loader:1266:32)
+    at Module._load (node:internal/modules/cjs/loader:1091:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12)
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.20.2

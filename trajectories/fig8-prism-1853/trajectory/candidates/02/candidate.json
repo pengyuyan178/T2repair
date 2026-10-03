@@ -1,0 +1,11 @@
+{
+  "rationale": "The JSON grammar declares a non-string-aware `comment` rule as its first grammar entry, so Prism's tokenizer claims the `/*` that occurs inside a quoted value as a comment start before `property`/`string` run; the resulting comment token then interacts with the greedy property/string passes and corrupts the tokens that follow the string. Reordering the grammar so `property` and `string` are matched before `comment`, and giving the comment rule the same greedy wrapper used for the other rules (so it can still match across already-tokenized content, e.g. real comments containing strings), makes the string rule claim the whole quoted value containing `/*` and prevents a comment from being started inside a string, while real `//` and `/* */` comments outside strings are still recognized after string/property tokens have been claimed.",
+  "edits": [
+    {
+      "file": "components/prism-json.js",
+      "search": "\t'comment': /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/,\n\t'property': {\n\t\tpattern: /\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?=\\s*:)/,\n\t\tgreedy: true\n\t},\n\t'string': {\n\t\tpattern: /\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?!\\s*:)/,\n\t\tgreedy: true\n\t},",
+      "replace": "\t'property': {\n\t\tpattern: /\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?=\\s*:)/,\n\t\tgreedy: true\n\t},\n\t'string': {\n\t\tpattern: /\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?!\\s*:)/,\n\t\tgreedy: true\n\t},\n\t'comment': {\n\t\tpattern: /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/,\n\t\tgreedy: true\n\t},",
+      "create": false
+    }
+  ]
+}

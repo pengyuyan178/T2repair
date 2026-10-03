@@ -1,0 +1,10 @@
+{
+  "command": [
+    "/opt/node/bin/node",
+    "/task/trajectory/agents/code/turn_01/tool_02/ast/ast.cjs",
+    "/task/trajectory/agents/code/turn_01/tool_02/ast/request.json"
+  ],
+  "returncode": 0,
+  "stdout": "/task/trajectory/agents/code/turn_01/tool_02/ast/stdout.log",
+  "stderr": "/task/trajectory/agents/code/turn_01/tool_02/ast/stderr.log"
+}

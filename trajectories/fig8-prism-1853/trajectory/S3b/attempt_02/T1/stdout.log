@@ -1,0 +1,1 @@
+NODE keys=comment,property,string,number,punctuation,operator,boolean,null COMMENT=/\/\/.*|\/\*[\s\S]*?(?:\*\/|$)/ EXEC=/*","B":"B","C":"C"}

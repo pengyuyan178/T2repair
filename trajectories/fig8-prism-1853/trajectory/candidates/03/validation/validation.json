@@ -1,0 +1,649 @@
+{
+  "patch_applied": true,
+  "syntax_ok": true,
+  "syntax": [
+    {
+      "file": "components/prism-json.js",
+      "ok": true,
+      "reason": "parsed",
+      "base_parse_ok": true
+    }
+  ],
+  "missing_symbols": [],
+  "symbol_validation": "UNKNOWN",
+  "witnesses": [
+    {
+      "id": "H1",
+      "tier": "T2",
+      "symbol_exists": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "execution_ok": true,
+      "artifact": "/task/trajectory/candidates/03/validation/replay/T2/replay/step_03.png",
+      "reason": "pinned_chromium_scene",
+      "source_sha256": "469e9246004f7b6b14125ad3100702e1ef567866db677f4c65fb4f7ee4af9ebc",
+      "instrumented_line": 1,
+      "static_reachable": null,
+      "scenario_complete": true,
+      "coverage": {
+        "complete": false,
+        "scenarios": 1,
+        "reason": "single_issue_reproducer_is_not_exhaustive"
+      },
+      "tiers": [
+        {
+          "tier": "T1",
+          "execution_ok": false,
+          "reached": true,
+          "values": [
+            {
+              "type": "undefined"
+            }
+          ],
+          "scenario_complete": false,
+          "target_loaded": true,
+          "artifact": "/task/trajectory/candidates/03/validation/replay/T1/events.json",
+          "reason": "node_execution",
+          "errors": [
+            "TypeError: Prism.languages.json.comment.exec is not a function"
+          ]
+        },
+        {
+          "tier": "T2",
+          "execution_ok": true,
+          "reached": true,
+          "values": [
+            {
+              "type": "undefined"
+            }
+          ],
+          "scenario_complete": true,
+          "target_loaded": true,
+          "artifact": "/task/trajectory/candidates/03/validation/replay/T2/replay/step_03.png",
+          "reason": "pinned_chromium_scene",
+          "errors": []
+        }
+      ],
+      "static_certificate": null,
+      "target_loaded": true,
+      "errors": []
+    },
+    {
+      "id": "H2",
+      "tier": "T2",
+      "symbol_exists": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "execution_ok": true,
+      "artifact": "/task/trajectory/candidates/03/validation/replay/T2/replay/step_03.png",
+      "reason": "pinned_chromium_scene",
+      "source_sha256": "469e9246004f7b6b14125ad3100702e1ef567866db677f4c65fb4f7ee4af9ebc",
+      "instrumented_line": 1,
+      "static_reachable": null,
+      "scenario_complete": true,
+      "coverage": {
+        "complete": false,
+        "scenarios": 1,
+        "reason": "single_issue_reproducer_is_not_exhaustive"
+      },
+      "tiers": [
+        {
+          "tier": "T1",
+          "execution_ok": false,
+          "reached": true,
+          "values": [
+            {
+              "type": "undefined"
+            }
+          ],
+          "scenario_complete": false,
+          "target_loaded": true,
+          "artifact": "/task/trajectory/candidates/03/validation/replay/T1/events.json",
+          "reason": "node_execution",
+          "errors": [
+            "TypeError: Prism.languages.json.comment.exec is not a function"
+          ]
+        },
+        {
+          "tier": "T2",
+          "execution_ok": true,
+          "reached": true,
+          "values": [
+            {
+              "type": "undefined"
+            }
+          ],
+          "scenario_complete": true,
+          "target_loaded": true,
+          "artifact": "/task/trajectory/candidates/03/validation/replay/T2/replay/step_03.png",
+          "reason": "pinned_chromium_scene",
+          "errors": []
+        }
+      ],
+      "static_certificate": null,
+      "target_loaded": true,
+      "errors": []
+    },
+    {
+      "id": "H3",
+      "tier": "T2",
+      "symbol_exists": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "execution_ok": true,
+      "artifact": "/task/trajectory/candidates/03/validation/replay/T2/replay/step_03.png",
+      "reason": "pinned_chromium_scene",
+      "source_sha256": "469e9246004f7b6b14125ad3100702e1ef567866db677f4c65fb4f7ee4af9ebc",
+      "instrumented_line": 1,
+      "static_reachable": null,
+      "scenario_complete": true,
+      "coverage": {
+        "complete": false,
+        "scenarios": 1,
+        "reason": "single_issue_reproducer_is_not_exhaustive"
+      },
+      "tiers": [
+        {
+          "tier": "T1",
+          "execution_ok": false,
+          "reached": true,
+          "values": [
+            {
+              "type": "undefined"
+            }
+          ],
+          "scenario_complete": false,
+          "target_loaded": true,
+          "artifact": "/task/trajectory/candidates/03/validation/replay/T1/events.json",
+          "reason": "node_execution",
+          "errors": [
+            "TypeError: Prism.languages.json.comment.exec is not a function"
+          ]
+        },
+        {
+          "tier": "T2",
+          "execution_ok": true,
+          "reached": true,
+          "values": [
+            {
+              "type": "undefined"
+            }
+          ],
+          "scenario_complete": true,
+          "target_loaded": true,
+          "artifact": "/task/trajectory/candidates/03/validation/replay/T2/replay/step_03.png",
+          "reason": "pinned_chromium_scene",
+          "errors": []
+        }
+      ],
+      "static_certificate": null,
+      "target_loaded": true,
+      "errors": []
+    },
+    {
+      "id": "H4",
+      "tier": "T2",
+      "symbol_exists": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "execution_ok": true,
+      "artifact": "/task/trajectory/candidates/03/validation/replay/T2/replay/step_03.png",
+      "reason": "pinned_chromium_scene",
+      "source_sha256": "469e9246004f7b6b14125ad3100702e1ef567866db677f4c65fb4f7ee4af9ebc",
+      "instrumented_line": 1,
+      "static_reachable": null,
+      "scenario_complete": true,
+      "coverage": {
+        "complete": false,
+        "scenarios": 1,
+        "reason": "single_issue_reproducer_is_not_exhaustive"
+      },
+      "tiers": [
+        {
+          "tier": "T1",
+          "execution_ok": false,
+          "reached": true,
+          "values": [
+            {
+              "type": "undefined"
+            }
+          ],
+          "scenario_complete": false,
+          "target_loaded": true,
+          "artifact": "/task/trajectory/candidates/03/validation/replay/T1/events.json",
+          "reason": "node_execution",
+          "errors": [
+            "TypeError: Prism.languages.json.comment.exec is not a function"
+          ]
+        },
+        {
+          "tier": "T2",
+          "execution_ok": true,
+          "reached": true,
+          "values": [
+            {
+              "type": "undefined"
+            }
+          ],
+          "scenario_complete": true,
+          "target_loaded": true,
+          "artifact": "/task/trajectory/candidates/03/validation/replay/T2/replay/step_03.png",
+          "reason": "pinned_chromium_scene",
+          "errors": []
+        }
+      ],
+      "static_certificate": null,
+      "target_loaded": true,
+      "errors": []
+    },
+    {
+      "id": "H5",
+      "tier": "T2",
+      "symbol_exists": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "execution_ok": true,
+      "artifact": "/task/trajectory/candidates/03/validation/replay/T2/replay/step_03.png",
+      "reason": "pinned_chromium_scene",
+      "source_sha256": "469e9246004f7b6b14125ad3100702e1ef567866db677f4c65fb4f7ee4af9ebc",
+      "instrumented_line": 1,
+      "static_reachable": null,
+      "scenario_complete": true,
+      "coverage": {
+        "complete": false,
+        "scenarios": 1,
+        "reason": "single_issue_reproducer_is_not_exhaustive"
+      },
+      "tiers": [
+        {
+          "tier": "T1",
+          "execution_ok": false,
+          "reached": true,
+          "values": [
+            {
+              "type": "undefined"
+            }
+          ],
+          "scenario_complete": false,
+          "target_loaded": true,
+          "artifact": "/task/trajectory/candidates/03/validation/replay/T1/events.json",
+          "reason": "node_execution",
+          "errors": [
+            "TypeError: Prism.languages.json.comment.exec is not a function"
+          ]
+        },
+        {
+          "tier": "T2",
+          "execution_ok": true,
+          "reached": true,
+          "values": [
+            {
+              "type": "undefined"
+            }
+          ],
+          "scenario_complete": true,
+          "target_loaded": true,
+          "artifact": "/task/trajectory/candidates/03/validation/replay/T2/replay/step_03.png",
+          "reason": "pinned_chromium_scene",
+          "errors": []
+        }
+      ],
+      "static_certificate": null,
+      "target_loaded": true,
+      "errors": []
+    },
+    {
+      "id": "H6",
+      "tier": "T2",
+      "symbol_exists": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "execution_ok": true,
+      "artifact": "/task/trajectory/candidates/03/validation/replay/T2/replay/step_03.png",
+      "reason": "pinned_chromium_scene",
+      "source_sha256": "469e9246004f7b6b14125ad3100702e1ef567866db677f4c65fb4f7ee4af9ebc",
+      "instrumented_line": 1,
+      "static_reachable": null,
+      "scenario_complete": true,
+      "coverage": {
+        "complete": false,
+        "scenarios": 1,
+        "reason": "single_issue_reproducer_is_not_exhaustive"
+      },
+      "tiers": [
+        {
+          "tier": "T1",
+          "execution_ok": false,
+          "reached": true,
+          "values": [
+            {
+              "type": "undefined"
+            }
+          ],
+          "scenario_complete": false,
+          "target_loaded": true,
+          "artifact": "/task/trajectory/candidates/03/validation/replay/T1/events.json",
+          "reason": "node_execution",
+          "errors": [
+            "TypeError: Prism.languages.json.comment.exec is not a function"
+          ]
+        },
+        {
+          "tier": "T2",
+          "execution_ok": true,
+          "reached": true,
+          "values": [
+            {
+              "type": "undefined"
+            }
+          ],
+          "scenario_complete": true,
+          "target_loaded": true,
+          "artifact": "/task/trajectory/candidates/03/validation/replay/T2/replay/step_03.png",
+          "reason": "pinned_chromium_scene",
+          "errors": []
+        }
+      ],
+      "static_certificate": null,
+      "target_loaded": true,
+      "errors": []
+    },
+    {
+      "id": "H7",
+      "tier": "T2",
+      "symbol_exists": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "execution_ok": true,
+      "artifact": "/task/trajectory/candidates/03/validation/replay/T2/replay/step_03.png",
+      "reason": "pinned_chromium_scene",
+      "source_sha256": "469e9246004f7b6b14125ad3100702e1ef567866db677f4c65fb4f7ee4af9ebc",
+      "instrumented_line": 1,
+      "static_reachable": null,
+      "scenario_complete": true,
+      "coverage": {
+        "complete": false,
+        "scenarios": 1,
+        "reason": "single_issue_reproducer_is_not_exhaustive"
+      },
+      "tiers": [
+        {
+          "tier": "T1",
+          "execution_ok": false,
+          "reached": true,
+          "values": [
+            {
+              "type": "undefined"
+            }
+          ],
+          "scenario_complete": false,
+          "target_loaded": true,
+          "artifact": "/task/trajectory/candidates/03/validation/replay/T1/events.json",
+          "reason": "node_execution",
+          "errors": [
+            "TypeError: Prism.languages.json.comment.exec is not a function"
+          ]
+        },
+        {
+          "tier": "T2",
+          "execution_ok": true,
+          "reached": true,
+          "values": [
+            {
+              "type": "undefined"
+            }
+          ],
+          "scenario_complete": true,
+          "target_loaded": true,
+          "artifact": "/task/trajectory/candidates/03/validation/replay/T2/replay/step_03.png",
+          "reason": "pinned_chromium_scene",
+          "errors": []
+        }
+      ],
+      "static_certificate": null,
+      "target_loaded": true,
+      "errors": []
+    },
+    {
+      "id": "H8",
+      "tier": "T2",
+      "symbol_exists": true,
+      "reached": true,
+      "values": [
+        {
+          "type": "undefined"
+        }
+      ],
+      "execution_ok": true,
+      "artifact": "/task/trajectory/candidates/03/validation/replay/T2/replay/step_03.png",
+      "reason": "pinned_chromium_scene",
+      "source_sha256": "469e9246004f7b6b14125ad3100702e1ef567866db677f4c65fb4f7ee4af9ebc",
+      "instrumented_line": 1,
+      "static_reachable": null,
+      "scenario_complete": true,
+      "coverage": {
+        "complete": false,
+        "scenarios": 1,
+        "reason": "single_issue_reproducer_is_not_exhaustive"
+      },
+      "tiers": [
+        {
+          "tier": "T1",
+          "execution_ok": false,
+          "reached": true,
+          "values": [
+            {
+              "type": "undefined"
+            }
+          ],
+          "scenario_complete": false,
+          "target_loaded": true,
+          "artifact": "/task/trajectory/candidates/03/validation/replay/T1/events.json",
+          "reason": "node_execution",
+          "errors": [
+            "TypeError: Prism.languages.json.comment.exec is not a function"
+          ]
+        },
+        {
+          "tier": "T2",
+          "execution_ok": true,
+          "reached": true,
+          "values": [
+            {
+              "type": "undefined"
+            }
+          ],
+          "scenario_complete": true,
+          "target_loaded": true,
+          "artifact": "/task/trajectory/candidates/03/validation/replay/T2/replay/step_03.png",
+          "reason": "pinned_chromium_scene",
+          "errors": []
+        }
+      ],
+      "static_certificate": null,
+      "target_loaded": true,
+      "errors": []
+    }
+  ],
+  "probe_changes": [
+    {
+      "id": "H1",
+      "reached_before": true,
+      "reached_after": true,
+      "value_changed": false,
+      "execution_ok": true
+    },
+    {
+      "id": "H2",
+      "reached_before": true,
+      "reached_after": true,
+      "value_changed": false,
+      "execution_ok": true
+    },
+    {
+      "id": "H3",
+      "reached_before": true,
+      "reached_after": true,
+      "value_changed": false,
+      "execution_ok": true
+    },
+    {
+      "id": "H4",
+      "reached_before": true,
+      "reached_after": true,
+      "value_changed": false,
+      "execution_ok": true
+    },
+    {
+      "id": "H5",
+      "reached_before": true,
+      "reached_after": true,
+      "value_changed": false,
+      "execution_ok": true
+    },
+    {
+      "id": "H6",
+      "reached_before": true,
+      "reached_after": true,
+      "value_changed": false,
+      "execution_ok": true
+    },
+    {
+      "id": "H7",
+      "reached_before": true,
+      "reached_after": true,
+      "value_changed": false,
+      "execution_ok": true
+    },
+    {
+      "id": "H8",
+      "reached_before": true,
+      "reached_after": true,
+      "value_changed": false,
+      "execution_ok": true
+    }
+  ],
+  "probe_improved": false,
+  "probe_preserved": true,
+  "target_improved": false,
+  "regression_status": "PASS",
+  "regression_reason": "frozen_base_suite",
+  "base": {
+    "ok": true,
+    "status": "PASS",
+    "runner": {
+      "available": true,
+      "framework": "package_script",
+      "script": "test",
+      "script_body": "npm run test:runner && npm run test:languages && npm run test:plugins && npm run test:aliases",
+      "command": [
+        "/opt/node/bin/npm",
+        "run",
+        "test",
+        "--"
+      ],
+      "provenance": "base_package_scripts",
+      "package_sha256": "c32ef0709a5982cad76ca73d90616a4bf6bcc57d0b961a290bd0de90472e3adc"
+    },
+    "selected_test": "",
+    "process": {
+      "command": [
+        "/opt/node/bin/npm",
+        "run",
+        "test",
+        "--"
+      ],
+      "returncode": 0,
+      "stdout": "/task/trajectory/candidates/01/validation/regression/base/process/stdout.log",
+      "stderr": "/task/trajectory/candidates/01/validation/regression/base/process/stderr.log"
+    },
+    "summary": {
+      "complete": true,
+      "total": 181,
+      "passed": 181,
+      "failed": 0
+    },
+    "output_tail": " should known all aliases\n\n  Testing language aliases of 'autohotkey'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'autoit'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'bash'\n    ✓ - should have all alias titles registered as alias\n    ✓ - should known all aliases\n\n  Testing language aliases of 'basic'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'batch'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'bison'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'bnf'\n    ✓ - should have all alias titles registered as alias\n    ✓ - should known all aliases\n\n  Testing language aliases of 'brainfuck'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'bro'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'c'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'csharp'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'cpp'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'cil'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'coffeescript'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'cmake'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'clojure'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'crystal'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'csp'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'css-extras'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'd'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'dart'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'diff'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'django'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'docker'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'ebnf'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'eiffel'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'ejs'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'elixir'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'elm'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'erb'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'erlang'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'fsharp'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'flow'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'fortran'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'gcode'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'gedcom'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'gherkin'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'git'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'glsl'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'gml'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'go'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'graphql'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'groovy'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'haml'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'handlebars'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'haskell'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'haxe'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'hcl'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'http'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'hpkp'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'hsts'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'ichigojam'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'icon'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'inform7'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'ini'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'io'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'j'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'java'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'javadoc'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'javadoclike'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'javastacktrace'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'jolie'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'jsdoc'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'js-extras'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'json'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'jsonp'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'json5'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'julia'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'keyman'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'kotlin'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'latex'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'less'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'liquid'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'lisp'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'livescript'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'lolcode'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'lua'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'makefile'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'markdown'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'markup-templating'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'matlab'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'mel'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'mizar'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'monkey'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'n1ql'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'n4js'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'nand2tetris-hdl'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'nasm'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'nginx'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'nim'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'nix'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'nsis'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'objectivec'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'ocaml'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'opencl'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'oz'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'parigp'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'parser'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'pascal'\n    ✓ - should have all alias titles registered as alias\n    ✓ - should known all aliases\n\n  Testing language aliases of 'perl'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'php'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'phpdoc'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'php-extras'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'plsql'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'powershell'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'processing'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'prolog'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'properties'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'protobuf'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'pug'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'puppet'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'pure'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'python'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'q'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'qore'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'r'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'jsx'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'tsx'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'renpy'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'reason'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'regex'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'rest'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'rip'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'roboconf'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'ruby'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'rust'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'sas'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'sass'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'scss'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'scala'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'scheme'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'smalltalk'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'smarty'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'sql'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'soy'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'stylus'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'swift'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'tap'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'tcl'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'textile'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'toml'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'tt2'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'twig'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'typescript'\n    ✓ - should known all aliases\n\n  Testing language aliases of 't4-cs'\n    ✓ - should known all aliases\n\n  Testing language aliases of 't4-vb'\n    ✓ - should known all aliases\n\n  Testing language aliases of 't4-templating'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'vala'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'vbnet'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'velocity'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'verilog'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'vhdl'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'vim'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'visual-basic'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'wasm'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'wiki'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'xeora'\n    ✓ - should have all alias titles registered as alias\n    ✓ - should known all aliases\n\n  Testing language aliases of 'xojo'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'xquery'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'yaml'\n    ✓ - should known all aliases\n\n\n  181 passing (534ms)\n\n\nConfiguring yargs through package.json is deprecated and will be removed in the next major release, please use the JS API instead.\n",
+    "seed": 42,
+    "provenance": "base_commit_existing_tests"
+  },
+  "patched": {
+    "ok": true,
+    "status": "PASS",
+    "runner": {
+      "available": true,
+      "framework": "package_script",
+      "script": "test",
+      "script_body": "npm run test:runner && npm run test:languages && npm run test:plugins && npm run test:aliases",
+      "command": [
+        "/opt/node/bin/npm",
+        "run",
+        "test",
+        "--"
+      ],
+      "provenance": "base_package_scripts",
+      "package_sha256": "c32ef0709a5982cad76ca73d90616a4bf6bcc57d0b961a290bd0de90472e3adc"
+    },
+    "selected_test": "",
+    "process": {
+      "command": [
+        "/opt/node/bin/npm",
+        "run",
+        "test",
+        "--"
+      ],
+      "returncode": 0,
+      "stdout": "/task/trajectory/candidates/03/validation/regression/patched/process/stdout.log",
+      "stderr": "/task/trajectory/candidates/03/validation/regression/patched/process/stderr.log"
+    },
+    "summary": {
+      "complete": true,
+      "total": 181,
+      "passed": 181,
+      "failed": 0
+    },
+    "output_tail": " should known all aliases\n\n  Testing language aliases of 'autohotkey'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'autoit'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'bash'\n    ✓ - should have all alias titles registered as alias\n    ✓ - should known all aliases\n\n  Testing language aliases of 'basic'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'batch'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'bison'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'bnf'\n    ✓ - should have all alias titles registered as alias\n    ✓ - should known all aliases\n\n  Testing language aliases of 'brainfuck'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'bro'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'c'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'csharp'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'cpp'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'cil'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'coffeescript'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'cmake'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'clojure'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'crystal'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'csp'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'css-extras'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'd'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'dart'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'diff'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'django'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'docker'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'ebnf'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'eiffel'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'ejs'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'elixir'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'elm'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'erb'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'erlang'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'fsharp'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'flow'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'fortran'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'gcode'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'gedcom'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'gherkin'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'git'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'glsl'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'gml'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'go'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'graphql'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'groovy'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'haml'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'handlebars'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'haskell'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'haxe'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'hcl'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'http'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'hpkp'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'hsts'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'ichigojam'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'icon'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'inform7'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'ini'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'io'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'j'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'java'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'javadoc'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'javadoclike'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'javastacktrace'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'jolie'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'jsdoc'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'js-extras'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'json'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'jsonp'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'json5'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'julia'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'keyman'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'kotlin'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'latex'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'less'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'liquid'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'lisp'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'livescript'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'lolcode'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'lua'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'makefile'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'markdown'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'markup-templating'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'matlab'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'mel'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'mizar'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'monkey'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'n1ql'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'n4js'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'nand2tetris-hdl'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'nasm'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'nginx'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'nim'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'nix'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'nsis'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'objectivec'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'ocaml'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'opencl'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'oz'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'parigp'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'parser'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'pascal'\n    ✓ - should have all alias titles registered as alias\n    ✓ - should known all aliases\n\n  Testing language aliases of 'perl'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'php'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'phpdoc'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'php-extras'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'plsql'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'powershell'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'processing'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'prolog'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'properties'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'protobuf'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'pug'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'puppet'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'pure'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'python'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'q'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'qore'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'r'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'jsx'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'tsx'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'renpy'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'reason'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'regex'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'rest'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'rip'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'roboconf'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'ruby'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'rust'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'sas'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'sass'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'scss'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'scala'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'scheme'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'smalltalk'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'smarty'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'sql'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'soy'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'stylus'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'swift'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'tap'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'tcl'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'textile'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'toml'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'tt2'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'twig'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'typescript'\n    ✓ - should known all aliases\n\n  Testing language aliases of 't4-cs'\n    ✓ - should known all aliases\n\n  Testing language aliases of 't4-vb'\n    ✓ - should known all aliases\n\n  Testing language aliases of 't4-templating'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'vala'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'vbnet'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'velocity'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'verilog'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'vhdl'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'vim'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'visual-basic'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'wasm'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'wiki'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'xeora'\n    ✓ - should have all alias titles registered as alias\n    ✓ - should known all aliases\n\n  Testing language aliases of 'xojo'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'xquery'\n    ✓ - should known all aliases\n\n  Testing language aliases of 'yaml'\n    ✓ - should known all aliases\n\n\n  181 passing (528ms)\n\n\nConfiguring yargs through package.json is deprecated and will be removed in the next major release, please use the JS API instead.\n",
+    "seed": 42,
+    "provenance": "base_commit_existing_tests"
+  },
+  "seed": 42,
+  "render_artifacts": [
+    "/task/trajectory/candidates/03/validation/replay/T2/replay/step_03.png",
+    "/task/trajectory/candidates/03/validation/replay/T2/replay/step_03.png",
+    "/task/trajectory/candidates/03/validation/replay/T2/replay/step_03.png",
+    "/task/trajectory/candidates/03/validation/replay/T2/replay/step_03.png",
+    "/task/trajectory/candidates/03/validation/replay/T2/replay/step_03.png",
+    "/task/trajectory/candidates/03/validation/replay/T2/replay/step_03.png",
+    "/task/trajectory/candidates/03/validation/replay/T2/replay/step_03.png",
+    "/task/trajectory/candidates/03/validation/replay/T2/replay/step_03.png"
+  ],
+  "patch_sha256": "fe9b406e67e8d65d37121cd974972311ffcce81dbbde7f971ecbcd6209c11d2b"
+}

@@ -1,0 +1,21 @@
+{
+  "valid": true,
+  "reason": "ok",
+  "patch": "diff --git a/components/prism-json.js b/components/prism-json.js\nindex 5f40179..2352c38 100644\n--- a/components/prism-json.js\n+++ b/components/prism-json.js\n@@ -1,5 +1,4 @@\n Prism.languages.json = {\n-\t'comment': /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/,\n \t'property': {\n \t\tpattern: /\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?=\\s*:)/,\n \t\tgreedy: true\n@@ -8,6 +7,7 @@ Prism.languages.json = {\n \t\tpattern: /\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?!\\s*:)/,\n \t\tgreedy: true\n \t},\n+\t'comment': /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/,\n \t'number': /-?\\d+\\.?\\d*(e[+-]?\\d+)?/i,\n \t'punctuation': /[{}[\\],]/,\n \t'operator': /:/,\n",
+  "changed_files": [
+    "components/prism-json.js"
+  ],
+  "patch_protocol": "exact_unique_search_v1",
+  "locations": [
+    {
+      "edit_index": 1,
+      "file": "components/prism-json.js",
+      "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+      "match_count": 1,
+      "start_byte": 0,
+      "end_byte": 224,
+      "start_line": 1,
+      "end_line": 10
+    }
+  ]
+}

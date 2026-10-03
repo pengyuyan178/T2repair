@@ -1,0 +1,26 @@
+{
+  "base_commit": "2f9c9261bc1454899266929711d5842a3675e467",
+  "issue_urls": [
+    "https://user-images.githubusercontent.com/24775744/55315159-55a5b580-549e-11e9-9789-1c0e7ac3356f.png"
+  ],
+  "download_urls": [
+    "https://user-images.githubusercontent.com/24775744/55315159-55a5b580-549e-11e9-9789-1c0e7ac3356f.png"
+  ],
+  "excluded_url_templates": [],
+  "raw_downloaded_images": {
+    "issue_image_01.png": "769c09958532a9a5364b6e39c1e7937acf0e8007533997dd162f6ca2e6c80b2a"
+  },
+  "excluded_nonimage_assets": [],
+  "png_crc_corrections": [],
+  "png_trailing_data": [],
+  "images": {
+    "issue_image_01.png": "769c09958532a9a5364b6e39c1e7937acf0e8007533997dd162f6ca2e6c80b2a"
+  },
+  "input_fields": [
+    "base_commit",
+    "image_assets",
+    "instance_id",
+    "problem_statement",
+    "repo"
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "protocol": "s0_to_s2_v1",
+  "status": "ready",
+  "config": {
+    "max_window_utf8_bytes": 16384,
+    "max_source_total_utf8_bytes": 65536,
+    "max_payload_utf8_bytes": 131072,
+    "context_radius": 8,
+    "max_direct_helpers": 8,
+    "max_dependency_files": 4,
+    "fallback_max_files": 3,
+    "fallback_max_windows_per_file": 2
+  },
+  "reference_checks": [],
+  "omissions": [],
+  "deduplicated": {
+    "constraints": 0,
+    "boundaries": 0,
+    "interfaces": 0,
+    "notes": 5
+  },
+  "metrics": {
+    "payload": {
+      "characters": 6328,
+      "utf8_bytes": 6328
+    },
+    "source_windows": 1,
+    "source_characters": 224,
+    "source_utf8_bytes": 224,
+    "duplicate_source_lines": 0,
+    "coverage": [
+      {
+        "boundary_id": "matching:components/prism-json.js:2:37-68",
+        "file": "components/prism-json.js",
+        "line": 2,
+        "end_line": 2,
+        "start_covered": true,
+        "range_covered": true
+      }
+    ],
+    "selected_targets": 1,
+    "covered_starts": 1,
+    "covered_ranges": 1,
+    "actual_input_tokens": null,
+    "omitted_items": 0,
+    "deduplicated": {
+      "constraints": 0,
+      "boundaries": 0,
+      "interfaces": 0,
+      "notes": 5
+    },
+    "unexpanded_source_ranges": 1,
+    "rejected_boundaries": 0
+  },
+  "issue_context": {
+    "protocol": "issue_blocks_v1",
+    "original_sha256": "d1e898dbcf00878ad5aa20d4fff55ebb8a0b4d64a80694e496a158b055182c1f",
+    "original_utf8_bytes": 557,
+    "original_reference": "input_context/task.json:problem_statement",
+    "status": "full",
+    "omissions": []
+  },
+  "source_versions": {
+    "components/prism-json.js": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e"
+  },
+  "selected_input_ids": [
+    "matching:components/prism-json.js:2:37-68"
+  ],
+  "accepted_boundary_ids": [
+    "matching:components/prism-json.js:2:37-68"
+  ],
+  "gaps": [
+    {
+      "kind": "localization_unresolved",
+      "origin": "S0_boundaries",
+      "text": "No JSON string-token boundary is present in the candidate pool; the JSON string rule that would directly enforce C1/C2 by matching quoted strings before comment handling is not among the supplied boundaries."
+    },
+    {
+      "kind": "localization_unresolved",
+      "origin": "S0_scope",
+      "text": "Selected boundary matching:components/prism-json.js:2:37-68 has no read_symbols; the local inputs cannot distinguish whether the regex literal itself or its surrounding gating/order controls the string-vs-comment decision."
+    },
+    {
+      "kind": "localization_unresolved",
+      "origin": "S0_scope",
+      "text": "No readable symbols are exposed at the selected boundary, so it cannot determine which tokenizer state (e.g., in-string) is available before the matching expression runs."
+    }
+  ],
+  "audit_only_paths": [
+    "spec.provenance_invalid",
+    "spec.ambiguity_policy",
+    "front_context.candidate_pool",
+    "front_context.scope_plan.ranked_files",
+    "front_context.value_decision_family",
+    "source_context.bindings",
+    "source_context.allowed_files",
+    "source_context.visual_index_files",
+    "source_context.indexed_files",
+    "source_context.scope_limits",
+    "baseline_topk"
+  ],
+  "source_coverage": [
+    {
+      "file": "components/prism-json.js",
+      "source_sha256": "c51c0eab001da1053bc36c42578610a4f1f94da24c10cb731c4c60953413519e",
+      "total_lines": 19,
+      "included_ranges": [
+        [
+          1,
+          10
+        ]
+      ],
+      "unexpanded_ranges": [
+        {
+          "start_line": 11,
+          "end_line": 19,
+          "reason": "not_expanded_in_payload"
+        }
+      ]
+    }
+  ]
+}

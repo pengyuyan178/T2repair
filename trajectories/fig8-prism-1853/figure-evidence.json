@@ -1,0 +1,267 @@
+{
+  "case": "PrismJS__prism-1853",
+  "displayed_trace_backend": "DeepSeek",
+  "issue_title": "/* breaks JSON tokenization",
+  "source_sha256": {
+    "result/method/causalgui/test480_deepseek/cases/PrismJS__prism-1853/trajectory/S2_hypotheses.json": "2d2ebd8ca752b1454a41437920b73b3f1bab7ea27be4f6bf7fe1659cbe9aeaf3",
+    "result/method/causalgui/test480_deepseek/cases/PrismJS__prism-1853/trajectory/agents/code/report.json": "faba4be66805571198143ffab84905bddc204437054724eca581c77a00166cdc",
+    "result/method/causalgui/test480_deepseek/cases/PrismJS__prism-1853/trajectory/agents/browser/report.json": "f92d302dfcd2bd9b68f9e100a3cf159f651ecf5b2951281a00ca6c8d82c5c3a5",
+    "result/method/causalgui/test480_deepseek/cases/PrismJS__prism-1853/trajectory/agents/browser/turn_02/tool_01/browser/observation.json": "f2ee27429778380385fb8794a12f53960bc3703e36a48ff7bdf89132da084bb9",
+    "result/method/causalgui/test480_deepseek/cases/PrismJS__prism-1853/trajectory/candidates/01/validation/replay/T2/replay/observation.json": "72003d1ef90245a4c173accfc23653f3f26f6feec5c1bc6198be2a6e7c2a24fd",
+    "result/method/causalgui/test480_deepseek/cases/PrismJS__prism-1853/patch.diff": "aea1499da539198f0398180376b8766c6bb12307908621abb237e60384dd0b8b",
+    "result/method/causalgui/test480_deepseek/cases/PrismJS__prism-1853/assets/issue_image_01.png": "769c09958532a9a5364b6e39c1e7937acf0e8007533997dd162f6ca2e6c80b2a",
+    "result/method/causalgui/test480__glm-5.3-flash_full_20260929/final_results.csv": "71057f4f451a3cc2819900f137683c2ea50b6080bb77fad2265732abfee2ba9e",
+    "result/method/causalgui/test480_deepseek/final_results.csv": "35bfe55a2ee12837a22ec27cfa4ef103bc26ab265c7136ad92fae3e52618ba02",
+    "result/baseline/guirepair/test480_i2c_glm-5.3-flash_opencode_seed42_20260917_154039_UTC/final_results.csv": "ad0bcf9b0197d91f661b7fe6f432395a95eb9ad3bf3c0572d59e73495ebaa980",
+    "result/baseline/guirepair/test480_deepseek/final_results.csv": "020ccd88565433a9122411feabfe8c778391c1b1207b7fc81882c9cf08ebd63a"
+  },
+  "hypotheses_shown": {
+    "H1": {
+      "kind": "value",
+      "expression": "Prism.languages.json['comment'].exec('{\"Accept\":\"*/*\"}')[0]",
+      "expected": "/*\"}"
+    },
+    "H2": {
+      "kind": "value",
+      "expression": "Object.keys(Prism.languages.json).indexOf('comment') < Object.keys(Prism.languages.json).indexOf('string')",
+      "expected": "true"
+    },
+    "H5": {
+      "kind": "value",
+      "expression": "Prism.tokenize('{\"A\":\"/*\",\"B\":\"B\",\"C\":\"C\"}', Prism.languages.json).some(function (t) { return typeof t === 'object' && t.type === 'comment' && String(t.content).indexOf('B') !== -1; })",
+      "expected": "true"
+    }
+  },
+  "code_agent": {
+    "calls": 2,
+    "source_lines": {
+      "2": "\t'comment': /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/,",
+      "3": "\t'property': {",
+      "7": "\t'string': {"
+    },
+    "search": {
+      "query": "greedy",
+      "file": "components/prism-core.js",
+      "lines": [
+        297,
+        301,
+        323,
+        335,
+        386,
+        453,
+        459
+      ]
+    },
+    "summary": "The whole JSON grammar is only 19 lines (components/prism-json.js, source_id 172). Line 2 defines 'comment' as the FIRST grammar key with a regex literal /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/ that is not string-aware: it accepts any /* and then lazily consumes everything up to the next */ or end of input. The string rule (lines 8-11) and property rule (lines 4-7) are plain greedy regex literals that are also not string-state aware. Prism core uses a matchGrammar-style pass that iterates grammar keys in order and applies each rule over the text (greedy handling at prism-core.js:297-386), so a comment rule placed before the string rule can claim the /* inside a quoted value before the string rule is applied. This is consistent with the reported symptom, but it is a static reading only; no tokenize/highlight execution was performed here."
+  },
+  "browser_agent": {
+    "calls": 3,
+    "base_key_order": "comment,property,string,number,punctuation,operator,boolean,null",
+    "base_tokens_issue_input": [
+      {
+        "type": "punctuation",
+        "content": "{",
+        "start": 0,
+        "end": 1
+      },
+      {
+        "type": "property",
+        "content": "\"A\"",
+        "start": 1,
+        "end": 4
+      },
+      {
+        "type": "operator",
+        "content": ":",
+        "start": 4,
+        "end": 5
+      },
+      {
+        "type": "string",
+        "content": "\"/*\"",
+        "start": 5,
+        "end": 9
+      },
+      {
+        "type": "punctuation",
+        "content": ",",
+        "start": 9,
+        "end": 10
+      },
+      {
+        "type": "property",
+        "content": "\"B\"",
+        "start": 10,
+        "end": 13
+      },
+      {
+        "type": "operator",
+        "content": ":",
+        "start": 13,
+        "end": 14
+      },
+      {
+        "type": "string",
+        "content": "\"B\"",
+        "start": 14,
+        "end": 17
+      },
+      {
+        "type": "punctuation",
+        "content": ",",
+        "start": 17,
+        "end": 18
+      },
+      {
+        "type": "text",
+        "content": "\"C",
+        "start": 18,
+        "end": 20
+      },
+      {
+        "type": "string",
+        "content": "\":\"",
+        "start": 20,
+        "end": 23
+      },
+      {
+        "type": "text",
+        "content": "C\"",
+        "start": 23,
+        "end": 25
+      },
+      {
+        "type": "punctuation",
+        "content": "}",
+        "start": 25,
+        "end": 26
+      }
+    ],
+    "base_has_comment_token": false,
+    "control_comments": [
+      {
+        "type": "comment",
+        "content": "// tail",
+        "start": 9,
+        "end": 16
+      },
+      {
+        "type": "comment",
+        "content": "/* block */",
+        "start": 9,
+        "end": 20
+      }
+    ],
+    "summary": "Base behavior was reproduced in two independent Prism scenes (browser.t1.o1, browser.t2.o1) loading the real entry prism.js plus components/prism-json.js (loaded via synchronous XHR in the page; Prism global present, JSON grammar present). Direct evidence from the browser scene: the JSON comment rule is the plain RegExp /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/ with no lookbehind. Applied to the whole document '{\"Accept\":\"*/*\"}' it matches at index 12 and returns the text '/*\"}', i.e. it does start inside a string value and run to end of input (H1 confirmation). The grammar key order is 'comment,property,string,number,punctuation,operator,boolean,null', so the comment rule is declared before the string rule (H2 confirmation). However, the composed tokenizer did NOT emit a comment token for the issue inputs: Prism.tokenize('{\"Accept\":\"*/*\"}', json) yields punctuation, property \"Accept\", operator, string \"*/*\" (offsets 10-15), punctuation, with no comment token (H4 falsified), and the raw string-pattern exec on that input returns '\":\\\"' at index 8, not '\"*/*\"' (H3 falsified). For the issue snippet '{\"A\":\"/*\",\"B\":\"B\",\"C\":\"C\"}' tokenization IS corrupted, but not through a comment token: the token stream is punctuation{ , property\"A\", operator, string\"/*\"(5-9), punctuation, property\"B\", operator, string\"B\"(14-17), punctuation, then text '\"C' (18-20), string '\":\\\"' (20-23), text 'C\"' (23-25), punctuation} — the '\"C\":\"C\"' pair is split (H5 falsified: no comment token containing 'B'; H6 partially supported as broken output but falsified as a comment span: the highlight HTML is {<property>\"A\"</property>:<string>\"/*\"</string>,<property>\"B\"</property>:<string>\"B\"</string>,\"C<string>\": \"</string>C\"<punctuation>}</punctuation> with no 'token comment' span). H7's predicted [5,6] was observed as [3,6] because the raw string pattern first matches '\":\\\"' at index 3. H8 is confirmed: the comment entry is a RegExp with no lookbehind, so it has no string-context gate. Net result: the reported corruption after a string containing /* reproduces at T1/T2 scene level, but the observed mechanism is unanchored comment/string/property matching rather than an emitted comment token; the hypotheses that predicted a comment token (H4, H5, H6) are contradicted by the observed token streams."
+  },
+  "selected_candidate": 1,
+  "candidate_count": 5,
+  "generator_rationale": "In components/prism-json.js the unanchored comment pattern /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/ is declared as the FIRST grammar token, ahead of the greedy 'property'/'string' tokens. It therefore claims the '/*' that occurs inside a JSON string value and inserts a comment token before the string tokens exist; the later greedy string/property tokens then overwrite that comment token and Prism is left re-tokenizing the leftover region, which corrupts every JSON token after the string. This is exactly what the runtime scene shows for {\"A\":\"/*\",\"B\":\"B\",\"C\":\"C\"}: the value strings tokenize fine but the region after them degrades to text '\"C' + string '\":\"' + text 'C\"' instead of property/string tokens (C3 violated), and comment.exec on {\"Accept\":\"*/*\"} matches '/*\"}' starting inside a string (C1/C4 violated). Fix: make the string/property tokens be applied before the comment token so a '/*' inside a quoted value is already covered by the greedy string token and can never start a comment (C1, C2, C4), keep property/string greedy and use the (^|[^\\\\]) lookbehind so escaped quotes are handled correctly, and move the comment token after them as a greedy token so it only matches outside strings while real comments ('{\"a\": 1} // tail', '{\"a\": 1} /* block */' — observed as comment tokens in the scene) still tokenize. All JSON tokens following a string containing '/*' are then produced normally (C3). Only components/prism-json.js is changed; tests, build scripts, dependency versions and unrelated files are untouched, and the existing component registration in components.js/components/index.js already exposes 'json', so the interface obligations are preserved.",
+  "replay_on_selected_candidate": {
+    "key_order": "property,string,comment,number,punctuation,operator,boolean,null",
+    "tokens_issue_input": [
+      {
+        "type": "punctuation",
+        "content": "{",
+        "start": 0,
+        "end": 1
+      },
+      {
+        "type": "property",
+        "content": "\"A\"",
+        "start": 1,
+        "end": 4
+      },
+      {
+        "type": "operator",
+        "content": ":",
+        "start": 4,
+        "end": 5
+      },
+      {
+        "type": "string",
+        "content": "\"/*\"",
+        "start": 5,
+        "end": 9
+      },
+      {
+        "type": "punctuation",
+        "content": ",",
+        "start": 9,
+        "end": 10
+      },
+      {
+        "type": "property",
+        "content": "\"B\"",
+        "start": 10,
+        "end": 13
+      },
+      {
+        "type": "operator",
+        "content": ":",
+        "start": 13,
+        "end": 14
+      },
+      {
+        "type": "string",
+        "content": "\"B\"",
+        "start": 14,
+        "end": 17
+      },
+      {
+        "type": "punctuation",
+        "content": ",",
+        "start": 17,
+        "end": 18
+      },
+      {
+        "type": "property",
+        "content": "\"C\"",
+        "start": 18,
+        "end": 21
+      },
+      {
+        "type": "operator",
+        "content": ":",
+        "start": 21,
+        "end": 22
+      },
+      {
+        "type": "string",
+        "content": "\"C\"",
+        "start": 22,
+        "end": 25
+      },
+      {
+        "type": "punctuation",
+        "content": "}",
+        "start": 25,
+        "end": 26
+      }
+    ],
+    "control_comments": [
+      {
+        "type": "comment",
+        "content": "// tail",
+        "start": 9,
+        "end": 16
+      },
+      {
+        "type": "comment",
+        "content": "/* block */",
+        "start": 9,
+        "end": 20
+      }
+    ],
+    "model_calls": 0
+  },
+  "patch": "diff --git a/components/prism-json.js b/components/prism-json.js\nindex 5f40179..5d032bc 100644\n--- a/components/prism-json.js\n+++ b/components/prism-json.js\n@@ -1,11 +1,16 @@\n Prism.languages.json = {\n-\t'comment': /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/,\n \t'property': {\n-\t\tpattern: /\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?=\\s*:)/,\n+\t\tpattern: /(^|[^\\\\])\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?=\\s*:)/,\n+\t\tlookbehind: true,\n \t\tgreedy: true\n \t},\n \t'string': {\n-\t\tpattern: /\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?!\\s*:)/,\n+\t\tpattern: /(^|[^\\\\])\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?!\\s*:)/,\n+\t\tlookbehind: true,\n+\t\tgreedy: true\n+\t},\n+\t'comment': {\n+\t\tpattern: /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/,\n \t\tgreedy: true\n \t},\n \t'number': /-?\\d+\\.?\\d*(e[+-]?\\d+)?/i,\n",
+  "official_outcomes": {
+    "t2repair_glm": true,
+    "t2repair_deepseek": true,
+    "guirepair_glm": false,
+    "guirepair_deepseek": false
+  },
+  "token_rendering": "Token colors follow the Prism default theme and are drawn from the recorded token types; they are not screenshots.",
+  "new_experiments": 0
+}

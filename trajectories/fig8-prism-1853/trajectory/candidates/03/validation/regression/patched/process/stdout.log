@@ -1,0 +1,2281 @@
+
+> prismjs@1.16.0 test
+> npm run test:runner && npm run test:languages && npm run test:plugins && npm run test:aliases
+
+
+> prismjs@1.16.0 test:runner
+> mocha tests/testrunner-tests.js
+
+
+
+  The token stream transformer
+    ✓ should handle all kinds of simple transformations
+    ✓ should handle nested structures
+    ✓ should strip empty tokens
+    ✓ should strip empty token tree branches
+    ✓ should ignore all properties in tokens except value and content
+
+  The language name parsing
+    ✓ should use the last language as the main language if no language is specified
+    ✓ should use the specified language as main language
+    ✓ should throw an error if there are multiple main languages
+
+
+  8 passing (11ms)
+
+
+> prismjs@1.16.0 test:languages
+> mocha tests/run.js
+
+
+
+  Testing language 'abap'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'eol-comment_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string-template_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'abnf'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'core-rule_feature'
+    ✓ – should pass test case 'definition_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'punctuation_feature'
+    ✓ – should pass test case 'range_feature'
+    ✓ – should pass test case 'repetition_feature'
+    ✓ – should pass test case 'rule_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'terminal_feature'
+
+  Testing language 'actionscript'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'operator_feature'
+
+  Testing language 'ada'
+    ✓ – should pass test case 'attr-name_feature'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'char_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'apacheconf'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'directive-block_feature'
+    ✓ – should pass test case 'directive-flags_feature'
+    ✓ – should pass test case 'directive-inline_feature'
+    ✓ – should pass test case 'regex_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'apl'
+    ✓ – should pass test case 'assignment_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'constant_feature'
+    ✓ – should pass test case 'dfn_feature'
+    ✓ – should pass test case 'dyadic-operator_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'monadic-operator_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'statement_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'system-function_feature'
+
+  Testing language 'applescript'
+    ✓ – should pass test case 'class_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'arff'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'asciidoc'
+    ✓ – should pass test case 'admonition_feature'
+    ✓ – should pass test case 'attribute-entry_feature'
+    ✓ – should pass test case 'attributes_feature'
+    ✓ – should pass test case 'callout_feature'
+    ✓ – should pass test case 'comment-block_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'entity_feature'
+    ✓ – should pass test case 'entity_feature'
+    ✓ – should pass test case 'hr_feature'
+    ✓ – should pass test case 'indented-block_feature'
+    ✓ – should pass test case 'inline_feature'
+    ✓ – should pass test case 'line-continuation_feature'
+    ✓ – should pass test case 'list-label_feature'
+    ✓ – should pass test case 'list-punctuation_feature'
+    ✓ – should pass test case 'literal-block_feature'
+    ✓ – should pass test case 'macro_feature'
+    ✓ – should pass test case 'other-block_feature'
+    ✓ – should pass test case 'page-break_feature'
+    ✓ – should pass test case 'passthrough-block_feature'
+    ✓ – should pass test case 'replacement_feature'
+    ✓ – should pass test case 'table_feature'
+    ✓ – should pass test case 'title_feature'
+
+  Testing language 'asm6502'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'directive_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'opcode_feature'
+    ✓ – should pass test case 'register_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'aspnet'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'page-directive_feature'
+
+  Testing language 'autohotkey'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'builtin_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'constant_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'important_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'selector_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'symbol_feature'
+    ✓ – should pass test case 'tag_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'autoit'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'directive_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'url_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'bash'
+    ✓ – should pass test case 'arithmetic_environment_feature'
+    ✓ – should pass test case 'command_substitution_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'shebang_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'basic'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'batch'
+    ✓ – should pass test case 'command_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'label_feature'
+
+  Testing language 'bison'
+    ✓ – should pass test case 'c_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'property_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'bnf'
+    ✓ – should pass test case 'definition_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'rule_feature'
+    ✓ – should pass test case 'string_featrue'
+
+  Testing language 'brainfuck'
+    ✓ – should pass test case 'all_feature'
+
+  Testing language 'bro'
+    ✓ – should pass test case 'builtin_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'c'
+    ✓ – should pass test case 'class-name_feature'
+    ✓ – should pass test case 'constant_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'macro_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+
+  Testing language 'c+pure'
+    ✓ – should pass test case 'c_inclusion'
+
+  Testing language 'cil'
+    ✓ – should pass test case 'asm_reference'
+    ✓ – should pass test case 'boolean'
+    ✓ – should pass test case 'comment'
+    ✓ – should pass test case 'instructions'
+    ✓ – should pass test case 'keywords'
+    ✓ – should pass test case 'strings'
+
+  Testing language 'clike'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'class-name_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'issue1340'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'clojure'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'operator_and_punctuation'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'cmake'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'inserted_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'namespace_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'property_feature'
+    ✓ – should pass test case 'punctuation_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'coffeescript'
+    ✓ – should pass test case 'block-regex_feature'
+    ✓ – should pass test case 'class-member_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'inline-javascript_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'property_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'coffeescript+haml'
+    ✓ – should pass test case 'coffeescript_inclusion'
+
+  Testing language 'coffeescript+pug'
+    ✓ – should pass test case 'coffeescript_inclusion'
+
+  Testing language 'cpp'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'class-name_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'raw_string_feature'
+
+  Testing language 'cpp+pure'
+    ✓ – should pass test case 'cpp_inclusion'
+
+  Testing language 'crystal'
+    ✓ – should pass test case 'attribute_feature'
+    ✓ – should pass test case 'expansion_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+
+  Testing language 'csharp'
+    ✓ – should pass test case 'class-name_feature'
+    ✓ – should pass test case 'generic_feature'
+    ✓ – should pass test case 'issue1091'
+    ✓ – should pass test case 'issue1365'
+    ✓ – should pass test case 'issue1371'
+    ✓ – should pass test case 'issue806'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'preprocessor_feature'
+    ✓ – should pass test case 'punctuation_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'csharp+aspnet'
+    ✓ – should pass test case 'directive_feature'
+
+  Testing language 'csp'
+    ✓ – should pass test case 'directive_no_value_feature'
+    ✓ – should pass test case 'directive_with_source_expression_feature'
+    ✓ – should pass test case 'safe_feature'
+    ✓ – should pass test case 'unsafe_feature'
+
+  Testing language 'css'
+    ✓ – should pass test case 'atrule_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'important_feature'
+    ✓ – should pass test case 'property_feature'
+    ✓ – should pass test case 'selector_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'url_feature'
+
+  Testing language 'css!+css-extras'
+    ✓ – should pass test case 'entity_feature'
+    ✓ – should pass test case 'hexcode_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'selector_attribute_feature'
+    ✓ – should pass test case 'selector_feature'
+    ✓ – should pass test case 'selector_n-th_feature'
+    ✓ – should pass test case 'selector_pseudo-class_feature'
+    ✓ – should pass test case 'unit_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'css+haml'
+    ✓ – should pass test case 'css+haml_usage'
+
+  Testing language 'css+http'
+    ✓ – should pass test case 'css_inclusion'
+
+  Testing language 'css+textile'
+    ✓ – should pass test case 'css_inclusion'
+
+  Testing language 'd'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'property_feature'
+    ✓ – should pass test case 'register_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'token-string_feature'
+
+  Testing language 'dart'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'metadata_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'diff'
+    ✓ – should pass test case 'coord_feature'
+    ✓ – should pass test case 'diff_feature'
+
+  Testing language 'django'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'delimiter_feature'
+    ✓ – should pass test case 'filter_feature'
+    ✓ – should pass test case 'for-loop_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'tag_feature'
+    ✓ – should pass test case 'test_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'django!+css'
+    ✓ – should pass test case 'inclusion'
+
+  Testing language 'django!+javascript'
+    ✓ – should pass test case 'inclusion'
+
+  Testing language 'docker'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'ebnf'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'definition_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'punctuation_feature'
+    ✓ – should pass test case 'rule_feature'
+    ✓ – should pass test case 'special_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'eiffel'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'char_feature'
+    ✓ – should pass test case 'class-name_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'ejs'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'ejs_feature'
+
+  Testing language 'elixir'
+    ✓ – should pass test case 'atom_feature'
+    ✓ – should pass test case 'attr-name_feature'
+    ✓ – should pass test case 'attribute_feature'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'capture_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'issue1392'
+    ✓ – should pass test case 'issue775'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'regex_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'elm'
+    ✓ – should pass test case 'builtin_feature'
+    ✓ – should pass test case 'char_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'constant_feature'
+    ✓ – should pass test case 'hvariable_feature'
+    ✓ – should pass test case 'import_statement_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'erb'
+    ✓ – should pass test case 'erb_feature'
+    ✓ – should pass test case 'erb_in_markup_feature'
+    ✓ – should pass test case 'issue1767'
+
+  Testing language 'erlang'
+    ✓ – should pass test case 'atom_feature'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'flow'
+    ✓ – should pass test case 'flow-punctuation_feature'
+    ✓ – should pass test case 'function-variable_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'type_feature'
+
+  Testing language 'fortran'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'fortran+pure'
+    ✓ – should pass test case 'fortran_inclusion'
+
+  Testing language 'fsharp'
+    ✓ – should pass test case 'annotation_feature'
+    ✓ – should pass test case 'class-name_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'computation-expression_feature'
+    ✓ – should pass test case 'issue1480'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'preprocessor_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'gcode'
+    ✓ – should pass test case 'checksum_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'property_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'gedcom'
+    ✓ – should pass test case 'level_feature'
+    ✓ – should pass test case 'line-value_feature'
+    ✓ – should pass test case 'pointer_feature'
+    ✓ – should pass test case 'tag_feature'
+
+  Testing language 'gherkin'
+    ✓ – should pass test case 'atrule_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'feature_feature'
+    ✓ – should pass test case 'outline_feature'
+    ✓ – should pass test case 'pystring_feature'
+    ✓ – should pass test case 'scenario_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'table_feature'
+    ✓ – should pass test case 'tag_feature'
+
+  Testing language 'git'
+    ✓ – should pass test case 'command_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'commit_sha1_feature'
+    ✓ – should pass test case 'coord_feature'
+    ✓ – should pass test case 'diff_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'glsl'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'preprocessor_feature'
+
+  Testing language 'go'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'builtin_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'graphql'
+    ✓ – should pass test case 'attr-name_feature'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'class-name_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'constant_feature'
+    ✓ – should pass test case 'directive_feature'
+    ✓ – should pass test case 'fragment_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'groovy'
+    ✓ – should pass test case 'annotation_feature'
+    ✓ – should pass test case 'issue1049'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'shebang_feature'
+    ✓ – should pass test case 'spock-block_feature'
+    ✓ – should pass test case 'string-interpolation_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'haml'
+    ✓ – should pass test case 'code_feature'
+    ✓ – should pass test case 'doctype_feature'
+    ✓ – should pass test case 'interpolation_feature'
+    ✓ – should pass test case 'multiline-code_feature'
+    ✓ – should pass test case 'multiline-comment_feature'
+    ✓ – should pass test case 'tag_feature'
+
+  Testing language 'handlebars'
+    ✓ – should pass test case 'block_feature'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'handlebars_in_markup_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'handlebars+pug'
+    ✓ – should pass test case 'handlebars_inclusion'
+
+  Testing language 'haskell'
+    ✓ – should pass test case 'builtin_feature'
+    ✓ – should pass test case 'char_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'constant_feature'
+    ✓ – should pass test case 'hvariable_feature'
+    ✓ – should pass test case 'import_statement_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'haxe'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'metadata_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'preprocessor_feature'
+    ✓ – should pass test case 'regex_feature'
+    ✓ – should pass test case 'reification_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'hcl'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'interpolation_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'property_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'hpkp'
+    ✓ – should pass test case 'safe_maxage_feature'
+    ✓ – should pass test case 'sha256_pin_feature'
+    ✓ – should pass test case 'unsafe_maxage_feature'
+
+  Testing language 'hsts'
+    ✓ – should pass test case 'include_subdomains_feature'
+    ✓ – should pass test case 'preload_feature'
+    ✓ – should pass test case 'safe_maxage_feature'
+    ✓ – should pass test case 'unsafe_maxage_feature'
+
+  Testing language 'http'
+    ✓ – should pass test case 'header-name_feature'
+    ✓ – should pass test case 'request-line_feature'
+    ✓ – should pass test case 'response-status_feature'
+
+  Testing language 'ichigojam'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'label_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'icon'
+    ✓ – should pass test case 'builtin-keyword_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'directive_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'inform7'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'position_feature'
+    ✓ – should pass test case 'property_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'title_feature'
+    ✓ – should pass test case 'variable_feature'
+    ✓ – should pass test case 'verb_feature'
+
+  Testing language 'ini'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'key_value_feature'
+    ✓ – should pass test case 'selector_feature'
+
+  Testing language 'io'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'j'
+    ✓ – should pass test case 'adverb_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'conjunction_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'verb_feature'
+
+  Testing language 'java'
+    ✓ – should pass test case 'function_featrue'
+    ✓ – should pass test case 'generics_feature'
+    ✓ – should pass test case 'issue1351'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'module_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'package_feature'
+
+  Testing language 'javadoc'
+    ✓ – should pass test case 'class-name_feature'
+    ✓ – should pass test case 'code_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'parameter_feature'
+    ✓ – should pass test case 'tag_feature'
+
+  Testing language 'javadoc+java'
+    ✓ – should pass test case 'javadoc_inclusion'
+
+  Testing language 'javascript'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'class-method_feature'
+    ✓ – should pass test case 'constant_feature'
+    ✓ – should pass test case 'function-variable_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'issue1337'
+    ✓ – should pass test case 'issue1340'
+    ✓ – should pass test case 'issue1397'
+    ✓ – should pass test case 'issue1526'
+    ✓ – should pass test case 'issue1807'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'regex_feature'
+    ✓ – should pass test case 'supposed-classes_feature'
+    ✓ – should pass test case 'supposed-function_feature'
+    ✓ – should pass test case 'template-string_feature'
+    ✓ – should pass test case 'try-catch_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'javascript!+js-extras'
+    ✓ – should pass test case 'arrow_feature'
+    ✓ – should pass test case 'console_feature'
+    ✓ – should pass test case 'dom_feature'
+    ✓ – should pass test case 'known-class-name_feature'
+    ✓ – should pass test case 'maybe-class-name_feature'
+    ✓ – should pass test case 'method-variable_feature'
+    ✓ – should pass test case 'method_feature'
+    ✓ – should pass test case 'property-access_feature'
+    ✓ – should pass test case 'spread_feature'
+
+  Testing language 'javascript!+regex'
+    ✓ – should pass test case 'regex_inclusion'
+
+  Testing language 'javascript+haml'
+    ✓ – should pass test case 'javascript_inclusion'
+
+  Testing language 'javascript+http'
+    ✓ – should pass test case 'javascript_inclusion'
+
+  Testing language 'javastacktrace'
+    ✓ – should pass test case 'more_feature'
+    ✓ – should pass test case 'stack-frame_feature'
+    ✓ – should pass test case 'summary_feature'
+
+  Testing language 'jolie'
+    ✓ – should pass test case 'deployment_features'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+
+  Testing language 'jsdoc'
+    ✓ – should pass test case 'class-name_feature'
+    ✓ – should pass test case 'example_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'parameter_feature'
+
+  Testing language 'jsdoc+javascript'
+    ✓ – should pass test case 'jsdoc_inclusion'
+
+  Testing language 'json'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'null_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'property_feature'
+    ✓ – should pass test case 'punctuation_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'json+http'
+    ✓ – should pass test case 'json-suffix_inclusion'
+    ✓ – should pass test case 'json_inclusion'
+
+  Testing language 'json5'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'property_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'jsonp'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'punctuation_feature'
+
+  Testing language 'jsx'
+    ✓ – should pass test case 'issue1103'
+    ✓ – should pass test case 'issue1235'
+    ✓ – should pass test case 'issue1236'
+    ✓ – should pass test case 'issue1294'
+    ✓ – should pass test case 'issue1335'
+    ✓ – should pass test case 'issue1342'
+    ✓ – should pass test case 'issue1356'
+    ✓ – should pass test case 'issue1364'
+    ✓ – should pass test case 'issue1408'
+    ✓ – should pass test case 'issue1421'
+    ✓ – should pass test case 'plain-text_feature'
+    ✓ – should pass test case 'tag_feature'
+
+  Testing language 'julia'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'keyman'
+    ✓ – should pass test case 'atrule_feature'
+    ✓ – should pass test case 'bold_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'tag_feature'
+
+  Testing language 'kotlin'
+    ✓ – should pass test case 'annotation_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'interpolation_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'label_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'raw-string_feature'
+
+  Testing language 'latex'
+    ✓ – should pass test case 'cdata_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'equation_feature'
+    ✓ – should pass test case 'headline_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'url_feature'
+
+  Testing language 'less'
+    ✓ – should pass test case 'atrule_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'property_feature'
+    ✓ – should pass test case 'selector_feature'
+
+  Testing language 'less+haml'
+    ✓ – should pass test case 'less_inclusion'
+
+  Testing language 'less+pug'
+    ✓ – should pass test case 'less_inclusion'
+
+  Testing language 'liquid'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+
+  Testing language 'lisp'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'car_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'declare_feature'
+    ✓ – should pass test case 'defun_feature'
+    ✓ – should pass test case 'defvar_feature'
+    ✓ – should pass test case 'heading_feature'
+    ✓ – should pass test case 'interactive_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'lambda-feature'
+    ✓ – should pass test case 'lisp-property_feature'
+    ✓ – should pass test case 'number_boolean'
+    ✓ – should pass test case 'punctuation_feature'
+    ✓ – should pass test case 'quoted-symbol_feature'
+    ✓ – should pass test case 'splice_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'livescript'
+    ✓ – should pass test case 'argument_feature'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'identifier_feature'
+    ✓ – should pass test case 'interpolated-string'
+    ✓ – should pass test case 'keyword-operator_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'regex_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'lolcode'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'label_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'symbol_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'lua'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'makefile'
+    ✓ – should pass test case 'builtin_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'symbol_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'markdown'
+    ✓ – should pass test case 'blockquote_feature'
+    ✓ – should pass test case 'bold_feature'
+    ✓ – should pass test case 'code_feature'
+    ✓ – should pass test case 'hr_feature'
+    ✓ – should pass test case 'italic_feature'
+    ✓ – should pass test case 'list_feature'
+    ✓ – should pass test case 'strike_feature'
+    ✓ – should pass test case 'title_feature'
+    ✓ – should pass test case 'url-reference_feature'
+    ✓ – should pass test case 'url_feature'
+
+  Testing language 'markdown+haml'
+    ✓ – should pass test case 'markdown_inclusion'
+
+  Testing language 'markdown+pug'
+    ✓ – should pass test case 'markdown_inclusion'
+
+  Testing language 'markup'
+    ✓ – should pass test case 'cdata_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'doctype_feature'
+    ✓ – should pass test case 'entity_feature'
+    ✓ – should pass test case 'entity_feature'
+    ✓ – should pass test case 'issue585'
+    ✓ – should pass test case 'issue888'
+    ✓ – should pass test case 'prolog_feature'
+    ✓ – should pass test case 'tag_attribute_feature'
+    ✓ – should pass test case 'tag_feature'
+
+  Testing language 'markup!+css'
+    ✓ – should pass test case 'css_inclusion'
+
+  Testing language 'markup!+css+javascript'
+    ✓ – should pass test case 'issue1240'
+
+  Testing language 'markup!+javascript'
+    ✓ – should pass test case 'javascript_inclusion'
+
+  Testing language 'markup+actionscript'
+    ✓ – should pass test case 'xml_feature'
+
+  Testing language 'markup+css+wiki'
+    ✓ – should pass test case 'table-tag_feature'
+
+  Testing language 'markup+haml'
+    ✓ – should pass test case 'markup_feature'
+
+  Testing language 'markup+http'
+    ✓ – should pass test case 'html_inclusion'
+    ✓ – should pass test case 'xml-suffix_inclusion'
+    ✓ – should pass test case 'xml_inclusion'
+
+  Testing language 'markup+javascript+csharp+aspnet'
+    ✓ – should pass test case 'script_feature'
+
+  Testing language 'markup+php'
+    ✓ – should pass test case 'issue1582'
+    ✓ – should pass test case 'php_in_markup_feature'
+    ✓ – should pass test case 'php_with_closing_tag_in_markup_feature'
+
+  Testing language 'markup+pug'
+    ✓ – should pass test case 'markup_feature'
+
+  Testing language 'markup+tt2'
+    ✓ – should pass test case 'tt2_in_markup_feature'
+
+  Testing language 'matlab'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'mel'
+    ✓ – should pass test case 'code_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'flag_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'mizar'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'parameter_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'monkey'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'preprocessor_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'type-char_feature'
+
+  Testing language 'n1ql'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'identifier_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'parameter_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'n4js'
+    ✓ – should pass test case 'annotation_feature'
+    ✓ – should pass test case 'keyword_feature'
+
+  Testing language 'nand2tetris-hdl'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'punctuation_feature'
+
+  Testing language 'nasm'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'label_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'register_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'nginx'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'nim'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'nix'
+    ✓ – should pass test case 'antiquotation_feature'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'url_feature'
+
+  Testing language 'nsis'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'constant_feature'
+    ✓ – should pass test case 'important_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'property_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'objectivec'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'ocaml'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'directive_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'type_feature'
+
+  Testing language 'opencl'
+    ✓ – should pass test case 'constant_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword_feature'
+
+  Testing language 'opencl+c'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'constant_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'type_feature'
+
+  Testing language 'opencl+cpp'
+    ✓ – should pass test case 'type_feature'
+
+  Testing language 'oz'
+    ✓ – should pass test case 'atom_feature'
+    ✓ – should pass test case 'attr-name_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'parigp'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'parser'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'escape_feature'
+    ✓ – should pass test case 'expression_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'parser-comment_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'pascal'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'perl'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'filehandle_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'regex_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'variable_feature'
+    ✓ – should pass test case 'vstring_feature'
+
+  Testing language 'php'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'constant_feature'
+    ✓ – should pass test case 'delimiter_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'package_feature'
+    ✓ – should pass test case 'property_feature'
+    ✓ – should pass test case 'shell-comment_feature'
+    ✓ – should pass test case 'string-interpolation_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'php!+php-extras'
+    ✓ – should pass test case 'global_feature'
+    ✓ – should pass test case 'scope_feature'
+    ✓ – should pass test case 'this_feature'
+
+  Testing language 'phpdoc'
+    ✓ – should pass test case 'class-name_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'parameter_feature'
+
+  Testing language 'phpdoc+php'
+    ✓ – should pass test case 'phpdoc_inclusion'
+
+  Testing language 'plsql'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'operator_feature'
+
+  Testing language 'powershell'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'issue1407'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'namespace_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'processing'
+    ✓ – should pass test case 'constant_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'type_feature'
+
+  Testing language 'prolog'
+    ✓ – should pass test case 'builtin_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'properties'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'key_value_feature'
+
+  Testing language 'protobuf'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'pug'
+    ✓ – should pass test case 'code_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'doctype_feature'
+    ✓ – should pass test case 'flow-control_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'mixin_feature'
+    ✓ – should pass test case 'multiline-plain-text_feature'
+    ✓ – should pass test case 'multiline-script_feature'
+    ✓ – should pass test case 'plain-text_feature'
+    ✓ – should pass test case 'script_feature'
+    ✓ – should pass test case 'tag_feature'
+
+  Testing language 'puppet'
+    ✓ – should pass test case 'attr-name_feature'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'datatype_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'heredoc_feature'
+    ✓ – should pass test case 'interpolation_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'regex_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'pure'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'special_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'python'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'builtin_feature'
+    ✓ – should pass test case 'class-name_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'decorator_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'issue1355'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string-interpolation_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'triple-quoted-string_feature'
+
+  Testing language 'q'
+    ✓ – should pass test case 'adverb_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'datetime_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'symbol_feature'
+    ✓ – should pass test case 'verb_feature'
+
+  Testing language 'qore'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'r'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'ellipsis_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'percent-operator_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'reason'
+    ✓ – should pass test case 'character_feature'
+    ✓ – should pass test case 'class-name_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'constructor_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'label_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'regex'
+    ✓ – should pass test case 'anchor_feature'
+    ✓ – should pass test case 'backreference_feature'
+    ✓ – should pass test case 'charclass_feature'
+    ✓ – should pass test case 'charset_feature'
+    ✓ – should pass test case 'escape_feature'
+    ✓ – should pass test case 'group_feature'
+    ✓ – should pass test case 'quantifier_feature'
+    ✓ – should pass test case 'range_feature'
+
+  Testing language 'rest'
+    ✓ – should pass test case 'command-line-option_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'directive_feature'
+    ✓ – should pass test case 'doctest-block_feature'
+    ✓ – should pass test case 'field_feature'
+    ✓ – should pass test case 'hr_feature'
+    ✓ – should pass test case 'inline_feature'
+    ✓ – should pass test case 'link-target_feature'
+    ✓ – should pass test case 'link_feature'
+    ✓ – should pass test case 'list-bullet_feature'
+    ✓ – should pass test case 'literal-block_feature'
+    ✓ – should pass test case 'quoted-literal-block_feature'
+    ✓ – should pass test case 'substitution-def_feature'
+    ✓ – should pass test case 'table_feature'
+    ✓ – should pass test case 'title_feature'
+
+  Testing language 'rip'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'builtin_feature'
+    ✓ – should pass test case 'character_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'date_time_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'reference_feature'
+    ✓ – should pass test case 'regex_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'symbol_feature'
+
+  Testing language 'roboconf'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'component_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'optional_feature'
+    ✓ – should pass test case 'property_feature'
+    ✓ – should pass test case 'value_feature'
+    ✓ – should pass test case 'wildcard_feature'
+
+  Testing language 'ruby'
+    ✓ – should pass test case 'builtin_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'constant_feature'
+    ✓ – should pass test case 'issue1336'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'method_definition_feature'
+    ✓ – should pass test case 'regex_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'symbol_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'rust'
+    ✓ – should pass test case 'attribute_feature'
+    ✓ – should pass test case 'char_feature'
+    ✓ – should pass test case 'closure-params_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'issue1339'
+    ✓ – should pass test case 'issue1353'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'lifetime-annotation_feature'
+    ✓ – should pass test case 'macro-rules_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'sas'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'datalines_feature'
+    ✓ – should pass test case 'datetime_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'sass'
+    ✓ – should pass test case 'atrule-line_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'property-line_feature'
+    ✓ – should pass test case 'selector_feature'
+    ✓ – should pass test case 'variable-line_feature'
+
+  Testing language 'scala'
+    ✓ – should pass test case 'builtin_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'symbol_feature'
+
+  Testing language 'scheme'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'builtin_feature'
+    ✓ – should pass test case 'character_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'issue1331'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'scss'
+    ✓ – should pass test case 'atrule_feature'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'null_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'placeholder_feature'
+    ✓ – should pass test case 'property_feature'
+    ✓ – should pass test case 'selector_feature'
+    ✓ – should pass test case 'statement_feature'
+    ✓ – should pass test case 'url_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'scss+haml'
+    ✓ – should pass test case 'scss_inclusion'
+
+  Testing language 'scss+pug'
+    ✓ – should pass test case 'scss_inclusion'
+
+  Testing language 'smalltalk'
+    ✓ – should pass test case 'block-arguments_feature'
+    ✓ – should pass test case 'character_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'symbol_feature'
+    ✓ – should pass test case 'temporary-variables_feature'
+
+  Testing language 'smarty'
+    ✓ – should pass test case 'attr-name_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'smarty_in_markup_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'soy'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'command-arg'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'literal_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'parameter_feature'
+    ✓ – should pass test case 'property_feature'
+    ✓ – should pass test case 'soy_in_markup_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'sql'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'stylus'
+    ✓ – should pass test case 'atrule-declaration_feature'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'func_feature'
+    ✓ – should pass test case 'hexcode_feature'
+    ✓ – should pass test case 'important_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'property-declaration_feature'
+    ✓ – should pass test case 'selector_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'url_feature'
+    ✓ – should pass test case 'variable-declaration_feature'
+
+  Testing language 'stylus+pug'
+    ✓ – should pass test case 'stylus_inclusion'
+
+  Testing language 'swift'
+    ✓ – should pass test case 'atrule_feature'
+    ✓ – should pass test case 'builtin_feature'
+    ✓ – should pass test case 'constant_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 't4-cs'
+    ✓ – should pass test case 'block_class-feature_feature'
+    ✓ – should pass test case 'block_directive_feature'
+    ✓ – should pass test case 'block_expression_feature'
+    ✓ – should pass test case 'block_standard_feature'
+
+  Testing language 't4-vb'
+    ✓ – should pass test case 'block_feature'
+
+  Testing language 'tap'
+    ✓ – should pass test case 'bail_out_feature'
+    ✓ – should pass test case 'directive_feature'
+    ✓ – should pass test case 'pass_fail_feature'
+    ✓ – should pass test case 'plan_feature'
+    ✓ – should pass test case 'pragma_feature'
+    ✓ – should pass test case 'version_feature'
+    ✓ – should pass test case 'yamlish_feature'
+
+  Testing language 'tcl'
+    ✓ – should pass test case 'builtin_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'scope_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'textile'
+    ✓ – should pass test case 'acronym_feature'
+    ✓ – should pass test case 'block-tag_feature'
+    ✓ – should pass test case 'footnote_feature'
+    ✓ – should pass test case 'image_feature'
+    ✓ – should pass test case 'inline_feature'
+    ✓ – should pass test case 'link-ref_feature'
+    ✓ – should pass test case 'link_feature'
+    ✓ – should pass test case 'list_feature'
+    ✓ – should pass test case 'mark_feature'
+    ✓ – should pass test case 'table_feature'
+
+  Testing language 'toml'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'date_feature'
+    ✓ – should pass test case 'key_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'table_feature'
+
+  Testing language 'tsx'
+    ✓ – should pass test case 'tag_feature'
+
+  Testing language 'tt2'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'delimiter_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string-interpolation_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'twig'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'twig+pug'
+    ✓ – should pass test case 'twig_inclusion'
+
+  Testing language 'typescript'
+    ✓ – should pass test case 'builtin_feature'
+    ✓ – should pass test case 'keyword_feature'
+
+  Testing language 'vala'
+    ✓ – should pass test case 'class-name_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'punctuation_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'vbnet'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'keyword_feature'
+
+  Testing language 'velocity'
+    ✓ – should pass test case 'directive_feature'
+    ✓ – should pass test case 'unparsed_feature'
+    ✓ – should pass test case 'variable_feature'
+    ✓ – should pass test case 'velocity-comment_feature'
+
+  Testing language 'verilog'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'constant_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'important_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'property_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'vhdl'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'constant_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'vhdl-vectors_feature'
+
+  Testing language 'vim'
+    ✓ – should pass test case 'builtin_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'visual-basic'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'date_feature'
+    ✓ – should pass test case 'directive_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+
+  Testing language 'wasm'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'wiki'
+    ✓ – should pass test case 'block-comment_feature'
+    ✓ – should pass test case 'emphasis_feature'
+    ✓ – should pass test case 'heading_feature'
+    ✓ – should pass test case 'hr_feature'
+    ✓ – should pass test case 'nowiki_feature'
+    ✓ – should pass test case 'symbol_feature'
+    ✓ – should pass test case 'url_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'xeora'
+    ✓ – should pass test case 'constant_feature'
+    ✓ – should pass test case 'directive-block-close_feature'
+    ✓ – should pass test case 'directive-block-open_feature'
+    ✓ – should pass test case 'directive-block-separator_feature'
+    ✓ – should pass test case 'directive-inline_feature'
+    ✓ – should pass test case 'function-block_feature'
+    ✓ – should pass test case 'function-inline_feature'
+    ✓ – should pass test case 'variable_feature'
+
+  Testing language 'xojo'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'symbol_feature'
+
+  Testing language 'xquery'
+    ✓ – should pass test case 'axis_feature'
+    ✓ – should pass test case 'builtin_feature'
+    ✓ – should pass test case 'extension_feature'
+    ✓ – should pass test case 'function_feature'
+    ✓ – should pass test case 'keyword-operator_feature'
+    ✓ – should pass test case 'keyword_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'operator_feature'
+    ✓ – should pass test case 'plain-text_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'tag_feature'
+    ✓ – should pass test case 'variable_feature'
+    ✓ – should pass test case 'xquery-attribute_feature'
+    ✓ – should pass test case 'xquery-comment_feature'
+    ✓ – should pass test case 'xquery-element_feature'
+
+  Testing language 'yaml'
+    ✓ – should pass test case 'boolean_feature'
+    ✓ – should pass test case 'comment_feature'
+    ✓ – should pass test case 'datetime_feature'
+    ✓ – should pass test case 'directive_feature'
+    ✓ – should pass test case 'important_feature'
+    ✓ – should pass test case 'key_feature'
+    ✓ – should pass test case 'null_feature'
+    ✓ – should pass test case 'number_feature'
+    ✓ – should pass test case 'scalar_feature'
+    ✓ – should pass test case 'string_feature'
+    ✓ – should pass test case 'tag_feature'
+
+
+  1271 passing (5s)
+
+
+> prismjs@1.16.0 test:plugins
+> mocha tests/plugins/**/*.js
+
+
+
+  Prism Keep Markup Plugin
+    ✓ should keep <span> markup
+    ✓ should preserve markup order
+    ✓ should keep last <span> markup
+
+
+  3 passing (40ms)
+
+
+> prismjs@1.16.0 test:aliases
+> mocha tests/aliases-test.js
+
+
+
+  Testing language aliases of 'markup'
+    ✓ - should have all alias titles registered as alias
+    ✓ - should known all aliases
+
+  Testing language aliases of 'css'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'clike'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'javascript'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'abap'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'abnf'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'actionscript'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'ada'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'apacheconf'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'apl'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'applescript'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'arduino'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'arff'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'asciidoc'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'asm6502'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'aspnet'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'autohotkey'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'autoit'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'bash'
+    ✓ - should have all alias titles registered as alias
+    ✓ - should known all aliases
+
+  Testing language aliases of 'basic'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'batch'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'bison'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'bnf'
+    ✓ - should have all alias titles registered as alias
+    ✓ - should known all aliases
+
+  Testing language aliases of 'brainfuck'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'bro'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'c'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'csharp'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'cpp'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'cil'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'coffeescript'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'cmake'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'clojure'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'crystal'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'csp'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'css-extras'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'd'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'dart'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'diff'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'django'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'docker'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'ebnf'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'eiffel'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'ejs'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'elixir'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'elm'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'erb'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'erlang'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'fsharp'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'flow'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'fortran'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'gcode'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'gedcom'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'gherkin'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'git'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'glsl'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'gml'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'go'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'graphql'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'groovy'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'haml'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'handlebars'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'haskell'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'haxe'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'hcl'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'http'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'hpkp'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'hsts'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'ichigojam'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'icon'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'inform7'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'ini'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'io'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'j'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'java'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'javadoc'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'javadoclike'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'javastacktrace'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'jolie'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'jsdoc'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'js-extras'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'json'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'jsonp'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'json5'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'julia'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'keyman'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'kotlin'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'latex'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'less'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'liquid'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'lisp'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'livescript'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'lolcode'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'lua'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'makefile'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'markdown'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'markup-templating'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'matlab'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'mel'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'mizar'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'monkey'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'n1ql'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'n4js'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'nand2tetris-hdl'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'nasm'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'nginx'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'nim'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'nix'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'nsis'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'objectivec'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'ocaml'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'opencl'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'oz'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'parigp'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'parser'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'pascal'
+    ✓ - should have all alias titles registered as alias
+    ✓ - should known all aliases
+
+  Testing language aliases of 'perl'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'php'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'phpdoc'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'php-extras'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'plsql'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'powershell'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'processing'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'prolog'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'properties'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'protobuf'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'pug'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'puppet'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'pure'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'python'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'q'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'qore'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'r'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'jsx'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'tsx'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'renpy'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'reason'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'regex'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'rest'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'rip'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'roboconf'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'ruby'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'rust'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'sas'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'sass'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'scss'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'scala'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'scheme'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'smalltalk'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'smarty'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'sql'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'soy'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'stylus'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'swift'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'tap'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'tcl'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'textile'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'toml'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'tt2'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'twig'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'typescript'
+    ✓ - should known all aliases
+
+  Testing language aliases of 't4-cs'
+    ✓ - should known all aliases
+
+  Testing language aliases of 't4-vb'
+    ✓ - should known all aliases
+
+  Testing language aliases of 't4-templating'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'vala'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'vbnet'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'velocity'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'verilog'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'vhdl'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'vim'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'visual-basic'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'wasm'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'wiki'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'xeora'
+    ✓ - should have all alias titles registered as alias
+    ✓ - should known all aliases
+
+  Testing language aliases of 'xojo'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'xquery'
+    ✓ - should known all aliases
+
+  Testing language aliases of 'yaml'
+    ✓ - should known all aliases
+
+
+  181 passing (528ms)
+

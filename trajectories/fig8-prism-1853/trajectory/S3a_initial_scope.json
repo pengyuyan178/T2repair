@@ -1,0 +1,435 @@
+{
+  "context": [
+    {
+      "file": "components/prism-json.js",
+      "windows": [
+        {
+          "start_line": 1,
+          "end_line": 19,
+          "text": "Prism.languages.json = {\n\t'comment': /\\/\\/.*|\\/\\*[\\s\\S]*?(?:\\*\\/|$)/,\n\t'property': {\n\t\tpattern: /\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?=\\s*:)/,\n\t\tgreedy: true\n\t},\n\t'string': {\n\t\tpattern: /\"(?:\\\\.|[^\\\\\"\\r\\n])*\"(?!\\s*:)/,\n\t\tgreedy: true\n\t},\n\t'number': /-?\\d+\\.?\\d*(e[+-]?\\d+)?/i,\n\t'punctuation': /[{}[\\],]/,\n\t'operator': /:/,\n\t'boolean': /\\b(?:true|false)\\b/,\n\t'null': {\n\t\tpattern: /\\bnull\\b/,\n\t\talias: 'keyword'\n\t}\n};"
+        }
+      ],
+      "complete": true,
+      "omitted": [],
+      "index_kind": "text_only",
+      "total_lines": 19,
+      "ast_ranges_available": false
+    },
+    {
+      "file": "components/prism-core.js",
+      "windows": [
+        {
+          "start_line": 1,
+          "end_line": 115,
+          "text": "var _self = (typeof window !== 'undefined')\n\t? window   // if in browser\n\t: (\n\t\t(typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope)\n\t\t? self // if in worker\n\t\t: {}   // if in node js\n\t);\n\n/**\n * Prism: Lightweight, robust, elegant syntax highlighting\n * MIT license http://www.opensource.org/licenses/mit-license.php/\n * @author Lea Verou http://lea.verou.me\n */\n\nvar Prism = (function (_self){\n\n// Private helper vars\nvar lang = /\\blang(?:uage)?-([\\w-]+)\\b/i;\nvar uniqueId = 0;\n\nvar _ = {\n\tmanual: _self.Prism && _self.Prism.manual,\n\tdisableWorkerMessageHandler: _self.Prism && _self.Prism.disableWorkerMessageHandler,\n\tutil: {\n\t\tencode: function (tokens) {\n\t\t\tif (tokens instanceof Token) {\n\t\t\t\treturn new Token(tokens.type, _.util.encode(tokens.content), tokens.alias);\n\t\t\t} else if (Array.isArray(tokens)) {\n\t\t\t\treturn tokens.map(_.util.encode);\n\t\t\t} else {\n\t\t\t\treturn tokens.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\\u00a0/g, ' ');\n\t\t\t}\n\t\t},\n\n\t\ttype: function (o) {\n\t\t\treturn Object.prototype.toString.call(o).slice(8, -1);\n\t\t},\n\n\t\tobjId: function (obj) {\n\t\t\tif (!obj['__id']) {\n\t\t\t\tObject.defineProperty(obj, '__id', { value: ++uniqueId });\n\t\t\t}\n\t\t\treturn obj['__id'];\n\t\t},\n\n\t\t// Deep clone a language definition (e.g. to extend it)\n\t\tclone: function deepClone(o, visited) {\n\t\t\tvar clone, id, type = _.util.type(o);\n\t\t\tvisited = visited || {};\n\n\t\t\tswitch (type) {\n\t\t\t\tcase 'Object':\n\t\t\t\t\tid = _.util.objId(o);\n\t\t\t\t\tif (visited[id]) {\n\t\t\t\t\t\treturn visited[id];\n\t\t\t\t\t}\n\t\t\t\t\tclone = {};\n\t\t\t\t\tvisited[id] = clone;\n\n\t\t\t\t\tfor (var key in o) {\n\t\t\t\t\t\tif (o.hasOwnProperty(key)) {\n\t\t\t\t\t\t\tclone[key] = deepClone(o[key], visited);\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\n\t\t\t\t\treturn clone;\n\n\t\t\t\tcase 'Array':\n\t\t\t\t\tid = _.util.objId(o);\n\t\t\t\t\tif (visited[id]) {\n\t\t\t\t\t\treturn visited[id];\n\t\t\t\t\t}\n\t\t\t\t\tclone = [];\n\t\t\t\t\tvisited[id] = clone;\n\n\t\t\t\t\to.forEach(function (v, i) {\n\t\t\t\t\t\tclone[i] = deepClone(v, visited);\n\t\t\t\t\t});\n\n\t\t\t\t\treturn clone;\n\n\t\t\t\tdefault:\n\t\t\t\t\treturn o;\n\t\t\t}\n\t\t}\n\t},\n\n\tlanguages: {\n\t\textend: function (id, redef) {\n\t\t\tvar lang = _.util.clone(_.languages[id]);\n\n\t\t\tfor (var key in redef) {\n\t\t\t\tlang[key] = redef[key];\n\t\t\t}\n\n\t\t\treturn lang;\n\t\t},\n\n\t\t/**\n\t\t * Insert a token before another token in a language literal\n\t\t * As this needs to recreate the object (we cannot actually insert before keys in object literals),\n\t\t * we cannot just provide an object, we need an object and a key.\n\t\t * @param inside The key (or language id) of the parent\n\t\t * @param before The key to insert before.\n\t\t * @param insert Object with the key/value pairs to insert\n\t\t * @param root The object that contains `inside`. If equal to Prism.languages, it can be omitted.\n\t\t */\n\t\tinsertBefore: function (inside, before, insert, root) {\n\t\t\troot = root || _.languages;\n\t\t\tvar grammar = root[inside];\n\t\t\tvar ret = {};\n\n\t\t\tfor (var token in grammar) {\n\t\t\t\tif (grammar.hasOwnProperty(token)) {\n"
+        },
+        {
+          "start_line": 453,
+          "end_line": 460,
+          "text": "function Token(type, content, alias, matchedStr, greedy) {\n\tthis.type = type;\n\tthis.content = content;\n\tthis.alias = alias;\n\t// Copy of the full string this token was created from\n\tthis.length = (matchedStr || \"\").length|0;\n\tthis.greedy = !!greedy;\n}"
+        },
+        {
+          "start_line": 543,
+          "end_line": 551,
+          "text": "\nif (typeof module !== 'undefined' && module.exports) {\n\tmodule.exports = Prism;\n}\n\n// hack for components to work correctly in node.js\nif (typeof global !== 'undefined') {\n\tglobal.Prism = Prism;\n}"
+        }
+      ],
+      "complete": false,
+      "omitted": [
+        {
+          "start_line": 116,
+          "end_line": 452
+        },
+        {
+          "start_line": 461,
+          "end_line": 542
+        }
+      ],
+      "index_kind": "baseline_ast",
+      "total_lines": 551,
+      "ast_ranges_available": true
+    },
+    {
+      "file": "prism.js",
+      "windows": [
+        {
+          "start_line": 1,
+          "end_line": 120,
+          "text": "\n/* **********************************************\n     Begin prism-core.js\n********************************************** */\n\nvar _self = (typeof window !== 'undefined')\n\t? window   // if in browser\n\t: (\n\t\t(typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope)\n\t\t? self // if in worker\n\t\t: {}   // if in node js\n\t);\n\n/**\n * Prism: Lightweight, robust, elegant syntax highlighting\n * MIT license http://www.opensource.org/licenses/mit-license.php/\n * @author Lea Verou http://lea.verou.me\n */\n\nvar Prism = (function (_self){\n\n// Private helper vars\nvar lang = /\\blang(?:uage)?-([\\w-]+)\\b/i;\nvar uniqueId = 0;\n\nvar _ = {\n\tmanual: _self.Prism && _self.Prism.manual,\n\tdisableWorkerMessageHandler: _self.Prism && _self.Prism.disableWorkerMessageHandler,\n\tutil: {\n\t\tencode: function (tokens) {\n\t\t\tif (tokens instanceof Token) {\n\t\t\t\treturn new Token(tokens.type, _.util.encode(tokens.content), tokens.alias);\n\t\t\t} else if (Array.isArray(tokens)) {\n\t\t\t\treturn tokens.map(_.util.encode);\n\t\t\t} else {\n\t\t\t\treturn tokens.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\\u00a0/g, ' ');\n\t\t\t}\n\t\t},\n\n\t\ttype: function (o) {\n\t\t\treturn Object.prototype.toString.call(o).slice(8, -1);\n\t\t},\n\n\t\tobjId: function (obj) {\n\t\t\tif (!obj['__id']) {\n\t\t\t\tObject.defineProperty(obj, '__id', { value: ++uniqueId });\n\t\t\t}\n\t\t\treturn obj['__id'];\n\t\t},\n\n\t\t// Deep clone a language definition (e.g. to extend it)\n\t\tclone: function deepClone(o, visited) {\n\t\t\tvar clone, id, type = _.util.type(o);\n\t\t\tvisited = visited || {};\n\n\t\t\tswitch (type) {\n\t\t\t\tcase 'Object':\n\t\t\t\t\tid = _.util.objId(o);\n\t\t\t\t\tif (visited[id]) {\n\t\t\t\t\t\treturn visited[id];\n\t\t\t\t\t}\n\t\t\t\t\tclone = {};\n\t\t\t\t\tvisited[id] = clone;\n\n\t\t\t\t\tfor (var key in o) {\n\t\t\t\t\t\tif (o.hasOwnProperty(key)) {\n\t\t\t\t\t\t\tclone[key] = deepClone(o[key], visited);\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\n\t\t\t\t\treturn clone;\n\n\t\t\t\tcase 'Array':\n\t\t\t\t\tid = _.util.objId(o);\n\t\t\t\t\tif (visited[id]) {\n\t\t\t\t\t\treturn visited[id];\n\t\t\t\t\t}\n\t\t\t\t\tclone = [];\n\t\t\t\t\tvisited[id] = clone;\n\n\t\t\t\t\to.forEach(function (v, i) {\n\t\t\t\t\t\tclone[i] = deepClone(v, visited);\n\t\t\t\t\t});\n\n\t\t\t\t\treturn clone;\n\n\t\t\t\tdefault:\n\t\t\t\t\treturn o;\n\t\t\t}\n\t\t}\n\t},\n\n\tlanguages: {\n\t\textend: function (id, redef) {\n\t\t\tvar lang = _.util.clone(_.languages[id]);\n\n\t\t\tfor (var key in redef) {\n\t\t\t\tlang[key] = redef[key];\n\t\t\t}\n\n\t\t\treturn lang;\n\t\t},\n\n\t\t/**\n\t\t * Insert a token before another token in a language literal\n\t\t * As this needs to recreate the object (we cannot actually insert before keys in object literals),\n\t\t * we cannot just provide an object, we need an object and a key.\n\t\t * @param inside The key (or language id) of the parent\n\t\t * @param before The key to insert before.\n\t\t * @param insert Object with the key/value pairs to insert\n\t\t * @param root The object that contains `inside`. If equal to Prism.languages, it can be omitted.\n\t\t */\n\t\tinsertBefore: function (inside, before, insert, root) {\n\t\t\troot = root || _.languages;\n\t\t\tvar grammar = root[inside];\n\t\t\tvar ret = {};\n\n\t\t\tfor (var token in grammar) {\n\t\t\t\tif (grammar.hasOwnProperty(token)) {\n"
+        },
+        {
+          "start_line": 548,
+          "end_line": 626,
+          "text": "\nif (typeof module !== 'undefined' && module.exports) {\n\tmodule.exports = Prism;\n}\n\n// hack for components to work correctly in node.js\nif (typeof global !== 'undefined') {\n\tglobal.Prism = Prism;\n}\n\n\n/* **********************************************\n     Begin prism-markup.js\n********************************************** */\n\nPrism.languages.markup = {\n\t'comment': /<!--[\\s\\S]*?-->/,\n\t'prolog': /<\\?[\\s\\S]+?\\?>/,\n\t'doctype': /<!DOCTYPE[\\s\\S]+?>/i,\n\t'cdata': /<!\\[CDATA\\[[\\s\\S]*?]]>/i,\n\t'tag': {\n\t\tpattern: /<\\/?(?!\\d)[^\\s>\\/=$<%]+(?:\\s(?:\\s*[^\\s>\\/=]+(?:\\s*=\\s*(?:\"[^\"]*\"|'[^']*'|[^\\s'\">=]+(?=[\\s>]))|(?=[\\s/>])))+)?\\s*\\/?>/i,\n\t\tgreedy: true,\n\t\tinside: {\n\t\t\t'tag': {\n\t\t\t\tpattern: /^<\\/?[^\\s>\\/]+/i,\n\t\t\t\tinside: {\n\t\t\t\t\t'punctuation': /^<\\/?/,\n\t\t\t\t\t'namespace': /^[^\\s>\\/:]+:/\n\t\t\t\t}\n\t\t\t},\n\t\t\t'attr-value': {\n\t\t\t\tpattern: /=\\s*(?:\"[^\"]*\"|'[^']*'|[^\\s'\">=]+)/i,\n\t\t\t\tinside: {\n\t\t\t\t\t'punctuation': [\n\t\t\t\t\t\t/^=/,\n\t\t\t\t\t\t{\n\t\t\t\t\t\t\tpattern: /^(\\s*)[\"']|[\"']$/,\n\t\t\t\t\t\t\tlookbehind: true\n\t\t\t\t\t\t}\n\t\t\t\t\t]\n\t\t\t\t}\n\t\t\t},\n\t\t\t'punctuation': /\\/?>/,\n\t\t\t'attr-name': {\n\t\t\t\tpattern: /[^\\s>\\/]+/,\n\t\t\t\tinside: {\n\t\t\t\t\t'namespace': /^[^\\s>\\/:]+:/\n\t\t\t\t}\n\t\t\t}\n\n\t\t}\n\t},\n\t'entity': /&#?[\\da-z]{1,8};/i\n};\n\nPrism.languages.markup['tag'].inside['attr-value'].inside['entity'] =\n\tPrism.languages.markup['entity'];\n\n// Plugin to make entity title show the real entity, idea by Roman Komarov\nPrism.hooks.add('wrap', function(env) {\n\n\tif (env.type === 'entity') {\n\t\tenv.attributes['title'] = env.content.replace(/&amp;/, '&');\n\t}\n});\n\nObject.defineProperty(Prism.languages.markup.tag, 'addInlined', {\n\t/**\n\t * Adds an inlined language to markup.\n\t *\n\t * An example of an inlined language is CSS with `<style>` tags.\n\t *\n\t * @param {string} tagName The name of the tag that contains the inlined language. This name will be treated as\n\t * case insensitive.\n\t * @param {string} lang The language key.\n\t * @example\n\t * addInlined('style', 'css');\n\t */"
+        },
+        {
+          "start_line": 657,
+          "end_line": 668,
+          "text": "});\n\nPrism.languages.xml = Prism.languages.extend('markup', {});\nPrism.languages.html = Prism.languages.markup;\nPrism.languages.mathml = Prism.languages.markup;\nPrism.languages.svg = Prism.languages.markup;\n\n\n/* **********************************************\n     Begin prism-css.js\n********************************************** */\n"
+        },
+        {
+          "start_line": 720,
+          "end_line": 958,
+          "text": "\n\n/* **********************************************\n     Begin prism-clike.js\n********************************************** */\n\nPrism.languages.clike = {\n\t'comment': [\n\t\t{\n\t\t\tpattern: /(^|[^\\\\])\\/\\*[\\s\\S]*?(?:\\*\\/|$)/,\n\t\t\tlookbehind: true\n\t\t},\n\t\t{\n\t\t\tpattern: /(^|[^\\\\:])\\/\\/.*/,\n\t\t\tlookbehind: true,\n\t\t\tgreedy: true\n\t\t}\n\t],\n\t'string': {\n\t\tpattern: /([\"'])(?:\\\\(?:\\r\\n|[\\s\\S])|(?!\\1)[^\\\\\\r\\n])*\\1/,\n\t\tgreedy: true\n\t},\n\t'class-name': {\n\t\tpattern: /((?:\\b(?:class|interface|extends|implements|trait|instanceof|new)\\s+)|(?:catch\\s+\\())[\\w.\\\\]+/i,\n\t\tlookbehind: true,\n\t\tinside: {\n\t\t\tpunctuation: /[.\\\\]/\n\t\t}\n\t},\n\t'keyword': /\\b(?:if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\\b/,\n\t'boolean': /\\b(?:true|false)\\b/,\n\t'function': /\\w+(?=\\()/,\n\t'number': /\\b0x[\\da-f]+\\b|(?:\\b\\d+\\.?\\d*|\\B\\.\\d+)(?:e[+-]?\\d+)?/i,\n\t'operator': /--?|\\+\\+?|!=?=?|<=?|>=?|==?=?|&&?|\\|\\|?|\\?|\\*|\\/|~|\\^|%/,\n\t'punctuation': /[{}[\\];(),.:]/\n};\n\n\n/* **********************************************\n     Begin prism-javascript.js\n********************************************** */\n\nPrism.languages.javascript = Prism.languages.extend('clike', {\n\t'class-name': [\n\t\tPrism.languages.clike['class-name'],\n\t\t{\n\t\t\tpattern: /(^|[^$\\w\\xA0-\\uFFFF])[_$A-Z\\xA0-\\uFFFF][$\\w\\xA0-\\uFFFF]*(?=\\.(?:prototype|constructor))/,\n\t\t\tlookbehind: true\n\t\t}\n\t],\n\t'keyword': [\n\t\t{\n\t\t\tpattern: /((?:^|})\\s*)(?:catch|finally)\\b/,\n\t\t\tlookbehind: true\n\t\t},\n\t\t{\n\t\t\tpattern: /(^|[^.])\\b(?:as|async(?=\\s*(?:function\\b|\\(|[$\\w\\xA0-\\uFFFF]|$))|await|break|case|class|const|continue|debugger|default|delete|do|else|enum|export|extends|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|undefined|var|void|while|with|yield)\\b/,\n\t\t\tlookbehind: true\n\t\t},\n\t],\n\t'number': /\\b(?:(?:0[xX][\\dA-Fa-f]+|0[bB][01]+|0[oO][0-7]+)n?|\\d+n|NaN|Infinity)\\b|(?:\\b\\d+\\.?\\d*|\\B\\.\\d+)(?:[Ee][+-]?\\d+)?/,\n\t// Allow for all non-ASCII characters (See http://stackoverflow.com/a/2008444)\n\t'function': /[_$a-zA-Z\\xA0-\\uFFFF][$\\w\\xA0-\\uFFFF]*(?=\\s*(?:\\.\\s*(?:apply|bind|call)\\s*)?\\()/,\n\t'operator': /-[-=]?|\\+[+=]?|!=?=?|<<?=?|>>?>?=?|=(?:==?|>)?|&[&=]?|\\|[|=]?|\\*\\*?=?|\\/=?|~|\\^=?|%=?|\\?|\\.{3}/\n});\n\nPrism.languages.javascript['class-name'][0].pattern = /(\\b(?:class|interface|extends|implements|instanceof|new)\\s+)[\\w.\\\\]+/\n\nPrism.languages.insertBefore('javascript', 'keyword', {\n\t'regex': {\n\t\tpattern: /((?:^|[^$\\w\\xA0-\\uFFFF.\"'\\])\\s])\\s*)\\/(\\[(?:[^\\]\\\\\\r\\n]|\\\\.)*]|\\\\.|[^/\\\\\\[\\r\\n])+\\/[gimyu]{0,5}(?=\\s*($|[\\r\\n,.;})\\]]))/,\n\t\tlookbehind: true,\n\t\tgreedy: true\n\t},\n\t// This must be declared before keyword because we use \"function\" inside the look-forward\n\t'function-variable': {\n\t\tpattern: /[_$a-zA-Z\\xA0-\\uFFFF][$\\w\\xA0-\\uFFFF]*(?=\\s*[=:]\\s*(?:async\\s*)?(?:\\bfunction\\b|(?:\\((?:[^()]|\\([^()]*\\))*\\)|[_$a-zA-Z\\xA0-\\uFFFF][$\\w\\xA0-\\uFFFF]*)\\s*=>))/,\n\t\talias: 'function'\n\t},\n\t'parameter': [\n\t\t{\n\t\t\tpattern: /(function(?:\\s+[_$A-Za-z\\xA0-\\uFFFF][$\\w\\xA0-\\uFFFF]*)?\\s*\\(\\s*)(?!\\s)(?:[^()]|\\([^()]*\\))+?(?=\\s*\\))/,\n\t\t\tlookbehind: true,\n\t\t\tinside: Prism.languages.javascript\n\t\t},\n\t\t{\n\t\t\tpattern: /[_$a-z\\xA0-\\uFFFF][$\\w\\xA0-\\uFFFF]*(?=\\s*=>)/i,\n\t\t\tinside: Prism.languages.javascript\n\t\t},\n\t\t{\n\t\t\tpattern: /(\\(\\s*)(?!\\s)(?:[^()]|\\([^()]*\\))+?(?=\\s*\\)\\s*=>)/,\n\t\t\tlookbehind: true,\n\t\t\tinside: Prism.languages.javascript\n\t\t},\n\t\t{\n\t\t\tpattern: /((?:\\b|\\s|^)(?!(?:as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|undefined|var|void|while|with|yield)(?![$\\w\\xA0-\\uFFFF]))(?:[_$A-Za-z\\xA0-\\uFFFF][$\\w\\xA0-\\uFFFF]*\\s*)\\(\\s*)(?!\\s)(?:[^()]|\\([^()]*\\))+?(?=\\s*\\)\\s*\\{)/,\n\t\t\tlookbehind: true,\n\t\t\tinside: Prism.languages.javascript\n\t\t}\n\t],\n\t'constant': /\\b[A-Z](?:[A-Z_]|\\dx?)*\\b/\n});\n\nPrism.languages.insertBefore('javascript', 'string', {\n\t'template-string': {\n\t\tpattern: /`(?:\\\\[\\s\\S]|\\${[^}]+}|[^\\\\`])*`/,\n\t\tgreedy: true,\n\t\tinside: {\n\t\t\t'interpolation': {\n\t\t\t\tpattern: /\\${[^}]+}/,\n\t\t\t\tinside: {\n\t\t\t\t\t'interpolation-punctuation': {\n\t\t\t\t\t\tpattern: /^\\${|}$/,\n\t\t\t\t\t\talias: 'punctuation'\n\t\t\t\t\t},\n\t\t\t\t\trest: Prism.languages.javascript\n\t\t\t\t}\n\t\t\t},\n\t\t\t'string': /[\\s\\S]+/\n\t\t}\n\t}\n});\n\nif (Prism.languages.markup) {\n\tPrism.languages.markup.tag.addInlined('script', 'javascript');\n}\n\nPrism.languages.js = Prism.languages.javascript;\n\n\n/* **********************************************\n     Begin prism-file-highlight.js\n********************************************** */\n\n(function () {\n\tif (typeof self === 'undefined' || !self.Prism || !self.document || !document.querySelector) {\n\t\treturn;\n\t}\n\n\t/**\n\t * @param {Element} [container=document]\n\t */\n\tself.Prism.fileHighlight = function(container) {\n\t\tcontainer = container || document;\n\n\t\tvar Extensions = {\n\t\t\t'js': 'javascript',\n\t\t\t'py': 'python',\n\t\t\t'rb': 'ruby',\n\t\t\t'ps1': 'powershell',\n\t\t\t'psm1': 'powershell',\n\t\t\t'sh': 'bash',\n\t\t\t'bat': 'batch',\n\t\t\t'h': 'c',\n\t\t\t'tex': 'latex'\n\t\t};\n\n\t\tArray.prototype.slice.call(container.querySelectorAll('pre[data-src]')).forEach(function (pre) {\n\t\t\t// ignore if already loaded\n\t\t\tif (pre.hasAttribute('data-src-loaded')) {\n\t\t\t\treturn;\n\t\t\t}\n\n\t\t\t// load current\n\t\t\tvar src = pre.getAttribute('data-src');\n\n\t\t\tvar language, parent = pre;\n\t\t\tvar lang = /\\blang(?:uage)?-([\\w-]+)\\b/i;\n\t\t\twhile (parent && !lang.test(parent.className)) {\n\t\t\t\tparent = parent.parentNode;\n\t\t\t}\n\n\t\t\tif (parent) {\n\t\t\t\tlanguage = (pre.className.match(lang) || [, ''])[1];\n\t\t\t}\n\n\t\t\tif (!language) {\n\t\t\t\tvar extension = (src.match(/\\.(\\w+)$/) || [, ''])[1];\n\t\t\t\tlanguage = Extensions[extension] || extension;\n\t\t\t}\n\n\t\t\tvar code = document.createElement('code');\n\t\t\tcode.className = 'language-' + language;\n\n\t\t\tpre.textContent = '';\n\n\t\t\tcode.textContent = 'Loading…';\n\n\t\t\tpre.appendChild(code);\n\n\t\t\tvar xhr = new XMLHttpRequest();\n\n\t\t\txhr.open('GET', src, true);\n\n\t\t\txhr.onreadystatechange = function () {\n\t\t\t\tif (xhr.readyState == 4) {\n\n\t\t\t\t\tif (xhr.status < 400 && xhr.responseText) {\n\t\t\t\t\t\tcode.textContent = xhr.responseText;\n\n\t\t\t\t\t\tPrism.highlightElement(code);\n\t\t\t\t\t\t// mark as loaded\n\t\t\t\t\t\tpre.setAttribute('data-src-loaded', '');\n\t\t\t\t\t}\n\t\t\t\t\telse if (xhr.status >= 400) {\n\t\t\t\t\t\tcode.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;\n\t\t\t\t\t}\n\t\t\t\t\telse {\n\t\t\t\t\t\tcode.textContent = '✖ Error: File does not exist or is empty';\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t};\n\n\t\t\txhr.send(null);\n\t\t});\n\n\t\tif (Prism.plugins.toolbar) {\n\t\t\tPrism.plugins.toolbar.registerButton('download-file', function (env) {\n\t\t\t\tvar pre = env.element.parentNode;\n\t\t\t\tif (!pre || !/pre/i.test(pre.nodeName) || !pre.hasAttribute('data-src') || !pre.hasAttribute('data-download-link')) {\n\t\t\t\t\treturn;\n\t\t\t\t}\n\t\t\t\tvar src = pre.getAttribute('data-src');\n\t\t\t\tvar a = document.createElement('a');\n\t\t\t\ta.textContent = pre.getAttribute('data-download-link-label') || 'Download';\n\t\t\t\ta.setAttribute('download', '');\n\t\t\t\ta.href = src;\n\t\t\t\treturn a;\n\t\t\t});\n\t\t}\n\n\t};\n\n\tdocument.addEventListener('DOMContentLoaded', function () {\n\t\t// execute inside handler, for dropping Event as argument\n\t\tself.Prism.fileHighlight();\n\t});\n\n})();"
+        }
+      ],
+      "complete": false,
+      "omitted": [
+        {
+          "start_line": 121,
+          "end_line": 547
+        },
+        {
+          "start_line": 627,
+          "end_line": 656
+        },
+        {
+          "start_line": 669,
+          "end_line": 719
+        }
+      ],
+      "index_kind": "baseline_ast",
+      "total_lines": 958,
+      "ast_ranges_available": true
+    },
+    {
+      "file": "components/index.js",
+      "windows": [
+        {
+          "start_line": 1,
+          "end_line": 82,
+          "text": "var components = require('../components.js');\nvar peerDependentsMap = null;\n\nfunction getPeerDependentsMap() {\n\tvar peerDependentsMap = {};\n\tObject.keys(components.languages).forEach(function (language) {\n\t\tif (language === 'meta') {\n\t\t\treturn false;\n\t\t}\n\t\tif (components.languages[language].peerDependencies) {\n\t\t\tvar peerDependencies = components.languages[language].peerDependencies;\n\t\t\tif (!Array.isArray(peerDependencies)) {\n\t\t\t\tpeerDependencies = [peerDependencies];\n\t\t\t}\n\t\t\tpeerDependencies.forEach(function (peerDependency) {\n\t\t\t\tif (!peerDependentsMap[peerDependency]) {\n\t\t\t\t\tpeerDependentsMap[peerDependency] = [];\n\t\t\t\t}\n\t\t\t\tpeerDependentsMap[peerDependency].push(language);\n\t\t\t});\n\t\t}\n\t});\n\treturn peerDependentsMap;\n}\n\nfunction getPeerDependents(mainLanguage) {\n\tif (!peerDependentsMap) {\n\t\tpeerDependentsMap = getPeerDependentsMap();\n\t}\n\treturn peerDependentsMap[mainLanguage] || [];\n}\n\nfunction loadLanguages(arr, withoutDependencies) {\n\t// If no argument is passed, load all components\n\tif (!arr) {\n\t\tarr = Object.keys(components.languages).filter(function (language) {\n\t\t\treturn language !== 'meta';\n\t\t});\n\t}\n\tif (arr && !arr.length) {\n\t\treturn;\n\t}\n\n\tif (!Array.isArray(arr)) {\n\t\tarr = [arr];\n\t}\n\n\tarr.forEach(function (language) {\n\t\tif (!components.languages[language]) {\n\t\t\tconsole.warn('Language does not exist ' + language);\n\t\t\treturn;\n\t\t}\n\t\t// Load dependencies first\n\t\tif (!withoutDependencies && components.languages[language].require) {\n\t\t\tloadLanguages(components.languages[language].require);\n\t\t}\n\n\t\tvar pathToLanguage = './prism-' + language;\n\t\tdelete require.cache[require.resolve(pathToLanguage)];\n\t\tdelete Prism.languages[language];\n\t\trequire(pathToLanguage);\n\n\t\t// Reload dependents\n\t\tvar dependents = getPeerDependents(language).filter(function (dependent) {\n\t\t\t// If dependent language was already loaded,\n\t\t\t// we want to reload it.\n\t\t\tif (Prism.languages[dependent]) {\n\t\t\t\tdelete Prism.languages[dependent];\n\t\t\t\treturn true;\n\t\t\t}\n\t\t\treturn false;\n\t\t});\n\t\tif (dependents.length) {\n\t\t\tloadLanguages(dependents, true);\n\t\t}\n\t});\n}\n\nmodule.exports = function (arr) {\n\t// Don't expose withoutDependencies\n\tloadLanguages(arr);\n};"
+        }
+      ],
+      "complete": true,
+      "omitted": [],
+      "index_kind": "baseline_ast",
+      "total_lines": 82,
+      "ast_ranges_available": true
+    },
+    {
+      "file": "components/prism-abnf.js",
+      "windows": [
+        {
+          "start_line": 1,
+          "end_line": 54,
+          "text": "(function (Prism) {\n\n\tvar coreRules = '(?:ALPHA|BIT|CHAR|CR|CRLF|CTL|DIGIT|DQUOTE|HEXDIG|HTAB|LF|LWSP|OCTET|SP|VCHAR|WSP)';\n\n\tPrism.languages.abnf = {\n\t\t'comment': /;.*/,\n\t\t'string': {\n\t\t\tpattern: /(?:%[is])?\"[^\"\\n\\r]*\"/,\n\t\t\tgreedy: true,\n\t\t\tinside: {\n\t\t\t\t'punctuation': /^%[is]/\n\t\t\t}\n\t\t},\n\t\t'range': {\n\t\t\tpattern: /%(?:b[01]+-[01]+|d\\d+-\\d+|x[A-F\\d]+-[A-F\\d]+)/i,\n\t\t\talias: 'number'\n\t\t},\n\t\t'terminal': {\n\t\t\tpattern: /%(?:b[01]+(?:\\.[01]+)*|d\\d+(?:\\.\\d+)*|x[A-F\\d]+(?:\\.[A-F\\d]+)*)/i,\n\t\t\talias: 'number'\n\t\t},\n\t\t'repetition': {\n\t\t\tpattern: /(^|[^\\w-])(?:\\d*\\*\\d*|\\d+)/,\n\t\t\tlookbehind: true,\n\t\t\talias: 'operator'\n\t\t},\n\t\t'definition': {\n\t\t\tpattern: /(^[ \\t]*)(?:[a-z][\\w-]*|<[^>\\r\\n]*>)(?=\\s*=)/m,\n\t\t\tlookbehind: true,\n\t\t\talias: 'keyword',\n\t\t\tinside: {\n\t\t\t\t'punctuation': /<|>/\n\t\t\t}\n\t\t},\n\t\t'core-rule': {\n\t\t\tpattern: RegExp('(?:(^|[^<\\\\w-])' + coreRules + '|<' + coreRules + '>)(?![\\\\w-])', 'i'),\n\t\t\tlookbehind: true,\n\t\t\talias: ['rule', 'constant'],\n\t\t\tinside: {\n\t\t\t\t'punctuation': /<|>/\n\t\t\t}\n\t\t},\n\t\t'rule': {\n\t\t\tpattern: /(^|[^<\\w-])[a-z][\\w-]*|<[^>\\r\\n]*>/i,\n\t\t\tlookbehind: true,\n\t\t\tinside: {\n\t\t\t\t'punctuation': /<|>/\n\t\t\t}\n\t\t},\n\t\t'operator': /=\\/?|\\//,\n\t\t'punctuation': /[()\\[\\]]/\n\t};\n\n})(Prism);"
+        }
+      ],
+      "complete": true,
+      "omitted": [],
+      "index_kind": "baseline_ast",
+      "total_lines": 54,
+      "ast_ranges_available": true
+    },
+    {
+      "file": "components/prism-actionscript.js",
+      "windows": [
+        {
+          "start_line": 1,
+          "end_line": 17,
+          "text": "Prism.languages.actionscript = Prism.languages.extend('javascript',  {\n\t'keyword': /\\b(?:as|break|case|catch|class|const|default|delete|do|else|extends|finally|for|function|if|implements|import|in|instanceof|interface|internal|is|native|new|null|package|private|protected|public|return|super|switch|this|throw|try|typeof|use|var|void|while|with|dynamic|each|final|get|include|namespace|native|override|set|static)\\b/,\n\t'operator': /\\+\\+|--|(?:[+\\-*\\/%^]|&&?|\\|\\|?|<<?|>>?>?|[!=]=?)=?|[~?@]/\n});\nPrism.languages.actionscript['class-name'].alias = 'function';\n\nif (Prism.languages.markup) {\n\tPrism.languages.insertBefore('actionscript', 'string', {\n\t\t'xml': {\n\t\t\tpattern: /(^|[^.])<\\/?\\w+(?:\\s+[^\\s>\\/=]+=(\"|')(?:\\\\[\\s\\S]|(?!\\2)[^\\\\])*\\2)*\\s*\\/?>/,\n\t\t\tlookbehind: true,\n\t\t\tinside: {\n\t\t\t\trest: Prism.languages.markup\n\t\t\t}\n\t\t}\n\t});\n}"
+        }
+      ],
+      "complete": true,
+      "omitted": [],
+      "index_kind": "text_only",
+      "total_lines": 17,
+      "ast_ranges_available": false
+    },
+    {
+      "file": "components/prism-ada.js",
+      "windows": [
+        {
+          "start_line": 1,
+          "end_line": 19,
+          "text": "Prism.languages.ada = {\n\t'comment': /--.*/,\n\t'string': /\"(?:\"\"|[^\"\\r\\f\\n])*\"/i,\n\t'number': [\n\t\t{\n\t\t\tpattern: /\\b\\d(?:_?\\d)*#[\\dA-F](?:_?[\\dA-F])*(?:\\.[\\dA-F](?:_?[\\dA-F])*)?#(?:E[+-]?\\d(?:_?\\d)*)?/i\n\t\t},\n\t\t{\n\t\t\tpattern: /\\b\\d(?:_?\\d)*(?:\\.\\d(?:_?\\d)*)?(?:E[+-]?\\d(?:_?\\d)*)?\\b/i\n\t\t}\n\t],\n\t'attr-name': /\\b'\\w+/i,\n\t'keyword': /\\b(?:abort|abs|abstract|accept|access|aliased|all|and|array|at|begin|body|case|constant|declare|delay|delta|digits|do|else|new|return|elsif|end|entry|exception|exit|for|function|generic|goto|if|in|interface|is|limited|loop|mod|not|null|of|others|out|overriding|package|pragma|private|procedure|protected|raise|range|record|rem|renames|requeue|reverse|select|separate|some|subtype|synchronized|tagged|task|terminate|then|type|until|use|when|while|with|xor)\\b/i,\n\t'boolean': /\\b(?:true|false)\\b/i,\n\t'operator': /<[=>]?|>=?|=>?|:=|\\/=?|\\*\\*?|[&+-]/,\n\t'punctuation': /\\.\\.?|[,;():]/,\n\t'char': /'.'/,\n\t'variable': /\\b[a-z](?:[_a-z\\d])*\\b/i\n};"
+        }
+      ],
+      "complete": true,
+      "omitted": [],
+      "index_kind": "text_only",
+      "total_lines": 19,
+      "ast_ranges_available": false
+    },
+    {
+      "file": "components/prism-apl.js",
+      "windows": [
+        {
+          "start_line": 1,
+          "end_line": 32,
+          "text": "Prism.languages.apl = {\n\t'comment': /(?:⍝|#[! ]).*$/m,\n\t'string': {\n\t\tpattern: /'(?:[^'\\r\\n]|'')*'/,\n\t\tgreedy: true\n\t},\n\t'number': /¯?(?:\\d*\\.?\\d+(?:e[+¯]?\\d+)?|¯|∞)(?:j¯?(?:\\d*\\.?\\d+(?:e[+¯]?\\d+)?|¯|∞))?/i,\n\t'statement': /:[A-Z][a-z][A-Za-z]*\\b/,\n\t'system-function': {\n\t\tpattern: /⎕[A-Z]+/i,\n\t\talias: 'function'\n\t},\n\t'constant': /[⍬⌾#⎕⍞]/,\n\t'function': /[-+×÷⌈⌊∣|⍳⍸?*⍟○!⌹<≤=>≥≠≡≢∊⍷∪∩~∨∧⍱⍲⍴,⍪⌽⊖⍉↑↓⊂⊃⊆⊇⌷⍋⍒⊤⊥⍕⍎⊣⊢⍁⍂≈⍯↗¤→]/,\n\t'monadic-operator': {\n\t\tpattern: /[\\\\\\/⌿⍀¨⍨⌶&∥]/,\n\t\talias: 'operator'\n\t},\n\t'dyadic-operator': {\n\t\tpattern: /[.⍣⍠⍤∘⌸@⌺]/,\n\t\talias: 'operator'\n\t},\n\t'assignment': {\n\t\tpattern: /←/,\n\t\talias: 'keyword'\n\t},\n\t'punctuation': /[\\[;\\]()◇⋄]/,\n\t'dfn': {\n\t\tpattern: /[{}⍺⍵⍶⍹∇⍫:]/,\n\t\talias: 'builtin'\n\t}\n};"
+        }
+      ],
+      "complete": true,
+      "omitted": [],
+      "index_kind": "text_only",
+      "total_lines": 32,
+      "ast_ranges_available": false
+    },
+    {
+      "file": "style.css",
+      "windows": [
+        {
+          "start_line": 1,
+          "end_line": 413,
+          "text": "@import url(https://fonts.googleapis.com/css?family=Questrial);\n@import url(https://fonts.googleapis.com/css?family=Arvo);\n\n@font-face {\n\tsrc: url(https://lea.verou.me/logo.otf);\n\tfont-family: 'LeaVerou';\n}\n\n/*\n Shared styles\n */\n\nsection h1,\n#features li strong,\nheader h2,\nfooter p {\n\tfont: 100% Rockwell, Arvo, serif;\n}\n\n/*\n Styles\n */\n\n* {\n\tmargin: 0;\n\tpadding: 0;\n\tfont-weight: normal;\n}\n\nbody {\n\tfont: 100%/1.5 Questrial, sans-serif;\n\ttab-size: 4;\n\thyphens: auto;\n}\n\na {\n\tcolor: inherit;\n}\n\nsection h1 {\n\tfont-size: 250%;\n}\n\n\tsection section h1 {\n\t\tfont-size: 150%;\n\t}\n\n\tsection h1 code {\n\t\tfont-style: normal;\n\t}\n\n\tsection h1 > a {\n\t\ttext-decoration: none;\n\t}\n\n\tsection h1 > a:before {\n\t\tcontent: '§';\n\t\tposition: absolute;\n\t\tpadding: 0 .2em;\n\t\tmargin-left: -1em;\n\t\tborder-radius: .2em;\n\t\tcolor: silver;\n\t\ttext-shadow: 0 1px white;\n\t}\n\n\tsection h1 > a:hover:before {\n\t\tcolor: black;\n\t\tbackground: #f1ad26;\n\t}\n\np {\n\tmargin: 1em 0;\n}\n\nsection h1,\nh2 {\n\tmargin: 1em 0 .3em;\n}\n\ndt {\n\tmargin: 1em 0 0 0;\n\tfont-size: 130%;\n}\n\n\tdt:after {\n\t\tcontent: ':';\n\t}\n\ndd {\n\tmargin-left: 2em;\n}\n\nstrong {\n\tfont-weight: bold;\n}\n\ncode, pre {\n\tfont-family: Consolas, Monaco, 'Andale Mono', 'Lucida Console', monospace;\n\thyphens: none;\n}\n\npre {\n\tmax-height: 30em;\n\toverflow: auto;\n}\n\npre > code.highlight {\n\toutline: .4em solid red;\n\toutline-offset: .4em;\n}\n\nheader,\nbody > section {\n\tdisplay: block;\n\tmax-width: 900px;\n\tmargin: auto;\n}\n\nheader, footer {\n\tposition: relative;\n\tpadding: 30px -webkit-calc(50% - 450px); /* Workaround for bug */\n\tpadding: 30px calc(50% - 450px);\n\tcolor: white;\n\ttext-shadow: 0 -1px 2px black;\n\tbackground: url(img/spectrum.png) fixed;\n}\n\nheader:before,\nfooter:before {\n\tcontent: '';\n\tposition: absolute;\n\tbottom: 0; left: 0; right: 0;\n\theight: 20px;\n\tbackground-size: 20px 40px;\n\tbackground-repeat: repeat-x;\n\tbackground-image: linear-gradient(45deg, transparent 34%, white 34%, white 66%, transparent 66%),\n\t                  linear-gradient(135deg, transparent 34%, white 34%, white 66%, transparent 66%);\n}\n\nheader {\n\n}\n\n\theader .intro,\n\thtml.simple header {\n\t\toverflow: hidden;\n\t}\n\n\theader h1 {\n\t\tfloat: left;\n\t\tmargin-right: 30px;\n\t\tcolor: #7fab14;\n\t\ttext-align: center;\n\t\tfont-size: 140%;\n\t\ttext-transform: uppercase;\n\t\tletter-spacing: .25em;\n\t}\n\n\theader h2 {\n\t\tmargin-top: .5em;\n\t\tcolor: #f1ad26;\n\t}\n\n\t\theader h1 a {\n\t\t\ttext-decoration: none;\n\t\t}\n\n\t\theader img {\n\t\t\tdisplay: block;\n\t\t\twidth: 150px;\n\t\t\theight: 128px;\n\t\t\tmargin-bottom: .3em;\n\t\t\tborder: 0;\n\t\t}\n\n\theader h2 {\n\t\tfont-size: 300%;\n\t}\n\n\theader .intro p {\n\t\tmargin: 0;\n\t\tfont: 150%/1.4 Questrial, sans-serif;\n\t\tfont-size: 150%;\n\t}\n\n\t#features {\n\t\twidth: 66em;\n\t\tmargin-top: 2em;\n\t\tfont-size: 80%;\n\t}\n\n\t\t#features li {\n\t\t\tmargin: 0 0 2em 0;\n\t\t\tlist-style: none;\n\t\t\tdisplay: inline-block;\n\t\t\twidth: 27em;\n\t\t\tvertical-align: top;\n\t\t}\n\n\t\t#features li:nth-child(odd) {\n\t\t\tmargin-right: 5em;\n\t\t}\n\n\t\t\t#features li:before {\n\t\t\t\tcontent: '✓';\n\t\t\t\tfloat: left;\n\t\t\t\tmargin-left: -.8em;\n\t\t\t\tcolor: #7fab14;\n\t\t\t\tfont-size: 400%;\n\t\t\t\tline-height: 1;\n\t\t\t}\n\n\t\t\t\t#features li strong {\n\t\t\t\t\tdisplay: block;\n\t\t\t\t\tmargin-bottom: .1em;\n\t\t\t\t\tfont-size: 200%;\n\t\t\t\t}\n\n\theader .download-button {\n\t\tfloat: right;\n\t\tmargin: 0 0 .5em .5em;\n\t}\n\n\t#theme {\n\t\tposition: relative;\n\t\tz-index: 1;\n\t\tfloat: right;\n\t\tmargin-right: -1em;\n\t\ttext-align: center;\n\t\ttext-transform: uppercase;\n\t\tletter-spacing: .2em;\n\t}\n\n\t\t#theme > p {\n\t\t\tposition: absolute;\n\t\t\tleft: 100%;\n\t\t\ttransform: translateX(50%) rotate(90deg) ;\n\t\t\ttransform-origin: top left;\n\t\t\tfont-size: 130%;\n\t\t}\n\n\t\t#theme > label {\n\t\t\tposition: relative;\n\t\t\tdisplay: flex;\n\t\t\tjustify-content: center;\n\t\t\talign-items: center;\n\t\t\twidth: 8.5em;\n\t\t\theight: 8.5em;\n\t\t\tline-height: 1em;\n\t\t\tborder-radius: 50%;\n\t\t\tbackground: hsla(0,0%,100%,.5);\n\t\t\tcursor: pointer;\n\t\t\tfont-size: 90%;\n\t\t\tpadding: 0;\n\t\t}\n\n\t\t#theme > label:before {\n\t\t\tcontent: '';\n\t\t\tposition: absolute;\n\t\t\ttop: 0; right: 0; bottom: 0; left: 0;\n\t\t\tz-index: -1;\n\t\t\tborder-radius: inherit;\n\t\t\tbackground: url(img/spectrum.png) fixed;\n\t\t}\n\n\t\t#theme > label:nth-of-type(n+2) {\n\t\t\tmargin-top: -2.5em;\n\t\t}\n\n\t\t#theme > input:not(:checked) + label:hover {\n\t\t\tbackground: hsla(77, 80%, 60%, .5);\n\t\t}\n\n\t\t#theme > input {\n\t\t\tposition: absolute;\n\t\t\tclip: rect(0,0,0,0);\n\t\t}\n\n\t\t#theme > input:checked + label {\n\t\t\tbackground: #7fab14;\n\t\t}\n\nfooter {\n\tmargin-top: 2em;\n\tbackground-position: bottom;\n\tcolor: white;\n\ttext-shadow: 0 -1px 2px black;\n}\n\n\tfooter:before {\n\t\tbottom: auto;\n\t\ttop: 0;\n\t\tbackground-position: bottom;\n\t}\n\n\tfooter p {\n\t\tfont-size: 150%;\n\t}\n\n\tfooter ul {\n\t\tcolumn-count: 3;\n\t}\n\n.download-button {\n\tdisplay: block;\n\tpadding: .2em .8em .1em;\n\tborder: 1px solid rgba(0,0,0,0.5);\n\tborder-radius: 10px;\n\tbackground: #39a1cf;\n\tbox-shadow: 0 2px 10px black,\n\t   inset 0 1px hsla(0,0%,100%,.3),\n\t   inset 0 .4em hsla(0,0%,100%,.2),\n\t   inset 0 10px 20px hsla(0,0%,100%,.25),\n\t   inset 0 -15px 30px rgba(0,0,0,0.3);\n\tcolor: white;\n\ttext-shadow: 0 -1px 2px black;\n\ttext-align: center;\n\tfont-size: 250%;\n\tline-height: 1.5;\n\ttext-transform: uppercase;\n\ttext-decoration: none;\n\thyphens: manual;\n}\n\n.download-button:hover {\n\tbackground-color: #7fab14;\n}\n\n.download-button:active {\n\tbox-shadow: inset 0 2px 8px rgba(0,0,0,.8);\n}\n\n#toc {\n\tposition: fixed;\n\tbottom: 15px;\n\tmax-width: calc(50% - 450px - 40px);\n\tfont-size: 80%;\n    z-index: 999;\n    background: white;\n    color: rgba(0,0,0,.5);\n    padding: 0 10px 10px;\n\tborder-radius: 0 3px 3px 0;\n\tbox-sizing: border-box;\n}\n\n@media (max-width: 1200px) {\n\t#toc {\n\t\t display: none;\n\t}\n}\n\n#toc:hover {\n    color: rgba(0,0,0,1);\n}\n\n\t#toc h1 {\n\t\tfont-size: 180%;\n\t\tmargin-top: .75rem;\n\t}\n\n\t#toc li {\n\t\tlist-style: none;\n\t}\n\n#logo:before {\n\tcontent: '☠';\n\tfloat: right;\n\tfont: 100px/1.6 LeaVerou;\n}\n\n.used-by-logos {\n\toverflow: hidden;\n}\n\t.used-by-logos > a {\n\t\tfloat: left;\n\t\twidth: 33.33%;\n\t\theight: 100px;\n\t\ttext-align: center;\n\t\tbackground: #F5F2F0;\n\t\tbox-sizing: border-box;\n\t\tborder: 5px solid white;\n\t\tposition: relative;\n\t}\n\t\t.used-by-logos > a > img {\n\t\t\tmax-height: 100%;\n\t\t\tmax-width: 100%;\n\t\t\tposition: absolute;\n\t\t\ttop: 50%;\n\t\t\tleft: 50%;\n\t\t\ttransform: translate(-50%, -50%);\n\t\t}\n\nlabel a.owner {\n\tmargin: 0 .5em;\n}\n\nlabel a.owner:not(:hover) {\n\ttext-decoration: none;\n\tcolor: #aaa;\n}\n\n#languages-list ul {\n\tcolumn-count: 3;\n}\n\t#languages-list li {\n\t\tpadding: .2em;\n\t}\n\t#languages-list li[data-id=\"javascript\"] {\n\t\tborder-bottom: 1px solid #aaa;\n\t\tpadding-bottom: 1em;\n\t\tmargin-bottom: 1em;\n\t\tmargin-right: 1em;\n\t}"
+        }
+      ],
+      "complete": true,
+      "omitted": [],
+      "index_kind": "text_only",
+      "total_lines": 413,
+      "ast_ranges_available": false
+    },
+    {
+      "file": "components.js",
+      "windows": [
+        {
+          "start_line": 1,
+          "end_line": 2,
+          "text": "var components = {\"core\":{\"meta\":{\"path\":\"components/prism-core.js\",\"option\":\"mandatory\"},\"core\":\"Core\"},\"themes\":{\"meta\":{\"path\":\"themes/{id}.css\",\"link\":\"index.html?theme={id}\",\"exclusive\":true},\"prism\":{\"title\":\"Default\",\"option\":\"default\"},\"prism-dark\":\"Dark\",\"prism-funky\":\"Funky\",\"prism-okaidia\":{\"title\":\"Okaidia\",\"owner\":\"ocodia\"},\"prism-twilight\":{\"title\":\"Twilight\",\"owner\":\"remybach\"},\"prism-coy\":{\"title\":\"Coy\",\"owner\":\"tshedor\"},\"prism-solarizedlight\":{\"title\":\"Solarized Light\",\"owner\":\"hectormatos2011 \"},\"prism-tomorrow\":{\"title\":\"Tomorrow Night\",\"owner\":\"Rosey\"}},\"languages\":{\"meta\":{\"path\":\"components/prism-{id}\",\"noCSS\":true,\"examplesPath\":\"examples/prism-{id}\",\"addCheckAll\":true},\"markup\":{\"title\":\"Markup\",\"alias\":[\"html\",\"xml\",\"svg\",\"mathml\"],\"aliasTitles\":{\"html\":\"HTML\",\"xml\":\"XML\",\"svg\":\"SVG\",\"mathml\":\"MathML\"},\"option\":\"default\"},\"css\":{\"title\":\"CSS\",\"option\":\"default\",\"peerDependencies\":\"markup\"},\"clike\":{\"title\":\"C-like\",\"option\":\"default\",\"overrideExampleHeader\":true},\"javascript\":{\"title\":\"JavaScript\",\"require\":\"clike\",\"peerDependencies\":\"markup\",\"alias\":\"js\",\"option\":\"default\"},\"abap\":{\"title\":\"ABAP\",\"owner\":\"dellagustin\"},\"abnf\":{\"title\":\"Augmented Backus–Naur form\",\"owner\":\"RunDevelopment\"},\"actionscript\":{\"title\":\"ActionScript\",\"require\":\"javascript\",\"peerDependencies\":\"markup\",\"owner\":\"Golmote\"},\"ada\":{\"title\":\"Ada\",\"owner\":\"Lucretia\"},\"apacheconf\":{\"title\":\"Apache Configuration\",\"owner\":\"GuiTeK\"},\"apl\":{\"title\":\"APL\",\"owner\":\"ngn\"},\"applescript\":{\"title\":\"AppleScript\",\"owner\":\"Golmote\"},\"arduino\":{\"title\":\"Arduino\",\"require\":\"cpp\",\"owner\":\"eisbehr-\"},\"arff\":{\"title\":\"ARFF\",\"owner\":\"Golmote\"},\"asciidoc\":{\"alias\":\"adoc\",\"title\":\"AsciiDoc\",\"owner\":\"Golmote\"},\"asm6502\":{\"title\":\"6502 Assembly\",\"owner\":\"kzurawel\"},\"aspnet\":{\"title\":\"ASP.NET (C#)\",\"require\":[\"markup\",\"csharp\"],\"owner\":\"nauzilus\"},\"autohotkey\":{\"title\":\"AutoHotkey\",\"owner\":\"aviaryan\"},\"autoit\":{\"title\":\"AutoIt\",\"owner\":\"Golmote\"},\"bash\":{\"title\":\"Bash\",\"alias\":\"shell\",\"aliasTitles\":{\"shell\":\"Shell\"},\"owner\":\"zeitgeist87\"},\"basic\":{\"title\":\"BASIC\",\"owner\":\"Golmote\"},\"batch\":{\"title\":\"Batch\",\"owner\":\"Golmote\"},\"bison\":{\"title\":\"Bison\",\"require\":\"c\",\"owner\":\"Golmote\"},\"bnf\":{\"title\":\"Backus–Naur form\",\"alias\":\"rbnf\",\"aliasTitles\":{\"rbnf\":\"Routing Backus–Naur form\"},\"owner\":\"RunDevelopment\"},\"brainfuck\":{\"title\":\"Brainfuck\",\"owner\":\"Golmote\"},\"bro\":{\"title\":\"Bro\",\"owner\":\"wayward710\"},\"c\":{\"title\":\"C\",\"require\":\"clike\",\"owner\":\"zeitgeist87\"},\"csharp\":{\"title\":\"C#\",\"require\":\"clike\",\"alias\":\"dotnet\",\"owner\":\"mvalipour\"},\"cpp\":{\"title\":\"C++\",\"require\":\"c\",\"owner\":\"zeitgeist87\"},\"cil\":{\"title\":\"CIL\",\"owner\":\"sbrl\"},\"coffeescript\":{\"title\":\"CoffeeScript\",\"require\":\"javascript\",\"alias\":\"coffee\",\"owner\":\"R-osey\"},\"cmake\":{\"title\":\"CMake\",\"owner\":\"mjrogozinski\"},\"clojure\":{\"title\":\"Clojure\",\"owner\":\"troglotit\"},\"crystal\":{\"title\":\"Crystal\",\"require\":\"ruby\",\"owner\":\"MakeNowJust\"},\"csp\":{\"title\":\"Content-Security-Policy\",\"owner\":\"ScottHelme\"},\"css-extras\":{\"title\":\"CSS Extras\",\"require\":\"css\",\"owner\":\"milesj\"},\"d\":{\"title\":\"D\",\"require\":\"clike\",\"owner\":\"Golmote\"},\"dart\":{\"title\":\"Dart\",\"require\":\"clike\",\"owner\":\"Golmote\"},\"diff\":{\"title\":\"Diff\",\"owner\":\"uranusjr\"},\"django\":{\"title\":\"Django/Jinja2\",\"require\":\"markup-templating\",\"alias\":\"jinja2\",\"owner\":\"romanvm\"},\"docker\":{\"title\":\"Docker\",\"alias\":\"dockerfile\",\"owner\":\"JustinBeckwith\"},\"ebnf\":{\"title\":\"Extended Backus–Naur form\",\"owner\":\"RunDevelopment\"},\"eiffel\":{\"title\":\"Eiffel\",\"owner\":\"Conaclos\"},\"ejs\":{\"title\":\"EJS\",\"require\":[\"javascript\",\"markup-templating\"],\"owner\":\"RunDevelopment\"},\"elixir\":{\"title\":\"Elixir\",\"owner\":\"Golmote\"},\"elm\":{\"title\":\"Elm\",\"owner\":\"zwilias\"},\"erb\":{\"title\":\"ERB\",\"require\":[\"ruby\",\"markup-templating\"],\"owner\":\"Golmote\"},\"erlang\":{\"title\":\"Erlang\",\"owner\":\"Golmote\"},\"fsharp\":{\"title\":\"F#\",\"require\":\"clike\",\"owner\":\"simonreynolds7\"},\"flow\":{\"title\":\"Flow\",\"require\":\"javascript\",\"owner\":\"Golmote\"},\"fortran\":{\"title\":\"Fortran\",\"owner\":\"Golmote\"},\"gcode\":{\"title\":\"G-code\",\"owner\":\"RunDevelopment\"},\"gedcom\":{\"title\":\"GEDCOM\",\"owner\":\"Golmote\"},\"gherkin\":{\"title\":\"Gherkin\",\"owner\":\"hason\"},\"git\":{\"title\":\"Git\",\"owner\":\"lgiraudel\"},\"glsl\":{\"title\":\"GLSL\",\"require\":\"clike\",\"owner\":\"Golmote\"},\"gml\":{\"title\":\"GameMaker Language\",\"alias\":\"gamemakerlanguage\",\"require\":\"clike\",\"owner\":\"LiarOnce\"},\"go\":{\"title\":\"Go\",\"require\":\"clike\",\"owner\":\"arnehormann\"},\"graphql\":{\"title\":\"GraphQL\",\"owner\":\"Golmote\"},\"groovy\":{\"title\":\"Groovy\",\"require\":\"clike\",\"owner\":\"robfletcher\"},\"haml\":{\"title\":\"Haml\",\"require\":\"ruby\",\"peerDependencies\":[\"css\",\"coffeescript\",\"erb\",\"javascript\",\"less\",\"markdown\",\"ruby\",\"scss\",\"textile\"],\"owner\":\"Golmote\"},\"handlebars\":{\"title\":\"Handlebars\",\"require\":\"markup-templating\",\"owner\":\"Golmote\"},\"haskell\":{\"title\":\"Haskell\",\"alias\":\"hs\",\"owner\":\"bholst\"},\"haxe\":{\"title\":\"Haxe\",\"require\":\"clike\",\"owner\":\"Golmote\"},\"hcl\":{\"title\":\"HCL\",\"owner\":\"outsideris\"},\"http\":{\"title\":\"HTTP\",\"peerDependencies\":[\"javascript\",\"markup\"],\"owner\":\"danielgtaylor\"},\"hpkp\":{\"title\":\"HTTP Public-Key-Pins\",\"owner\":\"ScottHelme\"},\"hsts\":{\"title\":\"HTTP Strict-Transport-Security\",\"owner\":\"ScottHelme\"},\"ichigojam\":{\"title\":\"IchigoJam\",\"owner\":\"BlueCocoa\"},\"icon\":{\"title\":\"Icon\",\"owner\":\"Golmote\"},\"inform7\":{\"title\":\"Inform 7\",\"owner\":\"Golmote\"},\"ini\":{\"title\":\"Ini\",\"owner\":\"aviaryan\"},\"io\":{\"title\":\"Io\",\"owner\":\"AlesTsurko\"},\"j\":{\"title\":\"J\",\"owner\":\"Golmote\"},\"java\":{\"title\":\"Java\",\"require\":\"clike\",\"owner\":\"sherblot\"},\"javadoc\":{\"title\":\"JavaDoc\",\"require\":[\"markup\",\"java\",\"javadoclike\"],\"peerDependencies\":[\"scala\"],\"owner\":\"RunDevelopment\"},\"javadoclike\":{\"title\":\"JavaDoc-like\",\"peerDependencies\":[\"java\",\"javascript\",\"php\"],\"owner\":\"RunDevelopment\"},\"javastacktrace\":{\"title\":\"Java stack trace\",\"owner\":\"RunDevelopment\"},\"jolie\":{\"title\":\"Jolie\",\"require\":\"clike\",\"owner\":\"thesave\"},\"jsdoc\":{\"title\":\"JSDoc\",\"require\":[\"javascript\",\"javadoclike\"],\"peerDependencies\":[\"actionscript\",\"coffeescript\"],\"owner\":\"RunDevelopment\"},\"js-extras\":{\"title\":\"JS Extras\",\"require\":\"javascript\",\"peerDependencies\":[\"actionscript\",\"coffeescript\",\"flow\",\"n4js\",\"typescript\"],\"owner\":\"RunDevelopment\"},\"json\":{\"title\":\"JSON\",\"owner\":\"CupOfTea696\"},\"jsonp\":{\"title\":\"JSONP\",\"require\":\"json\",\"owner\":\"RunDevelopment\"},\"json5\":{\"title\":\"JSON5\",\"require\":\"json\",\"owner\":\"RunDevelopment\"},\"julia\":{\"title\":\"Julia\",\"owner\":\"cdagnino\"},\"keyman\":{\"title\":\"Keyman\",\"owner\":\"mcdurdin\"},\"kotlin\":{\"title\":\"Kotlin\",\"require\":\"clike\",\"owner\":\"Golmote\"},\"latex\":{\"title\":\"LaTeX\",\"owner\":\"japborst\"},\"less\":{\"title\":\"Less\",\"require\":\"css\",\"owner\":\"Golmote\"},\"liquid\":{\"title\":\"Liquid\",\"owner\":\"cinhtau\"},\"lisp\":{\"title\":\"Lisp\",\"alias\":[\"emacs\",\"elisp\",\"emacs-lisp\"],\"owner\":\"JuanCaicedo\"},\"livescript\":{\"title\":\"LiveScript\",\"owner\":\"Golmote\"},\"lolcode\":{\"title\":\"LOLCODE\",\"owner\":\"Golmote\"},\"lua\":{\"title\":\"Lua\",\"owner\":\"Golmote\"},\"makefile\":{\"title\":\"Makefile\",\"owner\":\"Golmote\"},\"markdown\":{\"title\":\"Markdown\",\"require\":\"markup\",\"alias\":\"md\",\"owner\":\"Golmote\"},\"markup-templating\":{\"title\":\"Markup templating\",\"require\":\"markup\",\"owner\":\"Golmote\"},\"matlab\":{\"title\":\"MATLAB\",\"owner\":\"Golmote\"},\"mel\":{\"title\":\"MEL\",\"owner\":\"Golmote\"},\"mizar\":{\"title\":\"Mizar\",\"owner\":\"Golmote\"},\"monkey\":{\"title\":\"Monkey\",\"owner\":\"Golmote\"},\"n1ql\":{\"title\":\"N1QL\",\"owner\":\"TMWilds\"},\"n4js\":{\"title\":\"N4JS\",\"require\":\"javascript\",\"peerDependencies\":[\"jsdoc\"],\"alias\":\"n4jsd\",\"owner\":\"bsmith-n4\"},\"nand2tetris-hdl\":{\"title\":\"Nand To Tetris HDL\",\"owner\":\"stephanmax\"},\"nasm\":{\"title\":\"NASM\",\"owner\":\"rbmj\"},\"nginx\":{\"title\":\"nginx\",\"owner\":\"westonganger\",\"require\":\"clike\"},\"nim\":{\"title\":\"Nim\",\"owner\":\"Golmote\"},\"nix\":{\"title\":\"Nix\",\"owner\":\"Golmote\"},\"nsis\":{\"title\":\"NSIS\",\"owner\":\"idleberg\"},\"objectivec\":{\"title\":\"Objective-C\",\"require\":\"c\",\"owner\":\"uranusjr\"},\"ocaml\":{\"title\":\"OCaml\",\"owner\":\"Golmote\"},\"opencl\":{\"title\":\"OpenCL\",\"require\":\"cpp\",\"peerDependencies\":[\"c\",\"cpp\"],\"overrideExampleHeader\":true,\"owner\":\"Milania1\"},\"oz\":{\"title\":\"Oz\",\"owner\":\"Golmote\"},\"parigp\":{\"title\":\"PARI/GP\",\"owner\":\"Golmote\"},\"parser\":{\"title\":\"Parser\",\"require\":\"markup\",\"owner\":\"Golmote\"},\"pascal\":{\"title\":\"Pascal\",\"alias\":\"objectpascal\",\"aliasTitles\":{\"objectpascal\":\"Object Pascal\"},\"owner\":\"Golmote\"},\"perl\":{\"title\":\"Perl\",\"owner\":\"Golmote\"},\"php\":{\"title\":\"PHP\",\"require\":[\"clike\",\"markup-templating\"],\"owner\":\"milesj\"},\"phpdoc\":{\"title\":\"PHPDoc\",\"require\":[\"php\",\"javadoclike\"],\"owner\":\"RunDevelopment\"},\"php-extras\":{\"title\":\"PHP Extras\",\"require\":\"php\",\"owner\":\"milesj\"},\"plsql\":{\"title\":\"PL/SQL\",\"require\":\"sql\",\"owner\":\"Golmote\"},\"powershell\":{\"title\":\"PowerShell\",\"owner\":\"nauzilus\"},\"processing\":{\"title\":\"Processing\",\"require\":\"clike\",\"owner\":\"Golmote\"},\"prolog\":{\"title\":\"Prolog\",\"owner\":\"Golmote\"},\"properties\":{\"title\":\".properties\",\"owner\":\"Golmote\"},\"protobuf\":{\"title\":\"Protocol Buffers\",\"require\":\"clike\",\"owner\":\"just-boris\"},\"pug\":{\"title\":\"Pug\",\"require\":[\"markup\",\"javascript\"],\"peerDependencies\":[\"coffeescript\",\"ejs\",\"handlebars\",\"less\",\"livescript\",\"markdown\",\"scss\",\"stylus\",\"twig\"],\"owner\":\"Golmote\"},\"puppet\":{\"title\":\"Puppet\",\"owner\":\"Golmote\"},\"pure\":{\"title\":\"Pure\",\"peerDependencies\":[\"c\",\"cpp\",\"fortran\"],\"owner\":\"Golmote\"},\"python\":{\"title\":\"Python\",\"alias\":\"py\",\"owner\":\"multipetros\"},\"q\":{\"title\":\"Q (kdb+ database)\",\"owner\":\"Golmote\"},\"qore\":{\"title\":\"Qore\",\"require\":\"clike\",\"owner\":\"temnroegg\"},\"r\":{\"title\":\"R\",\"owner\":\"Golmote\"},\"jsx\":{\"title\":\"React JSX\",\"require\":[\"markup\",\"javascript\"],\"peerDependencies\":[\"jsdoc\",\"js-extras\"],\"owner\":\"vkbansal\"},\"tsx\":{\"title\":\"React TSX\",\"require\":[\"jsx\",\"typescript\"]},\"renpy\":{\"title\":\"Ren'py\",\"owner\":\"HyuchiaDiego\"},\"reason\":{\"title\":\"Reason\",\"require\":\"clike\",\"owner\":\"Golmote\"},\"regex\":{\"title\":\"Regex\",\"peerDependencies\":[\"actionscript\",\"coffeescript\",\"flow\",\"javascript\",\"typescript\",\"vala\"],\"owner\":\"RunDevelopment\"},\"rest\":{\"title\":\"reST (reStructuredText)\",\"owner\":\"Golmote\"},\"rip\":{\"title\":\"Rip\",\"owner\":\"ravinggenius\"},\"roboconf\":{\"title\":\"Roboconf\",\"owner\":\"Golmote\"},\"ruby\":{\"title\":\"Ruby\",\"require\":\"clike\",\"alias\":\"rb\",\"owner\":\"samflores\"},\"rust\":{\"title\":\"Rust\",\"owner\":\"Golmote\"},\"sas\":{\"title\":\"SAS\",\"owner\":\"Golmote\"},\"sass\":{\"title\":\"Sass (Sass)\",\"require\":\"css\",\"owner\":\"Golmote\"},\"scss\":{\"title\":\"Sass (Scss)\",\"require\":\"css\",\"owner\":\"MoOx\"},\"scala\":{\"title\":\"Scala\",\"require\":\"java\",\"owner\":\"jozic\"},\"scheme\":{\"title\":\"Scheme\",\"owner\":\"bacchus123\"},\"smalltalk\":{\"title\":\"Smalltalk\",\"owner\":\"Golmote\"},\"smarty\":{\"title\":\"Smarty\",\"require\":\"markup-templating\",\"owner\":\"Golmote\"},\"sql\":{\"title\":\"SQL\",\"owner\":\"multipetros\"},\"soy\":{\"title\":\"Soy (Closure Template)\",\"require\":\"markup-templating\",\"owner\":\"Golmote\"},\"stylus\":{\"title\":\"Stylus\",\"owner\":\"vkbansal\"},\"swift\":{\"title\":\"Swift\",\"require\":\"clike\",\"owner\":\"chrischares\"},\"tap\":{\"title\":\"TAP\",\"owner\":\"isaacs\",\"require\":\"yaml\"},\"tcl\":{\"title\":\"Tcl\",\"owner\":\"PeterChaplin\"},\"textile\":{\"title\":\"Textile\",\"require\":\"markup\",\"peerDependencies\":\"css\",\"owner\":\"Golmote\"},\"toml\":{\"title\":\"TOML\",\"owner\":\"RunDevelopment\"},\"tt2\":{\"title\":\"Template Toolkit 2\",\"require\":[\"clike\",\"markup-templating\"],\"owner\":\"gflohr\"},\"twig\":{\"title\":\"Twig\",\"require\":\"markup\",\"owner\":\"brandonkelly\"},\"typescript\":{\"title\":\"TypeScript\",\"require\":\"javascript\",\"alias\":\"ts\",\"owner\":\"vkbansal\"},\"t4-cs\":{\"title\":\"T4 Text Templates (C#)\",\"require\":[\"t4-templating\",\"csharp\"],\"alias\":\"t4\",\"owner\":\"RunDevelopment\"},\"t4-vb\":{\"title\":\"T4 Text Templates (VB)\",\"require\":[\"t4-templating\",\"visual-basic\"],\"owner\":\"RunDevelopment\"},\"t4-templating\":{\"title\":\"T4 templating\",\"owner\":\"RunDevelopment\"},\"vala\":{\"title\":\"Vala\",\"require\":\"clike\",\"owner\":\"TemplarVolk\"},\"vbnet\":{\"title\":\"VB.Net\",\"require\":\"basic\",\"owner\":\"Bigsby\"},\"velocity\":{\"title\":\"Velocity\",\"require\":\"markup\",\"owner\":\"Golmote\"},\"verilog\":{\"title\":\"Verilog\",\"owner\":\"a-rey\"},\"vhdl\":{\"title\":\"VHDL\",\"owner\":\"a-rey\"},\"vim\":{\"title\":\"vim\",\"owner\":\"westonganger\"},\"visual-basic\":{\"title\":\"Visual Basic\",\"alias\":\"vb\",\"owner\":\"Golmote\"},\"wasm\":{\"title\":\"WebAssembly\",\"owner\":\"Golmote\"},\"wiki\":{\"title\":\"Wiki markup\",\"require\":\"markup\",\"owner\":\"Golmote\"},\"xeora\":{\"title\":\"Xeora\",\"require\":\"markup\",\"alias\":\"xeoracube\",\"aliasTitles\":{\"xeoracube\":\"XeoraCube\"},\"owner\":\"freakmaxi\"},\"xojo\":{\"title\":\"Xojo (REALbasic)\",\"owner\":\"Golmote\"},\"xquery\":{\"title\":\"XQuery\",\"require\":\"markup\",\"owner\":\"Golmote\"},\"yaml\":{\"title\":\"YAML\",\"alias\":\"yml\",\"owner\":\"hason\"}},\"plugins\":{\"meta\":{\"path\":\"plugins/{id}/prism-{id}\",\"link\":\"plugins/{id}/\"},\"line-highlight\":\"Line Highlight\",\"line-numbers\":{\"title\":\"Line Numbers\",\"owner\":\"kuba-kubula\"},\"show-invisibles\":{\"title\":\"Show Invisibles\",\"after\":[\"autolinker\",\"data-uri-highlight\"]},\"autolinker\":\"Autolinker\",\"wpd\":\"WebPlatform Docs\",\"custom-class\":{\"title\":\"Custom Class\",\"owner\":\"dvkndn\",\"noCSS\":true},\"file-highlight\":{\"title\":\"File Highlight\",\"noCSS\":true},\"show-language\":{\"title\":\"Show Language\",\"owner\":\"nauzilus\",\"noCSS\":true,\"require\":\"toolbar\"},\"jsonp-highlight\":{\"title\":\"JSONP Highlight\",\"noCSS\":true,\"owner\":\"nauzilus\"},\"highlight-keywords\":{\"title\":\"Highlight Keywords\",\"owner\":\"vkbansal\",\"noCSS\":true},\"remove-initial-line-feed\":{\"title\":\"Remove initial line feed\",\"owner\":\"Golmote\",\"noCSS\":true},\"previewers\":{\"title\":\"Previewers\",\"owner\":\"Golmote\"},\"autoloader\":{\"title\":\"Autoloader\",\"owner\":\"Golmote\",\"noCSS\":true},\"keep-markup\":{\"title\":\"Keep Markup\",\"owner\":\"Golmote\",\"after\":\"normalize-whitespace\",\"noCSS\":true},\"command-line\":{\"title\":\"Command Line\",\"owner\":\"chriswells0\"},\"unescaped-markup\":\"Unescaped Markup\",\"normalize-whitespace\":{\"title\":\"Normalize Whitespace\",\"owner\":\"zeitgeist87\",\"after\":\"unescaped-markup\",\"noCSS\":true},\"data-uri-highlight\":{\"title\":\"Data-URI Highlight\",\"owner\":\"Golmote\",\"noCSS\":true},\"toolbar\":{\"title\":\"Toolbar\",\"owner\":\"mAAdhaTTah\"},\"copy-to-clipboard\":{\"title\":\"Copy to Clipboard Button\",\"owner\":\"mAAdhaTTah\",\"require\":\"toolbar\",\"noCSS\":true}}};\nif (typeof module !== 'undefined' && module.exports) { module.exports = components; }"
+        }
+      ],
+      "complete": true,
+      "omitted": [],
+      "index_kind": "text_only",
+      "total_lines": 2,
+      "ast_ranges_available": false
+    }
+  ],
+  "edges": [
+    {
+      "from": "components.js",
+      "to": "style.css",
+      "kind": "same_directory_visual"
+    },
+    {
+      "from": "components/index.js",
+      "to": "components.js",
+      "kind": "import"
+    },
+    {
+      "from": "gulpfile.js",
+      "to": "style.css",
+      "kind": "same_directory_visual"
+    },
+    {
+      "from": "prism.js",
+      "to": "style.css",
+      "kind": "same_directory_visual"
+    }
+  ],
+  "allowed_files": [
+    "components/prism-json.js",
+    "components/prism-core.js",
+    "prism.js",
+    "components/index.js",
+    "components/prism-abnf.js",
+    "components/prism-actionscript.js",
+    "components/prism-ada.js",
+    "components/prism-apl.js",
+    "style.css",
+    "components.js"
+  ],
+  "unresolved_dependencies": [
+    {
+      "from": "style.css",
+      "request": "gulpfile.js",
+      "reason": "file_budget",
+      "kind": "same_directory_source"
+    }
+  ],
+  "truncated": true,
+  "bindings": {
+    "H1": {
+      "symbol_exists": false,
+      "readable_symbols": [],
+      "readable_symbols_basis": "declaration_candidates_without_accessibility_proof",
+      "downstream_summary": {
+        "status": "partial_static",
+        "source_effects": [],
+        "unknown_reasons": [
+          "unresolved_dependency_closure",
+          "boundary_not_ast_bound",
+          "lexical_scope_and_dynamic_dispatch_not_proven"
+        ]
+      },
+      "effect_evidence": [],
+      "interface_complete": false,
+      "requested_interface_covered": false,
+      "interface_basis": "declaration_candidates_without_lexical_scope_proof",
+      "ast_boundaries": []
+    },
+    "H2": {
+      "symbol_exists": false,
+      "readable_symbols": [],
+      "readable_symbols_basis": "declaration_candidates_without_accessibility_proof",
+      "downstream_summary": {
+        "status": "partial_static",
+        "source_effects": [],
+        "unknown_reasons": [
+          "unresolved_dependency_closure",
+          "boundary_not_ast_bound",
+          "lexical_scope_and_dynamic_dispatch_not_proven"
+        ]
+      },
+      "effect_evidence": [],
+      "interface_complete": false,
+      "requested_interface_covered": false,
+      "interface_basis": "declaration_candidates_without_lexical_scope_proof",
+      "ast_boundaries": []
+    },
+    "H3": {
+      "symbol_exists": false,
+      "readable_symbols": [],
+      "readable_symbols_basis": "declaration_candidates_without_accessibility_proof",
+      "downstream_summary": {
+        "status": "partial_static",
+        "source_effects": [],
+        "unknown_reasons": [
+          "unresolved_dependency_closure",
+          "boundary_not_ast_bound",
+          "requested_symbols_not_declared_in_context",
+          "lexical_scope_and_dynamic_dispatch_not_proven"
+        ]
+      },
+      "effect_evidence": [],
+      "interface_complete": false,
+      "requested_interface_covered": false,
+      "interface_basis": "declaration_candidates_without_lexical_scope_proof",
+      "ast_boundaries": []
+    },
+    "H4": {
+      "symbol_exists": false,
+      "readable_symbols": [],
+      "readable_symbols_basis": "declaration_candidates_without_accessibility_proof",
+      "downstream_summary": {
+        "status": "partial_static",
+        "source_effects": [],
+        "unknown_reasons": [
+          "unresolved_dependency_closure",
+          "boundary_not_ast_bound",
+          "lexical_scope_and_dynamic_dispatch_not_proven"
+        ]
+      },
+      "effect_evidence": [],
+      "interface_complete": false,
+      "requested_interface_covered": false,
+      "interface_basis": "declaration_candidates_without_lexical_scope_proof",
+      "ast_boundaries": []
+    },
+    "H5": {
+      "symbol_exists": false,
+      "readable_symbols": [],
+      "readable_symbols_basis": "declaration_candidates_without_accessibility_proof",
+      "downstream_summary": {
+        "status": "partial_static",
+        "source_effects": [],
+        "unknown_reasons": [
+          "unresolved_dependency_closure",
+          "boundary_not_ast_bound",
+          "lexical_scope_and_dynamic_dispatch_not_proven"
+        ]
+      },
+      "effect_evidence": [],
+      "interface_complete": false,
+      "requested_interface_covered": false,
+      "interface_basis": "declaration_candidates_without_lexical_scope_proof",
+      "ast_boundaries": []
+    },
+    "H6": {
+      "symbol_exists": false,
+      "readable_symbols": [],
+      "readable_symbols_basis": "declaration_candidates_without_accessibility_proof",
+      "downstream_summary": {
+        "status": "partial_static",
+        "source_effects": [],
+        "unknown_reasons": [
+          "unresolved_dependency_closure",
+          "boundary_not_ast_bound",
+          "lexical_scope_and_dynamic_dispatch_not_proven"
+        ]
+      },
+      "effect_evidence": [],
+      "interface_complete": false,
+      "requested_interface_covered": false,
+      "interface_basis": "declaration_candidates_without_lexical_scope_proof",
+      "ast_boundaries": []
+    },
+    "H7": {
+      "symbol_exists": false,
+      "readable_symbols": [],
+      "readable_symbols_basis": "declaration_candidates_without_accessibility_proof",
+      "downstream_summary": {
+        "status": "partial_static",
+        "source_effects": [],
+        "unknown_reasons": [
+          "unresolved_dependency_closure",
+          "boundary_not_ast_bound",
+          "lexical_scope_and_dynamic_dispatch_not_proven"
+        ]
+      },
+      "effect_evidence": [],
+      "interface_complete": false,
+      "requested_interface_covered": false,
+      "interface_basis": "declaration_candidates_without_lexical_scope_proof",
+      "ast_boundaries": []
+    },
+    "H8": {
+      "symbol_exists": false,
+      "readable_symbols": [],
+      "readable_symbols_basis": "declaration_candidates_without_accessibility_proof",
+      "downstream_summary": {
+        "status": "partial_static",
+        "source_effects": [],
+        "unknown_reasons": [
+          "unresolved_dependency_closure",
+          "boundary_not_ast_bound",
+          "lexical_scope_and_dynamic_dispatch_not_proven"
+        ]
+      },
+      "effect_evidence": [],
+      "interface_complete": false,
+      "requested_interface_covered": false,
+      "interface_basis": "declaration_candidates_without_lexical_scope_proof",
+      "ast_boundaries": []
+    }
+  },
+  "indexed_files": 424,
+  "visual_index_files": [
+    "plugins/autolinker/prism-autolinker.css",
+    "plugins/command-line/prism-command-line.css",
+    "plugins/line-highlight/prism-line-highlight.css",
+    "plugins/line-numbers/prism-line-numbers.css",
+    "plugins/previewers/prism-previewers.css",
+    "plugins/show-invisibles/prism-show-invisibles.css",
+    "plugins/toolbar/prism-toolbar.css",
+    "plugins/unescaped-markup/prism-unescaped-markup.css",
+    "plugins/wpd/prism-wpd.css",
+    "style.css",
+    "themes/prism-coy.css",
+    "themes/prism-dark.css",
+    "themes/prism-funky.css",
+    "themes/prism-okaidia.css",
+    "themes/prism-solarizedlight.css",
+    "themes/prism-tomorrow.css",
+    "themes/prism-twilight.css",
+    "themes/prism.css"
+  ],
+  "baseline_topk": [
+    "components/prism-json.js",
+    "components/prism-core.js",
+    "prism.js",
+    "components/index.js",
+    "components/prism-abnf.js",
+    "components/prism-actionscript.js",
+    "components/prism-ada.js",
+    "components/prism-apl.js"
+  ],
+  "scope_limits": {
+    "max_files": 10,
+    "max_windows_per_file": 4,
+    "max_lines_per_file": 480
+  }
+}
