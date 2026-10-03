@@ -4,6 +4,8 @@
 
 This is the recorded **DeepSeek** run for `PrismJS__prism-1853`, titled **`/* breaks JSON tokenization`**, at base commit `2f9c9261bc1454899266929711d5842a3675e467`. The archive contains 451 files (12,170,101 bytes), including model requests and responses, both agents' tool observations, five candidate patches, validation, and frozen replay. These are existing experiment records, copied without a new model run.
 
+The figure labels the original report as `Issue #1852`; `1853` in the benchmark instance ID is the repair PR number.
+
 ## The reported failure
 
 The [task](input_context/task.json) and [issue screenshot](assets/issue_image_01.png) describe incorrect highlighting after a string containing `/*`:

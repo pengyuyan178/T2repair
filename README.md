@@ -78,7 +78,7 @@ The launcher runs one case at a time. Official benchmark evaluation is a separat
 | 5 | [Browser Agent investigation](figures/fig5-browser-investigation.pdf) |
 | 6 | [Repair overlap](figures/fig6-repair-overlap.pdf) |
 | 7 | [Agent ablation overlap](figures/fig7-ablation-overlap.pdf) |
-| 8 | [Repair trajectory on Prism #1853](figures/fig8-repair-trajectory.pdf) |
+| 8 | [Repair trajectory: PrismJS__prism-1853](figures/fig8-repair-trajectory.pdf) |
 
 ## Code map
 

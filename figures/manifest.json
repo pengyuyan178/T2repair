@@ -7,7 +7,7 @@
   {
     "file": "figures/fig2-motivating-example.pdf",
     "source": "latex/figure/fig2.pdf",
-    "sha256": "6bc51e0fd2e1da9eaa72dfc9f976b299e237ddce08db0e16b12cc8d3151e9e8e"
+    "sha256": "f5a21c41d83338ed46c16eee32c21a85cc60ec835a5fe3dd2c8c71ca5142739d"
   },
   {
     "file": "figures/fig3-framework.pdf",
@@ -37,6 +37,6 @@
   {
     "file": "figures/fig8-repair-trajectory.pdf",
     "source": "latex/figure/trajectory_case.pdf",
-    "sha256": "2765a832e69fd6d9f1a044373185f250fa40612c356e34af32a2e9fdf92b0003"
+    "sha256": "741d0b943a8954b59de752e13c0e0feb1ad8bd1e0b58c0f4014c8d55069b1f1e"
   }
 ]
