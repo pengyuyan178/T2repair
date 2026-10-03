@@ -15,7 +15,7 @@ All eight paper figures are provided as the original PDFs. Figure numbers follow
 
 [manifest.json](manifest.json) records the original manuscript filenames and SHA-256 hashes. Figure 8 also has a [trace walkthrough and raw records](../trajectories/fig8-prism-1853/README.md).
 
-The README displays [PNG previews](../assets/paper/) rendered directly from these PDFs, with each preview linking back to its original PDF. This directory keeps the original PDF figure collection. Mascot illustrations and archived screenshots are separate assets.
+The README displays [PNG previews](../assets/paper/) rendered directly from these PDFs, with each preview linking back to its original PDF. This directory keeps the original PDF figure collection. The README banner and archived screenshots are separate assets.
 
 To refresh the display previews after updating the PDFs and this directory's manifest:
 

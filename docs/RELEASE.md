@@ -18,4 +18,4 @@ The [Figure 8 archive](../trajectories/fig8-prism-1853/README.md) contains the r
 
 Machine-specific host roots in archived paths use `<your_path>` placeholders. Archive file and payload hashes refer to these anonymized records.
 
-Raw issue images and browser screenshots are included in the trajectory archive. README mascot illustrations are in `assets/`.
+Raw issue images and browser screenshots are included in the trajectory archive. The README banner is in `assets/`.
