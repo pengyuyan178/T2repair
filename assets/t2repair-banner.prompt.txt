@@ -1,0 +1,41 @@
+Generation mode: built-in image_gen with two user-provided character images, followed by restoration and nameplate-width edits.
+The built-in tool does not expose a model selector; no specific backend model is asserted.
+Requested resolution for the wider layout: 3840 x 1792 if supported.
+Verified generated resolution: 1836 x 857, RGBA with genuine transparency.
+The selected banner is the wider-nameplate output. It is not native 4K.
+
+FINAL NAMEPLATE-WIDTH EDIT PROMPT
+Use case: precise-object-edit. Modify only the WIDTH of the central nameplate in the provided finished T2Repair banner.
+
+Make the actual pearl-white nameplate approximately 35 percent LONGER horizontally, while retaining its current height, rounded corners, blue/indigo border thickness and cel-shaded enamel finish. Widen the entire canvas horizontally to accommodate the change (a broad banner of approximately 2.15:1 aspect ratio). The plaque itself must visibly become longer, with noticeably more blank pearl-white space on BOTH sides of the word "T2Repair".
+
+Keep the exact text "T2Repair" centered, using the same letter shapes, font weight, letter proportions, color and approximate height relative to the plaque as the original. Do not stretch the lettering horizontally to fill the added space.
+
+Translate the blue-haired character and her hands to the LEFT, and the black-haired cat-eared character and her hands to the RIGHT, so each still naturally grips the widened plaque at its corresponding end. Keep both characters' original sizes relative to the plaque height, faces, happy expressions, hair shapes and colors, costumes, head accessories, Z ornament, dangling bells, linework style, and poses. Preserve all four hands and their natural contact with the plaque. Fully retain the hair and ears without cropping, distortion, or adding body parts.
+
+Maintain the original vertical alignment, balanced composition, modest transparent margins, crisp high-definition anime linework, and genuine RGBA transparency. The visible change should be a longer horizontal plaque and proportionally wider overall banner. No extra words, icons, patterns, background or other decorations.
+Output at the highest available quality; target 3840 x 1792 pixels if supported, preserving the wider composition and transparent background.
+
+FINAL RESTORATION PROMPT
+Restore this exact T2Repair nameplate illustration at the highest available image quality, targeting a 3840 x 2160 pixel 4K PNG.
+This is a fidelity-preserving cleanup, not a redesign. Keep the exact original composition, spacing, proportions, colors, two chibi characters, all accessories, facial expressions, four hand positions and the exact central text "T2Repair". The blue-haired character stays on the left and the black-haired cat-eared character stays on the right, holding the same sign.
+The requested visual changes are: reconstruct clean continuous high-definition contour lines; eliminate stray bright blue fringe pixels and ragged alpha boundaries around the hair and clothing; restore fine clean hair and eye details; make the letters' outlines exceptionally smooth and crisp, with readable consistent edges. Avoid sharpening halos, overly thick outlines, added textures, or changes to character identity. Keep the pearl-white enamel sign and blue border unchanged.
+Preserve genuine transparent background (RGBA). Do not flatten on black, white or a checkerboard. All outer shapes and hair strands stay intact. Do not add or crop anything. Please deliver full-resolution output at 3840 x 2160 if supported, not just an enlarged-looking preview.
+
+ORIGINAL GENERATION PROMPT
+
+Use case: compositing.
+Asset type: high-resolution transparent PNG nameplate banner for the very top of the T2Repair research project's GitHub README.
+Primary request: combine the TWO PROVIDED CHARACTER IMAGES with a newly designed central nameplate. One character on each side, with both characters visibly holding the sides of the nameplate with their hands.
+
+Input image 1: identity-preserving compositing input for the LEFT character, the cheerful cobalt-blue-haired, blue-eyed chibi character in navy and white ruffled maid clothing, with the blue hair bow, long curved forelock, and the original side-ear/hair silhouette.
+Input image 2: identity-preserving compositing input for the RIGHT character, the cheerful black-haired, purple-eyed, cat-eared chibi character, with black and white ruffled clothing, the eyelash sleep-mask headband, dangling silver bells and the little Z ornament.
+Preserve both references' distinctive faces, big eye shapes, original hair colors, outfits, accessories, detailed clean anime linework, and cel-shaded illustration style. The inputs have transparent backgrounds; any apparent black outside their silhouettes is NOT a background to reproduce. Do not redesign their identities.
+
+Composition: a SINGLE horizontal header illustration, requested 4K UHD canvas 3840 x 2160 pixels, transparent background. Arrange the subjects in an elegant compact horizontal band, with tasteful transparent outer margins. A broad clean rounded rectangular nameplate dominates the middle. The blue character peeks inward from behind the LEFT end; the black-haired character peeks inward from behind the RIGHT end. Adapt the blue character's peeking pose to face inward toward the right. Keep the black character facing inward toward the left, and the Z ornament readable, not reversed. Heads and upper bodies are fully visible, at equal scale, no cut-off ears, hair, forelocks, hands, or outer silhouettes. Each character's two small hands naturally curl OVER the FRONT of the corresponding left or right vertical rim, convincingly gripping the same central plaque. Hands must touch the plaque rather than hover. Keep all faces and the name unobstructed.
+
+Nameplate design: softly rounded pearl-white enamel surface, restrained deep-indigo outline and a thin blue-violet accent edge matching the provided characters. Modest thickness, subtle cel-shaded edge dimension, calm spacious center, polished anime sticker/signboard finish. Do not add scenery or decorations.
+
+Text: the ONLY central text is exactly "T2Repair" (T, digit 2, capital R, lowercase e p a i r). Very large, exceptionally crisp, bold rounded modern lettering, centered with balanced kerning. Deep navy/indigo lettering on the light plaque, readable when the entire header is displayed at 850 pixels wide. No subtitle, no paper title, no author names, no institution names, no extra lettering except the original character's small Z ornament.
+
+Output requirements: genuine RGBA transparency surrounding the complete illustration, not a drawn checkerboard or black backdrop. Aim for actual 3840 x 2160 output and high-detail 4K edges. Keep the original cheerful wholesome appearance. Avoid duplicated characters, extra hands/fingers, anatomy changes, watermark, photographed page, device mockup, or any other background.
