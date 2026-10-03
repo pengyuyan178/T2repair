@@ -5,7 +5,7 @@
   "source_sha256": {
     "result/method/causalgui/test480_deepseek/cases/PrismJS__prism-1853/trajectory/S2_hypotheses.json": "2d2ebd8ca752b1454a41437920b73b3f1bab7ea27be4f6bf7fe1659cbe9aeaf3",
     "result/method/causalgui/test480_deepseek/cases/PrismJS__prism-1853/trajectory/agents/code/report.json": "faba4be66805571198143ffab84905bddc204437054724eca581c77a00166cdc",
-    "result/method/causalgui/test480_deepseek/cases/PrismJS__prism-1853/trajectory/agents/browser/report.json": "f92d302dfcd2bd9b68f9e100a3cf159f651ecf5b2951281a00ca6c8d82c5c3a5",
+    "result/method/causalgui/test480_deepseek/cases/PrismJS__prism-1853/trajectory/agents/browser/report.json": "70a467a1d9016a1f71d38267e45486d2c3f5e5c6320cdd7b39e0382c70059f60",
     "result/method/causalgui/test480_deepseek/cases/PrismJS__prism-1853/trajectory/agents/browser/turn_02/tool_01/browser/observation.json": "f2ee27429778380385fb8794a12f53960bc3703e36a48ff7bdf89132da084bb9",
     "result/method/causalgui/test480_deepseek/cases/PrismJS__prism-1853/trajectory/candidates/01/validation/replay/T2/replay/observation.json": "72003d1ef90245a4c173accfc23653f3f26f6feec5c1bc6198be2a6e7c2a24fd",
     "result/method/causalgui/test480_deepseek/cases/PrismJS__prism-1853/patch.diff": "aea1499da539198f0398180376b8766c6bb12307908621abb237e60384dd0b8b",

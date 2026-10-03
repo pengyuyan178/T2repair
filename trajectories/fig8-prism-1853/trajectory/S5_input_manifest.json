@@ -1,7 +1,7 @@
 {
   "protocol": "s5_context_v1",
   "base_commit": "2f9c9261bc1454899266929711d5842a3675e467",
-  "state_sha256": "be52a11af05720c70b78ead20ab22fe5f36236553a76e66242e82b6da1d4b31d",
+  "state_sha256": "e53ea28cce3a4512a326ea5553a7757186cf5c652855ea0df807bc598f628d0f",
   "budget": {
     "protocol": "s5_context_v1",
     "max_window_utf8_bytes": 32768,

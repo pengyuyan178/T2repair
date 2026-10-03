@@ -16,4 +16,6 @@ The [paper figures](../figures/README.md) are available as PDFs, with filenames 
 
 The [Figure 8 archive](../trajectories/fig8-prism-1853/README.md) contains the recorded DeepSeek run: model requests and responses, source excerpts, tool observations, candidate patches, validation, and frozen replay. Its manifest records relative paths and file hashes. The saved official result is the matching row from the experiment's final-results CSV, with that CSV's hash retained.
 
+Machine-specific host roots in archived paths use `<your_path>` placeholders. Archive file and payload hashes refer to these anonymized records.
+
 Raw issue images and browser screenshots are included in the trajectory archive. README mascot illustrations are in `assets/`.

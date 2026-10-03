@@ -1,6 +1,6 @@
 {
   "instance_id": "PrismJS__prism-1853",
-  "final_patch_path": "/data/zy/causalgui_results/night_20260916/causalgui_test480_opencode_high_w30_20260926/generation/remaining426/cases/PrismJS__prism-1853/patch.diff",
+  "final_patch_path": "<your_path>/run/generation/remaining426/cases/PrismJS__prism-1853/patch.diff",
   "model_name_or_path": "causalgui/deepseek-v4.1-flash",
   "native_output": "/task/trajectory",
   "selected_candidate": 1,

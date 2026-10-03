@@ -216,7 +216,7 @@
       "ok": true,
       "process": {
         "command": [
-          "/home/ubuntu/anaconda3/envs/pyy/paper/TraceRepair/releases/isolation_20260907/.venv/bin/python",
+          "<your_path>/runtime/.venv/bin/python",
           "/task/trajectory/agents/browser/turn_02/tool_01/browser/actions.py",
           "/task/trajectory/agents/browser/turn_02/tool_01/browser/request.json"
         ],
