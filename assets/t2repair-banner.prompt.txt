@@ -1,27 +1,16 @@
 Generation mode: built-in image_gen; the backend model selector is not exposed.
-Input: the clean T2Repair banner preserved in commit 0d0b3b2 at assets/t2repair-banner.png.
-Requested output: a wider transparent banner with sparse exterior decorations.
+Input: assets/t2repair-banner.png at commit c27d798.
+Requested output: the existing transparent banner with a cuter T2Repair wordmark.
 Requested resolution: 3840 x 1536 if supported.
 Verified output: 1983 x 793, RGBA, with genuine transparency. This is not native 4K.
 
-LAYOUT AND EXTERIOR-DECORATION PROMPT
+LETTERING EDIT PROMPT
 Use case: precise-object-edit.
-Revise the provided CLEAN T2Repair banner in two specific ways: (1) make the central plaque a little longer again, and (2) add a few delicate decorations AROUND THE OUTSIDE of the plaque.
+Asset: transparent T2Repair GitHub README banner.
+Input image 1 is the edit target. Edit ONLY the wordmark inside its white nameplate.
 
-Use this input as the exact base. The pearl-white plaque interior currently contains only "T2Repair", and it must remain that way: keep the interior completely clean except for that exact centered name. NO icons, mini windows, magnifying glasses, play buttons, checkmark badges, patterns, or extra writing INSIDE the plaque.
+Replace the current heavy dark navy geometric lettering with a genuinely cute, custom hand-lettered bubble wordmark. Exact text, case and spelling: "T2Repair". One centered horizontal line.
+Draw softly inflated rounded letters with friendly plump curves, a gently playful hand-drawn rhythm and subtly varied tilt, generous readable counters, and smooth rounded stroke endings. Use a coherent soft cornflower-blue to lavender gradient across the word, a slim muted indigo outline for legibility, a clean narrow ivory sticker border, and a shallow blue-violet lower-edge shadow. A few tiny curved white shine marks should make the letters feel like soft jelly stickers, not metallic plastic. The T and R capitals should be particularly round and friendly. The numeral 2 must remain a normal readable 2. The word should occupy about 55 percent of the plaque's interior width, with comfortable blank space on each side. Make the typography visibly more adorable and handmade, harmonious with the detailed chibi mascots, while still reading clearly when the full banner is shown at 960 pixels wide. No cursive lettering, no sharp corners, no dark corporate block font, no thick black extrusion, no excessive gloss, no added icons, faces, ears or symbols inside the plaque.
 
-1. Extend the actual plaque width by approximately 20 to 25 percent, keeping its height, blue border, rounded corners and enamel finish unchanged. Extend the whole canvas horizontally to accommodate it, to an approximately 2.5:1 banner. Move the left and right characters outward by the necessary distance, preserving their size relative to the sign's height and their natural two-handed grip on the same sign. Preserve the precise character designs, hair, eye colors, faces, costumes, accessories, small Z ornament and bells. Keep all silhouettes, ears, fingers and hair uncut. The name "T2Repair" stays centered, with unchanged letter proportions, color and height relative to the sign. More clear white breathing room on either side of the title.
-
-2. Add SPARSE, SMALL decorative accents floating in the TRANSPARENT SPACE JUST OUTSIDE the blue plaque border, loosely distributed around its perimeter. These should feel like tasteful little surrounding flourishes: several small four-point sparkles, tiny outlined diamonds and dots, and two or three short fine curved strokes. A tiny code-bracket doodle and a tiny outline triangle may be mixed into the accents, but keep them as very small line decorations, not large technical panels or UI icons. Place small balanced clusters above the top rim toward the left and right thirds, and below the bottom rim near the left and right thirds, with one or two very small accents near accessible outer corners. Keep every accent OUTSIDE the plaque, off the lettering and away from faces and hands. The effect should be a light sprinkling around the sign, not a frame of clutter. Leave most surrounding space empty.
-
-Palette and style: muted icy blue, periwinkle, pale lavender and small pearl highlights, matching the existing characters. Thin clean polished anime/sticker illustration details with subtle shading. No opaque backdrop, no large glow or haze. Keep the genuine RGBA transparent background. Do not add any more characters, labels or words. Do not place any decoration inside the nameplate.
-Highest available image quality. Target 3840 x 1536 pixels if supported. Preserve all existing design features except the extra horizontal length and sparse exterior decorations.
-
-FINAL EXTERIOR-DECORATION POLISH PROMPT
-Polish ONLY the small EXTERIOR decorative accents in this T2Repair banner. Preserve the exact newly elongated plaque geometry, title text, blank white interior, both anime characters, their placement, faces, hair, accessories, hands and poses, and the overall wide canvas.
-
-The current exterior ornaments are too luminous and surrounded by fuzzy electric-blue fringe pixels. Redraw ONLY those exterior accents as a few SMALL, CLEAN, CRISP decorative marks with solid smooth boundaries. Remove all fuzzy blue glow, bright neon halos, particle spray, speckled edges and thick swirling strokes around the decorations.
-
-Keep just four modest exterior accent clusters: two above the plaque toward the left and right thirds, and two below the plaque toward the left and right thirds. Each cluster consists of one small four-point star with a simple solid pale-blue or pale-lavender fill and a neat indigo outline, accompanied by one or two tiny outlined diamonds or dots. Use about half the current visual weight of the ornament clusters. No large rings or swirls. Decorations should be subtle little floating accents, with visible transparent gaps between them and the plaque border. Keep all accents OUTSIDE the plaque. Its entire interior stays plain pearl-white with ONLY the exact centered text "T2Repair".
-
-This is a small decoration cleanup, not a new design. Keep the two characters and main sign completely unchanged. Maintain genuine RGBA transparency, the approximately 2.5:1 banner shape, highest available crisp illustration quality, and all complete uncropped silhouettes.
+Strict invariants: keep both existing characters' identities, faces, anatomy, poses, colors, costumes and positions unchanged; keep their hands gripping the sign. Keep the same very long horizontal plaque, its exact width and height, pearl-white interior, blue rounded border, existing four groups of small exterior sparkles, and overall framing. Do not shorten the plaque. Do not add any new decorations or other text. Do not change the external sparkles. The only intentional edit is the lettering.
+Preserve genuine alpha transparency around the artwork. No black or white background and no baked checkerboard. Preserve crisp illustration detail and clean antialiased cutout edges. Wide 2.5:1 canvas, target 3840 x 1536 if supported.
