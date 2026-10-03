@@ -55,48 +55,14 @@
       "source_sha256": "89fa5815406d0ed5f5ce1b71d010ad83580065b46001bd87695503dcac5db9c7",
       "sha256": "206579ec59a48e57b92accd383f29378875c4348306dd4953dfc5cf761feea2a",
       "executable_ast_preserved": true
-    },
-    {
-      "source": "code/causalgui/tests/test_contracts.py",
-      "file": "tests/test_contracts.py",
-      "source_sha256": "34cfc3174d5de74dae86f26fe48393bbf3ad8ff1105d0c2d2b56066777b26b06",
-      "sha256": "c8f90cd3b0419c8e8a9f2796f2eb1eecbdd9678a83a3d6bc99514a6f8bc97934",
-      "executable_ast_preserved_except": []
-    },
-    {
-      "source": "code/causalgui/tests/test_synthesis.py",
-      "file": "tests/test_synthesis.py",
-      "source_sha256": "60d55fd2301b77f7a5c5e28104bedc7e6a760e286c61a5709f05c4906f1942bc",
-      "sha256": "40aca6fa64df7784d265725430fdb21f988d9f2827d937ebb6e74257cb56e719",
-      "executable_ast_preserved_except": []
-    },
-    {
-      "source": "code/causalgui/tests/test_agents.py",
-      "file": "tests/test_agents.py",
-      "source_sha256": "6bb271e6a6fc3bc040c6af8be520a5367dbb4c4858a10f926a84698b6154a456",
-      "sha256": "866f64547193225dd2737784e50ea74f9211022454fbeeae07f81cbb6f68536a",
-      "executable_ast_preserved_except": [
-        "test_budget_audit_binds_correction_to_original_response_and_rejects_third_attempt",
-        "AgentContracts.setUp: use isolated temporary directory instead of deleting a fixed server path",
-        "AgentContracts.run_pipeline: inline the same repair harness policy and verify stage/call budgets locally instead of importing the historical external runner"
-      ]
-    },
-    {
-      "source": "code/causalgui/tests/replay_tool_feedback.py",
-      "file": "tests/replay_tool_feedback.py",
-      "source_sha256": "2a7f45201d306296c9a0b83f786d3b805f7678672b573cba6dfcc69bca5eb613",
-      "sha256": "b22a21b5ece502c9ee074e1930b8e3b0ea512bb2590e579b02c24bba73fc9849",
-      "executable_ast_preserved_except": []
     }
   ],
-  "cleanup": "Ordinary comments and docstrings removed; executable syntax and model prompts preserved. Historical launchers coupled to baseline implementations are replaced by the standalone release entry point. The omitted test belongs to the historical external broker budget auditor.",
+  "cleanup": "Ordinary comments and docstrings removed; executable syntax and model prompts preserved. Historical launchers coupled to baseline implementations are replaced by the standalone release entry point.",
   "release_entry_points": [
     "code/causalgui/cli.py",
     "code/causalgui/__main__.py"
   ],
   "release_checks": [
-    "tests/test_cli.py",
-    "tests/run_suite.py",
     "scripts/verify_fig8.py"
   ]
 }

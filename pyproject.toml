@@ -16,15 +16,8 @@ dependencies = [
   "pydantic>=2.8,<3",
 ]
 
-[project.optional-dependencies]
-test = ["pytest>=8,<10"]
-
 [project.scripts]
 t2repair = "causalgui.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["code"]
-
-[tool.pytest.ini_options]
-pythonpath = ["code", "tests"]
-testpaths = ["tests"]

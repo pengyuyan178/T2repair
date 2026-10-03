@@ -135,12 +135,6 @@ The selected patch restores **property → operator → string**, and frozen rep
 
 ## Getting started
 
-Verify the **451 archived Figure 8 files** and their key observations offline with Python 3.11+:
-
-```bash
-python scripts/verify_fig8.py
-```
-
 To run T2Repair on a new case, build the Linux runtime:
 
 ```bash
@@ -149,7 +143,7 @@ docker build -t t2repair:local .
 
 Then follow [Run T2Repair](docs/RUNNING.md) to prepare a base checkout and issue images, install the target project's dependencies, configure an OpenAI-compatible model endpoint, and run `prepare → check → run → export`. The same configured backend serves both investigation roles and patch generation.
 
-The archive check needs no API key or extra packages. A new repair run calls the configured model endpoint. The launcher runs one case at a time, with official benchmark evaluation as a separate step.
+A repair run calls the configured model endpoint. The launcher runs one case at a time, with official benchmark evaluation as a separate step.
 
 ## Repository guide
 
@@ -159,7 +153,7 @@ The archive check needs no API key or extra packages. A new repair run calls the
 | [Running guide](docs/RUNNING.md) | Setup, inputs, configuration, ablations, and evaluation |
 | [Paper figures](figures/README.md) | All eight original PDFs |
 | [Figure 8 archive](trajectories/fig8-prism-1853/README.md) | Recorded investigation, candidates, patch, and replay |
-| [Release notes](docs/RELEASE.md) | Source provenance and completed checks |
+| [Release contents](docs/RELEASE.md) | Source provenance and archived artifacts |
 
 <details>
 <summary>Implementation map</summary>
@@ -174,9 +168,8 @@ The archive check needs no API key or extra packages. A new repair run calls the
 | [code/causalgui/synthesis.py](code/causalgui/synthesis.py) | Atomic candidate edits and patch construction |
 | [code/causalgui/main.py](code/causalgui/main.py) | Schemas, model calls, investigation, candidate generation, and selection |
 | [code/causalgui/cli.py](code/causalgui/cli.py) | Standalone release commands |
-| [tests/](tests/) | Contract, browser, synthesis, feedback, and launcher checks |
 | [trajectories/fig8-prism-1853/](trajectories/fig8-prism-1853/) | Recorded Figure 8 evidence |
 
-`causalgui` is the implementation's internal Python package name. This release includes T2Repair; baseline implementations are outside its scope. See [release provenance](docs/RELEASE.md) for source cleanup and preservation details.
+`causalgui` is the implementation's internal Python package name. See [release contents](docs/RELEASE.md) for code and archive provenance.
 
 </details>

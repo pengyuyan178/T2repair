@@ -128,22 +128,4 @@ python -m swebench.harness.run_evaluation \
   --run_id t2repair-example
 ```
 
-Use the benchmark revision and project environments corresponding to the experiment you are comparing. This repository ships the Figure 8 trace and its saved result row, not the full 480-case batch controller or dataset. No new model generation or official benchmark evaluation was performed when assembling the release.
-
-## Checks without model calls
-
-Inspect Figure 8 using only Python's standard library:
-
-```bash
-python scripts/verify_fig8.py
-```
-
-Run the implementation tests inside the built image:
-
-```bash
-docker run --rm --init --ipc=host \
-  --mount "type=bind,source=$PWD/tests,target=/tests,readonly" \
-  --entrypoint python t2repair:local /tests/run_suite.py
-```
-
-The tests cover source grounding, atomic patch application, bounded feedback, browser interactions and replay, format recovery, role ablations, interrupted generation, stage budgets, and release commands. Model responses are scripted or mocked; browser and Git operations are real. The full runtime suite targets Linux because it uses POSIX commands and symbolic links.
+Use the benchmark revision and project environments corresponding to the experiment you are comparing. This repository includes the Figure 8 trace and its saved result row. Obtain the full dataset and evaluation environments from the benchmark maintainers.

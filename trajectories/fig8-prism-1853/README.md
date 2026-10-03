@@ -2,7 +2,7 @@
 
 [Paper figure (PDF)](../../figures/fig8-repair-trajectory.pdf) · [Final patch](patch.diff) · [Figure evidence](figure-evidence.json) · [File hashes](manifest.json)
 
-This is the recorded **DeepSeek** run for `PrismJS__prism-1853`, titled **`/* breaks JSON tokenization`**, at base commit `2f9c9261bc1454899266929711d5842a3675e467`. The archive contains 451 files (12,170,101 bytes), including model requests and responses, both agents' tool observations, five candidate patches, validation, and frozen replay. These are existing experiment records, copied without a new model run.
+This is the recorded **DeepSeek** run for `PrismJS__prism-1853`, titled **`/* breaks JSON tokenization`**, at base commit `2f9c9261bc1454899266929711d5842a3675e467`. The archive includes model requests and responses, both agents' tool observations, five candidate patches, validation, and frozen replay.
 
 The figure labels the original report as `Issue #1852`; `1853` in the benchmark instance ID is the repair PR number.
 
@@ -50,14 +50,6 @@ The PDF colors are drawn from the recorded token types; they are not screenshots
 
 The archived [validation](trajectory/candidates/01/validation.json) also preserves its limits: `probe_improved` and `target_improved` are false, and symbol validation is `UNKNOWN`. The DOM token sequence demonstrates the observed repair, but the scalar probe checks do not certify that improvement automatically. Likewise, valid evidence citations mean that a report's references resolve; they do not make every interpretation a proved cause. The [official result](official-result.json) records an evaluated pass, while its separate strict audit remains `unconfirmed`.
 
-## Inspect the archive offline
-
-From the repository root, using Python 3.11 or newer:
-
-```bash
-python scripts/verify_fig8.py
-```
-
-This verifies every archived file's size and hash, the figure's trace references, the selected patch, the frozen replay plan, the before/after token sequence, preserved controls, and the saved official outcome. It does not call a model, launch a browser, or rerun the official evaluator.
+## Archive paths
 
 Raw records retain original absolute artifact paths and timestamps for provenance. Resolve files through the relative paths in [manifest.json](manifest.json); the old machine paths are not required. The figure's evidence file also records hashes for comparison CSVs used in the manuscript. Those comparison datasets and baseline implementations are outside this release; only the T2Repair DeepSeek result row is exported here. Comments inside source excerpts and generated scene scripts remain intact as experimental evidence.
