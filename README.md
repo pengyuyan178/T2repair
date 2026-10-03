@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/t2repair-banner.png" alt="T2Repair nameplate held by two mascots, with small sparkles around its outer edge" width="960">
+  <img src="assets/t2repair-banner.png" alt="T2Repair bubble-letter nameplate held by two mascots on a pastel background with clouds and stars" width="960">
 </p>
 
 # T2Repair

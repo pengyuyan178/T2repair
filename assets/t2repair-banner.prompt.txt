@@ -1,16 +1,18 @@
 Generation mode: built-in image_gen; the backend model selector is not exposed.
-Input: assets/t2repair-banner.png at commit c27d798.
-Requested output: the existing transparent banner with a cuter T2Repair wordmark.
+Input: assets/t2repair-banner.png at commit 2a611b7.
+Requested output: an opaque pastel background with clouds, stars and small accents around the existing banner.
 Requested resolution: 3840 x 1536 if supported.
-Verified output: 1983 x 793, RGBA, with genuine transparency. This is not native 4K.
+Verified output: 1983 x 793, RGB, fully opaque. This is not native 4K.
 
-LETTERING EDIT PROMPT
+BACKGROUND EDIT PROMPT
 Use case: precise-object-edit.
-Asset: transparent T2Repair GitHub README banner.
-Input image 1 is the edit target. Edit ONLY the wordmark inside its white nameplate.
+Asset: T2Repair GitHub README banner.
+Input image 1 is the edit target.
 
-Replace the current heavy dark navy geometric lettering with a genuinely cute, custom hand-lettered bubble wordmark. Exact text, case and spelling: "T2Repair". One centered horizontal line.
-Draw softly inflated rounded letters with friendly plump curves, a gently playful hand-drawn rhythm and subtly varied tilt, generous readable counters, and smooth rounded stroke endings. Use a coherent soft cornflower-blue to lavender gradient across the word, a slim muted indigo outline for legibility, a clean narrow ivory sticker border, and a shallow blue-violet lower-edge shadow. A few tiny curved white shine marks should make the letters feel like soft jelly stickers, not metallic plastic. The T and R capitals should be particularly round and friendly. The numeral 2 must remain a normal readable 2. The word should occupy about 55 percent of the plaque's interior width, with comfortable blank space on each side. Make the typography visibly more adorable and handmade, harmonious with the detailed chibi mascots, while still reading clearly when the full banner is shown at 960 pixels wide. No cursive lettering, no sharp corners, no dark corporate block font, no thick black extrusion, no excessive gloss, no added icons, faces, ears or symbols inside the plaque.
+Replace the transparent space around the existing illustration with a fully opaque, softly decorated pastel background. The user explicitly does NOT want transparency. Create a finished rectangular banner with background color extending to all four corners. Keep the current wide 2.5:1 composition.
 
-Strict invariants: keep both existing characters' identities, faces, anatomy, poses, colors, costumes and positions unchanged; keep their hands gripping the sign. Keep the same very long horizontal plaque, its exact width and height, pearl-white interior, blue rounded border, existing four groups of small exterior sparkles, and overall framing. Do not shorten the plaque. Do not add any new decorations or other text. Do not change the external sparkles. The only intentional edit is the lettering.
-Preserve genuine alpha transparency around the artwork. No black or white background and no baked checkerboard. Preserve crisp illustration detail and clean antialiased cutout edges. Wide 2.5:1 canvas, target 3840 x 1536 if supported.
+Background art direction: a warm milky ivory base, with an extremely soft sky-blue wash on the left blending into pale lavender on the right. Add softly rounded, low-contrast pastel cloud-like color patches near the corners. In the open space ABOVE and AROUND the long plaque, lightly scatter a small number of cute decorative doodles: two or three little fluffy white clouds with faint blue-lavender outlines, a handful of small rounded four-point stars, tiny hollow diamonds, pearly dots and short delicate curved strokes. Use a restrained balance of small accents, varied in size, with generous breathing room; the large central area above the plaque should feel gently decorated, not empty and not crowded. Keep the palette soft and coordinated with the blue-haired and violet-eyed characters. The decorations should feel like a polished kawaii stationery illustration. No busy repeating wallpaper, no overpowering glow, no realistic scenery.
+
+STRICT FOREGROUND PRESERVATION: preserve the two existing chibi mascots exactly: same identities, faces, eyes, hairstyles, colors, costumes, accessories, size, placement and poses, with their hands holding the nameplate. Preserve the current very long white rounded plaque, its blue border and the exact cute blue-to-lavender bubble wordmark "T2Repair" including its white outline and soft shadow. Do NOT redesign the lettering. Preserve the current small exterior sparkle clusters. Keep the entire plaque interior plain apart from the existing wordmark. All NEW decoration belongs in the BACKGROUND OUTSIDE the plaque, behind the foreground illustration and never across faces, hands or letters. Keep the entire illustration visible and uncropped. Clean the transparent-edge fringe naturally into the new pastel backdrop.
+
+Deliver a single finished opaque banner, no checkerboard, no transparent cutout, no black backdrop, no additional text or watermark. Crisp high quality anime sticker illustration with fine linework. Target 3840 x 1536 pixels if supported.
